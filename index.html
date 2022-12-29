@@ -1,41 +1,61 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-<head>
+  <head>
     <title>Estatística</title>
-    <meta charset="UTF-8">
+    <meta charset="UTF-8" />
 
-<!-- Google Tag Manager -->
-       <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-       new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-       j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-       'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-       })(window,document,'script','dataLayer','GTM-T35LM4N');</script>
-<!-- End Google Tag Manager -->
-    
+    <!-- Google Tag Manager -->
+    <script>
+      (function (w, d, s, l, i) {
+        w[l] = w[l] || [];
+        w[l].push({ "gtm.start": new Date().getTime(), event: "gtm.js" });
+        var f = d.getElementsByTagName(s)[0],
+          j = d.createElement(s),
+          dl = l != "dataLayer" ? "&l=" + l : "";
+        j.async = true;
+        j.src = "https://www.googletagmanager.com/gtm.js?id=" + i + dl;
+        f.parentNode.insertBefore(j, f);
+      })(window, document, "script", "dataLayer", "GTM-T35LM4N");
+    </script>
+    <!-- End Google Tag Manager -->
+
     <link rel="canonical" href="index.html" />
 
     <!-- favico logo: estatistica-->
-    <link rel="icon" type="image/x-icon" href="img/logo-estatist.png">
+    <link rel="icon" type="image/x-icon" href="img/logo-estatist.png" />
     <!-- .final favico -->
 
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
-    <meta name="Description" content="Site de estatistica, em construção, com objetivo de ajudar outros colegas."/>
-    
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta
+      name="Description"
+      content="Site de estatistica, em construção, com objetivo de ajudar outros colegas." />
+
     <!-- SEO - Compartilhamento em redes sociais-->
     <meta property="og:title" content="Estatística" />
-    <meta property="og:description" content="Site de estatistica, em construção, com objetivo de ajudar outros colegas." />
+    <meta
+      property="og:description"
+      content="Site de estatistica, em construção, com objetivo de ajudar outros colegas." />
     <meta property="og:url" content="index.html" />
     <meta property="og:locale" content="pt_BR" />
     <meta property="og:site_name" content="Estatistica (Brasil)" />
     <meta property="og:type" content="website" />
-    <meta property="og:image" content="https://www.site_name.com/ac/structured-data/images/open_graph_logo.png?201809211351" />
+    <meta
+      property="og:image"
+      content="https://www.site_name.com/ac/structured-data/images/open_graph_logo.png?201809211351" />
     <!-- final SEO - Compartilhamento em redes sociais-->
-    
+
     <!-- google tags-->
-    <meta name="google-site-verification" content="coloque o codigo fornecido aqui">
+    <meta
+      name="google-site-verification"
+      content="coloque o codigo fornecido aqui" />
     <!-- final google tags-->
-    <link rel="alternate" href="https://www.site_name.com/ae-ar/" hreflang="ar-AE">
+    <link
+      rel="alternate"
+      href="https://www.site_name.com/ae-ar/"
+      hreflang="ar-AE" />
 
     <!-- Analitics -->
     <meta property="analytics-track" content="site_name - Index/Tab" />
@@ -46,82 +66,159 @@
     <!-- .final Analitics -->
 
     <!-- CSS e JS links-->
-    <link rel="stylesheet" type="text/css" media="all" href="https://www.site_name.com/wss/fonts?families=SF+Pro,v3|SF+Pro+Icons,v3" />
-    <link rel="stylesheet"  type="text/css" href="https://www.site_name.com/v/home/av/built/styles/main.built.css" />
-    <script src="https://www.site_name.com/v/home/av/built/scripts/head.built.js" type="text/javascript" charset="utf-8"></script>
+    <link
+      rel="stylesheet"
+      type="text/css"
+      media="all"
+      href="https://www.site_name.com/wss/fonts?families=SF+Pro,v3|SF+Pro+Icons,v3" />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://www.site_name.com/v/home/av/built/styles/main.built.css" />
+    <script
+      src="https://www.site_name.com/v/home/av/built/scripts/head.built.js"
+      type="text/javascript"
+      charset="utf-8"></script>
     <!-- .final CSS e JS links -->
 
     <!-- Schema.org - @tipo:"Organization" Dados estruturados -->
     <script type="application/ld+json">
-        {
-            "@context": "http://schema.org",
-            "@id": "https://www.site_name.com/#organization",
-            "@type": "Organization",
-            "name": "site_name",
-            "url": "https://www.site_name.com/",
-            "logo": "https://www.site_name.com/ac/structured-data/images/knowledge_graph_logo.png?201809211351",
-            "subOrganization": {
-                "@type": "Organization",
-                "name": "site_name Support",
-                "url": "https://support.site_name.com",
-            "@id": "https://support.site_name.com/#organization"
-            },
-            "contactPoint": [
-                {
-                    "@type": "ContactPoint",
-                    "telephone": "+1-800-692-7753",
-                    "contactType": "sales",
-                    "areaServed": "US"
-                },
-                {
-                    "@type": "ContactPoint",
-                    "telephone": "+1-800-275-2273",
-                    "contactType": "technical support",
-                    "areaServed": "US",
-                    "availableLanguage": ["EN", "ES"]
-                },
-                {
-                    "@type": "ContactPoint",
-                    "telephone": "+1-800-275-2273",
-                    "contactType": "customer support",
-                    "areaServed": "US",
-                    "availableLanguage": ["EN", "ES"]
-                }
-            ],
-            "sameAs": [
-                "http://www.wikidata.org/entity/Q312",
-                "https://www.youtube.com/user/site_name",
-                "https://www.linkedin.com/company/site_name",
-                "https://www.facebook.com/site_name",
-                "https://www.twitter.com/site_name"
-            ]
-        }
-    
+      {
+        "@context": "http://schema.org",
+        "@id": "https://www.site_name.com/#organization",
+        "@type": "Organization",
+        "name": "site_name",
+        "url": "https://www.site_name.com/",
+        "logo": "https://www.site_name.com/ac/structured-data/images/knowledge_graph_logo.png?201809211351",
+        "subOrganization": {
+          "@type": "Organization",
+          "name": "site_name Support",
+          "url": "https://support.site_name.com",
+          "@id": "https://support.site_name.com/#organization"
+        },
+        "contactPoint": [
+          {
+            "@type": "ContactPoint",
+            "telephone": "+1-800-692-7753",
+            "contactType": "sales",
+            "areaServed": "US"
+          },
+          {
+            "@type": "ContactPoint",
+            "telephone": "+1-800-275-2273",
+            "contactType": "technical support",
+            "areaServed": "US",
+            "availableLanguage": ["EN", "ES"]
+          },
+          {
+            "@type": "ContactPoint",
+            "telephone": "+1-800-275-2273",
+            "contactType": "customer support",
+            "areaServed": "US",
+            "availableLanguage": ["EN", "ES"]
+          }
+        ],
+        "sameAs": [
+          "http://www.wikidata.org/entity/Q312",
+          "https://www.youtube.com/user/site_name",
+          "https://www.linkedin.com/company/site_name",
+          "https://www.facebook.com/site_name",
+          "https://www.twitter.com/site_name"
+        ]
+      }
     </script>
     <!-- .final:Schema.org - @tipo:"" - Dados estruturados -->
 
     <!-- Schema.org - tipo:"WebPage" Dados estruturados -->
-      <script type="application/ld+json">
-        {
-            "@context": "http://schema.org",
-            "@id": "https://www.site_name.com/br/#webpage",
-            "@type": "WebPage",
-            "url": "https://www.site_name.com/br/",
-            "name": "site_name (Brasil)"
-        }
-    
+    <script type="application/ld+json">
+      {
+        "@context": "http://schema.org",
+        "@id": "https://www.site_name.com/br/#webpage",
+        "@type": "WebPage",
+        "url": "https://www.site_name.com/br/",
+        "name": "site_name (Brasil)"
+      }
     </script>
-      <!-- .final:Schema.org - @tipo:"WebPage" - Dados estruturados -->
-    
-</head>
-<body>
+    <!-- .final:Schema.org - @tipo:"WebPage" - Dados estruturados -->
+  </head>
+  <body class="page-home ac-nav-overlap">
     <!-- Google Tag Manager (noscript) -->
-    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-T35LM4N"
-    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <noscript>
+      <iframe
+        src="https://www.googletagmanager.com/ns.html?id=GTM-T35LM4N"
+        height="0"
+        width="0"
+        style="display: none; visibility: hidden"></iframe>
+    </noscript>
     <!-- End Google Tag Manager (noscript) -->
-    
-</body>
 
-<h1>Em desenvolvimento</h1>
+    <!-- navbar-->
+    <nav></nav>
+    <!-- .final navbar-->
 
+    <!-- main-->
+    <main></main>
+    <!-- .final main-->
+
+    <!-- footer-->
+    <footer></footer>
+    <!-- .final footer-->
+
+    <!-- schema.org @type:"WebPage" dados estruturados-->
+    <script type="application/ld+json">
+      {
+        "@context": "http://schema.org",
+        "@id": "https://www.site_name.com/br/#webpage",
+        "@type": "WebPage",
+        "url": "https://www.site_name.com/br/",
+        "name": "Estatística (Brasil)"
+      }
+    </script>
+    <!-- schema.org @type:"Organization" dados estruturados-->
+    <script type="application/ld+json">
+      {
+        "@context": "http://schema.org",
+        "@id": "https://www.site_name.com/#organization",
+        "@type": "Organization",
+        "name": "Estatística",
+        "url": "https://www.site_name.com/",
+        "logo": "https://www.site_name.com/ac/structured-data/images/knowledge_graph_logo.png?201809211351",
+        "subOrganization": {
+          "@type": "Organization",
+          "name": "Estatística Support",
+          "url": "https://support.site_name.com",
+          "@id": "https://support.site_name.com/#organization"
+        },
+        "contactPoint": [
+          {
+            "@type": "ContactPoint",
+            "telephone": "+1-800-692-7753",
+            "contactType": "sales",
+            "areaServed": "US"
+          },
+          {
+            "@type": "ContactPoint",
+            "telephone": "+1-800-275-2273",
+            "contactType": "technical support",
+            "areaServed": "US",
+            "availableLanguage": ["EN", "ES"]
+          },
+          {
+            "@type": "ContactPoint",
+            "telephone": "+1-800-275-2273",
+            "contactType": "customer support",
+            "areaServed": "US",
+            "availableLanguage": ["EN", "ES"]
+          }
+        ],
+        "sameAs": [
+          "http://www.wikidata.org/entity/Q312",
+          "https://www.youtube.com/user/Site_name",
+          "https://www.linkedin.com/company/site_name",
+          "https://www.facebook.com/Site_name",
+          "https://www.twitter.com/Site_name"
+        ]
+      }
+    </script>
+  </body>
 </html>
