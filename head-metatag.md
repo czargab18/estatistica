@@ -1,3 +1,4 @@
+<!--
 <!DOCTYPE html>
 <html lang="pt-BR">
   <head>
@@ -162,3 +163,5 @@ Exemplo de Links para coleção de 3 pag.
     <script src=""></script>
   </head>
 </html>
+
+-->
