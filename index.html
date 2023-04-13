@@ -1,78 +1,115 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-	<head>
-		<!-- compatibilidade -->
-		<meta charset="UTF-8" />
-		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-		<!--  versão altern do site atual (idioma diferente) -->
-		<link rel="alternate" href="https://es.example.com/" hreflang="pt-br" />
+<head>
+	<!-- compatibilidade -->
+	<meta charset="UTF-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-		<!-- security -->
-		<meta
-			http-equiv="Content-Security-Policy"
-			content="img-src 'self' https://images.example.com; script-src 'self' https://cdn.example.com"
-		/>
-		<meta name="google-site-verification" content="verific_token_aqui" />
-		<meta name="referrer" content="no-referrer" />
+	<!--  versão altern do site atual (idioma diferente) -->
+	<link rel="alternate" href="https://es.example.com/" hreflang="pt-br" />
 
-		<!-- Prefetching, pré-carregamento, pré-navegação -->
-		<link rel="dns-prefetch" href="//example.com/" />
-		<link rel="preconnect" href="https://www.example.com/" />
-		<link rel="prefetch" href="https://www.example.com/" />
-		<link rel="prerender" href="https://example.com/" />
-		<link rel="subresource" href="styles.css" />
-		<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
-		<link rel="preload" href="image.png" />
-		<!-- Mais informações: https://css-tricks.com/prefetching-preloading-prebrowsing/ -->
+	<!-- security -->
+	<meta http-equiv="Content-Security-Policy"
+		content="img-src 'self' https://images.example.com; script-src 'self' https://cdn.example.com" />
+	<meta name="google-site-verification" content="verific_token_aqui" />
+	<meta name="referrer" content="no-referrer" />
 
-		<!-- SEO -->
-		<title>Estatística</title>
-		<meta
-			name="description"
-			content="Descrição curta do site (incluída nos resultados do motor de busca)."
-		/>
-		<meta name="subject" content="Breve descrição do assunto do seu site" />
-		<meta
-			name="abstract"
-			content="descreva o propósito do site (frase curta)."
-		/>
-		<meta name="topic" content="Estatística" />
-		<link rel="shortlink" href="https://example.com/?p=43625" />
-		<!-- link curto caso a url da pag atual seja grande-->
+	<!-- Prefetching, pré-carregamento, pré-navegação -->
+	<link rel="dns-prefetch" href="//example.com/" />
+	<link rel="preconnect" href="https://www.example.com/" />
+	<link rel="prefetch" href="https://www.example.com/" />
+	<link rel="prerender" href="https://example.com/" />
+	<link rel="subresource" href="styles.css" />
+	<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+	<link rel="preload" href="image.png" />
+	<!-- Mais informações: https://css-tricks.com/prefetching-preloading-prebrowsing/ -->
 
-		<!-- SEO - Geolocalização -->
-		<meta name="geo.region" content="BR-DF" />
-		<meta name="geo.placename" content="Brasília" />
+	<!-- SEO -->
+	<title>Estatística</title>
+	<meta name="description" content="Descrição curta do site (incluída nos resultados do motor de busca)." />
+	<meta name="subject" content="Breve descrição do assunto do seu site" />
+	<meta name="abstract" content="descreva o propósito do site (frase curta)." />
+	<meta name="topic" content="Estatística" />
+	<link rel="shortlink" href="https://example.com/?p=43625" />
+	<!-- link curto caso a url da pag atual seja grande-->
 
-		<!-- config -  -->
-		<meta name="robots" content="index,follow" />
-		<meta name="google" content="nositelinkssearchbox" />
-		<meta name="format-detection" content="telephone=no" />
+	<!-- SEO - Geolocalização -->
+	<meta name="geo.region" content="BR-DF" />
+	<meta name="geo.placename" content="Brasília" />
 
-		<!-- info adds -->
-		<meta name="generator" content="Visual Studio Code" />
+	<!-- config -  -->
+	<meta name="robots" content="index,follow" />
+	<meta name="google" content="nositelinkssearchbox" />
+	<meta name="format-detection" content="telephone=no" />
 
-		<!-- info author do doc.|site (dados struturados)-->
-		<!-- NÃO USAR email ou telef do autor para não sofrer SPAM -->
-		<link
-			href="https://google.com/profiles/thenextweb"
-			rel="me"
-			type="text/html"
-		/>
+	<!-- info adds -->
+	<meta name="generator" content="Visual Studio Code" />
 
-		<!--  estudar links -->
-		<link rel="manifest" href="manifest.json" />
-		<link rel="author" href="humans.txt" />
-		<link rel="import" href="component.html" />
+	<!-- info author do doc.|site (dados struturados)-->
+	<!-- NÃO USAR email ou telef do autor para não sofrer SPAM -->
+	<link href="https://google.com/profiles/thenextweb" rel="me" type="text/html" />
 
-		<!-- style -->
-		<link rel="stylesheet" href="style.css" />
+	<!--  estudar links -->
+	<link rel="manifest" href="manifest.json" />
+	<link rel="author" href="humans.txt" />
+	<link rel="import" href="component.html" />
 
-		<!-- script -->
-		<script src=""></script>
-	</head>
-	<body>
-	</body>
+	<!-- style -->
+	<link rel="stylesheet" href="style.css" />
+
+	<!-- script -->
+	<script src=""></script>
+</head>
+
+<body>
+	<!-- HEADER Gov.br -->
+	<header class="header-content">
+		<!-- CONTEUDOS: 2 DIVS -->
+		<div class="unbtv-infogovbr">
+			<!-- DIV-01 -->
+			<div class="unbtv-govbr-covid content-esquerda">
+				<ul class="lista-conteudo-esquerda">
+					<li class="eduplay-unbtv">
+						<a href="#" class="eduaplay-unb item-left">eduplay-UnBTV</a>
+						<span class="hidenvisualizacao eduaplay-unb item-left">eduplay-UnBTV</span>
+					</li>
+					<li class="gov-br">
+						<a href="#" class="gov-br item-left">Gov.BR</a>
+						<span class="hidenvisualizacao gov-br item-left">Gov.BR</span>
+					</li>
+					<li class="coronavarius">
+						<a href="#" class="coronavarius item-left">Coronavírus (COVID-19)</a>
+						<span class="hidenvisualizacao coronavarius item-left">Coronavírus (COVID-19)</span>
+					</li>
+				</ul>
+			</div>
+			<!-- .final DIV-01 -->
+			<!-- DIV-02 -->
+			<div></div>
+		</div>
+	</header>
+	<!-- .final HEADER Gov.br -->
+
+</body>
+
 </html>
+
+
+
+<!--  -->
+
+header:
+header-govbr-unbtv > eduplay-unbtv + gov-br + coronavarius
+
+ header-govbr-info > orgao-govbr + acesso-informacao + legislacao + participe + acessibilidade
+
+ 
+<div>
+	<ul>
+		<li><a href=""></a><span></span></li>
+		<li><a href=""></a><span></span></li>
+		<li><a href=""></a><span></span></li>
+	</ul>
+</div>
