@@ -1,3 +1,17 @@
+logo
+Graduação
+Pós-Graduação
+Extensão
+Docentes
+Pesquisa
+Eventos
+Notícias
+Ouvidoria
+Instalações
+Contato
+Search
+Perfil
+
 <!--  NAVBAR -->
 <li class="globalnav-item globalnav-item-xxx"></li>
 <a href="" class="globalnav-link globalnav-link-xxx"></a>
