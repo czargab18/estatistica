@@ -102,6 +102,7 @@ html,body {
 }
 
 #globalnav {
+    /* "variaveis" criadas para esta classe */
     --r-globalnav-next-flyout-height: 0px;
     --r-globalnav-previous-flyout-height: 0px;
     --r-globalnav-height: 44px;
@@ -111,6 +112,7 @@ html,body {
     --r-globalnav-font-size: 15px;
     --globalnav-background: none;
     --globalnav-backdrop-filter: none;
+    /* propriedades para esta classe */
     position: absolute;
     top: 0;
     right: 0;
