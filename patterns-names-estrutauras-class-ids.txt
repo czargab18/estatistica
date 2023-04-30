@@ -1,4 +1,3 @@
-
 <!-- HEADER -->
 
 CORONAVIRUS (COVID-19)
@@ -12,24 +11,23 @@ Acessibilidade
     <div class="globalheader-content">
         <ul class="globalheader-list">
             <!-- item-00 -->
-            <li class="globalheader-item globalheader-item-xxx">
-                <a href="" class="globalheader-link globalheader-link-xxx">
-                    <span class="globalheader-link-xxx-container">
-                        <span class="globalheader-xxx-regular globalheader-link-xxx">
+            <li class="globalheader-item globalheader-item-acessibilidade">
+                <a href="" class="globalheader-link globalheader-link-acessibilidade">
+                    <span class="globalheader-link-acessibilidade-container">
+                        <span class="globalnav-link-text">Acessibilidade</span>
+                        <!-- imagem: oculta -->
+                        <span
+                            class="visuallyhidden globalheader-acessibilidade-regular globalheader-link-acessibilidade">
                             <svg height="44" viewBox="0 0 XX 44" width="XX">
                                 <path d="COLOQUE-CÓDIGO site-https://yqnn.github.io/svg-path-editor/ " />
                             </svg>
                         </span>
-                        <span class="globalnav-link-text">XXXXX</span>
                     </span>
                 </a>
             </li>
-            <!-- item-01 -->
         </ul>
     </div>
 </header>
-
-
 
 <!-- ESTRUTURA -->
 <section class="homepage-section collection-module"></section>
@@ -51,9 +49,7 @@ Acessibilidade
                 <div class="section-content">
                     <span class="phone-ti-ribbon-copy trade-in">
                         <a href="#"></a>
-                        <span class="icon icon-after icon-chevronright">
-
-                        </span>
+                        <span class="icon icon-after icon-chevronright"> </span>
                     </span>
                 </div>
             </div>
@@ -61,20 +57,8 @@ Acessibilidade
     </div>
 </section>
 
-
-logo
-Graduação
-Pós-Graduação
-Extensão
-Docentes
-Pesquisa
-Eventos
-Notícias
-Ouvidoria
-Instalações
-Contato
-Search
-Perfil
+logo Graduação Pós-Graduação Extensão Docentes Pesquisa Eventos Notícias Ouvidoria
+Instalações Contato Search Perfil
 
 <!--  NAVBAR -->
 <li class="globalnav-item globalnav-item-xxx"></li>
@@ -98,10 +82,6 @@ Perfil
         </span>
     </a>
 </li>
-
-
-
-
 
 <!--  BOTÕES-TELA-PEQUENA -->
 <div class="globalnav-item globalnav-menuback"></div>
@@ -224,7 +204,6 @@ Perfil
     </div>
 </li>
 
-
 <!-- SEÇÃO  -->
 <section class="homepage-section collection-module">
     <!-- SECTION-PRINCIPAL - PRIMEIRA (TOPO) -->
@@ -233,12 +212,15 @@ Perfil
             <div class="unit-wrapper">
                 <a href="" class="unit-link"></a>
                 <div class="unit-copy-wrapper">
-                    <h4 class="headline">XXXXXXXXXX
+                    <h4 class="headline">
+                        XXXXXXXXXX
                         <!-- caso eu use um logo no <h4> ao inves de TEXTO -->
                         <span class="visuallyhidden">XXXXXXXXXX XXXXXXXXXX XXXXXXXXXX</span>
                         XXXXXXXXXX
                     </h4>
-                    <h5 class="subhead">XXXXXXXXXX XXXXXXXXXX XXXXXXXXXX XXXXXXXXXX &#8209;9.</h5>
+                    <h5 class="subhead">
+                        XXXXXXXXXX XXXXXXXXXX XXXXXXXXXX XXXXXXXXXX &#8209;9.
+                    </h5>
                     <div class="cta-links">
                         <!-- SAIBA MAIS -->
                         <a href="" class="icon icon-after icon-chevronright" data-analytics-region="learn more">Saiba
@@ -255,7 +237,6 @@ Perfil
     </div>
     <!-- SECTION-PRINCIPAL - SEGUNDA (TOPO) -->
     <!-- SECTION-PRINCIPAL - TERCEIRA (TOPO) -->
-
 </section>
 
 <!-- ESTRUTURA-CONJUNTO-6-CAIXAS/DIVs -->
@@ -283,8 +264,7 @@ Perfil
                     </div>
                 </div>
                 <div class="unit-image-wrapper">
-                    <figure class="unit-image unit-image-wwdc23-announce-promo-wwdc23" data-anim-lazy-image>
-                    </figure>
+                    <figure class="unit-image unit-image-wwdc23-announce-promo-wwdc23" data-anim-lazy-image></figure>
                 </div>
             </div>
         </div>
@@ -338,8 +318,7 @@ Perfil
                     </div>
                 </div>
                 <div class="unit-image-wrapper">
-                    <figure class="unit-image unit-image-macbook-pro-14-and-16-promo-mbp" data-anim-lazy-image>
-                    </figure>
+                    <figure class="unit-image unit-image-macbook-pro-14-and-16-promo-mbp" data-anim-lazy-image></figure>
                 </div>
             </div>
         </div>
@@ -394,8 +373,7 @@ Perfil
                     </div>
                 </div>
                 <div class="unit-image-wrapper">
-                    <figure class="unit-image unit-image-airpods-pro-campaign-promo" data-anim-lazy-image>
-                    </figure>
+                    <figure class="unit-image unit-image-airpods-pro-campaign-promo" data-anim-lazy-image></figure>
                 </div>
             </div>
         </div>
@@ -436,6 +414,5 @@ Perfil
         </div>
     </div>
 </section>
-
 
 <!-- slide-show -->

@@ -1,0 +1,145 @@
+@charset "UTF-8";
+#globalnav {
+    all: unset
+}
+/* ESCONDIDOS */
+.visuallyhidden {
+    position: absolute;
+    clip: rect(1px, 1px, 1px, 1px);
+    -webkit-clip-path: inset(0px 0px 99.9% 99.9%);
+    clip-path: inset(0px 0px 99.9% 99.9%);
+    overflow: hidden;
+    height: 1px;
+    width: 1px;
+    padding: 0;
+    border: 0
+}
+
+
+
+ *{
+    margin: auto;
+    padding: 0px;
+ }
+
+#globalheader{
+    --r-globalnav-font-size: 15px;
+    --r-globalnav-height: 44px;
+    --r-globalnav-color: rgba(7, 29, 65, 1);
+    --r-globalnav-color-secondary: #333336;
+    --r-globalnav-color-hover: #000000;
+    --globalnav-background: none;
+    --globalnav-backdrop-filter: none;
+    position: fixed;
+    background-color: var(--r-globalnav-color);
+    top:0;
+    left: 0;
+    right: 0;
+    gap: 8px;
+    margin: auto;
+    padding: 0px;
+    height: 40px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    z-index: 300;
+    align-items: center;
+    align-content: center;
+}
+
+
+
+.globalheader>.globalheader{
+    font-family: "SF Pro Text";
+    font-size: var(--r-globalnav-font-size);
+    line-height: 15px;
+    font-weight: 400;
+    margin: 0 10px;
+    gap: 27px;
+    width: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    flex-wrap: nowrap;
+}
+
+.globalheader .globalheader-content .globalheader-list{
+    width: 1156px;
+    height: 40px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: nowrap;
+
+    list-style: none;
+    font-size: var(--r-globalnav-font-size);
+    gap: 18px;
+}
+
+.globalheader .globalheader-content .globalheader-list .globalheader-item .globalheader-link{
+    text-decoration: none;
+    color: rgba(255, 255, 255, 0.92);
+}
+/* espaço todos os elementos <ul> */
+.globalheader-list>*{
+    margin-right: 20px;
+    white-space: nowrap;
+}
+
+/* espaço -entre gov.br e coronavarus */
+.globalheader-list>*:nth-child(2) {
+    margin-right: 100px;
+}
+
+/* coronavrus */
+.globalheader-list>*:nth-child(3), .globalheader-link-coronavarus-container {
+    color: rgba(255, 199, 0, 1);
+    text-decoration: underline;
+    list-style: none;
+}
+/* logo gov.br */
+
+.globalheader-link-text-gambiarra-govbr{
+    --r-globalnav-color-dark-blue: rgba(0, 58, 122, 1);
+    --r-globalnav-color-yellow:rgba(255, 199, 0, 1) ;
+    --r-globalnav-color-light-green:rgba(97, 196, 84, 1) ;
+    --r-globalnav-color-light-blue: rgba(0, 185, 255, 0.5);
+    display: flex;
+    flex-wrap: nowrap;
+    font-size: 20px;
+    font-weight: 600;
+}
+.globalheader-link-text-gambiarra-govbr>*:nth-child(1){
+    color: var(--r-globalnav-color-dark-blue);
+}
+.globalheader-link-text-gambiarra-govbr>*:nth-child(2){
+    color: var(--r-globalnav-color-yellow);
+}
+.globalheader-link-text-gambiarra-govbr>*:nth-child(3){
+    color: var(--r-globalnav-color-light-green);
+}
+.globalheader-link-text-gambiarra-govbr>*:nth-child(4){
+    color: var(--r-globalnav-color-dark-blue);
+}
+.globalheader-link-text-gambiarra-govbr>*:nth-child(5){
+    color: var(--r-globalnav-color-light-blue);
+}
+.globalheader-link-text-gambiarra-govbr>*:nth-child(6){
+    color: var(--r-globalnav-color-yellow);
+}
+
+/* logos eduplayUnBTV*/
+.globalheader-link-text-gambiarra-unbtv{
+    display: flex;
+    flex-wrap: nowrap;
+    font-size: 15px;
+}
+.globalheader-link-text-gambiarra-unbtv>*:nth-child(1){
+    color: rgba(255, 199, 0, 1);
+}
+.globalheader-link-text-gambiarra-unbtv>*:nth-child(2){
+    color: rgba(0, 58, 122, 1);
+}
+
