@@ -144,7 +144,7 @@ html,body {
     padding: 0;
     width: 100%;
     height: 114px;
-    
+
     font-size: 17px;
     -webkit-user-select: none;
     user-select: none;
@@ -229,14 +229,18 @@ html,body {
 
 
 
-.globalheader>.globalheader{
+#globalheader>.globalheader{
     font-family: "SF Pro Text";
     font-size: var(--r-globalheader-font-size);
     line-height: 15px;
-    font-weight: 600;
+    font-weight: 400;
+    background-color: #6c6ce3;
+
     margin: 0 10px;
     gap: 8px;
-    width: auto;
+    /* width: auto; */
+    width: calc(1440px*3);
+
     display: flex;
     justify-content: center;
     align-items: center;
