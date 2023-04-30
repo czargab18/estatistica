@@ -143,10 +143,8 @@ html,body {
     margin: 0;
     padding: 0;
     width: 100%;
-    min-width: 320px;
-    /* height: 48px; */
-    /* max-height: 44px; */
     height: 114px;
+    
     font-size: 17px;
     -webkit-user-select: none;
     user-select: none;
@@ -235,7 +233,7 @@ html,body {
     font-family: "SF Pro Text";
     font-size: var(--r-globalheader-font-size);
     line-height: 15px;
-    font-weight: 400;
+    font-weight: 600;
     margin: 0 10px;
     gap: 8px;
     width: auto;
@@ -282,7 +280,6 @@ html,body {
     list-style: none;
 }
 /* logo gov.br */
-
 .globalheader-link-text-gambiarra-govbr{
     display: flex;
     flex-wrap: nowrap;
@@ -313,6 +310,7 @@ html,body {
     display: flex;
     flex-wrap: nowrap;
     font-size: 15px;
+    font-weight: 600;
 }
 .globalheader-link-text-gambiarra-unbtv>*:nth-child(1){
     color: rgba(255, 199, 0, 1);
