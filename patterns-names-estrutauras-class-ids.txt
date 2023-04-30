@@ -1,0 +1,418 @@
+<!-- HEADER -->
+
+CORONAVIRUS (COVID-19)
+Órgãos do Governo
+Acesso à informação
+Legislação
+Participe
+Acessibilidade
+
+<header id="globalheader" class="globalheader no-js">
+    <div class="globalheader-content">
+        <ul class="globalheader-list">
+            <!-- item-00 -->
+            <li class="globalheader-item globalheader-item-acessibilidade">
+                <a href="" class="globalheader-link globalheader-link-acessibilidade">
+                    <span class="globalheader-link-acessibilidade-container">
+                        <span class="globalnav-link-text">Acessibilidade</span>
+                        <!-- imagem: oculta -->
+                        <span
+                            class="visuallyhidden globalheader-acessibilidade-regular globalheader-link-acessibilidade">
+                            <svg height="44" viewBox="0 0 XX 44" width="XX">
+                                <path d="COLOQUE-CÓDIGO site-https://yqnn.github.io/svg-path-editor/ " />
+                            </svg>
+                        </span>
+                    </span>
+                </a>
+            </li>
+        </ul>
+    </div>
+</header>
+
+<!-- ESTRUTURA -->
+<section class="homepage-section collection-module"></section>
+<div class="iphone-trade-in"></div>
+<div class="module-content"></div>
+<div class="ribbon-iphone-ti"></div>
+<div class="section-content"></div>
+<span class="iphone-ti-ribbon-copy trade-in"></span>
+<sup></sup>
+<a href="#footer-1"></a>
+<a href=""></a>
+<span class="icon icon-after icon-chevronright"></span>
+
+<!-- CÓDIGO -->
+<section class="homepage-section collection-module">
+    <div class="iphone-trade-in">
+        <div class="module-content">
+            <div class="ribbon-iphone-ti">
+                <div class="section-content">
+                    <span class="phone-ti-ribbon-copy trade-in">
+                        <a href="#"></a>
+                        <span class="icon icon-after icon-chevronright"> </span>
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+logo Graduação Pós-Graduação Extensão Docentes Pesquisa Eventos Notícias Ouvidoria
+Instalações Contato Search Perfil
+
+<!--  NAVBAR -->
+<li class="globalnav-item globalnav-item-xxx"></li>
+<a href="" class="globalnav-link globalnav-link-xxx"></a>
+<span class="globalnav-link-xxx-container"></span>
+<span class="globalnav-xxx-regular globalnav-link-xxx"></span>
+<svg height="44" viewBox="0 0 XX 44" width="XX"></svg>
+<path d="" />
+<span class="globalnav-link-text">XXXXX</span>
+
+<!--  ESTRUTURAS -->
+<li class="globalnav-item globalnav-item-xxx">
+    <a href="" class="globalnav-link globalnav-link-xxx">
+        <span class="globalnav-link-xxx-container">
+            <span class="globalnav-xxx-regular globalnav-link-xxx">
+                <svg height="44" viewBox="0 0 XX 44" width="XX">
+                    <path d="COLOQUE-CÓDIGO site-https://yqnn.github.io/svg-path-editor/ " />
+                </svg>
+            </span>
+            <span class="globalnav-link-text">XXXXX</span>
+        </span>
+    </a>
+</li>
+
+<!--  BOTÕES-TELA-PEQUENA -->
+<div class="globalnav-item globalnav-menuback"></div>
+<button class="globalnav-menuback-button"></button>
+<span class="globalnav-chevron-icon"></span>
+<svg height="44" viewBox="0 0 X 48" width="X"></svg>
+<path d="" />
+
+<!-- ESTRUTURA- LEFT-->
+<div class="globalnav-item globalnav-menuback">
+    <button class="globalnav-menuback-button" aria-label="Main menu">
+        <span class="globalnav-chevron-icon">
+            <svg height="48" viewBox="0 0 9 48" width="9" xmlns="http://www.w3.org/2000/svg">
+                <path d="COLOQUE-CÓDIGO site-https://yqnn.github.io/svg-path-editor/ " />
+            </svg>
+        </span>
+    </button>
+</div>
+
+<!-- ESTRUTURA- RIGHT - SEARCH-->
+<li class="globalnav-item globalnav-zzzz"></li>
+<a href="" id="globalnav-menubutton-link-zzzz" class="globalnav-link globalnav-link-zzzz"></a>
+<span class="globalnav-image-regular"></span>
+
+<span class="globalnav-image-compact"></span>
+<svg height="48" viewBox="0 0 XX 48" width="XX"></svg>
+<path d="" />
+
+<span class="globalnav-xxx-regular globalnav-link-xxx"></span>
+<svg height="44" viewBox="0 0 XX 44" width="XX"></svg>
+<path d="" />
+
+<!-- div-conteudo click botão pesquisa -->
+<!-- botão-searchtela pequena -->
+<div id="globalnav-submenu-search" class="globalnav-flyout globalnav-submenu"
+    aria-labelledby="globalnav-menubutton-link-search">
+    <div class="globalnav-flyout-scroll-container">
+        <div class="globalnav-flyout-content globalnav-submenu-content">
+            <form class="globalnav-searchfield" action="/us/search" method="get">
+                <div class="globalnav-searchfield-wrapper">
+                    <input class="globalnav-searchfield-input" placeholder="Search apple.com"
+                        aria-label="Search apple.com" autoCorrect="off" autocapitalize="off" autocomplete="off" />
+                    <input id="globalnav-searchfield-src" type="hidden" name="src" value />
+                    <input type="hidden" name="type" value />
+                    <input type="hidden" name="page" value />
+                    <input type="hidden" name="locale" value />
+                    <button class="globalnav-searchfield-reset" aria-label="Clear search" tabindex="-1" type="button">
+                        <span class="globalnav-image-regular">
+                            <svg height="14" viewBox="0 0 14 14" width="14" xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="m7 .0339a6.9661 6.9661 0 1 0 6.9661 6.9661 6.9661 6.9661 0 0 0 -6.9661-6.9661zm2.798 8.9867a.55.55 0 0 1 -.778.7774l-2.02-2.02-2.02 2.02a.55.55 0 0 1 -.7784-.7774l2.0206-2.0206-2.0204-2.02a.55.55 0 0 1 .7782-.7778l2.02 2.02 2.02-2.02a.55.55 0 0 1 .778.7778l-2.0203 2.02z" />
+                            </svg>
+                        </span>
+                        <span class="globalnav-image-compact">
+                            <svg height="16" viewBox="0 0 16 16" width="16" xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="m0 8a8.0474 8.0474 0 0 1 7.9922-8 8.0609 8.0609 0 0 1 8.0078 8 8.0541 8.0541 0 0 1 -8 8 8.0541 8.0541 0 0 1 -8-8zm5.6549 3.2863 2.3373-2.353 2.3451 2.353a.6935.6935 0 0 0 .4627.1961.6662.6662 0 0 0 .6667-.6667.6777.6777 0 0 0 -.1961-.4706l-2.3451-2.3373 2.3529-2.3607a.5943.5943 0 0 0 .1961-.4549.66.66 0 0 0 -.6667-.6589.6142.6142 0 0 0 -.447.1961l-2.3686 2.3606-2.353-2.3527a.6152.6152 0 0 0 -.447-.1883.6529.6529 0 0 0 -.6667.651.6264.6264 0 0 0 .1961.4549l2.3451 2.3529-2.3451 2.353a.61.61 0 0 0 -.1961.4549.6661.6661 0 0 0 .6667.6667.6589.6589 0 0 0 .4627-.1961z" />
+                            </svg>
+                        </span>
+                    </button>
+                    <button class="globalnav-searchfield-submit" aria-label="Submit search" tabindex="-1"
+                        aria-hidden="true" type="submit">
+                        <span class="globalnav-image-regular">
+                            <svg height="32" viewBox="0 0 30 32" width="30" xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="m23.3291 23.3066-4.35-4.35c-.0105-.0105-.0247-.0136-.0355-.0235a6.8714 6.8714 0 1 0 -1.5736 1.4969c.0214.0256.03.0575.0542.0815l4.35 4.35a1.1 1.1 0 1 0 1.5557-1.5547zm-15.4507-8.582a5.6031 5.6031 0 1 1 5.603 5.61 5.613 5.613 0 0 1 -5.603-5.61z" />
+                            </svg>
+                        </span>
+                        <span class="globalnav-image-compact">
+                            <svg width="38" height="40" viewBox="0 0 38 40" xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="m28.6724 27.8633-5.07-5.07c-.0095-.0095-.0224-.0122-.032-.0213a7.9967 7.9967 0 1 0 -1.8711 1.7625c.0254.03.0357.0681.0642.0967l5.07 5.07a1.3 1.3 0 0 0 1.8389-1.8379zm-18.0035-10.0033a6.5447 6.5447 0 1 1 6.545 6.5449 6.5518 6.5518 0 0 1 -6.545-6.5449z" />
+                            </svg>
+                        </span>
+                    </button>
+                </div>
+                <div class="globalnav-searchresults-count" role="status" aria-live="polite"
+                    data-topnav-searchresults-label="total results"></div>
+            </form>
+            <div class="globalnav-searchresults"></div>
+        </div>
+    </div>
+</div>
+
+<!-- ESTRUTURA- RIGHT - SEARCH-->
+
+<!-- bag -->
+<li class="globalnav-item globalnav-bag" id="globalnav-bag" data-analytics-region="bag">
+    <div class="globalnav-bag-wrapper">
+        <a role="button" id="globalnav-menubutton-link-bag" href="/us/shop/goto/bag" aria-label="Shopping Bag"
+            data-globalnav-item-name="bag" data-topnav-flyout-trigger-regular data-topnav-flyout-trigger-compact
+            data-analytics-click="prop3:open - bag" data-analytics-title="open - bag"
+            class="globalnav-link globalnav-link-bag">
+            <span class="globalnav-image-regular">
+                <svg height="44" viewBox="0 0 14 44" width="14" xmlns="http://www.w3.org/2000/svg">
+                    <path
+                        d="m11.3535 16.0283h-1.0205a3.4229 3.4229 0 0 0 -3.333-2.9648 3.4229 3.4229 0 0 0 -3.333 2.9648h-1.02a2.1184 2.1184 0 0 0 -2.117 2.1162v7.7155a2.1186 2.1186 0 0 0 2.1162 2.1167h8.707a2.1186 2.1186 0 0 0 2.1168-2.1167v-7.7155a2.1184 2.1184 0 0 0 -2.1165-2.1162zm-4.3535-1.8652a2.3169 2.3169 0 0 1 2.2222 1.8652h-4.4444a2.3169 2.3169 0 0 1 2.2222-1.8652zm5.37 11.6969a1.0182 1.0182 0 0 1 -1.0166 1.0171h-8.7069a1.0182 1.0182 0 0 1 -1.0165-1.0171v-7.7155a1.0178 1.0178 0 0 1 1.0166-1.0166h8.707a1.0178 1.0178 0 0 1 1.0164 1.0166z" />
+                </svg>
+            </span>
+            <span class="globalnav-image-compact">
+                <svg height="48" viewBox="0 0 17 48" width="17" xmlns="http://www.w3.org/2000/svg">
+                    <path
+                        d="m13.4575 16.9268h-1.1353a3.8394 3.8394 0 0 0 -7.6444 0h-1.1353a2.6032 2.6032 0 0 0 -2.6 2.6v8.9232a2.6032 2.6032 0 0 0 2.6 2.6h9.915a2.6032 2.6032 0 0 0 2.6-2.6v-8.9231a2.6032 2.6032 0 0 0 -2.6-2.6001zm-4.9575-2.2768a2.658 2.658 0 0 1 2.6221 2.2764h-5.2442a2.658 2.658 0 0 1 2.6221-2.2764zm6.3574 13.8a1.4014 1.4014 0 0 1 -1.4 1.4h-9.9149a1.4014 1.4014 0 0 1 -1.4-1.4v-8.9231a1.4014 1.4014 0 0 1 1.4-1.4h9.915a1.4014 1.4014 0 0 1 1.4 1.4z" />
+                </svg>
+            </span>
+        </a>
+        <span class="globalnav-bag-badge" aria-hidden="true" data-analytics-click="prop3:open - bag"
+            data-analytics-title="open - bag">
+            <span class="globalnav-bag-badge-separator"></span>
+            <span class="globalnav-bag-badge-number">0</span>
+            <span class="globalnav-bag-badge-unit">+</span>
+        </span>
+    </div>
+    <!-- botão-searchtela pequena -->
+    <div id="globalnav-submenu-bag" class="globalnav-flyout globalnav-submenu"
+        aria-labelledby="globalnav-menubutton-link-bag">
+        <div class="globalnav-flyout-scroll-container">
+            <div class="globalnav-flyout-content globalnav-submenu-content"></div>
+        </div>
+    </div>
+</li>
+
+<!-- SEÇÃO  -->
+<section class="homepage-section collection-module">
+    <!-- SECTION-PRINCIPAL - PRIMEIRA (TOPO) -->
+    <div data-unit-id="XXXXXXXXXX" data-analytics-section-engagement="name:promo-XXXXXXXXXX">
+        <div class="module-content">
+            <div class="unit-wrapper">
+                <a href="" class="unit-link"></a>
+                <div class="unit-copy-wrapper">
+                    <h4 class="headline">
+                        XXXXXXXXXX
+                        <!-- caso eu use um logo no <h4> ao inves de TEXTO -->
+                        <span class="visuallyhidden">XXXXXXXXXX XXXXXXXXXX XXXXXXXXXX</span>
+                        XXXXXXXXXX
+                    </h4>
+                    <h5 class="subhead">
+                        XXXXXXXXXX XXXXXXXXXX XXXXXXXXXX XXXXXXXXXX &#8209;9.
+                    </h5>
+                    <div class="cta-links">
+                        <!-- SAIBA MAIS -->
+                        <a href="" class="icon icon-after icon-chevronright" data-analytics-region="learn more">Saiba
+                            mais</a>
+                        <!-- COMPRE -->
+                        <a href="" class="icon icon-after icon-chevronright" data-analytics-region="buy">Compre</a>
+                    </div>
+                    <div class="unit-image-wrapper">
+                        <figure class="unit-image unit-image-XXXXXXXXXX" data-anim-lazy-image></figure>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- SECTION-PRINCIPAL - SEGUNDA (TOPO) -->
+    <!-- SECTION-PRINCIPAL - TERCEIRA (TOPO) -->
+</section>
+
+<!-- ESTRUTURA-CONJUNTO-6-CAIXAS/DIVs -->
+
+<section class="homepage-section collection-module" data-module-template="promos" data-analytics-region="promo">
+    <!-- item-01 -->
+    <div data-unit-id="wwdc23-announce" data-analytics-section-engagement="name:promo-wwdc23-announce">
+        <div class="module-content">
+            <div class="unit-wrapper bottom-copy-wrapper theme-dark">
+                <a class="unit-link" data-analytics-exit-link href="https://developer.apple.com/wwdc23/" target="_self"
+                    rel="follow" data-analytics-region="learn more">&nbsp;</a>
+                <div class="unit-copy-wrapper">
+                    <h4 class="logo-image logo-image-wwdc23-announce-promo-logo-wwdc23 headline">
+                        <span class="visuallyhidden">Apple Worldwide Developers Conference 2023</span>
+                    </h4>
+                    <h5 class="subhead" role="presentation">
+                        Apple Worldwide Developers Conference. Join us online June 5
+                        &#8209;9.
+                    </h5>
+                    <div class="cta-links">
+                        <a class="icon icon-after icon-chevronright" data-analytics-exit-link
+                            href="https://developer.apple.com/wwdc23/" target="_self" rel="follow"
+                            data-analytics-region="learn more" data-analytics-title="Learn more about WWDC23"
+                            aria-label="Learn more about WWDC23">Learn more</a>
+                    </div>
+                </div>
+                <div class="unit-image-wrapper">
+                    <figure class="unit-image unit-image-wwdc23-announce-promo-wwdc23" data-anim-lazy-image></figure>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- item-02 -->
+    <div data-unit-id="ipad" data-analytics-section-engagement="name:promo-ipad">
+        <div class="module-content">
+            <div class="unit-wrapper">
+                <a class="unit-link" href="/ipad-10.9/" target="_self" rel="follow"
+                    data-analytics-region="learn more">&nbsp;</a>
+                <div class="unit-copy-wrapper">
+                    <h4 class="headline">iPad</h4>
+                    <h5 class="subhead" role="presentation">
+                        Lovable. Drawable. Magical.
+                    </h5>
+                    <div class="cta-links">
+                        <a class="icon icon-after icon-chevronright" href="/ipad-10.9/" target="_self" rel="follow"
+                            data-analytics-region="learn more" data-analytics-title="Learn more about iPad"
+                            aria-label="Learn more about iPad">Learn more</a>
+                        <a class="icon icon-after icon-chevronright" href="/us/shop/goto/buy_ipad/ipad" target="_self"
+                            rel="follow" data-analytics-region="buy" data-analytics-title="Buy iPad"
+                            aria-label="Buy iPad">Buy</a>
+                    </div>
+                </div>
+                <div class="unit-image-wrapper">
+                    <figure class="unit-image unit-image-ipad-promo-ipad" data-anim-lazy-image></figure>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- item-03 -->
+    <div data-unit-id="macbook-pro-14-and-16" data-analytics-section-engagement="name:promo-macbook-pro-14-and-16">
+        <div class="module-content">
+            <div class="unit-wrapper theme-dark">
+                <a class="unit-link" href="/macbook-pro-14-and-16/" target="_self" rel="follow"
+                    data-analytics-region="learn more">&nbsp;</a>
+                <div class="unit-copy-wrapper">
+                    <h4 class="headline">MacBook Pro</h4>
+                    <h5 class="subhead" role="presentation">
+                        Supercharged by M2 Pro and M2 Max.
+                    </h5>
+                    <div class="cta-links">
+                        <a class="icon icon-after icon-chevronright" href="/macbook-pro-14-and-16/" target="_self"
+                            rel="follow" data-analytics-region="learn more"
+                            data-analytics-title="Learn more about MacBook Pro 14 and 16 inch"
+                            aria-label="Learn more about MacBook Pro 14 and 16 inch">Learn more</a>
+                        <a class="icon icon-after icon-chevronright" href="/us/shop/goto/buy_mac/macbook_pro_14"
+                            target="_self" rel="follow" data-analytics-region="buy"
+                            data-analytics-title="Buy MacBook Pro 14 and 16 inch"
+                            aria-label="Buy MacBook Pro 14 and 16 inch">Buy</a>
+                    </div>
+                </div>
+                <div class="unit-image-wrapper">
+                    <figure class="unit-image unit-image-macbook-pro-14-and-16-promo-mbp" data-anim-lazy-image></figure>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- item-04 -->
+    <div data-unit-id="homepod" data-analytics-section-engagement="name:promo-homepod">
+        <div class="module-content">
+            <div class="unit-wrapper theme-dark">
+                <a class="unit-link" href="/homepod-2nd-generation/" target="_self" rel="follow"
+                    data-analytics-region="learn more">&nbsp;</a>
+                <div class="unit-copy-wrapper">
+                    <h4 class="headline">HomePod</h4>
+                    <h5 class="subhead" role="presentation">Profound sound.</h5>
+                    <div class="cta-links">
+                        <a class="icon icon-after icon-chevronright" href="/homepod-2nd-generation/" target="_self"
+                            rel="follow" data-analytics-region="learn more"
+                            data-analytics-title="Learn more about Homepod" aria-label="Learn more about Homepod">Learn
+                            more</a>
+                        <a class="icon icon-after icon-chevronright" href="/us/shop/goto/buy_homepod/homepod"
+                            target="_self" rel="follow" data-analytics-region="buy" data-analytics-title="Buy Homepod"
+                            aria-label="Buy Homepod">Buy</a>
+                    </div>
+                </div>
+                <div class="unit-image-wrapper">
+                    <figure class="unit-image unit-image-homepod-promo-homepod" data-anim-lazy-image></figure>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- item-05 -->
+    <div data-unit-id="airpods-pro-campaign" data-analytics-section-engagement="name:promo-airpods-pro-campaign">
+        <div class="module-content">
+            <div class="unit-wrapper theme-dark">
+                <a class="unit-link" href="/airpods-pro/?campaign=true" target="_self" rel="follow"
+                    data-analytics-region="learn more">&nbsp;</a>
+                <div class="unit-copy-wrapper">
+                    <h4 class="headline">AirPods Pro</h4>
+                    <h5 class="subhead" role="presentation">
+                        Up to 2x more Active Noise Cancellation.
+                        <sup>
+                            <a href="#footnote-2" aria-label="Footnote 2" class="footnote-alt">2</a>
+                        </sup>
+                    </h5>
+                    <div class="cta-links">
+                        <a class="icon icon-after icon-chevronright" href="/airpods-pro/?campaign=true" target="_self"
+                            rel="follow" data-analytics-region="learn more"
+                            data-analytics-title="Learn more about AirPods Pro"
+                            aria-label="Learn more about AirPods Pro">Learn more</a>
+                        <a class="icon icon-after icon-chevronright" href="/us/shop/goto/product/MQD83" target="_self"
+                            rel="follow" data-analytics-region="buy" data-analytics-title="Buy AirPods Pro"
+                            aria-label="Buy AirPods Pro">Buy</a>
+                    </div>
+                </div>
+                <div class="unit-image-wrapper">
+                    <figure class="unit-image unit-image-airpods-pro-campaign-promo" data-anim-lazy-image></figure>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- item-06 -->
+    <div data-unit-id="apple-card" data-analytics-section-engagement="name:promo-apple-card">
+        <div class="module-content">
+            <div class="unit-wrapper background">
+                <a class="unit-link" href="/apple-card/" target="_self" rel="follow"
+                    data-analytics-region="learn more">&nbsp;</a>
+                <div class="unit-copy-wrapper">
+                    <h4 class="logo-image logo-image-apple-card-logo headline">
+                        <span class="visuallyhidden">Apple Card</span>
+                    </h4>
+                    <h5 class="subhead" role="presentation">
+                        Get up to 3% Daily Cash back with every purchase.
+                    </h5>
+                    <div class="cta-links">
+                        <a class="icon icon-after icon-chevronright" href="/apple-card/" target="_self" rel="follow"
+                            data-analytics-region="learn more" data-analytics-title="Learn more about Apple Card"
+                            aria-label="Learn more about Apple Card">Learn more</a>
+                        <a class="icon icon-after icon-chevronright default"
+                            href="https://card.apple.com/apply/application?referrer=cid%3Dapy-200-10000036&start=false"
+                            data-rid-relay='{"287":"referrer"}' data-analytics-exit-link target="_self" rel="follow"
+                            data-analytics-region="learn more" data-analytics-title="Apply now for Apple Card"
+                            aria-label="Apply now for Apple Card">Apply now</a>
+                        <a class="icon icon-after icon-chevronright ios"
+                            href="https://wallet.apple.com/apple-card/setup/feature/ccs?referrer=cid%3Dapy-200-10000036"
+                            data-rid-relay='{"287":"referrer"}' data-analytics-exit-link target="_self" rel="follow"
+                            data-analytics-region="learn more" data-analytics-title="Apply now for Apple Card"
+                            aria-label="Apply now for Apple Card">Apply now</a>
+                    </div>
+                </div>
+                <div class="unit-image-wrapper">
+                    <figure class="unit-image unit-image-apple-card-tile" data-anim-lazy-image></figure>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- slide-show -->

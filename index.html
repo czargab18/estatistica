@@ -1,75 +1,652 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-  <head>
-    <!-- compatibilidade -->
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <!--  versão altern do site atual (idioma diferente) -->
-    <link rel="alternate" href="https://es.example.com/" hreflang="pt-br" />
+<head>
+	<!-- compatibilidade -->
+	<meta charset="UTF-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <!-- security -->
-    <meta
-      http-equiv="Content-Security-Policy"
-      content="img-src 'self' https://images.example.com; script-src 'self' https://cdn.example.com"
-    />
-    <meta name="google-site-verification" content="verific_token_aqui" />
-    <meta name="referrer" content="no-referrer" />
+	<!--  versão altern do site atual (idioma diferente) -->
+	<link rel="alternate" href="https://es.example.com/" hreflang="pt-br" />
 
-    <!-- Prefetching, pré-carregamento, pré-navegação -->
-    <link rel="dns-prefetch" href="//example.com/" />
-    <link rel="preconnect" href="https://www.example.com/" />
-    <link rel="prefetch" href="https://www.example.com/" />
-    <link rel="prerender" href="https://example.com/" />
-    <link rel="subresource" href="styles.css" />
-    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
-    <link rel="preload" href="image.png" />
-    <!-- Mais informações: https://css-tricks.com/prefetching-preloading-prebrowsing/ -->
+	<!-- security -->
+	<meta http-equiv="Content-Security-Policy"
+		content="img-src 'self' https://images.example.com; script-src 'self' https://cdn.example.com" />
+	<meta name="google-site-verification" content="verific_token_aqui" />
+	<meta name="referrer" content="no-referrer" />
 
-    <!-- SEO -->
-    <title>Estatística</title>
-    <meta
-      name="description"
-      content="Descrição curta do site (incluída nos resultados do motor de busca)."
-    />
-    <meta name="subject" content="Breve descrição do assunto do seu site" />
-    <meta name="abstract" content="descreva o propósito do site (frase curta)." />
-    <meta name="topic" content="Estatística" />
-    <link rel="shortlink" href="https://example.com/?p=43625" />
-    <!-- link curto caso a url da pag atual seja grande-->
+	<!-- Prefetching, pré-carregamento, pré-navegação -->
+	<link rel="dns-prefetch" href="//example.com/" />
+	<link rel="preconnect" href="https://www.example.com/" />
+	<link rel="prefetch" href="https://www.example.com/" />
+	<link rel="prerender" href="https://example.com/" />
+	<link rel="subresource" href="styles.css" />
+	<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+	<link rel="preload" href="image.png" />
+	<!-- Mais informações: https://css-tricks.com/prefetching-preloading-prebrowsing/ -->
 
-    <!-- SEO - Geolocalização -->
-    <meta name="geo.region" content="BR-DF" />
-    <meta name="geo.placename" content="Brasília" />
+	<!-- SEO -->
+	<title>Estatística</title>
+	<meta name="description" content="Descrição curta do site (incluída nos resultados do motor de busca)." />
+	<meta name="subject" content="Breve descrição do assunto do seu site" />
+	<meta name="abstract" content="descreva o propósito do site (frase curta)." />
+	<meta name="topic" content="Estatística" />
+	<link rel="shortlink" href="https://example.com/?p=43625" />
+	<!-- link curto caso a url da pag atual seja grande-->
 
-    <!-- config -  -->
-    <meta name="robots" content="index,follow" />
-    <meta name="google" content="nositelinkssearchbox" />
-    <meta name="format-detection" content="telephone=no" />
+	<!-- SEO - Geolocalização -->
+	<meta name="geo.region" content="BR-DF" />
+	<meta name="geo.placename" content="Brasília" />
 
-    <!-- info adds -->
-    <meta name="generator" content="Visual Studio Code" />
+	<!-- config -  -->
+	<meta name="robots" content="index,follow" />
+	<meta name="google" content="nositelinkssearchbox" />
+	<meta name="format-detection" content="telephone=no" />
 
-    <!-- info author do doc.|site (dados struturados)-->
-    <!-- NÃO USAR email ou telef do autor para não sofrer SPAM -->
-    <link
-      rel="me"
-      href="https://google.com/profiles/thenextweb"
-      type="text/html"
-    />
+	<!-- info adds -->
+	<meta name="generator" content="Visual Studio Code" />
 
-    <!--  estudar links -->
-    <link rel="manifest" href="manifest.json" />
-    <link rel="author" href="humans.txt" />
-    <link rel="import" href="component.html" />
+	<!-- info author do doc.|site (dados struturados)-->
+	<!-- NÃO USAR email ou telef do autor para não sofrer SPAM -->
+	<link href="https://google.com/profiles/thenextweb" rel="me" type="text/html" />
 
-    <!-- style -->
-    <link rel="stylesheet" href="style.css" />
-    
-    <!-- script -->
-    <script src=""></script>
-  </head>
+	<!--  estudar links -->
+	<link rel="manifest" href="manifest.json" />
+	<link rel="author" href="humans.txt" />
+	<link rel="import" href="component.html" />
 
-  <body></body>
+	<!-- style -->
+	<link rel="stylesheet" href="ac/globalheader/1/pt_BR/styles/globalheader.css">
+	<!-- <link rel="stylesheet" href="ac/globalnavbar/1/pt_BR/styles/globalnavbar.css" />
+	<link rel="stylesheet" href="ac/globalmain/1/pt_BR/styles/globalmain.css" />
+	<link rel="stylesheet" href="ac/globalslides/1/pt_BR/assets/2025/2025.1/6/01-3/news.txt">
+	<link rel="stylesheet" href="ac/globalfooter/1/pt_BR/styles/globalfooter.css"> -->
+
+	<!-- script (atributo: --'defer'--)-->
+	<!-- <script defer src="ac/globalheader/1/pt_BR/scripts/globalheader.js"></script>
+	<script defer src="ac/globalnavbar/1/pt_BR/scripts/globalnavbar.js"></script>
+	<script defer src="ac/globalmain/1/pt_BR/scripts/globalmain.js"></script> -->
+	<!-- <script defer src="ac/globalslides/1/pt_BR/assets/2025/2025.1/1/01-3/news.js"></script> -->
+	<!-- <script defer src="ac/globalfooter/1/pt_BR/scripts/globalfooter.js"></script> -->
+</head>
+
+<body class="page-home ac-nav-overlap globalnav-scrim globalheader-dark body-with-ribbon">
+	<!-- Config -->
+	<h1 class="visuallyhidden">Estatística</h1>
+	<meta name="globalnav-store-key" content="SFX9YPYY9PPXCU9KH" />
+	<!-- .finalConfig -->
+	<!-- GROUP: HEADER NAVBAR SECTION-->
+	<div id="globalheader">
+		<!-- HEADER -->
+		<!-- <header id="globalheader"> -->
+		<header class="globalheader">
+			<div class="globalheader-content">
+				<ul class="globalheader-list">
+					<!-- item-01 -->
+					<li class="globalheader-item globalheader-item-govbr">
+						<a href="" class="globalheader-link globalheader-link-govbr">
+							<!-- provisorio -->
+							<div class="globalheader-link-text-gambiarra-govbr">
+								<span class="logo-gov-letter-g">g</span>
+								<span class="logo-gov-letter-o">o</span>
+								<span class="logo-gov-letter-v">v</span>
+								<span class="logo-gov-letter-pts">.</span>
+								<span class="logo-gov-letter-b">b</span>
+								<span class="logo-gov-letter-r">r</span>
+							</div>
+						</a>
+					</li>
+					<!-- item-00 -->
+					<li class="globalheader-item globalheader-item-unbtv">
+						<a href="" class="globalheader-link globalheader-link-unbtv">
+							<!-- provisorio -->
+							<div class="globalheader-link-text-gambiarra-unbtv">
+								<span class="logo-gov-word-eduplay">eduplay</span>
+								<span class="logo-gov-word-unbtv">UnBTV</span>
+							</div>
+						</a>
+					</li>
+					<!-- item-02 -->
+					<li class="globalheader-item globalheader-item-coronavarus">
+						<a href="" class="globalheader-link globalheader-link-coronavarus">
+							<span class="globalheader-link-coronavarus-container">
+								<span class="globalnav-link-text">CORONAVÍRUS(COVID-19)</span>
+								<!-- imagem: oculta -->
+								<span
+									class=" visuallyhidden globalheader-coronavarus-regular globalheader-link-coronavarus">
+									<svg height="44" viewBox="0 0 XX 44" width="XX">
+										<path d="COLOQUE-CÓDIGO site-https://yqnn.github.io/svg-path-editor/ " />
+									</svg>
+								</span>
+							</span>
+						</a>
+					</li>
+					<!-- item-03 -->
+					<li class="globalheader-item globalheader-item-orgaogov">
+						<a href="" class="globalheader-link globalheader-link-orgaogov">
+							<span class="globalheader-link-orgaogov-container">
+								<span class="globalnav-link-text">Órgãos do Governo</span>
+								<!-- imagem: oculta -->
+								<span class=" visuallyhidden globalheader-orgaogov-regular globalheader-link-orgaogov">
+									<svg height="44" viewBox="0 0 XX 44" width="XX">
+										<path d="COLOQUE-CÓDIGO site-https://yqnn.github.io/svg-path-editor/ " />
+									</svg>
+								</span>
+							</span>
+						</a>
+					</li>
+					<!-- item-04 -->
+					<li class="globalheader-item globalheader-item-acessinfo">
+						<a href="" class="globalheader-link globalheader-link-acessinfo">
+							<span class="globalheader-link-acessinfo-container">
+								<span class="globalnav-link-text">Acesso à informação</span>
+								<!-- imagem: oculta -->
+								<span
+									class=" visuallyhidden globalheader-acessinfo-regular globalheader-link-acessinfo">
+									<svg height="44" viewBox="0 0 XX 44" width="XX">
+										<path d="COLOQUE-CÓDIGO site-https://yqnn.github.io/svg-path-editor/ " />
+									</svg>
+								</span>
+							</span>
+						</a>
+					</li>
+					<!-- item-04 -->
+					<li class="globalheader-item globalheader-item-legislacao">
+						<a href="" class="globalheader-link globalheader-link-legislacao">
+							<span class="globalheader-link-legislacao-container">
+								<span class="globalnav-link-text">Legislação</span>
+								<!-- imagem: oculta -->
+								<span
+									class=" visuallyhidden globalheader-legislacao-regular globalheader-link-legislacao">
+									<svg height="44" viewBox="0 0 XX 44" width="XX">
+										<path d="COLOQUE-CÓDIGO site-https://yqnn.github.io/svg-path-editor/ " />
+									</svg>
+								</span>
+							</span>
+						</a>
+					</li>
+					<!-- item-00 -->
+					<li class="globalheader-item globalheader-item-participe">
+						<a href="" class="globalheader-link globalheader-link-participe">
+							<span class="globalheader-link-participe-container">
+								<span class="globalnav-link-text">Participe</span>
+								<!-- imagem: oculta -->
+								<span
+									class=" visuallyhidden globalheader-participe-regular globalheader-link-participe">
+									<svg height="44" viewBox="0 0 XX 44" width="XX">
+										<path d="COLOQUE-CÓDIGO site-https://yqnn.github.io/svg-path-editor/ " />
+									</svg>
+								</span>
+							</span>
+						</a>
+					</li>
+					<!-- item-00 -->
+					<li class="globalheader-item globalheader-item-acessibilidade">
+						<a href="" class="globalheader-link globalheader-link-acessibilidade">
+							<span class="globalheader-link-acessibilidade-container">
+								<span class="globalnav-link-text">Acessibilidade</span>
+								<!-- imagem: oculta -->
+								<span
+									class=" visuallyhidden globalheader-acessibilidade-regular globalheader-link-acessibilidade">
+									<svg height="44" viewBox="0 0 XX 44" width="XX">
+										<path d="COLOQUE-CÓDIGO site-https://yqnn.github.io/svg-path-editor/ " />
+									</svg>
+								</span>
+							</span>
+						</a>
+					</li>
+				</ul>
+			</div>
+		</header>
+		<!-- .final HEADER -->
+		<!-- NAVBAR -->
+		<nav id="globalnav" class="globalnav no-js">
+			<div class="globalnav-content">
+				<!-- lista ittens navbar: graduação, posgraduação,... -->
+				<ul class="globalnav-list">
+					<!-- item-01 -->
+					<li class="globalnav-item globalnav-item-logo">
+						<a href="" class="globalnav-link globalnav-link-logo">
+							<span class="globalnav-link-logo-container">
+								<span class="globalnav-logo-regular globalnav-link-logo">
+									<svg height="44" viewBox="0 0 XX 44" width="XX">
+										<path d="COLOQUE-CÓDIGO site-https://yqnn.github.io/svg-path-editor/ " />
+									</svg>
+								</span>
+								<!-- LOGO - Estatística -->
+								<span class="globalnav-link-text">Estatística</span>
+							</span>
+						</a>
+					</li>
+					<!-- tem-02 -->
+					<li class="globalnav-item globalnav-item-graduacao">
+						<a href="" class="globalnav-link globalnav-link-graduacao">
+							<span class="globalnav-link-graduacao-container">
+								<span class="globalnav-graduacao-regular globalnav-link-graduacao">
+									<svg height="44" viewBox="0 0 XX 44" width="XX">
+										<path d="COLOQUE-CÓDIGO site-https://yqnn.github.io/svg-path-editor/ " />
+									</svg>
+								</span>
+								<span class="globalnav-link-text">Graduação</span>
+							</span>
+						</a>
+					</li>
+					<!-- item-03 -->
+					<li class="globalnav-item globalnav-item-posgraduacao">
+						<a href="" class="globalnav-link globalnav-link-posgraduacao">
+							<span class="globalnav-link-posgraduacao-container">
+								<span class="globalnav-posgraduacao-regular globalnav-link-posgraduacao">
+									<svg height="44" viewBox="0 0 XX 44" width="XX">
+										<path d="COLOQUE-CÓDIGO site-https://yqnn.github.io/svg-path-editor/ " />
+									</svg>
+								</span>
+								<span class="globalnav-link-text">Pós-Graduação</span>
+							</span>
+						</a>
+					</li>
+					<!-- item-04 -->
+					<li class="globalnav-item globalnav-item-extensao">
+						<a href="" class="globalnav-link globalnav-link-extensao">
+							<span class="globalnav-link-extensao-container">
+								<span class="globalnav-extensao-regular globalnav-link-extensao">
+									<svg height="44" viewBox="0 0 XX 44" width="XX">
+										<path d="COLOQUE-CÓDIGO site-https://yqnn.github.io/svg-path-editor/ " />
+									</svg>
+								</span>
+								<span class="globalnav-link-text">Extensão</span>
+							</span>
+						</a>
+					</li>
+					<!-- item-05 -->
+					<li class="globalnav-item globalnav-item-docentes">
+						<a href="" class="globalnav-link globalnav-link-docentes">
+							<span class="globalnav-link-docentes-container">
+								<span class="globalnav-docentes-regular globalnav-link-docentes">
+									<svg height="44" viewBox="0 0 XX 44" width="XX">
+										<path d="COLOQUE-CÓDIGO site-https://yqnn.github.io/svg-path-editor/ " />
+									</svg>
+								</span>
+								<span class="globalnav-link-text">Docentes</span>
+							</span>
+						</a>
+					</li>
+					<!-- item-06 -->
+					<li class="globalnav-item globalnav-item-pesquisa">
+						<a href="" class="globalnav-link globalnav-link-pesquisa">
+							<span class="globalnav-link-pesquisa-container">
+								<span class="globalnav-pesquisa-regular globalnav-link-pesquisa">
+									<svg height="44" viewBox="0 0 XX 44" width="XX">
+										<path d="COLOQUE-CÓDIGO site-https://yqnn.github.io/svg-path-editor/ " />
+									</svg>
+								</span>
+								<span class="globalnav-link-text">Pesquisa</span>
+							</span>
+						</a>
+					</li>
+					<!-- item-07 -->
+					<li class="globalnav-item globalnav-item-eventos">
+						<a href="" class="globalnav-link globalnav-link-eventos">
+							<span class="globalnav-link-eventos-container">
+								<span class="globalnav-eventos-regular globalnav-link-eventos">
+									<svg height="44" viewBox="0 0 XX 44" width="XX">
+										<path d="COLOQUE-CÓDIGO site-https://yqnn.github.io/svg-path-editor/ " />
+									</svg>
+								</span>
+								<span class="globalnav-link-text">Eventos</span>
+							</span>
+						</a>
+					</li>
+					<!-- item-08 -->
+					<li class="globalnav-item globalnav-item-noticias">
+						<a href="" class="globalnav-link globalnav-link-noticias">
+							<span class="globalnav-link-noticias-container">
+								<span class="globalnav-noticias-regular globalnav-link-noticias">
+									<svg height="44" viewBox="0 0 XX 44" width="XX">
+										<path d="COLOQUE-CÓDIGO site-https://yqnn.github.io/svg-path-editor/ " />
+									</svg>
+								</span>
+								<span class="globalnav-link-text">Notícias</span>
+							</span>
+						</a>
+					</li>
+					<!-- item-09 -->
+					<li class="globalnav-item globalnav-item-ouvidoria">
+						<a href="" class="globalnav-link globalnav-link-ouvidoria">
+							<span class="globalnav-link-ouvidoria-container">
+								<span class="globalnav-ouvidoria-regular globalnav-link-ouvidoria">
+									<svg height="44" viewBox="0 0 XX 44" width="XX">
+										<path d="COLOQUE-CÓDIGO site-https://yqnn.github.io/svg-path-editor/ " />
+									</svg>
+								</span>
+								<span class="globalnav-link-text">Ouvidoria</span>
+							</span>
+						</a>
+					</li>
+					<!-- item-10 -->
+					<li class="globalnav-item globalnav-item-instalacoes">
+						<a href="" class="globalnav-link globalnav-link-instalacoes">
+							<span class="globalnav-link-instalacoes-container">
+								<span class="globalnav-instalacoes-regular globalnav-link-instalacoes">
+									<svg height="44" viewBox="0 0 XX 44" width="XX">
+										<path d="COLOQUE-CÓDIGO site-https://yqnn.github.io/svg-path-editor/ " />
+									</svg>
+								</span>
+								<span class="globalnav-link-text">Instalações</span>
+							</span>
+						</a>
+					</li>
+					<!-- item-11 -->
+					<li class="globalnav-item globalnav-item-contato">
+						<a href="" class="globalnav-link globalnav-link-contato">
+							<span class="globalnav-link-contato-container">
+								<span class="globalnav-contato-regular globalnav-link-contato">
+									<svg height="44" viewBox="0 0 XX 44" width="XX">
+										<path d="COLOQUE-CÓDIGO site-https://yqnn.github.io/svg-path-editor/ " />
+									</svg>
+								</span>
+								<span class="globalnav-link-text">Contato</span>
+							</span>
+						</a>
+					</li>
+					<!-- item-12 -->
+					Search
+					<!-- item-13 -->
+					Perfil
+					<!-- TELA PEQUENA (DIREÇÕES HEADER-NAVBAR-LOGO) -->
+					(Gov.br) - (Logo Estat | UnB) - (Search + Perfil)
+				</ul>
+			</div>
+		</nav>
+		<!-- SECTION IFORMAÇÃO IMPORTANTE -->
+		<section class="homepage-section collection-module">
+			<div class="xxx-trade-in">
+				<div class="module-content">
+					<div class="ribbon-xxx-ti">
+						<div class="section-content">
+							<span class="xxx-ti-ribbon-copy trade-in">
+								Lorem ipsum dolor sit amet consectetur adipisicing elit.
+								<a href="#">Lorem ipsum.
+									<!-- spanicon- simbolo de maior '>' -->
+									<span class="icon icon-after icon-chevronright"></span>
+								</a>
+							</span>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+	</div>
+	<!-- MAIN-PRINCIPAL- -->
+	<main class="main">
+		<!--  -->
+		<section class="homepage-section collection-module">
+			<!-- PRIMEIRA (TOPO) - SECTION-PRINCIPAL -->
+			<div data-unit-id="XXXXXXXXXX" data-analytics-section-engagement="name:promo-XXXXXXXXXX">
+				<div class="module-content">
+					<div class="unit-wrapper">
+						<a href="" class="unit-link"></a>
+						<div class="unit-copy-wrapper">
+							<h4 class="headline">XXXXXXXXXX
+								<!-- caso eu use um logo no <h4> ao inves de TEXTO -->
+								<span class="visuallyhidden">XXXXXXXXXX XXXXXXXXXX XXXXXXXXXX</span>
+								XXXXXXXXXX
+							</h4>
+							<h5 class="subhead">XXXXXXXXXX XXXXXXXXXX XXXXXXXXXX XXXXXXXXXX &#8209;9.</h5>
+							<div class="cta-links">
+								<!-- SAIBA MAIS -->
+								<a href="" class="icon icon-after icon-chevronright"
+									data-analytics-region="learn more">Saiba mais</a>
+								<!-- COMPRE -->
+								<a href="" class="icon icon-after icon-chevronright"
+									data-analytics-region="buy">Compre</a>
+							</div>
+							<div class="unit-image-wrapper">
+								<figure class="unit-image unit-image-XXXXXXXXXX" data-anim-lazy-image></figure>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- SEGUNDA (TOPO) - SECTION-PRINCIPAL -->
+			<div data-unit-id="XXXXXXXXXX" data-analytics-section-engagement="name:promo-XXXXXXXXXX">
+				<div class="module-content">
+					<div class="unit-wrapper">
+						<a href="" class="unit-link"></a>
+						<div class="unit-copy-wrapper">
+							<h4 class="headline">XXXXXXXXXX
+								<!-- caso eu use um logo no <h4> ao inves de TEXTO -->
+								<span class="visuallyhidden">XXXXXXXXXX XXXXXXXXXX XXXXXXXXXX</span>
+								XXXXXXXXXX
+							</h4>
+							<h5 class="subhead">XXXXXXXXXXXXXX XXXXXXXXXXXXXXXX XXXXXXXXXX &#8209;9.</h5>
+							<div class="cta-links">
+								<!-- SAIBA MAIS -->
+								<a href="" class="icon icon-after icon-chevronright"
+									data-analytics-region="learn more">Saiba mais</a>
+								<!-- COMPRE -->
+								<a href="" class="icon icon-after icon-chevronright"
+									data-analytics-region="buy">Compre</a>
+							</div>
+							<div class="unit-image-wrapper">
+								<figure class="unit-image unit-image-XXXXXXXXXX" data-anim-lazy-image></figure>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- TERCEIRA (TOPO) - SECTION-PRINCIPAL -->
+			<div data-unit-id="XXXXXXXXXX" data-analytics-section-engagement="name:promo-XXXXXXXXXX">
+				<div class="module-content">
+					<div class="unit-wrapper">
+						<a href="" class="unit-link"></a>
+						<div class="unit-copy-wrapper">
+							<h4 class="headline">XXXXXXXXXX
+								<!-- caso eu use um logo no <h4> ao inves de TEXTO -->
+								<span class="visuallyhidden">XXXXXXXXXX XXXXXXXXXX XXXXXXXXXX</span>
+								XXXXXXXXXX
+							</h4>
+							<h5 class="subhead">XXXXXXXXXXXXXX XXXXXXXXXXXXXXXX XXXXXXXXXX &#8209;9.</h5>
+							<div class="cta-links">
+								<!-- SAIBA MAIS -->
+								<a href="" class="icon icon-after icon-chevronright"
+									data-analytics-region="learn more">Saiba mais</a>
+								<!-- COMPRE -->
+								<a href="" class="icon icon-after icon-chevronright"
+									data-analytics-region="buy">Compre</a>
+							</div>
+							<div class="unit-image-wrapper">
+								<figure class="unit-image unit-image-XXXXXXXXXX" data-anim-lazy-image></figure>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+		<!-- CONJUNTO SEÇÕES - SECTION-SECUNDÁRIA -->
+
+		<section class="homepage-section collection-module">
+			<!-- item-01 -->
+			<div data-unit-id="XXXXXXXXXX" data-analytics-section-engagement="name:promo-XXXXXXXXXX">
+				<div class="module-content">
+					<div class="unit-wrapper">
+						<a href="" class="unit-link"></a>
+						<div class="unit-copy-wrapper">
+							<h4 class="logo-image logo-image-XXXXXXXXXX headline">XXXXXXXXXX
+								<!-- nomes possiveis para a <h4> classe: 'logo-image' 'logo-image-XXXXX' 'headline' -->
+								<!-- caso eu use um logo no <h4> ao inves de TEXTO -->
+								<span class="visuallyhidden">XXXXXXXXXX XXXXXXXXXX XXXXXXXXXX</span>
+								XXXXXXXXXX
+							</h4>
+							<h5 class="subhead">XXXXXXXXXX XXXXXXXXXX XXXXXXXXXX XXXXXXXXXX &#8209;9.</h5>
+							<div class="cta-links">
+								<!-- SAIBA MAIS -->
+								<a href="" class="icon icon-after icon-chevronright"
+									data-analytics-region="learn more">Saiba
+									mais</a>
+								<!-- COMPRE -->
+								<a href="" class="icon icon-after icon-chevronright"
+									data-analytics-region="buy">Compre</a>
+							</div>
+							<div class="unit-image-wrapper">
+								<figure class="unit-image unit-image-XXXXXXXXXX" data-anim-lazy-image></figure>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- item-02 -->
+			<div data-unit-id="XXXXXXXXXX" data-analytics-section-engagement="name:promo-XXXXXXXXXX">
+				<div class="module-content">
+					<div class="unit-wrapper">
+						<a href="" class="unit-link"></a>
+						<div class="unit-copy-wrapper">
+							<h4 class="logo-image logo-image-XXXXXXXXXX headline">XXXXXXXXXX
+								<!-- nomes possiveis para a <h4> classe: 'logo-image' 'logo-image-XXXXX' 'headline' -->
+								<!-- caso eu use um logo no <h4> ao inves de TEXTO -->
+								<span class="visuallyhidden">XXXXXXXXXX XXXXXXXXXX XXXXXXXXXX</span>
+								XXXXXXXXXX
+							</h4>
+							<h5 class="subhead">XXXXXXXXXX XXXXXXXXXX XXXXXXXXXX XXXXXXXXXX &#8209;9.</h5>
+							<div class="cta-links">
+								<!-- SAIBA MAIS -->
+								<a href="" class="icon icon-after icon-chevronright"
+									data-analytics-region="learn more">Saiba
+									mais</a>
+								<!-- COMPRE -->
+								<a href="" class="icon icon-after icon-chevronright"
+									data-analytics-region="buy">Compre</a>
+							</div>
+							<div class="unit-image-wrapper">
+								<figure class="unit-image unit-image-XXXXXXXXXX" data-anim-lazy-image></figure>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- item-03 -->
+			<div data-unit-id="XXXXXXXXXX" data-analytics-section-engagement="name:promo-XXXXXXXXXX">
+				<div class="module-content">
+					<div class="unit-wrapper">
+						<a href="" class="unit-link"></a>
+						<div class="unit-copy-wrapper">
+							<h4 class="logo-image logo-image-XXXXXXXXXX headline">XXXXXXXXXX
+								<!-- nomes possiveis para a <h4> classe: 'logo-image' 'logo-image-XXXXX' 'headline' -->
+								<!-- caso eu use um logo no <h4> ao inves de TEXTO -->
+								<span class="visuallyhidden">XXXXXXXXXX XXXXXXXXXX XXXXXXXXXX</span>
+								XXXXXXXXXX
+							</h4>
+							<h5 class="subhead">XXXXXXXXXX XXXXXXXXXX XXXXXXXXXX XXXXXXXXXX &#8209;9.</h5>
+							<div class="cta-links">
+								<!-- SAIBA MAIS -->
+								<a href="" class="icon icon-after icon-chevronright"
+									data-analytics-region="learn more">Saiba
+									mais</a>
+								<!-- COMPRE -->
+								<a href="" class="icon icon-after icon-chevronright"
+									data-analytics-region="buy">Compre</a>
+							</div>
+							<div class="unit-image-wrapper">
+								<figure class="unit-image unit-image-XXXXXXXXXX" data-anim-lazy-image></figure>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- item-04 -->
+			<div data-unit-id="XXXXXXXXXX" data-analytics-section-engagement="name:promo-XXXXXXXXXX">
+				<div class="module-content">
+					<div class="unit-wrapper">
+						<a href="" class="unit-link"></a>
+						<div class="unit-copy-wrapper">
+							<h4 class="logo-image logo-image-XXXXXXXXXX headline">XXXXXXXXXX
+								<!-- nomes possiveis para a <h4> classe: 'logo-image' 'logo-image-XXXXX' 'headline' -->
+								<!-- caso eu use um logo no <h4> ao inves de TEXTO -->
+								<span class="visuallyhidden">XXXXXXXXXX XXXXXXXXXX XXXXXXXXXX</span>
+								XXXXXXXXXX
+							</h4>
+							<h5 class="subhead">XXXXXXXXXX XXXXXXXXXX XXXXXXXXXX XXXXXXXXXX &#8209;9.</h5>
+							<div class="cta-links">
+								<!-- SAIBA MAIS -->
+								<a href="" class="icon icon-after icon-chevronright"
+									data-analytics-region="learn more">Saiba
+									mais</a>
+								<!-- COMPRE -->
+								<a href="" class="icon icon-after icon-chevronright"
+									data-analytics-region="buy">Compre</a>
+							</div>
+							<div class="unit-image-wrapper">
+								<figure class="unit-image unit-image-XXXXXXXXXX" data-anim-lazy-image></figure>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- item-05 -->
+			<div data-unit-id="XXXXXXXXXX" data-analytics-section-engagement="name:promo-XXXXXXXXXX">
+				<div class="module-content">
+					<div class="unit-wrapper">
+						<a href="" class="unit-link"></a>
+						<div class="unit-copy-wrapper">
+							<h4 class="logo-image logo-image-XXXXXXXXXX headline">XXXXXXXXXX
+								<!-- nomes possiveis para a <h4> classe: 'logo-image' 'logo-image-XXXXX' 'headline' -->
+								<!-- caso eu use um logo no <h4> ao inves de TEXTO -->
+								<span class="visuallyhidden">XXXXXXXXXX XXXXXXXXXX XXXXXXXXXX</span>
+								XXXXXXXXXX
+							</h4>
+							<h5 class="subhead">XXXXXXXXXX XXXXXXXXXX XXXXXXXXXX XXXXXXXXXX &#8209;9.</h5>
+							<div class="cta-links">
+								<!-- SAIBA MAIS -->
+								<a href="" class="icon icon-after icon-chevronright"
+									data-analytics-region="learn more">Saiba
+									mais</a>
+								<!-- COMPRE -->
+								<a href="" class="icon icon-after icon-chevronright"
+									data-analytics-region="buy">Compre</a>
+							</div>
+							<div class="unit-image-wrapper">
+								<figure class="unit-image unit-image-XXXXXXXXXX" data-anim-lazy-image></figure>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- item-06 -->
+			<div data-unit-id="XXXXXXXXXX" data-analytics-section-engagement="name:promo-XXXXXXXXXX">
+				<div class="module-content">
+					<div class="unit-wrapper">
+						<a href="" class="unit-link"></a>
+						<div class="unit-copy-wrapper">
+							<h4 class="logo-image logo-image-XXXXXXXXXX headline">XXXXXXXXXX
+								<!-- nomes possiveis para a <h4> classe: 'logo-image' 'logo-image-XXXXX' 'headline' -->
+								<!-- caso eu use um logo no <h4> ao inves de TEXTO -->
+								<span class="visuallyhidden">XXXXXXXXXX XXXXXXXXXX XXXXXXXXXX</span>
+								XXXXXXXXXX
+							</h4>
+							<h5 class="subhead">XXXXXXXXXX XXXXXXXXXX XXXXXXXXXX XXXXXXXXXX &#8209;9.</h5>
+							<div class="cta-links">
+								<!-- SAIBA MAIS -->
+								<a href="" class="icon icon-after icon-chevronright"
+									data-analytics-region="learn more">Saiba
+									mais</a>
+								<!-- COMPRE -->
+								<a href="" class="icon icon-after icon-chevronright"
+									data-analytics-region="buy">Compre</a>
+							</div>
+							<div class="unit-image-wrapper">
+								<figure class="unit-image unit-image-XXXXXXXXXX" data-anim-lazy-image></figure>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+		</section>
+
+		<!-- SLIDESHOW SEÇÕES - SECTION-TERCIARIA -->
+
+	</main>
+
+</body>
+
 </html>

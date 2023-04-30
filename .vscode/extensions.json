@@ -2,10 +2,11 @@
     "recommendations": [
         "esbenp.prettier-vscode",
         "ms-ceintl.vscode-language-pack-pt-br",
-        "freecodecamp.freecodecamp-dark-vscode-theme",
         "dracula-theme.theme-dracula",
         "davidanson.vscode-markdownlint",
         "ms-edgedevtools.vscode-edge-devtools",
-        "ritwickdey.liveserver"
+        "ritwickdey.liveserver",
+        "dotjoshjohnson.xml",
+        "eamodio.gitlens"
     ]
 }
