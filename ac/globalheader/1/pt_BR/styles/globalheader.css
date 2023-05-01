@@ -8,19 +8,6 @@
     -webkit-text-size-adjust: 100%
 }
 
-/* ESCONDIDOS */
-.visuallyhidden {
-    position: absolute;
-    clip: rect(1px, 1px, 1px, 1px);
-    -webkit-clip-path: inset(0px 0px 99.9% 99.9%);
-    clip-path: inset(0px 0px 99.9% 99.9%);
-    overflow: hidden;
-    height: 1px;
-    width: 1px;
-    padding: 0;
-    border: 0
-}
-
 body{
     background-color: aquamarine;
 }
@@ -130,9 +117,8 @@ html,body {
     top: 0;
     right: 0;
     left: 0;
-    gap: 8px;
     z-index: 9999;
-    /* display: block; */
+    display: block;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -288,7 +274,7 @@ html,body {
 
 #globalheader .globalheader-item {
     box-sizing: border-box;
-    /* height: 44px */
+    height: 44px;
     height: auto;
 }
 
