@@ -1,52 +1,91 @@
-:root{
-    --r-globalnavbar-background-opened: #fbfbfd;
-    --r-globalnavbar-background-opened-dark: #161617;
-    /* barra */
-    --r-globalnavbar-background-white: #ffffff; 
-    --r-globalnavbar-color-secondary: #333336;
-    --r-globalnavbar-color-hover: #000000;
+/* cor-text-primaria */
+/* cor-text-primaria-dark */
 
-    --globalnavbar-background: none;
-    --globalnavbar-backdrop-filter: none;
-    --r-globalnavbar-height: 44px;
-    --r-globalnavbar-font-size: 15px;
-    /* logo */
-    --globalnavbar-govbr-blue: #2864ae;
-    --r-globalnavbar-govbr-yellow:#fabd10;
-    --r-globalnavbar-govbr-light-green:  #026e3a ;
-    /* -------------------------------- */
-    --r-globalnavbar-height: 40px;
-    --r-globalnavbar-color: rgba(255, 255, 255, 0.8);
-    --r-globalnavbar-color-secondary: #333336;
-    --r-globalnavbar-color-hover: #ffffff;
-    --r-globalnavbar-font-size: 17px;
-    /* --globalnavbar-background: none; */
-    --globalnavbar-backdrop-filter: none;
-    /* -------------------------------- */
-    --r-globalnavbar-color: rgba(255, 255, 255, .8);
-    --r-globalnavbar-color-secondary: #E8E8ED;
-    --r-globalnavbar-color-hover: #FFFFFF
-    /* -------------------------------- */
-    --r-globalnavbar-color: rgba(0, 0, 0, .8);
-    --r-globalnavbar-color-secondary: #333336;
-    --r-globalnavbar-color-hover: #000000
-    /* -------------------------------- */
-    --globalnavbar-background: rgba(251, 251, 253, .92)
-    /* -------------------------------- */
-    --globalnavbar-background: rgba(22, 22, 23, .88)
-    /* -------------------------------- */
-    --globalnavbar-backdrop-filter: initial
-    /* -------------------------------- */
-    --r-globalnavbar-duration-medium: .24s;
-    /* -------------------------------- */
-    --r-globalnavbar-height: 48px;
-    /* -------------------------------- */
+/* cor-text-secundaria */
+/* cor-text-seundaria-dark */
+
+/* cor-text-primaria-hover */
+/* cor-text-primaria-dark */
+
+/* cor-text-secundaria-hover */
+/* cor-text-seundaria-dark */
+
+/* cor-text-primaria-background */
+/* cor-text-primaria-backgound-dark */
+
+/* cor-text-secundaria-background */
+/* cor-text-secundaria-backgound-dark */
+
+:root{
+    /* BACKGROUND */
+    --r-globalheader-background: none;
+    --r-globalheader-backdrop-filter: none;
+    /* --r-globalheader-background-opened:#fff; */
+    --r-globalheader-background-opened-white:#fff;
+    --r-globalheader-background-opened-dark:#fff;
+    --r-globalheader-background: rgba(251, 251, 253, .92)
     
-    /* -------------------------------- */
+    /* CORES-NAVBAR */
+    --r-globalheader-color-primary: #ffffff;
+    --r-globalheader-color-primary-opacity: rgba(255, 255, 255, 0.8);
+    --r-globalheader-color-secondy: #E8E8ED;
+    --r-globalheader-color-secondy: #333336;
+    --r-globalheader-color-secondy-opacity: rgba(51,51,54,0.8);
+    /* hover */
+    --r-globalheader-color-hover: #000000;
+    --r-globalheader-color-hover-white:#ffffff;
+    --r-globalheader-color-hover-white: #E8E8ED;
+    --r-globalheader-color-hover-black: #000000;
     
-    /* -------------------------------- */
-    
-    /* -------------------------------- */
-    
-    /* -------------------------------- */
+    --r-globalheader-color: rgba(0, 0, 0, .8);
+    --r-globalheader-color-secondary: #333336;
+    --r-globalheader-color-hover: #000000;
+
+    /* CORES-LOGOS */
+    --globalheader-govbr-blue: #2864ae;
+    --r-globalheader-govbr-yellow:#fabd10;
+    --r-globalheader-govbr-light-green:  #026e3a;
+
+    /* TAMANHOS */
+    --r-globalheader-height: 40px;
+    --r-globalheader-height: 44px;
+    --r-globalheader-font-size: 15px;
+    --r-globalheader-font-size: 17px;
+
+}
+
+
+:root{
+    fundo: #ffffff;
+    fundo: #fbfbfd;
+    fundo: #f5f5f7;
+    fundo: #161617cc;
+    fundo: #00000066;
+    fundo: #000000;
+    fundo: #0000008f;
+    fundo: #00000029;
+
+    cor-text:#ffffffcc;
+    cor-text:#ffffff;
+    cor-text:#f5f5f7;
+    cor-text:#e8e8ed;
+    cor-text:#2997ff;
+    cor-text:#86868b;
+    cor-text:#6e6e73;
+    cor-text:#0066cc;
+    cor-text:#424245;
+    cor-text:#1d1d1f;
+    cor-text:#1d1d1d;
+    cor-text:#000000;
+    cor-text:#0000008f;
+
+    preenchimento-:#ffffffcc;
+    preenchimento-:#86868b;
+    preenchimento-:#000000;
+
+    borda:#ffffff;
+    borda:#d2d2d7;
+    borda:#86868b;
+
+    font-family: "SF Pro Text", "SF pro Icons", "Helvetica Neue", Arial, sans-serif;
 }
