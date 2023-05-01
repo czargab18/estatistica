@@ -118,8 +118,6 @@ html,body {
 
 /* var-header */
 #globalheader {
-    --r-globalheader-next-flyout-height: 0px;
-    --r-globalheader-previous-flyout-height: 0px;
     --r-globalheader-height: 40px;
     --r-globalheader-color: rgba(0, 0, 0, .8);
     --r-globalheader-color-secondary: #333336;
@@ -253,11 +251,7 @@ html,body {
     background: rgba(232,232,237,.4)
 }
 
-.globalheader-with-flyout-open~.globalheader-curtain {
-    opacity: 1;
-    visibility: visible;
-    transition: opacity .32s cubic-bezier(.4,0,.6,1) 80ms,visibility .32s step-start 80ms
-}
+
 
 .globalheader-block-transitions~.globalheader-curtain {
     animation: none!important;
@@ -276,7 +270,6 @@ html,body {
     width: 100%;
     max-width: 1024px;
     padding: 0 22px;
-    --r-globalheader-flyout-rate: 0s;
     --r-globalheader-duration-medium: .24s;
     z-index: 2
 }
@@ -325,14 +318,17 @@ html,body {
     letter-spacing: 0em;
     font-family: SF Pro JP,SF Pro Text,SF Pro Icons,Hiragino Kaku Gothic Pro,\30d2\30e9\30ae\30ce\89d2\30b4 Pro W3,\30e1\30a4\30ea\30aa,Meiryo,\ff2d\ff33 \ff30\30b4\30b7\30c3\30af,Helvetica Neue,Helvetica,Arial,sans-serif
 }
+
 #globalheader .globalheader-link svg {
     fill: currentColor
 }
+
 #globalheader .globalheader-link:hover,
 #globalheader .globalheader-link:focus[data-focus-method=key] {
     color: var(--r-globalheader-color-hover);
     text-decoration: none
 }
+/* logo-apple */
 #globalheader .globalheader-link-govbr {
     font-size: 17px;
     line-height: 1.2353641176;
@@ -349,25 +345,100 @@ html,body {
     font-family: SF Pro AR,SF Pro Gulf,SF Pro Text,SF Pro Icons,Helvetica Neue,Helvetica,Arial,sans-serif
 }
 
-#globalheader .globalheader-link-apple-logo {
+#globalheader .globalheader-link-govbr {
     height: 100%
 }
-#globalheader .globalheader-link-apple .globalheader-link-text {
+#globalheader .globalheader-link-govbr .globalheader-link-text {
     margin-inline-start:4px
 }
 
-#globalheader .globalheader-link-chevron {
-    display: none;
-    visibility: hidden;
-    transition: visibility .24s step-end
+
+@media only screen and (min-width: 834px) {
+    #globalheader {
+        background:var(--globalheader-background)
+    }
 }
 
-/* botão hamburgues- tela pequena */
-#globalmenu .globalmenu-menutrigger {
-    width: 48px;
-    border-bottom: none;
-    display: none
+@media only screen and (max-width: 833px) {
+    #globalheader {
+        --r-globalheader-height: 48px;
+        max-height: none
+    }
+    #globalheader .globalheader-content {
+        display:flex;
+        padding: 0;
+        position: absolute;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        background: var(--globalheader-background);
+        transition: background var(--r-globalheader-flyout-rate) cubic-bezier(.4,0,.6,1) 80ms
+    }
+    #globalheader .globalheader-item {
+        width:auto;
+        height: auto;
+        transition: color .32s cubic-bezier(.4,0,.6,1)
+    }
+    #globalheader .globalheader-list>.globalheader-item {
+        height: 100%
+    }
+
+    #globalheader .globalheader-list>.globalheader-item>.globalheader-link {
+        opacity: 1;
+        visibility: visible;
+        transition: opacity .24s cubic-bezier(.4,0,.6,1) 80ms,visibility .24s step-start 80ms
+    }
+    #globalheader .globalheader-item {
+        width:48px
+    }
+    #globalheader .globalheader-item .globalheader-link {
+        height: 48px
+    }
+    /* trocar */
+    #globalheader .globalheader-item-govbr .globalheader-link-govbr {
+        width: max-content;
+        padding: 0 16px
+    }
+
+    #globalheader:not([dir=rtl]) .globalheader-item-govbr .globalheader-link-govbr {
+        margin-left: max(0px,env(safe-area-inset-left) - 16px)
+    }
+
+    #globalheader[dir=rtl] .globalheader-item-govbr .globalheader-link-govbr {
+        margin-right: max(0px,env(safe-area-inset-right) - 16px)
+    }
+
+    #globalheader .globalheader-item-govbr .globalheader-link-text {
+        display: none
+    }
+
+    #globalheader .globalheader-link {
+        font-size:28px;
+        line-height: 1.1428571429;
+        font-weight: 600;
+        letter-spacing: .007em;
+        font-family: SF Pro Display,SF Pro Icons,Helvetica Neue,Helvetica,Arial,sans-serif
+    }
+    #globalnav .globalnav-link:lang(pt-br) {
+        font-family: SF Pro AR,SF Pro Gulf,SF Pro Display,SF Pro Icons,Helvetica Neue,Helvetica,Arial,sans-serif
+    }
+
+
+    /* 2-imgs-links */
+    #globalheader .globalheader-image-compact {
+        display:flex
+    }
+    #globalheader .globalheader-image-regular {
+        display: none
+    }
+
+    /* .globalheader-placeholder {
+        height:48px
+    }
+     */
 }
+
+/* testar */
 
 
 
