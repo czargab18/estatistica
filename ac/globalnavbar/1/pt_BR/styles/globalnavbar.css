@@ -307,7 +307,7 @@ html,body {
 }
 
 #globalnavbar .globalnavbar-link svg {
-    fill: currentColor
+    fill: currentColor;
 }
 
 #globalnavbar .globalnavbar-link:hover,
