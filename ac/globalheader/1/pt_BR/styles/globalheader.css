@@ -27,7 +27,8 @@ body{
 
 #globalheader body {
     margin: 0;
-    padding: 0
+    padding: 0;
+    font-family: SF Pro HK,SF Pro Display,SF Pro Icons,PingFang HK,Helvetica Neue,Helvetica,Arial,sans-serif;
 }
 
 #globalheader ul,#globalheader ol,#globalheader li,#globalheader dl,#globalheader dt,#globalheader dd,#globalheader h1,#globalheader h2,#globalheader h3,#globalheader h4,#globalheader h5,#globalheader h6,#globalheader hgroup,#globalheader p,#globalheader blockquote,#globalheader figure,#globalheader form,#globalheader fieldset,#globalheader input,#globalheader legend,#globalheader pre,#globalheader abbr,#globalheader button {
@@ -112,7 +113,7 @@ html,body {
     /* logo */
     --globalheader-govbr-blue: #2864ae;
     --r-globalheader-govbr-yellow:#fabd10;
-    --r-globalheader-govbr-light-green:#46ad44 ;
+    --r-globalheader-govbr-light-green:  #026e3a ;
 }
 
 /* var-header */
@@ -132,19 +133,16 @@ html,body {
     right: 0;
     left: 0;
     gap: 8px;
-
     z-index: 9999;
     /* display: block; */
     display: flex;
     flex-direction: column;
     align-items: center;
     align-content: center;
-
     margin: 0;
     padding: 0;
     width: 100%;
     height: 114px;
-
     font-size: 17px;
     -webkit-user-select: none;
     user-select: none;
@@ -175,11 +173,21 @@ html,body {
     background: var(--globalheader-background);
     --globalheader-background: rgba(251, 251, 253, .92)
 }
+
 #globalheader.globalheader-scrim.globalheader-dark,
 .globalheader-scrim.globalheader-dark #globalheader,
 .globalheader-scrim #globalheader.globalheader-dark,
 .globalheader-dark #globalheader.globalheader-scrim {
     --globalheader-background: rgba(22, 22, 23, .88)
+}
+
+.globalheader-scrim.globalheader-light#globalheader,
+.globalheader-scrim.globalheader-dark .globalheader-light {
+    --globalheader-background: rgba(251, 251, 253, .92)
+}
+
+.globalheader-scrim-noblur#globalheader,.globalheader-scrim-noblur #globalheader {
+    --globalheader-backdrop-filter: initial
 }
 
 /* desabilite-transition */
@@ -224,23 +232,158 @@ html,body {
     transition: opacity .32s cubic-bezier(.4,0,.6,1) 80ms,visibility .32s step-end 80ms
 }
 
+#globalheader.globalheader-dark .globalheader-curtain,
+.globalheader-dark .globalheader-curtain,
+.theme-dark .globalheader-curtain {
+    background: rgba(0,0,0,.4)
+}
+
+.globalheader-dark~.globalheader-curtain {
+    background: rgba(0,0,0,.4)
+}
+
+#globalheader.globalheader-light .globalheader-curtain,
+.globalheader-dark #globalheader.globalheader-light .globalheader-curtain,
+.theme-dark #globalheader.globalheader-light .globalheader-curtain,
+.globalheader-light .globalheader-curtain,.theme-light .globalheader-curtain {
+    background: rgba(232,232,237,.4)
+}
+
+.globalheader-light~.globalheader-curtain {
+    background: rgba(232,232,237,.4)
+}
+
+.globalheader-with-flyout-open~.globalheader-curtain {
+    opacity: 1;
+    visibility: visible;
+    transition: opacity .32s cubic-bezier(.4,0,.6,1) 80ms,visibility .32s step-start 80ms
+}
+
+.globalheader-block-transitions~.globalheader-curtain {
+    animation: none!important;
+    transition: none!important
+}
+
+
+.globalheader-curtain-noblur {
+    -webkit-backdrop-filter: none;
+    backdrop-filter: none
+}
+
+#globalheader .globalheader-content {
+    margin: 0 auto;
+    box-sizing: border-box;
+    width: 100%;
+    max-width: 1024px;
+    padding: 0 22px;
+    --r-globalheader-flyout-rate: 0s;
+    --r-globalheader-duration-medium: .24s;
+    z-index: 2
+}
+
+#globalheader .globalheader-list {
+    cursor: default;
+    margin: 0 -9px;
+    width: auto;
+    height: 44px;
+    display: flex;
+    justify-content: space-between;
+    -webkit-user-select: none;
+    user-select: none;
+    list-style: none;
+}
+
+#globalheader .globalheader-item {
+    box-sizing: border-box;
+    /* height: 44px */
+    height: auto;
+}
+
+#globalheader .globalheader-link {
+    font-size: 12px;
+    font-weight: 400;
+    letter-spacing: -.01em;
+    font-family: SF Pro Text,SF Pro Icons,Helvetica Neue,Helvetica,Arial,sans-serif;
+    line-height: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--r-globalheader-color);
+    position: relative;
+    z-index: 1;
+    padding: 0 calc(9px / var(--r-globalheader-text-zoom-scale, 1));
+    height: 44px;
+    background: no-repeat;
+    text-decoration: none;
+    white-space: nowrap;
+    -webkit-tap-highlight-color: rgba(0,0,0,0);
+    outline-offset: -7px;
+    transition: color .32s cubic-bezier(.4,0,.6,1)
+}
+
+#globalheader .globalheader-link:lang(pt-br) {
+    letter-spacing: 0em;
+    font-family: SF Pro JP,SF Pro Text,SF Pro Icons,Hiragino Kaku Gothic Pro,\30d2\30e9\30ae\30ce\89d2\30b4 Pro W3,\30e1\30a4\30ea\30aa,Meiryo,\ff2d\ff33 \ff30\30b4\30b7\30c3\30af,Helvetica Neue,Helvetica,Arial,sans-serif
+}
+#globalheader .globalheader-link svg {
+    fill: currentColor
+}
+#globalheader .globalheader-link:hover,
+#globalheader .globalheader-link:focus[data-focus-method=key] {
+    color: var(--r-globalheader-color-hover);
+    text-decoration: none
+}
+#globalheader .globalheader-link-govbr {
+    font-size: 17px;
+    line-height: 1.2353641176;
+    font-weight: 600;
+    letter-spacing: -.022em;
+    font-family: SF Pro Text,SF Pro Icons,Helvetica Neue,Helvetica,Arial,sans-serif;
+    /* aninhar-conteudo do link */
+    display: flex;
+    align-items: center
+}
+
+#globalheader .globalheader-link-govbr:lang(pt-br) {
+    letter-spacing: 0em;
+    font-family: SF Pro AR,SF Pro Gulf,SF Pro Text,SF Pro Icons,Helvetica Neue,Helvetica,Arial,sans-serif
+}
+
+#globalheader .globalheader-link-apple-logo {
+    height: 100%
+}
+#globalheader .globalheader-link-apple .globalheader-link-text {
+    margin-inline-start:4px
+}
+
+#globalheader .globalheader-link-chevron {
+    display: none;
+    visibility: hidden;
+    transition: visibility .24s step-end
+}
+
+/* botão hamburgues- tela pequena */
+#globalmenu .globalmenu-menutrigger {
+    width: 48px;
+    border-bottom: none;
+    display: none
+}
+
+
 
 /* ----------------------  end -------------------------- */
-
-
 
 #globalheader>.globalheader{
     font-family: "SF Pro Text";
     font-size: var(--r-globalheader-font-size);
     line-height: 15px;
-    font-weight: 400;
-    background-color: #6c6ce3;
-
-    margin: 0 10px;
+    font-weight: 300;
+    background-color: #003a7a;
+    margin: 0px;
+    height: 44px;
     gap: 8px;
     /* width: auto; */
     width: calc(1440px*3);
-
     display: flex;
     justify-content: center;
     align-items: center;
@@ -250,7 +393,7 @@ html,body {
 
 .globalheader .globalheader-content .globalheader-list{
     width: 1156px;
-    height: 40px;
+    height: 44px;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -263,7 +406,7 @@ html,body {
 
 .globalheader .globalheader-content .globalheader-list .globalheader-item .globalheader-link{
     text-decoration: none;
-    color: rgba(34, 28, 28, 0.92);
+    color: rgba(255, 255, 255, 1);
     font-family: Arial, Helvetica, sans-serif;
 }
 /* espaço todos os elementos <ul> */
@@ -279,7 +422,7 @@ html,body {
 
 /* coronavrus */
 .globalheader-list>*:nth-child(3), .globalheader-link-coronavarus-container {
-    color:rgba(217, 152, 22, 1);
+    color:rgb(255, 233, 92);
     text-decoration: underline;
     list-style: none;
 }
@@ -303,7 +446,8 @@ html,body {
     color: var(--globalheader-govbr-blue);
 }
 .globalheader-link-text-gambiarra-govbr>*:nth-child(5){
-    color: var(--r-globalheader-govbr-light-blue);
+    /* color: var(--r-globalheader-govbr-light-blue); */
+    color: rgb(249, 228, 123);
 }
 .globalheader-link-text-gambiarra-govbr>*:nth-child(6){
     color: var(--r-globalheader-govbr-yellow);
@@ -320,6 +464,6 @@ html,body {
     color: rgba(255, 199, 0, 1);
 }
 .globalheader-link-text-gambiarra-unbtv>*:nth-child(2){
-    color: rgba(0, 58, 122, 1);
+    color:  #ffffff;
 }
 
