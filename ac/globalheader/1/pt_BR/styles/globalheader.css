@@ -438,7 +438,6 @@ html,body {
     background-color: #003a7a;
     margin: 0px;
     height: 44px;
-    gap: 8px;
     /* width: auto; */
     width: calc(1440px*3);
     display: flex;
