@@ -1,91 +1,101 @@
-/* cor-text-primaria */
-/* cor-text-primaria-dark */
-
-/* cor-text-secundaria */
-/* cor-text-seundaria-dark */
-
-/* cor-text-primaria-hover */
-/* cor-text-primaria-dark */
-
-/* cor-text-secundaria-hover */
-/* cor-text-seundaria-dark */
-
-/* cor-text-primaria-background */
-/* cor-text-primaria-backgound-dark */
-
-/* cor-text-secundaria-background */
-/* cor-text-secundaria-backgound-dark */
 
 :root{
-    /* BACKGROUND */
-    --r-globalheader-background: none;
-    --r-globalheader-backdrop-filter: none;
-    /* --r-globalheader-background-opened:#fff; */
-    --r-globalheader-background-opened-white:#fff;
-    --r-globalheader-background-opened-dark:#fff;
-    --r-globalheader-background: rgba(251, 251, 253, .92)
+    /* cor-text-logo-govbr */
+    --r-logo-govbr-blue:#1351b4;
+    --r-logo-govbr-yellow:#ffcd07; /*ou talvez c107 !=cd07 */
+    --r-logo-govbr-yellow: #ffc107;
+    --r-logo-govbr-green:#268744;
     
-    /* CORES-NAVBAR */
-    --r-globalheader-color-primary: #ffffff;
-    --r-globalheader-color-primary-opacity: rgba(255, 255, 255, 0.8);
-    --r-globalheader-color-secondy: #E8E8ED;
-    --r-globalheader-color-secondy: #333336;
-    --r-globalheader-color-secondy-opacity: rgba(51,51,54,0.8);
-    /* hover */
-    --r-globalheader-color-hover: #000000;
-    --r-globalheader-color-hover-white:#ffffff;
-    --r-globalheader-color-hover-white: #E8E8ED;
-    --r-globalheader-color-hover-black: #000000;
+    /* cor-text-logo-UnBTV */
+    --r-logo-unbtv-blue:#2570bb;
+    --r-logo-unbtv-gray:#777777;
     
-    --r-globalheader-color: rgba(0, 0, 0, .8);
-    --r-globalheader-color-secondary: #333336;
-    --r-globalheader-color-hover: #000000;
+    /* cor-text-logo-UnB */
+    --r-logo-unb-blue: #003a7a;
+    --r-logo-unb-green: #026e3a;
 
-    /* CORES-LOGOS */
-    --globalheader-govbr-blue: #2864ae;
-    --r-globalheader-govbr-yellow:#fabd10;
-    --r-globalheader-govbr-light-green:  #026e3a;
+    /* cor-text-header|navbar */
+    --r-global-hdnv-yellow:#d99816;
+    --r-global-hdnv-white:#ffffff;
+    --r-global-hdnv-white:#ffffffcc;
+    --r-global-hdnv-white:#f5f5f7;
+    --r-global-hdnv-white:#e8e8ed;
+    --r-global-hdnv-white:#2997ff;
+    --r-global-hdnv-white:#0066cc;
+    --r-global-hdnv-white:#86868b;
+    --r-global-hdnv-white:#6e6e73;
+    --r-global-hdnv-white:#424245;
+    --r-global-hdnv-white:#1d1d1f;
+    --r-global-hdnv-white:#1d1d1d;
+    --r-global-hdnv-white:#000000;
+    --r-global-hdnv-white:#0000008f;
+    --r-global-hdnv-white-opacity:rgba(255, 255, 255,0.8);
+    
+    /* cor-fundo-header */
+    --r-globalheader-blue:#003a7a;
+    --r-globalheader-bçue-opacity:#003a7acc;
+    
+    /* navbar */
+    --r-globalnav-bg-opened:#fbfbfd;
+    --r-globalnav-bg-opened-dark:#1661617;
 
-    /* TAMANHOS */
-    --r-globalheader-height: 40px;
-    --r-globalheader-height: 44px;
-    --r-globalheader-font-size: 15px;
-    --r-globalheader-font-size: 17px;
+    --r-globalnav-height:44px;
 
+    --r-globalnavmessage-segment-height:0px;
+    --r-globalnav-segmentbar-height:0px;
+    
+    /* background-color */
+    --r-bg-gray: #22222299;
+    --r-bg-black: #00000080;
+    --r-bg-white: #ffffff;
+    --r-bg-white-02: #fbfbfd;
+    --r-bg-white-03: #f5f5f7;
+    --r-bg-white-03: #161617;
+    --r-bg-white-03: #00000066;
+    --r-bg-white-03: #000000;
+    --r-bg-white-03: #0000008f;
+    --r-bg-white-03: #00000029;
+    
+    /* preenchimento */
+    --padding:#ffffffcc;
+    --padding:#86868b;
+    --padding:#000000;
+    
+    /* border */
+    --padding:#ffffff;
+    --padding:#d2d2d7;
+    --padding:#86868b;
+    
+    /* fonte */
+    --font:"SF Pro Text", "SF pro Icons", "Helvetica Neue", Arial, sans-serif;;
+
+    /* <section> anuncio-iphone */
+    --global-nav-ad-bar-height: 0px; 
+    --global-nav-collective-height: 0px;
+}
+
+/* ac-localnav */
+:root {
+    --r-localnav-height: 52px;
+    --r-localnav-stacked-height: 66px;
+    
+    --r-localnav-gn-height: var(--r-globalnav-height, 44px);
+    --r-localnav-viewport-large-min-width: 1024px;
+    --r-localnav-viewport-large-query: (min-width: 1024px);
+
+    --r-localnav-viewport-medium-min-width: 834px;
+    --r-localnav-viewport-medium-max-width: 1023px;
+    --r-localnav-viewport-medium-query: (min-width: 834px);
+
+    --r-localnav-viewport-small-min-width: 320px;
+    --r-localnav-viewport-small-max-width: 833px;
+    --r-localnav-viewport-small-query: (min-width: 320px);
 }
 
 
-:root{
-    fundo: #ffffff;
-    fundo: #fbfbfd;
-    fundo: #f5f5f7;
-    fundo: #161617cc;
-    fundo: #00000066;
-    fundo: #000000;
-    fundo: #0000008f;
-    fundo: #00000029;
-
-    cor-text:#ffffffcc;
-    cor-text:#ffffff;
-    cor-text:#f5f5f7;
-    cor-text:#e8e8ed;
-    cor-text:#2997ff;
-    cor-text:#86868b;
-    cor-text:#6e6e73;
-    cor-text:#0066cc;
-    cor-text:#424245;
-    cor-text:#1d1d1f;
-    cor-text:#1d1d1d;
-    cor-text:#000000;
-    cor-text:#0000008f;
-
-    preenchimento-:#ffffffcc;
-    preenchimento-:#86868b;
-    preenchimento-:#000000;
-
-    borda:#ffffff;
-    borda:#d2d2d7;
-    borda:#86868b;
-
-    font-family: "SF Pro Text", "SF pro Icons", "Helvetica Neue", Arial, sans-serif;
+html{
+    /* outras coisas */
+    font-family: "SF Pro Text","SF Pro Icons","Helvetica Neue","Helvetica","Arial",sans-serif;
+    /* font-size: 106.25%; */
+    quotes: "“" "”";
 }
