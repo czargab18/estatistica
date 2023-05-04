@@ -230,7 +230,7 @@ body {
 
 .globalheader {
 	width: 2560px;
-	background-color: darkblue;
+	background-color: darkblue !important;
 	height: 40px !important;
 }
 
@@ -355,7 +355,8 @@ body {
 
 /* ---------------------------------------------------------------------- */
 .globalheader-img-govbr > *:nth-child(1) {
-	color: var(--r-logo-govbr-dark-blue);
+	/* color: var(--r-logo-govbr-dark-blue); */
+	color: #ffffff;
 }
 
 .globalheader-img-govbr > *:nth-child(2) {
@@ -371,7 +372,8 @@ body {
 }
 
 .globalheader-img-govbr > *:nth-child(5) {
-	color: var(--r-logo-govbr-dark-blue);
+	/* color: var(--r-logo-govbr-dark-blue); */
+	color: #ffffff;
 }
 
 .globalheader-img-govbr > *:nth-child(6) {
