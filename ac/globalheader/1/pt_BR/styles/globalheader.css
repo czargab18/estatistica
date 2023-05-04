@@ -267,6 +267,15 @@ body {
 	height: auto;
 }
 
+/* unbtv-aumentar tamanho-fonte */
+.globalheader-img-govbr>*{
+	font-size: 25px;
+}
+/* unbtv-aumentar tamanho-fonte */
+.globalheader-img-unbtv>*{
+	font-size: 20px;
+}
+
 #global-hdr-nv-sc .globalheader-link {
 	font-size: 15px;
 	font-weight: 800;
@@ -281,7 +290,6 @@ body {
 	color: rgba(255, 255, 255, 0.8);
 	position: relative;
 	/* calc(9px / var(--r-globalheader-text-zoom-scale, 1)); */
-	padding: 0 9px;
 	z-index: 1;
 	background: no-repeat;
 	text-decoration: none;
@@ -317,7 +325,7 @@ body {
 	height: 40px;
 	font-size: 17px;
 	line-height: 1.2353641176;
-	font-weight: 800;
+	font-weight: 600;
 	letter-spacing: 0.05em !important;
 	font-family: SF Pro Text, SF Pro Icons, Helvetica Neue, Helvetica, Arial,
 		sans-serif;
