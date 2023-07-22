@@ -8,16 +8,9 @@ body {
 	background: aqua;
 }
 
-.globalnav-image-regular {
-	display: none;
-}
-
+.globalnav-image-regular,
 .globalnav-image-compact {
 	display: none;
-}
-
-.globalheader {
-	background-color: #071d41;
 }
 
 .globalheader {
@@ -321,7 +314,7 @@ body {
 		sans-serif;
 	/* aninhar-conteudo do link */
 	display: flex;
-	align-items: center;	
+	align-items: center;
 }
 
 /* unbtv-aumentar tamanho-fonte */
