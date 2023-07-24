@@ -1,4 +1,107 @@
 @charset "UTF-8";
+#globaltop {
+	all: unset;
+}
+#globalheader html {
+	-ms-text-size-adjust: 100%;
+	-webkit-text-size-adjust: 100%;
+}
+#globalheader body {
+	margin: 0;
+	padding: 0;
+}
+#globalheader ul,
+#globalheader ol,
+#globalheader li,
+#globalheader dl,
+#globalheader dt,
+#globalheader dd,
+#globalheader h1,
+#globalheader h2,
+#globalheader h3,
+#globalheader h4,
+#globalheader h5,
+#globalheader h6,
+#globalheader hgroup,
+#globalheader p,
+#globalheader blockquote,
+#globalheader figure,
+#globalheader form,
+#globalheader fieldset,
+#globalheader input,
+#globalheader legend,
+#globalheader pre,
+#globalheader abbr,
+#globalheader button {
+	margin: 0;
+	padding: 0;
+}
+#globalheader pre,
+#globalheader code,
+#globalheader address,
+#globalheader caption,
+#globalheader th,
+#globalheader figcaption {
+	font-size: 1em;
+	font-weight: 400;
+	font-style: normal;
+}
+#globalheader fieldset,
+#globalheader iframe {
+	border: 0;
+}
+#globalheader caption,
+#globalheader th {
+	text-align: left;
+}
+#globalheader table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+#globalheader main,
+#globalheader summary,
+#globalheader details {
+	display: block;
+}
+#globalheader audio,
+#globalheader canvas,
+#globalheader video,
+#globalheader progress {
+	vertical-align: baseline;
+}
+#globalheader button {
+	background: none;
+	border: 0;
+	box-sizing: content-box;
+	color: inherit;
+	cursor: pointer;
+	font: inherit;
+	line-height: inherit;
+	overflow: visible;
+	vertical-align: inherit;
+}
+#globalheader button:disabled {
+	cursor: default;
+}
+#globalheader :focus {
+	outline: 4px solid rgba(0, 125, 250, 0.6);
+	outline-offset: 1px;
+}
+#globalheader
+	:focus[data-focus-method="mouse"]:not(input):not(textarea):not(select),
+#globalheader
+	:focus[data-focus-method="touch"]:not(input):not(textarea):not(select) {
+	outline: none;
+}
+#globalheader ::-moz-focus-inner {
+	border: 0;
+	padding: 0;
+}
+@media print {
+	#globalheader {
+		display: none;
+	}
+}
 
 *,
 *::after,
@@ -7,20 +110,37 @@ html,
 body {
 	margin: 0;
 	padding: 0;
+	margin: 0;
+	padding: 0;
 	list-style: none;
 	text-decoration: none;
 	font-family: Arial, Helvetica, sans-serif;
 }
 
-.globaltop {
-	all: unset;
+:root {
+	--r-globaltop-background-opened: #fbfbfd;
+	--r-globaltop-background-opened-dark: #161617;
 }
 
-body {
-	background: aqua;
-}
+#globaltop {
+	/* copyApple */
+	
+	--r-globaltop-height: 44px;
+	--r-globaltop-font-size: 17px;
+	--r-globaltop-color: rgba(0, 0, 0, 0.8);
+	--r-globaltop-color-secondary: #333336;
+	--globaltop-background: none;
+	
+	--r-globaltop-color-hover: #000000;
+	--globaltop-backdrop-filter: none;
+	
+	--r-globaltop-flyout-link-opacity-duration: 0.5s;
+	--r-globaltop-flyout-spacing: 88px;
+	--r-globaltop-flyout-close-delay: 0.12s;
+	--r-globaltop-next-flyout-height: 0px;
+	--r-globaltop-previous-flyout-height: 0px;
 
-.globaltop {
+	/* myPropriedades */
 	--altura-globalheader: 40px;
 	--largura-globalheader: 1440px;
 
@@ -96,7 +216,7 @@ body {
 	width: auto;
 }
 
-.globaltop .globalheader-link {
+#globaltop .globalheader-link {
 	font-size: 15px;
 	font-weight: 800;
 	letter-spacing: -0.01em;
@@ -122,8 +242,8 @@ body {
 /* .globalheader-link .globalheader-link-text{} */
 
 /* transparence-curso-por-cima */
-.globaltop .globalheader-link:hover,
-.globaltop .globalheader-link:focus[data-focus-method="key"] {
+#globaltop .globalheader-link:hover,
+#globaltop .globalheader-link:focus[data-focus-method="key"] {
 	/* color: var(--r-globalheader-color-hover); */
 	color: white;
 }
@@ -153,13 +273,10 @@ body {
 	fill: currentColor;
 }
 
-.globalheader-list {
-	--r-logo-govbr-yellow: #ffcd07;
-}
-
 /*  */
-.globalheader-link-coronavarius .globalheader-link-text {
-	color: #ffcd07;
+.globalheader-list .globalheader-link-coronavarius .globalheader-link-text {
+	--r-logo-govbr-yellow: #ffcd07;
+	color: var(--r-logo-govbr-yellow);
 	text-decoration: underline;
 }
 
@@ -171,7 +288,7 @@ body {
 }
 
 @media screen and (max-width: 1440px) {
-	.globaltop,
+	#globaltop,
 	.globalheader,
 	.globalheader-content,
 	.globalheader-list {
@@ -183,8 +300,14 @@ body {
 	}
 	.globalheader-list-unbt-gov > *,
 	.globalheader-item-coronavarius,
-  .globalheader-item-orggovbr,
-  .globalheader-item-acessibilidade {
+	.globalheader-item-orggovbr,
+	.globalheader-item-acessibilidade,
+	.globalheader-espacador-01,
+	.globalheader-espacador-05 {
 		display: block;
 	}
+}
+
+body {
+	background: aqua;
 }
