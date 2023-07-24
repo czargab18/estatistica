@@ -1,5 +1,7 @@
 {
     "prettier.printWidth": 82,
     "prettier.tabWidth": 3,
-    "prettier.useTabs": true
+    "prettier.useTabs": true,
+    "python.linting.pylintEnabled": true,
+    "python.linting.enabled": true
 }
