@@ -1,6 +1,8 @@
 @charset "UTF-8";
 
 *,
+*::after,
+*::before,
 html,
 body {
 	margin: 0;
@@ -180,7 +182,9 @@ body {
 		display: none;
 	}
 	.globalheader-list-unbt-gov > *,
-	.globalheader-item-coronavarius {
+	.globalheader-item-coronavarius,
+  .globalheader-item-orggovbr,
+  .globalheader-item-acessibilidade {
 		display: block;
 	}
 }
