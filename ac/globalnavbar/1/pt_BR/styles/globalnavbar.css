@@ -154,11 +154,10 @@ body {
 	display: block;
 	display: flex;
 	flex-direction: column;
-	align-items: center;
 	align-content: center;
 	margin: 0;
 	padding: 0;
-	width: calc(2*1440px);
+	width: 100%;
 	height: 44px;
 	font-size: 17px;
 	-webkit-user-select: none;
@@ -171,7 +170,7 @@ body {
 
 #globalnavbar .globalnavbar-content {
 	--r-globalnavbar-duration-medium: 0.24s;
-	/* margin: 0 auto; */
+	margin: 0 auto;
 	box-sizing: border-box;
 	width: 100%;
 	max-width: 1024px;
@@ -263,11 +262,22 @@ body {
 	margin-inline-start: 4px;
 }
 
+#globalnavbar .globalnavbar-link-estatistica .globalnavbar-link-text-estatistica {
+	display: none;
+}
+#globalnavbar .globalnavbar-estatistica-regular,#globalnavbar .globalnavbar-item-estatistica {
+    display: block;
+	width: max-content
+}
+
+
 @media only screen and (min-width: 834px) {
 	#globalnavbar {
 		background: var(--globalnavbar-background);
 	}
 }
+
+/* mediaQuery 833px minimo para todos os links na NAVBAR */
 
 @media only screen and (max-width: 833px) {
 	#globalnavbar {
@@ -346,11 +356,7 @@ body {
 	#globalnavbar .globalnavbar-image-regular {
 		display: none;
 	}
-
-	/* .globalnavbar-placeholder {
-        height:48px
-    }
-     */
+	
 }
 
 /* testar */
