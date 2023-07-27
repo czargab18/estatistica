@@ -113,15 +113,19 @@ body {
 }
 #globalnav {
 	--r-globalnav-flyout-close-delay: 0.12s;
-	--r-globalnav-flyout-link-opacity-duration: 0.5s;
-	--r-globalnav-flyout-spacing: 88px;
-	--r-globalnav-next-flyout-height: 0px;
 	--r-globalnav-previous-flyout-height: 0px;
-	--r-globalnav-height: 44px;
+	
 	--r-globalnav-color: rgba(0, 0, 0, 0.8);
 	--r-globalnav-color-secondary: #333336;
 	--r-globalnav-color-hover: #000000;
+	
+	--r-globalnav-flyout-link-opacity-duration: 0.5s;
+
+	--r-globalnav-next-flyout-height: 0px;
+	--r-globalnav-flyout-spacing: 88px;
+	--r-globalnav-height: 44px;
 	--r-globalnav-font-size: 17px;
+
 	--globalnav-background: none;
 	--globalnav-backdrop-filter: none;
 	position: absolute;

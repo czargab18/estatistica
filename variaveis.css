@@ -1,3 +1,46 @@
+.globalheader-list>*:nth-child(n+1)  {
+	/* cor-text-logo-govbr */
+	--r-logo-govbr-dark-blue: hwb(211 0% 52%);
+	--r-logo-govbr-ligth-kblue: #00b9ff;
+	--r-logo-govbr-yellow: #ffcd07;
+	--r-logo-govbr-ligth-green: #61c454;
+
+	/* cor-text-logo-UnBTV */
+	--r-logo-unbtv-yellow: #ffc700;
+	--r-logo-unbtv-green-ligth: #61c454;
+	--r-logo-unbtv-blue-light: #2570bb;
+	--r-logo-unbtv-gray-light: #777777;
+}
+
+#globalnav .globalnav-link:lang(pt-br) {
+    font-family: SF Pro AR, SF Pro Gulf, SF Pro Display, SF Pro Icons,
+        Helvetica Neue, Helvetica, Arial, sans-serif;
+}
+
+#global-hdr-nv-sc .globalheader-link:lang(pt-br) {
+	letter-spacing: 0em;
+	font-family: SF Pro JP, SF Pro Text, SF Pro Icons, Hiragino Kaku Gothic Pro,
+		\30d2\30e9\30ae\30ce\89d2\30b4 Pro W3, \30e1\30a4\30ea\30aa, Meiryo,
+		\ff2d\ff33\ff30\30b4\30b7\30c3\30af, Helvetica Neue, Helvetica, Arial,
+		sans-serif;
+}
+
+#global-hdr-nv-sc {
+	/* heigth */
+	--global-hd-heigth: 40px;
+	--global-nv-heigth: 44px;
+	--global-sc-heigth: 40px;
+
+	--global-hns-font-size: 17px;
+	--global-hns-color: #;
+	--global-hns-color-secondary: #;
+
+	/* hover */
+	--global-hns-color-hover: #;
+	--global-hns-bg: #;
+	--global-hns-bg-filter: #;
+}
+
 
 :root{
     /* cor-text-logo-govbr */
