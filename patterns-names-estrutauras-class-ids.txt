@@ -116,6 +116,37 @@ Acessibilidade
     </div>
 </section>
 
+		
+		<!-- SECTION IFORMAÇÃO IMPORTANTE -->
+		<!-- <section class="globalsection collection-module">
+				<div class="globalsection-content">
+					<div class="module-content">
+						<div class="ribbon-iphone-ti">
+							<div class="section-content">
+								<span class="iphone-ti-ribbon-copy trade-in">
+									Cepe aprova calendário acadêmico para 2024
+									<sup>
+										<a href="#footnote-1" aria-label="Footnote 1"
+										>1</a
+										> </sup
+										>.
+										<a
+										href="#"
+										target="_self"
+										data-analytics-title="shop iphone - 2023 trade in campaign">
+										Saiba Mais
+										<span class="icon icon-after icon-chevronright">
+											&rsaquo; &nbsp;</span
+											>
+										</a>
+									</span>
+								</div>
+							</div>
+					</div>
+				</div>
+			</section> -->
+
+
 
 
 <!--  BOTÕES-TELA-PEQUENA -->

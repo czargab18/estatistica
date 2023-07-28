@@ -1,0 +1,122 @@
+@charset "UTF-8";
+@import url("../../../../../wss/font.css");
+#globaltop {
+	all: unset;
+}
+#globalheader html {
+	-ms-text-size-adjust: 100%;
+	-webkit-text-size-adjust: 100%;
+}
+#globalheader body {
+	margin: 0;
+	padding: 0;
+}
+#globalheader ul,
+#globalheader ol,
+#globalheader li,
+#globalheader dl,
+#globalheader dt,
+#globalheader dd,
+#globalheader h1,
+#globalheader h2,
+#globalheader h3,
+#globalheader h4,
+#globalheader h5,
+#globalheader h6,
+#globalheader hgroup,
+#globalheader p,
+#globalheader blockquote,
+#globalheader figure,
+#globalheader form,
+#globalheader fieldset,
+#globalheader input,
+#globalheader legend,
+#globalheader pre,
+#globalheader abbr,
+#globalheader button {
+	margin: 0;
+	padding: 0;
+}
+#globalheader pre,
+#globalheader code,
+#globalheader address,
+#globalheader caption,
+#globalheader th,
+#globalheader figcaption {
+	font-size: 1em;
+	font-weight: 400;
+	font-style: normal;
+}
+#globalheader fieldset,
+#globalheader iframe {
+	border: 0;
+}
+#globalheader caption,
+#globalheader th {
+	text-align: left;
+}
+#globalheader table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+#globalheader main,
+#globalheader summary,
+#globalheader details {
+	display: block;
+}
+#globalheader audio,
+#globalheader canvas,
+#globalheader video,
+#globalheader progress {
+	vertical-align: baseline;
+}
+#globalheader button {
+	background: none;
+	border: 0;
+	box-sizing: content-box;
+	color: inherit;
+	cursor: pointer;
+	font: inherit;
+	line-height: inherit;
+	overflow: visible;
+	vertical-align: inherit;
+}
+#globalheader button:disabled {
+	cursor: default;
+}
+/*  ao click-link: caixa-azul sobre o libk
+#globalheader :focus {
+	outline: 4px solid rgba(0, 125, 250, 0.6);
+	outline-offset: 1px;
+} 
+*/
+#globalheader
+	:focus[data-focus-method="mouse"]:not(input):not(textarea):not(select),
+#globalheader
+	:focus[data-focus-method="touch"]:not(input):not(textarea):not(select) {
+	outline: none;
+}
+#globalheader ::-moz-focus-inner {
+	border: 0;
+	padding: 0;
+}
+
+#globalsection {
+	--font-pattenr: SF Pro AR, SF Pro Gulf, SF Pro Text, SF Pro Icons,
+	Helvetica Neue, Helvetica, Arial, sans-serif;
+	--altura-globalheader: 40px;
+	background-color: rgb(127 127 127 / 10%);
+	user-select: none; /* impedir-selecionar-links */
+	width: 100%;
+	height: var(--altura-globalheader);
+	display: flex; /* display flex-column */
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	font-size: 16px;
+	font-family: var(--font-pattenr);
+}
+
+.globalsection-content{
+	font-family: var(--font-pattenr);
+}

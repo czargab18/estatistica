@@ -1,4 +1,5 @@
 @charset "UTF-8";
+@import url("../../../../../wss/font.css");
 #globaltop {
 	all: unset;
 }
@@ -113,6 +114,7 @@
 		Helvetica Neue, Helvetica, Arial, sans-serif;
 }
 
+
 *, /* *::after, *::before, */
 html,
 body {
@@ -149,10 +151,9 @@ body {
 	--altura-globalheader: 40px;
 	--largura-globalheader: 968px;
 
-	/* position: absolute; */
-	position: fixed;
-	/* z-index: 9999; */
-	z-index: auto;
+	position: absolute;
+	z-index: 9999;
+	/* z-index: auto; */
 	top: 0;
 	right: 0;
 	left: 0;
@@ -211,6 +212,8 @@ body {
 
 	display: flex;
 	justify-content: center;
+	position: static;
+	z-index: 3;
 }
 
 .globalheader .globalheader-content {
@@ -222,7 +225,7 @@ body {
 	flex-direction: row;
 	justify-content: space-between;
 	box-sizing: border-box;
-	/* z-index: 2; */
+	z-index: 2;
 }
 
 .globalheader-content .globalheader-list,
