@@ -3,6 +3,12 @@
 #globaltop {
 	all: unset;
 }
+/* Noticia: opçãoSeção: 2 */
+#globalsection-02{
+	display: none;
+}
+/* FINAL: Noticia opçãoSeção: 2 */
+
 #globalheader html {
 	-ms-text-size-adjust: 100%;
 	-webkit-text-size-adjust: 100%;

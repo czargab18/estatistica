@@ -1852,7 +1852,7 @@ abbr {
 	padding-bottom: 0;
 	display: -ms-grid;
 	display: grid;
-	-ms-grid-columns: (minmax(0, 1fr)) [12];
+	/* -ms-grid-columns: (minmax(0, 1fr)) [12]; */
 	grid-template-columns: repeat(12, minmax(0, 1fr));
 }
 .grid .grid {
@@ -12869,7 +12869,7 @@ html.js [data-anim-lazy-image] * {
 		background-color: var(--gutter-color);
 		grid-gap: var(--gutter-width);
 		grid-template-areas: "";
-		-ms-grid-columns: ;
+		/* -ms-grid-columns: ; */
 		grid-template-columns: repeat(var(--columns), 1fr);
 		width: calc(
 			100% - var(--double-edge-border-width) - var(--safe-area-inset-lt) -
@@ -21268,7 +21268,7 @@ html.text-zoom
 		background-color: var(--gutter-color);
 		grid-gap: var(--gutter-width);
 		grid-template-areas: "";
-		-ms-grid-columns: ;
+		/* -ms-grid-columns: ; */
 		grid-template-columns: repeat(var(--columns), 1fr);
 		width: calc(
 			100% - var(--double-edge-border-width) - var(--safe-area-inset-lt) -
