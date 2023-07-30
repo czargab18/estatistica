@@ -1,566 +1,431 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-	<head>
-		<!-- compatibilidade -->
-		<meta charset="UTF-8" />
-		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<!--  versão altern do site atual (idioma diferente) -->
-		<link rel="alternate" href="https://es.example.com/" hreflang="pt-br" />
-		<!-- security -->
-		<meta
-			http-equiv="Content-Security-Policy"
-			content="img-src 'self' https://images.example.com; script-src 'self' https://cdn.example.com" />
-		<meta name="google-site-verification" content="verific_token_aqui" />
-		<meta name="referrer" content="no-referrer" />
-		<!-- Prefetching, pré-carregamento, pré-navegação -->
-		<link rel="dns-prefetch" href="//example.com/" />
-		<link rel="preconnect" href="https://www.example.com/" />
-		<link rel="prefetch" href="https://www.example.com/" />
-		<link rel="prerender" href="https://example.com/" />
-		<link rel="subresource" href="styles.css" />
-		<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
-		<link rel="preload" href="image.png" />
-		<!-- Mais informações: https://css-tricks.com/prefetching-preloading-prebrowsing/ -->
-		<!-- SEO -->
-		<title>Estatística</title>
-		<meta
-			name="description"
-			content="Descrição curta do site (incluída nos resultados do motor de busca)." />
-		<meta name="subject" content="Breve descrição do assunto do seu site" />
-		<meta
-			name="abstract"
-			content="descreva o propósito do site (frase curta)." />
-		<meta name="topic" content="Estatística" />
-		<link rel="shortlink" href="https://example.com/?p=43625" />
-		<!-- link curto caso a url da pag atual seja grande-->
-		<!-- SEO - Geolocalização -->
-		<meta name="geo.region" content="BR-DF" />
-		<meta name="geo.placename" content="Brasília" />
-		<!-- config -  -->
-		<meta name="robots" content="index,follow" />
-		<meta name="google" content="nositelinkssearchbox" />
-		<meta name="format-detection" content="telephone=no" />
-		<!-- info adds -->
-		<meta name="generator" content="Visual Studio Code" />
 
-		<!-- info author do doc.|site (dados struturados)-->
-		<!-- NÃO USAR email ou telef do autor para não sofrer SPAM -->
-		<link
-			href="https://google.com/profiles/thenextweb"
-			rel="me"
-			type="text/html" />
+<head>
+	<!-- compatibilidade -->
+	<meta charset="UTF-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<!--  versão altern do site atual (idioma diferente) -->
+	<link rel="alternate" href="https://es.example.com/" hreflang="pt-br" />
+	<!-- security -->
+	<meta http-equiv="Content-Security-Policy"
+		content="img-src 'self' https://images.example.com; script-src 'self' https://cdn.example.com" />
+	<meta name="google-site-verification" content="verific_token_aqui" />
+	<meta name="referrer" content="no-referrer" />
+	<!-- Prefetching, pré-carregamento, pré-navegação -->
+	<link rel="dns-prefetch" href="//example.com/" />
+	<link rel="preconnect" href="https://www.example.com/" />
+	<link rel="prefetch" href="https://www.example.com/" />
+	<link rel="prerender" href="https://example.com/" />
+	<link rel="subresource" href="styles.css" />
+	<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+	<link rel="preload" href="image.png" />
+	<!-- Mais informações: https://css-tricks.com/prefetching-preloading-prebrowsing/ -->
+	<!-- SEO -->
+	<title>Estatística</title>
+	<meta name="description" content="Descrição curta do site (incluída nos resultados do motor de busca)." />
+	<meta name="subject" content="Breve descrição do assunto do seu site" />
+	<meta name="abstract" content="descreva o propósito do site (frase curta)." />
+	<meta name="topic" content="Estatística" />
+	<link rel="shortlink" href="https://example.com/?p=43625" />
+	<!-- link curto caso a url da pag atual seja grande-->
+	<!-- SEO - Geolocalização -->
+	<meta name="geo.region" content="BR-DF" />
+	<meta name="geo.placename" content="Brasília" />
+	<!-- config -  -->
+	<meta name="robots" content="index,follow" />
+	<meta name="google" content="nositelinkssearchbox" />
+	<meta name="format-detection" content="telephone=no" />
+	<!-- info adds -->
+	<meta name="generator" content="Visual Studio Code" />
 
-		<!--  
+	<!-- info author do doc.|site (dados struturados)-->
+	<!-- NÃO USAR email ou telef do autor para não sofrer SPAM -->
+	<link href="https://google.com/profiles/thenextweb" rel="me" type="text/html" />
+
+	<!--  
 		estudar links
 	<link rel="manifest" href="manifest.json" />
 	<link rel="author" href="humans.txt" />
 	<link rel="import" href="component.html" /> 
 -->
 
-		<!-- style -->
-		<link
-			rel="stylesheet"
-			href="ac/globalheader/1/pt_BR/styles/globalheader.css" />
+	<!-- style -->
+	<link rel="stylesheet" href="ac/globalheader/1/pt_BR/styles/globalheader.css" />
 
-		<link rel="stylesheet" href="ac/globalmain/1/pt_BR/styles/globalmain.css" />
+	<link rel="stylesheet" href="ac/globalmain/1/pt_BR/styles/globalmain.css" />
 
-		<link
-			rel="stylesheet"
-			href="ac/globalfooter/1/pt_BR/styles/globalfooter.css" />
-		<link
-			rel="stylesheet"
-			href="ac/globalnavbar/1/pt_BR/styles/globalnavbar.css" />
-		<link
-			rel="stylesheet"
-			href="ac/globalsection/1/pt_BR/styles/globalsection.css" />
-		<link
-			rel="stylesheet"
-			href="ac/globalslides/1/pt_BR/assets/2025/2025.1/6/01-3/news.txt" />
-		<!--AppleIcon fonts + Icons -->
-		<link
-			rel="stylesheet"
-			href="wss/fonts.css?families=SF+Pro,v3|SF+Pro+Icons,v3|fontello,v1"
-			type="text/css"
-			media="all" />
-		<!-- script -->
+	<link rel="stylesheet" href="ac/globalfooter/1/pt_BR/styles/globalfooter.css" />
+	<link rel="stylesheet" href="ac/globalnavbar/1/pt_BR/styles/globalnavbar.css" />
+	<link rel="stylesheet" href="ac/globalsection/1/pt_BR/styles/globalsection.css" />
+	<link rel="stylesheet" href="ac/globalslides/1/pt_BR/assets/2025/2025.1/6/01-3/news.txt" />
+	<!--AppleIcon fonts + Icons -->
+	<link rel="stylesheet" href="wss/fonts.css?families=SF+Pro,v3|SF+Pro+Icons,v3|fontello,v1" type="text/css"
+		media="all" />
+<!-- script -->
 
-		<!-- script (atributo: --'defer'--) -->
-		<script
-			defer
-			src="ac/globalheader/1/pt_BR/scripts/globalheader.js"></script>
-		<script
-			defer
-			src="ac/globalnavbar/1/pt_BR/scripts/globalnavbar.js"></script>
+	<!-- script (atributo: --'defer'--) -->
+	<script defer src="ac/globalheader/1/pt_BR/scripts/globalheader.js"></script>
+	<script defer src="ac/globalnavbar/1/pt_BR/scripts/globalnavbar.js"></script>
 
-		<script defer src="ac/globalmain/1/pt_BR/scripts/globalmain.js"></script>
-		<script
-			defer
-			src="ac/globalslides/1/pt_BR/assets/2025/2025.1/1/01-3/news.js"></script>
-		<script
-			defer
-			src="ac/globalfooter/1/pt_BR/scripts/globalfooter.js"></script>
-	</head>
+	<script defer src="ac/globalmain/1/pt_BR/scripts/globalmain.js"></script>
+	<script defer src="ac/globalslides/1/pt_BR/assets/2025/2025.1/1/01-3/news.js"></script>
+	<script defer src="ac/globalfooter/1/pt_BR/scripts/globalfooter.js"></script>
+</head>
 
-	<body>
-		<!-- header + navbar + section -->
-		<div id="globaltop" class="globaltop">
-			<!-- GROUP: header-navbar-section -->
-			<header id="globalheader" class="globalheader">
-				<div class="globalheader-content">
-					<!-- gov.br + UnBTV -->
-					<div class="globalheader-list globalheader-list-unbt-gov">
-						<!-- link: GOVBR -->
-						<li class="globalheader-item globalheader-item-govbr">
-							<a
-								href="#"
-								class="globalheader-link globalheader-link-govbr">
-								<span
-									class="globalheader-image-regular globalnav-link-image">
-									<!-- image-govbr -->
-								</span>
-								<!-- texto-govbr -->
-								<span class="globalheader-link-text">gov.br</span>
-							</a>
-						</li>
-						<!-- link: UnBTV -->
-						<li class="globalheader-item globalheader-item-unbtv">
-							<a
-								href="#"
-								class="globalheader-link globalheader-link-unbtv">
-								<span
-									class="globalheader-image-regular globalnav-link-image">
-									<!-- image-govbr -->
-								</span>
-								<!-- texto-govbr -->
-								<span class="globalheader-link-text">eduplayUnBTV</span>
-							</a>
-						</li>
-					</div>
-					<!-- lista à esquerda -->
-					<ul class="globalheader-list" id="globalheader-list-gov">
-						<!-- link-03: CORONAVARIUS  -->
-						<li class="globalheader-item globalheader-item-coronavarius">
-							<a
-								href="#"
-								class="globalheader-link globalheader-link-coronavarius">
-								<span
-									class="globalheader-image-regular globalheader-link-image">
-									<!-- image-govbr -->
-								</span>
-								<!-- texto-govbr -->
-								<span
-									class="globalheader-link-text globalheader-link-text-covid"
-									>CORONAVIRUS (COVID-19)</span
-								>
-								<span
-									class="globalheader-link-text-alternativo visuallyhidden"
-									>(COVID-19)</span
-								>
-							</a>
-						</li>
-						<!-- Espaçador -->
-						<span
-							class="globalheader-espacador globalheader-espacador-01"></span>
-						<!-- link-03: Acesso à Informação  -->
-						<li class="globalheader-item globalheader-item-moreinfo">
-							<a
-								href="#"
-								class="globalheader-link globalheader-link-moreinfo">
-								<span
-									class="globalheader-image-regular globalheader-link-image">
-									<!-- image-govbr -->
-								</span>
-								<!-- texto-govbr -->
-								<span class="globalheader-link-text"
-									>Acesso à informação</span
-								>
-							</a>
-						</li>
-						<!-- Espaçador -->
-						<span
-							class="globalheader-espacador globalheader-espacador-02"></span>
-						<!-- link-03: Participe  -->
-						<li class="globalheader-item globalheader-item-participe">
-							<a
-								href="#"
-								class="globalheader-link globalheader-link-participe">
-								<span
-									class="globalheader-image-regular globalheader-link-image">
-									<!-- image-govbr -->
-								</span>
-								<!-- texto-govbr -->
-								<span class="globalheader-link-text">Participe</span>
-							</a>
-						</li>
-						<!-- Espaçador -->
-						<span
-							class="globalheader-espacador globalheader-espacador-03"></span>
-						<!-- link-03: Legislação  -->
-						<li class="globalheader-item globalheader-item-legislacao">
-							<a
-								href="#"
-								class="globalheader-link globalheader-link-legislacao">
-								<span
-									class="globalheader-image-regular globalheader-link-image">
-									<!-- image-govbr -->
-								</span>
-								<!-- texto-govbr -->
-								<span class="globalheader-link-text">Legislação</span>
-							</a>
-						</li>
-						<!-- Espaçador -->
-						<span
-							class="globalheader-espacador globalheader-espacador-04"></span>
-						<!-- link-03: Orgão do Governo  -->
-						<li class="globalheader-item globalheader-item-orggovbr">
-							<a
-								href="#"
-								class="globalheader-link globalheader-link-orggovbr">
-								<span
-									class="globalheader-image-regular globalheader-link-image">
-									<!-- image-govbr -->
-								</span>
-								<!-- texto-govbr -->
-								<span class="globalheader-link-text"
-									>Orgão do Governo</span
-								>
-							</a>
-						</li>
-						<!-- Espaçador -->
-						<span
-							class="globalheader-espacador globalheader-espacador-05"></span>
-						<!-- link-03: Acessibilidade  -->
-						<li class="globalheader-item globalheader-item-acessibilidade">
-							<a
-								href="#"
-								class="globalheader-link globalheader-link-acessibilidade">
-								<span
-									class="globalheader-image-regular globalheader-link-image">
-									<!-- image-govbr -->
-								</span>
-								<!-- texto-govbr -->
-								<span class="globalheader-link-text">Acessibilidade</span>
-							</a>
-						</li>
-					</ul>
+<body>
+	<!-- header + navbar + section -->
+	<div id="globaltop" class="globaltop">
+		<!-- GROUP: header-navbar-section -->
+		<header id="globalheader" class="globalheader">
+			<div class="globalheader-content">
+				<!-- gov.br + UnBTV -->
+				<div class="globalheader-list globalheader-list-unbt-gov">
+					<!-- link: GOVBR -->
+					<li class="globalheader-item globalheader-item-govbr">
+						<a href="#" class="globalheader-link globalheader-link-govbr">
+							<span class="globalheader-image-regular globalnav-link-image">
+								<!-- image-govbr -->
+							</span>
+							<!-- texto-govbr -->
+							<span class="globalheader-link-text">gov.br</span>
+						</a>
+					</li>
+					<!-- link: UnBTV -->
+					<li class="globalheader-item globalheader-item-unbtv">
+						<a href="#" class="globalheader-link globalheader-link-unbtv">
+							<span class="globalheader-image-regular globalnav-link-image">
+								<!-- image-govbr -->
+							</span>
+							<!-- texto-govbr -->
+							<span class="globalheader-link-text">eduplayUnBTV</span>
+						</a>
+					</li>
 				</div>
-			</header>
-			<!-- .final: HEADER -->
+				<!-- lista à esquerda -->
+				<ul class="globalheader-list" id="globalheader-list-gov">
+					<!-- link-03: CORONAVARIUS  -->
+					<li class="globalheader-item globalheader-item-coronavarius">
+						<a href="#" class="globalheader-link globalheader-link-coronavarius">
+							<span class="globalheader-image-regular globalheader-link-image">
+								<!-- image-govbr -->
+							</span>
+							<!-- texto-govbr -->
+							<span class="globalheader-link-text globalheader-link-text-covid">CORONAVIRUS
+								(COVID-19)</span>
+							<span class="globalheader-link-text-alternativo visuallyhidden">(COVID-19)</span>
+						</a>
+					</li>
+					<!-- Espaçador -->
+					<span class="globalheader-espacador globalheader-espacador-01"></span>
+					<!-- link-03: Acesso à Informação  -->
+					<li class="globalheader-item globalheader-item-moreinfo">
+						<a href="#" class="globalheader-link globalheader-link-moreinfo">
+							<span class="globalheader-image-regular globalheader-link-image">
+								<!-- image-govbr -->
+							</span>
+							<!-- texto-govbr -->
+							<span class="globalheader-link-text">Acesso à informação</span>
+						</a>
+					</li>
+					<!-- Espaçador -->
+					<span class="globalheader-espacador globalheader-espacador-02"></span>
+					<!-- link-03: Participe  -->
+					<li class="globalheader-item globalheader-item-participe">
+						<a href="#" class="globalheader-link globalheader-link-participe">
+							<span class="globalheader-image-regular globalheader-link-image">
+								<!-- image-govbr -->
+							</span>
+							<!-- texto-govbr -->
+							<span class="globalheader-link-text">Participe</span>
+						</a>
+					</li>
+					<!-- Espaçador -->
+					<span class="globalheader-espacador globalheader-espacador-03"></span>
+					<!-- link-03: Legislação  -->
+					<li class="globalheader-item globalheader-item-legislacao">
+						<a href="#" class="globalheader-link globalheader-link-legislacao">
+							<span class="globalheader-image-regular globalheader-link-image">
+								<!-- image-govbr -->
+							</span>
+							<!-- texto-govbr -->
+							<span class="globalheader-link-text">Legislação</span>
+						</a>
+					</li>
+					<!-- Espaçador -->
+					<span class="globalheader-espacador globalheader-espacador-04"></span>
+					<!-- link-03: Orgão do Governo  -->
+					<li class="globalheader-item globalheader-item-orggovbr">
+						<a href="#" class="globalheader-link globalheader-link-orggovbr">
+							<span class="globalheader-image-regular globalheader-link-image">
+								<!-- image-govbr -->
+							</span>
+							<!-- texto-govbr -->
+							<span class="globalheader-link-text">Orgão do Governo</span>
+						</a>
+					</li>
+					<!-- Espaçador -->
+					<span class="globalheader-espacador globalheader-espacador-05"></span>
+					<!-- link-03: Acessibilidade  -->
+					<li class="globalheader-item globalheader-item-acessibilidade">
+						<a href="#" class="globalheader-link globalheader-link-acessibilidade">
+							<span class="globalheader-image-regular globalheader-link-image">
+								<!-- image-govbr -->
+							</span>
+							<!-- texto-govbr -->
+							<span class="globalheader-link-text">Acessibilidade</span>
+						</a>
+					</li>
+				</ul>
+			</div>
+		</header>
+		<!-- .final: HEADER -->
 
-			<!-- navbar -->
-			<nav id="globalnavbar" class="globalnavbar">
-				<div class="globalnavbar-content">
-					<!-- lista ittens navbar: graduação, posgraduação,... -->
-					<ul class="globalnavbar-list">
-						<!-- item-01 -->
-						<li class="globalnavbar-item globalnavbar-item-estatistica">
-							<a
-								href=""
-								class="globalnavbar-link globalnavbar-link-estatistica">
-								<span class="globalnavbar-link-estatistica-container">
-									<!-- estatistica - Estatística -->
-									<span
-										class="globalnavbar-link-text globalnavbar-link-text-estatistica"
-										>Estatística</span
-									>
-									<!-- img -->
-									<span
-										class="globalnavbar-estatistica-regular globalnavbar-link-estatistica">
-										<svg
-											width="15"
-											height="44"
-											viewBox="0 0 15 14"
-											fill="none"
-											xmlns="http://www.w3.org/2000/svg">
-											<path
-												fill-rule="evenodd"
-												clip-rule="evenodd"
-												d="M5.55554 0.14135C2.8274 0.724643 0.706755 2.86846 0.142622 5.61333C-0.631706 9.38086 1.82483 13.0771 5.62171 13.8574C9.38923 14.6317 13.0854 12.1752 13.8658 8.37829C14.6401 4.61077 12.1835 0.914557 8.38667 0.134247C7.50365 -0.0472552 6.42473 -0.0445449 5.55554 0.14135ZM8.68229 0.840815C9.79943 1.13485 10.5888 1.6029 11.493 2.50705C12.8059 3.8199 13.3659 5.16201 13.3659 6.99581C13.3659 8.82962 12.8059 10.1717 11.493 11.4846C10.1984 12.7792 8.7893 13.3715 7.00419 13.3715C5.21907 13.3715 3.80996 12.7792 2.51542 11.4846C1.22079 10.19 0.628528 8.78093 0.628528 6.99581C0.628528 5.2107 1.22079 3.80158 2.51542 2.50705C4.21782 0.804552 6.35304 0.227708 8.68229 0.840815ZM7.96282 1.89628C7.69365 2.12273 7.44159 2.60425 7.33672 3.09193L7.28196 3.34708L5.32992 3.37231L3.37788 3.39755L4.62812 4.78853C5.31571 5.55361 5.86415 6.2055 5.84676 6.23719C5.82938 6.26887 5.2416 7.2933 4.54045 8.51363C3.8394 9.73395 3.26573 10.7539 3.26573 10.7801C3.26573 10.8063 3.89659 10.8277 4.66765 10.8277C5.43871 10.8277 6.06957 10.8516 6.06957 10.8806C6.06957 10.9097 6.02256 11.0253 5.96518 11.1376C5.78068 11.4984 5.48684 11.6646 5.02953 11.6668C4.56998 11.669 4.34399 11.8214 4.47821 12.0386C4.58634 12.2136 5.41254 12.1908 5.77592 12.0028C6.09658 11.837 6.40267 11.4433 6.49408 11.079L6.55716 10.8277H8.65163H10.7462L10.6934 10.6174C10.6643 10.5018 10.5662 10.1128 10.4753 9.75292C10.2819 8.98691 10.0891 8.88897 9.96907 9.49591L9.89046 9.89312H8.30713C6.78801 9.89312 6.7238 9.88555 6.7238 9.70685C6.7238 9.52965 7.50224 4.7089 7.61814 4.1686C7.67262 3.91448 7.6816 3.91158 8.41349 3.91158C9.11857 3.91158 9.15389 3.92158 9.15511 4.12187C9.15941 4.83424 9.47559 4.97761 9.56727 4.3088C9.60083 4.06467 9.65092 3.74924 9.67877 3.60783L9.72943 3.35082H8.78734H7.84534V3.10819C7.84534 2.78472 8.10414 2.36255 8.37938 2.23722C8.60219 2.13563 8.79799 2.20059 9.26801 2.53209C9.39484 2.62154 9.454 2.6207 9.54634 2.52836C9.69859 2.37611 9.56886 2.16086 9.15455 1.8788C8.74715 1.6014 8.30564 1.60785 7.96282 1.89628ZM7.15055 4.1686C7.12008 4.31001 7.03344 4.77872 6.95821 5.21032C6.88288 5.64184 6.80633 6.00979 6.7882 6.02793C6.74932 6.06681 4.85457 4.04654 4.85457 3.96626C4.85457 3.93616 5.38366 3.91158 6.03023 3.91158H7.20597L7.15055 4.1686ZM6.41678 8.58466L6.20397 9.84639L5.58114 9.87386L4.95832 9.90143L5.77096 8.50241C6.2179 7.73294 6.59399 7.15283 6.6066 7.21311C6.61922 7.27349 6.5338 7.89071 6.41678 8.58466Z" />
-										</svg>
-									</span>
-								</span>
-							</a>
-						</li>
-						<!-- tem-02 -->
-						<li class="globalnavbar-item globalnavbar-item-graduacao">
-							<a
-								href=""
-								class="globalnavbar-link globalnavbar-link-graduacao">
-								<span class="globalnavbar-link-graduacao-container">
-									<span class="globalnavbar-link-text">Graduação</span>
-									<!-- img -->
-									<span
-										class="visuallyhidden globalnavbar-graduacao-regular globalnavbar-link-graduacao">
-										<svg height="44" viewBox="0 0 15 44" width="15">
-											<!-- <path d="COLOQUE-CÓDIGO site-https://yqnn.github.io/svg-path-editor/ " /> -->
-										</svg>
-									</span>
-								</span>
-							</a>
-						</li>
-						<!-- item-03 -->
-						<li class="globalnavbar-item globalnavbar-item-posgraduacao">
-							<a
-								href=""
-								class="globalnavbar-link globalnavbar-link-posgraduacao">
-								<span class="globalnavbar-link-posgraduacao-container">
-									<span class="globalnavbar-link-text"
-										>Pós-Graduação</span
-									>
-									<!-- img -->
-									<span
-										class="visuallyhidden globalnavbar-posgraduacao-regular globalnavbar-link-posgraduacao">
-										<svg height="44" viewBox="0 0 15 44" width="XX">
-											<!-- <path d="COLOQUE-CÓDIGO site-https://yqnn.github.io/svg-path-editor/ " /> -->
-										</svg>
-									</span>
-								</span>
-							</a>
-						</li>
-						<!-- item-04 -->
-						<li class="globalnavbar-item globalnavbar-item-extensao">
-							<a
-								href=""
-								class="globalnavbar-link globalnavbar-link-extensao">
-								<span class="globalnavbar-link-extensao-container">
-									<span class="globalnavbar-link-text">Extensão</span>
-									<!-- img -->
-									<span
-										class="visuallyhidden globalnavbar-extensao-regular globalnavbar-link-extensao">
-										<svg height="44" viewBox="0 0 15 44" width="XX">
-											<!-- <path d="COLOQUE-CÓDIGO site-https://yqnn.github.io/svg-path-editor/ " /> -->
-										</svg>
-									</span>
-								</span>
-							</a>
-						</li>
-						<!-- item-05 -->
-						<li class="globalnavbar-item globalnavbar-item-docentes">
-							<a
-								href=""
-								class="globalnavbar-link globalnavbar-link-docentes">
-								<span class="globalnavbar-link-docentes-container">
-									<span class="globalnavbar-link-text">Docentes</span>
-									<!-- img -->
-									<span
-										class="visuallyhidden globalnavbar-docentes-regular globalnavbar-link-docentes">
-										<svg height="44" viewBox="0 0 15 44" width="XX">
-											<!-- <path d="COLOQUE-CÓDIGO site-https://yqnn.github.io/svg-path-editor/ " /> -->
-										</svg>
-									</span>
-								</span>
-							</a>
-						</li>
-						<!-- item-06 -->
-						<li class="globalnavbar-item globalnavbar-item-pesquisa">
-							<a
-								href=""
-								class="globalnavbar-link globalnavbar-link-pesquisa">
-								<span class="globalnavbar-link-pesquisa-container">
-									<span class="globalnavbar-link-text">Pesquisa</span>
-									<!-- img -->
-									<span
-										class="visuallyhidden globalnavbar-pesquisa-regular globalnavbar-link-pesquisa">
-										<svg height="44" viewBox="0 0 15 44" width="XX">
-											<!-- <path d="COLOQUE-CÓDIGO site-https://yqnn.github.io/svg-path-editor/ " /> -->
-										</svg>
-									</span>
-								</span>
-							</a>
-						</li>
-						<!-- item-07 -->
-						<li class="globalnavbar-item globalnavbar-item-eventos">
-							<a
-								href=""
-								class="globalnavbar-link globalnavbar-link-eventos">
-								<span class="globalnavbar-link-eventos-container">
-									<span class="globalnavbar-link-text">Eventos</span>
-									<!-- img -->
-									<span
-										class="visuallyhidden globalnavbar-eventos-regular globalnavbar-link-eventos">
-										<svg height="44" viewBox="0 0 15 44" width="XX">
-											<!-- <path d="COLOQUE-CÓDIGO site-https://yqnn.github.io/svg-path-editor/ " /> -->
-										</svg>
-									</span>
-								</span>
-							</a>
-						</li>
-						<!-- item-08 -->
-						<li class="globalnavbar-item globalnavbar-item-noticias">
-							<a
-								href=""
-								class="globalnavbar-link globalnavbar-link-noticias">
-								<span class="globalnavbar-link-noticias-container">
-									<span class="globalnavbar-link-text">Notícias</span>
-									<!-- img -->
-									<span
-										class="visuallyhidden globalnavbar-noticias-regular globalnavbar-link-noticias">
-										<svg height="44" viewBox="0 0 15 44" width="XX">
-											<!-- <path d="COLOQUE-CÓDIGO site-https://yqnn.github.io/svg-path-editor/ " /> -->
-										</svg>
-									</span>
-								</span>
-							</a>
-						</li>
-						<!-- item-09 -->
-						<li class="globalnavbar-item globalnavbar-item-ouvidoria">
-							<a
-								href=""
-								class="globalnavbar-link globalnavbar-link-ouvidoria">
-								<span class="globalnavbar-link-ouvidoria-container">
-									<span class="globalnavbar-link-text">Ouvidoria</span>
-									<!-- img -->
-									<span
-										class="visuallyhidden globalnavbar-ouvidoria-regular globalnavbar-link-ouvidoria">
-										<svg height="44" viewBox="0 0 15 44" width="XX">
-											<!-- <path d="COLOQUE-CÓDIGO site-https://yqnn.github.io/svg-path-editor/ " /> -->
-										</svg>
-									</span>
-								</span>
-							</a>
-						</li>
-						<!-- item-10 -->
-						<li class="globalnavbar-item globalnavbar-item-instalacoes">
-							<a
-								href=""
-								class="globalnavbar-link globalnavbar-link-instalacoes">
-								<span class="globalnavbar-link-instalacoes-container">
-									<span class="globalnavbar-link-text">Instalações</span>
-									<!-- img -->
-									<span
-										class="visuallyhidden globalnavbar-instalacoes-regular globalnavbar-link-instalacoes">
-										<svg height="44" viewBox="0 0 15 44" width="XX">
-											<!-- <path d="COLOQUE-CÓDIGO site-https://yqnn.github.io/svg-path-editor/ " /> -->
-										</svg>
-									</span>
-								</span>
-							</a>
-						</li>
-						<!-- item-11 -->
-						<li class="globalnavbar-item globalnavbar-item-contato">
-							<a
-								href=""
-								class="globalnavbar-link globalnavbar-link-contato">
-								<span class="globalnavbar-link-contato-container">
-									<span class="globalnavbar-link-text">Contato</span>
-									<!-- img -->
-									<span
-										class="visuallyhidden globalnavbar-contato-regular globalnavbar-link-contato">
-										<svg height="44" viewBox="0 0 15 44" width="XX">
-											<!-- <path d="COLOQUE-CÓDIGO site-https://yqnn.github.io/svg-path-editor/ " /> -->
-										</svg>
-									</span>
-								</span>
-							</a>
-						</li>
-						<!-- item-12 search -->
-						<li class="globalnavbar-item globalnavbar-search">
-							<a
-								role="button"
-								class="globalnavbar-link globalnavbar-link-search"
-								href=""
-								aria-label="Search apple.com">
-								<!-- 2-imgs -->
-								<span class="visuallyhidden globalnavbar-image-regular">
-									<svg
-										xmlns="http://www.w3.org/2000/svg"
-										width="15px"
-										height="44px"
-										viewBox="0 0 15 44">
-										<path
-											d="M14.298,27.202l-3.87-3.87c0.701-0.929,1.122-2.081,1.122-3.332c0-3.06-2.489-5.55-5.55-5.55c-3.06,0-5.55,2.49-5.55,5.55 c0,3.061,2.49,5.55,5.55,5.55c1.251,0,2.403-0.421,3.332-1.122l3.87,3.87c0.151,0.151,0.35,0.228,0.548,0.228 s0.396-0.076,0.548-0.228C14.601,27.995,14.601,27.505,14.298,27.202z M1.55,20c0-2.454,1.997-4.45,4.45-4.45 c2.454,0,4.45,1.997,4.45,4.45S8.454,24.45,6,24.45C3.546,24.45,1.55,22.454,1.55,20z"></path>
-									</svg>
-								</span>
-								<span class="globalnavbar-image-compact">
-									<svg
-										height="48"
-										viewBox="0 0 17 48"
-										width="17"
+		<!-- navbar -->
+		<nav id="globalnavbar" class="globalnavbar">
+			<div class="globalnavbar-content">
+				<!-- lista ittens navbar: graduação, posgraduação,... -->
+				<ul class="globalnavbar-list">
+					<!-- item-01 -->
+					<li class="globalnavbar-item globalnavbar-item-estatistica">
+						<a href="" class="globalnavbar-link globalnavbar-link-estatistica">
+							<span class="globalnavbar-link-estatistica-container">
+								<!-- estatistica - Estatística -->
+								<span
+									class="globalnavbar-link-text globalnavbar-link-text-estatistica">Estatística</span>
+								<!-- img -->
+								<span class="globalnavbar-estatistica-regular globalnavbar-link-estatistica">
+									<svg width="15" height="44" viewBox="0 0 15 14" fill="none"
 										xmlns="http://www.w3.org/2000/svg">
-										<path
-											d="m16.2294 29.9556-4.1755-4.0821a6.4711 6.4711 0 1 0 -1.2839 1.2625l4.2005 4.1066a.9.9 0 1 0 1.2588-1.287zm-14.5294-8.0017a5.2455 5.2455 0 1 1 5.2455 5.2527 5.2549 5.2549 0 0 1 -5.2455-5.2527z"></path>
+										<path fill-rule="evenodd" clip-rule="evenodd"
+											d="M5.55554 0.14135C2.8274 0.724643 0.706755 2.86846 0.142622 5.61333C-0.631706 9.38086 1.82483 13.0771 5.62171 13.8574C9.38923 14.6317 13.0854 12.1752 13.8658 8.37829C14.6401 4.61077 12.1835 0.914557 8.38667 0.134247C7.50365 -0.0472552 6.42473 -0.0445449 5.55554 0.14135ZM8.68229 0.840815C9.79943 1.13485 10.5888 1.6029 11.493 2.50705C12.8059 3.8199 13.3659 5.16201 13.3659 6.99581C13.3659 8.82962 12.8059 10.1717 11.493 11.4846C10.1984 12.7792 8.7893 13.3715 7.00419 13.3715C5.21907 13.3715 3.80996 12.7792 2.51542 11.4846C1.22079 10.19 0.628528 8.78093 0.628528 6.99581C0.628528 5.2107 1.22079 3.80158 2.51542 2.50705C4.21782 0.804552 6.35304 0.227708 8.68229 0.840815ZM7.96282 1.89628C7.69365 2.12273 7.44159 2.60425 7.33672 3.09193L7.28196 3.34708L5.32992 3.37231L3.37788 3.39755L4.62812 4.78853C5.31571 5.55361 5.86415 6.2055 5.84676 6.23719C5.82938 6.26887 5.2416 7.2933 4.54045 8.51363C3.8394 9.73395 3.26573 10.7539 3.26573 10.7801C3.26573 10.8063 3.89659 10.8277 4.66765 10.8277C5.43871 10.8277 6.06957 10.8516 6.06957 10.8806C6.06957 10.9097 6.02256 11.0253 5.96518 11.1376C5.78068 11.4984 5.48684 11.6646 5.02953 11.6668C4.56998 11.669 4.34399 11.8214 4.47821 12.0386C4.58634 12.2136 5.41254 12.1908 5.77592 12.0028C6.09658 11.837 6.40267 11.4433 6.49408 11.079L6.55716 10.8277H8.65163H10.7462L10.6934 10.6174C10.6643 10.5018 10.5662 10.1128 10.4753 9.75292C10.2819 8.98691 10.0891 8.88897 9.96907 9.49591L9.89046 9.89312H8.30713C6.78801 9.89312 6.7238 9.88555 6.7238 9.70685C6.7238 9.52965 7.50224 4.7089 7.61814 4.1686C7.67262 3.91448 7.6816 3.91158 8.41349 3.91158C9.11857 3.91158 9.15389 3.92158 9.15511 4.12187C9.15941 4.83424 9.47559 4.97761 9.56727 4.3088C9.60083 4.06467 9.65092 3.74924 9.67877 3.60783L9.72943 3.35082H8.78734H7.84534V3.10819C7.84534 2.78472 8.10414 2.36255 8.37938 2.23722C8.60219 2.13563 8.79799 2.20059 9.26801 2.53209C9.39484 2.62154 9.454 2.6207 9.54634 2.52836C9.69859 2.37611 9.56886 2.16086 9.15455 1.8788C8.74715 1.6014 8.30564 1.60785 7.96282 1.89628ZM7.15055 4.1686C7.12008 4.31001 7.03344 4.77872 6.95821 5.21032C6.88288 5.64184 6.80633 6.00979 6.7882 6.02793C6.74932 6.06681 4.85457 4.04654 4.85457 3.96626C4.85457 3.93616 5.38366 3.91158 6.03023 3.91158H7.20597L7.15055 4.1686ZM6.41678 8.58466L6.20397 9.84639L5.58114 9.87386L4.95832 9.90143L5.77096 8.50241C6.2179 7.73294 6.59399 7.15283 6.6066 7.21311C6.61922 7.27349 6.5338 7.89071 6.41678 8.58466Z" />
 									</svg>
 								</span>
-							</a>
-							<!-- TELA PEQUENA (DIREÇÕES HEADER-NAVBAR-LOGO) -->
-							<!-- (Gov.br) - (Logo Estat | UnB) - (Search + Perfil) -->
-						</li>
-					</ul>
-				</div>
-			</nav>
-			<!-- .Finalnavbar -->
-			<!-- elemtentos adicionais - Animação + Transição -->
-			<div id="globalnav-curtain" class="globalnav-curtain"></div>
-			<div id="globalnav-placeholder" class="globalnav-placeholder"></div>
-			<!-- section: Noticias-->
-			<section
-				id="globalsection"
-				class="globalsection homepage-section collection-module">
-				<!-- section: Opção texto 1 -->
-				<div
-					id="globalsection-01"
-					class="globalsection-content background-white">
-					<div class="globalsection-item module-content">
-						<!-- ribbon = fita.traduzido.. -->
-						<div id="noticia" class="ribbon-tax-holiday">
-							<div class="section-content">
-								<span
-									id="content-noticia"
-									class="tax-holiday-ribbon-copy tax-holiday-hide tax-holiday-show">
-									For a limited time, shop select products tax‑free —
-									online and in stores.
-									<a
-										href="/us/shop/goto/campaigns/tax_holiday"
-										target="_self"
-										data-analytics-title="learn more - tax holiday 2023"
-										aria-label="Learn more, tax holiday 2023"
-										>Learn more.
-										<span  class="icon icon-after icon-chevronright">
-											</svg>
-										</span>
-									</a>
+							</span>
+						</a>
+					</li>
+					<!-- tem-02 -->
+					<li class="globalnavbar-item globalnavbar-item-graduacao">
+						<a href="" class="globalnavbar-link globalnavbar-link-graduacao">
+							<span class="globalnavbar-link-graduacao-container">
+								<span class="globalnavbar-link-text">Graduação</span>
+								<!-- img -->
+								<span class="visuallyhidden globalnavbar-graduacao-regular globalnavbar-link-graduacao">
+									<svg height="44" viewBox="0 0 15 44" width="15">
+										<!-- <path d="COLOQUE-CÓDIGO site-https://yqnn.github.io/svg-path-editor/ " /> -->
+									</svg>
 								</span>
-							</div>
+							</span>
+						</a>
+					</li>
+					<!-- item-03 -->
+					<li class="globalnavbar-item globalnavbar-item-posgraduacao">
+						<a href="" class="globalnavbar-link globalnavbar-link-posgraduacao">
+							<span class="globalnavbar-link-posgraduacao-container">
+								<span class="globalnavbar-link-text">Pós-Graduação</span>
+								<!-- img -->
+								<span
+									class="visuallyhidden globalnavbar-posgraduacao-regular globalnavbar-link-posgraduacao">
+									<svg height="44" viewBox="0 0 15 44" width="XX">
+										<!-- <path d="COLOQUE-CÓDIGO site-https://yqnn.github.io/svg-path-editor/ " /> -->
+									</svg>
+								</span>
+							</span>
+						</a>
+					</li>
+					<!-- item-04 -->
+					<li class="globalnavbar-item globalnavbar-item-extensao">
+						<a href="" class="globalnavbar-link globalnavbar-link-extensao">
+							<span class="globalnavbar-link-extensao-container">
+								<span class="globalnavbar-link-text">Extensão</span>
+								<!-- img -->
+								<span class="visuallyhidden globalnavbar-extensao-regular globalnavbar-link-extensao">
+									<svg height="44" viewBox="0 0 15 44" width="XX">
+										<!-- <path d="COLOQUE-CÓDIGO site-https://yqnn.github.io/svg-path-editor/ " /> -->
+									</svg>
+								</span>
+							</span>
+						</a>
+					</li>
+					<!-- item-05 -->
+					<li class="globalnavbar-item globalnavbar-item-docentes">
+						<a href="" class="globalnavbar-link globalnavbar-link-docentes">
+							<span class="globalnavbar-link-docentes-container">
+								<span class="globalnavbar-link-text">Docentes</span>
+								<!-- img -->
+								<span class="visuallyhidden globalnavbar-docentes-regular globalnavbar-link-docentes">
+									<svg height="44" viewBox="0 0 15 44" width="XX">
+										<!-- <path d="COLOQUE-CÓDIGO site-https://yqnn.github.io/svg-path-editor/ " /> -->
+									</svg>
+								</span>
+							</span>
+						</a>
+					</li>
+					<!-- item-06 -->
+					<li class="globalnavbar-item globalnavbar-item-pesquisa">
+						<a href="" class="globalnavbar-link globalnavbar-link-pesquisa">
+							<span class="globalnavbar-link-pesquisa-container">
+								<span class="globalnavbar-link-text">Pesquisa</span>
+								<!-- img -->
+								<span class="visuallyhidden globalnavbar-pesquisa-regular globalnavbar-link-pesquisa">
+									<svg height="44" viewBox="0 0 15 44" width="XX">
+										<!-- <path d="COLOQUE-CÓDIGO site-https://yqnn.github.io/svg-path-editor/ " /> -->
+									</svg>
+								</span>
+							</span>
+						</a>
+					</li>
+					<!-- item-07 -->
+					<li class="globalnavbar-item globalnavbar-item-eventos">
+						<a href="" class="globalnavbar-link globalnavbar-link-eventos">
+							<span class="globalnavbar-link-eventos-container">
+								<span class="globalnavbar-link-text">Eventos</span>
+								<!-- img -->
+								<span class="visuallyhidden globalnavbar-eventos-regular globalnavbar-link-eventos">
+									<svg height="44" viewBox="0 0 15 44" width="XX">
+										<!-- <path d="COLOQUE-CÓDIGO site-https://yqnn.github.io/svg-path-editor/ " /> -->
+									</svg>
+								</span>
+							</span>
+						</a>
+					</li>
+					<!-- item-08 -->
+					<li class="globalnavbar-item globalnavbar-item-noticias">
+						<a href="" class="globalnavbar-link globalnavbar-link-noticias">
+							<span class="globalnavbar-link-noticias-container">
+								<span class="globalnavbar-link-text">Notícias</span>
+								<!-- img -->
+								<span class="visuallyhidden globalnavbar-noticias-regular globalnavbar-link-noticias">
+									<svg height="44" viewBox="0 0 15 44" width="XX">
+										<!-- <path d="COLOQUE-CÓDIGO site-https://yqnn.github.io/svg-path-editor/ " /> -->
+									</svg>
+								</span>
+							</span>
+						</a>
+					</li>
+					<!-- item-09 -->
+					<li class="globalnavbar-item globalnavbar-item-ouvidoria">
+						<a href="" class="globalnavbar-link globalnavbar-link-ouvidoria">
+							<span class="globalnavbar-link-ouvidoria-container">
+								<span class="globalnavbar-link-text">Ouvidoria</span>
+								<!-- img -->
+								<span class="visuallyhidden globalnavbar-ouvidoria-regular globalnavbar-link-ouvidoria">
+									<svg height="44" viewBox="0 0 15 44" width="XX">
+										<!-- <path d="COLOQUE-CÓDIGO site-https://yqnn.github.io/svg-path-editor/ " /> -->
+									</svg>
+								</span>
+							</span>
+						</a>
+					</li>
+					<!-- item-10 -->
+					<li class="globalnavbar-item globalnavbar-item-instalacoes">
+						<a href="" class="globalnavbar-link globalnavbar-link-instalacoes">
+							<span class="globalnavbar-link-instalacoes-container">
+								<span class="globalnavbar-link-text">Instalações</span>
+								<!-- img -->
+								<span
+									class="visuallyhidden globalnavbar-instalacoes-regular globalnavbar-link-instalacoes">
+									<svg height="44" viewBox="0 0 15 44" width="XX">
+										<!-- <path d="COLOQUE-CÓDIGO site-https://yqnn.github.io/svg-path-editor/ " /> -->
+									</svg>
+								</span>
+							</span>
+						</a>
+					</li>
+					<!-- item-11 -->
+					<li class="globalnavbar-item globalnavbar-item-contato">
+						<a href="" class="globalnavbar-link globalnavbar-link-contato">
+							<span class="globalnavbar-link-contato-container">
+								<span class="globalnavbar-link-text">Contato</span>
+								<!-- img -->
+								<span class="visuallyhidden globalnavbar-contato-regular globalnavbar-link-contato">
+									<svg height="44" viewBox="0 0 15 44" width="XX">
+										<!-- <path d="COLOQUE-CÓDIGO site-https://yqnn.github.io/svg-path-editor/ " /> -->
+									</svg>
+								</span>
+							</span>
+						</a>
+					</li>
+					<!-- item-12 search -->
+					<li class="globalnavbar-item globalnavbar-search">
+						<a role="button" class="globalnavbar-link globalnavbar-link-search" href=""
+							aria-label="Search apple.com">
+							<!-- 2-imgs -->
+							<span class="visuallyhidden globalnavbar-image-regular">
+								<svg xmlns="http://www.w3.org/2000/svg" width="15px" height="44px" viewBox="0 0 15 44">
+									<path
+										d="M14.298,27.202l-3.87-3.87c0.701-0.929,1.122-2.081,1.122-3.332c0-3.06-2.489-5.55-5.55-5.55c-3.06,0-5.55,2.49-5.55,5.55 c0,3.061,2.49,5.55,5.55,5.55c1.251,0,2.403-0.421,3.332-1.122l3.87,3.87c0.151,0.151,0.35,0.228,0.548,0.228 s0.396-0.076,0.548-0.228C14.601,27.995,14.601,27.505,14.298,27.202z M1.55,20c0-2.454,1.997-4.45,4.45-4.45 c2.454,0,4.45,1.997,4.45,4.45S8.454,24.45,6,24.45C3.546,24.45,1.55,22.454,1.55,20z">
+									</path>
+								</svg>
+							</span>
+							<span class="globalnavbar-image-compact">
+								<svg height="48" viewBox="0 0 17 48" width="17" xmlns="http://www.w3.org/2000/svg">
+									<path
+										d="m16.2294 29.9556-4.1755-4.0821a6.4711 6.4711 0 1 0 -1.2839 1.2625l4.2005 4.1066a.9.9 0 1 0 1.2588-1.287zm-14.5294-8.0017a5.2455 5.2455 0 1 1 5.2455 5.2527 5.2549 5.2549 0 0 1 -5.2455-5.2527z">
+									</path>
+								</svg>
+							</span>
+						</a>
+						<!-- TELA PEQUENA (DIREÇÕES HEADER-NAVBAR-LOGO) -->
+						<!-- (Gov.br) - (Logo Estat | UnB) - (Search + Perfil) -->
+					</li>
+				</ul>
+			</div>
+		</nav>
+		<!-- .Finalnavbar -->
+		<!-- elemtentos adicionais - Animação + Transição -->
+		<div id="globalnav-curtain" class="globalnav-curtain"></div>
+		<div id="globalnav-placeholder" class="globalnav-placeholder"></div>
+		<!-- section: Noticias-->
+		<section id="globalsection" class="globalsection homepage-section collection-module">
+			<!-- section: Opção texto 1 -->
+			<div id="globalsection-01" class="globalsection-content background-white">
+				<div class="globalsection-item module-content">
+					<!-- ribbon = fita.traduzido.. -->
+					<div id="noticia" class="ribbon-tax-holiday">
+						<div class="section-content">
+							<span id="content-noticia"
+								class="tax-holiday-ribbon-copy tax-holiday-hide tax-holiday-show">
+								For a limited time, shop select products tax‑free —
+								online and in stores.
+								<a href="/us/shop/goto/campaigns/tax_holiday" target="_self"
+									data-analytics-title="learn more - tax holiday 2023"
+									aria-label="Learn more, tax holiday 2023">Learn more.
+									<span class="icon icon-after icon-chevronright">
+									</span>
+								</a>
+							</span>
 						</div>
 					</div>
 				</div>
-				<!-- section: Opção texto 2 -->
-				<div
-					id="globalsection-02"
-					class="globalsection-content glsec-01 background-white">
-					<div class="globalsection-item module-content">
-						<!-- ribbon = fita.traduzido.. -->
-						<div id="noticia" class="ribbon-iphone-ti">
-							<div class="section-content">
-								<span
-									id="content-noticia"
-									class="iphone-ti-ribbon-copy trade-in tax-holiday-hide tax-holiday-show">
-									Get $200–$640 in credit toward iPhone&nbsp;14
-									or&nbsp;iPhone&nbsp;14&nbsp;Pro when you trade in
-									iPhone&nbsp;11 or&nbsp;higher.
-									<sup>
-										<a href="#footnote-1" aria-label="Footnote 1"
-											>1
-										</a> </sup
-									>&nbsp;
-									<a
-										href="/us/shop/goto/buy_iphone"
-										target="_self"
-										data-analytics-title="shop iphone - 2023 trade in campaign"
-										>ShopiPhone
-										<span class="icon icon-after icon-chevronright"
-											></span
-										>
-									</a>
-								</span>
-							</div>
+			</div>
+			<!-- section: Opção texto 2 -->
+			<div id="globalsection-02" class="globalsection-content glsec-01 background-white">
+				<div class="globalsection-item module-content">
+					<!-- ribbon = fita.traduzido.. -->
+					<div id="noticia" class="ribbon-iphone-ti">
+						<div class="section-content">
+							<span id="content-noticia"
+								class="iphone-ti-ribbon-copy trade-in tax-holiday-hide tax-holiday-show">
+								Get $200–$640 in credit toward iPhone&nbsp;14
+								or&nbsp;iPhone&nbsp;14&nbsp;Pro when you trade in
+								iPhone&nbsp;11 or&nbsp;higher.
+								<sup>
+									<a href="#footnote-1" aria-label="Footnote 1">1
+									</a> </sup>&nbsp;
+								<a href="/us/shop/goto/buy_iphone" target="_self"
+									data-analytics-title="shop iphone - 2023 trade in campaign">ShopiPhone
+									<span class="icon icon-after icon-chevronright"></span>
+								</a>
+							</span>
 						</div>
 					</div>
 				</div>
-			</section>
-		</div>
-		<!-- Final: header + navbar + section -->
+			</div>
+		</section>
+	</div>
+	<!-- Final: header + navbar + section -->
+</body>
 
-	</body>
 </html>

@@ -4,15 +4,15 @@
 
 @font-face {
 	font-family: "fontello";
-	src: url("assets/icons/arrow/font/fontello.eot?13466744");
-	src: url("assets/icons/arrow/font/fontello.eot?13466744#iefix")
-			format("embedded-opentype"),
-		url("assets/icons/arrow/font/fontello.woff2?13466744") format("woff2"),
-		url("assets/icons/arrow/font/fontello.woff?13466744") format("woff"),
-		url("assets/icons/arrow/font/fontello.ttf.ttf?13466744") format("truetype"),
-		url("assets/icons/arrow/font/fontello.svg?13466744#fontello") format("svg");
 	font-weight: normal;
 	font-style: normal;
+	src: url("wss/fonts/Fontello/v1/fontello.eot?13466744");
+	src: url("wss/fonts/Fontello/v1/fontello.eot?13466744#iefix")
+			format("embedded-opentype"),
+		url("wss/fonts/Fontello/v1/fontello.woff2?13466744") format("woff2"),
+		url("wss/fonts/Fontello/v1/fontello.woff?13466744") format("woff"),
+		url("wss/fonts/Fontello/v1/fontello.ttf?13466744") format("truetype"),
+		url("wss/fonts/Fontello/v1/fontello.svg?13466744#fontello") format("svg");
 }
 
 /* Chrome hack: SVG is rendered more smooth in Windozze. 100% magic, uncomment if you need it. */
