@@ -1,0 +1,9 @@
+ideia 00 = construir uma api que vai na url
+
+{https://saa.unb.br/graduacao/calendario-academico#calendario-de-matricula}
+
+e pega os .PDFs dos 2 primeiros links.
+e colocar na section de noticias do home.
+
+link - padão : https://saa.unb.br/images/documentos/graduacao/Calendarios/Matricula/20xx_x/20xx_x_Calend_Mat_Grad_xx_xx_xx_vx.pdf
+
