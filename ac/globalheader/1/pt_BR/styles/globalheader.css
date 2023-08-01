@@ -1,12 +1,14 @@
 @charset "UTF-8";
-@import url("../../../../../wss/font.css");
 #globaltop {
 	all: unset;
 }
+@import url("../../../../../wss/font.css");
+/* 
 #globalheader html {
 	-ms-text-size-adjust: 100%;
 	-webkit-text-size-adjust: 100%;
 }
+*/
 #globalheader body {
 	margin: 0;
 	padding: 0;
@@ -120,8 +122,6 @@ html,
 body {
 	margin: 0;
 	padding: 0;
-	margin: 0;
-	padding: 0;
 	list-style: none;
 	text-decoration: none;
 	font-family: var(--font-pattenr);
@@ -151,31 +151,16 @@ body {
 	--altura-globalheader: 40px;
 	--largura-globalheader: 968px;
 
-	position: absolute;
-	z-index: 9999;
-	/* z-index: auto; */
-	top: 0;
-	right: 0;
-	left: 0;
-	width: 100%;
+	position: fixed;
 	min-width: 320px;
-	max-height: calc(
-		var(--altura-globalheader) + var(--altura-globalnav) +
-			var(--altura-globalsection)
-	);
+	max-height: max-content;
 
 	display: flex; /* display flex-column */
-	flex-direction: column;
 	justify-items: center;
-	align-items: center;
+
 	font-size: 18px;
-	user-select: none; /* impedir-selecionar-links */
-	user-select: none;
 	white-space: nowrap; /* não-quebrar-text */
 
-	-webkit-user-select: none;
-	-webkit-backdrop-filter: var(--globaltop-backdrop-filter);
-	backdrop-filter: var(--globaltop-backdrop-filter);
 }
 
 #globaltop.globaltop-light,
@@ -194,13 +179,6 @@ body {
 	--r-globaltop-color: rgba(255, 255, 255, 0.8);
 	--r-globaltop-color-secondary: #e8e8ed;
 	--r-globaltop-color-hover: #ffffff;
-}
-
-
-@media only screen and (min-width: 834px) {
-	#globaltop {
-		background: var(--globaltop-background);
-	}
 }
 
 .globalheader {
@@ -231,7 +209,7 @@ body {
 .globalheader-content .globalheader-list,
 .globalheader-content .globalheader-list-unbt-gov {
 	cursor: default;
-	user-select: none;
+	/* user-select: none; */
 	list-style: none;
 	width: auto;
 	height: var(--altura-globalheader);
