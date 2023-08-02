@@ -116,7 +116,6 @@
 		Helvetica Neue, Helvetica, Arial, sans-serif;
 }
 
-
 *, /* *::after, *::before, */
 html,
 body {
@@ -147,10 +146,6 @@ body {
 
 	--r-globaltop-previous-flyout-height: 0px;
 
-	/* myPropriedades */
-	--altura-globalheader: 40px;
-	--largura-globalheader: 968px;
-
 	position: fixed;
 	min-width: 320px;
 	max-height: max-content;
@@ -160,9 +155,8 @@ body {
 
 	font-size: 18px;
 	white-space: nowrap; /* não-quebrar-text */
-
 }
-
+/* 
 #globaltop.globaltop-light,
 .globalheader-dark #globaltop.globaltop-light,
 .theme-dark #globaltop.globaltop-light,
@@ -180,8 +174,11 @@ body {
 	--r-globaltop-color-secondary: #e8e8ed;
 	--r-globaltop-color-hover: #ffffff;
 }
-
-.globalheader {
+ */
+#globalheader {
+	/* myPropriedades */
+	--altura-globalheader: 40px;
+	--largura-globalheader: 968px;
 	--globalheader-color-link: rgba(255, 255, 255, 0.8);
 
 	background-color: #071d41;
@@ -190,11 +187,11 @@ body {
 
 	display: flex;
 	justify-content: center;
-	position: static;
+	position: relative;
 	z-index: 3;
 }
 
-.globalheader .globalheader-content {
+#globalheader .globalheader-content {
 	margin-left: 20px;
 	margin-right: 20px;
 	width: var(--largura-globalheader);
@@ -221,7 +218,7 @@ body {
 	align-items: center;
 }
 
-.globaltop .globalheader-item {
+#globaltop .globalheader-item {
 	box-sizing: border-box;
 	height: auto;
 	width: auto;
