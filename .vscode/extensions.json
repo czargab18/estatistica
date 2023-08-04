@@ -3,7 +3,6 @@
         "esbenp.prettier-vscode",
         "ms-ceintl.vscode-language-pack-pt-br",
         "dracula-theme.theme-dracula",
-        "davidanson.vscode-markdownlint",
         "ms-edgedevtools.vscode-edge-devtools",
         "ritwickdey.liveserver",
         "dotjoshjohnson.xml",
@@ -13,6 +12,7 @@
         "pkief.material-icon-theme",
         "reditorsupport.r",
         "rdebugger.r-debugger",
-        "stxr.iconfont-preview"
+        "stxr.iconfont-preview",
+        "github.github-vscode-theme"
     ]
 }
