@@ -1,0 +1,34 @@
+0000000000000000000000000000000000000000 aa5d910f538b111c564d9bb767a28ee09cbba154 cesar gabriel <cg279@Cesar.(none)> 1689984056 -0300	clone: from https://github.com/czargab18/estatistica.git
+aa5d910f538b111c564d9bb767a28ee09cbba154 089572d45e1b5f5acfea4dd2db561135c02d5c21 czargab18 <cesargabrielcode@.com> 1689993538 -0300	commit: [site] - v1.0.0
+089572d45e1b5f5acfea4dd2db561135c02d5c21 8028fbec7b9bddb2f6be0dec10de7932f351829b czargab18 <cesargabrielcode@.com> 1690063679 -0300	commit: [depEst v2] - header {css}
+8028fbec7b9bddb2f6be0dec10de7932f351829b cddd9a2db0076dd7c4f6a61cca8d4f8379d6779d czargab18 <cesargabrielcode@.com> 1690158731 -0300	commit: resposividade-header
+cddd9a2db0076dd7c4f6a61cca8d4f8379d6779d 3e77e26736acf5571ca456ae88581ba6fffb5f95 czargab18 <cesargabrielcode@.com> 1690159103 -0300	commit: resp-header
+3e77e26736acf5571ca456ae88581ba6fffb5f95 de8f0bc72b2915a2721b2939891eeb1f62c11205 czargab18 <cesargabrielcode@.com> 1690238416 -0300	commit: [css]- copyApple+ myCSS
+de8f0bc72b2915a2721b2939891eeb1f62c11205 16f454f8cf3e3ba69273af8fe8b04161cef73354 czargab18 <cesargabrielcode@.com> 1690242153 -0300	commit: css - copyApple corrigir
+16f454f8cf3e3ba69273af8fe8b04161cef73354 4c024479d1cd749f9b42375e17e1bda599ceffce czargab18 <cesargabrielcode@.com> 1690288564 -0300	commit: css-header-resposividade: 100%
+4c024479d1cd749f9b42375e17e1bda599ceffce 08bafa11d978970f28d9e90ea2ae49045077f176 czargab18 <cesargabrielcode@.com> 1690288595 -0300	commit: inicio-navbar
+08bafa11d978970f28d9e90ea2ae49045077f176 614640b6e2d3928ead825aa8a2845be4f9abf6af czargab18 <cesargabrielcode@.com> 1690289858 -0300	commit: navbar -sem responsividade
+614640b6e2d3928ead825aa8a2845be4f9abf6af 5ada49cc0e058442ad41384b063b5927ac73e8cc czargab18 <cesargabrielcode@.com> 1690389874 -0300	commit: logo + navbar - responsividade
+5ada49cc0e058442ad41384b063b5927ac73e8cc ab8912f1726739a28e60a01ec53fb28324f5af5a czargab18 <cesargabrielcode@.com> 1690478577 -0300	commit: ProblemResponsividad540px
+ab8912f1726739a28e60a01ec53fb28324f5af5a ac2ebcdc1aa7ab3685afba4c56681359768e7086 czargab18 <cesargabrielcode@.com> 1690560690 -0300	commit: globalsection + fonts + icons
+ac2ebcdc1aa7ab3685afba4c56681359768e7086 4abd4ec0a3f619902bacdc3922c5a58a1d81fbce czargab18 <cesargabrielcode@.com> 1690560766 -0300	commit: teste
+4abd4ec0a3f619902bacdc3922c5a58a1d81fbce f5496abb9072954e8e8a9c474a3dd54f54472de2 czargab18 <cesargabrielcode@.com> 1690560856 -0300	commit: teste-gitconfig
+f5496abb9072954e8e8a9c474a3dd54f54472de2 7bfad409795e7d4c5ecef54dc7c9c9a82c96617f czargab18 <cesargabrielcode@.com> 1690560858 -0300	commit: teste
+7bfad409795e7d4c5ecef54dc7c9c9a82c96617f 06c1b2a0e8d772e1d90daa91f0bac8442a26680f czargab18 <cesargabrielcode@.com> 1690564029 -0300	commit: copyAppleArrange: main + section
+06c1b2a0e8d772e1d90daa91f0bac8442a26680f eb5e6c3a824e506916982e18135d094ec9213e05 czargab18 <cesargabrielcode@.com> 1690564686 -0300	commit: delete-arquivosection
+eb5e6c3a824e506916982e18135d094ec9213e05 065000bd1924769cbe9a42e41d7c2e2f1e3cb898 czargab18 <cesargabrielcode@.com> 1690598644 -0300	commit: icones
+065000bd1924769cbe9a42e41d7c2e2f1e3cb898 11893b5a58542fa12852bd023518e5b234e86a23 czargab18 <cesargabrielcode@.com> 1690599447 -0300	commit: retrabalharGLOBALSECTION
+11893b5a58542fa12852bd023518e5b234e86a23 88aa620b30b9d52241c1e87baee62de04343af57 czargab18 <cesargabrielcode@.com> 1690636139 -0300	commit: Node.JS init
+88aa620b30b9d52241c1e87baee62de04343af57 9fbb26a0210b10458a98af241603d63e0eacb6f1 czargab18 <cesargabrielcode@.com> 1690660255 -0300	commit: concerteGlobalheader
+9fbb26a0210b10458a98af241603d63e0eacb6f1 f24dabab54df8392d1f6a873e74696d8160e3ef1 czargab18 <cesargabrielcode@.com> 1690679045 -0300	commit: icon+encodingFontello
+f24dabab54df8392d1f6a873e74696d8160e3ef1 3a0047a60e54d3832b9fb5106607a239a3f373ce czargab18 <cesargabrielcode@.com> 1690680737 -0300	commit: Certo: iconFontello - concertar:globalmain
+3a0047a60e54d3832b9fb5106607a239a3f373ce 8003d3ee44ae62d9f4dc6422d287ac4d82f13524 czargab18 <cesargabrielcode@.com> 1690737971 -0300	commit: ideias: API + UnB noticias
+8003d3ee44ae62d9f4dc6422d287ac4d82f13524 17f310d2ebd201a955c562f2e9c0ea2daa16696d czargab18 <cesargabrielcode@.com> 1690738264 -0300	commit: foco
+17f310d2ebd201a955c562f2e9c0ea2daa16696d 67dc8a3cc245a0f63664b2e8fec641646eb76b3d czargab18 <cesargabrielcode@.com> 1690771704 -0300	commit: deleteAppleFile
+67dc8a3cc245a0f63664b2e8fec641646eb76b3d ddf693b43d7f4c94f325ce1ce21b58b570ea6a61 czargab18 <cesargabrielcode@.com> 1690815040 -0300	commit: iconMoon
+ddf693b43d7f4c94f325ce1ce21b58b570ea6a61 a7472bcd7d724709b617ae82410ba1fce0c5ff27 czargab18 <cesargabrielcode@.com> 1690854936 -0300	commit: correções: globalheader
+a7472bcd7d724709b617ae82410ba1fce0c5ff27 a694c552c0b4e4e2af6db9a66877e10ccd32de57 czargab18 <cesargabrielcode@.com> 1690937660 -0300	commit: tratando o código
+a694c552c0b4e4e2af6db9a66877e10ccd32de57 d485688e44f987acdc980f86d904756df5f877b3 czargab18 <cesargabrielcode@.com> 1690938171 -0300	commit: pages to newsroom
+d485688e44f987acdc980f86d904756df5f877b3 2e958bd03d5bcb4c3c6a404a06d0531fc00d526e czargab18 <cesargabrielcode@.com> 1690938329 -0300	commit: pasta - z_inswx_9999
+2e958bd03d5bcb4c3c6a404a06d0531fc00d526e a9201487a418f9dbbedd18a6771c60bf21b23fe6 czargab18 <cesargabrielcode@.com> 1691154317 -0300	commit: umavirgula
+a9201487a418f9dbbedd18a6771c60bf21b23fe6 2aa8d5b224911cca727ab75042030f5108dc9cbe czargab18 <cesargabrielcode@.com> 1691184079 -0300	commit: inicioRefazerGlobalTop

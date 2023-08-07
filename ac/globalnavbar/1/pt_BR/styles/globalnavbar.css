@@ -1,12 +1,8 @@
 @charset "UTF-8";
 @import url("../../../../../wss/font.css");
+
 #globalnavbar {
 	all: unset;
-}
-
-#globalnavbar html {
-	-ms-text-size-adjust: 100%;
-	-webkit-text-size-adjust: 100%;
 }
 
 #globalnavbar body {

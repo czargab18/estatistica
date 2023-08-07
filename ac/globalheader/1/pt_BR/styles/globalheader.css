@@ -3,12 +3,7 @@
 	all: unset;
 }
 @import url("../../../../../wss/font.css");
-/* 
-#globalheader html {
-	-ms-text-size-adjust: 100%;
-	-webkit-text-size-adjust: 100%;
-}
-*/
+
 #globalheader body {
 	margin: 0;
 	padding: 0;
@@ -86,12 +81,7 @@
 #globalheader button:disabled {
 	cursor: default;
 }
-/*  ao click-link: caixa-azul sobre o libk
-#globalheader :focus {
-	outline: 4px solid rgba(0, 125, 250, 0.6);
-	outline-offset: 1px;
-} 
-*/
+
 #globalheader
 	:focus[data-focus-method="mouse"]:not(input):not(textarea):not(select),
 #globalheader
@@ -116,7 +106,9 @@
 		Helvetica Neue, Helvetica, Arial, sans-serif;
 }
 
-*, /* *::after, *::before, */
+*,
+*::after,
+*::before,
 html,
 body {
 	margin: 0;
@@ -156,25 +148,7 @@ body {
 	font-size: 18px;
 	white-space: nowrap; /* não-quebrar-text */
 }
-/* 
-#globaltop.globaltop-light,
-.globalheader-dark #globaltop.globaltop-light,
-.theme-dark #globaltop.globaltop-light,
-.globalheader-light #globaltop,
-.theme-light #globaltop {
-	--r-globaltop-color: rgba(0, 0, 0, 0.8);
-	--r-globaltop-color-secondary: #333336;
-	--r-globaltop-color-hover: #000000;
-}
 
-#globaltop.globaltop-dark,
-.globalheader-dark #globaltop,
-.theme-dark #globaltop {
-	--r-globaltop-color: rgba(255, 255, 255, 0.8);
-	--r-globaltop-color-secondary: #e8e8ed;
-	--r-globaltop-color-hover: #ffffff;
-}
- */
 #globalheader {
 	/* myPropriedades */
 	--altura-globalheader: 40px;
@@ -206,7 +180,6 @@ body {
 .globalheader-content .globalheader-list,
 .globalheader-content .globalheader-list-unbt-gov {
 	cursor: default;
-	/* user-select: none; */
 	list-style: none;
 	width: auto;
 	height: var(--altura-globalheader);
@@ -223,11 +196,7 @@ body {
 	height: auto;
 	width: auto;
 }
-/* 
-#globalheader[dir="rtl"] #globalnav .globalnav-item {
-	left: -7px;
-} 
-*/
+
 #globalnav .globalnav-item-apple {
 	display: block;
 }
@@ -268,7 +237,6 @@ body {
 
 	/* z-index: 1; */
 	outline-offset: -7px;
-	-webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 	transition: color 0.32s cubic-bezier(0.4, 0, 0.6, 1);
 }
 #globaltop .globaltop-link:lang(pt-br) {
@@ -336,7 +304,7 @@ body {
 #globalnav .globalnav-image-compact {
 	display: none;
 } 
-*/
+ */
 
 .globalheader-list .globalheader-link-coronavarius .globalheader-link-text {
 	--r-logo-govbr-yellow: #ffcd07;
@@ -514,8 +482,8 @@ body {
 		> span.globalheader-link-text-alternativo {
 		display: inline-block !important;
 		--r-logo-govbr-yellow: #ffcd07;
-		/* color: var(--r-logo-govbr-yellow); */
-		color: yellow;
+		color: var(--r-logo-govbr-yellow);
 		text-decoration: underline;
+		font-size: 16px;
 	}
 }
