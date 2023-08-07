@@ -297,14 +297,14 @@ body {
 	display: none;
 }
 
-/* 
+
 #globalnav .globalnav-image-regular {
 	display: flex;
 }
 #globalnav .globalnav-image-compact {
 	display: none;
 } 
- */
+
 
 .globalheader-list .globalheader-link-coronavarius .globalheader-link-text {
 	--r-logo-govbr-yellow: #ffcd07;
@@ -320,9 +320,11 @@ body {
 	width: 2px;
 	background-color: var(--color-espaçador);
 }
-.visuallyhidden {
+
+.globalheader-link-text-alternativo{
 	display: none;
 }
+
 /* mediaQuery verificado */
 @media screen and (max-width: 1024px) {
 	#globaltop,
@@ -473,15 +475,11 @@ body {
 		letter-spacing: 0.007em;
 		font-family: var(--font-pattenr);
 	}
-	#globaltop
-		> #globalheader
-		> .globalheader-content
-		> #globalheader-list-gov
-		> .globalheader-item-coronavarius
-		> .globalheader-link-coronavarius
-		> span.globalheader-link-text-alternativo {
-		display: inline-block !important;
+
+	.globalheader-link-text-alternativo{
 		--r-logo-govbr-yellow: #ffcd07;
+		
+		display: block;
 		color: var(--r-logo-govbr-yellow);
 		text-decoration: underline;
 		font-size: 16px;
