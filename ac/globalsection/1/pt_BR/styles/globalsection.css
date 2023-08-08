@@ -9,10 +9,6 @@
 }
 /* FINAL: Noticia opçãoSeção: 2 */
 
-#globalheader html {
-	-ms-text-size-adjust: 100%;
-	-webkit-text-size-adjust: 100%;
-}
 #globalheader body {
 	margin: 0;
 	padding: 0;
@@ -112,7 +108,7 @@
 	Helvetica Neue, Helvetica, Arial, sans-serif;
 	--altura-globalheader: 40px;
 	background-color: rgb(127 127 127 / 10%);
-	user-select: none; /* impedir-selecionar-links */
+	/* user-select: none; impedir-selecionar-links */
 	width: 100%;
 	height: var(--altura-globalheader);
 	display: flex; /* display flex-column */
