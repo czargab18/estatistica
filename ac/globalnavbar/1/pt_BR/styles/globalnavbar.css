@@ -6,11 +6,11 @@
 }
 
 #globalnavbar body {
-	--font-pattern:SF Pro HK, SF Pro Display, SF Pro Icons, PingFang HK,
-	Helvetica Neue, Helvetica, Arial, sans-serif;;
+	--font-pattern: SF Pro HK, SF Pro Display, SF Pro Icons, PingFang HK,
+		Helvetica Neue, Helvetica, Arial, sans-serif;
 	margin: 0;
 	padding: 0;
-	font-family: var(--font-pattern)
+	font-family: var(--font-pattern);
 }
 
 #globalnavbar ul,
@@ -131,6 +131,8 @@ body {
 	--globalnavbar-govbr-blue: #2864ae;
 	--r-globalnavbar-govbr-yellow: #fabd10;
 	--r-globalnavbar-govbr-light-green: #026e3a;
+	--font-pattern: SF Pro HK, SF Pro Display, SF Pro Icons, PingFang HK,
+		Helvetica Neue, Helvetica, Arial, sans-serif;
 }
 
 /* var-header */
@@ -198,8 +200,7 @@ body {
 	font-size: 12px;
 	font-weight: 400;
 	letter-spacing: -0.01em;
-	font-family: SF Pro Text, SF Pro Icons, Helvetica Neue, Helvetica, Arial,
-		sans-serif;
+	font-family: var(--font-pattern);
 	line-height: 1;
 	display: flex;
 	align-items: center;
@@ -217,14 +218,6 @@ body {
 	transition: color 0.32s cubic-bezier(0.4, 0, 0.6, 1);
 }
 
-#globalnavbar .globalnavbar-link:lang(pt-br) {
-	letter-spacing: 0em;
-	font-family: SF Pro JP, SF Pro Text, SF Pro Icons, Hiragino Kaku Gothic Pro,
-		\30d2\30e9\30ae\30ce\89d2\30b4 Pro W3, \30e1\30a4\30ea\30aa, Meiryo,
-		\ff2d\ff33\ff30\30b4\30b7\30c3\30af, Helvetica Neue, Helvetica, Arial,
-		sans-serif;
-}
-
 #globalnavbar .globalnavbar-link svg {
 	fill: currentColor;
 }
@@ -234,40 +227,56 @@ body {
 	color: var(--r-globalnavbar-color-hover-white) !important;
 	text-decoration: none;
 }
-/* logo-apple */
-#globalnavbar .globalnavbar-link-govbr {
-	font-size: 17px;
-	line-height: 1.2353641176;
-	font-weight: 600;
-	letter-spacing: -0.022em;
-	font-family: SF Pro Text, SF Pro Icons, Helvetica Neue, Helvetica, Arial,
-		sans-serif;
+/* IMG:svg - de cada Palavra da navbar - Não serão exibidos */
+#globalnavbar span[class*="-regular"] {
+	height: auto;
+	/* aninhar-conteudo do link */
+	display: none;
+	align-items: center;
+}
+
+/* IMG:svg - navbar */
+#globalnavbar span[class*="-regular"] {
+	height: auto;
+	/* aninhar-conteudo do link */
+	display: none;
+	align-items: center;
+}
+
+/* IMG:svg - Logo - Estatística */
+#globalnavbar span[class*="-estatistica-regular"] {
+	height: auto;
 	/* aninhar-conteudo do link */
 	display: flex;
 	align-items: center;
 }
 
-#globalnavbar .globalnavbar-link-govbr:lang(pt-br) {
-	letter-spacing: 0em;
-	font-family: SF Pro AR, SF Pro Gulf, SF Pro Text, SF Pro Icons, Helvetica Neue,
-		Helvetica, Arial, sans-serif;
-}
-
-#globalnavbar .globalnavbar-link-govbr {
+/* texto-logo */
+#globalnavbar .globalnavbar-link-estatistica {
+	font-size: 17px;
+	line-height: 1.2353641176;
+	font-weight: 600;
+	letter-spacing: -0.022em;
+	font-family: var(--font-pattern);
+	/* aninhar-conteudo do link */
+	display: flex;
+	align-items: center;
 	height: 100%;
 }
-#globalnavbar .globalnavbar-link-govbr .globalnavbar-link-text {
+
+#globalnavbar .globalnavbar-link-estatistica .globalnavbar-link-text {
 	margin-inline-start: 4px;
 }
 
+/* texto-logo */
 #globalnavbar .globalnavbar-link-estatistica .globalnavbar-link-text-estatistica {
 	display: none;
 }
-#globalnavbar .globalnavbar-estatistica-regular,#globalnavbar .globalnavbar-item-estatistica {
-    display: block;
-	width: max-content
-}
 
+#globalnavbar .globalnavbar-link-estatistica:lang(pt-br) {
+	letter-spacing: 0em;
+	font-family: var(--font-pattern);
+}
 
 @media only screen and (min-width: 834px) {
 	#globalnavbar {
@@ -339,22 +348,34 @@ body {
 		line-height: 1.1428571429;
 		font-weight: 600;
 		letter-spacing: 0.007em;
-		font-family: SF Pro Display, SF Pro Icons, Helvetica Neue, Helvetica, Arial,
-			sans-serif;
+		font-family: var(--font-pattern);
 	}
 	#globalnav .globalnav-link:lang(pt-br) {
-		font-family: SF Pro AR, SF Pro Gulf, SF Pro Display, SF Pro Icons,
-			Helvetica Neue, Helvetica, Arial, sans-serif;
+		font-family: var(--font-pattern);
 	}
 
-	/* 2-imgs-links */
-	#globalnavbar .globalnavbar-image-compact {
-		display: flex;
-	}
-	#globalnavbar .globalnavbar-image-regular {
+	/* IMG:svg - navbar */
+	#globalnavbar span[class*="-regular"],
+	/* remover-texto-navbar-833px */
+	#globalnavbar span[class="globalnavbar-link-text"] {
+		/* aninhar-conteudo do link */
 		display: none;
 	}
-	
+
+	/* IMG:svg - Logo - Estatística */
+	#globalnavbar span[class*="-estatistica-regular"] {
+		height: auto;
+		/* aninhar-conteudo do link */
+		display: flex;
+		align-items: center;
+	}
 }
 
-/* testar */
+/* testo de código */
+/* 2-imgs-links */
+#globalnavbar .globalnavbar-image-compact {
+	display: flex;
+}
+#globalnavbar .globalnavbar-image-regular {
+	display: none;
+}
