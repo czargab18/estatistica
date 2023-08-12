@@ -1,17 +1,13 @@
 {
-    "recommendations": [
-        "esbenp.prettier-vscode",
-        "ms-ceintl.vscode-language-pack-pt-br",
-        "dracula-theme.theme-dracula",
-        "ms-edgedevtools.vscode-edge-devtools",
-        "ritwickdey.liveserver",
-        "dotjoshjohnson.xml",
-        "redhat.vscode-xml",
-        "formulahendry.auto-rename-tag",
-        "pkief.material-icon-theme",
-        "reditorsupport.r",
-        "rdebugger.r-debugger",
-        "stxr.iconfont-preview",
-        "github.github-vscode-theme"
-    ]
+  "recommendations": [
+    "esbenp.prettier-vscode",
+    "ms-ceintl.vscode-language-pack-pt-br",
+    "dracula-theme.theme-dracula",
+    "ritwickdey.liveserver",
+    "dotjoshjohnson.xml",
+    "formulahendry.auto-rename-tag",
+    "pkief.material-icon-theme",
+    "stxr.iconfont-preview",
+    "github.github-vscode-theme"
+  ]
 }
