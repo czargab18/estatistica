@@ -1,10 +1,10 @@
 body {
   margin: 0;
   padding: 0;
-  /* background-color: blue; */
+  box-sizing: border-box;
 }
 
-.main {
+main {
   position: relative;
   max-width: 2560px;
   margin: 0 auto;
@@ -15,36 +15,138 @@ section[data-module-template="heroes"] {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 10px;
+  gap: 1em;
 }
 
-.unit-copy-warpper {
-  background-color: red;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 2px;
+[data-module-template="heroes"] [id="calouro"],
+[data-module-template="heroes"] [id="graduacao"],
+[data-module-template="heroes"] [id="posgraduacao"],
+[data-module-template="heroes"] [id="extensao"] {
+  width: 100%;
 }
 
-.headline {
-  font-size: 56px;
-}
-.subhead {
-  font-size: 24px;
-}
-.cta-links a {
-  font-size: 19px;
-}
-
-div[class="unit-image-warpper"] {
-  background-color: #fff;
-  height: max-content;
-}
-
-div[class="unit-image-warpper"] figure[id="unit-image-calouro"] {
+[id="calouro"] [id="modulo-content"],
+[id="graduacao"] [id="modulo-content"],
+[id="posgraduacao"] [id="modulo-content"],
+[id="extensao"] [id="modulo-content"] {
   height: 600px;
   background-size: 3008px 624px;
   background-repeat: no-repeat;
   background-position: center;
-  background-image: url("../../../../../depEst.png");
+}
+
+div .unit-wrapper {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  align-items: center;
+  position: relative;
+}
+/* link tag a */
+
+[data-module-template] [data-unit-id] .unit-wrapper a.unit-link {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 3;
+  /* REMOVE - Display */
+  /* REMOVE - Display */
+  /* REMOVE - Display */
+  display: none;
+}
+
+div[class="unit-copy-warpper"] {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+}
+
+/* faltou o sup */
+
+div[class="unit-image-warpper"] {
+  width: 100%;
+  height: 100%;
+}
+
+section[data-module-template="heroes"]
+  div[data-unit-id="calouro"]
+  div[id="modulo-content"]
+  div[class="unit-wrapper"]
+  div[class="unit-image-warpper"]
+  figure[id="unit-image-calouro"] {
+  height: 100%;
+  width: 100%;
+  background-image: url("../../../../../image-5.png");
+  background-color: white;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+section[data-module-template="heroes"]
+  div[data-unit-id="graduacao"]
+  div[id="modulo-content"]
+  div[class="unit-wrapper"]
+  div[class="unit-image-warpper"]
+  figure[id="unit-image-graduacao"] {
+  height: 100%;
+  width: 100%;
+  background-image: url("../../../../../image-5.png");
+  background-color: white;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+section[data-module-template="heroes"]
+  div[data-unit-id="posgraduacao"]
+  div[id="modulo-content"]
+  div[class="unit-wrapper"]
+  div[class="unit-image-warpper"]
+  figure[id="unit-image-posgraduacao"] {
+  height: 100%;
+  width: 100%;
+  background-image: url("../../../../../image-5.png");
+  background-color: white;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+section[data-module-template="heroes"]
+  div[data-unit-id="extensao"]
+  div[id="modulo-content"]
+  div[class="unit-wrapper"]
+  div[class="unit-image-warpper"]
+  figure[id="unit-image-extensao"] {
+  height: 100%;
+  width: 100%;
+  background-image: url("../../../../../image-5.png");
+  background-color: white;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+/* AJUSTAR DEPOIS O Z-INDEX */
+figure {
+  opacity: 0.85;
+}
+div[class="unit-copy-warpper"] {
+  z-index: 5;
+}
+.cta-links a {
+  z-index: 6;
+  font-size: 19px;
+}
+
+.headline {
+  color: whitesmoke;
+  font-size: 56px;
+}
+.subhead {
+  color: rgb(225, 215, 215);
+  font-size: 24px;
 }
