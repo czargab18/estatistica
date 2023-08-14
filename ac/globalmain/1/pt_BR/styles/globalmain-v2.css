@@ -39,9 +39,9 @@ div .unit-wrapper {
   height: 100%;
   display: flex;
   flex-direction: column;
-  gap: 2px;
   align-items: center;
   position: relative;
+  gap: 2px;
 }
 /* link tag a */
 
@@ -59,6 +59,8 @@ div .unit-wrapper {
 }
 
 div[class="unit-copy-warpper"] {
+  margin-top: 42px;
+
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -96,7 +98,7 @@ section[data-module-template="heroes"]
   figure[id="unit-image-graduacao"] {
   height: 100%;
   width: 100%;
-  background-image: url("../../../../../image-5.png");
+  background-image: url("../../../../../image-6.png");
   background-color: white;
   background-repeat: no-repeat;
   background-size: cover;
@@ -124,7 +126,7 @@ section[data-module-template="heroes"]
   figure[id="unit-image-extensao"] {
   height: 100%;
   width: 100%;
-  background-image: url("../../../../../image-5.png");
+  background-image: url("../../../../../image-4.png");
   background-color: white;
   background-repeat: no-repeat;
   background-size: cover;
@@ -132,7 +134,7 @@ section[data-module-template="heroes"]
 }
 /* AJUSTAR DEPOIS O Z-INDEX */
 figure {
-  opacity: 0.85;
+  /* opacity: 0.85; */
 }
 div[class="unit-copy-warpper"] {
   z-index: 5;
@@ -147,6 +149,6 @@ div[class="unit-copy-warpper"] {
   font-size: 56px;
 }
 .subhead {
-  color: rgb(225, 215, 215);
+  color: rgb(237, 233, 233);
   font-size: 24px;
 }
