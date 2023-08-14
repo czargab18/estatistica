@@ -137,14 +137,11 @@ body {
 	--r-globaltop-flyout-link-opacity-duration: 0.5s;
 
 	--r-globaltop-previous-flyout-height: 0px;
-
 	position: fixed;
 	min-width: 320px;
 	max-height: max-content;
-
 	display: flex; /* display flex-column */
 	justify-items: center;
-
 	font-size: 18px;
 	white-space: nowrap; /* não-quebrar-text */
 }

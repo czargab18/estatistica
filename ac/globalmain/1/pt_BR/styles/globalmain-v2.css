@@ -1,0 +1,50 @@
+body {
+  margin: 0;
+  padding: 0;
+  /* background-color: blue; */
+}
+
+.main {
+  position: relative;
+  max-width: 2560px;
+  margin: 0 auto;
+  padding-top: var(--global-nav-collective-height);
+}
+
+section[data-module-template="heroes"] {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+.unit-copy-warpper {
+  background-color: red;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+}
+
+.headline {
+  font-size: 56px;
+}
+.subhead {
+  font-size: 24px;
+}
+.cta-links a {
+  font-size: 19px;
+}
+
+div[class="unit-image-warpper"] {
+  background-color: #fff;
+  height: max-content;
+}
+
+div[class="unit-image-warpper"] figure[id="unit-image-calouro"] {
+  height: 600px;
+  background-size: 3008px 624px;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-image: url("../../../../../depEst.png");
+}
