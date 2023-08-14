@@ -3,7 +3,9 @@
   "version": "1.0.0",
   "description": "Em desenvolvimento,  com o objetivo de oferecer aos estudantes de estatística e áreas afins um espaço de aprendizagem, troca e atualização sobre os principais conceitos, métodos e aplicações da área.",
   "main": "index.js",
+  "type": "module",
   "scripts": {
+    "start": "nodemon server.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -12,7 +14,8 @@
   },
   "author": "czargab18",
   "license": "ISC",
-  "dependencies": {
-    "express": "^4.18.2"
+  "devDependencies": {
+    "express": "^4.18.2",
+    "nodemon": "^3.0.1"
   }
 }
