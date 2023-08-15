@@ -164,7 +164,7 @@ section[data-module-template="noticias"] {
 /* ======================= section grid=================================== */
 
 section[data-module-template="promos"] {
-position: relative;
+  position: relative;
 
   /* background-color: chartreuse; */
   display: grid;
@@ -176,7 +176,7 @@ position: relative;
   width: 100%;
 }
 
-section[data-module-template="promos"] [id="modulo-content"]{
+section[data-module-template="promos"] [id="modulo-content"] {
   height: 580px;
 }
 
