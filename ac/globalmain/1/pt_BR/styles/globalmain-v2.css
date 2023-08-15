@@ -73,7 +73,7 @@ div[class="unit-copy-warpper"] {
 
 /* faltou o sup */
 
-div[class="unit-image-warpper"] {
+div[class="unit-image-warpper"]:not(:last-child) {
   width: 100%;
   height: 100%;
 }
@@ -156,9 +156,8 @@ div[class="unit-copy-warpper"] {
   font-size: 24px;
 }
 
-/* removendo slide-noticias
-main section[data-module-template="noticias"],
-main section[data-module-template="noticias"] div[id="modulo-content-noticias"] {
+
+section[data-unit-id="contato"],
+section[data-unit-id="contato"] div[class="h-mc-testo"]{
   display: none;
 }
-*/
