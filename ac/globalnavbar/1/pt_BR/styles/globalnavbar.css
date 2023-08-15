@@ -141,7 +141,7 @@ body {
 	--r-globalnavbar-color-primary-wihte: rgba(255, 255, 255, 0.8);
 	--r-globalnavbar-color-hover-white: #ffffff;
 	--r-globalnavbar-font-size: 17px;
-	/* --r-globalnavbar-color-secondary: rgb(51, 51, 54); */
+	--r-globalnavbar-color-secondary: rgb(51, 51, 54);
 	--r-globalnavbar-color-secondary-black: #000000;
 	/* --globalnavbar-background: none; */
 	--globalnavbar-backdrop-filter: none;

@@ -9,6 +9,9 @@ main {
   max-width: 2560px;
   margin: 0 auto;
   padding-top: var(--global-nav-collective-height);
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
 }
 
 section[data-module-template="heroes"] {
@@ -54,7 +57,7 @@ div .unit-wrapper {
   left: 0;
   width: 100%;
   height: 100%;
-  z-index: 3;
+  /* z-index: 3; */
   /* REMOVE - Display */
   /* REMOVE - Display */
   /* REMOVE - Display */
@@ -69,13 +72,15 @@ div[class="unit-copy-warpper"] {
   align-items: center;
   justify-content: center;
   position: absolute;
+  z-index: 5;
 }
 
 /* faltou o sup */
 
-div[class="unit-image-warpper"]:not(:last-child) {
+div[class="unit-image-warpper"] {
   width: 100%;
   height: 100%;
+  opacity: 0.85;
 }
 
 section[data-module-template="heroes"]
@@ -135,13 +140,7 @@ section[data-module-template="heroes"]
   background-size: cover;
   background-position: center;
 }
-/* AJUSTAR DEPOIS O Z-INDEX */
-figure {
-  /* opacity: 0.85; */
-}
-div[class="unit-copy-warpper"] {
-  z-index: 5;
-}
+
 .cta-links a {
   z-index: 6;
   font-size: 19px;
@@ -156,8 +155,116 @@ div[class="unit-copy-warpper"] {
   font-size: 24px;
 }
 
-
-section[data-unit-id="contato"],
-section[data-unit-id="contato"] div[class="h-mc-testo"]{
+/* section[data-module-template="promos"], */
+section[data-module-template="noticias"] {
   display: none;
+}
+/*  */
+
+/* ======================= section grid=================================== */
+
+section[data-module-template="promos"] {
+position: relative;
+
+  /* background-color: chartreuse; */
+  display: grid;
+  height: max-content;
+  grid-template-rows: repeat(3, 1fr);
+  grid-template-columns: repeat(2, 1fr);
+  align-items: center;
+  gap: 1em;
+  width: 100%;
+}
+
+section[data-module-template="promos"] [id="modulo-content"]{
+  height: 580px;
+}
+
+section[data-module-template="promos"]
+  div[data-unit-id="docentes"]
+  div[id="modulo-content"]
+  div[class="unit-wrapper"]
+  div[class="unit-image-warpper"]
+  figure[id="unit-image-docentes"] {
+  height: 100%;
+  width: 100%;
+  background-image: url("../../../../../img/image-3.png");
+  background-color: white;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+section[data-module-template="promos"]
+  div[data-unit-id="pesquisa"]
+  div[id="modulo-content"]
+  div[class="unit-wrapper"]
+  div[class="unit-image-warpper"]
+  figure[id="unit-image-pesquisa"] {
+  height: 100%;
+  width: 100%;
+  background-image: url("../../../../../img/image-3.png");
+  background-color: white;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+section[data-module-template="promos"]
+  div[data-unit-id="eventos"]
+  div[id="modulo-content"]
+  div[class="unit-wrapper"]
+  div[class="unit-image-warpper"]
+  figure[id="unit-image-eventos"] {
+  height: 100%;
+  width: 100%;
+  background-image: url("../../../../../img/image-3.png");
+  background-color: white;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+section[data-module-template="promos"]
+  div[data-unit-id="ouvidoria"]
+  div[id="modulo-content"]
+  div[class="unit-wrapper"]
+  div[class="unit-image-warpper"]
+  figure[id="unit-image-ouvidoria"] {
+  height: 100%;
+  width: 100%;
+  background-image: url("../../../../../img/image-3.png");
+  background-color: white;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+section[data-module-template="promos"]
+  div[data-unit-id="instalacoes"]
+  div[id="modulo-content"]
+  div[class="unit-wrapper"]
+  div[class="unit-image-warpper"]
+  figure[id="unit-image-instalacoes"] {
+  height: 100%;
+  width: 100%;
+  background-image: url("../../../../../img/image-3.png");
+  background-color: white;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+section[data-module-template="promos"]
+  div[data-unit-id="contato"]
+  div[id="modulo-content"]
+  div[class="unit-wrapper"]
+  div[class="unit-image-warpper"]
+  figure[id="unit-image-contato"] {
+  height: 100%;
+  width: 100%;
+  background-image: url("../../../../../img/image-3.png");
+  background-color: white;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+section[data-module-template="promos"] div[class="unit-copy-warpper"] {
+  /* z-index: auto; */
 }
