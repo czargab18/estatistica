@@ -1,18 +1,3 @@
-/* inicio - tipografia */
-.cta-links a {
-  z-index: 6;
-  font-size: 19px;
-}
-
-.headline {
-  /* color: whitesmoke; */
-  font-size: 56px;
-}
-.subhead {
-  color: rgb(237, 233, 233);
-  font-size: 24px;
-}
-
 body {
   margin: 0;
   padding: 0;
@@ -72,11 +57,6 @@ div .unit-wrapper {
   left: 0;
   width: 100%;
   height: 100%;
-  /* z-index: 3; */
-  /* REMOVE - Display */
-  /* REMOVE - Display */
-  /* REMOVE - Display */
-  display: none;
 }
 
 div[class="unit-copy-warpper"] {
@@ -88,7 +68,20 @@ div[class="unit-copy-warpper"] {
   position: absolute;
   z-index: 5;
 }
+/* inicio - tipografia */
+.cta-links a {
+  z-index: 6;
+  font-size: 19px;
+}
 
+.headline {
+  color: whitesmoke;
+  font-size: 56px;
+}
+.subhead {
+  color: rgb(237, 233, 233);
+  font-size: 24px;
+}
 /* faltou o sup */
 
 section[data-module-template="heroes"]
@@ -133,15 +126,21 @@ section[data-module-template="heroes"] figure[id="unit-image-extensao"] {
 
 section[data-module-template="promos"] {
   position: relative;
-
-  /* background-color: chartreuse; */
   display: grid;
+  width: 100%;
   height: max-content;
   grid-template-rows: repeat(3, 1fr);
   grid-template-columns: repeat(2, 1fr);
   align-items: center;
   gap: 1em;
-  width: 100%;
+}
+
+section[data-module-template="promos"] div[class="unit-wrapper"] .headline {
+  font-size: 32px;
+}
+section[data-module-template="promos"] div[class="unit-wrapper"] .subhead,
+section[data-module-template="promos"] div[class="unit-wrapper"] .cta-links a {
+  font-size: 19px;
 }
 
 section[data-module-template="promos"] [id="modulo-content"] {
@@ -168,8 +167,6 @@ section[data-module-template="promos"]
   div[data-unit-id="contato"]
   figure[id="unit-image-contato"],
 section [class="unit-image-warpper"] {
-  /*   width: 1262px;
-  height: 580px; */
   width: 100%;
   height: 100%;
   background-color: white;
@@ -182,26 +179,40 @@ section [class="unit-image-warpper"] {
 section[data-module-template="promos"] figure[id="unit-image-docentes"] {
   background-image: url("../../../../../v/home/images/heroes/image-1.png");
 }
-section[data-module-template="promos"]
-  figure[id="unit-image-pesquisa"] {
+section[data-module-template="promos"] figure[id="unit-image-pesquisa"] {
   background-image: url("../../../../../v/home/images/heroes/image-3.png");
-
 }
 section[data-module-template="promos"] figure[id="unit-image-eventos"] {
-    background-image: url("../../../../../v/home/images/heroes/image-2.png");
+  background-image: url("../../../../../v/home/images/heroes/image-2.png");
 }
 section[data-module-template="promos"] figure[id="unit-image-ouvidoria"] {
-    background-image: url("../../../../../v/home/images/heroes/image-1.png");
+  background-image: url("../../../../../v/home/images/heroes/image-1.png");
 }
 section[data-module-template="promos"] figure[id="unit-image-instalacoes"] {
-    background-image: url("../../../../../v/home/images/heroes/image-1.png");
+  background-image: url("../../../../../v/home/images/heroes/image-1.png");
 }
 section[data-module-template="promos"] figure[id="unit-image-contato"] {
-    background-image: url("../../../../../v/home/images/heroes/image-3.png");
+  background-image: url("../../../../../v/home/images/heroes/image-3.png");
 }
 
 /* ============ section noticias========================== */
-/* section[data-module-template="promos"], */
 section[data-module-template="noticias"] {
   display: none;
 }
+
+
+
+/* ============ section noticias ========== */
+
+@media screen and (max-width: 734px) and (min-width: 0px){
+  section[data-module-template="promos"],
+  section[data-module-template="promos"] [data-unit-id]{
+    display: flex;
+    flex-direction: column;
+      width: 100%;
+  height: max-content;
+  gap: 1px;
+  }
+
+}
+
