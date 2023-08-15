@@ -200,19 +200,15 @@ section[data-module-template="noticias"] {
   display: none;
 }
 
-
-
 /* ============ section noticias ========== */
 
-@media screen and (max-width: 734px) and (min-width: 0px){
+@media screen and (max-width: 734px) and (min-width: 0px) {
   section[data-module-template="promos"],
-  section[data-module-template="promos"] [data-unit-id]{
+  section[data-module-template="promos"] [data-unit-id] {
     display: flex;
     flex-direction: column;
-      width: 100%;
-  height: max-content;
-  gap: 1px;
+    width: 100%;
+    height: max-content;
+    gap: 1px;
   }
-
 }
-
