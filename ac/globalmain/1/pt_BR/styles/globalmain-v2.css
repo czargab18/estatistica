@@ -17,6 +17,9 @@ section[data-module-template="heroes"] {
   align-items: center;
   gap: 1em;
 }
+[data-module-template="heroes"] [id="calouro"] {
+  display: none;
+}
 
 [data-module-template="heroes"] [id="calouro"],
 [data-module-template="heroes"] [id="graduacao"],
@@ -83,7 +86,7 @@ section[data-module-template="heroes"]
   figure[id="unit-image-calouro"] {
   height: 100%;
   width: 100%;
-  background-image: url("../../../../../image-5.png");
+  background-image: url("../../../../../img/image-1.png");
   background-color: white;
   background-repeat: no-repeat;
   background-size: cover;
@@ -98,7 +101,7 @@ section[data-module-template="heroes"]
   figure[id="unit-image-graduacao"] {
   height: 100%;
   width: 100%;
-  background-image: url("../../../../../image-6.png");
+  background-image: url("../../../../../img/image-1.png");
   background-color: white;
   background-repeat: no-repeat;
   background-size: cover;
@@ -112,7 +115,7 @@ section[data-module-template="heroes"]
   figure[id="unit-image-posgraduacao"] {
   height: 100%;
   width: 100%;
-  background-image: url("../../../../../image-5.png");
+  background-image: url("../../../../../img/image-2.png");
   background-color: white;
   background-repeat: no-repeat;
   background-size: cover;
@@ -126,7 +129,7 @@ section[data-module-template="heroes"]
   figure[id="unit-image-extensao"] {
   height: 100%;
   width: 100%;
-  background-image: url("../../../../../image-4.png");
+  background-image: url("../../../../../img/image-3.png");
   background-color: white;
   background-repeat: no-repeat;
   background-size: cover;
@@ -152,3 +155,10 @@ div[class="unit-copy-warpper"] {
   color: rgb(237, 233, 233);
   font-size: 24px;
 }
+
+/* removendo slide-noticias
+main section[data-module-template="noticias"],
+main section[data-module-template="noticias"] div[id="modulo-content-noticias"] {
+  display: none;
+}
+*/
