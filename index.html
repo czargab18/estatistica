@@ -1464,21 +1464,14 @@
       </section>
     </main>
     <!-- footer -->
-    <footer
-      class="js"
-      lang="en-US"
-      id="ac-globalfooter"
-      data-analytics-region=""
-      role="contentinfo"
-      aria-labelledby=""
-    >
-      <div class="ac-gf-content">
-        <h2 class="ac-gf-label" id="ac-gf-label">Apple Footer</h2>
-        <section class="ac-gf-sosumi" aria-label="Footnotes">
+    <footer id="js" id="globalfooter">
+      <div id="globalfooter-content">
+        <!--  -->
+        <section id="globalfooter-note" class="gf">
           <ul>
             <li>
-              <span id="footnote-1" class="bts-2023">
-                1. Este site foi criado com o objetivo de oferecer aos
+              <span id="footnote-1" class="bts-2023"
+                >1. Este site foi criado com o objetivo de oferecer aos
                 estudantes de estatística e áreas afins um espaço de
                 aprendizagem, troca e atualização sobre os principais conceitos,
                 métodos e aplicações da ciência dos dados. Aqui você encontrará
@@ -1489,8 +1482,7 @@
             </li>
             <li>
               Para mais informações sobre o departamento de estatística, visite
-              o site
-              <a href="http://est.unb.br/">clicando aqui</a>.
+              o site <a href="#">clicando aqui</a>.
             </li>
             <li>
               2. O Departamento de Estatística da UnB é um órgão do Instituto de
@@ -1507,38 +1499,305 @@
               exercícios, vídeos, links úteis e outras informações relevantes.
             </li>
             <li>
-              <span class="tv-plus-legal-general">
-                3. A Universidade de Brasília (UnB) é uma universidade pública
-                brasileira situada na capital federal, Brasília. Ela é uma das
-                maiores e mais prestigiadas instituições de ensino superior da
-                região Centro-Oeste e do Brasil.
-              </span>
+              3. A Universidade de Brasília (UnB) é uma universidade pública
+              brasileira situada na capital federal, Brasília. Ela é uma das
+              maiores e mais prestigiadas instituições de ensino superior da
+              região Centro-Oeste e do Brasil.
             </li>
             <li>
               Para mais informações sobre a Universidade de Brasília, visite o
-              site
-              <a href="https://unb.br">unb.br</a>.
+              site <a href="unb.br.">unb.br.</a>.
             </li>
           </ul>
         </section>
-        <nav
-          class="ac-gf-directory with-5-columns"
-          aria-label="Apple Directory"
-          role="navigation"
-        >
-          <!--googleoff: all-->
-          <div class="ac-gf-directory-column">
-            <div class="ac-gf-directory-column-section">
-              <h3 class="ac-gf-directory-column-section-title">
-                <span class="ac-gf-directory-column-section-title-text"
-                  >Shop and Learn
+        <!--  -->
+        <nav class="gf with-5-columns" id="globalfooter-navgation">
+          <!-- Primeiro: lista -->
+          <div class="gf-directory-column">
+            <div class="gf-directory-column-section">
+              <h3 class="gf-directory-column-section-title">
+                <!-- o texto na span é necessário? -->
+                <span class="gf-directory-column-section-title-text">
+                  Departamento
                 </span>
+                <!-- butão de media query -->
                 <button
                   class="ac-gf-directory-column-section-title-button"
-                  disabled=""
+                  aria-expanded="false"
+                  aria-controls="footer-directory-column-section-products"
+                >
+                  <span class="ac-gf-directory-column-section-title-text"
+                    >Shop and Learn</span
+                  >
+                  <span
+                    class="ac-gf-directory-column-section-title-icon"
+                    aria-hidden="true"
+                    >+</span
+                  >
+                </button>
+              </h3>
+              <ul
+                id="footer-directory-column-section-products"
+                class="gf-directory-column-section-list"
+                role="list"
+              >
+                <!-- link-01 -->
+                <li class="gf-directory-column-section-item" role="listitem">
+                  <a class="gf-directory-column-section-link" href="#">
+                    Graduação
+                  </a>
+                </li>
+                <!-- link-02 -->
+                <li class="gf-directory-column-section-item" role="listitem">
+                  <a class="gf-directory-column-section-link" href="#">
+                    Pós-Graduação
+                  </a>
+                </li>
+                <!-- link-03 -->
+                <li class="gf-directory-column-section-item" role="listitem">
+                  <a class="gf-directory-column-section-link" href="#">
+                    Extensão
+                  </a>
+                </li>
+                <!-- link-04 -->
+                <li class="gf-directory-column-section-item" role="listitem">
+                  <a class="gf-directory-column-section-link" href="#">
+                    Docentes
+                  </a>
+                </li>
+                <!-- link-05 -->
+                <li class="gf-directory-column-section-item" role="listitem">
+                  <a class="gf-directory-column-section-link" href="#">
+                    Pesquisa
+                  </a>
+                </li>
+                <!-- link-06 -->
+                <li class="gf-directory-column-section-item" role="listitem">
+                  <a class="gf-directory-column-section-link" href="#">
+                    Eventos
+                  </a>
+                </li>
+                <!-- link-07 -->
+                <li class="gf-directory-column-section-item" role="listitem">
+                  <a class="gf-directory-column-section-link" href="#">
+                    Instalações
+                  </a>
+                </li>
+                <!-- link-08 -->
+                <li class="gf-directory-column-section-item" role="listitem">
+                  <a class="gf-directory-column-section-link" href="#">
+                    Notícias
+                  </a>
+                </li>
+                <!-- link-09 -->
+                <li class="gf-directory-column-section-item" role="listitem">
+                  <a class="gf-directory-column-section-link" href="#">
+                    Contato
+                  </a>
+                </li>
+                <!-- link-10 -->
+                <li class="gf-directory-column-section-item" role="listitem">
+                  <a class="gf-directory-column-section-link" href="#">
+                    Ouvidoria
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <!-- Segunda: lista -->
+          <div class="gf-directory-column">
+            <div class="gf-directory-column-section">
+              <h3 class="gf-directory-column-section-title">
+                <!-- o texto na span é necessário? -->
+                <span class="gf-directory-column-section-title-text">
+                  Links Importante
+                </span>
+                <!-- butão de media query -->
+                <button
+                  class="ac-gf-directory-column-section-title-button"
+                  aria-expanded="false"
+                  aria-controls="footer-directory-column-section-products"
+                >
+                  <span class="ac-gf-directory-column-section-title-text"
+                    >Links Importante</span
+                  >
+                  <span
+                    class="ac-gf-directory-column-section-title-icon"
+                    aria-hidden="true"
+                    >+</span
+                  >
+                </button>
+              </h3>
+              <ul
+                id="footer-directory-column-section-products"
+                class="gf-directory-column-section-list"
+                role="list"
+              >
+                <!-- link-01 -->
+                <li class="gf-directory-column-section-item" role="listitem">
+                  <a class="gf-directory-column-section-link" href="#">
+                    Boas Viandas a Unb
+                  </a>
+                </li>
+                <!-- link-02 -->
+                <li class="gf-directory-column-section-item" role="listitem">
+                  <a class="gf-directory-column-section-link" href="#">
+                    Calendário acadêmico
+                  </a>
+                </li>
+                <!-- link-03 -->
+                <li class="gf-directory-column-section-item" role="listitem">
+                  <a class="gf-directory-column-section-link" href="#">
+                    Perguntas Frequentes
+                  </a>
+                </li>
+                <!-- link-04 -->
+                <li class="gf-directory-column-section-item" role="listitem">
+                  <a class="gf-directory-column-section-link" href="#">
+                    Assistência Estudantil
+                  </a>
+                </li>
+                <!-- link-05 -->
+                <li class="gf-directory-column-section-item" role="listitem">
+                  <a class="gf-directory-column-section-link" href="#">
+                    Canais oficiais - Unb
+                  </a>
+                </li>
+                <!-- link-06 -->
+                <li class="gf-directory-column-section-item" role="listitem">
+                  <a class="gf-directory-column-section-link" href="#">
+                    Marca UnB
+                  </a>
+                </li>
+                <!-- link-07 -->
+                <li class="gf-directory-column-section-item" role="listitem">
+                  <a class="gf-directory-column-section-link" href="#">
+                    Campanha Institucional 2023
+                  </a>
+                </li>
+                <!-- link-08 -->
+                <li class="gf-directory-column-section-item" role="listitem">
+                  <a class="gf-directory-column-section-link" href="#">
+                    UnBTV
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <!-- Terceira: lista -->
+          <div class="gf-directory-column">
+            <div class="gf-directory-column-section">
+              <h3 class="gf-directory-column-section-title">
+                <!-- o texto na span é necessário? -->
+                <span class="gf-directory-column-section-title-text">
+                  Secretaria de Administração Academica
+                </span>
+                <!-- butão de media query -->
+                <button
+                  class="ac-gf-directory-column-section-title-button"
+                  aria-expanded="false"
+                  aria-controls="footer-directory-column-section-products"
+                >
+                  <span class="ac-gf-directory-column-section-title-text"
+                    >Secretaria de Administração Academica</span
+                  >
+                  <span
+                    class="ac-gf-directory-column-section-title-icon"
+                    aria-hidden="true"
+                    >+</span
+                  >
+                </button>
+              </h3>
+              <ul
+                id="footer-directory-column-section-products"
+                class="gf-directory-column-section-list"
+                role="list"
+              >
+                <!-- link-01 -->
+                <li class="gf-directory-column-section-item" role="listitem">
+                  <a class="gf-directory-column-section-link" href="#">
+                    Identidade estudantil
+                  </a>
+                </li>
+                <!-- link-02 -->
+                <li class="gf-directory-column-section-item" role="listitem">
+                  <a class="gf-directory-column-section-link" href="#">
+                    Passe estudantil
+                  </a>
+                </li>
+                <!-- link-03 -->
+                <li class="gf-directory-column-section-item" role="listitem">
+                  <a class="gf-directory-column-section-link" href="#">
+                    Diploma Digital
+                  </a>
+                </li>
+                <!-- link-04 -->
+                <li class="gf-directory-column-section-item" role="listitem">
+                  <a class="gf-directory-column-section-link" href="#">
+                    Emissão de Documentos Acadêmicos
+                  </a>
+                </li>
+                <!-- link-05 -->
+                <li class="gf-directory-column-section-item" role="listitem">
+                  <a class="gf-directory-column-section-link" href="#">
+                    Registro Acadêmico
+                  </a>
+                </li>
+                <!-- link-06 -->
+                <li class="gf-directory-column-section-item" role="listitem">
+                  <a class="gf-directory-column-section-link" href="#">
+                    SIGAA - Graduação e Pós-Graduação
+                  </a>
+                </li>
+                <!-- link-07 -->
+                <li class="gf-directory-column-section-item" role="listitem">
+                  <a class="gf-directory-column-section-link" href="#">
+                    Emissão do Diploma
+                  </a>
+                </li>
+                <!-- link-08 -->
+                <li class="gf-directory-column-section-item" role="listitem">
+                  <a class="gf-directory-column-section-link" href="#">
+                    Transporte
+                  </a>
+                </li>
+                <!-- link-09 -->
+                <li class="gf-directory-column-section-item" role="listitem">
+                  <a class="gf-directory-column-section-link" href="#">
+                    Unb Idiomas
+                  </a>
+                </li>
+                <!-- link-10 -->
+                <li class="gf-directory-column-section-item" role="listitem">
+                  <a class="gf-directory-column-section-link" href="#">
+                    Diretório Central dos Estudantes - DCE
+                  </a>
+                </li>
+                <!-- link-11 -->
+                <li class="gf-directory-column-section-item" role="listitem">
+                  <a class="gf-directory-column-section-link" href="#">
+                    Legislação Graduação e Pós-Graduação
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <!-- Quarta: lista -->
+          <div class="gf-directory-column">
+            <div class="gf-directory-column-section">
+              <h3 class="gf-directory-column-section-title">
+                <!-- o texto na span é necessário? -->
+                <span class="gf-directory-column-section-title-text">
+                  Administrativo - UnB
+                </span>
+                <!-- butão de media query -->
+                <button
+                  class="ac-gf-directory-column-section-title-button"
+                  aria-expanded="false"
+                  aria-controls="footer-directory-column-section-products"
                 >
                   <span class="ac-gf-directory-column-section-title-text">
-                    Shop and Learn
+                    Administrativo - UnB
                   </span>
                   <span
                     class="ac-gf-directory-column-section-title-icon"
@@ -1549,171 +1808,71 @@
               </h3>
               <ul
                 id="footer-directory-column-section-products"
-                class="ac-gf-directory-column-section-list"
+                class="gf-directory-column-section-list"
                 role="list"
               >
-                <li class="ac-gf-directory-column-section-item" role="listitem">
-                  <a
-                    class="ac-gf-directory-column-section-link"
-                    href="/us/shop/goto/store"
-                    data-analytics-title="store"
-                    >Store</a
-                  >
+                <!-- link-01 -->
+                <li class="gf-directory-column-section-item" role="listitem">
+                  <a class="gf-directory-column-section-link" href="#">
+                    Reitoria
+                  </a>
                 </li>
-                <li class="ac-gf-directory-column-section-item" role="listitem">
-                  <a
-                    class="ac-gf-directory-column-section-link"
-                    href="/mac/"
-                    data-analytics-title="mac"
-                    >Mac</a
-                  >
+                <!-- link-02 -->
+                <li class="gf-directory-column-section-item" role="listitem">
+                  <a class="gf-directory-column-section-link" href="#">
+                    Vice-Reitoria
+                  </a>
                 </li>
-                <li class="ac-gf-directory-column-section-item" role="listitem">
-                  <a
-                    class="ac-gf-directory-column-section-link"
-                    href="/ipad/"
-                    data-analytics-title="ipad"
-                    >iPad</a
-                  >
+                <!-- link-03 -->
+                <li class="gf-directory-column-section-item" role="listitem">
+                  <a class="gf-directory-column-section-link" href="#">
+                    Conselhos e câmaras
+                  </a>
                 </li>
-                <li class="ac-gf-directory-column-section-item" role="listitem">
-                  <a
-                    class="ac-gf-directory-column-section-link"
-                    href="/iphone/"
-                    data-analytics-title="iphone"
-                    >iPhone</a
-                  >
+                <!-- link-04 -->
+                <li class="gf-directory-column-section-item" role="listitem">
+                  <a class="gf-directory-column-section-link" href="#">
+                    Resoluções dos Conselhos Superiores
+                  </a>
                 </li>
-                <li class="ac-gf-directory-column-section-item" role="listitem">
-                  <a
-                    class="ac-gf-directory-column-section-link"
-                    href="/watch/"
-                    data-analytics-title="watch"
-                    >Watch</a
-                  >
+                <!-- link-05 -->
+                <li class="gf-directory-column-section-item" role="listitem">
+                  <a class="gf-directory-column-section-link" href="#">
+                    Decanatos
+                  </a>
                 </li>
-                <li class="ac-gf-directory-column-section-item" role="listitem">
-                  <a
-                    class="ac-gf-directory-column-section-link"
-                    href="/apple-vision-pro/"
-                    data-analytics-title="vision"
-                    >Vision</a
-                  >
+                <!-- link-06 -->
+                <li class="gf-directory-column-section-item" role="listitem">
+                  <a class="gf-directory-column-section-link" href="#">
+                    Secretarias
+                  </a>
                 </li>
-                <li class="ac-gf-directory-column-section-item" role="listitem">
-                  <a
-                    class="ac-gf-directory-column-section-link"
-                    href="/airpods/"
-                    data-analytics-title="airpods"
-                    >AirPods</a
-                  >
-                </li>
-                <li class="ac-gf-directory-column-section-item" role="listitem">
-                  <a
-                    class="ac-gf-directory-column-section-link"
-                    href="/tv-home/"
-                    data-analytics-title="tv and home"
-                    >TV &amp; Home</a
-                  >
-                </li>
-                <li class="ac-gf-directory-column-section-item" role="listitem">
-                  <a
-                    class="ac-gf-directory-column-section-link"
-                    href="/airtag/"
-                    data-analytics-title="airtag"
-                    >AirTag</a
-                  >
-                </li>
-                <li class="ac-gf-directory-column-section-item" role="listitem">
-                  <a
-                    class="ac-gf-directory-column-section-link"
-                    href="/us/shop/goto/buy_accessories"
-                    data-analytics-title="accessories"
-                    >Accessories</a
-                  >
-                </li>
-                <li class="ac-gf-directory-column-section-item" role="listitem">
-                  <a
-                    class="ac-gf-directory-column-section-link"
-                    href="/us/shop/goto/giftcards"
-                    data-analytics-title="gift cards"
-                    >Gift Cards</a
-                  >
-                </li>
-              </ul>
-            </div>
-            <div class="ac-gf-directory-column-section">
-              <h3 class="ac-gf-directory-column-section-title">
-                <span class="ac-gf-directory-column-section-title-text"
-                  >Apple Wallet</span
-                >
-                <button
-                  class="ac-gf-directory-column-section-title-button"
-                  disabled=""
-                >
-                  <span class="ac-gf-directory-column-section-title-text"
-                    >Apple Wallet</span
-                  >
-                  <span
-                    class="ac-gf-directory-column-section-title-icon"
-                    aria-hidden="true"
-                    >+</span
-                  >
-                </button>
-              </h3>
-              <ul
-                id="footer-directory-column-section-applewallet"
-                class="ac-gf-directory-column-section-list"
-                role="list"
-              >
-                <li class="ac-gf-directory-column-section-item" role="listitem">
-                  <a
-                    class="ac-gf-directory-column-section-link"
-                    href="/wallet/"
-                    data-analytics-title="wallet"
-                    >Wallet</a
-                  >
-                </li>
-                <li class="ac-gf-directory-column-section-item" role="listitem">
-                  <a
-                    class="ac-gf-directory-column-section-link"
-                    href="/apple-card/"
-                    data-analytics-title="apple card"
-                    >Apple&nbsp;Card</a
-                  >
-                </li>
-                <li class="ac-gf-directory-column-section-item" role="listitem">
-                  <a
-                    class="ac-gf-directory-column-section-link"
-                    href="/apple-pay/"
-                    data-analytics-title="apple pay"
-                    >Apple&nbsp;Pay</a
-                  >
-                </li>
-                <li class="ac-gf-directory-column-section-item" role="listitem">
-                  <a
-                    class="ac-gf-directory-column-section-link"
-                    href="/apple-cash/"
-                    data-analytics-title="apple cash"
-                    >Apple&nbsp;Cash</a
-                  >
+                <!-- link-07 -->
+                <li class="gf-directory-column-section-item" role="listitem">
+                  <a class="gf-directory-column-section-link" href="#">
+                    Prefeitura da UnB
+                  </a>
                 </li>
               </ul>
             </div>
           </div>
-          <div class="ac-gf-directory-column">
-            <div class="ac-gf-directory-column-section">
-              <h3 class="ac-gf-directory-column-section-title">
-                <span class="ac-gf-directory-column-section-title-text"
-                  >Account</span
-                >
+          <!-- Quinta: lista -->
+          <div class="gf-directory-column">
+            <div class="gf-directory-column-section">
+              <h3 class="gf-directory-column-section-title">
+                <!-- o texto na span é necessário? -->
+                <span class="gf-directory-column-section-title-text">
+                  Serviçoes da Universidade
+                </span>
+                <!-- butão de media query -->
                 <button
                   class="ac-gf-directory-column-section-title-button"
-                  disabled=""
+                  aria-expanded="false"
+                  aria-controls="footer-directory-column-section-products"
                 >
-                  <span class="ac-gf-directory-column-section-title-text"
-                    >Account</span
-                  >
+                  <span class="ac-gf-directory-column-section-title-text">
+                    Serviçoes da Universidade
+                  </span>
                   <span
                     class="ac-gf-directory-column-section-title-icon"
                     aria-hidden="true"
@@ -1722,740 +1881,116 @@
                 </button>
               </h3>
               <ul
-                id="footer-directory-column-section-accounts"
-                class="ac-gf-directory-column-section-list"
+                id="footer-directory-column-section-products"
+                class="gf-directory-column-section-list"
                 role="list"
               >
-                <li class="ac-gf-directory-column-section-item" role="listitem">
-                  <a
-                    class="ac-gf-directory-column-section-link"
-                    href="https://appleid.apple.com/us/"
-                    data-analytics-title="manage your apple id"
-                    data-analytics-exit-link=""
-                    >Manage Your Apple&nbsp;ID</a
-                  >
+                <!-- link-01 -->
+                <li class="gf-directory-column-section-item" role="listitem">
+                  <a class="gf-directory-column-section-link" href="#">
+                    Arquivo Central
+                  </a>
                 </li>
-                <li class="ac-gf-directory-column-section-item" role="listitem">
-                  <a
-                    class="ac-gf-directory-column-section-link"
-                    href="/us/shop/goto/account"
-                    data-analytics-title="apple store account"
-                    >Apple Store Account</a
-                  >
+                <!-- link-02 -->
+                <li class="gf-directory-column-section-item" role="listitem">
+                  <a class="gf-directory-column-section-link" href="#">
+                    Biblioteca Central
+                  </a>
                 </li>
-                <li class="ac-gf-directory-column-section-item" role="listitem">
-                  <a
-                    class="ac-gf-directory-column-section-link"
-                    href="https://www.icloud.com"
-                    data-analytics-title="icloud.com"
-                    data-analytics-exit-link=""
-                    >iCloud.com</a
-                  >
+                <!-- link-03 -->
+                <li class="gf-directory-column-section-item" role="listitem">
+                  <a class="gf-directory-column-section-link" href="#">
+                    Editora UnB
+                  </a>
                 </li>
-              </ul>
-            </div>
-            <div class="ac-gf-directory-column-section">
-              <h3 class="ac-gf-directory-column-section-title">
-                <span class="ac-gf-directory-column-section-title-text"
-                  >Entertainment</span
-                >
-                <button
-                  class="ac-gf-directory-column-section-title-button"
-                  disabled=""
-                >
-                  <span class="ac-gf-directory-column-section-title-text"
-                    >Entertainment</span
-                  >
-                  <span
-                    class="ac-gf-directory-column-section-title-icon"
-                    aria-hidden="true"
-                    >+</span
-                  >
-                </button>
-              </h3>
-              <ul
-                id="footer-directory-column-section-entertainment"
-                class="ac-gf-directory-column-section-list"
-                role="list"
-              >
-                <li class="ac-gf-directory-column-section-item" role="listitem">
-                  <a
-                    class="ac-gf-directory-column-section-link"
-                    href="/apple-one/"
-                    data-analytics-title="apple one"
-                    >Apple&nbsp;One</a
-                  >
+                <!-- link-04 -->
+                <li class="gf-directory-column-section-item" role="listitem">
+                  <a class="gf-directory-column-section-link" href="#">
+                    Equipe de Tratamento e Resposta a Incidentes Cibernéticos
+                  </a>
                 </li>
-                <li class="ac-gf-directory-column-section-item" role="listitem">
-                  <a
-                    class="ac-gf-directory-column-section-link"
-                    href="/apple-tv-plus/"
-                    data-analytics-title="apple tv plus"
-                    >Apple&nbsp;TV+</a
-                  >
+                <!-- link-05 -->
+                <li class="gf-directory-column-section-item" role="listitem">
+                  <a class="gf-directory-column-section-link" href="#">
+                    Fazenda Água Limpo
+                  </a>
                 </li>
-                <li class="ac-gf-directory-column-section-item" role="listitem">
-                  <a
-                    class="ac-gf-directory-column-section-link"
-                    href="/apple-music/"
-                    data-analytics-title="apple music"
-                    >Apple&nbsp;Music</a
-                  >
+                <!-- link-06 -->
+                <li class="gf-directory-column-section-item" role="listitem">
+                  <a class="gf-directory-column-section-link" href="#">
+                    Hospital Universitário
+                  </a>
                 </li>
-                <li class="ac-gf-directory-column-section-item" role="listitem">
-                  <a
-                    class="ac-gf-directory-column-section-link"
-                    href="/apple-arcade/"
-                    data-analytics-title="apple arcade"
-                    >Apple&nbsp;Arcade</a
-                  >
+                <!-- link-07 -->
+                <li class="gf-directory-column-section-item" role="listitem">
+                  <a class="gf-directory-column-section-link" href="#">
+                    Hospitais Veterinários
+                  </a>
                 </li>
-                <li class="ac-gf-directory-column-section-item" role="listitem">
-                  <a
-                    class="ac-gf-directory-column-section-link"
-                    href="/apple-fitness-plus/"
-                    data-analytics-title="apple fitness plus"
-                    >Apple&nbsp;Fitness+</a
-                  >
-                </li>
-                <li class="ac-gf-directory-column-section-item" role="listitem">
-                  <a
-                    class="ac-gf-directory-column-section-link"
-                    href="/apple-news/"
-                    data-analytics-title="apple news plus"
-                    >Apple&nbsp;News+</a
-                  >
-                </li>
-                <li class="ac-gf-directory-column-section-item" role="listitem">
-                  <a
-                    class="ac-gf-directory-column-section-link"
-                    href="/apple-podcasts/"
-                    data-analytics-title="apple podcasts"
-                    >Apple Podcasts</a
-                  >
-                </li>
-                <li class="ac-gf-directory-column-section-item" role="listitem">
-                  <a
-                    class="ac-gf-directory-column-section-link"
-                    href="/apple-books/"
-                    data-analytics-title="apple books"
-                    >Apple&nbsp;Books</a
-                  >
-                </li>
-                <li class="ac-gf-directory-column-section-item" role="listitem">
-                  <a
-                    class="ac-gf-directory-column-section-link"
-                    href="/app-store/"
-                    data-analytics-title="app store"
-                    >App&nbsp;Store</a
-                  >
+                <!-- link-08 -->
+                <li class="gf-directory-column-section-item" role="listitem">
+                  <a class="gf-directory-column-section-link" href="#">
+                    Restaurante Universitário
+                  </a>
                 </li>
               </ul>
             </div>
           </div>
-          <div class="ac-gf-directory-column">
-            <div class="ac-gf-directory-column-section">
-              <h3 class="ac-gf-directory-column-section-title">
-                <span class="ac-gf-directory-column-section-title-text"
-                  >Apple Store</span
-                >
-                <button
-                  class="ac-gf-directory-column-section-title-button"
-                  disabled=""
-                >
-                  <span class="ac-gf-directory-column-section-title-text"
-                    >Apple Store</span
-                  >
-                  <span
-                    class="ac-gf-directory-column-section-title-icon"
-                    aria-hidden="true"
-                    >+</span
-                  >
-                </button>
-              </h3>
-              <ul
-                id="footer-directory-column-section-storeservices"
-                class="ac-gf-directory-column-section-list"
-                role="list"
-              >
-                <li class="ac-gf-directory-column-section-item" role="listitem">
-                  <a
-                    class="ac-gf-directory-column-section-link"
-                    href="/retail/"
-                    data-analytics-title="find a store"
-                    >Find a Store</a
-                  >
-                </li>
-                <li class="ac-gf-directory-column-section-item" role="listitem">
-                  <a
-                    class="ac-gf-directory-column-section-link"
-                    href="/retail/geniusbar/"
-                    data-analytics-title="genius bar"
-                    >Genius Bar</a
-                  >
-                </li>
-                <li class="ac-gf-directory-column-section-item" role="listitem">
-                  <a
-                    class="ac-gf-directory-column-section-link"
-                    href="/today/"
-                    data-analytics-title="today at apple"
-                    >Today at Apple</a
-                  >
-                </li>
-                <li class="ac-gf-directory-column-section-item" role="listitem">
-                  <a
-                    class="ac-gf-directory-column-section-link"
-                    href="/today/camp/"
-                    data-analytics-title="apple camp"
-                    >Apple Camp</a
-                  >
-                </li>
-                <li class="ac-gf-directory-column-section-item" role="listitem">
-                  <a
-                    class="ac-gf-directory-column-section-link"
-                    href="https://apps.apple.com/us/app/apple-store/id375380948"
-                    data-analytics-title="apple store app"
-                    data-analytics-exit-link=""
-                    >Apple Store App</a
-                  >
-                </li>
-                <li class="ac-gf-directory-column-section-item" role="listitem">
-                  <a
-                    class="ac-gf-directory-column-section-link"
-                    href="/us/shop/goto/special_deals"
-                    data-analytics-title="certified refurbished"
-                    >Certified Refurbished</a
-                  >
-                </li>
-                <li class="ac-gf-directory-column-section-item" role="listitem">
-                  <a
-                    class="ac-gf-directory-column-section-link"
-                    href="/us/shop/goto/trade_in"
-                    data-analytics-title="apple trade in"
-                    >Apple&nbsp;Trade&nbsp;In</a
-                  >
-                </li>
-                <li class="ac-gf-directory-column-section-item" role="listitem">
-                  <a
-                    class="ac-gf-directory-column-section-link"
-                    href="/us/shop/goto/payment_plan"
-                    data-analytics-title="financing"
-                    >Financing</a
-                  >
-                </li>
-                <li class="ac-gf-directory-column-section-item" role="listitem">
-                  <a
-                    class="ac-gf-directory-column-section-link"
-                    href="/us/shop/goto/buy_iphone/carrier_offers"
-                    data-analytics-title="carrier deals at apple"
-                    >Carrier Deals at Apple</a
-                  >
-                </li>
-                <li class="ac-gf-directory-column-section-item" role="listitem">
-                  <a
-                    class="ac-gf-directory-column-section-link"
-                    href="/us/shop/goto/order/list"
-                    data-analytics-title="order status"
-                    >Order Status</a
-                  >
-                </li>
-                <li class="ac-gf-directory-column-section-item" role="listitem">
-                  <a
-                    class="ac-gf-directory-column-section-link"
-                    href="/us/shop/goto/help"
-                    data-analytics-title="shopping help"
-                    >Shopping Help</a
-                  >
-                </li>
-              </ul>
-            </div>
-          </div>
-          <div class="ac-gf-directory-column">
-            <div class="ac-gf-directory-column-section">
-              <h3 class="ac-gf-directory-column-section-title">
-                <span class="ac-gf-directory-column-section-title-text"
-                  >For Business</span
-                >
-                <button
-                  class="ac-gf-directory-column-section-title-button"
-                  disabled=""
-                >
-                  <span class="ac-gf-directory-column-section-title-text"
-                    >For Business</span
-                  >
-                  <span
-                    class="ac-gf-directory-column-section-title-icon"
-                    aria-hidden="true"
-                    >+</span
-                  >
-                </button>
-              </h3>
-              <ul
-                id="footer-directory-column-section-business"
-                class="ac-gf-directory-column-section-list"
-                role="list"
-              >
-                <li class="ac-gf-directory-column-section-item" role="listitem">
-                  <a
-                    class="ac-gf-directory-column-section-link"
-                    href="/business/"
-                    data-analytics-title="apple and business"
-                    >Apple and Business</a
-                  >
-                </li>
-                <li class="ac-gf-directory-column-section-item" role="listitem">
-                  <a
-                    class="ac-gf-directory-column-section-link"
-                    href="/retail/business/"
-                    data-analytics-title="shop for business"
-                    >Shop for Business</a
-                  >
-                </li>
-              </ul>
-            </div>
-            <div class="ac-gf-directory-column-section">
-              <h3 class="ac-gf-directory-column-section-title">
-                <span class="ac-gf-directory-column-section-title-text"
-                  >For Education</span
-                >
-                <button
-                  class="ac-gf-directory-column-section-title-button"
-                  disabled=""
-                >
-                  <span class="ac-gf-directory-column-section-title-text"
-                    >For Education</span
-                  >
-                  <span
-                    class="ac-gf-directory-column-section-title-icon"
-                    aria-hidden="true"
-                    >+</span
-                  >
-                </button>
-              </h3>
-              <ul
-                id="footer-directory-column-section-education"
-                class="ac-gf-directory-column-section-list"
-                role="list"
-              >
-                <li class="ac-gf-directory-column-section-item" role="listitem">
-                  <a
-                    class="ac-gf-directory-column-section-link"
-                    href="/education/"
-                    data-analytics-title="apple and education"
-                    >Apple and Education</a
-                  >
-                </li>
-                <li class="ac-gf-directory-column-section-item" role="listitem">
-                  <a
-                    class="ac-gf-directory-column-section-link"
-                    href="/education/k12/how-to-buy/"
-                    data-analytics-title="shop for k12"
-                    >Shop for K-12</a
-                  >
-                </li>
-                <li class="ac-gf-directory-column-section-item" role="listitem">
-                  <a
-                    class="ac-gf-directory-column-section-link"
-                    href="/us/shop/goto/educationrouting"
-                    data-analytics-title="shop for college"
-                    >Shop for College</a
-                  >
-                </li>
-              </ul>
-            </div>
-            <div class="ac-gf-directory-column-section">
-              <h3 class="ac-gf-directory-column-section-title">
-                <span class="ac-gf-directory-column-section-title-text"
-                  >For Healthcare</span
-                >
-                <button
-                  class="ac-gf-directory-column-section-title-button"
-                  disabled=""
-                >
-                  <span class="ac-gf-directory-column-section-title-text"
-                    >For Healthcare</span
-                  >
-                  <span
-                    class="ac-gf-directory-column-section-title-icon"
-                    aria-hidden="true"
-                    >+</span
-                  >
-                </button>
-              </h3>
-              <ul
-                id="footer-directory-column-section-healthcare"
-                class="ac-gf-directory-column-section-list"
-                role="list"
-              >
-                <li class="ac-gf-directory-column-section-item" role="listitem">
-                  <a
-                    class="ac-gf-directory-column-section-link"
-                    href="/healthcare/"
-                    data-analytics-title="apple in healthcare"
-                    >Apple in Healthcare</a
-                  >
-                </li>
-                <li class="ac-gf-directory-column-section-item" role="listitem">
-                  <a
-                    class="ac-gf-directory-column-section-link"
-                    href="/healthcare/apple-watch/"
-                    data-analytics-title="health on apple watch"
-                    >Health on Apple&nbsp;Watch</a
-                  >
-                </li>
-                <li class="ac-gf-directory-column-section-item" role="listitem">
-                  <a
-                    class="ac-gf-directory-column-section-link"
-                    href="/healthcare/health-records/"
-                    data-analytics-title="health records on iphone"
-                    >Health Records on iPhone</a
-                  >
-                </li>
-              </ul>
-            </div>
-            <div class="ac-gf-directory-column-section">
-              <h3 class="ac-gf-directory-column-section-title">
-                <span class="ac-gf-directory-column-section-title-text"
-                  >For Government</span
-                >
-                <button
-                  class="ac-gf-directory-column-section-title-button"
-                  disabled=""
-                >
-                  <span class="ac-gf-directory-column-section-title-text"
-                    >For Government</span
-                  >
-                  <span
-                    class="ac-gf-directory-column-section-title-icon"
-                    aria-hidden="true"
-                    >+</span
-                  >
-                </button>
-              </h3>
-              <ul
-                id="footer-directory-column-section-government"
-                class="ac-gf-directory-column-section-list"
-                role="list"
-              >
-                <li class="ac-gf-directory-column-section-item" role="listitem">
-                  <a
-                    class="ac-gf-directory-column-section-link"
-                    href="/r/store/government/"
-                    data-analytics-title="shop for government"
-                    >Shop for Government</a
-                  >
-                </li>
-                <li class="ac-gf-directory-column-section-item" role="listitem">
-                  <a
-                    class="ac-gf-directory-column-section-link"
-                    href="/us/shop/goto/eppstore/veteransandmilitary"
-                    data-analytics-title="shop for veterans and military"
-                    >Shop for Veterans and Military</a
-                  >
-                </li>
-              </ul>
-            </div>
-          </div>
-          <div class="ac-gf-directory-column">
-            <div class="ac-gf-directory-column-section">
-              <h3 class="ac-gf-directory-column-section-title">
-                <span class="ac-gf-directory-column-section-title-text"
-                  >Apple Values</span
-                >
-                <button
-                  class="ac-gf-directory-column-section-title-button"
-                  disabled=""
-                >
-                  <span class="ac-gf-directory-column-section-title-text"
-                    >Apple Values</span
-                  >
-                  <span
-                    class="ac-gf-directory-column-section-title-icon"
-                    aria-hidden="true"
-                    >+</span
-                  >
-                </button>
-              </h3>
-              <ul
-                id="footer-directory-column-section-responsibility"
-                class="ac-gf-directory-column-section-list"
-                role="list"
-              >
-                <li class="ac-gf-directory-column-section-item" role="listitem">
-                  <a
-                    class="ac-gf-directory-column-section-link"
-                    href="/accessibility/"
-                    data-analytics-title="accessibility"
-                    >Accessibility</a
-                  >
-                </li>
-                <li class="ac-gf-directory-column-section-item" role="listitem">
-                  <a
-                    class="ac-gf-directory-column-section-link"
-                    href="/education-initiative/"
-                    data-analytics-title="education"
-                    >Education</a
-                  >
-                </li>
-                <li class="ac-gf-directory-column-section-item" role="listitem">
-                  <a
-                    class="ac-gf-directory-column-section-link"
-                    href="/environment/"
-                    data-analytics-title="environment"
-                    >Environment</a
-                  >
-                </li>
-                <li class="ac-gf-directory-column-section-item" role="listitem">
-                  <a
-                    class="ac-gf-directory-column-section-link"
-                    href="/diversity/"
-                    data-analytics-title="inclusion and diversity"
-                    >Inclusion and Diversity</a
-                  >
-                </li>
-                <li class="ac-gf-directory-column-section-item" role="listitem">
-                  <a
-                    class="ac-gf-directory-column-section-link"
-                    href="/privacy/"
-                    data-analytics-title="privacy"
-                    >Privacy</a
-                  >
-                </li>
-                <li class="ac-gf-directory-column-section-item" role="listitem">
-                  <a
-                    class="ac-gf-directory-column-section-link"
-                    href="/racial-equity-justice-initiative/"
-                    data-analytics-title="racial equity and justice"
-                    >Racial Equity and Justice</a
-                  >
-                </li>
-                <li class="ac-gf-directory-column-section-item" role="listitem">
-                  <a
-                    class="ac-gf-directory-column-section-link"
-                    href="/supplier-responsibility/"
-                    data-analytics-title="supplier responsibility"
-                    >Supplier Responsibility</a
-                  >
-                </li>
-              </ul>
-            </div>
-            <div class="ac-gf-directory-column-section">
-              <h3 class="ac-gf-directory-column-section-title">
-                <span class="ac-gf-directory-column-section-title-text"
-                  >About Apple</span
-                >
-                <button
-                  class="ac-gf-directory-column-section-title-button"
-                  disabled=""
-                >
-                  <span class="ac-gf-directory-column-section-title-text"
-                    >About Apple</span
-                  >
-                  <span
-                    class="ac-gf-directory-column-section-title-icon"
-                    aria-hidden="true"
-                    >+</span
-                  >
-                </button>
-              </h3>
-              <ul
-                id="footer-directory-column-section-about"
-                class="ac-gf-directory-column-section-list"
-                role="list"
-              >
-                <li class="ac-gf-directory-column-section-item" role="listitem">
-                  <a
-                    class="ac-gf-directory-column-section-link"
-                    href="/newsroom/"
-                    data-analytics-title="newsroom"
-                    >Newsroom</a
-                  >
-                </li>
-                <li class="ac-gf-directory-column-section-item" role="listitem">
-                  <a
-                    class="ac-gf-directory-column-section-link"
-                    href="/leadership/"
-                    data-analytics-title="apple leadership"
-                    >Apple Leadership</a
-                  >
-                </li>
-                <li class="ac-gf-directory-column-section-item" role="listitem">
-                  <a
-                    class="ac-gf-directory-column-section-link"
-                    href="/careers/us/"
-                    data-analytics-title="career opportunities"
-                    >Career Opportunities</a
-                  >
-                </li>
-                <li class="ac-gf-directory-column-section-item" role="listitem">
-                  <a
-                    class="ac-gf-directory-column-section-link"
-                    href="https://investor.apple.com/"
-                    data-analytics-title="investors"
-                    data-analytics-exit-link=""
-                    >Investors</a
-                  >
-                </li>
-                <li class="ac-gf-directory-column-section-item" role="listitem">
-                  <a
-                    class="ac-gf-directory-column-section-link"
-                    href="/compliance/"
-                    data-analytics-title="ethics and compliance"
-                    >Ethics &amp; Compliance</a
-                  >
-                </li>
-                <li class="ac-gf-directory-column-section-item" role="listitem">
-                  <a
-                    class="ac-gf-directory-column-section-link"
-                    href="/apple-events/"
-                    data-analytics-title="events"
-                    >Events</a
-                  >
-                </li>
-                <li class="ac-gf-directory-column-section-item" role="listitem">
-                  <a
-                    class="ac-gf-directory-column-section-link"
-                    href="/contact/"
-                    data-analytics-title="contact apple"
-                    >Contact Apple</a
-                  >
-                </li>
-              </ul>
-            </div>
-          </div>
-          <!--googleon: all-->
         </nav>
-
-        <section class="ac-gf-footer">
-          <div class="ac-gf-footer-shop" x-ms-format-detection="none">
-            More ways to shop:
-            <a href="/retail/" data-analytics-title="find an apple store"
-              >Find an Apple Store</a
-            >
-            or
-            <a
-              href="https://locate.apple.com/"
-              data-analytics-title="other retailers or resellers"
-              data-analytics-exit-link=""
-              >other retailer</a
-            >
-            near you. <span class="nowrap">Or call 1-800-MY-APPLE.</span>
+        <!-- =========== SECTION =========== -->
+        <section id="globalfooter-copyright" class="gf">
+          <div class="gf-copyright-secretaria">
+            Para mais informações, o email da Secretária do Departamento de
+            Estatistica é
+            <a href="#" class="emaillink-secretaria">est@unb.br</a>. Ou ligue
+            para o numero
+            <a href="#" class="celllink-secretaria">3107-3697</a> ou
+            <a href="#" class="celllink-secretaria">3107-3696</a>.
           </div>
-          <div class="ac-gf-footer-locale">
-            <a
-              class="ac-gf-footer-locale-link"
-              href="/choose-country-region/"
-              title="Choose your country or region"
-              aria-label="United States. Choose your country or region"
-              data-analytics-title="choose your country"
-              >United States</a
-            >
-          </div>
-          <div class="ac-gf-footer-legal">
-            <div class="ac-gf-footer-legal-copyright">
-              Copyright © 2023 Apple Inc. All rights reserved.
+          <!-- copyright - Legal -->
+          <div id="gf-copyright-legal">
+            <div class="gf-copyright-legal-text">
+              Copyright © 2023
+              <span class="espacador">&nbsp;</span> Todos os direitos
+              reservados.
             </div>
-            <ul class="ac-gf-footer-legal-links" role="list">
-              <li class="ac-gf-footer-legal-links-item" role="listitem">
-                <a
-                  class="ac-gf-footer-legal-link"
-                  href="/legal/privacy/"
-                  data-analytics-title="privacy policy"
-                  >Privacy Policy</a
+            <!-- links - copyright -->
+            <ul class="gf-copyright-legal-links" role="list">
+              <li class="gf-copy-legal-links-item" role="listitem">
+                <a class="gf-copy-legal-link" href="/legal/privacy/"
+                  >Politica de Privacidade</a
                 >
               </li>
-              <li class="ac-gf-footer-legal-links-item" role="listitem">
+              <li class="gf-copy-legal-links-item" role="listitem">
                 <a
-                  class="ac-gf-footer-legal-link"
+                  class="gf-copy-legal-link"
                   href="/legal/internet-services/terms/site.html"
-                  data-analytics-title="terms of use"
-                  >Terms of Use</a
+                  >Termos de uso</a
                 >
               </li>
-              <li class="ac-gf-footer-legal-links-item" role="listitem">
-                <a
-                  class="ac-gf-footer-legal-link"
-                  href="/us/shop/goto/help/sales_refunds"
-                  data-analytics-title="sales and refunds"
-                  >Sales and Refunds</a
-                >
-              </li>
-              <li class="ac-gf-footer-legal-links-item" role="listitem">
-                <a
-                  class="ac-gf-footer-legal-link"
-                  href="/legal/"
-                  data-analytics-title="legal"
-                  >Legal</a
-                >
-              </li>
-              <li class="ac-gf-footer-legal-links-item" role="listitem">
-                <a
-                  class="ac-gf-footer-legal-link"
-                  href="/sitemap/"
-                  data-analytics-title="site map"
-                  >Site Map</a
-                >
+              <li class="gf-copy-legal-links-item" role="listitem">
+                <a class="gf-copy-legal-link" href="/sitemap/"> Site Map</a>
               </li>
             </ul>
+            <div class="gf-copyright-locale locale-BR">
+              <a
+                class="gf-copyright-locale-link locale-unb"
+                href="https://www.google.com/maps?q=UNIVERSIDADE+DE+BRAS%C3%8DLIA+-+PR%C3%89DIO+CIC/EST+CAMPUS+DARCY+RIBEIRO+-+ASA+NORTE"
+                >Brasil
+              </a>
+            </div>
+          </div>
+          <!-- UnB -->
+          <div class="gf-copyright-locale locale-unb">
+            <a
+              class="gf-copyright-locale-link locale-unb"
+              href="https://www.google.com/maps?q=UNIVERSIDADE+DE+BRAS%C3%8DLIA+-+PR%C3%89DIO+CIC/EST+CAMPUS+DARCY+RIBEIRO+-+ASA+NORTE"
+            >
+              UNIVERSIDADE DE BRASÍLIA - PRÉDIO CIC/EST CAMPUS DARCY RIBEIRO -
+              ASA NORTE
+            </a>
           </div>
         </section>
-
-        <!-- script schama -->
-        <script
-          type="text/javascript"
-          src="/ac/globalfooter/8/en_US/scripts/ac-globalfooter.built.js"
-        ></script>
-
-        <script type="application/ld+json">
-          {
-            "@context": "http://schema.org",
-            "@id": "https://www.apple.com/#organization",
-            "@type": "Organization",
-            "name": "Apple",
-            "url": "https://www.apple.com/",
-            "logo": "https://www.apple.com/ac/structured-data/images/knowledge_graph_logo.png?202110180743",
-            "subOrganization": {
-              "@type": "Organization",
-              "name": "Apple Support",
-              "url": "https://support.apple.com",
-              "@id": "https://support.apple.com/#organization"
-            },
-            "contactPoint": [
-              {
-                "@type": "ContactPoint",
-                "telephone": "+1-800-692-7753",
-                "contactType": "sales",
-                "areaServed": "US"
-              },
-              {
-                "@type": "ContactPoint",
-                "telephone": "+1-800-275-2273",
-                "contactType": "technical support",
-                "areaServed": "US",
-                "availableLanguage": ["EN", "ES"]
-              },
-              {
-                "@type": "ContactPoint",
-                "telephone": "+1-800-275-2273",
-                "contactType": "customer support",
-                "areaServed": "US",
-                "availableLanguage": ["EN", "ES"]
-              }
-            ],
-            "sameAs": [
-              "http://www.wikidata.org/entity/Q312",
-              "https://www.youtube.com/user/Apple",
-              "https://www.linkedin.com/company/apple",
-              "https://www.facebook.com/Apple",
-              "https://www.twitter.com/Apple"
-            ]
-          }
-        </script>
-
-        <script
-          type="text/javascript"
-          src="/ac/localeswitcher/4/en_US/scripts/localeswitcher.built.js"
-        ></script>
       </div>
     </footer>
     <!-- Google Tag Manager (noscript) -->
