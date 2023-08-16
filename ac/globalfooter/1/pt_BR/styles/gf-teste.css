@@ -13,10 +13,6 @@
   letter-spacing: normal;
 }
 
-#globalfooter :is(h1, h2, h3, h4, h6) {
-  color: var(--footer-directory-title-color);
-}
-
 .globalfooter {
   --footer-background: #f5f5f7;
   --font-pad: "SF Pro Text", "Myriad Set Pro", "SF Pro Icons",
@@ -42,6 +38,13 @@
   direction: ltr;
   text-align: left;
   box-sizing: content-box;
+}
+
+#globalfooter :is(h1, h2, h3, h4, h6) {
+  color: var(--footer-directory-title-color);
+}
+#globalfooter a {
+  color: var(--footer-link-color);
 }
 
 #globalfooter #globalfooter-content {
@@ -93,6 +96,12 @@
 
 #globalfooter .gf-directory-column {
   flex-basis: 25%;
+  border: 1px solid black;
+}
+
+#globalfooter .gf-directory-column  {
+  flex-basis: 25%;
+  border-left: none;
 }
 
 #globalfooter .gf-directory-column-section {
