@@ -1,0 +1,451 @@
+.main
+  [data-module-template="heroes"]
+  [data-unit-id]
+  .unit-copy-wrapper
+  > *.headline {
+  font-size: 56px;
+  line-height: 1.07143;
+  font-weight: 600;
+  letter-spacing: -0.005em;
+  font-family: "SF Pro Display", "SF Pro Icons", "Helvetica Neue", "Helvetica",
+    "Arial", sans-serif;
+}
+
+.main
+  [data-module-template="heroes"]
+  [data-unit-id]
+  .unit-copy-wrapper
+  > *.headline:lang(ar) {
+  line-height: 1.21429;
+  letter-spacing: 0em;
+  font-family: "SF Pro AR", "SF Pro AR Display", "SF Pro Display", "SF Pro Gulf",
+    "SF Pro Icons", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+}
+
+/* ========================================================== */
+@media only screen and (max-width: 1068px) {
+  .main
+    [data-module-template="heroes"]
+    [data-unit-id]
+    .unit-copy-wrapper
+    > *.headline {
+    font-size: 48px;
+    line-height: 1.08349;
+    font-weight: 600;
+    letter-spacing: -0.002em;
+    font-family: "SF Pro Display", "SF Pro Icons", "Helvetica Neue", "Helvetica",
+      "Arial", sans-serif;
+  }
+
+  .main
+    [data-module-template="heroes"]
+    [data-unit-id]
+    .unit-copy-wrapper
+    > *.headline:lang(ar) {
+    letter-spacing: 0em;
+    font-family: "SF Pro AR", "SF Pro AR Display", "SF Pro Display",
+      "SF Pro Gulf", "SF Pro Icons", "Helvetica Neue", "Helvetica", "Arial",
+      sans-serif;
+  }
+}
+/* ========================================================== */
+@media only screen and (max-width: 734px) {
+  .main
+    [data-module-template="heroes"]
+    [data-unit-id]
+    .unit-copy-wrapper
+    > *.headline {
+    font-size: 32px;
+    line-height: 1.125;
+    font-weight: 600;
+    letter-spacing: 0.004em;
+    font-family: "SF Pro Display", "SF Pro Icons", "Helvetica Neue", "Helvetica",
+      "Arial", sans-serif;
+  }
+
+  .main
+    [data-module-template="heroes"]
+    [data-unit-id]
+    .unit-copy-wrapper
+    > *.headline:lang(ar) {
+    line-height: 1.34375;
+    font-family: "SF Pro AR", "SF Pro AR Display", "SF Pro Display",
+      "SF Pro Gulf", "SF Pro Icons", "Helvetica Neue", "Helvetica", "Arial",
+      sans-serif;
+  }
+}
+/* ========================================================== */
+.main
+  [data-module-template="promos"]
+  [data-unit-id]
+  .unit-copy-wrapper
+  .headline {
+  font-size: 40px;
+  line-height: 1.1;
+  font-weight: 600;
+  letter-spacing: 0em;
+  font-family: "SF Pro Display", "SF Pro Icons", "Helvetica Neue", "Helvetica",
+    "Arial", sans-serif;
+  margin-top: 53px;
+}
+
+.main
+  [data-module-template="promos"]
+  [data-unit-id]
+  .unit-copy-wrapper
+  .headline:lang(ar) {
+  font-family: "SF Pro AR", "SF Pro AR Display", "SF Pro Display", "SF Pro Gulf",
+    "SF Pro Icons", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+}
+/* ========================================================== */
+@media only screen and (max-width: 1068px) {
+  .main
+    [data-module-template="promos"]
+    [data-unit-id]
+    .unit-copy-wrapper
+    .headline {
+    font-size: 32px;
+    line-height: 1.125;
+    font-weight: 600;
+    letter-spacing: 0.002em;
+    font-family: "SF Pro Display", "SF Pro Icons", "Helvetica Neue", "Helvetica",
+      "Arial", sans-serif;
+  }
+
+  .main
+    [data-module-template="promos"]
+    [data-unit-id]
+    .unit-copy-wrapper
+    .headline:lang(ar) {
+    font-family: "SF Pro AR", "SF Pro AR Display", "SF Pro Display",
+      "SF Pro Gulf", "SF Pro Icons", "Helvetica Neue", "Helvetica", "Arial",
+      sans-serif;
+  }
+}
+/* ========================================================== */
+.main
+  [data-module-template="heroes"]
+  [data-unit-id]
+  .unit-copy-wrapper
+  > *.subhead {
+  font-size: 28px;
+  line-height: 1.10722;
+  font-weight: 400;
+  letter-spacing: 0.004em;
+  font-family: "SF Pro Display", "SF Pro Icons", "Helvetica Neue", "Helvetica",
+    "Arial", sans-serif;
+  margin-top: 6px;
+}
+
+.main
+  [data-module-template="heroes"]
+  [data-unit-id]
+  .unit-copy-wrapper
+  > *.subhead:lang(ar) {
+  font-family: "SF Pro AR", "SF Pro AR Display", "SF Pro Display", "SF Pro Gulf",
+    "SF Pro Icons", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+}
+/* ========================================================== */
+@media only screen and (max-width: 1068px) {
+  .main
+    [data-module-template="heroes"]
+    [data-unit-id]
+    .unit-copy-wrapper
+    > *.subhead {
+    font-size: 24px;
+    line-height: 1.16667;
+    font-weight: 400;
+    letter-spacing: 0.009em;
+    font-family: "SF Pro Display", "SF Pro Icons", "Helvetica Neue", "Helvetica",
+      "Arial", sans-serif;
+  }
+
+  .main
+    [data-module-template="heroes"]
+    [data-unit-id]
+    .unit-copy-wrapper
+    > *.subhead:lang(ar) {
+    line-height: 1.33341;
+    font-family: "SF Pro AR", "SF Pro AR Display", "SF Pro Display",
+      "SF Pro Gulf", "SF Pro Icons", "Helvetica Neue", "Helvetica", "Arial",
+      sans-serif;
+  }
+}
+/* ========================================================== */
+
+@media only screen and (max-width: 734px) {
+  .main
+    [data-module-template="heroes"]
+    [data-unit-id]
+    .unit-copy-wrapper
+    > *.subhead {
+    font-size: 19px;
+    line-height: 1.4211;
+    font-weight: 400;
+    letter-spacing: 0.012em;
+    font-family: "SF Pro Display", "SF Pro Icons", "Helvetica Neue", "Helvetica",
+      "Arial", sans-serif;
+  }
+
+  .main
+    [data-module-template="heroes"]
+    [data-unit-id]
+    .unit-copy-wrapper
+    > *.subhead:lang(ar) {
+    line-height: 1.57895;
+    font-family: "SF Pro AR", "SF Pro AR Display", "SF Pro Display",
+      "SF Pro Gulf", "SF Pro Icons", "Helvetica Neue", "Helvetica", "Arial",
+      sans-serif;
+  }
+}
+/* ========================================================== */
+.main
+  [data-module-template="promos"]
+  [data-unit-id]
+  .unit-copy-wrapper
+  .subhead {
+  font-size: 21px;
+  line-height: 1.2381;
+  font-weight: 400;
+  letter-spacing: 0.016em;
+  font-family: "SF Pro Display", "SF Pro Icons", "Helvetica Neue", "Helvetica",
+    "Arial", sans-serif;
+  margin-top: 4px;
+}
+/* ========================================================== */
+
+@media only screen and (max-width: 1068px) {
+  .main
+    [data-module-template="promos"]
+    [data-unit-id]
+    .unit-copy-wrapper
+    .subhead {
+    font-size: 19px;
+    line-height: 1.21053;
+    font-weight: 400;
+    letter-spacing: 0.012em;
+    font-family: "SF Pro Display", "SF Pro Icons", "Helvetica Neue", "Helvetica",
+      "Arial", sans-serif;
+  }
+}
+/* ========================================================== */
+@media only screen and (max-width: 734px) and (max-width: 734px) {
+  .main
+    [data-module-template="heroes"]
+    [data-unit-id]
+    .unit-copy-wrapper
+    > *.subhead {
+    font-size: 19px;
+    line-height: 1.21053;
+    font-weight: 400;
+    letter-spacing: 0em;
+    font-family: "SF Pro Display", "SF Pro Icons", "Helvetica Neue", "Helvetica",
+      "Arial", sans-serif;
+  }
+
+  .main
+    [data-module-template="heroes"]
+    [data-unit-id]
+    .unit-copy-wrapper
+    > *.subhead:lang(ar) {
+    font-family: "SF Pro AR", "SF Pro AR Display", "SF Pro Display",
+      "SF Pro Gulf", "SF Pro Icons", "Helvetica Neue", "Helvetica", "Arial",
+      sans-serif;
+  }
+}
+
+/* ========================================================== */
+.main [data-module-template="heroes"] [data-unit-id] .unit-copy-wrapper > *.cta,
+.main
+  [data-module-template="heroes"]
+  [data-unit-id]
+  .unit-copy-wrapper
+  > *.cta-links {
+  display: inline-block;
+  font-size: 21px;
+  line-height: 1.381;
+  font-weight: 400;
+  letter-spacing: 0.011em;
+  font-family: "SF Pro Display", "SF Pro Icons", "Helvetica Neue", "Helvetica",
+    "Arial", sans-serif;
+  margin-top: 0.65em;
+}
+
+.main
+  [data-module-template="heroes"]
+  [data-unit-id]
+  .unit-copy-wrapper
+  > *.cta:lang(ar),
+.main
+  [data-module-template="heroes"]
+  [data-unit-id]
+  .unit-copy-wrapper
+  > *.cta-links:lang(ar) {
+  line-height: 1.52381;
+  font-family: "SF Pro AR", "SF Pro AR Display", "SF Pro Display", "SF Pro Gulf",
+    "SF Pro Icons", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+}
+/* ========================================================== */
+@media only screen and (max-width: 734px) {
+  .main
+    [data-module-template="heroes"]
+    [data-unit-id]
+    .unit-copy-wrapper
+    > *.cta,
+  .main
+    [data-module-template="heroes"]
+    [data-unit-id]
+    .unit-copy-wrapper
+    > *.cta-links {
+    font-size: 19px;
+    line-height: 1.4211;
+    font-weight: 400;
+    letter-spacing: 0.012em;
+    font-family: "SF Pro Display", "SF Pro Icons", "Helvetica Neue", "Helvetica",
+      "Arial", sans-serif;
+  }
+
+  .main
+    [data-module-template="heroes"]
+    [data-unit-id]
+    .unit-copy-wrapper
+    > *.cta:lang(ar),
+  .main
+    [data-module-template="heroes"]
+    [data-unit-id]
+    .unit-copy-wrapper
+    > *.cta-links:lang(ar) {
+    line-height: 1.57895;
+    font-family: "SF Pro AR", "SF Pro AR Display", "SF Pro Display",
+      "SF Pro Gulf", "SF Pro Icons", "Helvetica Neue", "Helvetica", "Arial",
+      sans-serif;
+  }
+}
+/* ========================================================== */
+.main
+  [data-module-template="promos"]
+  [data-unit-id]
+  .unit-copy-wrapper
+  .cta-links,
+.main [data-module-template="promos"] [data-unit-id] .unit-copy-wrapper .cta {
+  font-size: 17px;
+  line-height: 1.23536;
+  font-weight: 400;
+  letter-spacing: -0.022em;
+  font-family: "SF Pro Text", "SF Pro Icons", "Helvetica Neue", "Helvetica",
+    "Arial", sans-serif;
+  margin-top: 0.7em;
+  text-align: center;
+}
+
+.main
+  [data-module-template="promos"]
+  [data-unit-id]
+  .unit-copy-wrapper
+  .cta-links:lang(ar),
+.main
+  [data-module-template="promos"]
+  [data-unit-id]
+  .unit-copy-wrapper
+  .cta:lang(ar) {
+  letter-spacing: 0em;
+  font-family: "SF Pro AR", "SF Pro AR Text", "SF Pro Text", "SF Pro Gulf",
+    "SF Pro Icons", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+}
+/* ========================================================== */
+@media only screen and (max-width: 734px) {
+  .main
+    [data-module-template="heroes"]
+    [data-unit-id]
+    .unit-copy-wrapper
+    .cta-links {
+    font-size: 17px;
+    line-height: 1.23536;
+    font-weight: 400;
+    letter-spacing: -0.022em;
+    font-family: "SF Pro Text", "SF Pro Icons", "Helvetica Neue", "Helvetica",
+      "Arial", sans-serif;
+  }
+
+  .main
+    [data-module-template="heroes"]
+    [data-unit-id]
+    .unit-copy-wrapper
+    .cta-links:lang(ar) {
+    letter-spacing: 0em;
+    font-family: "SF Pro AR", "SF Pro AR Text", "SF Pro Text", "SF Pro Gulf",
+      "SF Pro Icons", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+  }
+}
+/* ========================================================== */
+.main [data-module-template="heroes"] [data-unit-id] .unit-copy-wrapper > *.cta,
+.main
+  [data-module-template="heroes"]
+  [data-unit-id]
+  .unit-copy-wrapper
+  > *.cta-links {
+  display: inline-block;
+  font-size: 21px;
+  line-height: 1.381;
+  font-weight: 400;
+  letter-spacing: 0.011em;
+  font-family: "SF Pro Display", "SF Pro Icons", "Helvetica Neue", "Helvetica",
+    "Arial", sans-serif;
+  margin-top: 0.65em;
+}
+
+.main
+  [data-module-template="heroes"]
+  [data-unit-id]
+  .unit-copy-wrapper
+  > *.cta:lang(ar),
+.main
+  [data-module-template="heroes"]
+  [data-unit-id]
+  .unit-copy-wrapper
+  > *.cta-links:lang(ar) {
+  line-height: 1.52381;
+  font-family: "SF Pro AR", "SF Pro AR Display", "SF Pro Display", "SF Pro Gulf",
+    "SF Pro Icons", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+}
+/* ========================================================== */
+@media only screen and (max-width: 734px) {
+  .main
+    [data-module-template="heroes"]
+    [data-unit-id]
+    .unit-copy-wrapper
+    > *.cta,
+  .main
+    [data-module-template="heroes"]
+    [data-unit-id]
+    .unit-copy-wrapper
+    > *.cta-links {
+    font-size: 19px;
+    line-height: 1.4211;
+    font-weight: 400;
+    letter-spacing: 0.012em;
+    font-family: "SF Pro Display", "SF Pro Icons", "Helvetica Neue", "Helvetica",
+      "Arial", sans-serif;
+  }
+
+  .main
+    [data-module-template="heroes"]
+    [data-unit-id]
+    .unit-copy-wrapper
+    > *.cta:lang(ar),
+  .main
+    [data-module-template="heroes"]
+    [data-unit-id]
+    .unit-copy-wrapper
+    > *.cta-links:lang(ar) {
+    line-height: 1.57895;
+    font-family: "SF Pro AR", "SF Pro AR Display", "SF Pro Display",
+      "SF Pro Gulf", "SF Pro Icons", "Helvetica Neue", "Helvetica", "Arial",
+      sans-serif;
+  }
+}
+/* ========================================================== */
+
+/* ========================================================== */
+
+/* ========================================================== */
