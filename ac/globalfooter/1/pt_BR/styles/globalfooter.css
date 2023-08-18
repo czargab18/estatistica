@@ -431,8 +431,8 @@
   --footer-link-color: #06c;
   max-height: 9999px;
   padding-bottom: 3px;
-  /* display: flex; */
-  /* flex-direction: column; */
+  display: flex;
+  flex-direction: column;
   border-bottom: 1px solid var(--footer-border-color);
 }
 
@@ -453,7 +453,7 @@
 #globalfooter .gf-copyright-secretaria-locale {
   margin-top: 5px;
   position: relative;
-  top: 6px;
+  /* top: 6px; */
   z-index: 2;
   white-space: normal;
 }
@@ -530,9 +530,11 @@
 @media only screen and (max-width: 833px) {
   #globalfooter ul.gf-copyright-legal-links {
     margin-top: 10px;
+    margin-left: 0px;
+    margin-right: 0px;
     margin-inline-start: 0;
     flex-wrap: wrap;
-      gap: 0px;
+    align-content: space-between;
   }
   #globalfooter ul span.footer-espacador {
     /* display: none; */
@@ -567,5 +569,17 @@
   }
   #globalfooter-copyright #gf-copyright-legal a.locale-BR {
     /* padding-bottom: 19px; */
+  }
+}
+
+/* teste - interatividade tela < 833px*/
+
+@media only screen and (max-width: 833px) {
+  #globalfooter ul#footer-directory-column-section-products {
+    display: none;
+  }
+  #globalfooter ul.footer-directory-column-section-products-expanded {
+    display: block;
+    transition: max-height 0.3s ease-out;
   }
 }
