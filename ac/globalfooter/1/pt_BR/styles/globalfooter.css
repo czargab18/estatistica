@@ -580,6 +580,6 @@
   }
   #globalfooter ul.footer-directory-column-section-products-expanded {
     display: block;
-    transition: max-height 0.3s ease-out;
+    transition: transform 300ms ease;
   }
 }
