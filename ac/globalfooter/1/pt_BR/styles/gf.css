@@ -1,0 +1,269 @@
+/* ============ GLOBAL ============ */
+#globalfooter {
+  --font-pad: "SF Pro Text", "Myriad Set Pro", "SF Pro Icons",
+    "Apple Legacy Chevron", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+  font-weight: normal;
+  text-size-adjust: 100%;
+  font-family: var(--font-pad);
+}
+
+#globalfooter,
+#globalfooter:before,
+#globalfooter:after,
+#globalfooter *,
+#globalfooter *:before,
+#globalfooter *:after {
+  box-sizing: content-box;
+  margin: 0;
+  padding: 0;
+  pointer-events: auto;
+  letter-spacing: normal;
+  font-size: 1em;
+  font-family: inherit;
+  font-weight: inherit;
+  line-height: inherit;
+  text-align: inherit;
+}
+
+#globalfooter,
+#globalfooter:is(input, textarea, select, button) {
+  font-synthesis: none;
+  direction: ltr;
+  text-align: left;
+}
+
+#globalfooter,
+#globalfooter:is(select, button, input, textarea) {
+  font-family: var(--font-pad);
+}
+
+#globalfooter sup {
+  font-size: 0.6em;
+  vertical-align: top;
+  position: relative;
+  bottom: -0.2em;
+}
+
+:is(h1, h2, h3) #globalfooter sup {
+  font-size: 0.4em;
+}
+
+#globalfooter sup a {
+  vertical-align: inherit;
+  color: inherit;
+}
+
+#globalfooter sup a:hover {
+  color: #06c;
+  text-decoration: none;
+}
+
+#globalfooter sub {
+  font-size: smaller;
+  vertical-align: sub;
+  line-height: 1;
+}
+
+/* ======= CONFIG-FOOTER ======= */
+.globalfooter {
+  --footer-background: #f5f5f7;
+  --footer-border-color: #d2d2d7;
+  --footer-text-color: #6e6e73;
+  --footer-link-color: #424245;
+  --footer-pipe-color: #86868b;
+  --footer-directory-title-color: #1d1d1f;
+  --footer-directory-title-color-hover: #000;
+  /* font-size: 12px !important; */
+  font-size: 12px;
+  line-height: 1.33337;
+  font-weight: 400;
+  letter-spacing: -0.01em;
+  font-family: var(--font-pad);
+  background: var(--footer-background);
+  color: var(--footer-text-color);
+  min-width: 320px;
+  overflow: hidden;
+  position: relative;
+  z-index: 1;
+}
+
+#globalfooter :is(h1, h2, h3, h4, h6) {
+  color: var(--footer-directory-title-color);
+}
+
+#globalfooter :is(h1, h2, h3, h4, h6) > button {
+  color: var(--footer-directory-title-color);
+}
+#globalfooter a {
+  color: var(--footer-link-color);
+  text-decoration: none;
+}
+#globalfooter a:hover {
+  text-decoration: underline;
+}
+@media (prefers-contrast: more) {
+  #globalfooter .gf-content a:link {
+    text-decoration: underline;
+  }
+
+  #globalfooter .gf-content a:link:hover {
+    text-decoration: underline;
+  }
+}
+
+/* ========== CONTEÚDO ========== */
+#globalfooter #globalfooter-content {
+  margin: 0 auto;
+  padding: 0px 22px;
+  padding-top: 28px;
+  padding-bottom: 18px;
+  max-width: 980px;
+}
+/* #globalfooter #globalfooter-content a {
+  color: rgb(245, 30, 30);
+} */
+
+/* ========== NOTAS-INFO ========== */
+#globalfooter #globalfooter-note {
+  border-bottom: 1px solid var(--footer-border-color);
+  padding: 0px 11px;
+  padding-bottom: 16px;
+}
+#globalfooter #globalfooter-note a {
+  text-decoration: underline;
+  color: var(--footer-link-color);
+}
+#globalfooter #globalfooter-note ol {
+  list-style-position: outside;
+  margin: 0;
+  padding: 0 17px;
+}
+
+#globalfooter #globalfooter-note ol li {
+  list-style-type: decimal;
+}
+
+#globalfooter #globalfooter-note ul {
+  list-style: none;
+  margin: 0;
+}
+
+#globalfooter #globalfooter-note li {
+  padding-bottom: 0.8em;
+}
+
+#globalfooter #globalfooter-note p,
+#globalfooter #globalfooter-note li {
+  font-size: 12px;
+  line-height: 1.33337;
+  font-weight: 400;
+  letter-spacing: -0.01em;
+  font-family: var(--font-pad);
+}
+
+#globalfooter #globalfooter-note small {
+  font-size: 1em;
+}
+/* ========== NAVEGAÇÃO-links ========== */
+
+/* ========== COPYRIGHT ========== */
+#globalfooter #globalfooter-copyright {
+  border-top: 1px solid var(--footer-border-color);
+  padding: 12px 0 21px;
+  display: flex;
+  flex-direction: column;
+  font-size: 12px;
+}
+
+/* secretaria */
+#globalfooter .gf-copyright-secretaria {
+  --footer-link-color: #06c;
+  max-height: 9999px;
+  padding-bottom: 3px;
+  display: flex;
+  flex-direction: column;
+}
+/* "secretaria-text" */
+#globalfooter .gf-copyright-secretaria-text a,
+#globalfooter .gf-copyright-secretaria-text a:hover {
+  color: var(--footer-link-color);
+  text-decoration: underline;
+}
+
+/* secretaria -> locale */
+#globalfooter .gf-copyright-secretaria-locale {
+  float: right;
+  margin-top: 5px;
+  position: relative;
+  top: -3px;
+  z-index: 2;
+  /* white-space: nowrap; */
+}
+
+/* secretaria -> locale - links */
+#globalfooter a.locale-dep-unb {
+  color: var(--footer-text-color);
+  text-decoration: none;
+}
+
+#globalfooter a.locale-dep-unb:hover {
+  text-decoration: underline;
+}
+
+/* copyright-termos */
+#globalfooter #gf-copyright-legal {
+  top: 4px;
+  position: relative;
+  z-index: 1;
+  display: inline-flex;
+  flex-wrap: wrap;
+  width: 100%;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 0px 30px;
+}
+@media only screen and (max-width: 833px) {
+   #globalfooter #gf-copyright-legal {
+   flex-direction: column;
+   }
+}
+/* copyright-termos -> text */
+#globalfooter .gf-copyright-legal-text {
+  /* 'SEM PROPRIEDADES */
+}
+
+/* copyright-termos -> ul.links */
+#globalfooter ul.gf-copyright-legal-links {
+  margin-right: 30px;
+  float: left;
+  display: inline-flex;
+  gap: 0px 17px;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-top: 5px;
+  list-style-type: none;
+}
+@media only screen and (max-width: 833px) {
+  #globalfooter ul.gf-copyright-legal-links {
+     margin-right: 0;
+     float: none;
+     gap: 0px;
+     flex-direction: column;
+   }
+      #globalfooter ul span.footer-espacador{
+         display: none;
+      }
+      #globalfooter .gf-copyright-locale{
+         margin-top: 10px;
+      }
+}
+
+/* espaçador */
+#globalfooter-copyright .footer-espacador {
+  --color-espacador: #d2d2d7;
+  width: 0.12em;
+  height: auto;
+  background-color: var(--color-espacador);
+  border-radius: 0.5em;
+  display: block;
+}
