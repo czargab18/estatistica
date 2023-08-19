@@ -1,0 +1,10 @@
+config.css:
+  - header
+  - navbar
+  - section
+  - main
+  - footer
+  - tipografia
+     * tipografia de todo o site
+  - design
+     * design/config.css: de icones, imagens, etc 
