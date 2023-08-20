@@ -8,12 +8,11 @@
   "editor.formatOnPaste": true,
   "editor.formatOnType": false,
   "editor.formatOnSaveMode": "file",
-  "html.format.wrapAttributes": "force-aligned",
   "editor.quickSuggestionsDelay": 1,
   "editor.minimap.maxColumn": 80,
   "editor.defaultFormatter": "esbenp.prettier-vscode",
   "editor.wordWrap": "wordWrapColumn",
-  "editor.wordWrapColumn": 80,
+  "editor.wordWrapColumn": 82,
   "editor.tabSize": 3,
   "files.autoSave": "afterDelay",
   "files.autoSaveDelay": 100,
@@ -44,5 +43,8 @@
     "editor.defaultFormatter": "REditorSupport.r",
     "editor.formatOnSave": true
   },
-  "vscode-edge-devtools.webhint": false
+  "vscode-edge-devtools.webhint": false,
+  "explorer.confirmDragAndDrop": false,
+  "editor.wrappingIndent": "indent",
+  "html.format.wrapAttributes": "force"
 }
