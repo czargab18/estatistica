@@ -74,15 +74,6 @@ div[class="unit-copy-warpper"] {
   z-index: 6;
   font-size: 19px;
 }
-
-.headline {
-  color: whitesmoke;
-  font-size: 56px;
-}
-.subhead {
-  color: rgb(237, 233, 233);
-  font-size: 24px;
-}
 /* faltou o sup */
 
 section[data-module-template="heroes"]
@@ -210,6 +201,6 @@ section[data-module-template="noticias"] {
     flex-direction: column;
     width: 100%;
     height: max-content;
-    gap: 1px;
+    gap: 1em;
   }
 }

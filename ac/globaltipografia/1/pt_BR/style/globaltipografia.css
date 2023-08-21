@@ -3986,3 +3986,13 @@ body {
     width: 87.5%;
   }
 }
+
+/* FONTETS */
+.headline {
+  color: whitesmoke;
+  font-size: 56px;
+}
+.subhead {
+  color: rgb(237, 233, 233);
+  font-size: 24px;
+}
