@@ -96,7 +96,7 @@ section [class="unit-image-warpper"] {
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
-  opacity: 0.85;
+  /* opacity: 0.85; */
 }
 
 section[data-module-template="heroes"] figure[id="unit-image-calouro"] {
