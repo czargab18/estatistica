@@ -1,1707 +1,426 @@
+.main [data-module-template] .standalone-module {
+  box-sizing: border-box;
+  border-style: solid;
+  overflow: visible;
+  border-top-width: 0px;
+  border-left-width: 0px;
+  border-right-width: 0px;
+}
+
+.main .module-content {
+  width: 100%;
+  position: relative;
+  background-color: blue;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
 .main [data-module-template="noticias"] .gallery {
-    overflow: hidden;
-    position: relative;
-    height: 561.13167px;
-    background: #fff;
-    width: 100%;
-    margin: 0 auto;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-    -ms-flex-direction: column;
-    flex-direction: column
+  position: relative;
+  height: 561.13167px;
+  overflow: hidden;
+  background: #fff;
+  width: 100%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
 }
 
-@media (min-width: 1441px) {
-    .main [data-module-template="noticias"] .gallery {
-        height:705.25979px
-    }
-}
-
-@media only screen and (max-width: 1068px) {
-    .main [data-module-template="noticias"] .gallery {
-        height:405.79359px
-    }
-}
-
-@media only screen and (max-width: 734px) {
-    .main [data-module-template="noticias"] .gallery {
-        height:533px
-    }
-}
+/* ================================================= */
+/* =============        NOTICIAS       ============= */
+/* ================================================= */
 
 .main [data-module-template="noticias"] .gallery .item-container {
-    position: relative;
-    width: 995px;
-    margin: 0 auto;
-    will-change: transform
+  position: relative;
+  width: 995px;
+  margin: 0 auto;
+  will-change: transform;
+  /*  */
+  aspect-ratio: 16/9;
+  overflow: hidden;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+  scroll-snap-align: start;
+  object-fit: cover;
+  flex: 1 0 100%;
+
 }
 
-@media (min-width: 1441px) {
-    .main [data-module-template="noticias"] .gallery .item-container {
-        width:1265px
-    }
-}
-
-@media only screen and (max-width: 1068px) {
-    .main [data-module-template="noticias"] .gallery .item-container {
-        width:704px
-    }
-}
-
-@media only screen and (max-width: 734px) {
-    .main [data-module-template="noticias"] .gallery .item-container {
-        width:289px
-    }
-}
-
-.main [data-module-template="noticias"] .gallery .fnb-item a {
-    background-size: 980px 523px;
-    background-repeat: no-repeat;
-    background-image: url("/v/home/be/images/noticias/fnb__brvfy48gzsz6_large.jpg")
-}
-
-@media only screen and (-webkit-min-device-pixel-ratio: 1.5), only screen and (min-resolution: 1.5dppx), (-webkit-min-device-pixel-ratio: 1.5), (min-resolution: 144dpi) {
-    .main [data-module-template="noticias"] .gallery .fnb-item a {
-        background-image:url("/v/home/be/images/noticias/fnb__brvfy48gzsz6_large_2x.jpg")
-    }
-}
-
-@media only screen and (min-width: 1441px) {
-    .main [data-module-template="noticias"] .gallery .fnb-item a {
-        background-size:1250px 667px;
-        background-repeat: no-repeat;
-        background-image: url("/v/home/be/images/noticias/fnb__brvfy48gzsz6_xlarge.jpg")
-    }
-}
-
-@media only screen and (min-width: 1441px) and (-webkit-min-device-pixel-ratio: 1.5), only screen and (min-width: 1441px) and (min-resolution: 1.5dppx), only screen and (min-width: 1441px) and (min-resolution: 144dpi) {
-    .main [data-module-template="noticias"] .gallery .fnb-item a {
-        background-image:url("/v/home/be/images/noticias/fnb__brvfy48gzsz6_xlarge_2x.jpg")
-    }
-}
-
-@media only screen and (max-width: 1068px) {
-    .main [data-module-template="noticias"] .gallery .fnb-item a {
-        background-size:689px 378px;
-        background-repeat: no-repeat;
-        background-image: url("/v/home/be/images/noticias/fnb__brvfy48gzsz6_medium.jpg")
-    }
-}
-
-@media only screen and (max-width: 1068px) and (-webkit-min-device-pixel-ratio: 1.5), only screen and (max-width: 1068px) and (min-resolution: 1.5dppx), only screen and (max-width: 1068px) and (min-resolution: 144dpi) {
-    .main [data-module-template="noticias"] .gallery .fnb-item a {
-        background-image:url("/v/home/be/images/noticias/fnb__brvfy48gzsz6_medium_2x.jpg")
-    }
-}
-
-@media only screen and (max-width: 734px) {
-    .main [data-module-template="noticias"] .gallery .fnb-item a {
-        background-size:274px 495px;
-        background-repeat: no-repeat;
-        background-image: url("/v/home/be/images/noticias/fnb__brvfy48gzsz6_small.jpg")
-    }
-}
-
-@media only screen and (max-width: 734px) and (-webkit-min-device-pixel-ratio: 1.5), only screen and (max-width: 734px) and (min-resolution: 1.5dppx), only screen and (max-width: 734px) and (min-resolution: 144dpi) {
-    .main [data-module-template="noticias"] .gallery .fnb-item a {
-        background-image:url("/v/home/be/images/noticias/fnb__brvfy48gzsz6_small_2x.jpg")
-    }
+.main [data-module-template="noticias"] .gallery .gallery-item .current {
+  z-index: 1 !important;
 }
 
 .main [data-module-template="noticias"] .gallery .gallery-item {
-    --abs: Max(var(--progress) , var(--progress) * -1);
-    --progress-0-1: clamp(0, var(--abs), 1);
-    --progress-1-1: clamp(-1, var(--progress), 1);
-    overflow: hidden;
-    position: absolute;
-    left: 0;
-    height: 523.13167px;
-    width: 100%;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-pack: center;
-    -ms-flex-pack: center;
-    justify-content: center;
-    -webkit-box-align: center;
-    -ms-flex-align: center;
-    align-items: center;
-    will-change: opacity;
-    z-index: 0 !important
-}
-
-@media (min-width: 1441px) {
-    .main [data-module-template="noticias"] .gallery .gallery-item {
-        height:667.25979px
-    }
-}
-
-@media only screen and (max-width: 1068px) {
-    .main [data-module-template="noticias"] .gallery .gallery-item {
-        height:367.79359px
-    }
-}
-
-@media only screen and (max-width: 734px) {
-    .main [data-module-template="noticias"] .gallery .gallery-item {
-        height:495px
-    }
-}
-
-.main [data-module-template="noticias"] .gallery .gallery-item.theme-dark {
-    background: #fff
-}
-
-.main [data-module-template="noticias"] .gallery .gallery-item.theme-dark .info-top .atv-plus-icon {
-    background-size: 119px 46px;
-    background-repeat: no-repeat;
-    background-image: url("/v/home/be/images/logos/tv-plus/logo_hero_light__d7t8cya4x26a_large.png")
-}
-
-@media only screen and (-webkit-min-device-pixel-ratio: 1.5), only screen and (min-resolution: 1.5dppx), (-webkit-min-device-pixel-ratio: 1.5), (min-resolution: 144dpi) {
-    .main [data-module-template="noticias"] .gallery .gallery-item.theme-dark .info-top .atv-plus-icon {
-        background-image:url("/v/home/be/images/logos/tv-plus/logo_hero_light__d7t8cya4x26a_large_2x.png")
-    }
-}
-
-@media only screen and (max-width: 1068px) {
-    .main [data-module-template="noticias"] .gallery .gallery-item.theme-dark .info-top .atv-plus-icon {
-        background-size:92px 36px;
-        background-repeat: no-repeat;
-        background-image: url("/v/home/be/images/logos/tv-plus/logo_hero_light__d7t8cya4x26a_medium.png")
-    }
-}
-
-@media only screen and (max-width: 1068px) and (-webkit-min-device-pixel-ratio: 1.5), only screen and (max-width: 1068px) and (min-resolution: 1.5dppx), only screen and (max-width: 1068px) and (min-resolution: 144dpi) {
-    .main [data-module-template="noticias"] .gallery .gallery-item.theme-dark .info-top .atv-plus-icon {
-        background-image:url("/v/home/be/images/logos/tv-plus/logo_hero_light__d7t8cya4x26a_medium_2x.png")
-    }
-}
-
-@media only screen and (max-width: 734px) {
-    .main [data-module-template="noticias"] .gallery .gallery-item.theme-dark .info-top .atv-plus-icon {
-        background-size:69px 27px;
-        background-repeat: no-repeat;
-        background-image: url("/v/home/be/images/logos/tv-plus/logo_hero_light__d7t8cya4x26a_small.png")
-    }
-}
-
-@media only screen and (max-width: 734px) and (-webkit-min-device-pixel-ratio: 1.5), only screen and (max-width: 734px) and (min-resolution: 1.5dppx), only screen and (max-width: 734px) and (min-resolution: 144dpi) {
-    .main [data-module-template="noticias"] .gallery .gallery-item.theme-dark .info-top .atv-plus-icon {
-        background-image:url("/v/home/be/images/logos/tv-plus/logo_hero_light__d7t8cya4x26a_small_2x.png")
-    }
-}
-
-.main [data-module-template="noticias"] .gallery .gallery-item.theme-light .info-top .atv-plus-icon {
-    background-size: 118px 47px;
-    background-repeat: no-repeat;
-    background-image: url("/v/home/be/images/logos/tv-plus/logo_hero__trsrpeu6koqy_large.png")
-}
-
-@media only screen and (-webkit-min-device-pixel-ratio: 1.5), only screen and (min-resolution: 1.5dppx), (-webkit-min-device-pixel-ratio: 1.5), (min-resolution: 144dpi) {
-    .main [data-module-template="noticias"] .gallery .gallery-item.theme-light .info-top .atv-plus-icon {
-        background-image:url("/v/home/be/images/logos/tv-plus/logo_hero__trsrpeu6koqy_large_2x.png")
-    }
-}
-
-@media only screen and (max-width: 1068px) {
-    .main [data-module-template="noticias"] .gallery .gallery-item.theme-light .info-top .atv-plus-icon {
-        background-size:100px 40px;
-        background-repeat: no-repeat;
-        background-image: url("/v/home/be/images/logos/tv-plus/logo_hero__trsrpeu6koqy_medium.png")
-    }
-}
-
-@media only screen and (max-width: 1068px) and (-webkit-min-device-pixel-ratio: 1.5), only screen and (max-width: 1068px) and (min-resolution: 1.5dppx), only screen and (max-width: 1068px) and (min-resolution: 144dpi) {
-    .main [data-module-template="noticias"] .gallery .gallery-item.theme-light .info-top .atv-plus-icon {
-        background-image:url("/v/home/be/images/logos/tv-plus/logo_hero__trsrpeu6koqy_medium_2x.png")
-    }
-}
-
-@media only screen and (max-width: 734px) {
-    .main [data-module-template="noticias"] .gallery .gallery-item.theme-light .info-top .atv-plus-icon {
-        background-size:75px 30px;
-        background-repeat: no-repeat;
-        background-image: url("/v/home/be/images/logos/tv-plus/logo_hero__trsrpeu6koqy_small.png")
-    }
-}
-
-@media only screen and (max-width: 734px) and (-webkit-min-device-pixel-ratio: 1.5), only screen and (max-width: 734px) and (min-resolution: 1.5dppx), only screen and (max-width: 734px) and (min-resolution: 144dpi) {
-    .main [data-module-template="noticias"] .gallery .gallery-item.theme-light .info-top .atv-plus-icon {
-        background-image:url("/v/home/be/images/logos/tv-plus/logo_hero__trsrpeu6koqy_small_2x.png")
-    }
-}
-
-@media only screen and (min-width: 1069px) and (min-height: 776px) {
-    .main [data-module-template="noticias"] .gallery .gallery-item.theme-light .info-top .atv-plus-icon {
-        background-size:118px 47px;
-        background-repeat: no-repeat;
-        background-image: url("/v/home/be/images/logos/tv-plus/logo_hero__trsrpeu6koqy_largetall.png")
-    }
-}
-
-@media only screen and (min-width: 1069px) and (min-height: 776px) and (-webkit-min-device-pixel-ratio: 1.5), only screen and (min-width: 1069px) and (min-height: 776px) and (min-resolution: 1.5dppx), only screen and (min-width: 1069px) and (min-height: 776px) and (min-resolution: 144dpi) {
-    .main [data-module-template="noticias"] .gallery .gallery-item.theme-light .info-top .atv-plus-icon {
-        background-image:url("/v/home/be/images/logos/tv-plus/logo_hero__trsrpeu6koqy_largetall_2x.png")
-    }
-}
-
-@media only screen and (max-width: 1068px) and (min-width: 735px) and (min-height: 734px) {
-    .main [data-module-template="noticias"] .gallery .gallery-item.theme-light .info-top .atv-plus-icon {
-        background-size:100px 40px;
-        background-repeat: no-repeat;
-        background-image: url("/v/home/be/images/logos/tv-plus/logo_hero__trsrpeu6koqy_mediumtall.png")
-    }
-}
-
-@media only screen and (max-width: 1068px) and (min-width: 735px) and (min-height: 734px) and (-webkit-min-device-pixel-ratio: 1.5), only screen and (max-width: 1068px) and (min-width: 735px) and (min-height: 734px) and (min-resolution: 1.5dppx), only screen and (max-width: 1068px) and (min-width: 735px) and (min-height: 734px) and (min-resolution: 144dpi) {
-    .main [data-module-template="noticias"] .gallery .gallery-item.theme-light .info-top .atv-plus-icon {
-        background-image:url("/v/home/be/images/logos/tv-plus/logo_hero__trsrpeu6koqy_mediumtall_2x.png")
-    }
-}
-
-.main [data-module-template="noticias"] .gallery .gallery-item.current {
-    z-index: 1 !important
-}
-
-.main [data-module-template="noticias"] .gallery .gallery-item.current .info-bottom {
-    opacity: 0.999;
-    -webkit-transform: translateY(0);
-    transform: translateY(0);
-    -webkit-transition: all 0.6s;
-    transition: all 0.6s
-}
-
-.main [data-module-template="noticias"] .gallery .inner {
-    position: absolute;
-    top: 0;
-    left: 7.5px;
-    width: calc(100% - 15px);
-    height: 100%
-}
-
-@media only screen and (max-width: 734px) {
-    .main [data-module-template="noticias"] .gallery .inner {
-        background:-webkit-gradient(linear, left top, left bottom, color-stop(50%, rgba(0,0,0,0)), to(rgba(0,0,0,0.7)));
-        background: -webkit-linear-gradient(rgba(0,0,0,0) 50%, rgba(0,0,0,0.7));
-        background: linear-gradient(rgba(0,0,0,0) 50%, rgba(0,0,0,0.7))
-    }
-}
-
-.main [data-module-template="noticias"] .gallery .info-bottom {
-    opacity: 0.001;
-    -webkit-transform: translateY(20px);
-    transform: translateY(20px);
-    -webkit-transition: all 0.6s;
-    transition: all 0.6s;
-    position: absolute;
-    bottom: 35px;
-    left: 68px;
-    right: 175px;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-align: center;
-    -ms-flex-align: center;
-    align-items: center
-}
-
-@media (min-width: 1441px) {
-    .main [data-module-template="noticias"] .gallery .info-bottom {
-        bottom:50px;
-        right: 210px
-    }
-}
-
-@media only screen and (max-width: 1068px) {
-    .main [data-module-template="noticias"] .gallery .info-bottom {
-        bottom:21px;
-        left: 42px;
-        right: 128px
-    }
-}
-
-@media only screen and (max-width: 734px) {
-    .main [data-module-template="noticias"] .gallery .info-bottom {
-        -webkit-box-orient:vertical;
-        -webkit-box-direction: reverse;
-        -ms-flex-direction: column-reverse;
-        flex-direction: column-reverse;
-        left: 0;
-        width: 100%;
-        right: 0;
-        bottom: 30px
-    }
-}
-
-.main [data-module-template="noticias"] .gallery .info-bottom .custom-button {
-    cursor: pointer;
-    display: inline-block;
-    text-align: center;
-    white-space: nowrap;
-    font-size: 17px;
-    line-height: 1.17648;
-    font-weight: 400;
-    letter-spacing: -.022em;
-    font-family: "SF Pro Text","SF Pro Icons","Helvetica Neue","Helvetica","Arial",sans-serif;
-    border-style: solid;
-    border-width: 1px;
-    min-width: 30px;
-    padding-left: 15px;
-    padding-right: 15px;
-    padding-top: 7px;
-    padding-bottom: 7px;
-    border-radius: 980px;
-    background: #0071e3;
-    color: #fff;
-    border-color: rgba(0,0,0,0);
-    --sk-button-margin-horizontal: 14px;
-    --sk-button-margin-vertical: 14px;
-    font-size: 17px;
-    line-height: 1.17648;
-    font-weight: 400;
-    letter-spacing: -.022em;
-    font-family: "SF Pro Text","SF Pro Icons","Helvetica Neue","Helvetica","Arial",sans-serif;
-    border-style: solid;
-    border-width: 1px;
-    min-width: 28px;
-    padding-left: 21px;
-    padding-right: 21px;
-    padding-top: 11px;
-    padding-bottom: 11px;
-    --sk-button-margin-horizontal: 18px;
-    --sk-button-margin-vertical: 18px;
-    font-size: 14px;
-    line-height: 1.42859;
-    font-weight: 400;
-    letter-spacing: -.016em;
-    font-family: "SF Pro Text","SF Pro Icons","Helvetica Neue","Helvetica","Arial",sans-serif;
-    font-weight: 700;
-    background-color: #fff;
-    color: #1d1d1f;
-    cursor: pointer;
-    -ms-flex-negative: 0;
-    flex-shrink: 0
-}
-
-.main [data-module-template="noticias"] .gallery .info-bottom .custom-button:hover {
-    text-decoration: none
-}
-
-.main [data-module-template="noticias"] .gallery .info-bottom .custom-button:active {
-    outline: none
-}
-
-.main [data-module-template="noticias"] .gallery .info-bottom .custom-button:disabled,.main [data-module-template="noticias"] .gallery .info-bottom .custom-button.disabled {
-    cursor: default;
-    pointer-events: none
-}
-
-.main [data-module-template="noticias"] .gallery .info-bottom .custom-button:lang(ar) {
-    letter-spacing: 0em;
-    font-family: "SF Pro AR","SF Pro AR Text","SF Pro Text","SF Pro Gulf","SF Pro Icons","Helvetica Neue","Helvetica","Arial",sans-serif
-}
-
-.main [data-module-template="noticias"] .gallery .info-bottom .custom-button:lang(ja) {
-    letter-spacing: 0em;
-    font-family: "SF Pro JP","SF Pro Text","SF Pro Icons","Hiragino Kaku Gothic Pro","ãƒ’ãƒ©ã‚®ãƒŽè§’ã‚´ Pro W3","ãƒ¡ã‚¤ãƒªã‚ª","Meiryo","ï¼­ï¼³ ï¼°ã‚´ã‚·ãƒƒã‚¯","Helvetica Neue","Helvetica","Arial",sans-serif
-}
-
-.main [data-module-template="noticias"] .gallery .info-bottom .custom-button:lang(ko) {
-    letter-spacing: 0em;
-    font-family: "SF Pro KR","SF Pro Text","SF Pro Icons","Apple Gothic","HY Gulim","MalgunGothic","HY Dotum","Lexi Gulim","Helvetica Neue","Helvetica","Arial",sans-serif
-}
-
-.main [data-module-template="noticias"] .gallery .info-bottom .custom-button:lang(zh) {
-    letter-spacing: 0em
-}
-
-.main [data-module-template="noticias"] .gallery .info-bottom .custom-button:lang(th) {
-    font-family: "SF Pro TH","SF Pro Text","SF Pro Icons","Helvetica Neue","Helvetica","Arial",sans-serif
-}
-
-.main [data-module-template="noticias"] .gallery .info-bottom .custom-button:lang(zh-CN) {
-    font-family: "SF Pro SC","SF Pro Text","SF Pro Icons","PingFang SC","Helvetica Neue","Helvetica","Arial",sans-serif
-}
-
-.main [data-module-template="noticias"] .gallery .info-bottom .custom-button:lang(zh-HK) {
-    font-family: "SF Pro HK","SF Pro Text","SF Pro Icons","PingFang HK","Helvetica Neue","Helvetica","Arial",sans-serif
-}
-
-.main [data-module-template="noticias"] .gallery .info-bottom .custom-button:lang(zh-MO) {
-    font-family: "SF Pro HK","SF Pro TC","SF Pro Text","SF Pro Icons","PingFang HK","Helvetica Neue","Helvetica","Arial",sans-serif
-}
-
-.main [data-module-template="noticias"] .gallery .info-bottom .custom-button:lang(zh-TW) {
-    font-family: "SF Pro TC","SF Pro Text","SF Pro Icons","PingFang TC","Helvetica Neue","Helvetica","Arial",sans-serif
-}
-
-.main [data-module-template="noticias"] .gallery .info-bottom .custom-button:hover,.main [data-module-template="noticias"] .gallery .info-bottom .custom-button:focus {
-    background: #0077ED;
-    color: #fff;
-    border-color: transparent
-}
-
-.main [data-module-template="noticias"] .gallery .info-bottom .custom-button:focus {
-    -webkit-box-shadow: 0 0 0 3px #fff,0 0 0 5px #0071E3;
-    box-shadow: 0 0 0 3px #fff,0 0 0 5px #0071E3;
-    outline: none
-}
-
-.main [data-module-template="noticias"] .gallery .info-bottom .custom-button:focus[data-focus-method="mouse"]:not(input):not(textarea):not(select),.main [data-module-template="noticias"] .gallery .info-bottom .custom-button:focus[data-focus-method="touch"]:not(input):not(textarea):not(select) {
-    -webkit-box-shadow: none;
-    box-shadow: none
-}
-
-.main [data-module-template="noticias"] .gallery .info-bottom .custom-button:active {
-    background: #006EDB;
-    color: #fff;
-    border-color: transparent
-}
-
-.main [data-module-template="noticias"] .gallery .info-bottom .custom-button:disabled,.main [data-module-template="noticias"] .gallery .info-bottom .custom-button.disabled {
-    background: #0071e3;
-    color: #fff;
-    opacity: var(--sk-link-disabled-opacity)
-}
-
-.main [data-module-template="noticias"] .gallery .info-bottom .custom-button:lang(ar) {
-    letter-spacing: 0em;
-    font-family: "SF Pro AR","SF Pro AR Text","SF Pro Text","SF Pro Gulf","SF Pro Icons","Helvetica Neue","Helvetica","Arial",sans-serif
-}
-
-.main [data-module-template="noticias"] .gallery .info-bottom .custom-button:lang(ja) {
-    letter-spacing: 0em;
-    font-family: "SF Pro JP","SF Pro Text","SF Pro Icons","Hiragino Kaku Gothic Pro","ãƒ’ãƒ©ã‚®ãƒŽè§’ã‚´ Pro W3","ãƒ¡ã‚¤ãƒªã‚ª","Meiryo","ï¼­ï¼³ ï¼°ã‚´ã‚·ãƒƒã‚¯","Helvetica Neue","Helvetica","Arial",sans-serif
-}
-
-.main [data-module-template="noticias"] .gallery .info-bottom .custom-button:lang(ko) {
-    letter-spacing: 0em;
-    font-family: "SF Pro KR","SF Pro Text","SF Pro Icons","Apple Gothic","HY Gulim","MalgunGothic","HY Dotum","Lexi Gulim","Helvetica Neue","Helvetica","Arial",sans-serif
-}
-
-.main [data-module-template="noticias"] .gallery .info-bottom .custom-button:lang(zh) {
-    letter-spacing: 0em
-}
-
-.main [data-module-template="noticias"] .gallery .info-bottom .custom-button:lang(th) {
-    font-family: "SF Pro TH","SF Pro Text","SF Pro Icons","Helvetica Neue","Helvetica","Arial",sans-serif
-}
-
-.main [data-module-template="noticias"] .gallery .info-bottom .custom-button:lang(zh-CN) {
-    font-family: "SF Pro SC","SF Pro Text","SF Pro Icons","PingFang SC","Helvetica Neue","Helvetica","Arial",sans-serif
-}
-
-.main [data-module-template="noticias"] .gallery .info-bottom .custom-button:lang(zh-HK) {
-    font-family: "SF Pro HK","SF Pro Text","SF Pro Icons","PingFang HK","Helvetica Neue","Helvetica","Arial",sans-serif
-}
-
-.main [data-module-template="noticias"] .gallery .info-bottom .custom-button:lang(zh-MO) {
-    font-family: "SF Pro HK","SF Pro TC","SF Pro Text","SF Pro Icons","PingFang HK","Helvetica Neue","Helvetica","Arial",sans-serif
-}
-
-.main [data-module-template="noticias"] .gallery .info-bottom .custom-button:lang(zh-TW) {
-    font-family: "SF Pro TC","SF Pro Text","SF Pro Icons","PingFang TC","Helvetica Neue","Helvetica","Arial",sans-serif
-}
-
-.main [data-module-template="noticias"] .gallery .info-bottom .custom-button:lang(ar) {
-    line-height: 1.57143;
-    letter-spacing: 0em;
-    font-family: "SF Pro AR","SF Pro AR Text","SF Pro Text","SF Pro Gulf","SF Pro Icons","Helvetica Neue","Helvetica","Arial",sans-serif
-}
-
-.main [data-module-template="noticias"] .gallery .info-bottom .custom-button:lang(ja) {
-    letter-spacing: 0em;
-    font-family: "SF Pro JP","SF Pro Text","SF Pro Icons","Hiragino Kaku Gothic Pro","ãƒ’ãƒ©ã‚®ãƒŽè§’ã‚´ Pro W3","ãƒ¡ã‚¤ãƒªã‚ª","Meiryo","ï¼­ï¼³ ï¼°ã‚´ã‚·ãƒƒã‚¯","Helvetica Neue","Helvetica","Arial",sans-serif
-}
-
-.main [data-module-template="noticias"] .gallery .info-bottom .custom-button:lang(ko) {
-    line-height: 1.57143;
-    letter-spacing: 0em;
-    font-family: "SF Pro KR","SF Pro Text","SF Pro Icons","Apple Gothic","HY Gulim","MalgunGothic","HY Dotum","Lexi Gulim","Helvetica Neue","Helvetica","Arial",sans-serif
-}
-
-.main [data-module-template="noticias"] .gallery .info-bottom .custom-button:lang(zh) {
-    line-height: 1.5;
-    letter-spacing: 0em
-}
-
-.main [data-module-template="noticias"] .gallery .info-bottom .custom-button:lang(th) {
-    line-height: 1.35718;
-    letter-spacing: 0em;
-    font-family: "SF Pro TH","SF Pro Text","SF Pro Icons","Helvetica Neue","Helvetica","Arial",sans-serif
-}
-
-.main [data-module-template="noticias"] .gallery .info-bottom .custom-button:lang(zh-CN) {
-    font-family: "SF Pro SC","SF Pro Text","SF Pro Icons","PingFang SC","Helvetica Neue","Helvetica","Arial",sans-serif
-}
-
-.main [data-module-template="noticias"] .gallery .info-bottom .custom-button:lang(zh-HK) {
-    font-family: "SF Pro HK","SF Pro Text","SF Pro Icons","PingFang HK","Helvetica Neue","Helvetica","Arial",sans-serif
-}
-
-.main [data-module-template="noticias"] .gallery .info-bottom .custom-button:lang(zh-MO) {
-    font-family: "SF Pro HK","SF Pro TC","SF Pro Text","SF Pro Icons","PingFang HK","Helvetica Neue","Helvetica","Arial",sans-serif
-}
-
-.main [data-module-template="noticias"] .gallery .info-bottom .custom-button:lang(zh-TW) {
-    font-family: "SF Pro TC","SF Pro Text","SF Pro Icons","PingFang TC","Helvetica Neue","Helvetica","Arial",sans-serif
-}
-
-@media only screen and (max-width: 734px) {
-    .main [data-module-template="noticias"] .gallery .info-bottom .custom-button {
-        border:1px solid #fff
-    }
-}
-
-@media only screen and (max-width: 734px) {
-    .main [data-module-template="noticias"] .gallery .info-bottom .custom-button.small-solid {
-        background-color:#fff;
-        border: none;
-        color: #1d1d1f
-    }
-}
-
-@media only screen and (max-width: 734px) {
-    .main [data-module-template="noticias"] .gallery .info-bottom .custom-button.small-solid:hover {
-        background-color:#fff;
-        border: none;
-        color: #1d1d1f;
-        opacity: 0.9
-    }
-}
-
-.main [data-module-template="noticias"] .gallery .info-bottom .custom-button:hover {
-    background-color: #fff;
-    color: #1d1d1f;
-    opacity: 0.9;
-    text-decoration: none
-}
-
-.main [data-module-template="noticias"] .gallery .info-bottom .custom-button:hover .icon-copy {
-    text-decoration: none
-}
-
-@media only screen and (max-width: 734px) {
-    .main [data-module-template="noticias"] .gallery .info-bottom .custom-button:hover {
-        text-decoration:none;
-        background-color: #fff;
-        color: #1d1d1f;
-        opacity: 0.9
-    }
-}
-
-.main [data-module-template="noticias"] .gallery .info-bottom .custom-button-inactive {
-    cursor: auto;
-    border: 1px solid #fff;
-    color: #fff;
-    background-color: initial;
-    -webkit-backdrop-filter: none
-}
-
-.main [data-module-template="noticias"] .gallery .info-bottom .custom-button-inactive:hover {
-    color: #fff;
-    background-color: initial;
-    text-decoration: none
-}
-
-.main [data-module-template="noticias"] .gallery .info-bottom .custom-button.plus::before,.main [data-module-template="noticias"] .gallery .info-bottom .custom-button.plus::after {
-    font-family: "SF Pro Icons";
-    color: inherit;
-    display: inline-block;
-    font-style: normal;
-    font-weight: inherit;
-    font-size: inherit;
-    line-height: 1;
-    text-decoration: underline;
-    position: relative;
-    z-index: 1;
-    alt: ''
-}
-
-.main [data-module-template="noticias"] .gallery .info-bottom .custom-button.plus::before,.main [data-module-template="noticias"] .gallery .info-bottom .custom-button.plus::after {
-    text-decoration: none
-}
-
-.main [data-module-template="noticias"] .gallery .info-bottom .custom-button.plus::before {
-    display: none
-}
-
-.main [data-module-template="noticias"] .gallery .info-bottom .custom-button.plus::before,.main [data-module-template="noticias"] .gallery .info-bottom .custom-button.plus::after {
-    content: "ïŒ•"
-}
-
-.main [data-module-template="noticias"] .gallery .info-bottom .custom-button.plus::after {
-    padding-left: .3em;
-    top: 0
-}
-
-.main [data-module-template="noticias"] .gallery .info-bottom .custom-button.play::before,.main [data-module-template="noticias"] .gallery .info-bottom .custom-button.play::after {
-    font-family: "SF Pro Icons";
-    color: inherit;
-    display: inline-block;
-    font-style: normal;
-    font-weight: inherit;
-    font-size: inherit;
-    line-height: 1;
-    text-decoration: underline;
-    position: relative;
-    z-index: 1;
-    alt: ''
-}
-
-.main [data-module-template="noticias"] .gallery .info-bottom .custom-button.play::before,.main [data-module-template="noticias"] .gallery .info-bottom .custom-button.play::after {
-    text-decoration: none
-}
-
-.main [data-module-template="noticias"] .gallery .info-bottom .custom-button.play::before {
-    display: none
-}
-
-.main [data-module-template="noticias"] .gallery .info-bottom .custom-button.play::before,.main [data-module-template="noticias"] .gallery .info-bottom .custom-button.play::after {
-    content: "î¨‡"
-}
-
-.main [data-module-template="noticias"] .gallery .info-bottom .custom-button.play::after {
-    padding-left: .3em;
-    top: 0
-}
-
-.main [data-module-template="noticias"] .gallery .info-bottom p {
-    font-size: 20px;
-    line-height: 1.1;
-    font-weight: 400;
-    letter-spacing: 0em;
-    font-family: "SF Pro Display","SF Pro Icons","Helvetica Neue","Helvetica","Arial",sans-serif;
-    margin-left: 40px;
-    font-weight: 400;
-    color: #fff;
-    text-shadow: 0px 0px 5px rgba(0,0,0,0.6)
-}
-
-.main [data-module-template="noticias"] .gallery .info-bottom p:lang(ar) {
-    font-family: "SF Pro AR","SF Pro AR Display","SF Pro Display","SF Pro Gulf","SF Pro Icons","Helvetica Neue","Helvetica","Arial",sans-serif
-}
-
-.main [data-module-template="noticias"] .gallery .info-bottom p:lang(ja) {
-    font-family: "SF Pro JP","SF Pro Display","SF Pro Icons","Hiragino Kaku Gothic Pro","ãƒ’ãƒ©ã‚®ãƒŽè§’ã‚´ Pro W3","ãƒ¡ã‚¤ãƒªã‚ª","Meiryo","ï¼­ï¼³ ï¼°ã‚´ã‚·ãƒƒã‚¯","Helvetica Neue","Helvetica","Arial",sans-serif
-}
-
-.main [data-module-template="noticias"] .gallery .info-bottom p:lang(ko) {
-    font-family: "SF Pro KR","SF Pro Display","SF Pro Icons","Apple Gothic","HY Gulim","MalgunGothic","HY Dotum","Lexi Gulim","Helvetica Neue","Helvetica","Arial",sans-serif
-}
-
-.main [data-module-template="noticias"] .gallery .info-bottom p:lang(th) {
-    font-family: "SF Pro TH","SF Pro Display","SF Pro Icons","Helvetica Neue","Helvetica","Arial",sans-serif
-}
-
-.main [data-module-template="noticias"] .gallery .info-bottom p:lang(zh-CN) {
-    font-family: "SF Pro SC","SF Pro Display","SF Pro Icons","PingFang SC","Helvetica Neue","Helvetica","Arial",sans-serif
-}
-
-.main [data-module-template="noticias"] .gallery .info-bottom p:lang(zh-HK) {
-    font-family: "SF Pro HK","SF Pro Display","SF Pro Icons","PingFang HK","Helvetica Neue","Helvetica","Arial",sans-serif
-}
-
-.main [data-module-template="noticias"] .gallery .info-bottom p:lang(zh-MO) {
-    font-family: "SF Pro HK","SF Pro TC","SF Pro Display","SF Pro Icons","PingFang HK","Helvetica Neue","Helvetica","Arial",sans-serif
-}
-
-.main [data-module-template="noticias"] .gallery .info-bottom p:lang(zh-TW) {
-    font-family: "SF Pro TC","SF Pro Display","SF Pro Icons","PingFang TC","Helvetica Neue","Helvetica","Arial",sans-serif
-}
-
-@media only screen and (max-width: 1068px) {
-    .main [data-module-template="noticias"] .gallery .info-bottom p {
-        font-size:19px;
-        line-height: 1.21053;
-        font-weight: 400;
-        letter-spacing: 0em;
-        font-family: "SF Pro Display","SF Pro Icons","Helvetica Neue","Helvetica","Arial",sans-serif
-    }
-
-    .main [data-module-template="noticias"] .gallery .info-bottom p:lang(ar) {
-        font-family: "SF Pro AR","SF Pro AR Display","SF Pro Display","SF Pro Gulf","SF Pro Icons","Helvetica Neue","Helvetica","Arial",sans-serif
-    }
-
-    .main [data-module-template="noticias"] .gallery .info-bottom p:lang(ja) {
-        font-family: "SF Pro JP","SF Pro Display","SF Pro Icons","Hiragino Kaku Gothic Pro","ãƒ’ãƒ©ã‚®ãƒŽè§’ã‚´ Pro W3","ãƒ¡ã‚¤ãƒªã‚ª","Meiryo","ï¼­ï¼³ ï¼°ã‚´ã‚·ãƒƒã‚¯","Helvetica Neue","Helvetica","Arial",sans-serif
-    }
-
-    .main [data-module-template="noticias"] .gallery .info-bottom p:lang(ko) {
-        font-family: "SF Pro KR","SF Pro Display","SF Pro Icons","Apple Gothic","HY Gulim","MalgunGothic","HY Dotum","Lexi Gulim","Helvetica Neue","Helvetica","Arial",sans-serif
-    }
-
-    .main [data-module-template="noticias"] .gallery .info-bottom p:lang(th) {
-        font-family: "SF Pro TH","SF Pro Display","SF Pro Icons","Helvetica Neue","Helvetica","Arial",sans-serif
-    }
-
-    .main [data-module-template="noticias"] .gallery .info-bottom p:lang(zh-CN) {
-        font-family: "SF Pro SC","SF Pro Display","SF Pro Icons","PingFang SC","Helvetica Neue","Helvetica","Arial",sans-serif
-    }
-
-    .main [data-module-template="noticias"] .gallery .info-bottom p:lang(zh-HK) {
-        font-family: "SF Pro HK","SF Pro Display","SF Pro Icons","PingFang HK","Helvetica Neue","Helvetica","Arial",sans-serif
-    }
-
-    .main [data-module-template="noticias"] .gallery .info-bottom p:lang(zh-MO) {
-        font-family: "SF Pro HK","SF Pro TC","SF Pro Display","SF Pro Icons","PingFang HK","Helvetica Neue","Helvetica","Arial",sans-serif
-    }
-
-    .main [data-module-template="noticias"] .gallery .info-bottom p:lang(zh-TW) {
-        font-family: "SF Pro TC","SF Pro Display","SF Pro Icons","PingFang TC","Helvetica Neue","Helvetica","Arial",sans-serif
-    }
-}
-
-@media only screen and (max-width: 734px) {
-    .main [data-module-template="noticias"] .gallery .info-bottom p {
-        font-size:15px;
-        line-height: 1.33338;
-        font-weight: 400;
-        letter-spacing: 0em;
-        font-family: "SF Pro Text","SF Pro Icons","Helvetica Neue","Helvetica","Arial",sans-serif
-    }
-
-    .main [data-module-template="noticias"] .gallery .info-bottom p:lang(ar) {
-        font-family: "SF Pro AR","SF Pro AR Text","SF Pro Text","SF Pro Gulf","SF Pro Icons","Helvetica Neue","Helvetica","Arial",sans-serif
-    }
-
-    .main [data-module-template="noticias"] .gallery .info-bottom p:lang(ja) {
-        font-family: "SF Pro JP","SF Pro Text","SF Pro Icons","Hiragino Kaku Gothic Pro","ãƒ’ãƒ©ã‚®ãƒŽè§’ã‚´ Pro W3","ãƒ¡ã‚¤ãƒªã‚ª","Meiryo","ï¼­ï¼³ ï¼°ã‚´ã‚·ãƒƒã‚¯","Helvetica Neue","Helvetica","Arial",sans-serif
-    }
-
-    .main [data-module-template="noticias"] .gallery .info-bottom p:lang(ko) {
-        font-family: "SF Pro KR","SF Pro Text","SF Pro Icons","Apple Gothic","HY Gulim","MalgunGothic","HY Dotum","Lexi Gulim","Helvetica Neue","Helvetica","Arial",sans-serif
-    }
-
-    .main [data-module-template="noticias"] .gallery .info-bottom p:lang(th) {
-        font-family: "SF Pro TH","SF Pro Text","SF Pro Icons","Helvetica Neue","Helvetica","Arial",sans-serif
-    }
-
-    .main [data-module-template="noticias"] .gallery .info-bottom p:lang(zh-CN) {
-        font-family: "SF Pro SC","SF Pro Text","SF Pro Icons","PingFang SC","Helvetica Neue","Helvetica","Arial",sans-serif
-    }
-
-    .main [data-module-template="noticias"] .gallery .info-bottom p:lang(zh-HK) {
-        font-family: "SF Pro HK","SF Pro Text","SF Pro Icons","PingFang HK","Helvetica Neue","Helvetica","Arial",sans-serif
-    }
-
-    .main [data-module-template="noticias"] .gallery .info-bottom p:lang(zh-MO) {
-        font-family: "SF Pro HK","SF Pro TC","SF Pro Text","SF Pro Icons","PingFang HK","Helvetica Neue","Helvetica","Arial",sans-serif
-    }
-
-    .main [data-module-template="noticias"] .gallery .info-bottom p:lang(zh-TW) {
-        font-family: "SF Pro TC","SF Pro Text","SF Pro Icons","PingFang TC","Helvetica Neue","Helvetica","Arial",sans-serif
-    }
-}
-
-.main [data-module-template="noticias"] .gallery .info-bottom p span {
-    font-weight: 700
-}
-
-@media only screen and (max-width: 734px) {
-    .main [data-module-template="noticias"] .gallery .info-bottom p span {
-        display:block
-    }
-}
-
-@media only screen and (max-width: 734px) {
-    .main [data-module-template="noticias"] .gallery .info-bottom p span.m-dot {
-        display:none
-    }
-}
-
-@media only screen and (max-width: 1068px) {
-    .main [data-module-template="noticias"] .gallery .info-bottom p {
-        margin-left:30px
-    }
-}
-
-@media only screen and (max-width: 734px) {
-    .main [data-module-template="noticias"] .gallery .info-bottom p {
-        margin:0 auto 12px;
-        text-align: center;
-        padding: 0 15px;
-        white-space: pre-wrap;
-        overflow: visible
-    }
-}
-
-.main [data-module-template="noticias"] .gallery .info-top {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    display: none
-}
-
-@media only screen and (max-width: 734px) {
-    .main [data-module-template="noticias"] .gallery .info-top {
-        display:block
-    }
-}
-
-.main [data-module-template="noticias"] .gallery .info-top .logo {
-    width: 220px;
-    height: 54px;
-    display: block;
-    background-repeat: no-repeat;
-    background-size: contain;
-    background-position: top center;
-    margin: 0 auto
-}
-
-.main [data-module-template="noticias"] .gallery .info-top .atv-plus-icon {
-    width: 68px;
-    height: 33px;
-    margin: 20px auto 5px;
-    background-size: contain;
-    top: 20px
+  --abs: Max(var(--progress), var(--progress) * -1);
+  --progress-0-1: clamp(0, var(--abs), 1);
+  --progress-1-1: clamp(-1, var(--progress), 1);
+  overflow: hidden;
+  overflow-x: auto;
+  position: absolute;
+  left: 0;
+  width: 100%;
+  /* height: 523.13167px; */
+  justify-content: center;
+  align-items: center;
+  will-change: opacity;
+  z-index: 0 !important;
+  /* ====================== */
+  /* ====================== */
+  display: flex;
+  aspect-ratio: 16/9;
+  background-color: #ff0000;
 }
 
 .main [data-module-template="noticias"] .gallery .item-container a {
-    opacity: calc((var(--progress-0-1) * -0.7) + .99);
-    background-size: cover;
-    background-position: center;
-    width: 980px;
-    margin: 0 auto;
-    height: 100%;
-    will-change: opacity
+  opacity: calc((var(--progress-0-1) * -0.7) + 0.99);
+  background-size: cover;
+  background-position: center;
+  width: 980px;
+  margin: 0 auto;
+  height: 100%;
+  will-change: opacity;
 }
 
-@media (min-width: 1441px) {
-    .main [data-module-template="noticias"] .gallery .item-container a {
-        width:1250px
-    }
+.main [data-module-template="noticias"] .gallery .inner {
+  position: absolute;
+  top: 0;
+  left: 7.5px;
+  width: calc(100% - 15px);
+  height: 100%;
 }
 
-@media only screen and (max-width: 1068px) {
-    .main [data-module-template="noticias"] .gallery .item-container a {
-        width:689px
-    }
+.main [data-module-template="noticias"] .gallery .info-top {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  display: none;
 }
 
-@media only screen and (max-width: 734px) {
-    .main [data-module-template="noticias"] .gallery .item-container a {
-        width:274px;
-        background-position: top center
-    }
+.main
+  [data-module-template="noticias"]
+  .gallery
+  .gallery-item
+  .info-top
+  .noticias-icon {
+  background-size: 119px 46px;
+  background-repeat: no-repeat;
+  background-image: url("../../../../../ac/globalimgs/grande.jpg");
 }
 
-.main [data-module-template="noticias"] .gallery .paddlenav ul {
-    list-style: none;
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: 9999;
-    pointer-events: none
+.main [data-module-template="noticias"] .gallery .info-top .logo {
+  width: 220px;
+  height: 54px;
+  display: block;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: top center;
+  margin: 0 auto;
+}
+/*  */
+.main
+  [data-module-template="noticias"]
+  .gallery
+  .gallery-item.current
+  .info-bottom {
+  opacity: 0.999;
+  -webkit-transform: translateY(0);
+  transform: translateY(0);
+  -webkit-transition: all 0.6s;
+  transition: all 0.6s;
 }
 
-.main [data-module-template="noticias"] .gallery .paddlenav li {
-    position: absolute;
-    bottom: 38px;
-    top: 0
+.main [data-module-template="noticias"] .gallery .info-bottom {
+  opacity: 0.001;
+  -webkit-transform: translateY(20px);
+  transform: translateY(20px);
+  -webkit-transition: all 0.6s;
+  transition: all 0.6s;
+  position: absolute;
+  bottom: 35px;
+  left: 68px;
+  right: 175px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
 }
 
-.main [data-module-template="noticias"] .gallery .paddlenav li.next {
-    right: 0;
-    left: calc(50% + 505px)
+.main [data-module-template="noticias"] .gallery .info-bottom .custom-button {
+  cursor: pointer;
+  display: inline-block;
+  text-align: center;
+  white-space: nowrap;
+  font-size: 17px;
+  line-height: 1.17648;
+  font-weight: 400;
+  letter-spacing: -0.022em;
+  font-family: "SF Pro Text", "SF Pro Icons", "Helvetica Neue", "Helvetica",
+    "Arial", sans-serif;
+  border-style: solid;
+  border-width: 1px;
+  min-width: 30px;
+  padding-left: 15px;
+  padding-right: 15px;
+  padding-top: 7px;
+  padding-bottom: 7px;
+  border-radius: 980px;
+  background: #0071e3;
+  color: #fff;
+  border-color: rgba(0, 0, 0, 0);
+  --sk-button-margin-horizontal: 14px;
+  --sk-button-margin-vertical: 14px;
+  font-size: 17px;
+  line-height: 1.17648;
+  font-weight: 400;
+  letter-spacing: -0.022em;
+  font-family: "SF Pro Text", "SF Pro Icons", "Helvetica Neue", "Helvetica",
+    "Arial", sans-serif;
+  border-style: solid;
+  border-width: 1px;
+  min-width: 28px;
+  padding-left: 21px;
+  padding-right: 21px;
+  padding-top: 11px;
+  padding-bottom: 11px;
+  --sk-button-margin-horizontal: 18px;
+  --sk-button-margin-vertical: 18px;
+  font-size: 14px;
+  line-height: 1.42859;
+  font-weight: 400;
+  letter-spacing: -0.016em;
+  font-family: "SF Pro Text", "SF Pro Icons", "Helvetica Neue", "Helvetica",
+    "Arial", sans-serif;
+  font-weight: 700;
+  background-color: #fff;
+  color: #1d1d1f;
+  cursor: pointer;
+  -ms-flex-negative: 0;
+  flex-shrink: 0;
 }
 
-@media only screen and (min-width: 1441px) {
-    .main [data-module-template="noticias"] .gallery .paddlenav li.next {
-        left:calc(50% + 640px)
-    }
+.main
+  [data-module-template="noticias"]
+  .gallery
+  .info-bottom
+  .custom-button.play::after {
+  padding-left: 0.3em;
+  top: 0;
 }
 
-@media only screen and (max-width: 1068px) {
-    .main [data-module-template="noticias"] .gallery .paddlenav li.next {
-        left:calc(50% + 359.5px)
-    }
+.main [data-module-template="noticias"] .gallery .info-bottom p {
+  font-size: 20px;
+  line-height: 1.1;
+  font-weight: 400;
+  letter-spacing: 0em;
+  font-family: "SF Pro Display", "SF Pro Icons", "Helvetica Neue", "Helvetica",
+    "Arial", sans-serif;
+  margin-left: 40px;
+  font-weight: 400;
+  color: #fff;
+  text-shadow: 0px 0px 5px rgba(0, 0, 0, 0.6);
 }
 
-@media only screen and (max-width: 734px) {
-    .main [data-module-template="noticias"] .gallery .paddlenav li.next {
-        left:calc(50% + 152px)
-    }
+.main [data-module-template="noticias"] .gallery .info-bottom p span {
+  font-weight: 700;
 }
 
-.main [data-module-template="noticias"] .gallery .paddlenav li.previous {
-    left: 0;
-    right: calc(50% + 505px)
+.main [data-module-template="noticias"] .gallery .info-bottom p {
+  font-size: 20px;
+  line-height: 1.1;
+  font-weight: 400;
+  letter-spacing: 0em;
+  font-family: "SF Pro Display", "SF Pro Icons", "Helvetica Neue", "Helvetica",
+    "Arial", sans-serif;
+  margin-left: 40px;
+  font-weight: 400;
+  color: #fff;
+  text-shadow: 0px 0px 5px rgba(0, 0, 0, 0.6);
 }
 
-@media only screen and (min-width: 1441px) {
-    .main [data-module-template="noticias"] .gallery .paddlenav li.previous {
-        right:calc(50% + 640px)
-    }
+.main [data-module-template="noticias"] .gallery .info-bottom p span {
+  font-weight: 700;
 }
 
-@media only screen and (max-width: 1068px) {
-    .main [data-module-template="noticias"] .gallery .paddlenav li.previous {
-        right:calc(50% + 359.5px)
-    }
-}
-
-@media only screen and (max-width: 734px) {
-    .main [data-module-template="noticias"] .gallery .paddlenav li.previous {
-        right:calc(50% + 152px)
-    }
-}
-
-.main [data-module-template="noticias"] .gallery .paddlenav button {
-    width: auto;
-    height: auto;
-    border-radius: 0;
-    background: none !important;
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    text-align: center;
-    margin-top: 0;
-    pointer-events: all
-}
-
-.main [data-module-template="noticias"] .gallery .paddlenav button:focus,.main [data-module-template="noticias"] .gallery .paddlenav button:active {
-    background: none
-}
-
-.main [data-module-template="noticias"] .gallery .paddlenav button:after {
-    display: none
-}
-
-@media only screen and (max-width: 734px) {
-    .main [data-module-template="noticias"] .gallery .paddlenav button:after {
-        display:block
-    }
-}
-
-@media (max-width: 320px) {
-    .main [data-module-template="noticias"] .gallery .paddlenav button:after {
-        display:none
-    }
-}
-
-.main [data-module-template="noticias"] .gallery .paddlenav button:hover {
-    background: none
-}
-
+/* NAVGATION - PONTOS HORIZONTAL */
 .main [data-module-template="noticias"] .gallery .tablist-wrapper {
-    position: absolute;
-    bottom: 7px;
-    left: 50%;
-    /* -webkit-transform:translateX(-50%); */
-    transform: translateX(-50%)
+  position: absolute;
+  bottom: 7px;
+  left: 50%;
+  transform: translate(-50%);
 }
+.main [data-module-template="noticias"] .dotnav {
+  text-align: center;
+  box-sizing: border-box;
+}
+
+.main [data-module-template="noticias"] .dotnav ul {
+  margin: 0;
+  list-style: none;
+  display: inline-flex;
+  justify-content: center;
+}
+
+.main [data-module-template="noticias"] .dotnav li {
+  list-style: none;
+  margin: 0 7px;
+  width: 8px;
+  height: 8px;
+  position: relative;
+}
+
+.main [data-module-template="noticias"] .dotnav .dotnav-item {
+  background-color: rgba(0, 0, 0, 0.42);
+  transition: background-color 100ms linear;
+}
+.main [data-module-template="noticias"] .dotnav-item {
+  top: 0;
+  left: 0;
+  width: 8px;
+  height: 8px;
+  outline: none;
+  position: absolute;
+  border-radius: 50%;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  padding: 0;
+}
+
+.visuallyhidden {
+  position: absolute;
+  clip: rect(1px, 1px, 1px, 1px);
+  clip-path: inset(0px 0px 99.9% 99.9%);
+  overflow: hidden;
+  height: 1px;
+  width: 1px;
+  padding: 0;
+  border: 0;
+}
+/* ================================================= */
+/* ============= BOTÃO - PLAY e PAUSAR ============= */
+/* ================================================= */
 
 .main [data-module-template="noticias"] .gallery .play-pause {
-    display: none;
-    position: absolute;
-    bottom: 0;
-    right: 30px;
-    height: 38px;
-    width: 30px;
-    font-size: 22px;
-    color: #1d1d1d
+  display: none;
+  position: absolute;
+  bottom: 0;
+  right: 30px;
+  height: 38px;
+  width: 30px;
+  font-size: 22px;
+  color: #1d1d1d;
 }
 
 @media only screen and (max-width: 1068px) {
-    html.ac-gn-segmentbar-visible .main [data-module-template="noticias"] .gallery .play-pause:after,html.ac-ls-visible .main [data-module-template="noticias"] .gallery .play-pause:after,html.ac-gn-segmentbar-visible .main [data-module-template="noticias"] .gallery .play-pause:after,html.ac-ls-visible .main [data-module-template="noticias"] .gallery .play-pause:after {
-        height:38px;
-        position: relative;
-        top: 2px
-    }
+  html.ac-gn-segmentbar-visible
+    .main
+    [data-module-template="noticias"]
+    .gallery
+    .play-pause:after,
+  html.ac-ls-visible
+    .main
+    [data-module-template="noticias"]
+    .gallery
+    .play-pause:after,
+  html.ac-gn-segmentbar-visible
+    .main
+    [data-module-template="noticias"]
+    .gallery
+    .play-pause:after,
+  html.ac-ls-visible
+    .main
+    [data-module-template="noticias"]
+    .gallery
+    .play-pause:after {
+    height: 38px;
+    position: relative;
+    top: 2px;
+  }
 }
 
 @media only screen and (max-width: 734px) {
-    .main [data-module-template="noticias"] .gallery .play-pause {
-        right:15px
-    }
+  .main [data-module-template="noticias"] .gallery .play-pause {
+    right: 15px;
+  }
 }
 
 @media (max-width: 320px) {
-    .main [data-module-template="noticias"] .gallery .play-pause {
-        right:5px
-    }
+  .main [data-module-template="noticias"] .gallery .play-pause {
+    right: 5px;
+  }
 }
 
 html.text-zoom .main [data-module-template="noticias"] .gallery .play-pause {
-    font-size: 14px
+  font-size: 14px;
 }
 
 .main [data-module-template="noticias"] .gallery .play-pause.show {
-    display: block
+  display: block;
 }
 
-.main [data-module-template="noticias"] .gallery .play-pause.paused::before,.main [data-module-template="noticias"] .gallery .play-pause.paused::after {
-    font-family: "SF Pro Icons";
-    color: inherit;
-    display: inline-block;
-    font-style: normal;
-    font-weight: inherit;
-    font-size: inherit;
-    line-height: 1;
-    text-decoration: underline;
-    position: relative;
-    z-index: 1;
-    alt: ''
+.main [data-module-template="noticias"] .gallery .play-pause.paused::before,
+.main [data-module-template="noticias"] .gallery .play-pause.paused::after {
+  font-family: "SF Pro Icons";
+  color: inherit;
+  display: inline-block;
+  font-style: normal;
+  font-weight: inherit;
+  font-size: inherit;
+  line-height: 1;
+  text-decoration: underline;
+  position: relative;
+  z-index: 1;
+  alt: "";
 }
 
-.main [data-module-template="noticias"] .gallery .play-pause.paused::before,.main [data-module-template="noticias"] .gallery .play-pause.paused::after {
-    text-decoration: none
+.main [data-module-template="noticias"] .gallery .play-pause.paused::before,
+.main [data-module-template="noticias"] .gallery .play-pause.paused::after {
+  text-decoration: none;
 }
 
 .main [data-module-template="noticias"] .gallery .play-pause.paused::before {
-    display: none
+  display: none;
 }
 
-.main [data-module-template="noticias"] .gallery .play-pause.paused::before,.main [data-module-template="noticias"] .gallery .play-pause.paused::after {
-    content: "ïŒž"
+.main [data-module-template="noticias"] .gallery .play-pause.paused::before,
+.main [data-module-template="noticias"] .gallery .play-pause.paused::after {
+  content: "ïŒž";
 }
 
-.main [data-module-template="noticias"] .gallery .play-pause.playing::before,.main [data-module-template="noticias"] .gallery .play-pause.playing::after {
-    font-family: "SF Pro Icons";
-    color: inherit;
-    display: inline-block;
-    font-style: normal;
-    font-weight: inherit;
-    font-size: inherit;
-    line-height: 1;
-    text-decoration: underline;
-    position: relative;
-    z-index: 1;
-    alt: ''
+.main [data-module-template="noticias"] .gallery .play-pause.playing::before,
+.main [data-module-template="noticias"] .gallery .play-pause.playing::after {
+  font-family: "SF Pro Icons";
+  color: inherit;
+  display: inline-block;
+  font-style: normal;
+  font-weight: inherit;
+  font-size: inherit;
+  line-height: 1;
+  text-decoration: underline;
+  position: relative;
+  z-index: 1;
+  alt: "";
 }
 
-.main [data-module-template="noticias"] .gallery .play-pause.playing::before,.main [data-module-template="noticias"] .gallery .play-pause.playing::after {
-    text-decoration: none
+.main [data-module-template="noticias"] .gallery .play-pause.playing::before,
+.main [data-module-template="noticias"] .gallery .play-pause.playing::after {
+  text-decoration: none;
 }
 
 .main [data-module-template="noticias"] .gallery .play-pause.playing::before {
-    display: none
+  display: none;
 }
 
-.main [data-module-template="noticias"] .gallery .play-pause.playing::before,.main [data-module-template="noticias"] .gallery .play-pause.playing::after {
-    content: "ïŒŸ"
+.main [data-module-template="noticias"] .gallery .play-pause.playing::before,
+.main [data-module-template="noticias"] .gallery .play-pause.playing::after {
+  content: "ïŒŸ";
 }
 
-html.ie .cta-links,html.edge .cta-links {
-    pointer-events: none
-}
-
-html.ie .cta-links a,html.edge .cta-links a {
-    display: inline-block;
-    pointer-events: all
-}
-
-html.ie [data-module-template="promos"] .cta-links,html.edge [data-module-template="promos"] .cta-links {
-    left: 50%;
-    -webkit-transform: translateX(-50%);
-    transform: translateX(-50%)
-}
-
-.tv-plus-legal {
-    display: none
-}
-
-html.fnb-supported .tv-plus-legal {
-    display: block
-}
-
-html.no-js .tv-plus-legal-general {
-    display: none
-}
-
-.main [data-module-template="ribbon"].collection-module {
-    width: calc(100% - var(--double-edge-border-width) - var(--safe-area-inset-lt) - var(--safe-area-inset-rt));
-    left: calc(var(--edge-border-width) + var(--safe-area-inset-lt))
-}
-
-@media only screen and (max-width: 734px) {
-    .main [data-module-template="heroes"] [data-unit-id] .unit-copy-wrapper .cta-links {
-        font-size:17px;
-        line-height: 1.23536;
-        font-weight: 400;
-        letter-spacing: -.022em;
-        font-family: "SF Pro Text","SF Pro Icons","Helvetica Neue","Helvetica","Arial",sans-serif
-    }
-
-    .main [data-module-template="heroes"] [data-unit-id] .unit-copy-wrapper .cta-links:lang(ar) {
-        letter-spacing: 0em;
-        font-family: "SF Pro AR","SF Pro AR Text","SF Pro Text","SF Pro Gulf","SF Pro Icons","Helvetica Neue","Helvetica","Arial",sans-serif
-    }
-
-    .main [data-module-template="heroes"] [data-unit-id] .unit-copy-wrapper .cta-links:lang(ja) {
-        letter-spacing: 0em;
-        font-family: "SF Pro JP","SF Pro Text","SF Pro Icons","Hiragino Kaku Gothic Pro","ãƒ’ãƒ©ã‚®ãƒŽè§’ã‚´ Pro W3","ãƒ¡ã‚¤ãƒªã‚ª","Meiryo","ï¼­ï¼³ ï¼°ã‚´ã‚·ãƒƒã‚¯","Helvetica Neue","Helvetica","Arial",sans-serif
-    }
-
-    .main [data-module-template="heroes"] [data-unit-id] .unit-copy-wrapper .cta-links:lang(ko) {
-        line-height: 1.35296;
-        letter-spacing: 0em;
-        font-family: "SF Pro KR","SF Pro Text","SF Pro Icons","Apple Gothic","HY Gulim","MalgunGothic","HY Dotum","Lexi Gulim","Helvetica Neue","Helvetica","Arial",sans-serif
-    }
-
-    .main [data-module-template="heroes"] [data-unit-id] .unit-copy-wrapper .cta-links:lang(zh) {
-        line-height: 1.35296;
-        letter-spacing: 0em
-    }
-
-    .main [data-module-template="heroes"] [data-unit-id] .unit-copy-wrapper .cta-links:lang(th) {
-        line-height: 1.35296;
-        letter-spacing: 0em;
-        font-family: "SF Pro TH","SF Pro Text","SF Pro Icons","Helvetica Neue","Helvetica","Arial",sans-serif
-    }
-
-    .main [data-module-template="heroes"] [data-unit-id] .unit-copy-wrapper .cta-links:lang(zh-CN) {
-        font-family: "SF Pro SC","SF Pro Text","SF Pro Icons","PingFang SC","Helvetica Neue","Helvetica","Arial",sans-serif
-    }
-
-    .main [data-module-template="heroes"] [data-unit-id] .unit-copy-wrapper .cta-links:lang(zh-HK) {
-        font-family: "SF Pro HK","SF Pro Text","SF Pro Icons","PingFang HK","Helvetica Neue","Helvetica","Arial",sans-serif
-    }
-
-    .main [data-module-template="heroes"] [data-unit-id] .unit-copy-wrapper .cta-links:lang(zh-MO) {
-        font-family: "SF Pro HK","SF Pro TC","SF Pro Text","SF Pro Icons","PingFang HK","Helvetica Neue","Helvetica","Arial",sans-serif
-    }
-
-    .main [data-module-template="heroes"] [data-unit-id] .unit-copy-wrapper .cta-links:lang(zh-TW) {
-        font-family: "SF Pro TC","SF Pro Text","SF Pro Icons","PingFang TC","Helvetica Neue","Helvetica","Arial",sans-serif
-    }
-}
-
-.cta-links .icon::after {
-    line-height: inherit
-}
-
-.ac-gn-segmentbar-visible .cta-links .icon-playsolid::after,.ac-ls-visible .cta-links .icon-playsolid::after {
-    display: inline-block;
-    text-decoration: none
-}
-
-@media only screen and (max-width: 734px) {
-    .main [data-module-template="heroes"] [data-unit-id] .unit-copy-wrapper>*.subhead {
-        margin-top:4px
-    }
-}
-
-@media only screen and (max-width: 734px) and (max-width: 734px) {
-    .main [data-module-template="heroes"] [data-unit-id] .unit-copy-wrapper>*.subhead {
-        font-size:19px;
-        line-height: 1.21053;
-        font-weight: 400;
-        letter-spacing: 0em;
-        font-family: "SF Pro Display","SF Pro Icons","Helvetica Neue","Helvetica","Arial",sans-serif
-    }
-
-    .main [data-module-template="heroes"] [data-unit-id] .unit-copy-wrapper>*.subhead:lang(ar) {
-        font-family: "SF Pro AR","SF Pro AR Display","SF Pro Display","SF Pro Gulf","SF Pro Icons","Helvetica Neue","Helvetica","Arial",sans-serif
-    }
-
-    .main [data-module-template="heroes"] [data-unit-id] .unit-copy-wrapper>*.subhead:lang(ja) {
-        font-family: "SF Pro JP","SF Pro Display","SF Pro Icons","Hiragino Kaku Gothic Pro","ãƒ’ãƒ©ã‚®ãƒŽè§’ã‚´ Pro W3","ãƒ¡ã‚¤ãƒªã‚ª","Meiryo","ï¼­ï¼³ ï¼°ã‚´ã‚·ãƒƒã‚¯","Helvetica Neue","Helvetica","Arial",sans-serif
-    }
-
-    .main [data-module-template="heroes"] [data-unit-id] .unit-copy-wrapper>*.subhead:lang(ko) {
-        font-family: "SF Pro KR","SF Pro Display","SF Pro Icons","Apple Gothic","HY Gulim","MalgunGothic","HY Dotum","Lexi Gulim","Helvetica Neue","Helvetica","Arial",sans-serif
-    }
-
-    .main [data-module-template="heroes"] [data-unit-id] .unit-copy-wrapper>*.subhead:lang(th) {
-        font-family: "SF Pro TH","SF Pro Display","SF Pro Icons","Helvetica Neue","Helvetica","Arial",sans-serif
-    }
-
-    .main [data-module-template="heroes"] [data-unit-id] .unit-copy-wrapper>*.subhead:lang(zh-CN) {
-        font-family: "SF Pro SC","SF Pro Display","SF Pro Icons","PingFang SC","Helvetica Neue","Helvetica","Arial",sans-serif
-    }
-
-    .main [data-module-template="heroes"] [data-unit-id] .unit-copy-wrapper>*.subhead:lang(zh-HK) {
-        font-family: "SF Pro HK","SF Pro Display","SF Pro Icons","PingFang HK","Helvetica Neue","Helvetica","Arial",sans-serif
-    }
-
-    .main [data-module-template="heroes"] [data-unit-id] .unit-copy-wrapper>*.subhead:lang(zh-MO) {
-        font-family: "SF Pro HK","SF Pro TC","SF Pro Display","SF Pro Icons","PingFang HK","Helvetica Neue","Helvetica","Arial",sans-serif
-    }
-
-    .main [data-module-template="heroes"] [data-unit-id] .unit-copy-wrapper>*.subhead:lang(zh-TW) {
-        font-family: "SF Pro TC","SF Pro Display","SF Pro Icons","PingFang TC","Helvetica Neue","Helvetica","Arial",sans-serif
-    }
-}
-
-sup .footnote {
-    font-size: inherit;
-    bottom: inherit
-}
-
-.footnote {
-    color: inherit
-}
-
-.theme-dark .footnote {
-    color: inherit
-}
-
-[data-module-template] [data-unit-id] .headline sup {
-    font-weight: 800
-}
-
-[data-module-template] [data-unit-id] .headline sup a.footnote:hover {
-    text-decoration: none
-}
-
-[data-module-template] [data-unit-id] .unit-wrapper a.footnote:hover {
-    text-decoration: none;
-    color: #06c
-}
-
-[data-module-template] [data-unit-id] .unit-wrapper.theme-dark a.footnote:hover {
-    color: #2997ff
-}
-
-[data-module-template="ribbon"] [data-unit-id] a.footnote:hover {
-    text-decoration: none;
-    color: #06c
-}
-
-@supports (height: calc(var(--global-nav-collective-height) + var(--content-height) + 12px)) {
-    .body-with-ribbon [data-module-template="heroes"].collection-module [data-unit-id],.body-with-ribbon [data-module-template="promos"].collection-module [data-unit-id] {
-        top:initial
-    }
-
-    .body-with-ribbon [data-module-template="heroes"] [data-unit-id]:first-child {
-        height: calc(var(--content-height) + var(--gutter-width))
-    }
-
-    .body-with-ribbon [data-module-template="heroes"] [data-unit-id]:first-child .module-content {
-        height: var(--content-height);
-        padding-top: 0
-    }
-
-    .body-with-ribbon [data-module-template="heroes"] [data-unit-id]:first-child .unit-wrapper {
-        height: var(--content-height);
-        padding-top: var(--global-nav-collective-height)
-    }
-
-    .body-with-ribbon [data-module-template="heroes"] [data-unit-id]:first-child .unit-copy-wrapper {
-        margin-top: 0
-    }
-
-    .body-with-ribbon #ac-globalfooter {
-        top: var(--global-nav-collective-height)
-    }
-}
-
-.main [data-module-template] [data-unit-id] .center-copy-wrapper .unit-copy-wrapper {
-    height: 100%;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-    -ms-flex-direction: column;
-    flex-direction: column;
-    -webkit-box-pack: center;
-    -ms-flex-pack: center;
-    justify-content: center;
-    padding-top: 0
-}
-
-.main [data-module-template] [data-unit-id] .center-copy-wrapper .unit-copy-wrapper .headline {
-    margin-top: 0
-}
-
-.main [data-module-template] [data-unit-id] .bottom-copy-wrapper .unit-copy-wrapper {
-    height: 100%;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-    -ms-flex-direction: column;
-    flex-direction: column;
-    -webkit-box-pack: end;
-    -ms-flex-pack: end;
-    justify-content: flex-end
-}
-
-.main [data-module-template] [data-unit-id] .split-copy-wrapper .unit-copy-wrapper {
-    height: 100%;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-pack: justify;
-    -ms-flex-pack: justify;
-    justify-content: space-between;
-    -webkit-box-align: center;
-    -ms-flex-align: center;
-    align-items: center;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-    -ms-flex-direction: column;
-    flex-direction: column
-}
-
-.main [data-module-template="heroes"] .unit-copy-wrapper>*.callout {
-    font-size: 21px;
-    line-height: 1.19048;
-    font-weight: 400;
-    letter-spacing: .011em;
-    font-family: "SF Pro Display","SF Pro Icons","Helvetica Neue","Helvetica","Arial",sans-serif;
-    color: #6e6e73;
-    margin-top: 15px
-}
-
-.main [data-module-template="heroes"] .unit-copy-wrapper>*.callout:lang(ja) {
-    line-height: 1.2381;
-    font-family: "SF Pro JP","SF Pro Display","SF Pro Icons","Hiragino Kaku Gothic Pro","ãƒ’ãƒ©ã‚®ãƒŽè§’ã‚´ Pro W3","ãƒ¡ã‚¤ãƒªã‚ª","Meiryo","ï¼­ï¼³ ï¼°ã‚´ã‚·ãƒƒã‚¯","Helvetica Neue","Helvetica","Arial",sans-serif
-}
-
-.main [data-module-template="heroes"] .unit-copy-wrapper>*.callout:lang(ko) {
-    line-height: 1.2858;
-    font-family: "SF Pro KR","SF Pro Display","SF Pro Icons","Apple Gothic","HY Gulim","MalgunGothic","HY Dotum","Lexi Gulim","Helvetica Neue","Helvetica","Arial",sans-serif
-}
-
-.main [data-module-template="heroes"] .unit-copy-wrapper>*.callout:lang(th) {
-    line-height: 1.381;
-    font-family: "SF Pro TH","SF Pro Display","SF Pro Icons","Helvetica Neue","Helvetica","Arial",sans-serif
-}
-
-.main [data-module-template="heroes"] .unit-copy-wrapper>*.callout:lang(zh) {
-    line-height: 1.3334
-}
-
-.main [data-module-template="heroes"] .unit-copy-wrapper>*.callout:lang(ar) {
-    font-family: "SF Pro AR","SF Pro AR Display","SF Pro Display","SF Pro Gulf","SF Pro Icons","Helvetica Neue","Helvetica","Arial",sans-serif
-}
-
-.main [data-module-template="heroes"] .unit-copy-wrapper>*.callout:lang(zh-CN) {
-    font-family: "SF Pro SC","SF Pro Display","SF Pro Icons","PingFang SC","Helvetica Neue","Helvetica","Arial",sans-serif
-}
-
-.main [data-module-template="heroes"] .unit-copy-wrapper>*.callout:lang(zh-HK) {
-    font-family: "SF Pro HK","SF Pro Display","SF Pro Icons","PingFang HK","Helvetica Neue","Helvetica","Arial",sans-serif
-}
-
-.main [data-module-template="heroes"] .unit-copy-wrapper>*.callout:lang(zh-MO) {
-    font-family: "SF Pro HK","SF Pro TC","SF Pro Display","SF Pro Icons","PingFang HK","Helvetica Neue","Helvetica","Arial",sans-serif
-}
+/* ================================================= */
+/* ============= BARRA-LATERAL-NOTICIA ============= */
+/* ================================================= */
 
-.main [data-module-template="heroes"] .unit-copy-wrapper>*.callout:lang(zh-TW) {
-    font-family: "SF Pro TC","SF Pro Display","SF Pro Icons","PingFang TC","Helvetica Neue","Helvetica","Arial",sans-serif
-}
-
-@media only screen and (max-width: 1068px) {
-    .main [data-module-template="heroes"] .unit-copy-wrapper>*.callout {
-        font-size:19px;
-        line-height: 1.21053;
-        font-weight: 400;
-        letter-spacing: 0em;
-        font-family: "SF Pro Display","SF Pro Icons","Helvetica Neue","Helvetica","Arial",sans-serif
-    }
-
-    .main [data-module-template="heroes"] .unit-copy-wrapper>*.callout:lang(ar) {
-        font-family: "SF Pro AR","SF Pro AR Display","SF Pro Display","SF Pro Gulf","SF Pro Icons","Helvetica Neue","Helvetica","Arial",sans-serif
-    }
-
-    .main [data-module-template="heroes"] .unit-copy-wrapper>*.callout:lang(ja) {
-        font-family: "SF Pro JP","SF Pro Display","SF Pro Icons","Hiragino Kaku Gothic Pro","ãƒ’ãƒ©ã‚®ãƒŽè§’ã‚´ Pro W3","ãƒ¡ã‚¤ãƒªã‚ª","Meiryo","ï¼­ï¼³ ï¼°ã‚´ã‚·ãƒƒã‚¯","Helvetica Neue","Helvetica","Arial",sans-serif
-    }
-
-    .main [data-module-template="heroes"] .unit-copy-wrapper>*.callout:lang(ko) {
-        font-family: "SF Pro KR","SF Pro Display","SF Pro Icons","Apple Gothic","HY Gulim","MalgunGothic","HY Dotum","Lexi Gulim","Helvetica Neue","Helvetica","Arial",sans-serif
-    }
-
-    .main [data-module-template="heroes"] .unit-copy-wrapper>*.callout:lang(th) {
-        font-family: "SF Pro TH","SF Pro Display","SF Pro Icons","Helvetica Neue","Helvetica","Arial",sans-serif
-    }
-
-    .main [data-module-template="heroes"] .unit-copy-wrapper>*.callout:lang(zh-CN) {
-        font-family: "SF Pro SC","SF Pro Display","SF Pro Icons","PingFang SC","Helvetica Neue","Helvetica","Arial",sans-serif
-    }
-
-    .main [data-module-template="heroes"] .unit-copy-wrapper>*.callout:lang(zh-HK) {
-        font-family: "SF Pro HK","SF Pro Display","SF Pro Icons","PingFang HK","Helvetica Neue","Helvetica","Arial",sans-serif
-    }
-
-    .main [data-module-template="heroes"] .unit-copy-wrapper>*.callout:lang(zh-MO) {
-        font-family: "SF Pro HK","SF Pro TC","SF Pro Display","SF Pro Icons","PingFang HK","Helvetica Neue","Helvetica","Arial",sans-serif
-    }
-
-    .main [data-module-template="heroes"] .unit-copy-wrapper>*.callout:lang(zh-TW) {
-        font-family: "SF Pro TC","SF Pro Display","SF Pro Icons","PingFang TC","Helvetica Neue","Helvetica","Arial",sans-serif
-    }
-}
-
-@media only screen and (max-width: 734px) {
-    .main [data-module-template="heroes"] .unit-copy-wrapper>*.callout {
-        font-size:17px;
-        line-height: 1.23536;
-        font-weight: 400;
-        letter-spacing: -.022em;
-        font-family: "SF Pro Text","SF Pro Icons","Helvetica Neue","Helvetica","Arial",sans-serif
-    }
-
-    .main [data-module-template="heroes"] .unit-copy-wrapper>*.callout:lang(ar) {
-        letter-spacing: 0em;
-        font-family: "SF Pro AR","SF Pro AR Text","SF Pro Text","SF Pro Gulf","SF Pro Icons","Helvetica Neue","Helvetica","Arial",sans-serif
-    }
-
-    .main [data-module-template="heroes"] .unit-copy-wrapper>*.callout:lang(ja) {
-        letter-spacing: 0em;
-        font-family: "SF Pro JP","SF Pro Text","SF Pro Icons","Hiragino Kaku Gothic Pro","ãƒ’ãƒ©ã‚®ãƒŽè§’ã‚´ Pro W3","ãƒ¡ã‚¤ãƒªã‚ª","Meiryo","ï¼­ï¼³ ï¼°ã‚´ã‚·ãƒƒã‚¯","Helvetica Neue","Helvetica","Arial",sans-serif
-    }
-
-    .main [data-module-template="heroes"] .unit-copy-wrapper>*.callout:lang(ko) {
-        line-height: 1.35296;
-        letter-spacing: 0em;
-        font-family: "SF Pro KR","SF Pro Text","SF Pro Icons","Apple Gothic","HY Gulim","MalgunGothic","HY Dotum","Lexi Gulim","Helvetica Neue","Helvetica","Arial",sans-serif
-    }
-
-    .main [data-module-template="heroes"] .unit-copy-wrapper>*.callout:lang(zh) {
-        line-height: 1.35296;
-        letter-spacing: 0em
-    }
-
-    .main [data-module-template="heroes"] .unit-copy-wrapper>*.callout:lang(th) {
-        line-height: 1.35296;
-        letter-spacing: 0em;
-        font-family: "SF Pro TH","SF Pro Text","SF Pro Icons","Helvetica Neue","Helvetica","Arial",sans-serif
-    }
-
-    .main [data-module-template="heroes"] .unit-copy-wrapper>*.callout:lang(zh-CN) {
-        font-family: "SF Pro SC","SF Pro Text","SF Pro Icons","PingFang SC","Helvetica Neue","Helvetica","Arial",sans-serif
-    }
-
-    .main [data-module-template="heroes"] .unit-copy-wrapper>*.callout:lang(zh-HK) {
-        font-family: "SF Pro HK","SF Pro Text","SF Pro Icons","PingFang HK","Helvetica Neue","Helvetica","Arial",sans-serif
-    }
-
-    .main [data-module-template="heroes"] .unit-copy-wrapper>*.callout:lang(zh-MO) {
-        font-family: "SF Pro HK","SF Pro TC","SF Pro Text","SF Pro Icons","PingFang HK","Helvetica Neue","Helvetica","Arial",sans-serif
-    }
-
-    .main [data-module-template="heroes"] .unit-copy-wrapper>*.callout:lang(zh-TW) {
-        font-family: "SF Pro TC","SF Pro Text","SF Pro Icons","PingFang TC","Helvetica Neue","Helvetica","Arial",sans-serif
-    }
-}
-
-@media only screen and (max-width: 1068px) {
-    .main [data-module-template="heroes"] .unit-copy-wrapper>*.callout {
-        margin-top:14px
-    }
-}
-
-@media only screen and (max-width: 734px) {
-    .main [data-module-template="heroes"] .unit-copy-wrapper>*.callout {
-        margin-top:13px
-    }
-}
-
-.main [data-module-template="heroes"] .unit-copy-wrapper>*.callout+.cta-links {
-    margin-top: 15px
-}
-
-@media only screen and (max-width: 734px) {
-    .main [data-module-template="heroes"] .unit-copy-wrapper>*.callout+.cta-links {
-        margin-top:14px
-    }
-}
-
-.main [data-module-template="promos"] .unit-copy-wrapper>*.callout {
-    font-size: 17px;
-    line-height: 1.23536;
-    font-weight: 400;
-    letter-spacing: -.022em;
-    font-family: "SF Pro Text","SF Pro Icons","Helvetica Neue","Helvetica","Arial",sans-serif;
-    color: #6e6e73;
-    text-align: center;
-    margin-top: 12px
-}
-
-.main [data-module-template="promos"] .unit-copy-wrapper>*.callout:lang(ar) {
-    letter-spacing: 0em;
-    font-family: "SF Pro AR","SF Pro AR Text","SF Pro Text","SF Pro Gulf","SF Pro Icons","Helvetica Neue","Helvetica","Arial",sans-serif
-}
-
-.main [data-module-template="promos"] .unit-copy-wrapper>*.callout:lang(ja) {
-    letter-spacing: 0em;
-    font-family: "SF Pro JP","SF Pro Text","SF Pro Icons","Hiragino Kaku Gothic Pro","ãƒ’ãƒ©ã‚®ãƒŽè§’ã‚´ Pro W3","ãƒ¡ã‚¤ãƒªã‚ª","Meiryo","ï¼­ï¼³ ï¼°ã‚´ã‚·ãƒƒã‚¯","Helvetica Neue","Helvetica","Arial",sans-serif
-}
-
-.main [data-module-template="promos"] .unit-copy-wrapper>*.callout:lang(ko) {
-    line-height: 1.35296;
-    letter-spacing: 0em;
-    font-family: "SF Pro KR","SF Pro Text","SF Pro Icons","Apple Gothic","HY Gulim","MalgunGothic","HY Dotum","Lexi Gulim","Helvetica Neue","Helvetica","Arial",sans-serif
-}
-
-.main [data-module-template="promos"] .unit-copy-wrapper>*.callout:lang(zh) {
-    line-height: 1.35296;
-    letter-spacing: 0em
-}
-
-.main [data-module-template="promos"] .unit-copy-wrapper>*.callout:lang(th) {
-    line-height: 1.35296;
-    letter-spacing: 0em;
-    font-family: "SF Pro TH","SF Pro Text","SF Pro Icons","Helvetica Neue","Helvetica","Arial",sans-serif
-}
-
-.main [data-module-template="promos"] .unit-copy-wrapper>*.callout:lang(zh-CN) {
-    font-family: "SF Pro SC","SF Pro Text","SF Pro Icons","PingFang SC","Helvetica Neue","Helvetica","Arial",sans-serif
-}
-
-.main [data-module-template="promos"] .unit-copy-wrapper>*.callout:lang(zh-HK) {
-    font-family: "SF Pro HK","SF Pro Text","SF Pro Icons","PingFang HK","Helvetica Neue","Helvetica","Arial",sans-serif
-}
-
-.main [data-module-template="promos"] .unit-copy-wrapper>*.callout:lang(zh-MO) {
-    font-family: "SF Pro HK","SF Pro TC","SF Pro Text","SF Pro Icons","PingFang HK","Helvetica Neue","Helvetica","Arial",sans-serif
-}
-
-.main [data-module-template="promos"] .unit-copy-wrapper>*.callout:lang(zh-TW) {
-    font-family: "SF Pro TC","SF Pro Text","SF Pro Icons","PingFang TC","Helvetica Neue","Helvetica","Arial",sans-serif
-}
-
-@media only screen and (max-width: 1068px) {
-    .main [data-module-template="promos"] .unit-copy-wrapper>*.callout {
-        font-size:19px;
-        line-height: 1.21053;
-        font-weight: 400;
-        letter-spacing: 0em;
-        font-family: "SF Pro Display","SF Pro Icons","Helvetica Neue","Helvetica","Arial",sans-serif
-    }
-
-    .main [data-module-template="promos"] .unit-copy-wrapper>*.callout:lang(ar) {
-        font-family: "SF Pro AR","SF Pro AR Display","SF Pro Display","SF Pro Gulf","SF Pro Icons","Helvetica Neue","Helvetica","Arial",sans-serif
-    }
-
-    .main [data-module-template="promos"] .unit-copy-wrapper>*.callout:lang(ja) {
-        font-family: "SF Pro JP","SF Pro Display","SF Pro Icons","Hiragino Kaku Gothic Pro","ãƒ’ãƒ©ã‚®ãƒŽè§’ã‚´ Pro W3","ãƒ¡ã‚¤ãƒªã‚ª","Meiryo","ï¼­ï¼³ ï¼°ã‚´ã‚·ãƒƒã‚¯","Helvetica Neue","Helvetica","Arial",sans-serif
-    }
-
-    .main [data-module-template="promos"] .unit-copy-wrapper>*.callout:lang(ko) {
-        font-family: "SF Pro KR","SF Pro Display","SF Pro Icons","Apple Gothic","HY Gulim","MalgunGothic","HY Dotum","Lexi Gulim","Helvetica Neue","Helvetica","Arial",sans-serif
-    }
-
-    .main [data-module-template="promos"] .unit-copy-wrapper>*.callout:lang(th) {
-        font-family: "SF Pro TH","SF Pro Display","SF Pro Icons","Helvetica Neue","Helvetica","Arial",sans-serif
-    }
-
-    .main [data-module-template="promos"] .unit-copy-wrapper>*.callout:lang(zh-CN) {
-        font-family: "SF Pro SC","SF Pro Display","SF Pro Icons","PingFang SC","Helvetica Neue","Helvetica","Arial",sans-serif
-    }
-
-    .main [data-module-template="promos"] .unit-copy-wrapper>*.callout:lang(zh-HK) {
-        font-family: "SF Pro HK","SF Pro Display","SF Pro Icons","PingFang HK","Helvetica Neue","Helvetica","Arial",sans-serif
-    }
-
-    .main [data-module-template="promos"] .unit-copy-wrapper>*.callout:lang(zh-MO) {
-        font-family: "SF Pro HK","SF Pro TC","SF Pro Display","SF Pro Icons","PingFang HK","Helvetica Neue","Helvetica","Arial",sans-serif
-    }
-
-    .main [data-module-template="promos"] .unit-copy-wrapper>*.callout:lang(zh-TW) {
-        font-family: "SF Pro TC","SF Pro Display","SF Pro Icons","PingFang TC","Helvetica Neue","Helvetica","Arial",sans-serif
-    }
-}
-
-@media only screen and (max-width: 734px) {
-    .main [data-module-template="promos"] .unit-copy-wrapper>*.callout {
-        font-size:17px;
-        line-height: 1.23536;
-        font-weight: 400;
-        letter-spacing: -.022em;
-        font-family: "SF Pro Text","SF Pro Icons","Helvetica Neue","Helvetica","Arial",sans-serif
-    }
-
-    .main [data-module-template="promos"] .unit-copy-wrapper>*.callout:lang(ar) {
-        letter-spacing: 0em;
-        font-family: "SF Pro AR","SF Pro AR Text","SF Pro Text","SF Pro Gulf","SF Pro Icons","Helvetica Neue","Helvetica","Arial",sans-serif
-    }
-
-    .main [data-module-template="promos"] .unit-copy-wrapper>*.callout:lang(ja) {
-        letter-spacing: 0em;
-        font-family: "SF Pro JP","SF Pro Text","SF Pro Icons","Hiragino Kaku Gothic Pro","ãƒ’ãƒ©ã‚®ãƒŽè§’ã‚´ Pro W3","ãƒ¡ã‚¤ãƒªã‚ª","Meiryo","ï¼­ï¼³ ï¼°ã‚´ã‚·ãƒƒã‚¯","Helvetica Neue","Helvetica","Arial",sans-serif
-    }
-
-    .main [data-module-template="promos"] .unit-copy-wrapper>*.callout:lang(ko) {
-        line-height: 1.35296;
-        letter-spacing: 0em;
-        font-family: "SF Pro KR","SF Pro Text","SF Pro Icons","Apple Gothic","HY Gulim","MalgunGothic","HY Dotum","Lexi Gulim","Helvetica Neue","Helvetica","Arial",sans-serif
-    }
-
-    .main [data-module-template="promos"] .unit-copy-wrapper>*.callout:lang(zh) {
-        line-height: 1.35296;
-        letter-spacing: 0em
-    }
-
-    .main [data-module-template="promos"] .unit-copy-wrapper>*.callout:lang(th) {
-        line-height: 1.35296;
-        letter-spacing: 0em;
-        font-family: "SF Pro TH","SF Pro Text","SF Pro Icons","Helvetica Neue","Helvetica","Arial",sans-serif
-    }
-
-    .main [data-module-template="promos"] .unit-copy-wrapper>*.callout:lang(zh-CN) {
-        font-family: "SF Pro SC","SF Pro Text","SF Pro Icons","PingFang SC","Helvetica Neue","Helvetica","Arial",sans-serif
-    }
-
-    .main [data-module-template="promos"] .unit-copy-wrapper>*.callout:lang(zh-HK) {
-        font-family: "SF Pro HK","SF Pro Text","SF Pro Icons","PingFang HK","Helvetica Neue","Helvetica","Arial",sans-serif
-    }
-
-    .main [data-module-template="promos"] .unit-copy-wrapper>*.callout:lang(zh-MO) {
-        font-family: "SF Pro HK","SF Pro TC","SF Pro Text","SF Pro Icons","PingFang HK","Helvetica Neue","Helvetica","Arial",sans-serif
-    }
-
-    .main [data-module-template="promos"] .unit-copy-wrapper>*.callout:lang(zh-TW) {
-        font-family: "SF Pro TC","SF Pro Text","SF Pro Icons","PingFang TC","Helvetica Neue","Helvetica","Arial",sans-serif
-    }
-}
-
-@media only screen and (max-width: 1068px) {
-    .main [data-module-template="promos"] .unit-copy-wrapper>*.callout {
-        margin-top:11px
-    }
-}
-
-@media only screen and (max-width: 734px) {
-    .main [data-module-template="promos"] .unit-copy-wrapper>*.callout {
-        margin-top:13px
-    }
-}
-
-.main [data-module-template="promos"] .unit-copy-wrapper>*.callout+.cta-links {
-    margin-top: 14px
-}
-
-html.ac-gn-segmentbar-visible.ac-ls-visible.ac-gn-segmentbar-visible.ac-ls-fixed .main {
-    top: 0 !important
-}
-
-html.ac-gn-segmentbar-visible.ac-ls-visible body:not(.body-with-ribbon) #ac-globalfooter {
-    top: 0
-}
-
-#ac-globalfooter .ac-gf-sosumi strong {
-    font-weight: 600
-}
-
-body {
-    background: -webkit-gradient(linear, left top, left bottom, from(#f5f5f7), color-stop(0%, #fff));
-    background: -webkit-linear-gradient(#f5f5f7 var(--global-nav-collective-height), #fff 0%);
-    background: linear-gradient(#f5f5f7 var(--global-nav-collective-height), #fff 0%)
-}
-
-.nav-dark {
-    background: -webkit-gradient(linear, left top, left bottom, from(#1D1D1F), color-stop(0%, #fff));
-    background: -webkit-linear-gradient(#1D1D1F var(--global-nav-collective-height), #fff 0%);
-    background: linear-gradient(#1D1D1F var(--global-nav-collective-height), #fff 0%)
-}
-
-[data-module-template] [data-unit-id] .unit-wrapper.theme-dark {
-    background: black
-}
+/* NÃO TERÁ NO MOMENTO */
