@@ -1,109 +1,101 @@
 @charset "UTF-8";
 #globaltop {
-	all: unset;
+  all: unset;
 }
 @import url("../../../../../wss/font.css");
 
 #globalheader body {
-	margin: 0;
-	padding: 0;
+  margin: 0;
+  padding: 0;
 }
-#globalheader ul,
-#globalheader ol,
-#globalheader li,
-#globalheader dl,
-#globalheader dt,
-#globalheader dd,
-#globalheader h1,
-#globalheader h2,
-#globalheader h3,
-#globalheader h4,
-#globalheader h5,
-#globalheader h6,
-#globalheader hgroup,
-#globalheader p,
-#globalheader blockquote,
-#globalheader figure,
-#globalheader form,
-#globalheader fieldset,
-#globalheader input,
-#globalheader legend,
-#globalheader pre,
-#globalheader abbr,
-#globalheader button {
-	margin: 0;
-	padding: 0;
+#globalheader
+  :is(
+    ul,
+    ol,
+    li,
+    dl,
+    dt,
+    dd,
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6,
+    hgroup,
+    p,
+    blockquote,
+    figure,
+    form,
+    fieldset,
+    input,
+    legend,
+    pre,
+    abbr,
+    button
+  ) {
+  margin: 0;
+  padding: 0;
 }
-#globalheader pre,
-#globalheader code,
-#globalheader address,
-#globalheader caption,
-#globalheader th,
-#globalheader figcaption {
-	font-size: 1em;
-	font-weight: 400;
-	font-style: normal;
+
+#globalheader :is(pre, code, address, caption, th, figcaption) {
+  font-size: 1em;
+  font-weight: 400;
+  font-style: normal;
 }
-#globalheader fieldset,
-#globalheader iframe {
-	border: 0;
+#globalheader :is(fieldset,iframe) {
+  border: 0;
 }
-#globalheader caption,
-#globalheader th {
-	text-align: left;
+#globalheader :is( caption,th) {
+  text-align: left;
 }
 #globalheader table {
-	border-collapse: collapse;
-	border-spacing: 0;
+  border-collapse: collapse;
+  border-spacing: 0;
 }
-#globalheader main,
-#globalheader summary,
-#globalheader details {
-	display: block;
+#globalheader :is(main, summary, details) {
+  display: block;
 }
-#globalheader audio,
-#globalheader canvas,
-#globalheader video,
-#globalheader progress {
-	vertical-align: baseline;
+#globalheader :is( audio, canvas, video, progress) {
+  vertical-align: baseline;
 }
 #globalheader button {
-	background: none;
-	border: 0;
-	box-sizing: content-box;
-	color: inherit;
-	cursor: pointer;
-	font: inherit;
-	line-height: inherit;
-	overflow: visible;
-	vertical-align: inherit;
+  background: none;
+  border: 0;
+  box-sizing: content-box;
+  color: inherit;
+  cursor: pointer;
+  font: inherit;
+  line-height: inherit;
+  overflow: visible;
+  vertical-align: inherit;
 }
 #globalheader button:disabled {
-	cursor: default;
+  cursor: default;
 }
 
 #globalheader
-	:focus[data-focus-method="mouse"]:not(input):not(textarea):not(select),
+  :focus[data-focus-method="mouse"]:not(input):not(textarea):not(select),
 #globalheader
-	:focus[data-focus-method="touch"]:not(input):not(textarea):not(select) {
-	outline: none;
+  :focus[data-focus-method="touch"]:not(input):not(textarea):not(select) {
+  outline: none;
 }
 #globalheader ::-moz-focus-inner {
-	border: 0;
-	padding: 0;
+  border: 0;
+  padding: 0;
 }
 @media print {
-	#globalheader {
-		display: none;
-	}
+  #globalheader {
+    display: none;
+  }
 }
 
 :root {
-	--r-globaltop-background-opened: #fbfbfd;
-	--r-globaltop-background-opened-dark: #161617;
+  --r-globaltop-background-opened: #fbfbfd;
+  --r-globaltop-background-opened-dark: #161617;
 
-	--font-pattenr: SF Pro AR, SF Pro Gulf, SF Pro Text, SF Pro Icons,
-		Helvetica Neue, Helvetica, Arial, sans-serif;
+  --font-pattenr: SF Pro AR, SF Pro Gulf, SF Pro Text, SF Pro Icons,
+    Helvetica Neue, Helvetica, Arial, sans-serif;
 }
 
 *,
@@ -111,296 +103,294 @@
 *::before,
 html,
 body {
-	margin: 0;
-	padding: 0;
-	list-style: none;
-	text-decoration: none;
-	font-family: var(--font-pattenr);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  text-decoration: none;
+  font-family: var(--font-pattenr);
 }
 
 #globaltop {
-	/* copyApple */
-	--r-globalnav-color: rgba(0, 0, 0, 0.8);
-	--r-globalnav-color-secondary: #333336;
-	--r-globalnav-color-hover: #000000;
+  /* copyApple */
+  --r-globalnav-color: rgba(0, 0, 0, 0.8);
+  --r-globalnav-color-secondary: #333336;
+  --r-globalnav-color-hover: #000000;
 
-	--globaltop-backdrop-filter: none;
-	--globaltop-background: none;
+  --globaltop-backdrop-filter: none;
+  --globaltop-background: none;
 
-	--r-globaltop-height: 44px;
-	--r-globaltop-font-size: 17px;
+  --r-globaltop-height: 44px;
+  --r-globaltop-font-size: 17px;
 
-	--r-globaltop-flyout-spacing: 88px;
-	--r-globaltop-next-flyout-height: 0px;
+  --r-globaltop-flyout-spacing: 88px;
+  --r-globaltop-next-flyout-height: 0px;
 
-	--r-globaltop-flyout-close-delay: 0.12s;
-	--r-globaltop-flyout-link-opacity-duration: 0.5s;
+  --r-globaltop-flyout-close-delay: 0.12s;
+  --r-globaltop-flyout-link-opacity-duration: 0.5s;
 
-	--r-globaltop-previous-flyout-height: 0px;
-	position: fixed;
-	min-width: 320px;
-	max-height: max-content;
-	display: flex; /* display flex-column */
-	justify-items: center;
-	font-size: 18px;
-	white-space: nowrap; /* não-quebrar-text */
+  --r-globaltop-previous-flyout-height: 0px;
+  position: absolute;
+  min-width: 320px;
+  max-height: max-content;
+  display: flex; /* display flex-column */
+  justify-items: center;
+  font-size: 18px;
+  white-space: nowrap; /* não-quebrar-text */
 }
 
 #globalheader {
-	/* myPropriedades */
-	--altura-globalheader: 40px;
-	--largura-globalheader: 968px;
-	--globalheader-color-link: rgba(255, 255, 255, 0.8);
+  /* myPropriedades */
+  --altura-globalheader: 40px;
+  --largura-globalheader: 968px;
+  --globalheader-color-link: rgba(255, 255, 255, 0.8);
 
-	background-color: #071d41;
-	height: var(--altura-globalheader);
-	width: 100%;
+  background-color: #071d41;
+  height: var(--altura-globalheader);
+  width: 100%;
 
-	display: flex;
-	justify-content: center;
-	position: relative;
-	z-index: 3;
+  display: flex;
+  justify-content: center;
+  position: relative;
+  z-index: 3;
 }
 
 #globalheader .globalheader-content {
-	margin-left: 20px;
-	margin-right: 20px;
-	width: var(--largura-globalheader);
+  margin-left: 20px;
+  margin-right: 20px;
+  width: var(--largura-globalheader);
 
-	display: flex;
-	flex-direction: row;
-	justify-content: space-between;
-	box-sizing: border-box;
-	z-index: 2;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  box-sizing: border-box;
+  z-index: 2;
 }
 
 .globalheader-content .globalheader-list,
 .globalheader-content .globalheader-list-unbt-gov {
-	cursor: default;
-	list-style: none;
-	width: auto;
-	height: var(--altura-globalheader);
-	box-sizing: border-box;
+  cursor: default;
+  list-style: none;
+  width: auto;
+  height: var(--altura-globalheader);
+  box-sizing: border-box;
 
-	gap: 16px;
-	display: flex;
-	justify-content: space-between;
-	align-items: center;
+  gap: 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 #globaltop .globalheader-item {
-	box-sizing: border-box;
-	height: auto;
-	width: auto;
+  box-sizing: border-box;
+  height: auto;
+  width: auto;
 }
 
 #globalnav .globalnav-item-apple {
-	display: block;
+  display: block;
 }
 #globalnav.globalnav-trailing .globalnav-item-apple {
-	flex: 1;
+  flex: 1;
 }
 #globalnav.globalnav-trailing .globalnav-item-apple .globalnav-link-apple {
-	width: max-content;
+  width: max-content;
 }
 
 #globalnav .globalnav-image-regular {
-	display: flex;
+  display: flex;
 }
 #globalnav .globalnav-image-compact {
-	display: none;
+  display: none;
 }
 
 #globaltop .globalheader-link {
-	font-family: var(--font-pattenr) Arial, Helvetica, sans-serif;
-	font-size: 12px;
-	font-weight: 600;
-	font-family: var(--font-pattenr);
-	line-height: 1;
-	letter-spacing: -0.01em;
+  font-family: var(--font-pattenr) Arial, Helvetica, sans-serif;
+  font-size: 12px;
+  font-weight: 600;
+  font-family: var(--font-pattenr);
+  line-height: 1;
+  letter-spacing: -0.01em;
 
-	height: var(--altura-globalheader);
-	color: var(--globalheader-color-link);
-	/* color: var(--r-globalnav-color); */
+  height: var(--altura-globalheader);
+  color: var(--globalheader-color-link);
+  /* color: var(--r-globalnav-color); */
 
-	display: flex;
-	align-items: center;
-	justify-content: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 
-	text-decoration: none;
-	white-space: nowrap;
-	/* position: relative; */
-	background: no-repeat;
+  text-decoration: none;
+  white-space: nowrap;
+  /* position: relative; */
+  background: no-repeat;
 
-	/* z-index: 1; */
-	outline-offset: -7px;
-	transition: color 0.32s cubic-bezier(0.4, 0, 0.6, 1);
+  /* z-index: 1; */
+  outline-offset: -7px;
+  transition: color 0.32s cubic-bezier(0.4, 0, 0.6, 1);
 }
 #globaltop .globaltop-link:lang(pt-br) {
-	letter-spacing: 0em;
-	font-family: var(--font-pattenr), Arial, Helvetica, sans-serif;
+  letter-spacing: 0em;
+  font-family: var(--font-pattenr), Arial, Helvetica, sans-serif;
 }
 #globaltop .globalheader-link svg {
-	fill: currentColor;
+  fill: currentColor;
 }
 
 #globalheader .globalheader-link:hover,
 #globalheader .globalheader-link:focus[data-focus-method="key"] {
-	color: var(--r-globaltop-color-hover);
-	color: #ffffff;
-	text-decoration: none;
+  color: var(--r-globaltop-color-hover);
+  color: #ffffff;
+  text-decoration: none;
 }
 /* logo */
 #globaltop .globalheader-link-govbr {
-	font-size: 17px;
-	line-height: 1.2353641176;
-	font-weight: 800;
-	letter-spacing: -0.022em;
-	font-family: var(--font-pattenr), Arial, Helvetica, sans-serif;
-	display: flex;
-	align-items: center;
+  font-size: 17px;
+  line-height: 1.2353641176;
+  font-weight: 800;
+  letter-spacing: -0.022em;
+  font-family: var(--font-pattenr), Arial, Helvetica, sans-serif;
+  display: flex;
+  align-items: center;
 }
 #globaltop .globaltop-link-govbr:lang(ar) {
-	letter-spacing: 0em;
-	font-family: SF Pro AR, SF Pro Gulf, SF Pro Text, SF Pro Icons, Helvetica Neue,
-		Helvetica, Arial, sans-serif;
+  letter-spacing: 0em;
+  font-family: SF Pro AR, SF Pro Gulf, SF Pro Text, SF Pro Icons, Helvetica Neue,
+    Helvetica, Arial, sans-serif;
 }
 #globaltop .globaltop-link-govbr-logo {
-	height: 100%;
+  height: 100%;
 }
 #globaltop .globaltop-link-govbr .globaltop-link-text {
-	margin-inline-start: 4px;
-	height: 100%;
-	display: flex;
-	align-items: center;
-	pointer-events: none;
+  margin-inline-start: 4px;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  pointer-events: none;
 }
 
 /* Estilos para as classes que começam com "globalheader-link-" */
 [class^="globalheader-image-"] {
-	height: 40px;
-	width: 20px;
-	font-size: 17px;
-	line-height: 1.2353641176;
-	font-weight: 600;
-	letter-spacing: 0.05em !important;
-	font-family: var(--font-pattenr);
-	display: flex;
-	align-items: center; /* aninhar-conteudo do link */
+  height: 40px;
+  width: 20px;
+  font-size: 17px;
+  line-height: 1.2353641176;
+  font-weight: 600;
+  letter-spacing: 0.05em !important;
+  font-family: var(--font-pattenr);
+  display: flex;
+  align-items: center; /* aninhar-conteudo do link */
 }
 
 .globalheader-image-regular,
 .globalheader-image-compact {
-	display: none;
+  display: none;
 }
-
 
 #globalnav .globalnav-image-regular {
-	display: flex;
+  display: flex;
 }
 #globalnav .globalnav-image-compact {
-	display: none;
-} 
-
+  display: none;
+}
 
 .globalheader-list .globalheader-link-coronavarius .globalheader-link-text {
-	--r-logo-govbr-yellow: #ffcd07;
-	color: var(--r-logo-govbr-yellow);
-	text-decoration: underline;
+  --r-logo-govbr-yellow: #ffcd07;
+  color: var(--r-logo-govbr-yellow);
+  text-decoration: underline;
 }
 
 /* Oculta a classe visuallyhidden */
 
 .globalheader-list span.globalheader-espacador {
-	--color-espaçador: rgba(151, 151, 151, 0.5);
-	height: 20px;
-	width: 2px;
-	background-color: var(--color-espaçador);
+  --color-espaçador: rgba(151, 151, 151, 0.5);
+  height: 20px;
+  width: 2px;
+  background-color: var(--color-espaçador);
 }
 
-.globalheader-link-text-alternativo{
-	display: none;
+.globalheader-link-text-alternativo {
+  display: none;
 }
 
 /* mediaQuery verificado */
 @media screen and (max-width: 1024px) {
-	#globaltop,
-	.globalheader,
-	.globalheader-content,
-	.globalheader-list {
-		width: 100%;
-	}
-	.globalheader-item,
-	.globalheader-espacador {
-		display: none;
-	}
-	.globalheader-list-unbt-gov > *,
-	.globalheader-item-coronavarius,
-	.globalheader-item-orggovbr,
-	.globalheader-item-acessibilidade,
-	.globalheader-espacador-01,
-	.globalheader-espacador-05 {
-		display: block;
-	}
+  #globaltop,
+  .globalheader,
+  .globalheader-content,
+  .globalheader-list {
+    width: 100%;
+  }
+  .globalheader-item,
+  .globalheader-espacador {
+    display: none;
+  }
+  .globalheader-list-unbt-gov > *,
+  .globalheader-item-coronavarius,
+  .globalheader-item-orggovbr,
+  .globalheader-item-acessibilidade,
+  .globalheader-espacador-01,
+  .globalheader-espacador-05 {
+    display: block;
+  }
 }
 
 @media only screen and (max-width: 768px) {
-	#globaltop .globaltop-content {
-		display: flex;
-		padding: 0;
-		position: absolute;
-		top: 0;
-		width: 100%;
-		height: 100%;
-		background: var(--globaltop-background);
-		transition: background var(--r-globaltop-flyout-rate)
-			cubic-bezier(0.4, 0, 0.6, 1) 80ms;
-	}
-	.globaltop-content {
-		-webkit-backdrop-filter: var(--globaltop-backdrop-filter);
-		backdrop-filter: var(--globaltop-backdrop-filter);
-	}
+  #globaltop .globaltop-content {
+    display: flex;
+    padding: 0;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: var(--globaltop-background);
+    transition: background var(--r-globaltop-flyout-rate)
+      cubic-bezier(0.4, 0, 0.6, 1) 80ms;
+  }
+  .globaltop-content {
+    -webkit-backdrop-filter: var(--globaltop-backdrop-filter);
+    backdrop-filter: var(--globaltop-backdrop-filter);
+  }
 
-	#globaltop .globaltop-list {
-		display: flex;
-		flex: 1;
-		position: relative;
-		z-index: 1;
-		top: 0;
-		right: 0;
-		bottom: 0;
-		left: 0;
-		margin-inline-start: 0;
-		margin-inline-end: 0;
-		height: auto;
-		box-sizing: border-box;
-		-webkit-overflow-scrolling: touch;
-	}
-	#globalheader:not([dir="rtl"]) #globaltop .globaltop-list {
-		padding-right: calc(
-			48px + max(0px, calc(env(safe-area-inset-right) - 16px))
-		);
-	}
-	#globalheader[dir="rtl"] #globaltop .globaltop-list {
-		padding-left: calc(48px + max(0px, calc(env(safe-area-inset-left) - 16px)));
-	}
-	#globaltop .globaltop-item {
-		width: auto;
-		height: auto;
-		transition: color 0.32s cubic-bezier(0.4, 0, 0.6, 1);
-	}
-	#globaltop .globaltop-list > .globaltop-item {
-		height: 100%;
-	}
-	#globaltop
-		.globaltop-list
-		> .globaltop-item:not(.globaltop-menu)
-		.globaltop-link {
-		opacity: 1;
-		visibility: visible;
-		transition: opacity 0.24s cubic-bezier(0.4, 0, 0.6, 1) 80ms,
-			visibility 0.24s step-start 80ms;
-	}
+  #globaltop .globaltop-list {
+    display: flex;
+    flex: 1;
+    position: relative;
+    z-index: 1;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    margin-inline-start: 0;
+    margin-inline-end: 0;
+    height: auto;
+    box-sizing: border-box;
+    -webkit-overflow-scrolling: touch;
+  }
+  #globalheader:not([dir="rtl"]) #globaltop .globaltop-list {
+    padding-right: calc(
+      48px + max(0px, calc(env(safe-area-inset-right) - 16px))
+    );
+  }
+  #globalheader[dir="rtl"] #globaltop .globaltop-list {
+    padding-left: calc(48px + max(0px, calc(env(safe-area-inset-left) - 16px)));
+  }
+  #globaltop .globaltop-item {
+    width: auto;
+    height: auto;
+    transition: color 0.32s cubic-bezier(0.4, 0, 0.6, 1);
+  }
+  #globaltop .globaltop-list > .globaltop-item {
+    height: 100%;
+  }
+  #globaltop
+    .globaltop-list
+    > .globaltop-item:not(.globaltop-menu)
+    .globaltop-link {
+    opacity: 1;
+    visibility: visible;
+    transition: opacity 0.24s cubic-bezier(0.4, 0, 0.6, 1) 80ms,
+      visibility 0.24s step-start 80ms;
+  }
 }
 
 /* 
@@ -415,70 +405,70 @@ body {
 */
 
 @media only screen and (max-width: 768px) {
-	#globaltop,
-	.globalheader,
-	.globalheader-content,
-	.globalheader-list {
-		width: 100%;
-	}
-	.globalheader-item,
-	.globalheader-espacador {
-		display: none;
-	}
-	.globalheader-list-unbt-gov > * {
-		display: block;
-	}
-	.globalheader-item-orggovbr,
-	.globalheader-espacador-01,
-	.globalheader-item-coronavarius {
-		display: block;
-	}
-	#globaltop .globaltop-link- {
-		font-size: 28px;
-		line-height: 1.1428571429;
-		font-weight: 600;
-		letter-spacing: 0.007em;
-		font-family: SF Pro Display, SF Pro Icons, Helvetica Neue, Helvetica, Arial,
-			sans-serif;
-	}
-	#globaltop .globaltop-link:lang(ar) {
-		font-family: SF Pro AR, SF Pro Gulf, SF Pro Display, SF Pro Icons,
-			Helvetica Neue, Helvetica, Arial, sans-serif;
-	}
-	#globaltop .globaltop-link:lang(zh-TW) {
-		font-family: SF Pro TC, SF Pro Display, SF Pro Icons, PingFang TC,
-			Helvetica Neue, Helvetica, Arial, sans-serif;
-	}
+  #globaltop,
+  .globalheader,
+  .globalheader-content,
+  .globalheader-list {
+    width: 100%;
+  }
+  .globalheader-item,
+  .globalheader-espacador {
+    display: none;
+  }
+  .globalheader-list-unbt-gov > * {
+    display: block;
+  }
+  .globalheader-item-orggovbr,
+  .globalheader-espacador-01,
+  .globalheader-item-coronavarius {
+    display: block;
+  }
+  #globaltop .globaltop-link- {
+    font-size: 28px;
+    line-height: 1.1428571429;
+    font-weight: 600;
+    letter-spacing: 0.007em;
+    font-family: SF Pro Display, SF Pro Icons, Helvetica Neue, Helvetica, Arial,
+      sans-serif;
+  }
+  #globaltop .globaltop-link:lang(ar) {
+    font-family: SF Pro AR, SF Pro Gulf, SF Pro Display, SF Pro Icons,
+      Helvetica Neue, Helvetica, Arial, sans-serif;
+  }
+  #globaltop .globaltop-link:lang(zh-TW) {
+    font-family: SF Pro TC, SF Pro Display, SF Pro Icons, PingFang TC,
+      Helvetica Neue, Helvetica, Arial, sans-serif;
+  }
 }
 
 @media only screen and (max-width: 540px) {
-	#globaltop,
-	#globalheader,
-	.globalheader-content {
-		width: 100%;
-	}
-	.globalheader-item,
-	.globalheader-espacador,
-	.globalheader-link-text-covid {
-		display: none;
-	}
-	.globalheader-list-unbt-gov > *,
-	.globalheader-item-coronavarius {
-		display: block;
-		justify-content: right;
-		font-size: 10px;
-		line-height: 1.1428571429;
-		/* font-weight: 200; */
-		letter-spacing: 0.007em;
-		font-family: var(--font-pattenr);
-	}
+  #globaltop,
+  #globalheader,
+  .globalheader-content {
+    width: 100%;
+  }
+  .globalheader-item,
+  .globalheader-espacador,
+  .globalheader-link-text-covid {
+    display: none;
+  }
+  .globalheader-list-unbt-gov > *,
+  .globalheader-item-coronavarius {
+    display: block;
+    justify-content: right;
+    font-size: 10px;
+    line-height: 1.1428571429;
+    /* font-weight: 200; */
+    letter-spacing: 0.007em;
+    font-family: var(--font-pattenr);
+  }
 
-	.globalheader-link-text-alternativo{
-		--r-logo-govbr-yellow: #ffcd07;
-		
-		display: block;
-		color: var(--r-logo-govbr-yellow);
-		text-decoration: underline;
-		font-size: 16px;
-	}
+  .globalheader-link-text-alternativo {
+    --r-logo-govbr-yellow: #ffcd07;
+
+    display: block;
+    color: var(--r-logo-govbr-yellow);
+    text-decoration: underline;
+    font-size: 16px;
+  }
 }
