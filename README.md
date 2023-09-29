@@ -38,6 +38,7 @@ meus novos padrões
 
  - bug :bug: - Correção de bug
  - repeat :repeat: Renomeada a pasta
+ - twisted_rightwards_arrows :twisted_rightwards_arrows: merges entre branchs
  - sparkles :sparkles: - Nova funcionalidade
  - wrench :wrench: - Alterações de configuração ou manutenção
  - art :art: - Melhorias de formatação/código
