@@ -239,7 +239,7 @@ body {
 #globalheader .globalheader-link:hover,
 #globalheader .globalheader-link:focus[data-focus-method="key"] {
   color: var(--r-globaltop-color-hover);
-  color: #ffffff;
+  /* color: #ffffff; */
   text-decoration: none;
 }
 /* logo */

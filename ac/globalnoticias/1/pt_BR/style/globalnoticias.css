@@ -2,7 +2,7 @@
   box-sizing: border-box;
   border-style: solid;
   overflow: visible;
-    border-top-width: 0px;
+  border-top-width: 0px;
   border-left-width: 0px;
   border-right-width: 0px;
 }
@@ -78,25 +78,19 @@
   display: none;
 }
 
-.main
-  [data-module-template="noticias"]
-  .gallery
-  .item-container
-  .gallery-item
-  .inner {
-    background-position: center;
-    /* background-size: 119px 46px; */
-  aspect-ratio: 16/9;
+
+
+.main [data-module-template="noticias"] #tv-plus-gallery-item-1 .inner {
+  background-position: center;
+  background-size: cover;
   background-repeat: no-repeat;
-  /* background-image: url("../../../../../ac/globalimgs/grande.jpg"); */
+  background-image: url("../../../../../ac/globalnoticias/1/pt_BR/assets/grande.jpg");
+  /* height: 530px; */
+  aspect-ratio: 16/9;
   background-color: #0071e3;
 }
 
-.main
-  [data-module-template="noticias"]
-  .gallery
-  .gallery-item
-  .info-bottom {
+.main [data-module-template="noticias"] .gallery .gallery-item .info-bottom {
   opacity: 0.999;
   transform: translateY(0);
   transition: all 0.6s;
