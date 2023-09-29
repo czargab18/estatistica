@@ -241,8 +241,8 @@ meus novos padrões
 mais padões - chatgpt
 
  - bug :bug: - Correção de bug
- - repeat :repeat: Renomeada a pasta
  - folder :folder: Alterações no acervo (/ac/)
+ - repeat :repeat: Renomeada a pasta
  - sparkles :sparkles: - Nova funcionalidade
  - wrench :wrench: - Alterações de configuração ou manutenção
  - art :art: - Melhorias de formatação/código
