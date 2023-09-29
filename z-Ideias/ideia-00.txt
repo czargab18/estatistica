@@ -2,7 +2,6 @@
 nomeIdeia = CalendarioAcademico-unb
 
 ideia 00 = construir uma api que vai na url
-
 {https://saa.unb.br/graduacao/calendario-academico#calendario-de-matricula}
 
 e pega os .PDFs dos 2 primeiros links.
