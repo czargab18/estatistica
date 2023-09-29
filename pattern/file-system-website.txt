@@ -23,8 +23,11 @@ website/
 |-- backend/
 |   |-- src/
 |   |   |-- app.js
+|   |   |-- API/
+|   |   |   |-- calendAcademic.js 
+|   |   |   |-- imgBannersNoticias-e-Assuntos.js 
 |   |   |-- routes/
-|   |   |   |-- api.js
+|   |   |   |-- routes.js
 |   |   |-- controllers/
 |   |   |   |-- userController.js
 |   |   |-- models/
