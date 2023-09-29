@@ -104,7 +104,7 @@
     <script defer src="ac/globalmain/1/pt_BR/scripts/globalmain.js"></script>
     <script
       defer
-      src="ac/globalslides/1/pt_BR/assets/2025/2025.1/1/01-3/news.js"
+      src="ac/globalnoticias/1/pt_BR/scripts/globalnoticias.js"
     ></script>
 
     <script
@@ -1176,10 +1176,16 @@
                 transition: none 0s ease 0s;
               "
             >
-            <!-- 01 -->
+              <!-- 01 -->
               <div
+                id="tv-plus-gallery-item-1"
                 class="gallery-item current"
-                id="noticias-item-1 tv-plus-gallery-item-1"
+                data-analytics-gallery-item-id="Tv Plus Gallery item 2"
+                data-ac-gallery-item=""
+                role="tabpanel"
+                aria-labelledby="tv-plus-gallery-item-2-trigger"
+                data-original-aria-hidden=""
+                aria-hidden="true"
                 style="
                   --progress: 0;
                   z-index: 1;
@@ -1187,7 +1193,7 @@
                   transform: translate(0px, 0px);
                 "
               >
-                <a id="noticias-link-01 show" href="">
+                <a id="noticias-link-01 show" href="#">
                   <div class="inner">
                     <div class="info-top">
                       <figure class="atv-plus-icon noticias-icon"></figure>
@@ -1203,12 +1209,12 @@
                   </div>
                 </a>
               </div>
-            <!-- 02 -->
+              <!-- 02 -->
               <div
                 id="tv-plus-gallery-item-2"
+                class="gallery-item theme-dark"
                 data-analytics-gallery-item-id="Tv Plus Gallery item 2"
                 data-ac-gallery-item=""
-                class="gallery-item theme-dark"
                 role="tabpanel"
                 aria-labelledby="tv-plus-gallery-item-2-trigger"
                 data-original-aria-hidden=""
@@ -1221,7 +1227,7 @@
                 "
               >
                 <a
-                  href="https://tv.apple.com/us/movie/argylle/umc.cmc.3qy6j44hfqtekx6fx3yzh9w8i?itscg=10000&amp;itsct=atv-apl_hp-stream_now--220622"
+                  href="#"
                   style="
                     background-image: url('https://is1-ssl.mzstatic.com/image/thumb/8lCBaVJh1fiEQqlI-dCPJA/980x551.jpg');
                   "
@@ -1258,7 +1264,7 @@
                   </div>
                 </a>
               </div>
-            <!-- 03 -->
+              <!-- 03 -->
               <div
                 id="tv-plus-gallery-item-3"
                 data-analytics-gallery-item-id="Tv Plus Gallery item 3"
@@ -1313,9 +1319,9 @@
                   </div>
                 </a>
               </div>
-            <!-- 04 -->
+              <!-- 04 -->
               <div
-                id="tv-plus-gallery-item-3"
+                id="tv-plus-gallery-item-4"
                 data-analytics-gallery-item-id="Tv Plus Gallery item 3"
                 data-ac-gallery-item=""
                 class="gallery-item theme-dark"
@@ -1363,9 +1369,9 @@
                   </div>
                 </a>
               </div>
-            <!-- 05 -->
+              <!-- 05 -->
               <div
-                id="tv-plus-gallery-item-3"
+                id="tv-plus-gallery-item-5"
                 data-analytics-gallery-item-id="Tv Plus Gallery item 3"
                 data-ac-gallery-item=""
                 class="gallery-item theme-dark"
@@ -1404,9 +1410,9 @@
                   </div>
                 </a>
               </div>
-            <!-- 06 -->
+              <!-- 06 -->
               <div
-                id="tv-plus-gallery-item-3"
+                id="tv-plus-gallery-item-6"
                 data-analytics-gallery-item-id="Tv Plus Gallery item 3"
                 data-ac-gallery-item=""
                 class="gallery-item theme-dark"
@@ -1445,9 +1451,9 @@
                   </div>
                 </a>
               </div>
-            <!-- 07 -->
+              <!-- 07 -->
               <div
-                id="tv-plus-gallery-item-3"
+                id="tv-plus-gallery-item-7"
                 data-analytics-gallery-item-id="Tv Plus Gallery item 3"
                 data-ac-gallery-item=""
                 class="gallery-item theme-dark"
@@ -1486,9 +1492,9 @@
                   </div>
                 </a>
               </div>
-            <!-- 08 -->
+              <!-- 08 -->
               <div
-                id="tv-plus-gallery-item-3"
+                id="tv-plus-gallery-item-8"
                 data-analytics-gallery-item-id="Tv Plus Gallery item 3"
                 data-ac-gallery-item=""
                 class="gallery-item theme-dark"
@@ -1527,9 +1533,9 @@
                   </div>
                 </a>
               </div>
-            <!-- 09 -->
+              <!-- 09 -->
               <div
-                id="tv-plus-gallery-item-3"
+                id="tv-plus-gallery-item-9"
                 data-analytics-gallery-item-id="Tv Plus Gallery item 3"
                 data-ac-gallery-item=""
                 class="gallery-item theme-dark"
@@ -1568,9 +1574,9 @@
                   </div>
                 </a>
               </div>
-            <!-- 10 -->
+              <!-- 10 -->
               <div
-                id="tv-plus-gallery-item-3"
+                id="tv-plus-gallery-item-10"
                 data-analytics-gallery-item-id="Tv Plus Gallery item 3"
                 data-ac-gallery-item=""
                 class="gallery-item theme-dark"
@@ -1636,7 +1642,7 @@
                 <ul role="tablist" class="dotnav-items">
                   <li role="presentation" class="current">
                     <a
-                      href="#"
+                      href="#tv-plus-gallery-item-1"
                       id="tv-plus-gallery-item-1-trigger"
                       class="dotnav-item current"
                       role="tab"
@@ -1655,7 +1661,7 @@
                       class="dotnav-item"
                       role="tab"
                       aria-controls="tv-plus-gallery-item-2"
-                      tabindex="-1"
+                      tabindex="0"
                       aria-selected="false"
                     >
                       <span class="visuallyhidden">Item 2</span>
@@ -1670,7 +1676,7 @@
                       class="dotnav-item"
                       role="tab"
                       aria-controls="tv-plus-gallery-item-3"
-                      tabindex="-1"
+                      tabindex="0"
                       aria-selected="false"
                     >
                       <span class="visuallyhidden">Item 3</span>
@@ -1685,7 +1691,7 @@
                       class="dotnav-item"
                       role="tab"
                       aria-controls="tv-plus-gallery-item-4"
-                      tabindex="-1"
+                      tabindex="0"
                       aria-selected="false"
                     >
                       <span class="visuallyhidden">Item 4</span>
@@ -1700,7 +1706,7 @@
                       class="dotnav-item"
                       role="tab"
                       aria-controls="tv-plus-gallery-item-5"
-                      tabindex="-1"
+                      tabindex="0"
                       aria-selected="false"
                     >
                       <span class="visuallyhidden">Item 5</span>
@@ -1785,7 +1791,7 @@
               </div>
             </div>
             <!-- botão-play-pause -->
-            <button
+            <button id="playButton"
               class="play-pause paused show"
               aria-label="play Apple TV plus gallery"
               data-analytics-title="play-gallery"

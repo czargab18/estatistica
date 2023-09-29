@@ -32,10 +32,10 @@
   /*  */
   aspect-ratio: 16/9;
   overflow: hidden;
-  overflow-x: auto;
+  overflow-x: hidden;
   scroll-snap-type: x mandatory;
   scroll-behavior: smooth;
-  scroll-snap-align: start;
+  /* scroll-snap-align: start; */
   object-fit: cover;
   /*  */
   z-index: 1 !important;
