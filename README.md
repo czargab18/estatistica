@@ -5,10 +5,6 @@
 
 De acordo com a documentação do **[Conventional Commits](https://www.conventionalcommits.org/pt-br)**, commits semânticos são uma convenção simples para ser utilizada nas mensagens de commit. Essa convenção define um conjunto de regras para criar um histórico de commit explícito, o que facilita a criação de ferramentas automatizadas.
 
-Esses commits auxiliarão você e sua equipe a entenderem de forma facilitada quais alterações foram realizadas no trecho de código que foi commitado.
-
-Essa identificação ocorre por meio de uma palavra e emoji que identifica se aquele commit realizado se trata de uma alteração de código, atualização de pacotes, documentação, alteração de visual, teste...
-
 ## Tipo e descrição 🦄
 
 O commit semântico possui os elementos estruturais abaixo (tipos), que informam a intenção do seu commit ao utilizador(a) de seu código.
@@ -34,22 +30,33 @@ O commit semântico possui os elementos estruturais abaixo (tipos), que informam
 - `ci` - Commits do tipo ci indicam mudanças relacionadas a **integração contínua** (_continuous integration_).
 
 - `raw` - Commits to tipo raw indicam mudanças relacionadas a arquivos de configurações, dados, features, parametros.
-  
-## Recomendações 🎉
 
-- Adicione um tipo consistente com o título do conteúdo.
-- Recomendamos que na primeira linha deve ter no máximo 4 palavras.
-- Para descrever com detalhes, usar a descrição do commit.
-- Usar um emoji no início da mensagem de commit representando sobre o commit.
-- Os links precisam ser adicionados em sua forma mais autêntica, ou seja: sem encurtadores de link e links afiliados.
-
-## Complementos de commits 💻
-
-- **Rodapé:** informação sobre o revisor e número do card no Trello ou Jira. Exemplo: Reviewed-by: Elisandro Mello Refs #133
-- **Corpo:** descrições mais precisas do que está contido no commit, apresentando impactos e os motivos pelos quais foram empregadas as alterações no código, como também instruções essenciais para intervenções futuras. Exemplo: see the issue for details on typos fixed.
-- **Descrições:** uma descrição sucinta da mudança. Exemplo: correct minor typos in code
+meus novos padrões
+- não definidos
 
 ## Padrões de emojis 💈
+
+ - bug :bug: - Correção de bug
+ - repeat :repeat: Renomeada a pasta
+ - sparkles :sparkles: - Nova funcionalidade
+ - wrench :wrench: - Alterações de configuração ou manutenção
+ - art :art: - Melhorias de formatação/código
+ - fire :fire: - Remoção de código ou arquivos
+ - memo :memo: - Atualização de documentação
+ - rocket :rocket: - Melhorias de desempenho
+ - construction :construction: - Trabalho em andamento (WIP - "Work in Progress")
+ - arrow_up :arrow_up: - Atualização de dependências
+ - arrow_down :arrow_down: - Redução de dependências
+ - recycle :recycle: - Refatoração de código
+ - heavy_plus_sign :heavy_plus_sign: - Adição de dependências ou pacotes
+ - heavy_minus_sign :heavy_minus_sign: - Remoção de dependências ou pacotes
+ - tada :tada: - Um commit inicial, um marco importante ou uma conquista
+ - white_check_mark :white_check_mark: - Adição de testes
+ - lock :lock: - Melhorias de segurança
+ - green_heart :green_heart: - Correções nos testes
+ - truck :truck: - Mudanças de movimentação ou renomeação de arquivos
+ - package :package: - Mudanças relacionadas a pacotes ou gerenciadores de pacotes
+ - bookmark :bookmark: - Versão ou tag
 
 <table>
   <thead>
@@ -336,11 +343,3 @@ mais padões - chatgpt
     </tr>
   </tbody>
 </table>
-
-## Contribuição ✨
-
-Ajude a comunidade tornando este projeto ainda mais incrível. Leia como contribuir clicando **[aqui](https://github.com/iuricode/padroes-de-commits/blob/main/CONTRIBUTING.md)** e a **[licença](https://github.com/iuricode/padroes-de-commits/blob/main/LICENSE.md)**. Estou convencido de que juntos alcançaremos coisas incríveis!
-
-## Aprenda desenvolvimento frontend ❤️
-
-Este repositório é um projeto gratuito para a comunidade de desenvolvedores, mas você pode me ajudar comprando o meu ebook "**[eFront - Estudando frontend do zero](https://iuricode.com/efront)**" se estiver interessado em aprender ou melhorar suas habilidades de desenvolvimento frontend. A sua compra me ajuda a produzir e fornecer mais conteúdo gratuito para a comunidade. Adquira agora e comece sua jornada no desenvolvimento frontend.
