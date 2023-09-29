@@ -1,45 +1,64 @@
-// Adicione seu código JavaScript aqui para implementar a funcionalidade de slider
-const itemContainer = document.querySelector(".item-container");
-const galleryItems = document.querySelectorAll(".gallery-item");
-const playButton = document.getElementById("playButton");
+document.addEventListener("DOMContentLoaded", function () {
+  const slides = document.querySelectorAll(".gallery-item");
+  const dots = document.querySelectorAll(".dotnav-item");
+  const playButton = document.getElementById("playButton");
+  const pauseButton = document.getElementById("pauseButton");
 
-let currentIndex = 0;
-let isPlaying = false;
-let intervalId;
+  let currentSlideIndex = 0;
+  let autoPlayInterval;
 
-function goToSlide(index) {
-  itemContainer.style.transform = `translateX(-${index * 100}%)`;
-  currentIndex = index;
-}
-
-function startSlider() {
-  if (!isPlaying) {
-    isPlaying = true;
-    // playButton.textContent = "Pause";
-
-    intervalId = setInterval(() => {
-      let nextIndex = currentIndex + 1;
-      if (nextIndex >= galleryItems.length) {
-        nextIndex = 0;
-      }
-      goToSlide(nextIndex);
-    }, 3000); // Altere o intervalo conforme necessário (em milissegundos)
+  function hideAllSlides() {
+    slides.forEach((slide) => {
+      slide.style.display = "none";
+    });
   }
-}
 
-function pauseSlider() {
-  if (isPlaying) {
-    clearInterval(intervalId);
-    isPlaying = false;
-    // playButton.textContent = "Play";
+  function showSlide(index) {
+    if (index >= 0 && index < slides.length) {
+      slides[index].style.display = "block";
+      currentSlideIndex = index;
+    }
   }
-}
 
-playButton.addEventListener("click", () => {
-  if (isPlaying) {
-    pauseSlider();
-  } else {
-    // Adicione um atraso antes de iniciar o slider novamente
-    setTimeout(startSlider, 1000); // Atraso de 1 segundo (1000 milissegundos)
+  function nextSlide() {
+    const nextIndex = (currentSlideIndex + 1) % slides.length;
+    dots[currentSlideIndex].classList.remove("current");
+    dots[nextIndex].classList.add("current");
+    hideAllSlides();
+    showSlide(nextIndex);
   }
+
+  function startAutoPlay() {
+    autoPlayInterval = setInterval(nextSlide, 3000); // Altere o intervalo conforme necessário (atualmente definido como 3000 ms)
+  }
+
+  function stopAutoPlay() {
+    clearInterval(autoPlayInterval);
+  }
+
+  dots.forEach((dot, index) => {
+    dot.addEventListener("click", () => {
+      dots.forEach((d) => d.classList.remove("current"));
+      dot.classList.add("current");
+      hideAllSlides();
+      showSlide(index);
+      stopAutoPlay(); // Pare a reprodução automática quando o usuário clicar em um ponto
+    });
+  });
+
+  playButton.addEventListener("click", () => {
+    startAutoPlay(); // Inicie a reprodução automática quando o botão "play" for clicado
+    playButton.style.display = "none";
+    pauseButton.style.display = "block";
+  });
+
+  pauseButton.addEventListener("click", () => {
+    stopAutoPlay(); // Pare a reprodução automática quando o botão "pause" for clicado
+    pauseButton.style.display = "none";
+    playButton.style.display = "block";
+  });
+
+  dots[0].classList.add("current");
+  showSlide(0);
+  startAutoPlay(); // Inicie a reprodução automática ao carregar a página
 });
