@@ -228,6 +228,28 @@ O commit semântico possui os elementos estruturais abaixo (tipos), que informam
   </tbody>
 </table>
 
+mais padões - chatgpt
+
+ - bug :bug: - Correção de bug 
+ - sparkles :sparkles: - Nova funcionalidade
+ - wrench :wrench: - Alterações de configuração ou manutenção
+ - art :art: - Melhorias de formatação/código
+ - fire :fire: - Remoção de código ou arquivos
+ - memo :memo: - Atualização de documentação
+ - rocket :rocket: - Melhorias de desempenho
+ - construction :construction: - Trabalho em andamento (WIP - "Work in Progress")
+ - arrow_up :arrow_up: - Atualização de dependências
+ - arrow_down :arrow_down: - Redução de dependências
+ - recycle :recycle: - Refatoração de código
+ - heavy_plus_sign :heavy_plus_sign: - Adição de dependências ou pacotes
+ - heavy_minus_sign :heavy_minus_sign: - Remoção de dependências ou pacotes
+ - tada :tada: - Um commit inicial, um marco importante ou uma conquista
+ - white_check_mark :white_check_mark: - Adição de testes
+ - lock :lock: - Melhorias de segurança
+ - green_heart :green_heart: - Correções nos testes
+ - truck :truck: - Mudanças de movimentação ou renomeação de arquivos
+ - package :package: - Mudanças relacionadas a pacotes ou gerenciadores de pacotes
+ - bookmark :bookmark: - Versão ou tag
 ## 💻 Exemplos
 
 <table>
