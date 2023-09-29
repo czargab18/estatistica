@@ -32,7 +32,7 @@ O commit semântico possui os elementos estruturais abaixo (tipos), que informam
 - `raw` - Commits to tipo raw indicam mudanças relacionadas a arquivos de configurações, dados, features, parametros.
 
 meus novos padrões
-- não definidos
+- `merge` - quando há merges enter branchs. merge: <code> branch1 </code> to <code>branch2</code>
 
 ## Padrões de emojis 💈
 
