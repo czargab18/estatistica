@@ -120,7 +120,7 @@ meus novos padrões
     </tr>
     <tr>
       <td>Documentação</td>
-      <td>📚 <code>:books:</code></td>
+      <td>📚 <code>:book:</code></td>
       <td><code>docs</code></td>
     </tr>
     <tr>
@@ -278,7 +278,7 @@ mais padões - chatgpt
     </tr>
     <tr>
       <td>
-        <code>git commit -m ":books: docs: Atualizaçao do README"</code>
+        <code>git commit -m ":book: docs: Atualizaçao do README"</code>
       </td>
       <td>📚 docs: Atualizaçao do README</td>
     </tr>
