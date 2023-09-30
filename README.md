@@ -6,7 +6,7 @@
 
 De acordo com a documentação do **[Conventional Commits](https://www.conventionalcommits.org/pt-br)**, commits semânticos são uma convenção simples para ser utilizada nas mensagens de commit. Essa convenção define um conjunto de regras para criar um histórico de commit explícito, o que facilita a criação de ferramentas automatizadas.
 
-## Tipo e descrição 🦄
+## Tipo e descrição e Padrões de emojis
 
 O commit semântico possui os elementos estruturais abaixo (tipos), que informam a intenção do seu commit ao utilizador(a) de seu código.
 
@@ -22,14 +22,16 @@ O commit semântico possui os elementos estruturais abaixo (tipos), que informam
   - :goal_net: [goal_net] Tratamento de erros
 
 - `docs` - indicam que houveram **mudanças na documentação**, como por exemplo no Readme do seu repositório. (Não inclui alterações em código).
-
   - :book: [books] Documentação
+  - :memo: [memo] Qtualização da Documentação
 
 - `build` - são utilizados quando são realizadas modificações em **arquivos de build e dependências**.
 
   - :heavy_plus_sign: [heavy_plus_sign] Adicionando uma dependência
   - :heavy_minus_sign: [heavy_minus_sign] Revertendo uma dependência
   - :package: [package] Package.json em JS
+  - :arrow_up: [arrow_up] atualização de dependências
+  - :arrow_down: [arrow_down] Redução de dependências
 
 - `style` - indicam que houveram alterações referentes a **formatações de código**, semicolons, trailing spaces, lint... (Não inclui alterações em código).
 
@@ -41,6 +43,7 @@ O commit semântico possui os elementos estruturais abaixo (tipos), que informam
 meus novos padrões
 
 - `merge` - indica quando há merges entre branchs
+  - :twisted_rightwards_arrows: [twisted_rightwards_arrows] Merges entre branchs
 
 - `acervo` - indicam quando há mudanças no acervo (renomear pastas, mudanças de pastas que estejam dentro do ac)
 
@@ -48,7 +51,10 @@ meus novos padrões
   - :wheelchair: [wheelchair] Acessibilidade
   - :rocket: [rocket] Deploy
   - :construction: [construction] Em progresso
-  - :truck: [truck] Mover/Renomear
+  - :truck: [truck]  Mudanças de movimentação ou renomeação de arquivos
+     - :fire: [fire] Remover
+     - :truck: [truck] Mover
+     - :repeat: [repeat] Renomear
   - :zap: [zap] Performance
   - :iphone: [iphone] Responsividade
   - :lock: [lock] Segurança
@@ -57,11 +63,17 @@ meus novos padrões
   - :label: [label] Tipagem
 
 - `outros` - indicam comentários ou identação de código
+  - :tada: [tada] Commit inicial
   - :bulb: [bulb] Comentários
-  - :format: [format] Identação
+  - :art: [art] Identação
+  - :truck: [truck]  Mudanças de movimentação ou renomeação de arquivos (ou mais expecificos abaixo)
+     - :fire: [fire] Remover
+     - :truck: [truck] Mover
+     - :repeat: [repeat] Renomear
   - :soon: [soon] Lista de ideias (tasks)
-  - :fire: [fire] Removendo um arquivo
   - :pencil: [pencil] Texto
+  - :wrench: [wrench] Alterações de configuração ou manutenção
+  - :fire: [fire] Removendo um arquivo
 
 ## 💻 Exemplos
 
@@ -161,28 +173,3 @@ meus novos padrões
   </tr>
   </tdoby>
 </table>
-
-## Padrões de emojis 💈
-
-- bug :bug: - Correção de bug
-- repeat :repeat: Renomeada a pasta
-- twisted_rightwards_arrows :twisted_rightwards_arrows: merges entre branchs
-- sparkles :sparkles: - Nova funcionalidade
-- wrench :wrench: - Alterações de configuração ou manutenção
-- art :art: - Melhorias de formatação/código
-- fire :fire: - Remoção de código ou arquivos
-- memo :memo: - Atualização de documentação
-- rocket :rocket: - Melhorias de desempenho
-- construction :construction: - Trabalho em andamento (WIP - "Work in Progress")
-- arrow_up :arrow_up: - Atualização de dependências
-- arrow_down :arrow_down: - Redução de dependências
-- recycle :recycle: - Refatoração de código
-- heavy_plus_sign :heavy_plus_sign: - Adição de dependências ou pacotes
-- heavy_minus_sign :heavy_minus_sign: - Remoção de dependências ou pacotes
-- tada :tada: - Um commit inicial, um marco importante ou uma conquista
-- white_check_mark :white_check_mark: - Adição de testes
-- lock :lock: - Melhorias de segurança
-- green_heart :green_heart: - Correções nos testes
-- truck :truck: - Mudanças de movimentação ou renomeação de arquivos
-- package :package: - Mudanças relacionadas a pacotes ou gerenciadores de pacotes
-- bookmark :bookmark: - Versão ou tag
