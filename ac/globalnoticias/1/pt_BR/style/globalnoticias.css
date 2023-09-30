@@ -24,6 +24,7 @@
   overflow: hidden;
   position: relative;
   height: 561.13167px;
+  aspect-ratio: 16/9;
   background-color: #fff;
   width: 100%;
   margin: 0 auto;
@@ -36,12 +37,18 @@
   width: 995px;
   margin: 0 auto;
   will-change: transform;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
 }
 
 .main [data-module-template="noticias"] .gallery .gallery-item {
-  --abs: Max(var(--progress), var(--progress) * -1);
-  --progress-0-1: clamp(0, var(--abs), 1);
-  --progress-1-1: clamp(-1, var(--progress), 1);
+  --abs: Max(var(
+  --progress), var(--progress) * -1);
+  --progress-0-1: clamp(0, var(
+  --abs), 1);
+  --progress-1-1: clamp(-1, var(
+  --progress), 1);
   overflow: hidden;
   position: absolute;
   left: 0;
@@ -54,6 +61,7 @@
   align-items: center;
   will-change: opacity;
   z-index: 0 !important;
+  flex: 1 0 100%;
 }
 .main
   [data-module-template="noticias"]
