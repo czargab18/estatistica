@@ -22,11 +22,13 @@ O commit semântico possui os elementos estruturais abaixo (tipos), que informam
   - :goal_net: [goal_net] Tratamento de erros
 
 - `docs` - indicam que houveram **mudanças na documentação**, como por exemplo no Readme do seu repositório. (Não inclui alterações em código).
+
   - :book: [books] Documentação
   - :memo: [memo] Qtualização da Documentação
 
 - `build` - são utilizados quando são realizadas modificações em **arquivos de build e dependências**.
 
+  - :wrench: [wrench] Alterações de configuração ou manutenção
   - :heavy_plus_sign: [heavy_plus_sign] Adicionando uma dependência
   - :heavy_minus_sign: [heavy_minus_sign] Revertendo uma dependência
   - :package: [package] Package.json em JS
@@ -43,18 +45,20 @@ O commit semântico possui os elementos estruturais abaixo (tipos), que informam
 meus novos padrões
 
 - `merge` - indica quando há merges entre branchs
+
   - :twisted_rightwards_arrows: [twisted_rightwards_arrows] Merges entre branchs
 
 - `acervo` - indicam quando há mudanças no acervo (renomear pastas, mudanças de pastas que estejam dentro do ac)
 
 - `page` criação de novas paginas ou alteração de nomes ou local de diretórios
+
   - :wheelchair: [wheelchair] Acessibilidade
   - :rocket: [rocket] Deploy
   - :construction: [construction] Em progresso
-  - :truck: [truck]  Mudanças de movimentação ou renomeação de arquivos
-     - :fire: [fire] Remover
-     - :truck: [truck] Mover
-     - :repeat: [repeat] Renomear
+  - :truck: [truck] Mudanças de movimentação ou renomeação de arquivos
+    - :fire: [fire] Remover
+    - :truck: [truck] Mover
+    - :repeat: [repeat] Renomear
   - :zap: [zap] Performance
   - :iphone: [iphone] Responsividade
   - :lock: [lock] Segurança
@@ -66,13 +70,12 @@ meus novos padrões
   - :tada: [tada] Commit inicial
   - :bulb: [bulb] Comentários
   - :art: [art] Identação
-  - :truck: [truck]  Mudanças de movimentação ou renomeação de arquivos (ou mais expecificos abaixo)
-     - :fire: [fire] Remover
-     - :truck: [truck] Mover
-     - :repeat: [repeat] Renomear
+  - :truck: [truck] Mudanças de movimentação ou renomeação de arquivos (ou mais expecificos abaixo)
+    - :fire: [fire] Remover
+    - :truck: [truck] Mover
+    - :repeat: [repeat] Renomear
   - :soon: [soon] Lista de ideias (tasks)
   - :pencil: [pencil] Texto
-  - :wrench: [wrench] Alterações de configuração ou manutenção
   - :fire: [fire] Removendo um arquivo
 
 ## 💻 Exemplos
