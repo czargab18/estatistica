@@ -228,7 +228,7 @@ body {
 
 #globalnavbar .globalnavbar-link:hover,
 #globalnavbar .globalnavbar-link:focus[data-focus-method="key"] {
-  color: var(--r-globalnavbar-color-hover-white) !important;
+  color: var(--r-globalnavbar-color-secondary-black) !important;
   text-decoration: none;
 }
 /* IMG:svg - de cada Palavra da navbar - Não serão exibidos */
