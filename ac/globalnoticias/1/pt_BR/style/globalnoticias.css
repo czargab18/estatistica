@@ -773,7 +773,7 @@
 }
 /* =================== imagens - Slides =================== */
 
-.main [data-module-template="noticias"] .gallery #noticias-01  a {
+.main [data-module-template="noticias"] .gallery #noticias-01 a {
   position: absolute;
   top: 0;
   left: 7.5px;
@@ -785,7 +785,7 @@
   background-color: #0071e3;
   background-image: url("../../../../../ac/globalnoticias/1/pt_BR/assets/unb.png");
 }
-.main [data-module-template="noticias"] .gallery #noticias-02  a {
+.main [data-module-template="noticias"] .gallery #noticias-02 a {
   position: absolute;
   top: 0;
   left: 7.5px;
@@ -797,7 +797,7 @@
   background-color: #0071e3;
   background-image: url("../../../../../ac/globalnoticias/1/pt_BR/assets/grande.jpg");
 }
-.main [data-module-template="noticias"] .gallery #noticias-03  a {
+.main [data-module-template="noticias"] .gallery #noticias-03 a {
   position: absolute;
   top: 0;
   left: 7.5px;
@@ -809,7 +809,7 @@
   background-color: #0071e3;
   background-image: url("../../../../../ac/globalnoticias/1/pt_BR/assets/unb.png");
 }
-.main [data-module-template="noticias"] .gallery #noticias-04  a {
+.main [data-module-template="noticias"] .gallery #noticias-04 a {
   position: absolute;
   top: 0;
   left: 7.5px;
@@ -821,7 +821,7 @@
   background-color: #0071e3;
   background-image: url("../../../../../ac/globalnoticias/1/pt_BR/assets/grande.jpg");
 }
-.main [data-module-template="noticias"] .gallery #noticias-05  a {
+.main [data-module-template="noticias"] .gallery #noticias-05 a {
   position: absolute;
   top: 0;
   left: 7.5px;
@@ -833,7 +833,7 @@
   background-color: #0071e3;
   background-image: url("../../../../../ac/globalnoticias/1/pt_BR/assets/unb.png");
 }
-.main [data-module-template="noticias"] .gallery #noticias-06  a {
+.main [data-module-template="noticias"] .gallery #noticias-06 a {
   position: absolute;
   top: 0;
   left: 7.5px;
@@ -845,7 +845,7 @@
   background-color: #0071e3;
   background-image: url("../../../../../ac/globalnoticias/1/pt_BR/assets/grande.jpg");
 }
-.main [data-module-template="noticias"] .gallery #noticias-07  a {
+.main [data-module-template="noticias"] .gallery #noticias-07 a {
   position: absolute;
   top: 0;
   left: 7.5px;
@@ -857,7 +857,7 @@
   background-color: #0071e3;
   background-image: url("../../../../../ac/globalnoticias/1/pt_BR/assets/unb.png");
 }
-.main [data-module-template="noticias"] .gallery #noticias-08  a {
+.main [data-module-template="noticias"] .gallery #noticias-08 a {
   position: absolute;
   top: 0;
   left: 7.5px;
@@ -869,7 +869,7 @@
   background-color: #0071e3;
   background-image: url("../../../../../ac/globalnoticias/1/pt_BR/assets/grande.jpg");
 }
-.main [data-module-template="noticias"] .gallery #noticias-09  a {
+.main [data-module-template="noticias"] .gallery #noticias-09 a {
   position: absolute;
   top: 0;
   left: 7.5px;
@@ -881,7 +881,7 @@
   background-color: #0071e3;
   background-image: url("../../../../../ac/globalnoticias/1/pt_BR/assets/unb.png");
 }
-.main [data-module-template="noticias"] .gallery #noticias-10  a {
+.main [data-module-template="noticias"] .gallery #noticias-10 a {
   position: absolute;
   top: 0;
   left: 7.5px;
@@ -893,7 +893,6 @@
   background-color: #0071e3;
   background-image: url("../../../../../ac/globalnoticias/1/pt_BR/assets/grande.jpg");
 }
-
 
 .main [data-module-template="noticias"] .gallery .item-container a {
   background-size: cover;
@@ -951,48 +950,48 @@
 }
 
 .main [data-module-template="noticias"] .gallery .info-bottom .custom-button {
-    cursor: pointer;
-    display: inline-block;
-    text-align: center;
-    white-space: nowrap;
-    font-size: 17px;
-    line-height: 1.17648;
-    font-weight: 400;
-    letter-spacing: -0.022em;
-    font-family: "SF Pro Text", "SF Pro Icons", "Helvetica Neue", "Helvetica",
+  cursor: pointer;
+  display: inline-block;
+  text-align: center;
+  white-space: nowrap;
+  font-size: 17px;
+  line-height: 1.17648;
+  font-weight: 400;
+  letter-spacing: -0.022em;
+  font-family: "SF Pro Text", "SF Pro Icons", "Helvetica Neue", "Helvetica",
     "Arial", sans-serif;
-    border-style: solid;
-    border-width: 1px;
-    min-width: 30px;
-    padding-left: 15px;
-    padding-right: 15px;
-    padding-top: 7px;
-    padding-bottom: 7px;
-    border-radius: 980px;
-    background: #0071e3;
-    color: #fff;
-    border-color: rgba(0, 0, 0, 0);
-    --sk-button-margin-horizontal: 14px;
-    --sk-button-margin-vertical: 14px;
-    min-width: 28px;
-    padding-left: 21px;
-    padding-right: 21px;
-    padding-top: 11px;
-    padding-bottom: 11px;
-    --sk-button-margin-horizontal: 18px;
-    --sk-button-margin-vertical: 18px;
-    font-size: 14px;
-    line-height: 1.42859;
-    font-weight: 400;
-    letter-spacing: -0.016em;
-    font-family: "SF Pro Text", "SF Pro Icons", "Helvetica Neue", "Helvetica",
+  border-style: solid;
+  border-width: 1px;
+  min-width: 30px;
+  padding-left: 15px;
+  padding-right: 15px;
+  padding-top: 7px;
+  padding-bottom: 7px;
+  border-radius: 980px;
+  background: #0071e3;
+  color: #fff;
+  border-color: rgba(0, 0, 0, 0);
+  --sk-button-margin-horizontal: 14px;
+  --sk-button-margin-vertical: 14px;
+  min-width: 28px;
+  padding-left: 21px;
+  padding-right: 21px;
+  padding-top: 11px;
+  padding-bottom: 11px;
+  --sk-button-margin-horizontal: 18px;
+  --sk-button-margin-vertical: 18px;
+  font-size: 14px;
+  line-height: 1.42859;
+  font-weight: 400;
+  letter-spacing: -0.016em;
+  font-family: "SF Pro Text", "SF Pro Icons", "Helvetica Neue", "Helvetica",
     "Arial", sans-serif;
-    font-weight: 700;
-    background-color: #fff;
-    color: #1d1d1f;
-    cursor: pointer;
-    -ms-flex-negative: 0;
-    flex-shrink: 0;
+  font-weight: 700;
+  background-color: #fff;
+  color: #1d1d1f;
+  cursor: pointer;
+  -ms-flex-negative: 0;
+  flex-shrink: 0;
 }
 
 .main
