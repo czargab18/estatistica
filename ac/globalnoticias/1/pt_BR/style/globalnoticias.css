@@ -1189,7 +1189,7 @@ html.text-zoom .main [data-module-template="noticias"] .gallery .play-pause {
 
 .main [data-module-template="noticias"] .gallery .play-pause.paused::before,
 .main [data-module-template="noticias"] .gallery .play-pause.paused::after {
-  content: "ïŒž";
+  /* content: "ïŒž"; */
 }
 
 .main [data-module-template="noticias"] .gallery .play-pause.playing::before,
@@ -1218,7 +1218,7 @@ html.text-zoom .main [data-module-template="noticias"] .gallery .play-pause {
 
 .main [data-module-template="noticias"] .gallery .play-pause.playing::before,
 .main [data-module-template="noticias"] .gallery .play-pause.playing::after {
-  content: "ïŒŸ";
+  /* content: "ïŒŸ"; */
 }
 
 /* ================================================= */
