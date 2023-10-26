@@ -104,19 +104,20 @@ section [class="unit-image-warpper"] {
   /* opacity: 0.85; */
 }
 
-section[data-module-template="heroes"] figure[id="unit-image-calouro"] {
-  background-image: url("../../../../../v/home/images/heroes/image-1.png");
-  display: none; /* div calouros - não exibida */
-}
+/* div calouros - não exibida */
+/* section[data-module-template="heroes"] figure[id="unit-image-calouro"] {
+  background-image: url("../../../../../i/astronauta.jpg");
+  display: none; 
+} */
 
 section[data-module-template="heroes"] figure[id="unit-image-graduacao"] {
-  background-image: url("../../../../../v/home/images/heroes/image-1.png");
+  background-image: url("../../../../../i/astronauta.jpg");
 }
 section[data-module-template="heroes"] figure[id="unit-image-posgraduacao"] {
-  background-image: url("../../../../../v/home/images/heroes/image-2.png");
+  background-image: url("../../../../../i/prof.jpg");
 }
 section[data-module-template="heroes"] figure[id="unit-image-extensao"] {
-  background-image: url("../../../../../v/home/images/heroes/image-3.png");
+  background-image: url("../../../../../i/tinta.jpg");
 }
 
 /* ======================= section grid=================================== */
@@ -173,22 +174,22 @@ section [class="unit-image-warpper"] {
 }
 
 section[data-module-template="promos"] figure[id="unit-image-docentes"] {
-  background-image: url("../../../../../v/home/images/heroes/image-1.png");
+  background-image: url("../../../../../i/livro-lupa.jpg");
 }
 section[data-module-template="promos"] figure[id="unit-image-pesquisa"] {
-  background-image: url("../../../../../v/home/images/heroes/image-3.png");
+  background-image: url("../../../../../i/borboleta.jpg");
 }
 section[data-module-template="promos"] figure[id="unit-image-eventos"] {
-  background-image: url("../../../../../v/home/images/heroes/image-2.png");
+  background-image: url("../../../../../i/violão.jpg");
 }
 section[data-module-template="promos"] figure[id="unit-image-ouvidoria"] {
-  background-image: url("../../../../../v/home/images/heroes/image-1.png");
-}
-section[data-module-template="promos"] figure[id="unit-image-instalacoes"] {
-  background-image: url("../../../../../v/home/images/heroes/image-1.png");
+  background-image: url("../../../../../i/estudando.jpg");
 }
 section[data-module-template="promos"] figure[id="unit-image-contato"] {
-  background-image: url("../../../../../v/home/images/heroes/image-3.png");
+  background-image: url("../../../../../i/estudante.jpg");
+}
+section[data-module-template="promos"] figure[id="unit-image-instalacoes"] {
+  background-image: url("../../../../../i/prof.jpg");
 }
 
 /* ============ section noticias ========== */
