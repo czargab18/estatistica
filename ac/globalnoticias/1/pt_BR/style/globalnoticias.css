@@ -34,7 +34,7 @@
 
 .main [data-module-template="noticias"] .gallery .item-container {
   position: relative;
-  /* width: 995px; */
+  width: 995px;
   height: 100%;
   margin: 0 auto;
   will-change: transform;
