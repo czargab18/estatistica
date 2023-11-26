@@ -111,13 +111,14 @@ section [class="unit-image-warpper"] {
 } */
 
 section[data-module-template="heroes"] figure[id="unit-image-graduacao"] {
-  background-image: url("../../../../../i/astronauta.jpg");
+  /* background-image: url("../../../../../i/astronauta.jpg"); */
+  background-image: url("../../../../../i/grande.jpg");
 }
 section[data-module-template="heroes"] figure[id="unit-image-posgraduacao"] {
   background-image: url("../../../../../i/prof.jpg");
 }
 section[data-module-template="heroes"] figure[id="unit-image-extensao"] {
-  background-image: url("../../../../../i/tinta.jpg");
+  background-image: url("../../../../../i/tinta-grande.jpg");
 }
 
 /* ======================= section grid=================================== */
@@ -169,7 +170,7 @@ section [class="unit-image-warpper"] {
   height: 100%;
   background-color: white;
   background-repeat: no-repeat;
-  background-size: cover;
+  background-size: contain;
   background-position: center;
 }
 
