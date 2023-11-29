@@ -106,7 +106,15 @@
       defer
       src="ac/globalfooter/1/pt_BR/scripts/globalfooter.js"
     ></script>
-
+   <script>
+        // Impedir a alteração da URL
+        history.pushState(null, null, document.URL);
+        
+        // Adicionar um ouvinte de evento para impedir alterações de URL
+        window.addEventListener('popstate', function() {
+            history.pushState(null, null, document.URL);
+        });
+    </script>
     <!-- Google Tag Manager -->
     <script>
       (function (w, d, s, l, i) {
