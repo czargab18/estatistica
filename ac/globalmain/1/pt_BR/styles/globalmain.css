@@ -112,13 +112,13 @@ section [class="unit-image-warpper"] {
 
 section[data-module-template="heroes"] figure[id="unit-image-graduacao"] {
   /* background-image: url("../../../../../i/astronauta.jpg"); */
-  background-image: url("../../../../../i/grande.jpg");
+  background-image: url("../../../../../i/astronauta-grande-3000.jpg");
 }
 section[data-module-template="heroes"] figure[id="unit-image-posgraduacao"] {
-  background-image: url("../../../../../i/prof.jpg");
+  background-image: url("../../../../../i/docente-grande-3000.jpg");
 }
 section[data-module-template="heroes"] figure[id="unit-image-extensao"] {
-  background-image: url("../../../../../i/tinta-grande.jpg");
+  background-image: url("../../../../../i/tinta-grande-3000.jpg");
 }
 
 /* ======================= section grid=================================== */
@@ -175,7 +175,7 @@ section [class="unit-image-warpper"] {
 }
 
 section[data-module-template="promos"] figure[id="unit-image-docentes"] {
-  background-image: url("../../../../../i/livro-lupa.jpg");
+  background-image: url("../../../../../i/lupa-livro-grande-734.jpg");
 }
 section[data-module-template="promos"] figure[id="unit-image-pesquisa"] {
   background-image: url("../../../../../i/borboleta.jpg");
@@ -204,4 +204,12 @@ section[data-module-template="promos"] figure[id="unit-image-instalacoes"] {
     height: max-content;
     gap: 1em;
   }
+}
+
+.icon-chevronright:before,
+.icon-chevronright:after {
+  font-family: "fontello";
+  content: "\e801";
+  padding: 0;
+  text-decoration: none;
 }

@@ -3419,7 +3419,7 @@ abbr {
 .icon-before.icon-apple::after {
   display: none;
 }
-
+/* 
 .icon-apple::before,
 .icon-apple::after {
   content: "ï£¿";
@@ -3444,8 +3444,7 @@ abbr {
 .icon-chevronleftcircle::after {
   content: "ïŒ„";
 }
-
-.icon-chevronright::before,
+ .icon-chevronright::before,
 .icon-chevronright::after {
   content: "ïŒ";
 }
@@ -3833,7 +3832,7 @@ abbr {
 .more::before,
 .more::after {
   content: "ïŒ";
-}
+}  */
 
 .more-block {
   margin-top: 0.5em;
