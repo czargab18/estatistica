@@ -175,22 +175,22 @@ section [class="unit-image-warpper"] {
 }
 
 section[data-module-template="promos"] figure[id="unit-image-docentes"] {
-  background-image: url("../../../../../i/lupa-livro-grande-734.jpg");
+  background-image: url("../../../../../i/docente-pequena-734.png");
 }
 section[data-module-template="promos"] figure[id="unit-image-pesquisa"] {
-  background-image: url("../../../../../i/borboleta.jpg");
+  background-image: url("../../../../../i/docente-pequena-734.png");
 }
 section[data-module-template="promos"] figure[id="unit-image-eventos"] {
-  background-image: url("../../../../../i/violão.jpg");
+  background-image: url("../../../../../i/astronauta-pequeno-734.jpg");
 }
 section[data-module-template="promos"] figure[id="unit-image-ouvidoria"] {
-  background-image: url("../../../../../i/estudando.jpg");
+  background-image: url("../../../../../i/astronauta-pequeno-734.jpg");
 }
 section[data-module-template="promos"] figure[id="unit-image-contato"] {
-  background-image: url("../../../../../i/estudante.jpg");
+  background-image: url("../../../../../i/docente-pequena-734.png");
 }
 section[data-module-template="promos"] figure[id="unit-image-instalacoes"] {
-  background-image: url("../../../../../i/prof.jpg");
+  background-image: url("../../../../../i/docente-pequena-734.png");
 }
 
 /* ============ section noticias ========== */
