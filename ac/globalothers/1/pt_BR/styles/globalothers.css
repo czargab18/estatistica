@@ -1,0 +1,77 @@
+#main404 {
+  position: relative;
+  margin-top: 88px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#main404 .content404 {
+  /* width: 1444px; */
+  height: 820px;
+  background-color: #fff;
+}
+#main404 .content404 section {
+  /* width: 100%; */
+  max-width: 1440px;
+  margin: 0 auto;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  padding: 230px 208px;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+#main404 .content404 section .content-erro-page {
+  max-width: 620px;
+  margin-left: 44px;
+  word-wrap: break-word;
+  -webkit-box-ordinal-group: 3;
+  -ms-flex-order: 2;
+  order: 2;
+}
+#main404 .content404 section .content-erro-page .headline404 {
+  font-family: "SamsungSharpSans", arial, sans-serif;
+  font-weight: bold;
+  font-size: 48px;
+  line-height: 1.2;
+}
+#main404 .content404 section .content-erro-page .headline404 .desc {
+  font-size: 18px;
+  line-height: 1.33;
+  margin-top: 16px;
+}
+#main404 .content404 section .content-erro-page .error-page-cta {
+  margin-top: 48px;
+  display: flex;
+  gap: 20px
+  ;
+}
+
+
+#main404
+  .content404
+  section
+  .content-erro-page
+  .error-page-cta
+  .content404-cta
+  .cta-page-home {
+  color: #fff !important;
+  background-color: #000 !important;
+      padding: .69444444vw 1.66666667vw .76388889vw 1.66666667vw;
+    border-radius: 1.38888889vw;
+      padding: 10px 24px 11px 24px;
+  border-radius: 20px;
+}
+
+#main404 .content404 section .unit-image-warpper #unit-image-calouro {
+  background-image: url("../../../../../bg/imagens/404/astronauta-pequena-334.png");
+  display: block;
+  width: 360px;
+  height: 360px;
+  -webkit-box-ordinal-group: 2;
+  -ms-flex-order: 1;
+  order: 1;
+}

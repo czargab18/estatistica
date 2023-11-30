@@ -106,18 +106,18 @@ section [class="unit-image-warpper"] {
 
 /* div calouros - não exibida */
 /* section[data-module-template="heroes"] figure[id="unit-image-calouro"] {
-  background-image: url("../../../../../i/astronauta.jpg");
+  background-image: url("../../../../../bg/imagens/astronauta.jpg");
   display: none; 
 } */
 
 section[data-module-template="heroes"] figure[id="unit-image-graduacao"] {
-  background-image: url("../../../../../i/astronauta-grande-3000.jpg");
+  background-image: url("../../../../../bg/imagens/heroes/moca-estudante-grande-3000.jpg");
 }
 section[data-module-template="heroes"] figure[id="unit-image-posgraduacao"] {
-  background-image: url("../../../../../i/docente-grande-3000.jpg");
+  background-image: url("../../../../../bg/imagens/heroes/astronauta-grande-3000.jpg");
 }
 section[data-module-template="heroes"] figure[id="unit-image-extensao"] {
-  background-image: url("../../../../../i/tinta-grande-3000.jpg");
+  background-image: url("../../../../../bg/imagens/heroes/docente-grande-3000.jpg");
 }
 /* MEDIA SCREEN */
 
@@ -178,22 +178,22 @@ section [class="unit-image-warpper"] {
 }
 
 section[data-module-template="promos"] figure[id="unit-image-docentes"] {
-  background-image: url("../../../../../i/docente-pequena-734.png");
+  background-image: url("../../../../../bg/imagens/docente-pequena-734.png");
 }
 section[data-module-template="promos"] figure[id="unit-image-pesquisa"] {
-  background-image: url("../../../../../i/docente-pequena-734.png");
+  background-image: url("../../../../../bg/imagens/docente-pequena-734.png");
 }
 section[data-module-template="promos"] figure[id="unit-image-eventos"] {
-  background-image: url("../../../../../i/astronauta-pequeno-734.jpg");
+  background-image: url("../../../../../bg/imagens/astronauta-pequeno-734.jpg");
 }
 section[data-module-template="promos"] figure[id="unit-image-ouvidoria"] {
-  background-image: url("../../../../../i/astronauta-pequeno-734.jpg");
+  background-image: url("../../../../../bg/imagens/astronauta-pequeno-734.jpg");
 }
 section[data-module-template="promos"] figure[id="unit-image-contato"] {
-  background-image: url("../../../../../i/docente-pequena-734.png");
+  background-image: url("../../../../../bg/imagens/docente-pequena-734.png");
 }
 section[data-module-template="promos"] figure[id="unit-image-instalacoes"] {
-  background-image: url("../../../../../i/docente-pequena-734.png");
+  background-image: url("../../../../../bg/imagens/docente-pequena-734.png");
 }
 
 /* ============ section noticias ========== */

@@ -106,7 +106,7 @@
   color: var(--footer-text-color);
   min-width: 320px;
   overflow: hidden;
-  position: relative;
+  position: static;
   z-index: 1;
 }
 

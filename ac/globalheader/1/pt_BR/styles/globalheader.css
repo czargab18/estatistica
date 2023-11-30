@@ -2,7 +2,6 @@
 #globaltop {
   all: unset;
 }
-@import url("../../../../../wss/font.css");
 
 #globalheader body {
   margin: 0;
@@ -131,12 +130,17 @@ body {
 
   --r-globaltop-previous-flyout-height: 0px;
   position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
   min-width: 320px;
   max-height: max-content;
-  display: flex; /* display flex-column */
+  display: flex;
+  flex-direction: column;
   justify-items: center;
   font-size: 18px;
   white-space: nowrap; /* não-quebrar-text */
+  align-items: center;
 }
 
 #globalheader {
