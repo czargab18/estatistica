@@ -42,10 +42,10 @@
   font-weight: 400;
   font-style: normal;
 }
-#globalheader :is(fieldset,iframe) {
+#globalheader :is(fieldset, iframe) {
   border: 0;
 }
-#globalheader :is( caption,th) {
+#globalheader :is(caption, th) {
   text-align: left;
 }
 #globalheader table {
@@ -55,7 +55,7 @@
 #globalheader :is(main, summary, details) {
   display: block;
 }
-#globalheader :is( audio, canvas, video, progress) {
+#globalheader :is(audio, canvas, video, progress) {
   vertical-align: baseline;
 }
 #globalheader button {
@@ -129,14 +129,15 @@ body {
   --r-globaltop-flyout-link-opacity-duration: 0.5s;
 
   --r-globaltop-previous-flyout-height: 0px;
-  position: absolute;
   top: 0;
   left: 0;
   right: 0;
+  position: absolute;
   min-width: 320px;
   max-height: max-content;
   display: flex;
   flex-direction: column;
+
   justify-items: center;
   font-size: 18px;
   white-space: nowrap; /* não-quebrar-text */
