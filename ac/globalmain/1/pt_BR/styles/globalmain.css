@@ -111,7 +111,6 @@ section [class="unit-image-warpper"] {
 } */
 
 section[data-module-template="heroes"] figure[id="unit-image-graduacao"] {
-  /* background-image: url("../../../../../i/astronauta.jpg"); */
   background-image: url("../../../../../i/astronauta-grande-3000.jpg");
 }
 section[data-module-template="heroes"] figure[id="unit-image-posgraduacao"] {
@@ -120,7 +119,11 @@ section[data-module-template="heroes"] figure[id="unit-image-posgraduacao"] {
 section[data-module-template="heroes"] figure[id="unit-image-extensao"] {
   background-image: url("../../../../../i/tinta-grande-3000.jpg");
 }
+/* MEDIA SCREEN */
 
+/* ====== */
+
+/* MEDIA SCREEN */
 /* ======================= section grid=================================== */
 
 section[data-module-template="promos"] {
