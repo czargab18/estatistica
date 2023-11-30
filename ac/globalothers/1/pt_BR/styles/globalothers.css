@@ -11,7 +11,7 @@
 }
 
 #main404 .content404 {
-  /* width: 1444px; */
+  width: 1444px;
   height: 820px;
   background-color: #fff;
 }
@@ -29,7 +29,7 @@
 
 #main404 .content404 section .content-erro-page {
   max-width: 620px;
-  margin-left: 44px;
+  margin:0px 20px;
   word-wrap: break-word;
   -webkit-box-ordinal-group: 3;
   -ms-flex-order: 2;
@@ -49,10 +49,8 @@
 #main404 .content404 section .content-erro-page .error-page-cta {
   margin-top: 48px;
   display: flex;
-  gap: 20px
-  ;
+  gap: 20px;
 }
-
 
 #main404
   .content404
@@ -63,13 +61,13 @@
   .cta-page-home {
   color: #fff !important;
   background-color: #000 !important;
-      padding: .69444444vw 1.66666667vw .76388889vw 1.66666667vw;
-    border-radius: 1.38888889vw;
-      padding: 10px 24px 11px 24px;
+  padding: 0.69444444vw 1.66666667vw 0.76388889vw 1.66666667vw;
+  border-radius: 1.38888889vw;
+  padding: 10px 24px 11px 24px;
   border-radius: 20px;
 }
 
-#main404 .content404 section .unit-image-warpper #unit-image-calouro {
+#main404 .content404 section .unit-image-warpper #unit-image-astronauta {
   background-image: url("../../../../../bg/imagens/404/astronauta-pequena-334.png");
   display: block;
   width: 360px;
@@ -77,4 +75,78 @@
   -webkit-box-ordinal-group: 2;
   -ms-flex-order: 1;
   order: 1;
+}
+
+@media screen and (max-width: 1280px) {
+  #main404 .content404 section {
+    padding: 160px 145px; /* Ou o valor desejado para telas menores */
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  #main404 .content404 section {
+    padding: 112px 100px; /* Ou o valor desejado para telas menores */
+  }
+}
+@media screen and (max-width: 940px) {
+  #main404 .content404 section .content-erro-page .headline404 {
+    font-family: "SamsungSharpSans", arial, sans-serif;
+    font-weight: bold;
+    font-size: 40px;
+    line-height: 1;
+  }
+  #main404 .content404 section .content-erro-page .headline404 .desc {
+    font-size: 16px;
+    line-height: 1.33;
+    margin-top: 16px;
+  }
+
+  #main404 .content404 section .content-erro-page .error-page-cta {
+    margin-top: 48px;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+  }
+  #main404
+    .content404
+    section
+    .content-erro-page
+    .error-page-cta
+    .error-page-cta-sitemap {
+    padding: 24px;
+  }
+  #main404 .content404 section {
+    padding: 112px 100px; /* Ou o valor desejado para telas menores */
+  }
+}
+
+@media screen and (max-width: 856px) {
+  #main404 .content404 section {
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    padding: 50px 10px;
+  }
+  #main404 .content404 section .content-erro-page {
+    margin-top: 24px;
+  }
+  /* #main404 .content404 section .content-erro-page .error-page-cta {
+    display: flex;
+    flex-direction: row;
+    align-items: baseline;
+    margin-top: 16px;
+  } */
+  #main404 .content404 section .unit-image-warpper #unit-image-astronauta {
+    height: 300px;
+    width: 300px;
+    background-size: cover;
+  }
+}
+
+@media screen and (max-width: 430px) {
+    #main404 .content404 section .unit-image-warpper #unit-image-astronauta {
+    height: 200px;
+    width: 200px;
+    background-size: cover;
+  }
 }
