@@ -1,6 +1,7 @@
 # estatistica
 
 [desenvolvimento]-Plataforma de ensino de estatística gratuitamente.
+- repositório de imagens: https://github.com/czargab18/images
 
 ## Padrões de commits 📜
 
