@@ -216,3 +216,19 @@ section[data-module-template="promos"] figure[id="unit-image-contato"] {
   padding: 0;
   text-decoration: none;
 }
+
+/* botão slideshow*/
+.main [data-module-template="noticias"] .gallery .play-pause.show{
+  display: block;
+}
+
+.main [data-module-template="noticias"] .gallery .play-pause {
+    display: none;
+    position: absolute;
+    bottom: 0;
+    right: 30px;
+    height: 38px;
+    width: 30px;
+    font-size: 22px;
+    color: #1d1d1d;
+}
