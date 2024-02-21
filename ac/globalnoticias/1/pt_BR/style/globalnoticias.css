@@ -258,10 +258,6 @@
   border: 0;
 }
 /* ============= BOTÃO - PLAY e PAUSAR ============= */
-.main [data-module-template="noticias"] .gallery svg{
-  fill: #1d1d1d;
-  background-color: #1d1d1d;
-}
 .main [data-module-template="noticias"] .gallery .play-pause.show {
     display: block;
 }
