@@ -271,4 +271,9 @@
     font-size: 22px;
     color: #1d1d1d;
 }
+.main [data-module-template="noticias"] .gallery svg{
+    color: #1d1d1d;
+    display: block;
+}
+
 /* ============= PADDLENAV ============= */
