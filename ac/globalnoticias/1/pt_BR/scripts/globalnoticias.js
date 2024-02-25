@@ -1,4 +1,3 @@
-
 document.addEventListener("DOMContentLoaded", function () {
   const slides = document.querySelectorAll(".gallery-item");
   const dots = document.querySelectorAll(".dotnav-item");
@@ -67,7 +66,24 @@ document.addEventListener("DOMContentLoaded", function () {
     togglePlayPause();
   });
 
-  dots[0].classList.add("current");
-  showSlide(0);
+  showSlide(0); // Mostrar o primeiro slide inicialmente
+  dots[0].classList.add("current"); // Adicionar classe "current" ao primeiro ponto
   startAutoPlay();
+
+  // Ajuste para ciclo infinito
+  function previousSlide() {
+    const previousIndex =
+      (currentSlideIndex - 1 + slides.length) % slides.length;
+    dots[currentSlideIndex].classList.remove("current");
+    dots[previousIndex].classList.add("current");
+    hideAllSlides();
+    showSlide(previousIndex);
+  }
+
+  // Atualizar evento de clique para botão anterior
+  const previousButton = document.querySelector(".paddlenav-arrow-previous");
+  previousButton.addEventListener("click", () => {
+    previousSlide();
+    stopAutoPlay();
+  });
 });
