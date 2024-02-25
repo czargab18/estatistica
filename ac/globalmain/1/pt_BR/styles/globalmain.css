@@ -28,6 +28,15 @@ section[data-module-template="heroes"] {
 [data-module-template="heroes"] [id="calouro"] {
   display: none;
 }
+[data-module-template="heroes"] [id="posgraduacao"] :is(.headline, .subhead) {
+  color: #fff;
+}
+[data-module-template="promos"] [id="docentes"] :is(.headline, .subhead) {
+  color: #fff;
+}
+[data-module-template="promos"] [id="extensao"] :is(.headline, .subhead) {
+  color: #1d1d1d;
+}
 
 [data-module-template="heroes"] [id="calouro"],
 [data-module-template="heroes"] [id="graduacao"],
@@ -39,7 +48,7 @@ section[data-module-template="heroes"] {
 [id="calouro"] [id="modulo-content"],
 [id="graduacao"] [id="modulo-content"],
 [id="posgraduacao"] [id="modulo-content"],
-[id="extensao"] [id="modulo-content"] {
+[id="docentes"] [id="modulo-content"] {
   height: 600px;
   background-size: 3008px 624px;
   background-repeat: no-repeat;
@@ -92,8 +101,8 @@ section[data-module-template="heroes"]
   div[data-unit-id="posgraduacao"]
   figure[id="unit-image-posgraduacao"],
 section[data-module-template="heroes"]
-  div[data-unit-id="extensao"]
-  figure[id="unit-image-extensao"],
+  div[data-unit-id="docentes"]
+  figure[id="unit-image-docentes"],
 section [class="unit-image-warpper"] {
   width: 100%;
   height: 100%;
@@ -116,7 +125,7 @@ section[data-module-template="heroes"] figure[id="unit-image-graduacao"] {
 section[data-module-template="heroes"] figure[id="unit-image-posgraduacao"] {
   background-image: url("../../../../../imgs/heroes/astronauta-banner-grande.jpg");
 }
-section[data-module-template="heroes"] figure[id="unit-image-extensao"] {
+section[data-module-template="heroes"] figure[id="unit-image-docentes"] {
   background-image: url("../../../../../imgs/heroes/docente-banner-grande.jpg");
 }
 /* MEDIA SCREEN */
@@ -150,10 +159,6 @@ section[data-module-template="promos"] [id="modulo-content"] {
 }
 
 section[data-module-template="promos"]
-  div[data-unit-id="docentes"]
-  div[class="unit-image-warpper"]
-  figure[id="unit-image-docentes"],
-section[data-module-template="promos"]
   div[data-unit-id="pesquisa"]
   figure[id="unit-image-pesquisa"],
 section[data-module-template="promos"]
@@ -177,9 +182,6 @@ section [class="unit-image-warpper"] {
   background-position: center;
 }
 
-section[data-module-template="promos"] figure[id="unit-image-docentes"] {
-  background-image: url("../../../../../imgs/promos/pintura-banner-medio.jpg");
-}
 section[data-module-template="promos"] figure[id="unit-image-pesquisa"] {
   background-image: url("../../../../../imgs/promos/folas-banner-medio.jpg");
 }
