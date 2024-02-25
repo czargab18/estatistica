@@ -91,7 +91,8 @@
   background-size: cover;
   background-repeat: no-repeat;
   background-color: #0071e3;
-  background-image: url("../../../../../ac/globalnoticias/1/pt_BR/assets/unb.png");
+  /* background-image: url("../../../../../ac/globalnoticias/1/pt_BR/assets/unb.png"); */
+  background-image: url("../../../../../imgs/31ago2023_CotidianoFGA_05_AnastaciaVaz.jpg");
 }
 .main [data-module-template="noticias"] .gallery #noticias-02 a {
   position: absolute;
@@ -102,7 +103,7 @@
   background-size: cover;
   background-repeat: no-repeat;
   background-color: #0071e3;
-  background-image: url("../../../../../ac/globalnoticias/1/pt_BR/assets/grande.jpg");
+  background-image: url("../../../../../imgs/28jan2024_Vestibular60_36_LGPrado.jpg");
 }
 .main [data-module-template="noticias"] .gallery #noticias-03 a {
   position: absolute;
@@ -113,7 +114,7 @@
   background-size: cover;
   background-repeat: no-repeat;
   background-color: #0071e3;
-  background-image: url("../../../../../ac/globalnoticias/1/pt_BR/assets/unb.png");
+  background-image: url("../../../../../imgs/26jan2023_EgalitarianSDGChallenge_raquelaviani101.jpg");
 }
 .main [data-module-template="noticias"] .gallery #noticias-04 a {
   position: absolute;
@@ -182,6 +183,28 @@
   background-image: url("../../../../../ac/globalnoticias/1/pt_BR/assets/unb.png");
 }
 .main [data-module-template="noticias"] .gallery #noticias-10 a {
+  position: absolute;
+  top: 0;
+  left: 7.5px;
+  width: calc(100% - 15px);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-color: #0071e3;
+  background-image: url("../../../../../ac/globalnoticias/1/pt_BR/assets/grande.jpg");
+}
+.main [data-module-template="noticias"] .gallery #noticias-11 a {
+  position: absolute;
+  top: 0;
+  left: 7.5px;
+  width: calc(100% - 15px);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-color: #0071e3;
+  background-image: url("../../../../../ac/globalnoticias/1/pt_BR/assets/grande.jpg");
+}
+.main [data-module-template="noticias"] .gallery #noticias-12 a {
   position: absolute;
   top: 0;
   left: 7.5px;
