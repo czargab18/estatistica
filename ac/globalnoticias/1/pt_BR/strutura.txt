@@ -1,0 +1,26 @@
+Esta <section> será para avisos (ou noticias) muito impirtanantes
+sobre UnB ou Depart Estat
+
+estrtura:
+
+ano: 2025 
+ - 2025.1 (primeiro semestre/periodo de 2025)
+ -- terá 6 pastas (representa cada mes do primeiro semestre/periodo)
+******
+ - 2025.2 (segundo semestre/periodo de 2025)
+ -- terá 6 pastas (representa cada mes do segundo semestre/periodo)
+
+dentro de cada mês terá arquivo do dia
+- 01- (dia-mes: 00-0), dentro terá um arquivo news.txt
+- imagem de referencia do conteúdo
+
+No arquivo .txt:
+- Título do aviso
+- link do site (UnB, Dep Estat, Gov-BR, ou outra informação)
+- Descrição rapida
+- Autor
+- Data er Horario
+
+&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
+
+caso não haja noticias, não há necessidade de criar a pasta vazia!!!!!!!!!!!
