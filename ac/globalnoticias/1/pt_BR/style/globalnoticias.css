@@ -282,16 +282,132 @@
 }
 /* ============= BOTÃO - PLAY e PAUSAR ============= */
 .main [data-module-template="noticias"] .gallery .play-pause.show {
-    display: block;
+  display: block;
 }
 .main [data-module-template="noticias"] .gallery .play-pause {
-    display: none;
-    position: absolute;
-    bottom: 0;
-    right: 30px;
-    height: 38px;
-    width: 30px;
-    font-size: 22px;
-    color: #1d1d1d;
+  display: none;
+  position: absolute;
+  bottom: 0;
+  right: 30px;
+  height: 38px;
+  width: 30px;
+  font-size: 22px;
+  color: #1d1d1d;
 }
-/* ============= PADDLENAV ============= */
+
+/* texto slideshow */
+.main [data-module-template="noticias"] .gallery .inner {
+  position: absolute;
+  top: 0;
+  left: 7.5px;
+  width: calc(100% - 15px);
+  height: 100%;
+}
+.main [data-module-template="noticias"] .gallery .info-top {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  display: none;
+}
+.main [data-module-template="noticias"] .gallery .info-top .logo {
+  width: 220px;
+  height: 54px;
+  display: block;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: top center;
+  margin: 0 auto;
+}
+.main
+  [data-module-template="noticias"]
+  .gallery
+  .gallery-item.current
+  .info-bottom {
+  opacity: 0.999;
+  -webkit-transform: translateY(0);
+  transform: translateY(0);
+  -webkit-transition: all 0.6s;
+  transition: all 0.6s;
+}
+
+.main [data-module-template="noticias"] .gallery .info-bottom {
+  transform: translateY(20px);
+  transition: all 0.6s;
+  position: absolute;
+  bottom: 35px;
+  left: 68px;
+  right: 175px;
+  display: flex;
+  align-items: center;
+}
+
+.main [data-module-template="noticias"] .gallery .info-bottom .custom-button {
+  cursor: pointer;
+  display: inline-block;
+  text-align: center;
+  white-space: nowrap;
+  font-size: 17px;
+  line-height: 1.17648;
+  font-weight: 400;
+  letter-spacing: -0.022em;
+  font-family: "SF Pro Text", "SF Pro Icons", "Helvetica Neue", "Helvetica",
+    "Arial", sans-serif;
+  border-style: solid;
+  border-width: 1px;
+  min-width: 30px;
+  padding-left: 15px;
+  padding-right: 15px;
+  padding-top: 7px;
+  padding-bottom: 7px;
+  border-radius: 980px;
+  background: #0071e3;
+  color: #fff;
+  border-color: rgba(0, 0, 0, 0);
+  --sk-button-margin-horizontal: 14px;
+  --sk-button-margin-vertical: 14px;
+  font-size: 17px;
+  line-height: 1.17648;
+  font-weight: 400;
+  letter-spacing: -0.022em;
+  font-family: "SF Pro Text", "SF Pro Icons", "Helvetica Neue", "Helvetica",
+    "Arial", sans-serif;
+  border-style: solid;
+  border-width: 1px;
+  min-width: 28px;
+  padding-left: 21px;
+  padding-right: 21px;
+  padding-top: 11px;
+  padding-bottom: 11px;
+  --sk-button-margin-horizontal: 18px;
+  --sk-button-margin-vertical: 18px;
+  font-size: 14px;
+  line-height: 1.42859;
+  font-weight: 400;
+  letter-spacing: -0.016em;
+  font-family: "SF Pro Text", "SF Pro Icons", "Helvetica Neue", "Helvetica",
+    "Arial", sans-serif;
+  font-weight: 700;
+  background-color: #fff;
+  color: #1d1d1f;
+  cursor: pointer;
+  -ms-flex-negative: 0;
+  flex-shrink: 0;
+}
+
+.main [data-module-template="noticias"] .gallery .info-bottom p {
+  font-size: 20px;
+  line-height: 1.1;
+  font-weight: 400;
+  letter-spacing: 0em;
+  font-family: "SF Pro Display", "SF Pro Icons", "Helvetica Neue", "Helvetica",
+    "Arial", sans-serif;
+  margin-left: 40px;
+  font-weight: 400;
+  color: #fff;
+  text-shadow: 0px 0px 5px rgba(0, 0, 0, 0.6);
+}
+
+.main [data-module-template="noticias"] .gallery .info-bottom p span {
+  font-weight: 700;
+}
