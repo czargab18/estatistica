@@ -1,11 +1,107 @@
+// document.addEventListener("DOMContentLoaded", function () {
+//   const slides = document.querySelectorAll(".gallery-item");
+//   const dots = document.querySelectorAll(".dotnav-item");
+//   const playPauseButton = document.querySelector(".play-pause");
+//   const playIcon = document.getElementById("play-icon");
+//   const pauseIcon = document.getElementById("pause-icon");
+//   const paddlePrevious = document.querySelector(".paddlenav-arrow-previous");
+//   const paddleNext = document.querySelector(".paddlenav-arrow-next");
+
+//   let currentSlideIndex = 0;
+//   let autoPlayInterval;
+//   let isPlaying = false;
+
+//   function hideAllSlides() {
+//     slides.forEach((slide) => {
+//       slide.style.display = "none";
+//     });
+//   }
+
+//   function showSlide(index) {
+//     if (index >= 0 && index < slides.length) {
+//       hideAllSlides();
+//       slides[index].style.display = "block";
+//       currentSlideIndex = index;
+//     }
+//   }
+
+//   function nextSlide() {
+//     const nextIndex = (currentSlideIndex + 1) % slides.length;
+//     dots[currentSlideIndex].classList.remove("current");
+//     dots[nextIndex].classList.add("current");
+//     showSlide(nextIndex);
+//   }
+
+//   function previousSlide() {
+//     const previousIndex =
+//       currentSlideIndex === 0 ? slides.length - 1 : currentSlideIndex - 1;
+//     dots[currentSlideIndex].classList.remove("current");
+//     dots[previousIndex].classList.add("current");
+//     showSlide(previousIndex);
+//   }
+
+//   function startAutoPlay() {
+//     autoPlayInterval = setInterval(nextSlide, 3000);
+//     isPlaying = true;
+//     playIcon.style.display = "none";
+//     pauseIcon.style.display = "block";
+//   }
+
+//   function stopAutoPlay() {
+//     clearInterval(autoPlayInterval);
+//     isPlaying = false;
+//     playIcon.style.display = "block";
+//     pauseIcon.style.display = "none";
+//   }
+
+//   function togglePlayPause() {
+//     if (isPlaying) {
+//       stopAutoPlay();
+//     } else {
+//       startAutoPlay();
+//     }
+//   }
+
+//   playPauseButton.addEventListener("click", () => {
+//     togglePlayPause();
+//   });
+
+//   paddlePrevious.addEventListener("click", () => {
+//     stopAutoPlay();
+//     previousSlide();
+//   });
+
+//   paddleNext.addEventListener("click", () => {
+//     stopAutoPlay();
+//     nextSlide();
+//   });
+
+//   dots.forEach((dot, index) => {
+//     dot.addEventListener("click", () => {
+//       stopAutoPlay();
+//       dots.forEach((d) => d.classList.remove("current"));
+//       dot.classList.add("current");
+//       showSlide(index);
+//     });
+//   });
+
+//   showSlide(0);
+//   dots[0].classList.add("current");
+
+//   startAutoPlay();
+// });
+
+// ver
 document.addEventListener("DOMContentLoaded", function () {
   const slides = document.querySelectorAll(".gallery-item");
   const dots = document.querySelectorAll(".dotnav-item");
   const playPauseButton = document.querySelector(".play-pause");
   const playIcon = document.getElementById("play-icon");
   const pauseIcon = document.getElementById("pause-icon");
-  const paddlePrevious = document.querySelector(".paddlenav-arrow-previous");
-  const paddleNext = document.querySelector(".paddlenav-arrow-next");
+  const noticiasSection = document.querySelector(
+    "[data-module-template='noticias']"
+  );
+  const paddlenav = document.querySelector(".paddlenav");
 
   let currentSlideIndex = 0;
   let autoPlayInterval;
@@ -32,14 +128,6 @@ document.addEventListener("DOMContentLoaded", function () {
     showSlide(nextIndex);
   }
 
-  function previousSlide() {
-    const previousIndex =
-      currentSlideIndex === 0 ? slides.length - 1 : currentSlideIndex - 1;
-    dots[currentSlideIndex].classList.remove("current");
-    dots[previousIndex].classList.add("current");
-    showSlide(previousIndex);
-  }
-
   function startAutoPlay() {
     autoPlayInterval = setInterval(nextSlide, 3000);
     isPlaying = true;
@@ -62,31 +150,49 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   }
 
+  dots.forEach((dot, index) => {
+    dot.addEventListener("click", () => {
+      dots.forEach((d) => d.classList.remove("current"));
+      dot.classList.add("current");
+      showSlide(index);
+      stopAutoPlay();
+    });
+  });
+
   playPauseButton.addEventListener("click", () => {
     togglePlayPause();
   });
 
-  paddlePrevious.addEventListener("click", () => {
-    stopAutoPlay();
-    previousSlide();
-  });
+  // Verificar quando a seção de notícias está visível na tela
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting && !isPlaying) {
+          startAutoPlay();
+        } else {
+          stopAutoPlay();
+        }
+      });
+    },
+    { threshold: 0.5 } // Define o limite de 50% de visibilidade
+  );
 
-  paddleNext.addEventListener("click", () => {
-    stopAutoPlay();
-    nextSlide();
-  });
+  observer.observe(noticiasSection);
 
-  dots.forEach((dot, index) => {
-    dot.addEventListener("click", () => {
+  // Event listeners para os botões paddlenav
+  paddlenav.addEventListener("click", (event) => {
+    const target = event.target.closest("button");
+    if (target && target.classList.contains("paddlenav-arrow")) {
+      const direction = target.classList.contains("paddlenav-arrow-previous")
+        ? -1
+        : 1;
+      const newIndex =
+        (currentSlideIndex + direction + slides.length) % slides.length;
+      showSlide(newIndex);
       stopAutoPlay();
-      dots.forEach((d) => d.classList.remove("current"));
-      dot.classList.add("current");
-      showSlide(index);
-    });
+    }
   });
 
-  showSlide(0);
-  dots[0].classList.add("current");
-
-  startAutoPlay();
+  showSlide(0); // Mostrar o primeiro slide inicialmente
+  dots[0].classList.add("current"); // Adicionar classe "current" ao primeiro ponto
 });
