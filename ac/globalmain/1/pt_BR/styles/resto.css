@@ -25,6 +25,18 @@ section[data-module-template="heroes"] {
   align-items: center;
   gap: 1em;
 }
+[data-module-template="heroes"] [id="calouro"] {
+  display: none;
+}
+[data-module-template="heroes"] [id="posgraduacao"] :is(.headline, .subhead) {
+  color: #fff;
+}
+[data-module-template="promos"] [id="docentes"] :is(.headline, .subhead) {
+  color: #fff;
+}
+[data-module-template="promos"] [id="extensao"] :is(.headline, .subhead) {
+  color: #1d1d1d;
+}
 
 [data-module-template="heroes"] [id="calouro"],
 [data-module-template="heroes"] [id="graduacao"],
@@ -51,6 +63,7 @@ div .unit-wrapper {
   position: relative;
   gap: 2px;
 }
+/* link tag a */
 
 [data-module-template] [data-unit-id] .unit-wrapper a.unit-link {
   position: absolute;
@@ -70,11 +83,12 @@ div[class="unit-copy-warpper"] {
   text-align: center;
   z-index: 5;
 }
-
+/* inicio - tipografia */
 .cta-links a {
   z-index: 6;
   font-size: 19px;
 }
+/* faltou o sup */
 
 section[data-module-template="heroes"]
   div[data-unit-id="calouro"]
@@ -99,10 +113,12 @@ section [class="unit-image-warpper"] {
   /* opacity: 0.85; */
 }
 
-section[data-module-template="heroes"] figure[id="unit-image-calouro"] {
+/* div calouros - não exibida */
+/* section[data-module-template="heroes"] figure[id="unit-image-calouro"] {
   background-image: url("../../../../../bg/imagens/astronauta.jpg");
-  display: none;
-}
+  display: none; 
+} */
+
 section[data-module-template="heroes"] figure[id="unit-image-graduacao"] {
   background-image: url("../../../../../imgs/heroes/estudante-banner-grande.jpg");
 }
@@ -112,6 +128,12 @@ section[data-module-template="heroes"] figure[id="unit-image-posgraduacao"] {
 section[data-module-template="heroes"] figure[id="unit-image-docentes"] {
   background-image: url("../../../../../imgs/heroes/docente-banner-grande.jpg");
 }
+/* MEDIA SCREEN */
+
+/* ====== */
+
+/* MEDIA SCREEN */
+/* ======================= section grid=================================== */
 
 section[data-module-template="promos"] {
   position: relative;
@@ -124,16 +146,16 @@ section[data-module-template="promos"] {
   gap: 1em;
 }
 
-section[data-module-template="promos"] [id="modulo-content"] {
-  height: 580px;
-}
-
 section[data-module-template="promos"] div[class="unit-wrapper"] .headline {
   font-size: 32px;
 }
 section[data-module-template="promos"] div[class="unit-wrapper"] .subhead,
 section[data-module-template="promos"] div[class="unit-wrapper"] .cta-links a {
   font-size: 19px;
+}
+
+section[data-module-template="promos"] [id="modulo-content"] {
+  height: 580px;
 }
 
 section[data-module-template="promos"]
@@ -160,14 +182,7 @@ section [class="unit-image-warpper"] {
   background-position: center;
 }
 
-
-section[data-module-template="promos"] figure[id="unit-image-instalacoes"] {
-  background-image: url("../../../../../imgs/promos/fumaça-banner-medio.jpg");
-}
 section[data-module-template="promos"] figure[id="unit-image-pesquisa"] {
-  background-image: url("../../../../../imgs/promos/folas-banner-medio.jpg");
-}
-section[data-module-template="promos"] figure[id="unit-image-extencao"] {
   background-image: url("../../../../../imgs/promos/folas-banner-medio.jpg");
 }
 section[data-module-template="promos"] figure[id="unit-image-eventos"] {
@@ -176,10 +191,14 @@ section[data-module-template="promos"] figure[id="unit-image-eventos"] {
 section[data-module-template="promos"] figure[id="unit-image-ouvidoria"] {
   background-image: url("../../../../../imgs/promos/estudando-banner-medio.jpg");
 }
+section[data-module-template="promos"] figure[id="unit-image-instalacoes"] {
+  background-image: url("../../../../../imgs/promos/fumaça-banner-medio.jpg");
+}
 section[data-module-template="promos"] figure[id="unit-image-contato"] {
   background-image: url("../../../../../imgs/promos/caquito-banner-medio.jpg");
 }
 
+/* ============ section noticias ========== */
 
 @media screen and (max-width: 734px) and (min-width: 0px) {
   section[data-module-template="promos"],
