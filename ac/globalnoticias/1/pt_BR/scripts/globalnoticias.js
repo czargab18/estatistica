@@ -17,6 +17,9 @@ document.addEventListener("DOMContentLoaded", function () {
 
   function showSlide(index) {
     if (index >= 0 && index < slides.length) {
+      slides.forEach((slide) => {
+        slide.style.display = "none";
+      });
       slides[index].style.display = "block";
       currentSlideIndex = index;
     }
@@ -56,7 +59,6 @@ document.addEventListener("DOMContentLoaded", function () {
     dot.addEventListener("click", () => {
       dots.forEach((d) => d.classList.remove("current"));
       dot.classList.add("current");
-      hideAllSlides();
       showSlide(index);
       stopAutoPlay();
     });
