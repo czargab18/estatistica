@@ -24,18 +24,23 @@ document.addEventListener("DOMContentLoaded", function () {
       hideAllSlides();
       slides[index].style.display = "block";
       currentSlideIndex = index;
+      updateTablist(index); // Atualizar a classe "current" nos dots
     }
   }
 
   function nextSlide() {
     const nextIndex = (currentSlideIndex + 1) % slides.length;
-    dots[currentSlideIndex].classList.remove("current");
-    dots[nextIndex].classList.add("current");
     showSlide(nextIndex);
   }
 
+  function previousSlide() {
+    const previousIndex =
+      (currentSlideIndex - 1 + slides.length) % slides.length;
+    showSlide(previousIndex);
+  }
+
   function startAutoPlay() {
-     autoPlayInterval = setInterval(nextSlide, 10000);
+    autoPlayInterval = setInterval(nextSlide, 5000);
     isPlaying = true;
     playIcon.style.display = "none";
     pauseIcon.style.display = "block";
@@ -56,10 +61,15 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   }
 
+  function updateTablist(index) {
+    dots.forEach((dot) => {
+      dot.classList.remove("current");
+    });
+    dots[index].classList.add("current");
+  }
+
   dots.forEach((dot, index) => {
     dot.addEventListener("click", () => {
-      dots.forEach((d) => d.classList.remove("current"));
-      dot.classList.add("current");
       showSlide(index);
       stopAutoPlay();
     });
