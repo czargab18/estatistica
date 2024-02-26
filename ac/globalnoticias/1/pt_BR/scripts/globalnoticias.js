@@ -4,6 +4,9 @@ document.addEventListener("DOMContentLoaded", function () {
   const playPauseButton = document.querySelector(".play-pause");
   const playIcon = document.getElementById("play-icon");
   const pauseIcon = document.getElementById("pause-icon");
+  const noticiasSection = document.querySelector(
+    "[data-module-template='noticias']"
+  );
 
   let currentSlideIndex = 0;
   let autoPlayInterval;
@@ -68,24 +71,28 @@ document.addEventListener("DOMContentLoaded", function () {
     togglePlayPause();
   });
 
-  showSlide(0); // Mostrar o primeiro slide inicialmente
-  dots[0].classList.add("current"); // Adicionar classe "current" ao primeiro ponto
-  startAutoPlay();
-
-  // Ajuste para ciclo infinito
-  function previousSlide() {
-    const previousIndex =
-      (currentSlideIndex - 1 + slides.length) % slides.length;
-    dots[currentSlideIndex].classList.remove("current");
-    dots[previousIndex].classList.add("current");
-    hideAllSlides();
-    showSlide(previousIndex);
+  // Verificar quando a seção de notícias está visível na tela
+  function isElementInViewport(el) {
+    const rect = el.getBoundingClientRect();
+    return (
+      rect.top >= 0 &&
+      rect.left >= 0 &&
+      rect.bottom <=
+        (window.innerHeight || document.documentElement.clientHeight) &&
+      rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+    );
   }
 
-  // Atualizar evento de clique para botão anterior
-  const previousButton = document.querySelector(".paddlenav-arrow-previous");
-  previousButton.addEventListener("click", () => {
-    previousSlide();
-    stopAutoPlay();
-  });
+  function handleScroll() {
+    if (isElementInViewport(noticiasSection) && !isPlaying) {
+      startAutoPlay();
+      window.removeEventListener("scroll", handleScroll);
+    }
+  }
+
+  // Adicionar listener de evento de scroll
+  window.addEventListener("scroll", handleScroll);
+
+  showSlide(0); // Mostrar o primeiro slide inicialmente
+  dots[0].classList.add("current"); // Adicionar classe "current" ao primeiro ponto
 });
