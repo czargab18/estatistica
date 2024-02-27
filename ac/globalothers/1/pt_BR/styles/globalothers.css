@@ -16,13 +16,12 @@
   background-color: #fff;
 }
 #main404 .content404 section {
-  /* width: 100%; */
   max-width: 1440px;
   margin: 0 auto;
   position: relative;
   overflow: hidden;
   display: flex;
-  padding: 230px 208px;
+  padding: 200px 208px;
   justify-content: flex-start;
   align-items: center;
 }
@@ -68,7 +67,7 @@
 }
 
 #main404 .content404 section .unit-image-warpper #unit-image-astronauta {
-  background-image: url("../../../../../imgs/404/astronauta-pequena-334.png");
+  background-image: url("../assets/404/astronauta-pequena-334.png");
   display: block;
   width: 360px;
   height: 360px;
