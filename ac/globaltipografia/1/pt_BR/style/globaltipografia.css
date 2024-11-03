@@ -1441,7 +1441,8 @@ abbr {
 }
 [data-module-template] [data-unit-id] .headline {
   font-size: 56px;
-  color: #000000;
+  /*   color: #000000; trecho original*/
+  color: #ff0011;
 }
 
 [data-module-template] [data-unit-id="graduacao"] .headline:first-child {
@@ -1449,7 +1450,8 @@ abbr {
 }
 
 [data-module-template] [data-unit-id] .subhead {
-  color: #000000;
+  /*   color: #000000; trecho original*/
+  color: #ff0011;
   font-size: 24px;
 }
 [data-module-template] [data-unit-id="graduacao"] .subhead:first-of-type {
