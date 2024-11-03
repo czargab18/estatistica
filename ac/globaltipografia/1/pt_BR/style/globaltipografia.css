@@ -1439,10 +1439,21 @@ abbr {
     content: "xlarge";
   }
 }
+[data-module-template] [data-unit-id] .headline {
+  font-size: 56px;
+  color: #000000;
+}
 
-[data-module-template] [data-unit-id] .headline,
+[data-module-template] [data-unit-id="graduacao"] .headline:first-child {
+  color: #ffffff;
+}
+
 [data-module-template] [data-unit-id] .subhead {
-  color: #1d1d1f;
+  color: #000000;
+  font-size: 24px;
+}
+[data-module-template] [data-unit-id="graduacao"] .subhead:first-of-type {
+  color: #ffffff;
 }
 
 [data-module-template] [data-unit-id] .cta {
@@ -3984,20 +3995,4 @@ body {
     margin-right: auto;
     width: 87.5%;
   }
-}
-
-/* FONTETS */
-.headline {
-  color: whitesmoke;
-  font-size: 56px;
-}
-.headline:first-of-type {
-  color: rgb(255, 255, 255);
-}
-.subhead {
-  color: #f5f5f7;
-  font-size: 24px;
-}
-.subhead:first-of-type {
-  color:#f5f5f7;
 }
