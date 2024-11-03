@@ -2,7 +2,6 @@
 .main [data-module-template="noticias"] .standalone-module,
 .main [data-module-template] div[clas="home-section"] {
   box-sizing: border-box;
-  border-style: solid;
   overflow: visible;
   border-top-width: 0px;
   border-left-width: 0px;
