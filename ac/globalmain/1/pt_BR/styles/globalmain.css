@@ -21,6 +21,7 @@ main {
 
 section[data-module-template="heroes"] {
   display: flex;
+  overflow: hidden;
   flex-direction: column;
   align-items: center;
   gap: 1em;
@@ -246,6 +247,11 @@ section[data-module-template="promos"] div[class="unit-wrapper"] .headline {
 section[data-module-template="promos"] div[class="unit-wrapper"] .subhead,
 section[data-module-template="promos"] div[class="unit-wrapper"] .cta-links a {
   font-size: 19px;
+}
+
+.headline:first-of-type,
+.subhead:first-of-type {
+  color: white;
 }
 
 section[data-module-template="promos"]

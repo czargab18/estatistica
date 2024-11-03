@@ -3991,7 +3991,13 @@ body {
   color: whitesmoke;
   font-size: 56px;
 }
+.headline:first-of-type {
+  color: rgb(255, 255, 255);
+}
 .subhead {
-  color: rgb(237, 233, 233);
+  color: #f5f5f7;
   font-size: 24px;
+}
+.subhead:first-of-type {
+  color:#f5f5f7;
 }
