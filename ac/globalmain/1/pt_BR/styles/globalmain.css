@@ -217,9 +217,13 @@ section[data-module-template="heroes"] figure[id="unit-image-graduacao"] {
 }
 
 section[data-module-template="heroes"] figure[id="unit-image-posgraduacao"] {
-  background-image: url("../../../../../ac/globalmain/1/pt_BR/assets/heroes/astronauta-banner-grande.jpg");
+  width: 3008px;
+  height: 624px;
+  background-image: url("../../../../../ac/globalmain/1/pt_BR/assets/heroes/estudante-banner-grande.jpg");
 }
 section[data-module-template="heroes"] figure[id="unit-image-docentes"] {
+  width: 3008px;
+  height: 624px;
   background-image: url("../../../../../ac/globalmain/1/pt_BR/assets/heroes/docente-banner-grande.jpg");
 }
 
@@ -249,9 +253,12 @@ section[data-module-template="promos"] div[class="unit-wrapper"] .cta-links a {
   font-size: 19px;
 }
 
-.headline:first-of-type,
-.subhead:first-of-type {
-  color: white;
+.main [data-module-template="promos"] .unit-image-wrapper {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100px;
+  width: 100px;
 }
 
 section[data-module-template="promos"]
@@ -268,13 +275,22 @@ section[data-module-template="promos"]
   figure[id="unit-image-instalacoes"],
 section[data-module-template="promos"]
   div[data-unit-id="contato"]
-  figure[id="unit-image-contato"] {
-  width: 100%;
-  height: 100%;
+  figure[id="unit-image-contato"],
+section[data-module-template="promos"]
+  div[data-unit-id="extencao"]
+  figure[id="unit-image-extencao"],
+section[data-module-template="promos"]
+  div[data-unit-id="eventos"]
+  figure[id="unit-image-eventos"],
+section[data-module-template="promos"]
+  div[data-unit-id="formularios"]
+  figure[id="unit-image-formularios"] {
   background-color: white;
-  background-repeat: no-repeat;
-  background-size: cover;
   background-position: center;
+  width: 1262px;
+  height: 580px;
+  background-size: 1262px 580px;
+  background-repeat: no-repeat;
 }
 
 section[data-module-template="promos"] figure[id="unit-image-instalacoes"] {
@@ -284,16 +300,45 @@ section[data-module-template="promos"] figure[id="unit-image-pesquisa"] {
   background-image: url("../../../../../ac/globalmain/1/pt_BR/assets/promos/folas-banner-medio.jpg");
 }
 section[data-module-template="promos"] figure[id="unit-image-extencao"] {
-  background-image: url("../../../../../imgs/promos/folas-banner-medio.jpg");
+  background-image: url("../../../../../ac/globalmain/1/pt_BR/assets/promos/folas-banner-medio.jpg");
 }
 section[data-module-template="promos"] figure[id="unit-image-eventos"] {
-  background-image: url("../../../../../imgs/promos/jovem-banner-medio.jpg");
+  background-image: url("../../../../../ac/globalmain/1/pt_BR/assets/promos/folas-banner-medio.jpg");
 }
-section[data-module-template="promos"] figure[id="unit-image-ouvidoria"] {
-  background-image: url("../../../../../imgs/promos/estudando-banner-medio.jpg");
+section[data-module-template="promos"] figure[id="unit-image-formularios"] {
+  background-image: url("../../../../../ac/globalmain/1/pt_BR/assets/promos/folas-banner-medio.jpg");
 }
 section[data-module-template="promos"] figure[id="unit-image-contato"] {
-  background-image: url("../../../../../imgs/promos/caquito-banner-medio.jpg");
+  background-image: url("../../../../../ac/globalmain/1/pt_BR/assets/promos/folas-banner-medio.jpg");
+}
+
+[data-module-template] [data-unit-id] .unit-wrapper {
+  --content-height: 580px;
+  height: var(--content-height);
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  overflow: hidden;
+  background: #f5f5f7;
+}
+
+[data-module-template] [data-unit-id] .unit-image {
+  z-index: 1;
+  position: absolute;
+  border: 0;
+  margin: 0;
+  padding: 0;
+  left: calc(50% + 0px);
+  right: auto;
+  bottom: 0px;
+  top: auto;
+  -webkit-transform: translatex(-50%);
+  transform: translatex(-50%);
 }
 
 .icon-chevronright:before,
