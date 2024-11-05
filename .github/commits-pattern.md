@@ -27,3 +27,5 @@ O commit semântico possui os elementos estruturais abaixo (tipos), que informam
 - `cleanup` Commits do tipo cleanup são utilizados para remover código comentado, trechos desnecessários ou qualquer outra forma de limpeza do código-fonte, visando aprimorar sua legibilidade e manutenibilidade.
 
 - `remove` Commits do tipo remove indicam a exclusão de arquivos, diretórios ou funcionalidades obsoletas ou não utilizadas, reduzindo o tamanho e a complexidade do projeto e mantendo-o mais organizado.
+
+- `files`: criação e organização de pastas dentro do repositório.
