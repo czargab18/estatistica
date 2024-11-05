@@ -59,7 +59,7 @@ Para contribuir com este repositório, siga os passos abaixo:
 
 ## 📝 Licença
 
-Este projeto está licenciado sob a [MIT License](LICENSE).
+Este projeto está licenciado sob a [MIT License](.github/LICENSE).
 
 ## 📫 Contato
 
