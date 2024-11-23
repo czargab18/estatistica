@@ -7,7 +7,7 @@ Bem-vindo ao repositório do site não oficial para o Departamento de Estatísti
 ## 1. Objetivo
 
 Este site foi criado com o objetivo de oferecer aos estudantes de estatística e áreas afins um espaço de aprendizagem, troca e atualização sobre os principais conceitos, métodos e aplicações da ciência dos dados. Aqui você encontrará materiais didáticos, exercícios, vídeos, links úteis e outras informações relevantes para o seu desenvolvimento acadêmico e profissional na área de estatística.
-Para mais informações sobre o departamento de estatística, visite o site clicando [aqui](https://www.estatistica.unb.br).
+Para mais informações sobre o departamento de estatística, visite o site oficial do [Departamento de Estatística]([https://www.estatistica.unb.br](http://est.unb.br/)). 
 
 ## 2. Departamento de Estatística
 
