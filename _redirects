@@ -1,0 +1,6 @@
+/403 /errors/403.html 403
+/404 /errors/404.html 404
+/500 /errors/500.html 500
+/503 /errors/503.html 503
+/maintenance /errors/maintenance.html 200
+/offline /errors/offline.html 200
