@@ -8,5 +8,6 @@
 # Redirecionamento para todas as outras URLs inválidas para 404.html
 # /* /errors/404.html 404
 
-
 /errors/404 / 404
+
+# https://developers.cloudflare.com/pages/configuration/redirects/
