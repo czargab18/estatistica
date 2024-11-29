@@ -5,10 +5,10 @@
 	font-weight: normal;
 	font-style: normal;
 	src: url("wss/fonts/Fontello/v1/fontello.woff2") format("woff2"),
-		url("wss/fonts/Fontello/v1/fontello.eot") format("embedded-opentype"),
-		url("wss/fonts/Fontello/v1/fontello.woff") format("woff"),
-		url("wss/fonts/Fontello/v1/fontello.ttf") format("truetype"),
-		url("wss/fonts/Fontello/v1/fontello.svg") format("svg");
+		url("./wss/fonts/Fontello/v1/fontello.eot") format("embedded-opentype"),
+		url("./wss/fonts/Fontello/v1/fontello.woff") format("woff"),
+		url("./wss/fonts/Fontello/v1/fontello.ttf") format("truetype"),
+		url("./wss/fonts/Fontello/v1/fontello.svg") format("svg");
 }
 /* fonte: base64 */
 @font-face {
