@@ -1,19 +1,16 @@
 name: estatistica.pro deployment
-
 on:
   push:
     branches: ["main"]
   pull_request:
     branches: ["main"]
   workflow_dispatch:
-
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
       - name: Build
         run: echo Building the application
-
   # Deploy desenvolvimento
   deploy-development:
     runs-on: ubuntu-latest
@@ -34,7 +31,6 @@ jobs:
           REMOTE_USER: ${{ vars.REMOTE_USER }}
           REMOTE_PORT: ${{ vars.REMOTE_PORT }}
           TARGET: ${{ vars.TARGET }}
-
   # Deploy staging
   deploy-staging:
     runs-on: ubuntu-latest
@@ -55,7 +51,6 @@ jobs:
           REMOTE_USER: ${{ vars.REMOTE_USER }}
           REMOTE_PORT: ${{ vars.REMOTE_PORT }}
           TARGET: ${{ vars.TARGET }}
-
   # Deploy produção
   deploy-production:
     runs-on: ubuntu-latest
