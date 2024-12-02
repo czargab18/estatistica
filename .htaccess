@@ -1,12 +1,10 @@
-# Forçar www no domínio
+# Ativar reescrita de URL
 RewriteEngine On
-RewriteCond %{HTTP_HOST} ^estatistica\.pro [NC]
-RewriteRule ^(.*)$ https://www.estatistica.pro/$1 [L,R=301,NC]
 
-# Forçar HTTPS
-RewriteEngine on
-RewriteCond %{HTTPS} !on
-RewriteRule (.*) https://%{HTTP_HOST}%{REQUEST_URI}
+# Redirecionar para HTTPS e www para todos os domínios e subdomínios
+RewriteCond %{HTTPS} !=on [OR]
+RewriteCond %{HTTP_HOST} !^www\. [NC]
+RewriteRule ^(.*)$ https://www.%{HTTP_HOST}/$1 [L,R=301]
 
 # Página de erro 404 personalizada
 ErrorDocument 404 /v/errors/404.html
@@ -31,6 +29,5 @@ Options -Indexes
 
 # Proteger arquivos sensíveis
 <FilesMatch "\.(htaccess|htpasswd|env|ini|log|sh|inc|bak|sql)$">
-  Order Allow,Deny
-  Deny from all
+  Require all denied
 </FilesMatch>
