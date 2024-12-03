@@ -1,3 +1,4 @@
+=begin 
 # Ativar reescrita de URL
 RewriteEngine On
 
@@ -28,6 +29,7 @@ ErrorDocument 404 /v/errors/404.html
 Options -Indexes
 
 # Proteger arquivos sensíveis
-<FilesMatch "\.(htaccess|htpasswd|env|ini|log|sh|inc|bak|sql)$">
+<FilesMatch "\.(htaccess|htpasswd|env|ini|log|sh|inc|bak|sql|md)$">
   Require all denied
 </FilesMatch>
+ =end
