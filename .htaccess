@@ -1,9 +1,12 @@
-
-# Página de erro 404 personalizada
-ErrorDocument 404 /v/errors/404.html
-
 RewriteEngine On 
 RewriteCond %{HTTP_HOST} !^www\. [NC]
 RewriteCond %{HTTP_HOST} ^([^\.]+)\.estatistica\.pro$ [NC] 
 RewriteRule ^(.*)$ https://www.%{HTTP_HOST}/$1 [L,R=301]
+
+# Página de erro 404 personalizada
+ErrorDocument 404 /v/errors/404.html
+
+# Página de erro 404 personalizada
+ErrorDocument 403 /v/errors/404.html
+
 
