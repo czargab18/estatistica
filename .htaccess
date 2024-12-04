@@ -1,8 +1,17 @@
 RewriteEngine On
-# Rediceiona domin-main www.*
+# Força HTTPS e adiciona 'www' apenas para o domínio principal
+RewriteCond %{HTTPS} off
 RewriteCond %{HTTP_HOST} ^estatistica\.pro$ [NC]
-RewriteRule ^ https://www.%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+RewriteRule ^ https://www.estatistica.pro%{REQUEST_URI} [L,R=301]
 
-# Remove www de subdomínios
-RewriteCond %{HTTP_HOST} ^www\.([^\.]*)\.estatistica\.pro$ [NC]
-RewriteRule (.*) http://%1.estatistica.pro$1 [R=301,L]
+# Força HTTPS para subdomínios sem alterar 'www'
+RewriteCond %{HTTPS} off
+RewriteCond %{HTTP_HOST} ^([^.]+)\.estatistica\.pro$ [NC]
+RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
+# Página de ERRO STATUSCODE personalizada
+ErrorDocument 404 /v/errors/404.html
+ErrorDocument 403 /v/errors/404.html
+ErrorDocument 500 /v/errors/404.html
+ErrorDocument 502 /v/errors/404.html
+ErrorDocument 503 /v/errors/404.html
