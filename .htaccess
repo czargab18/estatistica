@@ -1,10 +1,10 @@
 RewriteEngine On 
-# Força o https e www no domínio principal
-RewriteCond %{HTTPS} off 
-RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
-RewriteCond %{HTTP_HOST} ^estatistica\.pro$ [NC]
-RewriteRule ^ https://www.estatistica.pro%{REQUEST_URI} [L,R=301]
-
+#  # Força o https e www no domínio principal
+#  RewriteCond %{HTTPS} off 
+#  RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+#  RewriteCond %{HTTP_HOST} ^estatistica\.pro$ [NC]
+#  RewriteRule ^ https://www.estatistica.pro%{REQUEST_URI} [L,R=301]
+#  
 #  # Remove "www" dos subdomínios
 #  RewriteCond %{HTTP_HOST} ^www\.([a-z0-9-]+)\.estatistica\.pro$ [NC]
 #  RewriteRule ^ https://%1.estatistica.pro%{REQUEST_URI} [L,R=301]
