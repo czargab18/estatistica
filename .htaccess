@@ -2,8 +2,8 @@ RewriteEngine On
 RewriteCond %{HTTPS} off 
 RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
 
-RewriteCond %{HTTP_HOST} ^estatistica.pro [NC]
-RewriteRule ^(.*)$ http:www.estatistica.pro/$1 [L,R=301]
+RewriteCond %{HTTP_HOST} ^estatistica\.pro$ [NC]
+RewriteRule ^ https://www.estatistica.pro%{REQUEST_URI} [L,R=301]
 
 # Ignorar pastas específicas
 RewriteCond %{REQUEST_URI} !^/css/
