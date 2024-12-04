@@ -1,6 +1,5 @@
 [desenvolvimento] - Aprendendo Desenvolvimento Web.
-  - CloudFlare Pages: (http://estatistica.pages.dev/)
-  - GitHub Pages: (https://czargab18.github.io/estatistica/)
+  - website: [estatística](https://estatistica.pro/)
 
 # Estatística
 
