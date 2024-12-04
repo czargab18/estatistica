@@ -340,11 +340,3 @@ section[data-module-template="promos"] figure[id="unit-image-contato"] {
   -webkit-transform: translatex(-50%);
   transform: translatex(-50%);
 }
-
-.icon-chevronright:before,
-.icon-chevronright:after {
-  font-family: "fontello";
-  content: "\e801";
-  padding: 0;
-  text-decoration: none;
-}

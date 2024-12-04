@@ -2422,6 +2422,14 @@ abbr {
   content: "";
 }
 
+.icon-chevronright:before,
+.icon-chevronright:after {
+  font-family: "SF Pro Icons";
+  content: "\F301";
+  padding: 0;
+  text-decoration: none;
+}
+
 .icon-chevronup::before,
 .icon-chevronup::after {
   content: "";
