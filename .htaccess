@@ -1,7 +1,8 @@
-RewriteEngine On
+RewriteEngine On 
 # Força o https e www no domínio principal
-RewriteCond %{HTTPS} off%{HTTP_HOST} ^(www\.)?estatistica.pro$ [NC]
-RewriteRule ^(.*)$ https://www.estatistica.pro/$1 [L,R=301]
+RewriteCond %{HTTPS} off 
+RewriteCond %{HTTP_HOST} ^estatistica.pro [NC]
+RewriteRule ^(.*)$ https://www.%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
 
 # Ignorar pastas específicas
 RewriteCond %{REQUEST_URI} !^/css/
