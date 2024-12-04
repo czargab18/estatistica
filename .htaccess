@@ -1,0 +1,9 @@
+RewriteEngine On
+
+# Rediceiona domin-main www.*
+RewriteCond %{HTTP_HOST} ^dominio\.com$ [NC]
+RewriteRule ^ https://www.%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
+# Remove www de subdomínios
+RewriteCond %{HTTP_HOST} ^www\.(.+)\.dominio\.com$ [NC]
+RewriteRule ^ https://%1.dominio.com%{REQUEST_URI} [L,R=301]
