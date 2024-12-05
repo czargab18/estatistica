@@ -1,16 +1,21 @@
 RewriteEngine On
 
 # Força HTTPS para todo o site, incluindo subdomínios
-RewriteCond %{HTTPS} off
-RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [R=301,L]
+RewriteCond %{HTTPS} !=on
+RewriteRule .* https://%{HTTP_HOST}%{REQUEST_URI} [R=301,L]
 
-# Força www exclusivamente no domínio principal estatistica.com e seus subdiretórios
-RewriteCond %{HTTP_HOST} ^estatistica\.com [NC]
-RewriteRule ^(.*)$ https://www.estatistica.com/$1 [R=301,L]
+# Força www exclusivamente no domínio principal estatistica.pro e seus subdiretórios
+RewriteCond %{HTTP_HOST} !^www\.estatistica\.pro$ [NC]
+RewriteRule ^(.*)$ https://www.estatistica.pro/$1 [R=301,L]
 
 # Redireciona tentativas de acesso a /dev/ e /stage/
 RewriteCond %{REQUEST_URI} ^/(dev|stage)
 RewriteRule ^ - [F]
+
+# Redireciona para o domínio principal apenas se o subdomínio não existir
+RewriteCond %{HTTP_HOST} !^www\.estatistica\.pro [NC]
+RewriteCond %{HTTP_HOST} !^estatistica\.pro [NC]
+RewriteRule ^ https://www.estatistica.pro/ [R=301,L]
 
 # Página de ERRO STATUSCODE personalizada
 ErrorDocument 404 /v/errors/404.html
@@ -19,5 +24,17 @@ ErrorDocument 500 /v/errors/404.html
 ErrorDocument 502 /v/errors/404.html
 ErrorDocument 503 /v/errors/404.html
 
-# fonte: https://cwiki.apache.org/confluence/display/httpd/RewriteHTTPToHTTPS
+# Configuração de cache para arquivos estáticos (1 ano)
+SetEnvIf Request_URI "\.(ico|pdf|flv|jpg|jpeg|png|gif|swf|mp3|mp4)$" STATIC_FILES
+Header set Cache-Control "public" env=STATIC_FILES
+Header unset Last-Modified env=STATIC_FILES
 
+# Configuração de cache para arquivos dinâmicos (6 meses)
+SetEnvIf Request_URI "\.(html|js|css|xml|txt|xsl)$" DYNAMIC_FILES
+Header set Cache-Control "max-age=15552000, must-revalidate" env=DYNAMIC_FILES
+
+#   fonte:
+# - https://cwiki.apache.org/confluence/display/httpd/RewriteHTTPToHTTPS
+# - https://www.askapache.pro/htaccess/ssl-example-usage-in-htaccess/
+# - https://www.github.com/czargab18/
+# - chat copilot vscode
