@@ -2,7 +2,7 @@
 #globaltop {
   all: unset;
 }
-@import url("../../../../../wss/fonts.css");
+@import url("/wss/fonts.css");
 /* Noticia: opçãoSeção: 2 */
 #globalsection-02 {
   display: none;
