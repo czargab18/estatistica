@@ -1,8 +1,12 @@
 RewriteEngine On
 
 # Força HTTPS para todo o site, incluindo subdomínios
-RewriteCond %{HTTPS} off add 
+RewriteCond %{HTTPS} off
 RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [R=301,L]
+
+# Força www exclusivamente no domínio principal estatistica.com e seus subdiretórios
+RewriteCond %{HTTP_HOST} ^estatistica\.com [NC]
+RewriteRule ^(.*)$ https://www.estatistica.com/$1 [R=301,L]
 
 # Redireciona tentativas de acesso a /dev/ e /stage/
 RewriteCond %{REQUEST_URI} ^/(dev|stage)
