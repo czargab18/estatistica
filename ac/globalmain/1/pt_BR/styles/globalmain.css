@@ -245,13 +245,13 @@ section[data-module-template="promos"] {
 section[data-module-template="promos"] [id="modulo-content"] {
   height: 580px;
 }
-section[data-module-template="promos"] div[class="unit-wrapper"] .headline {
+/* section[data-module-template="promos"] div[class="unit-wrapper"] .headline {
   font-size: 32px;
 }
 section[data-module-template="promos"] div[class="unit-wrapper"] .subhead,
 section[data-module-template="promos"] div[class="unit-wrapper"] .cta-links a {
   font-size: 19px;
-}
+} */
 
 .main [data-module-template="promos"] .unit-image-wrapper {
   position: absolute;
@@ -261,30 +261,7 @@ section[data-module-template="promos"] div[class="unit-wrapper"] .cta-links a {
   width: 100px;
 }
 
-section[data-module-template="promos"]
-  div[data-unit-id="pesquisa"]
-  figure[id="unit-image-pesquisa"],
-section[data-module-template="promos"]
-  div[data-unit-id="eventos"]
-  figure[id="unit-image-eventos"],
-section[data-module-template="promos"]
-  div[data-unit-id="ouvidoria"]
-  figure[id="unit-image-ouvidoria"],
-section[data-module-template="promos"]
-  div[data-unit-id="instalacoes"]
-  figure[id="unit-image-instalacoes"],
-section[data-module-template="promos"]
-  div[data-unit-id="contato"]
-  figure[id="unit-image-contato"],
-section[data-module-template="promos"]
-  div[data-unit-id="extencao"]
-  figure[id="unit-image-extencao"],
-section[data-module-template="promos"]
-  div[data-unit-id="eventos"]
-  figure[id="unit-image-eventos"],
-section[data-module-template="promos"]
-  div[data-unit-id="formularios"]
-  figure[id="unit-image-formularios"] {
+section[data-module-template="promos"] figure {
   background-color: white;
   background-position: center;
   width: 1262px;
@@ -339,12 +316,4 @@ section[data-module-template="promos"] figure[id="unit-image-contato"] {
   top: auto;
   -webkit-transform: translatex(-50%);
   transform: translatex(-50%);
-}
-
-.icon-chevronright:before,
-.icon-chevronright:after {
-  font-family: "fontello";
-  content: "\e801";
-  padding: 0;
-  text-decoration: none;
 }
