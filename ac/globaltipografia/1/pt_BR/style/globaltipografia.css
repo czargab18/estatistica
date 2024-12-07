@@ -12740,7 +12740,7 @@ html.no-js .fam-legal {
     background-color: var(--gutter-color);
     grid-gap: var(--gutter-width);
     grid-template-areas: "";
-    -ms-grid-columns: ;
+    -ms-grid-columns: 1fr;
     grid-template-columns: repeat(var(--columns), 1fr);
     width: calc(
       100% - var(--double-edge-border-width) - var(--safe-area-inset-lt) -
@@ -12799,11 +12799,7 @@ html.no-js .fam-legal {
   }
 }
 
-.main
-  [data-module-template="heroes"]
-  [data-unit-id]
-  .unit-copy-wrapper
-  > *.headline {
+.main [data-module-template="heroes"] [data-unit-id] .unit-copy-wrapper> *.headline {
   font-size: 56px;
   line-height: 1.07143;
   font-weight: 600;
@@ -23452,7 +23448,7 @@ html.enhanced-xp.text-zoom
     background-color: var(--gutter-color);
     grid-gap: var(--gutter-width);
     grid-template-areas: "";
-    -ms-grid-columns: ;
+    -ms-grid-columns: 1fr;
     grid-template-columns: repeat(var(--columns), 1fr);
     width: calc(
       100% - var(--double-edge-border-width) - var(--safe-area-inset-lt) -

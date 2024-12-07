@@ -1,138 +1,82 @@
 <!DOCTYPE html>
 <html lang="pt-br">
   <head>
-    <!-- compatibilidade -->
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link
-      rel="alternate"
-      hreflang="pt-br"
-      href="https://estatistica.pages.dev/"
-    />
-    <link
-      rel="alternate"
-      hreflang="pt-br"
-      href="https://czargab18.github.io/"
-    />
-    <!-- security -->
+    <link rel="canonical" hreflang="pt-br" href="https://estatistica.pro" />
+    <link rel="alternate" hreflang="pt-br" href="https://estatistica.pro" />
     <meta
       http-equiv="Content-Security-Policy"
-      content="img-src 'self' https://czargab18.github.io/estatistica/; script-src 'self' https://czargab18.github.io/estatistica/v/"
-    />
-    <meta
-      name="google-site-verification"
-      content="IsHhATM498xD3uOdDeHH2TcPdeZ8JikORjUobeuaI2U"
+      content="img-src 'self' https://estatistica.pro; script-src 'self' https://estatistica.pro/"
     />
     <!-- Prefetching, pré-carregamento, pré-navegação -->
     <meta name="referrer" content="no-referrer" />
-    <link rel="dns-prefetch" href="https://czargab18.github.io/estatistica/" />
-    <link rel="preconnect" href="https://czargab18.github.io/estatistica/" />
-    <link rel="prefetch" href="https://czargab18.github.io/estatistica/" />
-    <link rel="prerender" href="https://czargab18.github.io/estatistica/" />
-
-    <!-- SEO -->
+    <link rel="dns-prefetch" href="https://estatistica.pro" />
+    <link rel="preconnect" href="https://estatistica.pro" />
+    <link rel="prefetch" href="https://estatistica.pro" />
+    <link rel="prerender" href="https://estatistica.pro" />
     <title>Departamento de Estatística</title>
     <link
       rel="shortcut icon"
-      href="ac/structure-data/1/pt_BR/favicons/Estatisticalogo.png"
+      href="/ac/structure-data/1/pt_BR/favicons/Estatisticalogo.png"
       type="image/x-icon"
     />
-    <meta name="description" content="." />
-    <meta name="subject" content="." />
-    <meta name="abstract" content="." />
-    <meta name="topic" content="Estatística" />
-    <link rel="shortlink" href="#" />
-
-    <!-- SEO - Geolocalização -->
-    <meta name="geo.region" content="BR-DF" />
-    <meta name="geo.placename" content="Brasília" />
-
-    <!-- config -  -->
     <meta name="robots" content="index,follow" />
-
-    <!-- style -->
     <link
       rel="stylesheet"
-      href="ac/globalheader/1/pt_BR/styles/globalheader.css"
+      href="/ac/globalheader/1/pt_BR/styles/globalheader.css"
     />
     <link
       rel="stylesheet"
-      href="ac/globalnavbar/1/pt_BR/styles/globalnavbar.css"
+      href="/ac/globalnavbar/1/pt_BR/styles/globalnavbar.css"
     />
     <link
       rel="stylesheet"
-      href="ac/globalsection/1/pt_BR/styles/globalsection.css"
+      href="/ac/globalsection/1/pt_BR/styles/globalsection.css"
+    />
+    <link rel="stylesheet" href="/ac/globalmain/1/pt_BR/styles/globalmain.css" />
+    <link
+      rel="stylesheet"
+      href="/ac/globaltipografia/1/pt_BR/style/globaltipografia.css"
     />
     <link
       rel="stylesheet"
-      href="ac/globaltipografia/1/pt_BR/style/globaltipografia.css"
+      href="/ac/globalnoticias/1/pt_BR/style/globalnoticias.css"
     />
-    <link rel="stylesheet" href="ac/globalmain/1/pt_BR/styles/globalmain.css" />
-
     <link
       rel="stylesheet"
-      href="ac/globalnoticias/1/pt_BR/style/globalnoticias.css"
+      href="/ac/globalfooter/1/pt_BR/styles/globalfooter.css"
     />
-
-    <link
-      rel="stylesheet"
-      href="ac/globalfooter/1/pt_BR/styles/globalfooter.css"
-    />
-    <!-- FONTS + ICONES -->
     <link
       rel="stylesheet"
       href="/wss/fonts.css?families=SF+Pro,v3|SF+Pro+Icons,v3"
       type="text/css"
       media="all"
     />
-    <!-- script -->
     <script
       defer
-      src="ac/globalperform/1/pt_BR/scripts/globalperform.js"
+      src="/ac/globalheader/1/pt_BR/scripts/globalheader.js"
     ></script>
     <script
       defer
-      src="ac/globalheader/1/pt_BR/scripts/globalheader.js"
+      src="/ac/globalnavbar/1/pt_BR/scripts/globalnavbar.js"
+    ></script>
+    <script defer src="/ac/globalmain/1/pt_BR/scripts/globalmain.js"></script>
+    <script
+      defer
+      src="/ac/globalnoticias/1/pt_BR/scripts/globalnoticias.js"
     ></script>
     <script
       defer
-      src="ac/globalnavbar/1/pt_BR/scripts/globalnavbar.js"
+      src="/ac/globalfooter/1/pt_BR/scripts/globalfooter.js"
     ></script>
-
-    <script defer src="ac/globalmain/1/pt_BR/scripts/globalmain.js"></script>
-    <script
-      defer
-      src="ac/globalnoticias/1/pt_BR/scripts/globalnoticias.js"
-    ></script>
-
-    <script
-      defer
-      src="ac/globalfooter/1/pt_BR/scripts/globalfooter.js"
-    ></script>
-    <!-- Google Tag Manager -->
-    <script defer>
-      (function (w, d, s, l, i) {
-        w[l] = w[l] || [];
-        w[l].push({ "gtm.start": new Date().getTime(), event: "gtm.js" });
-        var f = d.getElementsByTagName(s)[0],
-          j = d.createElement(s),
-          dl = l != "dataLayer" ? "&l=" + l : "";
-        j.async = true;
-        j.src = "https://www.googletagmanager.com/gtm.js?id=" + i + dl;
-        f.parentNode.insertBefore(j, f);
-      })(window, document, "script", "dataLayer", "GTM-P2XZKD3D");
-    </script>
-    <!-- End Google Tag Manager -->
   </head>
   <body
     class="page-home ac-nav-overlap globalnav-scrim globalheader-light body-with-ribbon"
     data-test-99999="default"
     data-anim-scroll-group="body"
   >
-    <!-- ======= TOP + HEADER + SECTION =======  -->
-
-    <!-- header + navbar + section -->
     <div id="globaltop">
       <!-- GROUP: header-navbar-section -->
       <header id="globalheader">
