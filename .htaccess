@@ -14,7 +14,7 @@ RewriteRule ^/dev/ https://www.estatistica.pro/v/errors/404.html [L,R=301]
 RewriteRule ^/stage/ https://www.estatistica.pro/v/errors/404.html [L,R=301]
 
 # Indica onde estão os arquivos de /ac/
-# RewriteRule ^(.*)/([^.]+\.css|js)$ /ac/$1/$2 [L]
+RewriteRule ^(.*)/([^.]+\.(css|js))$ /ac/$1/$2 [L]
 
 # Página de ERRO STATUSCODE personalizada
 ErrorDocument 404 /v/errors/404.html
