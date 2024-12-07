@@ -5,7 +5,7 @@ Disallow:
 # Diretórios ou arquivos específicos que não devem ser rastreados
 User-agent: *
 Disallow: .vscode
-Disallow: /README.md
+Disallow: README.md
 
 # Bloqueia todos os bots de rastrear uma área específica do site
 User-agent: BadBot
