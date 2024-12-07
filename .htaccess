@@ -9,7 +9,7 @@ RewriteCond %{HTTPS} off
 RewriteCond %{HTTP_HOST} ^([^.]+)\.estatistica\.pro$ [NC]
 RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
 
-#vRedireciona tentativas de acesso a /dev/  e /stage/
+# Redireciona tentativas de acesso a /dev/ e /stage/
 RewriteRule ^/dev/ https://www.estatistica.pro/v/errors/404.html [L,R=301]
 RewriteRule ^/stage/ https://www.estatistica.pro/v/errors/404.html [L,R=301]
 
