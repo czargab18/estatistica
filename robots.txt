@@ -11,6 +11,8 @@ Disallow: /README.md
 User-agent: BadBot
 Disallow: /dev/
 Disallow: /stage/
+Disallow: /.github/
+Disallow: /.vscode/
 
 # Especifica o local do sitemap XML
 Sitemap: http://www.estatistica.pro/sitemap.xml
