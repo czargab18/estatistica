@@ -73,6 +73,12 @@ referencia: cesargabrielphd
 "A Plataforma de Avaliação de Professores e Matérias, desenvolvida como parte da disciplina Métodos de Desenvolvimento de Software (MDS) é um projeto dedicado à comunidade estudantil da Universidade de Brasília (UnB). Nosso objetivo é fornecer informações úteis e relevantes para os alunos, facilitando a escolha de professores e matérias através de avaliações dos professores feitas pelos proprios alunos. A plataforma permitirá avaliações detalhadas, feedback construtivo e transparência na busca por conhecimento."
 referencia: https://github.com/unb-mds/2024-1-squad04
 
+# ideia 10
+Página que contenha todos os formulários, modelos ou slides sobre algum assunto.
+  ex: 
+    - Slide de TCC 2 feito em R.
+    - modelo de TCC feito em LaTeX.
+referencia: cesargabrielphd
 
 Observação:
  - Algumas dessas ideias podem ser embutida dentro de um sistema de login de usuários para guardar suas informações para uso posterior.
