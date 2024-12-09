@@ -96,5 +96,7 @@ Impossível:
     - Armazenar essas informações em algum objeto adequado
   - Frontend:
    - publicar essas informações
+   - funcionalidade para adicionar uma ementa de disciplina
+   - funcionalidade para editar uma ementa de disciplina, mesmo que já tenha sido criada.
 
    referencia: cesargabrielphd
