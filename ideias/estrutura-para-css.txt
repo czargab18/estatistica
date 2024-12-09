@@ -8,3 +8,7 @@ config.css:
      * tipografia de todo o site
   - design
      * design/config.css: de icones, imagens, etc 
+
+Refatoração:
+   - Destina-se a Construir o site novamente do zero seguindo os meus padrões
+     nome de variáveis e id e classes, entre outras coisas.
