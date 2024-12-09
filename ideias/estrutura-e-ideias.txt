@@ -100,3 +100,12 @@ Impossível:
    - funcionalidade para editar uma ementa de disciplina, mesmo que já tenha sido criada.
 
    referencia: cesargabrielphd
+
+-# Impossível 03
+   Inteligência Artificial
+    - para ajudar a gerar questões de estatística para alunos.
+   - explica exercícios
+   - demonstra teoremas
+   - treinar usando apenas livros e artigos acadêmicos suficientemente bons.
+
+   referencia: cesargabrielphd
