@@ -60,7 +60,9 @@ Ambiente onde os usuários podem trocar, emprestar ou doar livros.
 referencia: https://github.com/unb-mds/2024-2-Squad01
 
 # ideia 07
-auxiliar a monitoria para os alunos da UnB por meio de um fórum de dúvidas.
+auxiliar a monitoria para os alunos da UnB por meio de:
+ -  um fórum de dúvidas.
+ -  marcar encontros em plataformas de stream para monitórias onlines (adicionar a uma agenda).
 referencia: https://github.com/unb-mds/2024-1-forUnB
 
 # ideia 08
