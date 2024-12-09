@@ -32,19 +32,16 @@
 # Ideias para sobre funcionalidades para este repositório
 
 # ideia 01 - Calendario Academico UnB
- - construir uma api que vai na url
-https://saa.unb.br/graduacao/calendario-academico#calendario-de-matricula
+ - construir uma api que vai na url https://saa.unb.br/graduacao/calendario-academico#calendario-de-matricula
  - pega os .PDFs dos 2 primeiros links.
  - colocar na section de noticias do home.
  - ou noticias UnB
  - Ou deixa os arquivos de calendários para serem baixados
-
-link-padão : https://saa.unb.br/images/documentos/graduacao/Calendarios/Matricula/20xx_x/20xx_x_Calend_Mat_Grad_xx_xx_xx_vx.pdf
+referência: cesargabrielphd
 
 # ideia 02
-Ajudao os alunos a montarem a grade do semestre, com base nos sigaa.unb.br/sigaa/public
+Ajuda os alunos a montarem a grade do semestre, com base nos sigaa.unb.br/sigaa/public
 referencia: https://github.com/unb-mds/2023-2-SuaGradeUnB
-
 
 # ideia 03
 Construir uma página que cálcula o IRA do aluno, armazena e criar gráficos iterativos sobre os resultados de cada semestre.
@@ -58,8 +55,33 @@ referencia: https://github.com/unb-mds/2024-2-AcheiUnB
 Página para facilitar a organização da vida acadêmica.
 referencia: https://github.com/unb-mds/Squad09-UnBHUB
 
+# ideia 06
+Ambiente onde os usuários podem trocar, emprestar ou doar livros.
+referencia: https://github.com/unb-mds/2024-2-Squad01
+
+# ideia 07
+auxiliar a monitoria para os alunos da UnB por meio de um fórum de dúvidas.
+referencia: https://github.com/unb-mds/2024-1-forUnB
+
+# ideia 08
+Ambiente onde alunos de TCC 1 e 2 possam postar seus questionários para coleta de dados da UnB para seus trabalhos.
+referencia: cesargabrielphd
+
+# ideia 09
+"A Plataforma de Avaliação de Professores e Matérias, desenvolvida como parte da disciplina Métodos de Desenvolvimento de Software (MDS) é um projeto dedicado à comunidade estudantil da Universidade de Brasília (UnB). Nosso objetivo é fornecer informações úteis e relevantes para os alunos, facilitando a escolha de professores e matérias através de avaliações dos professores feitas pelos proprios alunos. A plataforma permitirá avaliações detalhadas, feedback construtivo e transparência na busca por conhecimento."
+referencia: https://github.com/unb-mds/2024-1-squad04
+
+
 Observação:
- - Algumas dessas páginas pode ser embutida dentro de um sistema de login de usuários para guardar suas informações para uso posterior.
+ - Algumas dessas ideias podem ser embutida dentro de um sistema de login de usuários para guardar suas informações para uso posterior.
 
 Nota: 
  - As referências são apenas para estudo, como se fosse um referêncial teorico.
+ - Caso não venham a ser implementadas pelos idealizadores, me comprometo a implementarmesmo que sozinho.
+
+Impossível:
+ -# Impossível 01
+   Ambiente para pesquisa para referêncial teorico usando as bases de dados da BCE UnB, quase um google.com.
+   - O usuário digita um tema e aparece a refências sobre trabalhos acadêmicos relacionados.
+   - titulo; autor; data; trecho que contem o que a pessoa deseja.
+   referencia: cesargabrielphd
