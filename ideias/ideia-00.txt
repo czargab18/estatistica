@@ -12,3 +12,8 @@ link - padão : https://saa.unb.br/images/documentos/graduacao/Calendarios/Matri
 // ============== ideia 02 =================== //  
 Construir uma API que monta a grade do semestre dos alunos para o semstre.
 referencia: https://github.com/unb-mds/2023-2-SuaGradeUnB
+
+
+// ============== ideia 03 =================== //  
+Construir uma página que cálcula o IRA do aluno, armazena e criar gráficos iterativos sobre os resultados de cada semestre.
+referencia: https://github.com/cesargabrielphd/ira
