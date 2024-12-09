@@ -75,4 +75,4 @@ Este site e seu conteúdo são protegidos por direitos autorais. É proibida a c
 Para dúvidas ou sugestões, entre em contato:
 
 - Nome: César Gabriel
-- GitHub: [czargab18](https://github.com/cesargabrielphd)
+- GitHub: [cesargabrielphd](https://github.com/cesargabrielphd)
