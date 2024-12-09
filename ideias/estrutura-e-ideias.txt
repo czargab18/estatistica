@@ -87,3 +87,14 @@ Impossível:
    - O usuário digita um tema e aparece a refências sobre trabalhos acadêmicos relacionados.
    - titulo; autor; data; trecho que contem o que a pessoa deseja.
    referencia: cesargabrielphd
+
+ -# Impossível 02
+   Refazer o Matricula Web UnB para disciplinas da grade de Estatistica.
+   - Backend:
+    - fazer webscrpping no sigaa publico da UnB e obter as ementas/planos de ensino.
+    - Usar um script para extrair informações sobre os pdf.
+    - Armazenar essas informações em algum objeto adequado
+  - Frontend:
+   - publicar essas informações
+
+   referencia: cesargabrielphd
