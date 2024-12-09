@@ -38,5 +38,5 @@ Header set Cache-Control "max-age=15552000, must-revalidate" env=DYNAMIC_FILES
 #   fonte:
 # - https://cwiki.apache.org/confluence/display/httpd/RewriteHTTPToHTTPS
 # - https://www.askapache.pro/htaccess/ssl-example-usage-in-htaccess/
-# - https://www.github.com/czargab18/
+# - https://www.github.com/cesargabrielphd/
 # - chat copilot vscode
