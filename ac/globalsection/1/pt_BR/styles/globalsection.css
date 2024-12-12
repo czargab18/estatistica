@@ -112,14 +112,14 @@
 }
 
 .globalsection .icon:before {
-  font-family: "fontello"; /* Fonte é obrigatória para o icone*/
-  content: "\e801"; /* em '\ue801' REMOVA => u*/
+  font-family: "SF Pro Icons";
+  content: ""; 
   padding: 0;
   text-decoration: none;
 }
 .globalsection .icon:after {
-  font-family: "fontello"; /* Fonte é obrigatória para o icone*/
-  content: "\e801"; /* em '\ue801' REMOVA => u*/
+  font-family: "SF Pro Icons";
+  content: ""; 
   padding: 0;
   text-decoration: none;
 }
