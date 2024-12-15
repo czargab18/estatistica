@@ -1,3 +1,8 @@
+Responsividade do globalmain (telas menores)
+ - corrigir as seções em <main> que não estão
+   respondendo à telas menores
+
+
 No diretório /ira/
 
 - Adicionar globalheader
