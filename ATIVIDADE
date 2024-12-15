@@ -1,0 +1,10 @@
+No diretório /ira/
+
+- Adicionar globalheader
+- Adicionar globalnav
+- Adicionar globalfooter
+  ( Sem quebrar a lógica do site )
+
+Depois Transferir os arquivos css e jascript para
+o diretório global /ac/
+( Sem quebrar a lógica do site )
