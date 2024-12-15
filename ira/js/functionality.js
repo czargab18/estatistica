@@ -1,5 +1,6 @@
 let periodoCount = 0; 
 let disciplinaCount = {};
+const maxDisciplinas = 8;
 
 function criaPeriodo() {
   periodoCount++;
@@ -28,6 +29,10 @@ function criaPeriodo() {
 }
 
 function adicionarDisciplina(periodoId) {
+  if (disciplinaCount[periodoId] >= maxDisciplinas) {
+    alert(`Você atingiu o limite máximo de ${maxDisciplinas} disciplinas para este período.`);
+    return;
+  }
   disciplinaCount[periodoId]++;
   const disciplinaId = disciplinaCount[periodoId];
   const disciplinasDiv = document.getElementById(
@@ -287,7 +292,15 @@ function baixarDados() {
 document.addEventListener("DOMContentLoaded", () => {
   const footer = document.querySelector("footer");
   if (footer) {
-    const paragrafo = footer.querySelector("p"); 
+    let avisosDiv = footer.querySelector(".avisos");
+    if (!avisosDiv) {
+      avisosDiv = document.createElement("div");
+      avisosDiv.className = "avisos";
+      footer.appendChild(avisosDiv);
+    }
+    
+    const paragrafo = footer.querySelector("p");
+    
     const botaoBaixar = document.createElement("button");
     botaoBaixar.id = "botao-baixar";
     botaoBaixar.className = "btn btn-success";
@@ -295,10 +308,9 @@ document.addEventListener("DOMContentLoaded", () => {
     botaoBaixar.textContent = "Baixar Dados";
     botaoBaixar.onclick = baixarDados;
 
-    if (paragrafo) { 
-      footer.insertBefore(botaoBaixar, paragrafo); 
-    } else {
-      footer.appendChild(botaoBaixar); 
+    avisosDiv.appendChild(botaoBaixar);
+    if (paragrafo) {
+      avisosDiv.appendChild(paragrafo);
     }
   }
 

@@ -1,5 +1,5 @@
 body {
-  --header-hight: calc(4em + 1.5em);
+  --chapternav-hight: calc(4em + 1.5em);
   --bg-color-white: rgba(255, 255, 257, 1);
   --bg-color-gray: rgb(245, 245, 247, 1);
   --bg-color-blue: #2997ff;
@@ -40,7 +40,7 @@ select option[disabled] {
   color: #ffffff;
 }
 
-#header {
+#chapternav {
   position: fixed;
   top: 0;
   z-index: 1000;
@@ -52,11 +52,11 @@ select option[disabled] {
   gap: 0.5rem;
   background-color: var(--bg-color-gray);
   width: 100%;
-  height: var(--header-hight);
+  height: var(--chapternav-hight);
 }
 
 @media (max-width: 768px) {
-  #header {
+  #chapternav {
     flex-direction: column;
     padding-top: 0.5rem;
     padding-bottom: 0.5rem;
@@ -74,15 +74,15 @@ main {
   position: relative;
   max-width: 2560px;
   margin: 0 auto;
-  padding-top: var(--header-hight);
+  padding-top: var(--chapternav-hight);
 }
 @media (max-width: 768px) {
   main {
-    --header-hight: 8em;
+    --chapternav-hight: 8em;
     position: relative;
     max-width: 2560px;
     margin: 0 auto;
-    padding-top: var(--header-hight);
+    padding-top: var(--chapternav-hight);
   }
 }
 #container {
@@ -161,18 +161,24 @@ footer {
   width: 100%;
   background-color: var(--bg-color-gray);
   display: flex;
-  column-gap: 1em;
   flex-direction: column;
   align-items: center;
 }
-footer button {
+
+footer div.avisos {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+footer div.avisos button {
   bottom: 0;
   margin: 0;
   width: max-content;
   margin-bottom: 1em;
 }
 
-footer p {
+footer div.avisos p {
   bottom: 0;
   margin: 0;
   text-align: center;

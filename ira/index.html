@@ -9,7 +9,7 @@
     <title>Calcular IRA UnB</title>
   </head>
   <body onload="criaPeriodo();">
-    <header id="header">
+    <div id="chapternav">
       <h1 id="titulo">Calculadora de IRA</h1>
       <h3 id="ira-mp">IRA: 0.00 MP: 0.00</h3>
       <div id="linhaSuperior">
@@ -21,7 +21,7 @@
           Novo Período
         </button>
       </div>
-    </header>
+    </div>
     <main>
       <div class="container" id="container">
         <!-- Exemplo de Período 1 -->
@@ -29,11 +29,13 @@
     </main>
 
     <footer>
-      <p>
-        Este não é um site oficial da Universidade de Brasília. O IRA calculado
-        aqui não pode ser utilizado para fins de
-        <strong class="aviso">comprovação de rendimento acadêmico</strong>.
-      </p>
+      <div class="avisos">
+        <p>
+          Este não é um site oficial da Universidade de Brasília. O IRA
+          calculado aqui não pode ser utilizado para fins de
+          <strong class="aviso">comprovação de rendimento acadêmico</strong>.
+        </p>
+      </div>
     </footer>
   </body>
 </html>
