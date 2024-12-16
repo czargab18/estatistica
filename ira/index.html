@@ -392,16 +392,29 @@
       </nav>
     </div>
     <div id="chapternav">
-      <h1 id="titulo">Calculadora de IRA</h1>
-      <h3 id="ira-mp">IRA: 0.00 MP: 0.00</h3>
-      <div id="linhaSuperior">
-        <button
-          id="novoPeriodo"
-          class="btn btn-success"
-          onclick="criaPeriodo()"
-        >
-          Novo Período
-        </button>
+      <div
+        class="chapternav-content"
+        style="
+          display: flex;
+          flex-direction: row;
+          flex-wrap: nowrap;
+          justify-content: space-between;
+          align-items: center;
+          gap: 10em;
+          max-width: 1024px;
+        "
+      >
+        <h1 id="titulo">Calculadora de IRA</h1>
+        <h3 id="ira-mp">IRA: 0.00 MP: 0.00</h3>
+        <div id="linhaSuperior">
+          <button
+            id="novoPeriodo"
+            class="btn btn-success"
+            onclick="criaPeriodo()"
+          >
+            Novo Período
+          </button>
+        </div>
       </div>
     </div>
     <main>

@@ -54,13 +54,27 @@ select option[disabled] {
   width: 100%;
   height: var(--chapternav-hight);
 }
-
+#chapternav .chapternav-content {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10em;
+  max-width: 1024px;
+  padding: 0 22px;
+}
 @media (max-width: 768px) {
   #chapternav {
     flex-direction: column;
     padding-top: 0.5rem;
     padding-bottom: 0.5rem;
     height: max-content;
+  }
+  #chapternav .chapternav-content {
+    flex-direction: column;
+    max-width: 1024px;
+    gap: 0.25em;
   }
 }
 
