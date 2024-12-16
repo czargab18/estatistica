@@ -42,7 +42,8 @@ select option[disabled] {
 
 #chapternav {
   position: sticky;
-  margin-top: var(--altura-globalheader);
+  top: 0;
+  margin-top: calc(var(--altura-globalheader) + var(--r-globalnavbar-height));
   display: flex;
   flex-direction: row;
   flex-wrap: nowrap;
