@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="shortcut icon" type="image/png" href="imgs/UnB-favicon.jpg" />
+    <link rel="stylesheet" href="./css/style.css" />
+    <script defer src="./js/functionality.js"></script>
+    <title>Calcular IRA UnB</title>
+  </head>
+  <body onload="criaPeriodo();">
+    <div id="chapternav">
+      <h1 id="titulo">Calculadora de IRA</h1>
+      <h3 id="ira-mp">IRA: 0.00 MP: 0.00</h3>
+      <div id="linhaSuperior">
+        <button
+          id="novoPeriodo"
+          class="btn btn-success"
+          onclick="criaPeriodo()"
+        >
+          Novo Período
+        </button>
+      </div>
+    </div>
+    <main>
+      <div class="container" id="container">
+        <!-- Exemplo de Período 1 -->
+      </div>
+    </main>
+
+    <footer>
+      <div class="avisos">
+        <p>
+          Este não é um site oficial da Universidade de Brasília. O IRA
+          calculado aqui não pode ser utilizado para fins de
+          <strong class="aviso">comprovação de rendimento acadêmico</strong>.
+        </p>
+      </div>
+    </footer>
+  </body>
+</html>

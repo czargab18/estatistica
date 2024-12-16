@@ -80,6 +80,11 @@ Página que contenha todos os formulários, modelos ou slides sobre algum assunt
     - modelo de TCC feito em LaTeX.
 referencia: cesargabrielphd
 
+# ideia 11
+API para analisar o PDF contendo informações sobre o calendário acadêmico da UnB e fornece opção para adicionar as informações desse PDF ao calendário ou agenda  pessoal do usuário, seja Apple Calendário ou Google Calendário ou etc....
+
+referencia: cesargabrielphd
+
 Observação:
  - Algumas dessas ideias podem ser embutida dentro de um sistema de login de usuários para guardar suas informações para uso posterior.
 
