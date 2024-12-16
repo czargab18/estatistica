@@ -95,6 +95,9 @@
 
   --font-pattenr: SF Pro AR, SF Pro Gulf, SF Pro Text, SF Pro Icons,
     Helvetica Neue, Helvetica, Arial, sans-serif;
+  --altura-globalheader: 40px;
+  --largura-globalheader: 968px;
+  --globalheader-color-link: rgba(255, 255, 255, 0.8);
 }
 
 *,
@@ -218,7 +221,6 @@ body {
 
   height: var(--altura-globalheader);
   color: var(--globalheader-color-link);
-  /* color: var(--r-globalnav-color); */
 
   display: flex;
   align-items: center;

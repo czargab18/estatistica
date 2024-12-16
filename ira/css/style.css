@@ -41,9 +41,8 @@ select option[disabled] {
 }
 
 #chapternav {
-  position: fixed;
-  top: 0;
-  z-index: 1000;
+  position: sticky;
+  margin-top: var(--altura-globalheader);
   display: flex;
   flex-direction: row;
   flex-wrap: nowrap;
@@ -70,26 +69,8 @@ select option[disabled] {
   margin: 0;
 }
 
-main {
-  position: relative;
-  max-width: 2560px;
-  margin: 0 auto;
-  padding-top: var(--chapternav-hight);
-}
-@media (max-width: 768px) {
-  main {
-    --chapternav-hight: 8em;
-    position: relative;
-    max-width: 2560px;
-    margin: 0 auto;
-    padding-top: var(--chapternav-hight);
-  }
-}
-#container {
-  margin-bottom: 400px;
-}
-
 div#container {
+  margin-bottom: 400px;
   display: flex;
   flex-direction: column;
   flex-wrap: nowrap;
