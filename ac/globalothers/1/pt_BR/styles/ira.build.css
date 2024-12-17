@@ -121,6 +121,9 @@ div#container {
 }
 div#linhaSuperior {
   position: sticky;
+  display: flex;
+  flex-direction: row;
+  gap: 2em;
 }
 div[id^="periodo"] {
   display: flex;
