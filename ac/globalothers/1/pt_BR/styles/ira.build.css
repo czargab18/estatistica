@@ -1,0 +1,213 @@
+html {
+  --font-padrao: "SF Pro Text", "SF Pro Icons", "Helvetica Neue", "Helvetica",
+    "Arial", sans-serif;
+  font-family: var(--font-padrao);
+  font-size: 106.25%;
+  quotes: "â€œ" "â€";
+}
+[lang]:lang(pt-br) {
+  font-family: "SF Pro AR", "SF Pro AR Text", "SF Pro Text", "SF Pro Gulf",
+    "SF Pro Icons", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+}
+body {
+  --chapternav-hight: calc(4em + 1.5em);
+  --bg-color-white: rgba(255, 255, 257, 1);
+  --bg-color-gray: rgb(245, 245, 247, 1);
+  --bg-color-blue: #2997ff;
+  --bg-color-blue-black: #004080;
+  --bg-color-green: #007a33;
+  font-family: "Roboto", sans-serif;
+  font-size: 16px;
+  line-height: 1.5;
+  color: #000000;
+  background-color: var(--bg-color-white);
+  margin: 0;
+  padding: 0;
+}
+button,
+input,
+select,
+span[id^="status-"] {
+  padding: 0.75rem;
+  border-radius: 0.75em;
+  border: 0.15em;
+  border-style: solid;
+  border-color: var(--bg-color-blue-black);
+  color: #ffffff;
+  background-color: var(--bg-color-blue-black);
+}
+input:active,
+select:active,
+input:focus,
+input::placeholder,
+select:focus,
+select::placeholder {
+  color: #ffffff;
+  border-color: var(--bg-color-blue-black);
+  outline: none;
+}
+select option[disabled] {
+  color: #ffffff;
+}
+section#globalsection-ira-avisos {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+section#globalsection-ira-avisos #noticia-avisos {
+  display: flex;
+  justify-content: center;
+}
+
+#chapternav {
+  position: sticky;
+  top: 0;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-items: center;
+  justify-content: space-around;
+  gap: 0.5rem;
+  width: 100%;
+  background-color: var(--bg-color-gray);
+  margin-top: calc(
+    var(--altura-globalheader) + var(--r-globalnavbar-height) + 32px
+  );
+  padding-top: 0.5em;
+  padding-bottom: 0.5em;
+}
+#chapternav .chapternav-content {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-items: center;
+  gap: 38em;
+  max-width: 1024px;
+}
+#chapternav .chapternav-content button {
+  padding: 0.5rem;
+}
+@media (max-width: 768px) {
+  #chapternav {
+    flex-direction: column;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+    height: max-content;
+  }
+  #chapternav .chapternav-content {
+    flex-direction: column;
+    max-width: 1024px;
+    gap: 0.25em;
+  }
+}
+#titulo,
+#ira-mp {
+  text-align: center;
+  margin: 0;
+  font-size: 28px;
+  line-height: 1.14286;
+  font-weight: 400;
+  letter-spacing: 0.007em;
+  margin-top: 6px;
+}
+div#container {
+  margin-bottom: 400px;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  justify-content: center;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+div#linhaSuperior {
+  position: sticky;
+}
+div[id^="periodo"] {
+  display: flex;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  flex-direction: column;
+  gap: 0.5em;
+}
+div[id^="periodo"] .d-flex {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  justify-content: space-around;
+  width: 100%;
+}
+div.row.g-3 > div.row.g-3 {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  width: 100%;
+  justify-content: space-evenly;
+  align-items: center;
+  row-gap: 1em; /* Adiciona espaçamento vertical entre os elementos */
+}
+@media (max-width: 768px) {
+  div.row.g-3 > div.row.g-3 {
+    flex-direction: column;
+  }
+}
+.btn-success,
+.btn-success:hover,
+.btn-primary {
+  color: #fff;
+  background-color: #157347;
+  border-color: #146c43;
+}
+.btn-success,
+.btn-success:hover,
+.btn-primary {
+  color: #fff;
+  background-color: #157347;
+  border-color: #146c43;
+}
+.btn-danger,
+.btn-danger:hover {
+  color: #fff;
+  background-color: #bb2d3b;
+  border-color: #b02a37;
+}
+footer {
+  position: relative;
+  bottom: 0;
+  padding-top: 1em;
+  padding-bottom: 1em;
+  width: 100%;
+  background-color: var(--bg-color-gray);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+footer div.avisos {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+footer div.avisos button {
+  bottom: 0;
+  margin: 0;
+  width: max-content;
+  margin-bottom: 1em;
+}
+footer div.avisos p {
+  bottom: 0;
+  margin: 0;
+  text-align: center;
+}
+@media (max-width: 768px) {
+  footer {
+    position: static;
+    text-align: justify;
+    width: 100%;
+    bottom: 0;
+    padding-bottom: 1em;
+  }
+  footer p {
+    text-align: justify;
+    padding-right: 1em;
+    padding-left: 1em;
+  }
+}
