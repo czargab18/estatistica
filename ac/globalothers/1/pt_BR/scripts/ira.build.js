@@ -298,13 +298,13 @@ document.addEventListener("DOMContentLoaded", () => {
       avisosDiv.className = "avisos";
       footer.appendChild(avisosDiv);
     }
-    
+
     const paragrafo = footer.querySelector("p");
-    
+
     const botaoBaixar = document.createElement("button");
     botaoBaixar.id = "botao-baixar";
     botaoBaixar.className = "btn btn-success";
-    botaoBaixar.style.display = "none";
+    botaoBaixar.style.display = "none"; // Inicialmente oculto
     botaoBaixar.textContent = "Baixar Dados";
     botaoBaixar.onclick = baixarDados;
 
@@ -314,9 +314,33 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   }
 
+  const linhaSuperior = document.getElementById('linhaSuperior');
+  if (linhaSuperior) {
+    const botaoNovoPeriodo = linhaSuperior.querySelector('#novoPeriodo');
+    if (botaoNovoPeriodo) {
+      const botaoBaixar = document.createElement("button");
+      botaoBaixar.id = "botao-baixar";
+      botaoBaixar.className = "btn btn-success";
+      botaoBaixar.style.display = "none"; // Inicialmente oculto
+      botaoBaixar.textContent = "Baixar Dados";
+      botaoBaixar.onclick = baixarDados;
+
+      linhaSuperior.insertBefore(botaoBaixar, botaoNovoPeriodo);
+    }
+  }
+
   const container = document.getElementById('container');
   if (container) {
     container.addEventListener('input', verificarPreenchimento);
     container.addEventListener('change', verificarPreenchimento);
   }
 });
+
+function verificarPreenchimento() {
+  const dados = coletaDados();
+  const botoesBaixar = document.querySelectorAll("#botao-baixar");
+  let preenchido = Object.values(dados).some(periodo => periodo.length > 0);
+  botoesBaixar.forEach(botao => {
+    botao.style.display = preenchido ? "block" : "none";
+  });
+}
