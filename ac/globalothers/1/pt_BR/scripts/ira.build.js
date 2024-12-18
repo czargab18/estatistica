@@ -13,12 +13,20 @@ function criaPeriodo() {
   periodoDiv.innerHTML = `
     <div class="d-flex justify-content-between">
       <h3>${periodoCount}º Período</h3>
-      <button
-        class="btn btn-primary"
-        onclick="adicionarDisciplina(${periodoCount})"
-      >
-        Adicionar Disciplina
-      </button>
+      <div>
+        <button
+          class="btn btn-primary"
+          onclick="adicionarDisciplina(${periodoCount})"
+        >
+          Adicionar Disciplina
+        </button>
+        <button
+          class="btn btn-danger"
+          onclick="removerPeriodo(${periodoCount})"
+        >
+          Remover Período
+        </button>
+      </div>
     </div>
     <div id="periodo${periodoCount}-disciplinas" class="row g-3"></div>
   `;
@@ -26,6 +34,15 @@ function criaPeriodo() {
   container.appendChild(periodoDiv);
 
   adicionarDisciplina(periodoCount);
+}
+
+function removerPeriodo(periodoId) {
+  const periodoDiv = document.getElementById(`periodo${periodoId}`);
+  if (periodoDiv) {
+    periodoDiv.remove();
+    delete disciplinaCount[periodoId];
+    periodoCount--;
+  }
 }
 
 function adicionarDisciplina(periodoId) {
