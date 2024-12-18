@@ -125,6 +125,11 @@ div#linhaSuperior {
   flex-direction: row;
   gap: 2em;
 }
+div#linhaSuperior button#botao-baixar{
+    display: block;
+    background-color: gray;
+    border-color: gray;
+}
 div[id^="periodo"] {
   display: flex;
   margin-top: 1rem;
