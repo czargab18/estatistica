@@ -13,12 +13,16 @@ RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
 RewriteRule ^/dev/ https://www.estatistica.pro/v/errors/404.html [L,R=301]
 RewriteRule ^/stage/ https://www.estatistica.pro/v/errors/404.html [L,R=301]
 
-# Página de ERRO STATUSCODE personalizada
+# Página de ERRO STATUSCODE personalizada dominío principal
 ErrorDocument 404 /v/errors/404.html
 ErrorDocument 403 /v/errors/404.html
 ErrorDocument 500 /v/errors/404.html
 ErrorDocument 502 /v/errors/404.html
 ErrorDocument 503 /v/errors/404.html
+# Página de ERRO STATUSCODE personalizada qualquer dominío
+RewriteCond %{REQUEST_FILENAME} !-f 
+RewriteCond %{REQUEST_FILENAME} !-d 
+RewriteRule ^(.*)$ https://www.estatistica.pro/v/errors/404.html [L,R=301]
 
 # Configuração de cache para arquivos estáticos (1 ano)
 SetEnvIf Request_URI "\.(ico|pdf|flv|jpg|jpeg|png|gif|swf|mp3|mp4)$" STATIC_FILES
