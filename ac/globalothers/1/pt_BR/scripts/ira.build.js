@@ -1,4 +1,4 @@
-let periodoCount = 0; 
+let periodoCount = 0;
 let disciplinaCount = {};
 const maxDisciplinas = 8;
 
@@ -14,17 +14,17 @@ function criaPeriodo() {
     <div class="d-flex justify-content-between">
       <h3>${periodoCount}º Período</h3>
       <div>
+      <button
+          class="btn btn-danger"
+          onclick="removerPeriodo(${periodoCount})"
+        >
+          Remover Período
+        </button>
         <button
           class="btn btn-primary"
           onclick="adicionarDisciplina(${periodoCount})"
         >
           Adicionar Disciplina
-        </button>
-        <button
-          class="btn btn-danger"
-          onclick="removerPeriodo(${periodoCount})"
-        >
-          Remover Período
         </button>
       </div>
     </div>
@@ -151,12 +151,12 @@ function calcularIRA() {
   let numeradorIra = 0;
   let denominadorIra = 0;
   const valoresMencao = {
-    SR: 0, 
-    II: 1, 
-    MI: 2, 
-    MM: 3, 
-    MS: 4, 
-    SS: 5, 
+    SR: 0,
+    II: 1,
+    MI: 2,
+    MM: 3,
+    MS: 4,
+    SS: 5,
   };
   for (const periodo in dados) {
     const disciplinas = dados[periodo];
@@ -177,7 +177,7 @@ function calcularIRA() {
   if (iraDisplay) {
     iraDisplay.textContent = `IRA: ${ira.toFixed(2)}`;
   }
-  console.log(`IRA calculado: ${ira.toFixed(2)}`); 
+  console.log(`IRA calculado: ${ira.toFixed(2)}`);
   return ira;
 }
 function coletaDados() {
@@ -260,14 +260,14 @@ function formatarCodigo(input) {
   if (valor.length > 3) {
     valor = valor.slice(0, 3).toUpperCase() + valor.slice(3, 7).replace(/[^0-9]/g, '');
   } else {
-    valor = valor.toUpperCase(); 
+    valor = valor.toUpperCase();
   }
   input.value = valor.slice(0, 7);
 }
 
 function coletaDados() {
   const dados = {};
-  for (let p = 1; p <= periodoCount; p++) { 
+  for (let p = 1; p <= periodoCount; p++) {
     const periodoDiv = document.getElementById(`periodo${p}`);
     if (!periodoDiv) continue;
     dados[`Periodo ${p}`] = [];
