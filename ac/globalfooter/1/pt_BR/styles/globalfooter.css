@@ -1,10 +1,7 @@
-/* ============ GLOBAL ============ */
 #globalfooter {
-  --font-pad: "SF Pro Text", "Myriad Set Pro", "SF Pro Icons",
-    "Apple Legacy Chevron", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
   font-weight: normal;
   text-size-adjust: 100%;
-  font-family: var(--font-pad);
+  font-family: var(--r-font-family-default);
 }
 
 #globalfooter,
@@ -58,7 +55,7 @@
 
 #globalfooter,
 #globalfooter:is(select, button, input, textarea) {
-  font-family: var(--font-pad);
+  font-family: var(--r-font-family-default);
 }
 
 #globalfooter sup {
@@ -101,7 +98,7 @@
   line-height: 1.33337;
   font-weight: 400;
   letter-spacing: -0.01em;
-  font-family: var(--font-pad);
+  font-family: var(--r-font-family-default);
   background: var(--footer-background);
   color: var(--footer-text-color);
   min-width: 320px;
@@ -172,7 +169,7 @@
   line-height: 1.33337;
   font-weight: 400;
   letter-spacing: -0.01em;
-  font-family: var(--font-pad);
+  font-family: var(--r-font-family-default);
 }
 
 #globalfooter #globalfooter-note small {
@@ -185,7 +182,7 @@
   line-height: 1.33337;
   font-weight: 400;
   letter-spacing: -0.01em;
-  font-family: var(--font-pad);
+  font-family: var(--r-font-family-default);
   display: flex;
   flex-wrap: nowrap;
   padding-top: 20px;
@@ -244,7 +241,7 @@
   line-height: 1.33337;
   font-weight: 400;
   letter-spacing: -0.01em;
-  font-family: var(--font-pad);
+  font-family: var(--r-font-family-default);
   font-weight: 600;
   margin-right: 20px;
   margin-bottom: 0.8em;

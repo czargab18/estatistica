@@ -7,55 +7,69 @@
   margin: 0;
   padding: 0;
 }
-#globalheader
-  :is(
-    ul,
-    ol,
-    li,
-    dl,
-    dt,
-    dd,
-    h1,
-    h2,
-    h3,
-    h4,
-    h5,
-    h6,
-    hgroup,
-    p,
-    blockquote,
-    figure,
-    form,
-    fieldset,
-    input,
-    legend,
-    pre,
-    abbr,
-    button
-  ) {
+#globalheader ul,
+#globalheader ol,
+#globalheader li,
+#globalheader dl,
+#globalheader dt,
+#globalheader dd,
+#globalheader h1,
+#globalheader h2,
+#globalheader h3,
+#globalheader h4,
+#globalheader h5,
+#globalheader h6,
+#globalheader hgroup,
+#globalheader p,
+#globalheader blockquote,
+#globalheader figure,
+#globalheader form,
+#globalheader fieldset,
+#globalheader input,
+#globalheader legend,
+#globalheader pre,
+#globalheader abbr,
+#globalheader button {
   margin: 0;
   padding: 0;
 }
 
-#globalheader :is(pre, code, address, caption, th, figcaption) {
+#globalheader pre,
+#globalheader code,
+#globalheader address,
+#globalheader caption,
+#globalheader th,
+#globalheader figcaption {
   font-size: 1em;
   font-weight: 400;
   font-style: normal;
 }
-#globalheader :is(fieldset, iframe) {
+
+#globalheader fieldset,
+#globalheader iframe {
   border: 0;
 }
-#globalheader :is(caption, th) {
+
+#globalheader caption,
+#globalheader th {
   text-align: left;
 }
+
 #globalheader table {
   border-collapse: collapse;
   border-spacing: 0;
 }
-#globalheader :is(main, summary, details) {
+
+#globalheader main,
+#globalheader summary,
+#globalheader details {
   display: block;
 }
-#globalheader :is(audio, canvas, video, progress) {
+
+#globalheader audio,
+#globalheader canvas,
+#globalheader video,
+#globalheader progress {
   vertical-align: baseline;
 }
 #globalheader button {
@@ -89,48 +103,7 @@
   }
 }
 
-:root {
-  --r-globaltop-background-opened: #fbfbfd;
-  --r-globaltop-background-opened-dark: #161617;
-
-  --font-pattenr: SF Pro AR, SF Pro Gulf, SF Pro Text, SF Pro Icons,
-    Helvetica Neue, Helvetica, Arial, sans-serif;
-  --altura-globalheader: 40px;
-  --largura-globalheader: 968px;
-  --globalheader-color-link: rgba(255, 255, 255, 0.8);
-}
-
-*,
-*::after,
-*::before,
-html,
-body {
-  margin: 0;
-  padding: 0;
-  list-style: none;
-  text-decoration: none;
-  font-family: var(--font-pattenr);
-}
-
 #globaltop {
-  --r-globalnav-color: rgba(0, 0, 0, 0.8);
-  --r-globalnav-color-secondary: #333336;
-  --r-globalnav-color-hover: #000000;
-  --r-globalnav-color-secundary-hover: #ffffff;
-
-  --globaltop-backdrop-filter: none;
-  --globaltop-background: none;
-
-  --r-globaltop-height: 44px;
-  --r-globaltop-font-size: 17px;
-
-  --r-globaltop-flyout-spacing: 88px;
-  --r-globaltop-next-flyout-height: 0px;
-
-  --r-globaltop-flyout-close-delay: 0.12s;
-  --r-globaltop-flyout-link-opacity-duration: 0.5s;
-
-  --r-globaltop-previous-flyout-height: 0px;
   top: 0;
   left: 0;
   right: 0;
@@ -142,20 +115,14 @@ body {
 
   justify-items: center;
   font-size: 18px;
-  white-space: nowrap; /* não-quebrar-text */
+  white-space: nowrap;
   align-items: center;
 }
 
 #globalheader {
-  /* myPropriedades */
-  --altura-globalheader: 40px;
-  --largura-globalheader: 968px;
-  --globalheader-color-link: rgba(255, 255, 255, 0.8);
-
-  background-color: #071d41;
-  height: var(--altura-globalheader);
+  background-color: var(--r-globalheader-background-color-dark-blue);
+  height: var(--r-globalheader-height);
   width: 100%;
-
   display: flex;
   justify-content: center;
   position: relative;
@@ -165,7 +132,7 @@ body {
 #globalheader .globalheader-content {
   margin-left: 20px;
   margin-right: 20px;
-  width: var(--largura-globalheader);
+  width: var(--r-globalheader-width);
 
   display: flex;
   flex-direction: row;
@@ -179,7 +146,7 @@ body {
   cursor: default;
   list-style: none;
   width: auto;
-  height: var(--altura-globalheader);
+  height: var(--r-globalheader-height);
   box-sizing: border-box;
 
   gap: 16px;
@@ -212,15 +179,13 @@ body {
 }
 
 #globaltop .globalheader-link {
-  font-family: var(--font-pattenr) Arial, Helvetica, sans-serif;
+  font-family: var(--r-font-family-default);
   font-size: 12px;
   font-weight: 600;
-  font-family: var(--font-pattenr);
   line-height: 1;
   letter-spacing: -0.01em;
-
-  height: var(--altura-globalheader);
-  color: var(--globalheader-color-link);
+  height: var(--r-globalheader-height--altura-globalheader);
+  color: var(--r-globalheader-color-link);
 
   display: flex;
   align-items: center;
@@ -237,7 +202,7 @@ body {
 }
 #globaltop .globaltop-link:lang(pt-br) {
   letter-spacing: 0em;
-  font-family: var(--font-pattenr), Arial, Helvetica, sans-serif;
+  font-family: var(--r-font-family-default);
 }
 #globaltop .globalheader-link svg {
   fill: currentColor;
@@ -255,14 +220,13 @@ body {
   line-height: 1.2353641176;
   font-weight: 800;
   letter-spacing: -0.022em;
-  font-family: var(--font-pattenr), Arial, Helvetica, sans-serif;
+  font-family: var(--r-font-family-default);
   display: flex;
   align-items: center;
 }
 #globaltop .globaltop-link-govbr:lang(ar) {
   letter-spacing: 0em;
-  font-family: SF Pro AR, SF Pro Gulf, SF Pro Text, SF Pro Icons, Helvetica Neue,
-    Helvetica, Arial, sans-serif;
+  font-family: var(--r-font-family-default);
 }
 #globaltop .globaltop-link-govbr-logo {
   height: 100%;
@@ -283,7 +247,7 @@ body {
   line-height: 1.2353641176;
   font-weight: 600;
   letter-spacing: 0.05em !important;
-  font-family: var(--font-pattenr);
+  font-family: var(--r-font-family-default);
   display: flex;
   align-items: center; /* aninhar-conteudo do link */
 }
@@ -435,8 +399,7 @@ body {
     line-height: 1.1428571429;
     font-weight: 600;
     letter-spacing: 0.007em;
-    font-family: SF Pro Display, SF Pro Icons, Helvetica Neue, Helvetica, Arial,
-      sans-serif;
+    font-family: var(--r-font-family-default);
   }
   #globaltop .globaltop-link:lang(ar) {
     font-family: SF Pro AR, SF Pro Gulf, SF Pro Display, SF Pro Icons,
@@ -467,7 +430,7 @@ body {
     line-height: 1.1428571429;
     /* font-weight: 200; */
     letter-spacing: 0.007em;
-    font-family: var(--font-pattenr);
+    font-family: var(--r-font-family-default);
   }
 
   .globalheader-link-text-alternativo {
