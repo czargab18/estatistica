@@ -2,7 +2,21 @@
 #globaltop {
   all: unset;
 }
+#globaltop {
+  top: 0;
+  left: 0;
+  right: 0;
+  position: absolute;
+  min-width: 320px;
+  max-height: max-content;
+  display: flex;
+  flex-direction: column;
 
+  justify-items: center;
+  font-size: 18px;
+  white-space: nowrap;
+  align-items: center;
+}
 #globalheader body {
   margin: 0;
   padding: 0;
@@ -103,22 +117,6 @@
   }
 }
 
-#globaltop {
-  top: 0;
-  left: 0;
-  right: 0;
-  position: absolute;
-  min-width: 320px;
-  max-height: max-content;
-  display: flex;
-  flex-direction: column;
-
-  justify-items: center;
-  font-size: 18px;
-  white-space: nowrap;
-  align-items: center;
-}
-
 #globalheader {
   background-color: var(--r-globalheader-background-color-dark-blue);
   height: var(--r-globalheader-height);
@@ -161,23 +159,6 @@
   width: auto;
 }
 
-#globalnav .globalnav-item-apple {
-  display: block;
-}
-#globalnav.globalnav-trailing .globalnav-item-apple {
-  flex: 1;
-}
-#globalnav.globalnav-trailing .globalnav-item-apple .globalnav-link-apple {
-  width: max-content;
-}
-
-#globalnav .globalnav-image-regular {
-  display: flex;
-}
-#globalnav .globalnav-image-compact {
-  display: none;
-}
-
 #globaltop .globalheader-link {
   font-family: var(--r-font-family-default);
   font-size: 12px;
@@ -210,7 +191,7 @@
 
 #globalheader .globalheader-link:hover,
 #globalheader .globalheader-link:focus[data-focus-method="key"] {
-  color: var(--r-globalnav-color-secondary-hover);
+  color: var(--r-globalheader-color-secondary-hover);
   text-decoration: none;
 }
 #globaltop .globalheader-link-govbr {
@@ -252,13 +233,6 @@
 
 .globalheader-image-regular,
 .globalheader-image-compact {
-  display: none;
-}
-
-#globalnav .globalnav-image-regular {
-  display: flex;
-}
-#globalnav .globalnav-image-compact {
   display: none;
 }
 
@@ -361,17 +335,6 @@
       visibility 0.24s step-start 80ms;
   }
 }
-
-/* 
-@media only screen and (max-width: 76px) {
-	#globalnav .globalnav-image-compact {
-		display: flex;
-	}
-	#globalnav .globalnav-image-regular {
-		display: none;
-	}
-} 
-*/
 
 @media only screen and (max-width: 768px) {
   #globaltop,

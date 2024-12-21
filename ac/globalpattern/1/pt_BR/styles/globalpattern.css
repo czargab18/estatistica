@@ -1,5 +1,6 @@
 /* 
-- Este arquivo é usado para definir o padrão global de alguns elementos.
+- Ele é usado para definir o estilo de elementos que são comuns a várias páginas do site.
+- Ele é importado por outros arquivos CSS.
 - Hierarquia de cada página do site
   - globaltop
     - globalheader
@@ -8,6 +9,7 @@
   - globalmain
   - globalfooter
 */
+
 :root {
   /* Altura*/
   --r-globaltop-height: 44px;
@@ -24,6 +26,10 @@
   --r-globalheader-color-link: rgba(255, 255, 255, 0.8);
   --r-globalheader-color-link-hover: #ffffff;
   --r-globalheader-color-link-active: #ffffff;
+
+  --r-globalheader-color-secondary: #ffffff;
+  --r-globalheader-color-secondary-hover: #ffffff;
+  --r-globalheader-color-secondary-active: #ffffff;
 
   --r-globalnav-color-primary: rgba(0, 0, 0, 0.8);
   --r-globalnav-color-primary-hover: rgba(0, 0, 0, 0.8);
