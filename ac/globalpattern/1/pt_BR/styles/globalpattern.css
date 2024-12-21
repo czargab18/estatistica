@@ -1,0 +1,85 @@
+/* 
+- Este arquivo é usado para definir o padrão global de alguns elementos.
+- Hierarquia de cada página do site
+  - globaltop
+    - globalheader
+    - globalnav
+    - globalsection
+  - globalmain
+  - globalfooter
+*/
+:root {
+  /* Altura*/
+  --r-globaltop-height: 44px;
+  --r-globalheader-height: 40px;
+  --r-globalnav-height: 40px;
+  --r-globalsection-height: 40px;
+
+  /* width*/
+  --r-globalheader-width: 968px;
+  --r-globalnav-width: 968px;
+  --r-globalsection-width: 968px;
+
+  /* Cores */
+  --r-globalheader-color-link: rgba(255, 255, 255, 0.8);
+  --r-globalheader-color-link-hover: #ffffff;
+  --r-globalheader-color-link-active: #ffffff;
+
+  --r-globalnav-color-primary: rgba(0, 0, 0, 0.8);
+  --r-globalnav-color-primary-hover: rgba(0, 0, 0, 0.8);
+  --r-globalnav-color-primary-active: rgba(0, 0, 0, 0.8);
+
+  --r-globalnav-color-secondary: #333336;
+  --r-globalnav-color-secondary-hover: #ffffff;
+  --r-globalnav-color-secundary-active: #ffffff;
+
+  --r-globalfooter-color-primary: rgba(0, 0, 0, 0.8);
+  --r-globalfooter-color-primary-hover: rgba(0, 0, 0, 0.8);
+  --r-globalfooter-color-primary-active: rgba(0, 0, 0, 0.8);
+
+  --r-globalfooter-border-color: #d2d2d7;
+  --r-globalfooter-text-color: #6e6e73;
+  --r-globalfooter-link-color: #424245;
+  --r-globalfooter-pipe-color: #86868b;
+  --r-globalfooter-directory-title-color: #1d1d1f;
+  --r-globalfooter-directory-title-color-hover: #000;
+
+  /* Fontes */
+  --r-font-family-default: "SF Pro Text", "SF Pro Dislay", "SF Pro Icons",
+    "Helvetica Neue", "Helvetica", "San Francisco", "Open Sans", "Noto Sans",
+    "Arial", sans-serif;
+  --r-globaltop-font-size: 17px;
+
+  /* Gerais */
+  --r-globaltop-flyout-height: 0px;
+  --r-globaltop-previous-flyout-height: 0px;
+  --r-globaltop-previous-flyout-height: 0px;
+  --r-globaltop-next-flyout-height: 0px;
+
+  --r-globaltop-background: none;
+  --r-globaltop-backdrop-filter: none;
+  --r-globaltop-background-opened: #fbfbfd;
+  --r-globaltop-background-opened-dark: #161617;
+
+  --r-globalfooter-background: #f5f5f7;
+  --r-globalheader-background-color-dark-blue: #071d41;
+
+  --r-globaltop-flyout-spacing: 88px;
+  --r-globaltop-flyout-close-delay: 0.12s;
+  --r-globaltop-flyout-link-opacity-duration: 0.5s;
+  --r-globaltop-previous-flyout-spacing: 88px;
+  --r-globaltop-previous-flyout-close-delay: 0.12s;
+  --r-globaltop-previous-flyout-link-opacity-duration: 0.5s;
+}
+
+*,
+*::after,
+*::before,
+html,
+body {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  text-decoration: none;
+  font-family: var(--fonte-padrao);
+}
