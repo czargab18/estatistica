@@ -210,11 +210,9 @@
 
 #globalheader .globalheader-link:hover,
 #globalheader .globalheader-link:focus[data-focus-method="key"] {
-  color: var(--r-globalnav-color-secundary-hover);
-  /* color: #ffffff; */
+  color: var(--r-globalnav-color-secondary-hover);
   text-decoration: none;
 }
-/* logo */
 #globaltop .globalheader-link-govbr {
   font-size: 17px;
   line-height: 1.2353641176;

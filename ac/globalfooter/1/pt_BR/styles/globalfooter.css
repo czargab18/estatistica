@@ -508,9 +508,8 @@
 }
 
 /* copyright-termos -> text */
-#globalfooter .gf-copyright-legal-text {
-  /* 'SEM PROPRIEDADES */
-}
+/* #globalfooter .gf-copyright-legal-text {
+} */
 
 /* copyright-termos -> ul.links */
 #globalfooter ul.gf-copyright-legal-links {
@@ -533,9 +532,9 @@
     flex-wrap: wrap;
     align-content: space-between;
   }
-  #globalfooter ul span.footer-espacador {
-    /* display: none; */
-  }
+/*   #globalfooter ul span.footer-espacador {
+    display: none;
+  } */
 }
 
 /* espaçador */
@@ -564,9 +563,9 @@
     margin-top: 10px;
     position: static;
   }
-  #globalfooter-copyright #gf-copyright-legal a.locale-BR {
-    /* padding-bottom: 19px; */
-  }
+/*   #globalfooter-copyright #gf-copyright-legal a.locale-BR {
+    padding-bottom: 19px;
+  } */
 }
 
 /* teste - interatividade tela < 833px*/
