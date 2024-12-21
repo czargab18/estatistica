@@ -6,101 +6,107 @@
   - Line-height (entrelinha)
   - Tabelas de Estilos: H*, p, label, etc...
 
+Cálculo de escala tipográfica:
+Fonte Large Figma = 34px
+  - Escala: 14px = 1em
+  - 34px / 14px = 2.4 em
 - Referência: https://www.gov.br/ds/fundamentos-visuais/visao-geral
 */
 
 /* SF Pro Text */
-.large-title-regular-text {
+.headline-large-regular-text {
   font-family: "SF Pro Text";
   font-size: 34px;
-  font-weight: 400;
+  font-weight: regular;
+  letter-spacing: 0.4%;
+  line-height: 41px;
 }
 
-.large-title-medium-text {
+.headline-large-medium-text {
   font-family: "SF Pro Text";
   font-size: 34px;
   font-weight: 500;
 }
 
-.large-title-semibold-text {
+.headline-large-semibold-text {
   font-family: "SF Pro Text";
   font-size: 34px;
   font-weight: 600;
 }
 
-.large-title-bold-text {
+.headline-large-bold-text {
   font-family: "SF Pro Text";
   font-size: 34px;
   font-weight: 700;
 }
 
-.title1-regular-text {
+.headline1-regular-text {
   font-family: "SF Pro Text";
   font-size: 28px;
   font-weight: 400;
 }
 
-.title1-medium-text {
+.headline1-medium-text {
   font-family: "SF Pro Text";
   font-size: 28px;
   font-weight: 500;
 }
 
-.title1-semibold-text {
+.headline1-semibold-text {
   font-family: "SF Pro Text";
   font-size: 28px;
   font-weight: 600;
 }
 
-.title1-bold-text {
+.headline1-bold-text {
   font-family: "SF Pro Text";
   font-size: 28px;
   font-weight: 700;
 }
 
-.title2-regular-text {
+.headline2-regular-text {
   font-family: "SF Pro Text";
   font-size: 22px;
   font-weight: 400;
 }
 
-.title2-medium-text {
+.headline2-medium-text {
   font-family: "SF Pro Text";
   font-size: 22px;
   font-weight: 500;
 }
 
-.title2-semibold-text {
+.headline2-semibold-text {
   font-family: "SF Pro Text";
   font-size: 22px;
   font-weight: 600;
 }
 
-.title2-bold-text {
+.headline2-bold-text {
   font-family: "SF Pro Text";
   font-size: 22px;
   font-weight: 700;
 }
 
-.title3-regular-text {
+.headline3-regular-text {
   font-family: "SF Pro Text";
   font-size: 20px;
   font-weight: 400;
 }
 
-.title3-medium-text {
+.headline3-medium-text {
   font-family: "SF Pro Text";
   font-size: 20px;
   font-weight: 500;
 }
 
-.title3-semibold-text {
+.headline3-semibold-text {
   font-family: "SF Pro Text";
   font-size: 20px;
   font-weight: 600;
 }
 
-.title3-bold-text {
+.headline3-bold-text {
   font-family: "SF Pro Text";
   font-size: 20px;
   font-weight: 700;
@@ -233,97 +239,97 @@
 }
 
 /* SF Pro Display */
-.large-title-regular-display {
+.headline-large-regular-display {
   font-family: "SF Pro Display";
   font-size: 34px;
   font-weight: 400;
 }
 
-.large-title-medium-display {
+.headline-large-medium-display {
   font-family: "SF Pro Display";
   font-size: 34px;
   font-weight: 500;
 }
 
-.large-title-semibold-display {
+.headline-large-semibold-display {
   font-family: "SF Pro Display";
   font-size: 34px;
   font-weight: 600;
 }
 
-.large-title-bold-display {
+.headline-large-bold-display {
   font-family: "SF Pro Display";
   font-size: 34px;
   font-weight: 700;
 }
 
-.title1-regular-display {
+.headline1-regular-display {
   font-family: "SF Pro Display";
   font-size: 28px;
   font-weight: 400;
 }
 
-.title1-medium-display {
+.headline1-medium-display {
   font-family: "SF Pro Display";
   font-size: 28px;
   font-weight: 500;
 }
 
-.title1-semibold-display {
+.headline1-semibold-display {
   font-family: "SF Pro Display";
   font-size: 28px;
   font-weight: 600;
 }
 
-.title1-bold-display {
+.headline1-bold-display {
   font-family: "SF Pro Display";
   font-size: 28px;
   font-weight: 700;
 }
 
-.title2-regular-display {
+.headline2-regular-display {
   font-family: "SF Pro Display";
   font-size: 22px;
   font-weight: 400;
 }
 
-.title2-medium-display {
+.headline2-medium-display {
   font-family: "SF Pro Display";
   font-size: 22px;
   font-weight: 500;
 }
 
-.title2-semibold-display {
+.headline2-semibold-display {
   font-family: "SF Pro Display";
   font-size: 22px;
   font-weight: 600;
 }
 
-.title2-bold-display {
+.headline2-bold-display {
   font-family: "SF Pro Display";
   font-size: 22px;
   font-weight: 700;
 }
 
-.title3-regular-display {
+.headline3-regular-display {
   font-family: "SF Pro Display";
   font-size: 20px;
   font-weight: 400;
 }
 
-.title3-medium-display {
+.headline3-medium-display {
   font-family: "SF Pro Display";
   font-size: 20px;
   font-weight: 500;
 }
 
-.title3-semibold-display {
+.headline3-semibold-display {
   font-family: "SF Pro Display";
   font-size: 20px;
   font-weight: 600;
 }
 
-.title3-bold-display {
+.headline3-bold-display {
   font-family: "SF Pro Display";
   font-size: 20px;
   font-weight: 700;
@@ -456,97 +462,97 @@
 }
 
 /* SF Pro Rounded */
-.large-title-regular-rounded {
+.headline-large-regular-rounded {
   font-family: "SF Pro Rounded";
   font-size: 34px;
   font-weight: 400;
 }
 
-.large-title-medium-rounded {
+.headline-large-medium-rounded {
   font-family: "SF Pro Rounded";
   font-size: 34px;
   font-weight: 500;
 }
 
-.large-title-semibold-rounded {
+.headline-large-semibold-rounded {
   font-family: "SF Pro Rounded";
   font-size: 34px;
   font-weight: 600;
 }
 
-.large-title-bold-rounded {
+.headline-large-bold-rounded {
   font-family: "SF Pro Rounded";
   font-size: 34px;
   font-weight: 700;
 }
 
-.title1-regular-rounded {
+.headline1-regular-rounded {
   font-family: "SF Pro Rounded";
   font-size: 28px;
   font-weight: 400;
 }
 
-.title1-medium-rounded {
+.headline1-medium-rounded {
   font-family: "SF Pro Rounded";
   font-size: 28px;
   font-weight: 500;
 }
 
-.title1-semibold-rounded {
+.headline1-semibold-rounded {
   font-family: "SF Pro Rounded";
   font-size: 28px;
   font-weight: 600;
 }
 
-.title1-bold-rounded {
+.headline1-bold-rounded {
   font-family: "SF Pro Rounded";
   font-size: 28px;
   font-weight: 700;
 }
 
-.title2-regular-rounded {
+.headline2-regular-rounded {
   font-family: "SF Pro Rounded";
   font-size: 22px;
   font-weight: 400;
 }
 
-.title2-medium-rounded {
+.headline2-medium-rounded {
   font-family: "SF Pro Rounded";
   font-size: 22px;
   font-weight: 500;
 }
 
-.title2-semibold-rounded {
+.headline2-semibold-rounded {
   font-family: "SF Pro Rounded";
   font-size: 22px;
   font-weight: 600;
 }
 
-.title2-bold-rounded {
+.headline2-bold-rounded {
   font-family: "SF Pro Rounded";
   font-size: 22px;
   font-weight: 700;
 }
 
-.title3-regular-rounded {
+.headline3-regular-rounded {
   font-family: "SF Pro Rounded";
   font-size: 20px;
   font-weight: 400;
 }
 
-.title3-medium-rounded {
+.headline3-medium-rounded {
   font-family: "SF Pro Rounded";
   font-size: 20px;
   font-weight: 500;
 }
 
-.title3-semibold-rounded {
+.headline3-semibold-rounded {
   font-family: "SF Pro Rounded";
   font-size: 20px;
   font-weight: 600;
 }
 
-.title3-bold-rounded {
+.headline3-bold-rounded {
   font-family: "SF Pro Rounded";
   font-size: 20px;
   font-weight: 700;
