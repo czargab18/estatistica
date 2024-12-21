@@ -3,15 +3,25 @@
   all: unset;
 }
 
-
 main {
   position: relative;
   max-width: 2560px;
   margin: 0 auto;
-  padding-top: var(--global-nav-collective-height);
+  padding-top: calc(
+    var(--r-globalheader-height) + var(--r-globalnav-height) +
+      var(--r-globalsection-height)
+  );
   display: flex;
   flex-direction: column;
   gap: 1em;
+}
+@media only screen and (max-width: 833px) {
+  /* Removi o GlobalNav em Telas Menores */
+  main {
+    padding-top: calc(
+      var(--r-globalheader-height)+ var(--r-globalsection-height)
+    );
+  }
 }
 
 section[data-module-template="heroes"] {

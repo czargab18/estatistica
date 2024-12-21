@@ -9,7 +9,7 @@
 
   --altura-globalheader: 40px;
   background-color: rgb(127 127 127 / 10%);
-  /* width: auto; */
+    width: 100%;
   min-width: 320px;
   height: var(--altura-globalheader);
   /* height: auto; */
