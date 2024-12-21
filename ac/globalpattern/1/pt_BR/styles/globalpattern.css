@@ -86,6 +86,7 @@ html {
 body {
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
 }
 
 ul,
@@ -189,7 +190,7 @@ button:disabled {
 html {
   font-family: var(--r-font-family-default);
   font-size: 106.25%;
-  quotes: "â€œ" "â€";
+  quotes: "“" "”";
   --sk-link-disabled-opacity: 0.42;
 }
 
@@ -199,7 +200,7 @@ html {
 }
 
 :lang(pt-BR) {
-  quotes: "â€ž" "â€œ";
+  quotes: "“" "”";
 }
 
 body {
