@@ -7,4 +7,673 @@
   - Tabelas de Estilos: H*, p, label, etc...
 
 - Referência: https://www.gov.br/ds/fundamentos-visuais/visao-geral
-  */
+*/
+
+/* SF Pro Text */
+.large-title-regular-text {
+  font-family: "SF Pro Text";
+  font-size: 34px;
+  font-weight: 400;
+}
+
+.large-title-medium-text {
+  font-family: "SF Pro Text";
+  font-size: 34px;
+  font-weight: 500;
+}
+
+.large-title-semibold-text {
+  font-family: "SF Pro Text";
+  font-size: 34px;
+  font-weight: 600;
+}
+
+.large-title-bold-text {
+  font-family: "SF Pro Text";
+  font-size: 34px;
+  font-weight: 700;
+}
+
+.title1-regular-text {
+  font-family: "SF Pro Text";
+  font-size: 28px;
+  font-weight: 400;
+}
+
+.title1-medium-text {
+  font-family: "SF Pro Text";
+  font-size: 28px;
+  font-weight: 500;
+}
+
+.title1-semibold-text {
+  font-family: "SF Pro Text";
+  font-size: 28px;
+  font-weight: 600;
+}
+
+.title1-bold-text {
+  font-family: "SF Pro Text";
+  font-size: 28px;
+  font-weight: 700;
+}
+
+.title2-regular-text {
+  font-family: "SF Pro Text";
+  font-size: 22px;
+  font-weight: 400;
+}
+
+.title2-medium-text {
+  font-family: "SF Pro Text";
+  font-size: 22px;
+  font-weight: 500;
+}
+
+.title2-semibold-text {
+  font-family: "SF Pro Text";
+  font-size: 22px;
+  font-weight: 600;
+}
+
+.title2-bold-text {
+  font-family: "SF Pro Text";
+  font-size: 22px;
+  font-weight: 700;
+}
+
+.title3-regular-text {
+  font-family: "SF Pro Text";
+  font-size: 20px;
+  font-weight: 400;
+}
+
+.title3-medium-text {
+  font-family: "SF Pro Text";
+  font-size: 20px;
+  font-weight: 500;
+}
+
+.title3-semibold-text {
+  font-family: "SF Pro Text";
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.title3-bold-text {
+  font-family: "SF Pro Text";
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.headline-semibold-text {
+  font-family: "SF Pro Text";
+  font-size: 17px;
+  font-weight: 600;
+}
+
+.body-regular-text {
+  font-family: "SF Pro Text";
+  font-size: 17px;
+  font-weight: 400;
+}
+
+.body-medium-text {
+  font-family: "SF Pro Text";
+  font-size: 17px;
+  font-weight: 500;
+}
+
+.body-semibold-text {
+  font-family: "SF Pro Text";
+  font-size: 17px;
+  font-weight: 600;
+}
+
+.body-bold-text {
+  font-family: "SF Pro Text";
+  font-size: 17px;
+  font-weight: 700;
+}
+
+.callout-regular-text {
+  font-family: "SF Pro Text";
+  font-size: 16px;
+  font-weight: 400;
+}
+
+.callout-medium-text {
+  font-family: "SF Pro Text";
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.callout-semibold-text {
+  font-family: "SF Pro Text";
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.callout-bold-text {
+  font-family: "SF Pro Text";
+  font-size: 16px;
+  font-weight: 700;
+}
+
+.footnote-regular-text {
+  font-family: "SF Pro Text";
+  font-size: 13px;
+  font-weight: 400;
+}
+
+.footnote-medium-text {
+  font-family: "SF Pro Text";
+  font-size: 13px;
+  font-weight: 500;
+}
+
+.footnote-semibold-text {
+  font-family: "SF Pro Text";
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.footnote-bold-text {
+  font-family: "SF Pro Text";
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.caption1-regular-text {
+  font-family: "SF Pro Text";
+  font-size: 12px;
+  font-weight: 400;
+}
+
+.caption1-medium-text {
+  font-family: "SF Pro Text";
+  font-size: 12px;
+  font-weight: 500;
+}
+
+.caption1-semibold-text {
+  font-family: "SF Pro Text";
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.caption1-bold-text {
+  font-family: "SF Pro Text";
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.caption2-regular-text {
+  font-family: "SF Pro Text";
+  font-size: 11px;
+  font-weight: 400;
+}
+
+.caption2-medium-text {
+  font-family: "SF Pro Text";
+  font-size: 11px;
+  font-weight: 500;
+}
+
+.caption2-semibold-text {
+  font-family: "SF Pro Text";
+  font-size: 11px;
+  font-weight: 600;
+}
+
+.caption2-bold-text {
+  font-family: "SF Pro Text";
+  font-size: 11px;
+  font-weight: 700;
+}
+
+/* SF Pro Display */
+.large-title-regular-display {
+  font-family: "SF Pro Display";
+  font-size: 34px;
+  font-weight: 400;
+}
+
+.large-title-medium-display {
+  font-family: "SF Pro Display";
+  font-size: 34px;
+  font-weight: 500;
+}
+
+.large-title-semibold-display {
+  font-family: "SF Pro Display";
+  font-size: 34px;
+  font-weight: 600;
+}
+
+.large-title-bold-display {
+  font-family: "SF Pro Display";
+  font-size: 34px;
+  font-weight: 700;
+}
+
+.title1-regular-display {
+  font-family: "SF Pro Display";
+  font-size: 28px;
+  font-weight: 400;
+}
+
+.title1-medium-display {
+  font-family: "SF Pro Display";
+  font-size: 28px;
+  font-weight: 500;
+}
+
+.title1-semibold-display {
+  font-family: "SF Pro Display";
+  font-size: 28px;
+  font-weight: 600;
+}
+
+.title1-bold-display {
+  font-family: "SF Pro Display";
+  font-size: 28px;
+  font-weight: 700;
+}
+
+.title2-regular-display {
+  font-family: "SF Pro Display";
+  font-size: 22px;
+  font-weight: 400;
+}
+
+.title2-medium-display {
+  font-family: "SF Pro Display";
+  font-size: 22px;
+  font-weight: 500;
+}
+
+.title2-semibold-display {
+  font-family: "SF Pro Display";
+  font-size: 22px;
+  font-weight: 600;
+}
+
+.title2-bold-display {
+  font-family: "SF Pro Display";
+  font-size: 22px;
+  font-weight: 700;
+}
+
+.title3-regular-display {
+  font-family: "SF Pro Display";
+  font-size: 20px;
+  font-weight: 400;
+}
+
+.title3-medium-display {
+  font-family: "SF Pro Display";
+  font-size: 20px;
+  font-weight: 500;
+}
+
+.title3-semibold-display {
+  font-family: "SF Pro Display";
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.title3-bold-display {
+  font-family: "SF Pro Display";
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.headline-semibold-display {
+  font-family: "SF Pro Display";
+  font-size: 17px;
+  font-weight: 600;
+}
+
+.body-regular-display {
+  font-family: "SF Pro Display";
+  font-size: 17px;
+  font-weight: 400;
+}
+
+.body-medium-display {
+  font-family: "SF Pro Display";
+  font-size: 17px;
+  font-weight: 500;
+}
+
+.body-semibold-display {
+  font-family: "SF Pro Display";
+  font-size: 17px;
+  font-weight: 600;
+}
+
+.body-bold-display {
+  font-family: "SF Pro Display";
+  font-size: 17px;
+  font-weight: 700;
+}
+
+.callout-regular-display {
+  font-family: "SF Pro Display";
+  font-size: 16px;
+  font-weight: 400;
+}
+
+.callout-medium-display {
+  font-family: "SF Pro Display";
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.callout-semibold-display {
+  font-family: "SF Pro Display";
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.callout-bold-display {
+  font-family: "SF Pro Display";
+  font-size: 16px;
+  font-weight: 700;
+}
+
+.footnote-regular-display {
+  font-family: "SF Pro Display";
+  font-size: 13px;
+  font-weight: 400;
+}
+
+.footnote-medium-display {
+  font-family: "SF Pro Display";
+  font-size: 13px;
+  font-weight: 500;
+}
+
+.footnote-semibold-display {
+  font-family: "SF Pro Display";
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.footnote-bold-display {
+  font-family: "SF Pro Display";
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.caption1-regular-display {
+  font-family: "SF Pro Display";
+  font-size: 12px;
+  font-weight: 400;
+}
+
+.caption1-medium-display {
+  font-family: "SF Pro Display";
+  font-size: 12px;
+  font-weight: 500;
+}
+
+.caption1-semibold-display {
+  font-family: "SF Pro Display";
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.caption1-bold-display {
+  font-family: "SF Pro Display";
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.caption2-regular-display {
+  font-family: "SF Pro Display";
+  font-size: 11px;
+  font-weight: 400;
+}
+
+.caption2-medium-display {
+  font-family: "SF Pro Display";
+  font-size: 11px;
+  font-weight: 500;
+}
+
+.caption2-semibold-display {
+  font-family: "SF Pro Display";
+  font-size: 11px;
+  font-weight: 600;
+}
+
+.caption2-bold-display {
+  font-family: "SF Pro Display";
+  font-size: 11px;
+  font-weight: 700;
+}
+
+/* SF Pro Rounded */
+.large-title-regular-rounded {
+  font-family: "SF Pro Rounded";
+  font-size: 34px;
+  font-weight: 400;
+}
+
+.large-title-medium-rounded {
+  font-family: "SF Pro Rounded";
+  font-size: 34px;
+  font-weight: 500;
+}
+
+.large-title-semibold-rounded {
+  font-family: "SF Pro Rounded";
+  font-size: 34px;
+  font-weight: 600;
+}
+
+.large-title-bold-rounded {
+  font-family: "SF Pro Rounded";
+  font-size: 34px;
+  font-weight: 700;
+}
+
+.title1-regular-rounded {
+  font-family: "SF Pro Rounded";
+  font-size: 28px;
+  font-weight: 400;
+}
+
+.title1-medium-rounded {
+  font-family: "SF Pro Rounded";
+  font-size: 28px;
+  font-weight: 500;
+}
+
+.title1-semibold-rounded {
+  font-family: "SF Pro Rounded";
+  font-size: 28px;
+  font-weight: 600;
+}
+
+.title1-bold-rounded {
+  font-family: "SF Pro Rounded";
+  font-size: 28px;
+  font-weight: 700;
+}
+
+.title2-regular-rounded {
+  font-family: "SF Pro Rounded";
+  font-size: 22px;
+  font-weight: 400;
+}
+
+.title2-medium-rounded {
+  font-family: "SF Pro Rounded";
+  font-size: 22px;
+  font-weight: 500;
+}
+
+.title2-semibold-rounded {
+  font-family: "SF Pro Rounded";
+  font-size: 22px;
+  font-weight: 600;
+}
+
+.title2-bold-rounded {
+  font-family: "SF Pro Rounded";
+  font-size: 22px;
+  font-weight: 700;
+}
+
+.title3-regular-rounded {
+  font-family: "SF Pro Rounded";
+  font-size: 20px;
+  font-weight: 400;
+}
+
+.title3-medium-rounded {
+  font-family: "SF Pro Rounded";
+  font-size: 20px;
+  font-weight: 500;
+}
+
+.title3-semibold-rounded {
+  font-family: "SF Pro Rounded";
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.title3-bold-rounded {
+  font-family: "SF Pro Rounded";
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.headline-semibold-rounded {
+  font-family: "SF Pro Rounded";
+  font-size: 17px;
+  font-weight: 600;
+}
+
+.body-regular-rounded {
+  font-family: "SF Pro Rounded";
+  font-size: 17px;
+  font-weight: 400;
+}
+
+.body-medium-rounded {
+  font-family: "SF Pro Rounded";
+  font-size: 17px;
+  font-weight: 500;
+}
+
+.body-semibold-rounded {
+  font-family: "SF Pro Rounded";
+  font-size: 17px;
+  font-weight: 600;
+}
+
+.body-bold-rounded {
+  font-family: "SF Pro Rounded";
+  font-size: 17px;
+  font-weight: 700;
+}
+
+.callout-regular-rounded {
+  font-family: "SF Pro Rounded";
+  font-size: 16px;
+  font-weight: 400;
+}
+
+.callout-medium-rounded {
+  font-family: "SF Pro Rounded";
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.callout-semibold-rounded {
+  font-family: "SF Pro Rounded";
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.callout-bold-rounded {
+  font-family: "SF Pro Rounded";
+  font-size: 16px;
+  font-weight: 700;
+}
+
+.footnote-regular-rounded {
+  font-family: "SF Pro Rounded";
+  font-size: 13px;
+  font-weight: 400;
+}
+
+.footnote-medium-rounded {
+  font-family: "SF Pro Rounded";
+  font-size: 13px;
+  font-weight: 500;
+}
+
+.footnote-semibold-rounded {
+  font-family: "SF Pro Rounded";
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.footnote-bold-rounded {
+  font-family: "SF Pro Rounded";
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.caption1-regular-rounded {
+  font-family: "SF Pro Rounded";
+  font-size: 12px;
+  font-weight: 400;
+}
+
+.caption1-medium-rounded {
+  font-family: "SF Pro Rounded";
+  font-size: 12px;
+  font-weight: 500;
+}
+
+.caption1-semibold-rounded {
+  font-family: "SF Pro Rounded";
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.caption1-bold-rounded {
+  font-family: "SF Pro Rounded";
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.caption2-regular-rounded {
+  font-family: "SF Pro Rounded";
+  font-size: 11px;
+  font-weight: 400;
+}
+
+.caption2-medium-rounded {
+  font-family: "SF Pro Rounded";
+  font-size: 11px;
+  font-weight: 500;
+}
+
+.caption2-semibold-rounded {
+  font-family: "SF Pro Rounded";
+  font-size: 11px;
+  font-weight: 600;
+}
+
+.caption2-bold-rounded {
+  font-family: "SF Pro Rounded";
+  font-size: 11px;
+  font-weight: 700;
+}
