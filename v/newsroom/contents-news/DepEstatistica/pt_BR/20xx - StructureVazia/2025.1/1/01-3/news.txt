@@ -1,5 +1,0 @@
-- Título do aviso
-- link do site (UnB, Dep Estat, Gov-BR, ou outra informação)
-- Descrição rapida
-- Autor
-- Data er Horario
