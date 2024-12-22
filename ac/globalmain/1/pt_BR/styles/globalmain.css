@@ -40,7 +40,6 @@ section[data-module-template="heroes"] {
 [id="graduacao"] [id="modulo-content"],
 [id="posgraduacao"] [id="modulo-content"],
 [id="docentes"] [id="modulo-content"] {
-  height: 600px;
   background-size: 3008px 624px;
   background-repeat: no-repeat;
   background-position: center;
@@ -78,19 +77,7 @@ div[class="unit-copy-warpper"] {
   font-size: 19px;
 }
 
-section[data-module-template="heroes"]
-  div[data-unit-id="calouro"]
-  div[class="unit-image-warpper"]
-  figure[id="unit-image-calouro"],
-section[data-module-template="heroes"]
-  div[data-unit-id="graduacao"]
-  figure[id="unit-image-graduacao"],
-section[data-module-template="heroes"]
-  div[data-unit-id="posgraduacao"]
-  figure[id="unit-image-posgraduacao"],
-section[data-module-template="heroes"]
-  div[data-unit-id="docentes"]
-  figure[id="unit-image-docentes"] {
+section[data-module-template="heroes"] figure{
   background-color: var(--r-globalmain-figure-color-primary);
   background-repeat: no-repeat;
   background-size: cover;
@@ -99,7 +86,6 @@ section[data-module-template="heroes"]
 }
 
 section[data-module-template="heroes"] figure[id="unit-image-calouro"] {
-  background-image: url("/ac/globalmain/1/pt_BR/assets/heroes/docente-banner-grande.jpg");
   display: none;
 }
 section[data-module-template="heroes"] figure[id="unit-image-graduacao"] {
@@ -107,8 +93,7 @@ section[data-module-template="heroes"] figure[id="unit-image-graduacao"] {
   height: 624px;
   background-size: 3008px 624px;
   background-repeat: no-repeat;
-  background-image: url("../assets/heroes/astronauta-banner-grande.svg");
-  background-color: var();
+  background-image: url("/v/home/images/heroes/graduacao-banner-grande.png");
 }
 
 @media only screen and (-webkit-min-device-pixel-ratio: 1.5),
@@ -119,7 +104,7 @@ section[data-module-template="heroes"] figure[id="unit-image-graduacao"] {
     [data-module-template="heroes"]
     .unit-image-wrapper
     .unit-image.unit-image-graduacao {
-    background-image: url("../assets/heroes/astronauta-banner-grande.jpg");
+    background-image: url("/v/home/images/heroes/graduacao-banner-grande.png");
   }
 }
 
@@ -132,7 +117,7 @@ section[data-module-template="heroes"] figure[id="unit-image-graduacao"] {
     height: 617px;
     background-size: 1068px 617px;
     background-repeat: no-repeat;
-    background-image: url("../assets/heroes/astronauta-banner-grande.jpg");
+    background-image: url("/v/home/images/heroes/graduacao-banner-grande.png");
   }
 }
 
@@ -143,7 +128,7 @@ section[data-module-template="heroes"] figure[id="unit-image-graduacao"] {
     [data-module-template="heroes"]
     .unit-image-wrapper
     .unit-image.unit-image-graduacao {
-    background-image: url("../assets/heroes/astronauta-banner-grande.jpg");
+    background-image: url("/v/home/images/heroes/graduacao-banner-grande.png");
   }
 }
 
@@ -156,7 +141,7 @@ section[data-module-template="heroes"] figure[id="unit-image-graduacao"] {
     height: 548px;
     background-size: 734px 548px;
     background-repeat: no-repeat;
-    background-image: url("../assets/heroes/astronauta-banner-grande.jpg");
+    background-image: url("/v/home/images/heroes/graduacao-banner-grande.png");
   }
 }
 
@@ -167,7 +152,7 @@ section[data-module-template="heroes"] figure[id="unit-image-graduacao"] {
     [data-module-template="heroes"]
     .unit-image-wrapper
     .unit-image.unit-image-graduacao {
-    background-image: url("../assets/heroes/astronauta-banner-grande.jpg");
+    background-image: url("/v/home/images/heroes/graduacao-banner-grande.png");
   }
 }
 
@@ -180,7 +165,7 @@ section[data-module-template="heroes"] figure[id="unit-image-graduacao"] {
     height: 736px;
     background-size: 3008px 736px;
     background-repeat: no-repeat;
-    background-image: url("../assets/heroes/astronauta-banner-grande.jpg");
+    background-image: url("/v/home/images/heroes/graduacao-banner-grande.png");
   }
 }
 
@@ -191,7 +176,7 @@ section[data-module-template="heroes"] figure[id="unit-image-graduacao"] {
     [data-module-template="heroes"]
     .unit-image-wrapper
     .unit-image.unit-image-graduacao {
-    background-image: url("../assets/heroes/astronauta-banner-grande.jpg");
+    background-image: url("/v/home/images/heroes/graduacao-banner-grande.png");
   }
 }
 
@@ -204,7 +189,7 @@ section[data-module-template="heroes"] figure[id="unit-image-graduacao"] {
     height: 694px;
     background-size: 1068px 694px;
     background-repeat: no-repeat;
-    background-image: url("../assets/heroes/astronauta-banner-grande.jpg");
+    background-image: url("/v/home/images/heroes/graduacao-banner-grande.png");
   }
 }
 
@@ -215,19 +200,19 @@ section[data-module-template="heroes"] figure[id="unit-image-graduacao"] {
     [data-module-template="heroes"]
     .unit-image-wrapper
     .unit-image.unit-image-graduacao {
-    background-image: url("../assets/heroes/astronauta-banner-grande.jpg");
+    background-image: url("/v/home/images/heroes/graduacao-banner-grande.png");
   }
 }
 
 section[data-module-template="heroes"] figure[id="unit-image-posgraduacao"] {
   width: 3008px;
   height: 624px;
-  background-image: url("../../../../../ac/globalmain/1/pt_BR/assets/heroes/estudante-banner-grande.jpg");
+  background-image: url("/v/home/images/heroes/posgraduacao-banner-grande.png");
 }
 section[data-module-template="heroes"] figure[id="unit-image-docentes"] {
   width: 3008px;
   height: 624px;
-  background-image: url("../../../../../ac/globalmain/1/pt_BR/assets/heroes/docente-banner-grande.jpg");
+  background-image: url("/v/home/images/heroes/docente-banner-grande.png");
 }
 
 .main [data-module-template="heroes"] {
@@ -248,13 +233,6 @@ section[data-module-template="promos"] {
 section[data-module-template="promos"] [id="modulo-content"] {
   height: 580px;
 }
-/* section[data-module-template="promos"] div[class="unit-wrapper"] .headline {
-  font-size: 32px;
-}
-section[data-module-template="promos"] div[class="unit-wrapper"] .subhead,
-section[data-module-template="promos"] div[class="unit-wrapper"] .cta-links a {
-  font-size: 19px;
-} */
 
 .main [data-module-template="promos"] .unit-image-wrapper {
   position: absolute;
@@ -263,9 +241,8 @@ section[data-module-template="promos"] div[class="unit-wrapper"] .cta-links a {
   height: 100px;
   width: 100px;
 }
-
 section[data-module-template="promos"] figure {
-  background-color: white;
+  background-color: var(--r-globalmain-figure-color-primary);
   background-position: center;
   width: 1262px;
   height: 580px;
@@ -274,22 +251,22 @@ section[data-module-template="promos"] figure {
 }
 
 section[data-module-template="promos"] figure[id="unit-image-instalacoes"] {
-  background-image: url("../../../../../ac/globalmain/1/pt_BR/assets/promos/pintura-banner-medio.jpg");
+  background-image: url("/v/home/images/promos/fumaça-banner-medio.png");
 }
 section[data-module-template="promos"] figure[id="unit-image-pesquisa"] {
-  background-image: url("../../../../../ac/globalmain/1/pt_BR/assets/promos/folas-banner-medio.jpg");
+  background-image: url("/v/home/images/promos/estudando-banner-medio.png");
 }
 section[data-module-template="promos"] figure[id="unit-image-extencao"] {
-  background-image: url("../../../../../ac/globalmain/1/pt_BR/assets/promos/folas-banner-medio.jpg");
+  background-image: url("/v/home/images/promos/caquito-banner-medio.png");
 }
 section[data-module-template="promos"] figure[id="unit-image-eventos"] {
-  background-image: url("../../../../../ac/globalmain/1/pt_BR/assets/promos/folas-banner-medio.jpg");
+  background-image: url("/v/home/images/promos/pintura-banner-medio.png");
 }
 section[data-module-template="promos"] figure[id="unit-image-formularios"] {
-  background-image: url("../../../../../ac/globalmain/1/pt_BR/assets/promos/folas-banner-medio.jpg");
+  background-image: url("/v/home/images/promos/jovem-banner-medio.png");
 }
 section[data-module-template="promos"] figure[id="unit-image-contato"] {
-  background-image: url("../../../../../ac/globalmain/1/pt_BR/assets/promos/folas-banner-medio.jpg");
+  background-image: url("/v/home/images/promos/pintura-banner-medio.png");
 }
 
 [data-module-template] [data-unit-id] .unit-wrapper {
