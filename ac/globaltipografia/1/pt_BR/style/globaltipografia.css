@@ -16,7 +16,7 @@ Fonte Large Figma = 34px
 /* SF Pro Text */
 .headline-large-regular-text {
   font-family: "SF Pro Text";
-  font-size: 34px;
+  font-size: 56px;
   font-weight: regular;
   letter-spacing: 0.4%;
   line-height: 41px;
@@ -24,97 +24,97 @@ Fonte Large Figma = 34px
 
 .headline-large-medium-text {
   font-family: "SF Pro Text";
-  font-size: 34px;
+  font-size: 56px;
   font-weight: 500;
 }
 
 .headline-large-semibold-text {
   font-family: "SF Pro Text";
-  font-size: 34px;
+  font-size: 56px;
   font-weight: 600;
 }
 
 .headline-large-bold-text {
   font-family: "SF Pro Text";
-  font-size: 34px;
+  font-size: 56px;
   font-weight: 700;
 }
 
 .headline1-regular-text {
   font-family: "SF Pro Text";
-  font-size: 28px;
+  font-size: 46px;
   font-weight: 400;
 }
 
 .headline1-medium-text {
   font-family: "SF Pro Text";
-  font-size: 28px;
+  font-size: 46px;
   font-weight: 500;
 }
 
 .headline1-semibold-text {
   font-family: "SF Pro Text";
-  font-size: 28px;
+  font-size: 46px;
   font-weight: 600;
 }
 
 .headline1-bold-text {
   font-family: "SF Pro Text";
-  font-size: 28px;
+  font-size: 46px;
   font-weight: 700;
 }
 
 .headline2-regular-text {
   font-family: "SF Pro Text";
-  font-size: 22px;
+  font-size: 36px;
   font-weight: 400;
 }
 
 .headline2-medium-text {
   font-family: "SF Pro Text";
-  font-size: 22px;
+  font-size: 36px;
   font-weight: 500;
 }
 
 .headline2-semibold-text {
   font-family: "SF Pro Text";
-  font-size: 22px;
+  font-size: 36px;
   font-weight: 600;
 }
 
 .headline2-bold-text {
   font-family: "SF Pro Text";
-  font-size: 22px;
+  font-size: 36px;
   font-weight: 700;
 }
 
 .headline3-regular-text {
   font-family: "SF Pro Text";
-  font-size: 20px;
+  font-size: 33px;
   font-weight: 400;
 }
 
 .headline3-medium-text {
   font-family: "SF Pro Text";
-  font-size: 20px;
+  font-size: 33px;
   font-weight: 500;
 }
 
 .headline3-semibold-text {
   font-family: "SF Pro Text";
-  font-size: 20px;
+  font-size: 33px;
   font-weight: 600;
 }
 
 .headline3-bold-text {
   font-family: "SF Pro Text";
-  font-size: 20px;
+  font-size: 33px;
   font-weight: 700;
 }
 
 .headline-semibold-text {
   font-family: "SF Pro Text";
-  font-size: 17px;
+  font-size: 28px;
   font-weight: 600;
 }
 
@@ -241,103 +241,103 @@ Fonte Large Figma = 34px
 /* SF Pro Display */
 .headline-large-regular-display {
   font-family: "SF Pro Display";
-  font-size: 34px;
+  font-size: 56px;
   font-weight: 400;
 }
 
 .headline-large-medium-display {
   font-family: "SF Pro Display";
-  font-size: 34px;
+  font-size: 56px;
   font-weight: 500;
 }
 
 .headline-large-semibold-display {
   font-family: "SF Pro Display";
-  font-size: 34px;
+  font-size: 56px;
   font-weight: 600;
 }
 
 .headline-large-bold-display {
   font-family: "SF Pro Display";
-  font-size: 34px;
+  font-size: 56px;
   font-weight: 700;
 }
 
 .headline1-regular-display {
   font-family: "SF Pro Display";
-  font-size: 28px;
+  font-size: 46px;
   font-weight: 400;
 }
 
 .headline1-medium-display {
   font-family: "SF Pro Display";
-  font-size: 28px;
+  font-size: 46px;
   font-weight: 500;
 }
 
 .headline1-semibold-display {
   font-family: "SF Pro Display";
-  font-size: 28px;
+  font-size: 46px;
   font-weight: 600;
 }
 
 .headline1-bold-display {
   font-family: "SF Pro Display";
-  font-size: 28px;
+  font-size: 46px;
   font-weight: 700;
 }
 
 .headline2-regular-display {
   font-family: "SF Pro Display";
-  font-size: 22px;
+  font-size: 36px;
   font-weight: 400;
 }
 
 .headline2-medium-display {
   font-family: "SF Pro Display";
-  font-size: 22px;
+  font-size: 36px;
   font-weight: 500;
 }
 
 .headline2-semibold-display {
   font-family: "SF Pro Display";
-  font-size: 22px;
+  font-size: 36px;
   font-weight: 600;
 }
 
 .headline2-bold-display {
   font-family: "SF Pro Display";
-  font-size: 22px;
+  font-size: 36px;
   font-weight: 700;
 }
 
 .headline3-regular-display {
   font-family: "SF Pro Display";
-  font-size: 20px;
+  font-size: 33px;
   font-weight: 400;
 }
 
 .headline3-medium-display {
   font-family: "SF Pro Display";
-  font-size: 20px;
+  font-size: 33px;
   font-weight: 500;
 }
 
 .headline3-semibold-display {
   font-family: "SF Pro Display";
-  font-size: 20px;
+  font-size: 33px;
   font-weight: 600;
 }
 
 .headline3-bold-display {
   font-family: "SF Pro Display";
-  font-size: 20px;
+  font-size: 33px;
   font-weight: 700;
 }
 
 .headline-semibold-display {
   font-family: "SF Pro Display";
-  font-size: 17px;
+ font-size: 28px;
   font-weight: 600;
 }
 
@@ -464,103 +464,103 @@ Fonte Large Figma = 34px
 /* SF Pro Rounded */
 .headline-large-regular-rounded {
   font-family: "SF Pro Rounded";
-  font-size: 34px;
+  font-size: 56px;
   font-weight: 400;
 }
 
 .headline-large-medium-rounded {
   font-family: "SF Pro Rounded";
-  font-size: 34px;
+  font-size: 56px;
   font-weight: 500;
 }
 
 .headline-large-semibold-rounded {
   font-family: "SF Pro Rounded";
-  font-size: 34px;
+  font-size: 56px;
   font-weight: 600;
 }
 
 .headline-large-bold-rounded {
   font-family: "SF Pro Rounded";
-  font-size: 34px;
+  font-size: 56px;
   font-weight: 700;
 }
 
 .headline1-regular-rounded {
   font-family: "SF Pro Rounded";
-  font-size: 28px;
+  font-size: 46px;
   font-weight: 400;
 }
 
 .headline1-medium-rounded {
   font-family: "SF Pro Rounded";
-  font-size: 28px;
+  font-size: 46px;
   font-weight: 500;
 }
 
 .headline1-semibold-rounded {
   font-family: "SF Pro Rounded";
-  font-size: 28px;
+  font-size: 46px;
   font-weight: 600;
 }
 
 .headline1-bold-rounded {
   font-family: "SF Pro Rounded";
-  font-size: 28px;
+  font-size: 46px;
   font-weight: 700;
 }
 
 .headline2-regular-rounded {
   font-family: "SF Pro Rounded";
-  font-size: 22px;
+  font-size: 36px;
   font-weight: 400;
 }
 
 .headline2-medium-rounded {
   font-family: "SF Pro Rounded";
-  font-size: 22px;
+  font-size: 36px;
   font-weight: 500;
 }
 
 .headline2-semibold-rounded {
   font-family: "SF Pro Rounded";
-  font-size: 22px;
+  font-size: 36px;
   font-weight: 600;
 }
 
 .headline2-bold-rounded {
   font-family: "SF Pro Rounded";
-  font-size: 22px;
+  font-size: 36px;
   font-weight: 700;
 }
 
 .headline3-regular-rounded {
   font-family: "SF Pro Rounded";
-  font-size: 20px;
+  font-size: 33px;
   font-weight: 400;
 }
 
 .headline3-medium-rounded {
   font-family: "SF Pro Rounded";
-  font-size: 20px;
+  font-size: 33px;
   font-weight: 500;
 }
 
 .headline3-semibold-rounded {
   font-family: "SF Pro Rounded";
-  font-size: 20px;
+  font-size: 33px;
   font-weight: 600;
 }
 
 .headline3-bold-rounded {
   font-family: "SF Pro Rounded";
-  font-size: 20px;
+  font-size: 33px;
   font-weight: 700;
 }
 
 .headline-semibold-rounded {
   font-family: "SF Pro Rounded";
-  font-size: 17px;
+  font-size: 28px;
   font-weight: 600;
 }
 
