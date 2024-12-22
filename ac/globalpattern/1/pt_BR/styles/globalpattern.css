@@ -2,13 +2,7 @@
 - Ele é usado para definir o estilo de elementos que são comuns a várias páginas do site.
 - Ele é importado por outros arquivos CSS.
 
-  - Hierarquia de cada página do site
-    - globaltop
-      - globalheader
-      - globalnav
-      - globalsection
-    - globalmain
-    - globalfooter
+  - Defini proriedades de fonte, cor, espaçamento, alinhamento, etc.
 */
 
 :root {
@@ -42,6 +36,8 @@
   --r-globalnav-color-secondary: #333336;
   --r-globalnav-color-secondary-hover: #ffffff;
   --r-globalnav-color-secondary-active: #ffffff;
+
+  --r-globalmain-figure-color-primary: rgba(127, 127, 127, 0.1);
 
   --r-globalfooter-color-primary: rgba(0, 0, 0, 0.8);
   --r-globalfooter-color-primary-hover: rgba(0, 0, 0, 0.8);

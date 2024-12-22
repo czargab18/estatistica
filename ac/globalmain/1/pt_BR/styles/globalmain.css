@@ -91,7 +91,7 @@ section[data-module-template="heroes"]
 section[data-module-template="heroes"]
   div[data-unit-id="docentes"]
   figure[id="unit-image-docentes"] {
-  background-color: white;
+  background-color: var(--r-globalmain-figure-color-primary);
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
@@ -99,7 +99,7 @@ section[data-module-template="heroes"]
 }
 
 section[data-module-template="heroes"] figure[id="unit-image-calouro"] {
-  background-image: url("../../../../../ac/globalmain/1/pt_BR/assets/heroes/docente-banner-grande.jpg");
+  background-image: url("/ac/globalmain/1/pt_BR/assets/heroes/docente-banner-grande.jpg");
   display: none;
 }
 section[data-module-template="heroes"] figure[id="unit-image-graduacao"] {
@@ -107,7 +107,8 @@ section[data-module-template="heroes"] figure[id="unit-image-graduacao"] {
   height: 624px;
   background-size: 3008px 624px;
   background-repeat: no-repeat;
-  background-image: url("../assets/heroes/astronauta-banner-grande.jpg");
+  background-image: url("../assets/heroes/astronauta-banner-grande.svg");
+  background-color: var();
 }
 
 @media only screen and (-webkit-min-device-pixel-ratio: 1.5),
