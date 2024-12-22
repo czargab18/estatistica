@@ -162,7 +162,7 @@ body {
   margin: 0;
   padding: 0;
   width: 100%;
-  height: 44px;
+  height: var(-r-globalnav-height);
   font-size: 17px;
   -webkit-user-select: none;
   user-select: none;

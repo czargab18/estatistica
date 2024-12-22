@@ -16,6 +16,7 @@
   font-size: 18px;
   white-space: nowrap;
   align-items: center;
+  z-index: 1;
 }
 #globalheader body {
   margin: 0;
