@@ -57,6 +57,8 @@ O commit semântico possui os elementos estruturais abaixo (tipos), que informam
 - `files`: criação e organização de pastas dentro do repositório.
   - Exemplo: `files: cria estrutura de pastas para componentes`
   - Exemplo: `files: reorganiza diretórios do projeto`
+  - Exemplo: `files: adiciona arquivos (imagens, fontes,...)`
+  - Exemplo: `files: apaga arquivos  (imagens, fontes,...)`
 
 - `feature` Commits do tipo feature indicam a **adição de uma nova funcionalidade** ao código.
   - Exemplo: `feature: adiciona funcionalidade de exportação de dados`
