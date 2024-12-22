@@ -579,3 +579,9 @@
     transition: transform 300ms ease;
   }
 }
+
+
+footer span,
+footer p {
+  display: inline;
+}
