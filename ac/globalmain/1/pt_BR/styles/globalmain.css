@@ -7,10 +7,7 @@ main {
   position: relative;
   max-width: 2560px;
   margin: 0 auto;
-  padding-top: calc(
-    var(--r-globalheader-height) + var(--r-globalnav-height) +
-      var(--r-globalsection-height)
-  );
+  padding-top: var(--r-globaltop-height);
   display: flex;
   flex-direction: column;
   gap: 1em;

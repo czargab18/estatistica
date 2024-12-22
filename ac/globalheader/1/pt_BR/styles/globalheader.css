@@ -165,7 +165,7 @@
   font-weight: 600;
   line-height: 1;
   letter-spacing: -0.01em;
-  height: var(--r-globalheader-height--altura-globalheader);
+  height: var(--r-globalheader-height);
   color: var(--r-globalheader-color-link);
 
   display: flex;

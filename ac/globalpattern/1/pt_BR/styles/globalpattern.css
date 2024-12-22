@@ -1,18 +1,22 @@
 /* 
 - Ele é usado para definir o estilo de elementos que são comuns a várias páginas do site.
 - Ele é importado por outros arquivos CSS.
-- Hierarquia de cada página do site
-  - globaltop
-    - globalheader
-    - globalnav
-    - globalsection
-  - globalmain
-  - globalfooter
+
+  - Hierarquia de cada página do site
+    - globaltop
+      - globalheader
+      - globalnav
+      - globalsection
+    - globalmain
+    - globalfooter
 */
 
 :root {
   /* Altura*/
-  --r-globaltop-height: 44px;
+  --r-globaltop-height: calc(
+    var(--r-globalheader-height) + var(--r-globalnav-height) +
+      var(--r-globalsection-height)
+  );
   --r-globalheader-height: 40px;
   --r-globalnav-height: 40px;
   --r-globalsection-height: 40px;
@@ -173,15 +177,12 @@ button:disabled {
 }
 
 :focus {
+  outline: none;
+}
+:focus-visible {
   outline: 2px solid #0071e3;
   outline-offset: 0px;
 }
-
-:focus[data-focus-method="mouse"]:not(input):not(textarea):not(select),
-:focus[data-focus-method="touch"]:not(input):not(textarea):not(select) {
-  outline: none;
-}
-
 ::-moz-focus-inner {
   border: 0;
   padding: 0;
