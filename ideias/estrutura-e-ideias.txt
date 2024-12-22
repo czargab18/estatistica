@@ -1,34 +1,3 @@
-
-/c:/Users/cesar.oliveira/Documents/github/estatistica/
-├── api/
-│   ├── calendario_academico/
-│   │   ├── __init__.py
-│   │   ├── fetch_pdfs.py
-│   │   └── update_news_section.py
-│   ├── grade_semestre/
-│   │   ├── __init__.py
-│   │   ├── build_schedule.py
-│   │   └── api_endpoints.py
-│   └── ira/
-│       ├── __init__.py
-│       ├── calculate_ira.py
-│       ├── store_results.py
-│       └── generate_charts.py
-├── web/
-│   ├── templates/
-│   │   ├── index.html
-│   │   ├── calendario_academico.html
-│   │   ├── grade_semestre.html
-│   │   └── ira.html
-│   └── static/
-│       ├── css/
-│       │   └── styles.css
-│       └── js/
-│           └── scripts.js
-├── app.py
-└── requirements.txt
-
-
 # Ideias para sobre funcionalidades para este repositório
 
 # ideia 01 - Calendario Academico UnB

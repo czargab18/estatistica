@@ -35,7 +35,7 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
   // Add click event listener to the play/pause button
-  playButton.addEventListener("click", toggleSlideshow);
+  // playButton.addEventListener("click", toggleSlideshow);
 
   // Initial setup for play/pause icons
   togglePlayPauseIcons();
