@@ -298,3 +298,8 @@ section[data-module-template="promos"] figure[id="unit-image-contato"] {
   -webkit-transform: translatex(-50%);
   transform: translatex(-50%);
 }
+
+
+section[data-module-template="noticias"] {
+ display: none;
+}
