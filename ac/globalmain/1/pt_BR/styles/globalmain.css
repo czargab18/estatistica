@@ -70,6 +70,7 @@ div[class="unit-copy-warpper"] {
   position: absolute;
   text-align: center;
   z-index: 5;
+  user-select: none;
 }
 
 .cta-links a {
