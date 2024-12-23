@@ -15,7 +15,7 @@ function criaPeriodo() {
       <h3>${periodoCount}º Período</h3>
       <div>
       <button
-          class="btn btn-danger"
+          class="btn btn-danger remove-periodo"
           onclick="removerPeriodo(${periodoCount})"
         >
           Remover Período

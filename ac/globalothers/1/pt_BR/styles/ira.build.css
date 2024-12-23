@@ -71,11 +71,17 @@ section#globalsection-ira-avisos #noticia-avisos {
   width: 100%;
   background-color: var(--bg-color-gray);
   margin-top: calc(
-    var(--altura-globalheader) + var(--r-globalnavbar-height) + 32px
+    var(--r-globalheader-height) + var(--r-globalnavbar-height) + 32px
   );
   padding-top: 0.5em;
   padding-bottom: 0.5em;
 }
+@media screen and (max-width: 768px) {
+  #chapternav {
+    margin-top: calc(var(--r-globalnavbar-height) + 32px);
+  }
+}
+
 #chapternav .chapternav-content {
   display: flex;
   flex-direction: row;
@@ -125,10 +131,10 @@ div#linhaSuperior {
   flex-direction: row;
   gap: 2em;
 }
-div#linhaSuperior button#botao-baixar{
-    display: block;
-    background-color: gray;
-    border-color: gray;
+div#linhaSuperior button#botao-baixar {
+  display: block;
+  background-color: gray;
+  border-color: gray;
 }
 div[id^="periodo"] {
   display: flex;
@@ -151,7 +157,7 @@ div.row.g-3 > div.row.g-3 {
   width: 100%;
   justify-content: space-evenly;
   align-items: center;
-  row-gap: 1em; /* Adiciona espaçamento vertical entre os elementos */
+  row-gap: 1em;
 }
 @media (max-width: 768px) {
   div.row.g-3 > div.row.g-3 {
@@ -173,12 +179,21 @@ div.row.g-3 > div.row.g-3 {
   border-color: #146c43;
 }
 .btn-danger,
-.btn-danger:hover {
+.remove-periodo {
+  background-color: transparent;
+  color: black;
+  border-color: black;
+  font-family: var(--r-font-family-default);
+}
+
+.btn-danger:hover,
+.remove-periodo:hover {
   color: #fff;
   background-color: #bb2d3b;
   border-color: #b02a37;
 }
-footer {
+
+#aviso-site-nao-oficial {
   position: relative;
   bottom: 0;
   padding-top: 1em;
@@ -189,31 +204,31 @@ footer {
   flex-direction: column;
   align-items: center;
 }
-footer div.avisos {
+#aviso-site-nao-oficial div.avisos {
   display: flex;
   flex-direction: column;
   align-items: center;
 }
-footer div.avisos button {
+#aviso-site-nao-oficial div.avisos button {
   bottom: 0;
   margin: 0;
   width: max-content;
   margin-bottom: 1em;
 }
-footer div.avisos p {
+#aviso-site-nao-oficial div.avisos p {
   bottom: 0;
   margin: 0;
   text-align: center;
 }
 @media (max-width: 768px) {
-  footer {
+  #aviso-site-nao-oficial {
     position: static;
     text-align: justify;
     width: 100%;
     bottom: 0;
     padding-bottom: 1em;
   }
-  footer p {
+  #aviso-site-nao-oficial p {
     text-align: justify;
     padding-right: 1em;
     padding-left: 1em;
