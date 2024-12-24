@@ -285,7 +285,7 @@
     left: -4px;
   }
 
-  #globalfooter .gf-directory-column-section-title-button:focus::after {
+  /* #globalfooter .gf-directory-column-section-title-button:focus::after {
     outline: 4px solid rgba(0, 125, 250, 0.6);
     outline-offset: -6px;
   }
@@ -299,7 +299,7 @@
       input
     ):not(textarea):not(select) {
     outline: none;
-  }
+  } */
 }
 
 /* icone do botão à esquerda */
@@ -384,9 +384,9 @@
     display: block;
   }
 
-  #globalfooter .gf-directory-column-section-link:focus {
+  /* #globalfooter .gf-directory-column-section-link:focus {
     outline-offset: -6px;
-  }
+  } */
 }
 
 @media only screen and (max-width: 833px) {
