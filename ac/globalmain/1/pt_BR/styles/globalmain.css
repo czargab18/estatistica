@@ -12,11 +12,11 @@ main {
   flex-direction: column;
   gap: 1em;
 }
-@media only screen and (max-width: 833px) {
+@media only screen and (max-width: 745px) {
   /* Removi o GlobalNav em Telas Menores */
   main {
     padding-top: calc(
-      var(--r-globalheader-height)+ var(--r-globalsection-height)
+      var(--r-globalheader-height) + var(--r-globalribbon-height)
     );
   }
 }
@@ -78,7 +78,7 @@ div[class="unit-copy-warpper"] {
   font-size: 19px;
 }
 
-section[data-module-template="heroes"] figure{
+section[data-module-template="heroes"] figure {
   background-color: var(--r-globalmain-figure-color-primary);
   background-repeat: no-repeat;
   background-size: cover;
@@ -299,7 +299,6 @@ section[data-module-template="promos"] figure[id="unit-image-contato"] {
   transform: translatex(-50%);
 }
 
-
 section[data-module-template="noticias"] {
- display: none;
+  display: none;
 }
