@@ -4,47 +4,31 @@
 }
 
 #globalribbon {
-  --font-pattenr: SF Pro AR, SF Pro Gulf, SF Pro Text, SF Pro Icons,
-    Helvetica Neue, Helvetica, Arial, sans-serif;
-
-  --altura-globalheader: 40px;
-  background-color: rgb(127 127 127 / 10%);
-    width: 100%;
+  font-family: var(--r-font-family-default);
+  font-size: 14px;
+  background-color: var(--r-bg-color-primary);
+  width: 100%;
   min-width: 320px;
-  height: var(--altura-globalheader);
-  /* height: auto; */
+  height: var(--r-globalribbon-height);
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: 16px;
-  font-family: var(--font-pattenr) !important;
-  font-size: 15px;
-  font-weight: 400;
-  flex-wrap: wrap;
-}
-
-#globalribbon .section-content {
-  display: flex;
-  flex-wrap: wrap;
   justify-content: center;
   align-items: center;
-  /* height: auto; */
+  user-select: none;
+}
+.news-ribbon-content {
+  text-align: center;
+  white-space: normal;
+}
+.news-ribbon-content span[class="news-content"] {
+  white-space: normal;
 }
 
-#globalribbon a {
+.news-ribbon-content a {
+  white-space: nowrap;
   margin-left: 0.3em;
 }
-
-.globalribbon .icon:before {
-  font-family: "SF Pro Icons";
-  content: ""; 
-  padding: 0;
-  text-decoration: none;
-}
-.globalribbon .icon:after {
-  font-family: "SF Pro Icons";
-  content: ""; 
-  padding: 0;
-  text-decoration: none;
+@media screen and (max-width: 744px) {
+  div[class="news-ribbon-content"] {
+    margin: 0 10px;
+  }
 }

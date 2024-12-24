@@ -9,16 +9,16 @@
   /* Altura*/
   --r-globaltop-height: calc(
     var(--r-globalheader-height) + var(--r-globalnav-height) +
-      var(--r-globalsection-height)
+      var(--r-globalribbon-height)
   );
   --r-globalheader-height: 40px;
   --r-globalnav-height: 44px;
-  --r-globalsection-height: 40px;
+  --r-globalribbon-height: 40px;
 
   /* width*/
   --r-globalheader-width: 968px;
   --r-globalnav-width: 968px;
-  --r-globalsection-width: 968px;
+  --r-globalribbon-width: 968px;
 
   /* Cores */
   --r-globalheader-color-link: rgba(255, 255, 255, 0.8);
@@ -49,6 +49,8 @@
   --r-globalfooter-pipe-color: #86868b;
   --r-globalfooter-directory-title-color: #1d1d1f;
   --r-globalfooter-directory-title-color-hover: #000;
+
+  --r-bg-color-primary: #7f7f7f1a;
 
   /* Fontes */
   --r-font-family-default: "SF Pro Text", "SF Pro Dislay", "SF Pro Icons",
@@ -87,4 +89,621 @@
   width: 1px;
   padding: 0;
   border: 0;
+}
+html {
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+ul,
+ol,
+li,
+dl,
+dt,
+dd,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+hgroup,
+p,
+blockquote,
+figure,
+form,
+fieldset,
+input,
+legend,
+pre,
+abbr,
+button {
+  margin: 0;
+  padding: 0;
+}
+
+pre,
+code,
+address,
+caption,
+th,
+figcaption {
+  font-size: 1em;
+  font-weight: normal;
+  font-style: normal;
+}
+
+fieldset,
+iframe {
+  border: 0;
+}
+
+caption,
+th {
+  text-align: left;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+main,
+summary,
+details {
+  display: block;
+}
+
+audio,
+canvas,
+video,
+progress {
+  vertical-align: baseline;
+}
+
+button {
+  background: none;
+  border: 0;
+  box-sizing: content-box;
+  color: inherit;
+  cursor: pointer;
+  font: inherit;
+  line-height: inherit;
+  overflow: visible;
+  vertical-align: inherit;
+}
+
+button:disabled {
+  cursor: default;
+}
+
+:focus {
+  outline: 4px solid rgba(0, 125, 250, 0.6);
+  outline-offset: 1px;
+}
+
+:focus[data-focus-method="mouse"]:not(input):not(textarea):not(select),
+:focus[data-focus-method="touch"]:not(input):not(textarea):not(select) {
+  outline: none;
+}
+
+:focus-visible {
+  outline: 4px solid rgba(0, 125, 250, 0.6);
+  outline-offset: 1px;
+}
+
+:focus:not(:focus-visible) {
+  outline: none;
+}
+
+::-moz-focus-inner {
+  border: 0;
+  padding: 0;
+}
+
+html {
+  font-family: "SF Pro Text", "SF Pro Icons", "Helvetica Neue", "Helvetica",
+    "Arial", sans-serif;
+  font-size: 106.25%;
+  quotes: "“" "”";
+}
+
+[lang]:lang(ar) {
+  font-family: "SF Pro AR", "SF Pro Gulf", "SF Pro Text", "SF Pro Icons",
+    "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+}
+
+[lang]:lang(ja) {
+  font-family: "SF Pro JP", "SF Pro Text", "SF Pro Icons",
+    "Hiragino Kaku Gothic Pro", "ヒラギノ角ゴ Pro W3", "メイリオ", "Meiryo",
+    "ＭＳ Ｐゴシック", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+}
+
+[lang]:lang(ko) {
+  font-family: "SF Pro KR", "SF Pro Text", "SF Pro Icons", "Apple Gothic",
+    "HY Gulim", "MalgunGothic", "HY Dotum", "Lexi Gulim", "Helvetica Neue",
+    "Helvetica", "Arial", sans-serif;
+}
+
+[lang]:lang(th) {
+  font-family: "SF Pro TH", "SF Pro Text", "SF Pro Icons", "Helvetica Neue",
+    "Helvetica", "Arial", sans-serif;
+}
+
+[lang]:lang(zh-CN) {
+  font-family: "SF Pro SC", "SF Pro Text", "SF Pro Icons", "PingFang SC",
+    "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+}
+
+[lang]:lang(zh-HK) {
+  font-family: "SF Pro HK", "SF Pro Text", "SF Pro Icons", "PingFang HK",
+    "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+}
+
+[lang]:lang(zh-MO) {
+  font-family: "SF Pro HK", "SF Pro TC", "SF Pro Text", "SF Pro Icons",
+    "PingFang HK", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+}
+
+[lang]:lang(zh-TW) {
+  font-family: "SF Pro TC", "SF Pro Text", "SF Pro Icons", "PingFang TC",
+    "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+}
+
+:lang(cs) {
+  quotes: "„" "“";
+}
+
+:lang(de) {
+  quotes: "„" "“";
+}
+
+:lang(de-CH) {
+  quotes: "«" "»";
+}
+
+:lang(de-LI) {
+  quotes: "«" "»";
+}
+
+:lang(fr) {
+  quotes: "« " " »";
+}
+
+:lang(fr-CH) {
+  quotes: "«" "»";
+}
+
+:lang(es-ES) {
+  quotes: "«" "»";
+}
+
+:lang(hu) {
+  quotes: "„" "“";
+}
+
+:lang(ja-JP) {
+  quotes: "「" "」";
+}
+
+:lang(no-NO) {
+  quotes: "«" "»";
+}
+
+:lang(lt) {
+  quotes: "„" "“";
+}
+
+:lang(pl) {
+  quotes: "„" "“";
+}
+
+:lang(ru) {
+  quotes: "« " " »";
+}
+
+:lang(zh) {
+  quotes: "「" "」";
+}
+
+:lang(zh-CN) {
+  quotes: "“" "”";
+}
+
+body {
+  font-size: 17px;
+  line-height: 1.47059;
+  font-weight: 400;
+  letter-spacing: -0.022em;
+  font-family: "SF Pro Text", "SF Pro Icons", "Helvetica Neue", "Helvetica",
+    "Arial", sans-serif;
+  background-color: #fff;
+  color: #1d1d1f;
+  font-style: normal;
+}
+
+body:lang(ar) {
+  line-height: 1.58824;
+  letter-spacing: 0em;
+  font-family: "SF Pro AR", "SF Pro Gulf", "SF Pro Text", "SF Pro Icons",
+    "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+}
+
+body:lang(ja) {
+  letter-spacing: 0em;
+  font-family: "SF Pro JP", "SF Pro Text", "SF Pro Icons",
+    "Hiragino Kaku Gothic Pro", "ヒラギノ角ゴ Pro W3", "メイリオ", "Meiryo",
+    "ＭＳ Ｐゴシック", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+}
+
+body:lang(ko) {
+  line-height: 1.58824;
+  letter-spacing: 0em;
+  font-family: "SF Pro KR", "SF Pro Text", "SF Pro Icons", "Apple Gothic",
+    "HY Gulim", "MalgunGothic", "HY Dotum", "Lexi Gulim", "Helvetica Neue",
+    "Helvetica", "Arial", sans-serif;
+}
+
+body:lang(zh) {
+  letter-spacing: 0em;
+}
+
+body:lang(th) {
+  line-height: 1.35296;
+  letter-spacing: 0em;
+  font-family: "SF Pro TH", "SF Pro Text", "SF Pro Icons", "Helvetica Neue",
+    "Helvetica", "Arial", sans-serif;
+}
+
+body:lang(zh-CN) {
+  font-family: "SF Pro SC", "SF Pro Text", "SF Pro Icons", "PingFang SC",
+    "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+}
+
+body:lang(zh-HK) {
+  font-family: "SF Pro HK", "SF Pro Text", "SF Pro Icons", "PingFang HK",
+    "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+}
+
+body:lang(zh-MO) {
+  font-family: "SF Pro HK", "SF Pro TC", "SF Pro Text", "SF Pro Icons",
+    "PingFang HK", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+}
+
+body:lang(zh-TW) {
+  font-family: "SF Pro TC", "SF Pro Text", "SF Pro Icons", "PingFang TC",
+    "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+}
+
+body,
+input,
+textarea,
+select,
+button {
+  font-synthesis: none;
+  -moz-font-feature-settings: "kern";
+  font-feature-settings: "kern";
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  direction: ltr;
+  text-align: left;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: 600;
+  color: #1d1d1f;
+}
+
+h1 img,
+h2 img,
+h3 img,
+h4 img,
+h5 img,
+h6 img {
+  display: block;
+  margin: 0;
+}
+
+h1 + *,
+h2 + *,
+h3 + *,
+h4 + *,
+h5 + *,
+h6 + * {
+  margin-top: 0.8em;
+}
+
+h1 + h1,
+h1 + h2,
+h1 + h3,
+h1 + h4,
+h1 + h5,
+h1 + h6,
+h2 + h1,
+h2 + h2,
+h2 + h3,
+h2 + h4,
+h2 + h5,
+h2 + h6,
+h3 + h1,
+h3 + h2,
+h3 + h3,
+h3 + h4,
+h3 + h5,
+h3 + h6,
+h4 + h1,
+h4 + h2,
+h4 + h3,
+h4 + h4,
+h4 + h5,
+h4 + h6,
+h5 + h1,
+h5 + h2,
+h5 + h3,
+h5 + h4,
+h5 + h5,
+h5 + h6,
+h6 + h1,
+h6 + h2,
+h6 + h3,
+h6 + h4,
+h6 + h5,
+h6 + h6 {
+  margin-top: 0.4em;
+}
+
+p + h1,
+ul + h1,
+ol + h1,
+p + h2,
+ul + h2,
+ol + h2,
+p + h3,
+ul + h3,
+ol + h3,
+p + h4,
+ul + h4,
+ol + h4,
+p + h5,
+ul + h5,
+ol + h5,
+p + h6,
+ul + h6,
+ol + h6 {
+  margin-top: 1.6em;
+}
+
+.heading-collapsed + * {
+  margin-top: 0;
+}
+
+p + *,
+ul + *,
+ol + * {
+  margin-top: 0.8em;
+}
+
+ul,
+ol {
+  margin-left: 1.17647em;
+}
+
+ul ul,
+ul ol,
+ol ul,
+ol ol {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+nav ul,
+nav ol {
+  margin: 0;
+  list-style: none;
+}
+
+li li {
+  font-size: 1em;
+}
+
+a,
+.link {
+  color: #06c;
+  letter-spacing: inherit;
+}
+
+a:link,
+a:visited,
+.link:link,
+.link:visited {
+  text-decoration: none;
+}
+
+a:hover,
+.link:hover {
+  text-decoration: underline;
+}
+
+a:active,
+.link:active {
+  text-decoration: none;
+}
+
+a:disabled,
+.link:disabled {
+  opacity: 0.32;
+}
+
+.links-inline,
+.links-stacked {
+  margin-left: 0;
+  margin-right: 0;
+  list-style: none;
+}
+
+.links-inline li {
+  display: inline;
+  margin: 0 0.8em;
+}
+
+.links-inline li:first-child {
+  margin-left: 0;
+}
+
+.links-inline li:last-child {
+  margin-right: 0;
+}
+
+.links-stacked li {
+  margin: 0;
+  display: block;
+}
+
+.links-stacked li + li {
+  margin-top: 0.4em;
+}
+
+b,
+strong {
+  font-weight: 600;
+}
+
+em,
+i,
+cite,
+dfn {
+  font-style: italic;
+}
+
+sup,
+sub {
+  position: relative;
+  font-size: 0.6em;
+  vertical-align: baseline;
+}
+
+sup {
+  top: -0.5em;
+}
+
+sub {
+  bottom: -0.25em;
+}
+
+.footnote a {
+  vertical-align: inherit;
+  color: inherit;
+}
+
+.footnote a:hover {
+  color: #06c;
+  text-decoration: none;
+}
+
+.footnote-reduced {
+  font-size: 0.45em;
+}
+
+sup.footnote-reduced {
+  top: -0.86em;
+}
+
+sub.footnote-reduced {
+  bottom: -0.36em;
+}
+
+.footnote-supglyph {
+  position: relative;
+  vertical-align: baseline;
+}
+
+.footnote-supglyph.footnote-reduced {
+  font-size: 0.9em;
+  top: -0.09em;
+}
+
+.footnote-diamond {
+  position: relative;
+  vertical-align: baseline;
+  font-feature-settings: "numr";
+  font-size: 1em;
+}
+
+sup.footnote-diamond {
+  top: initial;
+}
+
+sub.footnote-diamond {
+  bottom: -0.5em;
+}
+
+.footnote-diamond.footnote-reduced {
+  font-size: 0.9em;
+  top: -0.09em;
+}
+
+sub.footnote-diamond.footnote-reduced {
+  top: initial;
+  bottom: -0.52em;
+}
+
+.footnote-number {
+  position: relative;
+  vertical-align: baseline;
+  font-feature-settings: "numr";
+  font-size: 1em;
+}
+
+sup.footnote-number {
+  top: initial;
+}
+
+sub.footnote-number {
+  bottom: -0.5em;
+}
+
+.footnote-number.footnote-reduced {
+  font-size: 0.9em;
+  top: -0.09em;
+}
+
+sub.footnote-number.footnote-reduced {
+  top: initial;
+  bottom: -0.52em;
+}
+
+abbr {
+  border: 0;
+}
+
+:lang(ja),
+:lang(ko),
+:lang(th),
+:lang(zh) {
+  font-style: normal;
+}
+
+:lang(ko) {
+  word-break: keep-all;
+}
+
+/* 
+- ICONS Padrão 
+- Definição de ícones padrão para serem usados em diversos elementos do site.
+*/
+.icon-chevronright::before {
+  content: "";
+}
+.icon-chevronright::after {
+  content: "\F301";
 }
