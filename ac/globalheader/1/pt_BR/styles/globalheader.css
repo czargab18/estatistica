@@ -11,12 +11,13 @@
   max-height: max-content;
   display: flex;
   flex-direction: column;
-
   justify-items: center;
   font-size: 18px;
   white-space: nowrap;
   align-items: center;
   z-index: 1;
+  max-width: 2560px;
+  margin: 0 auto;
 }
 #globalheader body {
   margin: 0;

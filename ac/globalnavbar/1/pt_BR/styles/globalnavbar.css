@@ -5,13 +5,13 @@
   all: unset;
 }
 
-#globalnavbar body {
+/* #globalnavbar body {
   --font-pattern: SF Pro HK, SF Pro Display, SF Pro Icons, PingFang HK,
     Helvetica Neue, Helvetica, Arial, sans-serif;
   margin: 0;
   padding: 0;
   font-family: var(--font-pattern);
-}
+} */
 
 #globalnavbar ul,
 #globalnavbar ol,
@@ -109,11 +109,11 @@
   padding: 0;
 }
 
-html,
+/* html,
 body {
   margin: 0;
   padding: 0;
-}
+} */
 
 :root {
   --r-globalnavbar-background-opened: #fbfbfd;

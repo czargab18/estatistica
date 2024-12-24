@@ -2,6 +2,8 @@
   font-weight: normal;
   text-size-adjust: 100%;
   font-family: var(--r-font-family-default);
+  max-width: 2560px;
+  width: 100%;
 }
 
 #globalfooter,
@@ -532,7 +534,7 @@
     flex-wrap: wrap;
     align-content: space-between;
   }
-/*   #globalfooter ul span.footer-espacador {
+  /*   #globalfooter ul span.footer-espacador {
     display: none;
   } */
 }
@@ -563,7 +565,7 @@
     margin-top: 10px;
     position: static;
   }
-/*   #globalfooter-copyright #gf-copyright-legal a.locale-BR {
+  /*   #globalfooter-copyright #gf-copyright-legal a.locale-BR {
     padding-bottom: 19px;
   } */
 }
@@ -579,7 +581,6 @@
     transition: transform 300ms ease;
   }
 }
-
 
 footer span,
 footer p {
