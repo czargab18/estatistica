@@ -1,9 +1,9 @@
 @charset "UTF-8";
-#globalsection {
+#globalribbon {
   all: unset;
 }
 
-#globalsection {
+#globalribbon {
   --font-pattenr: SF Pro AR, SF Pro Gulf, SF Pro Text, SF Pro Icons,
     Helvetica Neue, Helvetica, Arial, sans-serif;
 
@@ -24,7 +24,7 @@
   flex-wrap: wrap;
 }
 
-#globalsection .section-content {
+#globalribbon .section-content {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
@@ -32,17 +32,17 @@
   /* height: auto; */
 }
 
-#globalsection a {
+#globalribbon a {
   margin-left: 0.3em;
 }
 
-.globalsection .icon:before {
+.globalribbon .icon:before {
   font-family: "SF Pro Icons";
   content: ""; 
   padding: 0;
   text-decoration: none;
 }
-.globalsection .icon:after {
+.globalribbon .icon:after {
   font-family: "SF Pro Icons";
   content: ""; 
   padding: 0;
