@@ -721,6 +721,10 @@ abbr {
 
 /* FOOTER */
 #globalfooter,
+main{
+  position: static;
+}
+#globalfooter,
 #globalfooter:before,
 #globalfooter:after,
 #globalfooter *,
