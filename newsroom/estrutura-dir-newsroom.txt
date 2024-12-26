@@ -1,4 +1,3 @@
-```
 ├───newsroom/
     ├───contents-news/
     │   ├───DepEstatistica/
@@ -135,4 +134,3 @@
     │       └───UnB-news-API.txt
     └───index.html
     └───style.css
-```
