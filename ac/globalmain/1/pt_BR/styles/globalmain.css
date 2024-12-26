@@ -95,7 +95,7 @@ section[data-module-template="heroes"] figure[id="unit-image-graduacao"] {
   height: 624px;
   background-size: 3008px 624px;
   background-repeat: no-repeat;
-  background-image: url("/v/home/images/heroes/graduacao-banner-grande.png");
+  background-image: url("/images/banners/heroes/graduacao-banner-grande.png");
 }
 
 @media only screen and (-webkit-min-device-pixel-ratio: 1.5),
@@ -106,7 +106,7 @@ section[data-module-template="heroes"] figure[id="unit-image-graduacao"] {
     [data-module-template="heroes"]
     .unit-image-wrapper
     .unit-image.unit-image-graduacao {
-    background-image: url("/v/home/images/heroes/graduacao-banner-grande.png");
+    background-image: url("/images/banners/heroes/graduacao-banner-grande.png");
   }
 }
 
@@ -119,7 +119,7 @@ section[data-module-template="heroes"] figure[id="unit-image-graduacao"] {
     height: 617px;
     background-size: 1068px 617px;
     background-repeat: no-repeat;
-    background-image: url("/v/home/images/heroes/graduacao-banner-grande.png");
+    background-image: url("/images/banners/heroes/graduacao-banner-grande.png");
   }
 }
 
@@ -130,7 +130,7 @@ section[data-module-template="heroes"] figure[id="unit-image-graduacao"] {
     [data-module-template="heroes"]
     .unit-image-wrapper
     .unit-image.unit-image-graduacao {
-    background-image: url("/v/home/images/heroes/graduacao-banner-grande.png");
+    background-image: url("/images/banners/heroes/graduacao-banner-grande.png");
   }
 }
 
@@ -143,7 +143,7 @@ section[data-module-template="heroes"] figure[id="unit-image-graduacao"] {
     height: 548px;
     background-size: 734px 548px;
     background-repeat: no-repeat;
-    background-image: url("/v/home/images/heroes/graduacao-banner-grande.png");
+    background-image: url("/images/banners/heroes/graduacao-banner-grande.png");
   }
 }
 
@@ -154,7 +154,7 @@ section[data-module-template="heroes"] figure[id="unit-image-graduacao"] {
     [data-module-template="heroes"]
     .unit-image-wrapper
     .unit-image.unit-image-graduacao {
-    background-image: url("/v/home/images/heroes/graduacao-banner-grande.png");
+    background-image: url("/images/banners/heroes/graduacao-banner-grande.png");
   }
 }
 
@@ -167,7 +167,7 @@ section[data-module-template="heroes"] figure[id="unit-image-graduacao"] {
     height: 736px;
     background-size: 3008px 736px;
     background-repeat: no-repeat;
-    background-image: url("/v/home/images/heroes/graduacao-banner-grande.png");
+    background-image: url("/images/banners/heroes/graduacao-banner-grande.png");
   }
 }
 
@@ -178,7 +178,7 @@ section[data-module-template="heroes"] figure[id="unit-image-graduacao"] {
     [data-module-template="heroes"]
     .unit-image-wrapper
     .unit-image.unit-image-graduacao {
-    background-image: url("/v/home/images/heroes/graduacao-banner-grande.png");
+    background-image: url("/images/banners/heroes/graduacao-banner-grande.png");
   }
 }
 
@@ -191,7 +191,7 @@ section[data-module-template="heroes"] figure[id="unit-image-graduacao"] {
     height: 694px;
     background-size: 1068px 694px;
     background-repeat: no-repeat;
-    background-image: url("/v/home/images/heroes/graduacao-banner-grande.png");
+    background-image: url("/images/banners/heroes/graduacao-banner-grande.png");
   }
 }
 
@@ -202,19 +202,19 @@ section[data-module-template="heroes"] figure[id="unit-image-graduacao"] {
     [data-module-template="heroes"]
     .unit-image-wrapper
     .unit-image.unit-image-graduacao {
-    background-image: url("/v/home/images/heroes/graduacao-banner-grande.png");
+    background-image: url("/images/banners/heroes/graduacao-banner-grande.png");
   }
 }
 
 section[data-module-template="heroes"] figure[id="unit-image-posgraduacao"] {
   width: 3008px;
   height: 624px;
-  background-image: url("/v/home/images/heroes/posgraduacao-banner-grande.png");
+  background-image: url("/images/banners/heroes/posgraduacao-banner-grande.png");
 }
 section[data-module-template="heroes"] figure[id="unit-image-docentes"] {
   width: 3008px;
   height: 624px;
-  background-image: url("/v/home/images/heroes/docente-banner-grande.png");
+  background-image: url("/images/banners/heroes/docente-banner-grande.png");
 }
 
 .main [data-module-template="heroes"] {
@@ -253,22 +253,22 @@ section[data-module-template="promos"] figure {
 }
 
 section[data-module-template="promos"] figure[id="unit-image-instalacoes"] {
-  background-image: url("/v/home/images/promos/fumaça-banner-medio.png");
+  background-image: url("/images/banners/promos/fumaça-banner-medio.png");
 }
 section[data-module-template="promos"] figure[id="unit-image-pesquisa"] {
-  background-image: url("/v/home/images/promos/estudando-banner-medio.png");
+  background-image: url("/images/banners/promos/estudando-banner-medio.png");
 }
 section[data-module-template="promos"] figure[id="unit-image-extencao"] {
-  background-image: url("/v/home/images/promos/caquito-banner-medio.png");
+  background-image: url("/images/banners/promos/caquito-banner-medio.png");
 }
 section[data-module-template="promos"] figure[id="unit-image-eventos"] {
-  background-image: url("/v/home/images/promos/pintura-banner-medio.png");
+  background-image: url("/images/banners/promos/pintura-banner-medio.png");
 }
 section[data-module-template="promos"] figure[id="unit-image-formularios"] {
-  background-image: url("/v/home/images/promos/jovem-banner-medio.png");
+  background-image: url("/images/banners/promos/jovem-banner-medio.png");
 }
 section[data-module-template="promos"] figure[id="unit-image-contato"] {
-  background-image: url("/v/home/images/promos/pintura-banner-medio.png");
+  background-image: url("/images/banners/promos/pintura-banner-medio.png");
 }
 
 [data-module-template] [data-unit-id] .unit-wrapper {
