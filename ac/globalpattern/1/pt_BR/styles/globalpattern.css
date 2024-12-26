@@ -103,6 +103,13 @@ body {
   align-items: center;
   justify-items: center;
 }
+body > nav,
+body > header,
+body > main,
+body > footer,
+body > div {
+  max-width: 2560px;
+}
 
 ul,
 ol,

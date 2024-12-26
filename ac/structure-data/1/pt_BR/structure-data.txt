@@ -1,0 +1,3 @@
+Antiga versão de /images/
+Será usado para outros tipos de dados.
+ - 
