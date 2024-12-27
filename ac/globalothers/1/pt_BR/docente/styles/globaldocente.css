@@ -2,5 +2,292 @@
 body#globaldocente {
   all: unset;
 }
+body#globaldocente main {
+  font-size: 17px;
+  background: -webkit-gradient(
+    linear,
+    left top,
+    left bottom,
+    from(#eaeaea),
+    to(#fafafa)
+  );
+  padding-top: calc(var(--r-globalheader-height) + var(--r-globalnavbar-height));
+  display: flex;
+  justify-content: center;
+  font-size: 17px;
+  line-height: 1.52947;
+  font-weight: 400;
+  letter-spacing: -0.021em;
+  background-color: #fff;
+  color: #333;
+  font-style: normal;
+}
 
+#globalmain-docente {
+  padding-top: calc(var(--r-globalheader-height) + var(--r-globalnavbar-height));
+}
 
+#content-gradient .content {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  gap: 20px;
+}
+#content-gradient {
+  background: -webkit-gradient(
+    linear,
+    left top,
+    left bottom,
+    from(#eaeaea),
+    to(#fafafa)
+  );
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+.content-profile {
+  width: 980px;
+}
+@media (max-width: 980px) {
+  .content-profile {
+    margin: 0 50px;
+  }
+}
+.profile-ribbon {
+  width: 100%;
+  padding-top: 14px;
+  padding-bottom: 16px;
+  font-size: 21px;
+  font-weight: 600;
+  letter-spacing: 0.23px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.16);
+  line-height: 1.14286;
+  letter-spacing: 0.011em;
+  cursor: default;
+  white-space: nowrap;
+  float: none;
+}
+.profile-apresentation {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.apresentation-title {
+  width: 360px;
+  height: 190px;
+}
+.apresentation-title h1 {
+  color: #333333;
+  font-size: 34px;
+  line-height: 40px;
+  letter-spacing: 0.34px;
+  font-weight: 600;
+  margin: 0;
+  padding-top: 50px;
+}
+.apresentation-title span {
+  color: #333333;
+  font-size: 28px;
+  letter-spacing: 0.3px;
+  font-weight: lighter;
+  margin: 0;
+  padding-top: 50px;
+}
+
+.img-person figure[id="unit-image-docente-cesargabrielphd"] {
+  background-image: url("/images/br/retratos/docentes/cesargabrielphd.png");
+  width: 380px;
+  height: 400px;
+}
+
+main {
+  display: flex;
+  justify-content: center;
+  color: #333333;
+  flex-direction: column;
+  align-items: center;
+}
+main .content {
+  width: 980px;
+}
+
+@media (max-width: 980px) {
+  main .content {
+    margin: 0 50px;
+  }
+}
+main .title-main {
+  font-size: 20px;
+  font-weight: 600;
+  letter-spacing: 0.23px;
+  color: #1c1010;
+}
+@media (max-width: 980px) {
+  main .title-main {
+    margin: 0 50px;
+  }
+}
+main .content-main {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  gap: 56px;
+  /* margin:0 50px; */
+}
+@media (max-width: 980px) {
+  main .content-main {
+    margin: 0 50px;
+  }
+}
+
+main .description-left,
+main .description-right {
+  width: 420px;
+  height: max-content;
+}
+
+main :is(.description-left, .description-right) p {
+  padding-bottom: 20px;
+  margin: 0;
+}
+
+main .habilidades {
+  width: 980px;
+  height: max-content;
+}
+
+main .habilidades .title2 {
+  font-size: 20px;
+  font-weight: 600;
+  letter-spacing: 0.23px;
+  color: #1c1010;
+  margin: 0 50px;
+}
+@media (max-width: 980px) {
+  main .habilidades .title2 {
+    margin: 0 50px;
+  }
+}
+main .content-habilid {
+  margin: 0 50px;
+  margin-top: 16px;
+}
+
+@media (max-width: 980px) {
+  main .content-habilid {
+    margin: 0 50px;
+  }
+}
+
+main .content-habilid .title3 {
+  font-size: 16px;
+  font-weight: 400;
+  letter-spacing: 0.23px;
+  color: #1c1010;
+  margin: 0;
+}
+
+main .content-habilid .box {
+  margin: 0 32px;
+  position: relative;
+  width: 100%;
+  height: 40px;
+  display: grid;
+  grid-template-columns: 0.2fr 0.6fr;
+  justify-content: start;
+  align-items: center;
+}
+main .habilidades .more {
+  margin-top: 60px;
+}
+
+main .box h4 {
+  text-transform: uppercase;
+  color: #848c90;
+  font-weight: 500;
+  margin: 0;
+}
+
+main .box .percent {
+  position: relative;
+  width: 100%;
+  height: 10px;
+  background: #f0f0f0;
+  border-radius: 12px;
+}
+
+main .box .percent div {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  background: #03a9f4;
+  border-radius: 12px;
+}
+
+main .latters-curriculum {
+  width: 980px;
+  height: max-content;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 20px;
+}
+
+main .latters-curriculum .title-main {
+  font-size: 20px;
+  font-weight: 600;
+  letter-spacing: 0.23px;
+  color: #1c1010;
+}
+@media (max-width: 980px) {
+  main .latters-curriculum .title-main {
+    margin: 0 50px;
+  }
+  main .content-latters {
+    margin: 0 50px;
+  }
+}
+main .latters-curriculum .box-latters {
+  width: 980px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+}
+
+main .box-latters .box-lattters-text {
+  width: 50%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  column-gap: 16px;
+  color: #326c99;
+  margin: 0 36px;
+}
+
+main .lattters-text {
+  display: flex;
+  flex-direction: column;
+}
+main .lattters-text h5 {
+  margin: 0;
+}
+main .lattters-text .lattters-sub {
+  margin: 0;
+  padding-left: 15px;
+}
+
+main .box-latters .box-lattters-text h4 {
+  margin: 0;
+}
+
+main .box-latters .box-lattters-text svg {
+  fill: #848c90 !important;
+}
+
+main .box-latters .box-lattters-text h5 {
+  color: #848c90;
+}
