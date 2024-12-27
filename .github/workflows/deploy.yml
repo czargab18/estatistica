@@ -1,4 +1,4 @@
-name: Deployment estatistica.pro Hostinger
+name: Deployment Estatística
 on:
   push:
     branches: ["main"]
