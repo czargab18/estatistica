@@ -6,18 +6,18 @@ on:
     branches: ["main"]
   workflow_dispatch:
 jobs:
-  build:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Build
-        run: echo "Building the application"
+#  build:
+#    runs-on: ubuntu-latest
+#    steps:
+#      - name: Build
+#        run: echo "Building the application"
   # Deploy desenvolvimento
   deploy-development:
     runs-on: ubuntu-latest
     environment:
       name: development
       url: ${{ vars.URL }}
-    needs: build
+#    needs: build
     steps:
       - name: Repo Checkout
         uses: actions/checkout@v2
