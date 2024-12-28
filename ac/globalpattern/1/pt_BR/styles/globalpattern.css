@@ -78,6 +78,38 @@
   --r-globaltop-previous-flyout-spacing: 88px;
   --r-globaltop-previous-flyout-close-delay: 0.12s;
   --r-globaltop-previous-flyout-link-opacity-duration: 0.5s;
+
+  /* globalnavbar.css */
+  --r-globalnavbar-background-opened: #fbfbfd;
+  --r-globalnavbar-background-opened-dark: #161617;
+  /* barra */
+  --r-globalnavbar-background-white: #ffffff;
+  --r-globalnavbar-color-secondary: #333336;
+  --r-globalnavbar-color-hover: #000000;
+
+  --globalnavbar-background: none;
+  --globalnavbar-backdrop-filter: none;
+  --r-globalnavbar-height: 44px;
+  --r-globalnavbar-font-size: 15px;
+  /* logo */
+  --globalnavbar-govbr-blue: #2864ae;
+  --r-globalnavbar-govbr-yellow: #fabd10;
+  --r-globalnavbar-govbr-light-green: #026e3a;
+  --font-pattern: SF Pro HK, SF Pro Display, SF Pro Icons, PingFang HK,
+    Helvetica Neue, Helvetica, Arial, sans-serif;
+  --globalnav-backdrop-filter: saturate(180%) blur(20px);
+  --globalnav-background: rgba(251, 251, 253, 0.8);
+
+  --r-globalnavbar-height: 44px;
+  --r-globalnavbar-color-primary-wihte: rgba(255, 255, 255, 0.8);
+  --r-globalnavbar-color-hover-white: #ffffff;
+  --r-globalnavbar-font-size: 17px;
+  --r-globalnavbar-color-secondary: rgb(51, 51, 54);
+  --r-globalnavbar-color-secondary-black: #000000;
+  /*   --globalnavbar-background: none;
+  --globalnavbar-backdrop-filter: none; */
+  --globalnavbar-backdrop-filter: saturate(180%) blur(20px);
+  --globalnavbar-background: rgba(251, 251, 253, 0.8);
 }
 .visuallyhidden {
   position: absolute;
@@ -721,7 +753,7 @@ abbr {
 
 /* FOOTER */
 #globalfooter,
-main{
+main {
   position: static;
 }
 #globalfooter,

@@ -4,14 +4,9 @@ body#globaldocente {
 }
 body#globaldocente main {
   font-size: 17px;
-  background: -webkit-gradient(
-    linear,
-    left top,
-    left bottom,
-    from(#eaeaea),
-    to(#fafafa)
+  padding-top: calc(
+    var(--r-globalheader-height) + var(--r-globalnavbar-height)
   );
-  padding-top: calc(var(--r-globalheader-height) + var(--r-globalnavbar-height));
   display: flex;
   justify-content: center;
   font-size: 17px;
@@ -21,10 +16,14 @@ body#globaldocente main {
   background-color: #fff;
   color: #333;
   font-style: normal;
+  gap: 1em;
+  margin-bottom: 1em;
 }
 
 #globalmain-docente {
-  padding-top: calc(var(--r-globalheader-height) + var(--r-globalnavbar-height));
+  padding-top: calc(
+    var(--r-globalheader-height) + var(--r-globalnavbar-height)
+  );
 }
 
 #content-gradient .content {
