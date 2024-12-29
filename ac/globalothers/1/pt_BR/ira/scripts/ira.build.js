@@ -6,7 +6,7 @@ function criaPeriodo() {
   periodoCount++;
   disciplinaCount[periodoCount] = 0;
 
-  const container = document.getElementById("container");
+  const container = document.getElementById("container-periodos");
 
   const periodoDiv = document.createElement("div");
   periodoDiv.id = `periodo${periodoCount}`;
@@ -57,10 +57,10 @@ function adicionarDisciplina(periodoId) {
   );
 
   const disciplinaDiv = document.createElement("div");
-  disciplinaDiv.className = "row g-3";
-  disciplinaDiv.id = `periodo${periodoId}-disciplina${disciplinaId}`;
+  disciplinaDiv.id = `periodo${periodoId}-disciplina${disciplinaId}-lista`;
   disciplinaDiv.innerHTML = `
-    <div class="col-sm-4">
+    <div>
+    <div id="col-item-discip-${disciplinaId}" class="col-items">
       <input
         type="text"
         id="periodo${periodoId}-disciplina${disciplinaId}-codigo"
@@ -72,7 +72,7 @@ function adicionarDisciplina(periodoId) {
         maxlength="7"
       />
     </div>
-    <div class="col-sm-4">
+    <div id="col-item-discip-${disciplinaId}"" class="col-items">
       <select
         id="periodo${periodoId}-disciplina${disciplinaId}-creditos"
         class="form-control"
@@ -92,7 +92,7 @@ function adicionarDisciplina(periodoId) {
         <option value="64">64 Créditos</option>
       </select>
     </div>
-    <div class="col-sm-2">
+    <div id="col-item-discip-${disciplinaId}" class="col-items">
       <select
         id="periodo${periodoId}-disciplina${disciplinaId}-mencao"
         class="form-control"
@@ -107,11 +107,14 @@ function adicionarDisciplina(periodoId) {
         <option value="SS">SS</option>
       </select>
     </div>
-    <div class="col-sm-2" id="status-col-${periodoId}-${disciplinaId}">
+    </div>
+    <div >
+    <div id="col-item-status-discip-${disciplinaId}" class="col-items">
       <span id="status-${periodoId}-${disciplinaId}">Status</span>
     </div>
-    <div class="col-sm-12">
+    <div id="col-item-discip-${disciplinaId}">
       <button class="btn btn-danger" onclick="removerDisciplina(${periodoId}, ${disciplinaId})">Remover Disciplina</button>
+    </div>
     </div>
   `;
 

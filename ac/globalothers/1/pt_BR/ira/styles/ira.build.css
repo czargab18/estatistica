@@ -2,17 +2,6 @@
 main[id="globalmain-ira"] {
   all: unset;
 }
-html {
-  --font-padrao: "SF Pro Text", "SF Pro Icons", "Helvetica Neue", "Helvetica",
-    "Arial", sans-serif;
-  font-family: var(--font-padrao);
-  font-size: 106.25%;
-  quotes: "â€œ" "â€";
-}
-[lang]:lang(pt-br) {
-  font-family: "SF Pro AR", "SF Pro AR Text", "SF Pro Text", "SF Pro Gulf",
-    "SF Pro Icons", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
-}
 button,
 input,
 select,
@@ -121,70 +110,80 @@ main[id="globalmain-ira"] #chapternav {
   margin-top: 6px;
 }
 
-main[id="globalmain-ira"] div#container {
+main[id="globalmain-ira"] div[id="container-periodos"] {
   display: flex;
   flex-direction: column;
   flex-wrap: nowrap;
   justify-content: center;
+  width: 100%;
 }
-div#linhaSuperior {
-  position: sticky;
+div[id="container-periodos"] > div[id^="periodo"] {
   display: flex;
-  flex-direction: row;
-  gap: 2em;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
-div#linhaSuperior button#botao-baixar {
-  display: block;
-  background-color: gray;
-  border-color: gray;
+div[id="container-periodos"] > div[id^="periodo"],
+div[id="container-periodos"] > div[id^="periodo"] > * {
+  width: 100%;
 }
-div[id^="periodo"] {
-  display: flex;
-  margin-top: 1rem;
-  margin-bottom: 1rem;
-  flex-direction: row;
-  gap: 0.5em;
-  align-items: baseline;
-}
-@media screen and (max-width: 1080px) {
-  div[id^="periodo"] {
+
+@media screen and (max-width: 1079px) {
+  div[id="container-periodos"] div[id^="periodo"] {
     display: flex;
+    flex-direction: column;
     align-items: baseline;
     gap: 0.5em;
     margin-top: 0;
     margin-bottom: 1rem;
-    flex-direction: row;
   }
 }
-div[id^="periodo"] div[class="periodo-title"] {
+div[id^="periodo"] > div[class="periodo-title"] {
   display: flex;
   flex-direction: row;
   align-items: baseline;
-  justify-content: space-between;
+  justify-content: space-around;
 }
 
 div[id^="periodo"] div[class="periodo-title-btns"] button:nth-child(1) {
   margin-right: 0.5em;
 }
 
-/* div.row.g-3 > div.row.g-3 {
+div[id^="periodo"] > div[id$="-disciplinas"] > div[id$="-lista"] {
   display: flex;
   flex-direction: row;
-  flex-wrap: nowrap;
-  width: 100%;
-  justify-content: space-evenly;
+  justify-content: center;
   align-items: center;
-  row-gap: 1em;
+  gap: 1em;
+  width: 100%;
 }
-@media (max-width: 744px) {
-  div.row.g-3 > div.row.g-3 {
+
+div[id^="periodo"] > div[id$="-disciplinas"] > div[id$="-lista"] div {
+  display: flex;
+  flex-direction: row;
+  align-items: baseline;
+  justify-content: center;
+  flex-wrap: wrap;
+  column-gap: 3.5em;
+}
+@media screen and (max-width: 1080px) {
+  div[id^="periodo"] > div[id$="-disciplinas"] > div[id$="-lista"] div {
     flex-direction: column;
+    justify-content: center;
+    flex-wrap: nowrap;
+    align-items: center;
+    row-gap: 2em;
   }
 }
 
-div[class="periodo-title-btns"] {
-  margin-top: 0;
-} */
+div[id^="periodo"]
+  > div[id$="-disciplinas"]
+  > div[id$="-lista"]
+  > div[class="col-items"]
+  > * {
+  display: block;
+  width: 12em;
+}
 
 .btn-success,
 .btn-success:hover,
