@@ -178,14 +178,14 @@ div.row.g-3 > div.row.g-3 {
   background-color: #157347;
   border-color: #146c43;
 }
+
 .btn-danger,
 .remove-periodo {
   background-color: transparent;
-  color: black;
-  border-color: black;
+  color: #d0192b;
+  border-color: #d0192b;
   font-family: var(--r-font-family-default);
 }
-
 .btn-danger:hover,
 .remove-periodo:hover {
   color: #fff;
