@@ -11,9 +11,9 @@ function criaPeriodo() {
   const periodoDiv = document.createElement("div");
   periodoDiv.id = `periodo${periodoCount}`;
   periodoDiv.innerHTML = `
-    <div class="d-flex justify-content-between">
+    <div class="periodo-title">
       <h3>${periodoCount}º Período</h3>
-      <div>
+      <div class="periodo-title-btns">
       <button
           class="btn btn-danger remove-periodo"
           onclick="removerPeriodo(${periodoCount})"

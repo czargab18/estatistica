@@ -1,3 +1,7 @@
+@charset "UTF-8";
+main[id="globalmain-ira"] {
+  all: unset;
+}
 html {
   --font-padrao: "SF Pro Text", "SF Pro Icons", "Helvetica Neue", "Helvetica",
     "Arial", sans-serif;
@@ -9,31 +13,17 @@ html {
   font-family: "SF Pro AR", "SF Pro AR Text", "SF Pro Text", "SF Pro Gulf",
     "SF Pro Icons", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
 }
-body {
-  --chapternav-hight: calc(4em + 1.5em);
-  --bg-color-white: rgba(255, 255, 257, 1);
-  --bg-color-gray: rgb(245, 245, 247, 1);
-  --bg-color-blue: #2997ff;
-  --bg-color-blue-black: #004080;
-  --bg-color-green: #007a33;
-  font-family: "Roboto", sans-serif;
-  font-size: 16px;
-  line-height: 1.5;
-  color: #000000;
-  background-color: var(--bg-color-white);
-  margin: 0;
-  padding: 0;
-}
 button,
 input,
 select,
 span[id^="status-"] {
+  width: 12em;
+  color: #ffffff;
   padding: 0.75rem;
-  border-radius: 0.75em;
   border: 0.15em;
+  border-radius: 0.75em;
   border-style: solid;
   border-color: var(--bg-color-blue-black);
-  color: #ffffff;
   background-color: var(--bg-color-blue-black);
 }
 input:active,
@@ -58,8 +48,28 @@ section#globalsection-ira-avisos #noticia-avisos {
   display: flex;
   justify-content: center;
 }
-
-#chapternav {
+main[id="globalmain-ira"],
+div[id="chapternav"] {
+  max-width: 2560px;
+  width: 100%;
+  justify-items: center;
+}
+main[id="globalmain-ira"] {
+  --chapternav-hight: calc(4em + 1.5em);
+  --bg-color-white: rgba(255, 255, 257, 1);
+  --bg-color-gray: rgb(245, 245, 247, 1);
+  --bg-color-blue: #2997ff;
+  --bg-color-blue-black: #004080;
+  --bg-color-green: #007a33;
+  font-family: "Roboto", sans-serif;
+  font-size: 16px;
+  line-height: 1.5;
+  color: #000000;
+  background-color: var(--bg-color-white);
+  margin: 0;
+  padding: 0;
+}
+main[id="globalmain-ira"] #chapternav {
   position: sticky;
   top: 0;
   display: flex;
@@ -67,45 +77,39 @@ section#globalsection-ira-avisos #noticia-avisos {
   flex-wrap: nowrap;
   align-items: center;
   justify-content: space-around;
-  gap: 0.5rem;
   width: 100%;
   background-color: var(--bg-color-gray);
   margin-top: calc(
     var(--r-globalheader-height) + var(--r-globalnavbar-height) + 32px
   );
-  padding-top: 0.5em;
-  padding-bottom: 0.5em;
 }
-@media screen and (max-width: 768px) {
-  #chapternav {
+@media screen and (max-width: 744px) {
+  main[id="globalmain-ira"] #chapternav {
     margin-top: calc(var(--r-globalnavbar-height) + 32px);
   }
 }
 
 #chapternav .chapternav-content {
+  width: 100%;
+  padding: 0.5em;
+  margin-left: 2em;
+  margin-right: 2em;
   display: flex;
   flex-direction: row;
   flex-wrap: nowrap;
   align-items: center;
-  gap: 38em;
-  max-width: 1024px;
+  justify-content: space-between;
 }
-#chapternav .chapternav-content button {
-  padding: 0.5rem;
+#chapternav .chapternav-content > * {
+  margin: 0;
 }
-@media (max-width: 768px) {
-  #chapternav {
-    flex-direction: column;
-    padding-top: 0.5rem;
-    padding-bottom: 0.5rem;
-    height: max-content;
-  }
+
+@media screen and (max-width: 600px) {
   #chapternav .chapternav-content {
     flex-direction: column;
-    max-width: 1024px;
-    gap: 0.25em;
   }
 }
+
 #titulo,
 #ira-mp {
   text-align: center;
@@ -116,14 +120,12 @@ section#globalsection-ira-avisos #noticia-avisos {
   letter-spacing: 0.007em;
   margin-top: 6px;
 }
-div#container {
-  margin-bottom: 400px;
+
+main[id="globalmain-ira"] div#container {
   display: flex;
   flex-direction: column;
   flex-wrap: nowrap;
   justify-content: center;
-  margin-top: 1rem;
-  margin-bottom: 1rem;
 }
 div#linhaSuperior {
   position: sticky;
@@ -140,17 +142,32 @@ div[id^="periodo"] {
   display: flex;
   margin-top: 1rem;
   margin-bottom: 1rem;
-  flex-direction: column;
+  flex-direction: row;
   gap: 0.5em;
+  align-items: baseline;
 }
-div[id^="periodo"] .d-flex {
+@media screen and (max-width: 1080px) {
+  div[id^="periodo"] {
+    display: flex;
+    align-items: baseline;
+    gap: 0.5em;
+    margin-top: 0;
+    margin-bottom: 1rem;
+    flex-direction: row;
+  }
+}
+div[id^="periodo"] div[class="periodo-title"] {
   display: flex;
+  flex-direction: row;
+  align-items: baseline;
   justify-content: space-between;
-  align-items: center;
-  justify-content: space-around;
-  width: 100%;
 }
-div.row.g-3 > div.row.g-3 {
+
+div[id^="periodo"] div[class="periodo-title-btns"] button:nth-child(1) {
+  margin-right: 0.5em;
+}
+
+/* div.row.g-3 > div.row.g-3 {
   display: flex;
   flex-direction: row;
   flex-wrap: nowrap;
@@ -159,11 +176,16 @@ div.row.g-3 > div.row.g-3 {
   align-items: center;
   row-gap: 1em;
 }
-@media (max-width: 768px) {
+@media (max-width: 744px) {
   div.row.g-3 > div.row.g-3 {
     flex-direction: column;
   }
 }
+
+div[class="periodo-title-btns"] {
+  margin-top: 0;
+} */
+
 .btn-success,
 .btn-success:hover,
 .btn-primary {
@@ -220,7 +242,7 @@ div.row.g-3 > div.row.g-3 {
   margin: 0;
   text-align: center;
 }
-@media (max-width: 768px) {
+@media (max-width: 744px) {
   #aviso-site-nao-oficial {
     position: static;
     text-align: justify;
