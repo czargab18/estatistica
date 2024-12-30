@@ -31,33 +31,34 @@ jobs:
           REMOTE_USER: ${{ vars.REMOTE_USER }}
           REMOTE_PORT: ${{ vars.REMOTE_PORT }}
           TARGET: ${{ vars.TARGET }}
-  # Deploy staging
-  deploy-staging:
-    runs-on: ubuntu-latest
-    environment:
-      name: staging
-      url: ${{ vars.URL }}
-    needs: deploy-development
-    steps:
-      - name: Repo Checkout
-        uses: actions/checkout@v2
-      - name: Hostinger Deployment
-        uses: easingthemes/ssh-deploy@main
-        with:
-          SSH_PRIVATE_KEY: ${{ secrets.SERVER_SSH_KEY }}
-          ARGS: "-rlgoDzvO --delete"
-          SOURCE: "./"
-          REMOTE_HOST: ${{ vars.REMOTE_HOST }}
-          REMOTE_USER: ${{ vars.REMOTE_USER }}
-          REMOTE_PORT: ${{ vars.REMOTE_PORT }}
-          TARGET: ${{ vars.TARGET }}
+#   # Deploy staging
+#   deploy-staging:
+#     runs-on: ubuntu-latest
+#     environment:
+#       name: staging
+#       url: ${{ vars.URL }}
+#     needs: deploy-development
+#     steps:
+#       - name: Repo Checkout
+#         uses: actions/checkout@v2
+#       - name: Hostinger Deployment
+#         uses: easingthemes/ssh-deploy@main
+#         with:
+#           SSH_PRIVATE_KEY: ${{ secrets.SERVER_SSH_KEY }}
+#           ARGS: "-rlgoDzvO --delete"
+#           SOURCE: "./"
+#           REMOTE_HOST: ${{ vars.REMOTE_HOST }}
+#           REMOTE_USER: ${{ vars.REMOTE_USER }}
+#           REMOTE_PORT: ${{ vars.REMOTE_PORT }}
+#           TARGET: ${{ vars.TARGET }}
   # Deploy produção
   deploy-production:
     runs-on: ubuntu-latest
     environment:
       name: production
       url: ${{ vars.URL }}
-    needs: deploy-staging
+#    needs: deploy-staging
+    needs: deploy-development
     steps:
       - name: Repo Checkout
         uses: actions/checkout@v2
