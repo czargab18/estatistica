@@ -62,10 +62,11 @@ Para contribuir com este repositório, siga os passos abaixo:
 
 ## 📝 Licença
 
-```{R}
+```{txt}
 Copyright 2024 César Gabriel. Todos os direitos reservados.
 
-Este site e seu conteúdo são protegidos por direitos autorais. É proibida a cópia, redistribuição ou modificação sem autorização prévia do autor.
+Este site e seu conteúdo são protegidos por direitos autorais.
+É proibida a cópia, redistribuição ou modificação sem autorização prévia do autor.
 ```
 
 ## 📫 Contato
