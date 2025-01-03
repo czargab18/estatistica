@@ -233,7 +233,7 @@ div[id="container-periodos"] div[id^="periodo"] div[id$="-disciplinas"] div[clas
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    align-items: center;
+    align-items: flex-start;
     column-gap: 2em;
   }
 }
