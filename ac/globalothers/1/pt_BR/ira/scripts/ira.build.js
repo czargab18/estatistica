@@ -131,8 +131,11 @@ function adicionarDisciplina(periodoId) {
 }
 
 function removerDisciplina(periodoId, disciplinaId) {
-  const disciplinaDiv = document.getElementById(`periodo${periodoId}-disciplina${disciplinaId}`);
-  disciplinaDiv.remove();
+  const disciplinaDiv = document.getElementById(`periodo${periodoId}-disciplina${disciplinaId}-preencher`);
+  if (disciplinaDiv) {
+    disciplinaDiv.remove();
+    disciplinaCount[periodoId]--;
+  }
 }
 
 function determinarStatus(mencao) {
