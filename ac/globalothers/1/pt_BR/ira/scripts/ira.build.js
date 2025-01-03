@@ -57,9 +57,9 @@ function adicionarDisciplina(periodoId) {
   );
 
   const disciplinaDiv = document.createElement("div");
-  disciplinaDiv.id = `periodo${periodoId}-disciplina${disciplinaId}-lista`;
+  disciplinaDiv.id = `periodo${periodoId}-disciplina${disciplinaId}-preencher`;
   disciplinaDiv.innerHTML = `
-    <div>
+    <div id = "periodo${periodoId}-disciplina${disciplinaId}-lista" class="left">
     <div id="col-item-discip-${disciplinaId}" class="col-items">
       <input
         type="text"
@@ -108,7 +108,7 @@ function adicionarDisciplina(periodoId) {
       </select>
     </div>
     </div>
-    <div >
+    <div id="periodo${periodoId}-disciplina${disciplinaId}-status-removeDiscp" class="rigth">
     <div id="col-item-status-discip-${disciplinaId}" class="col-items">
       <span id="status-${periodoId}-${disciplinaId}">Status</span>
     </div>
