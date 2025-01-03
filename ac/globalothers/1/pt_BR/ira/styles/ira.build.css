@@ -5,9 +5,15 @@ main[id="globalmain-ira"] {
 button,
 input,
 select,
-span[id^="status-"] {
+span[id^="status-"],
+.btn-success,
+.btn-primary,
+.btn-danger,
+.remove-periodo {
+  font-size: 16px;
+  margin-top: 0.25em;
   color: #ffffff;
-  padding: 0.75rem;
+  padding: 0.5em 1em;
   border: 0.15em;
   border-radius: 0.75em;
   border-style: solid;
@@ -18,9 +24,18 @@ span[id^="status-"] {
   button,
   input,
   select,
-  span[id^="status-"] {
+  span[id^="status-"],
+  .btn-success,
+  .btn-success:hover,
+  .btn-primary,
+  .btn-primary:hover,
+  .btn-danger,
+  .btn-danger:hover,
+  .remove-periodo,
+  .remove-periodo:hover {
+    font-size: 14px;
     color: #ffffff;
-    padding: 0.75rem;
+    padding: 0.5em 1em;
     border: 0.1em;
     border-radius: 0.75em;
     border-style: solid;
@@ -28,6 +43,39 @@ span[id^="status-"] {
     background-color: var(--bg-color-blue-black);
   }
 }
+div > span[id^="status-"] {
+  display: flex;
+}
+.btn-success,
+.btn-success:hover,
+.btn-primary {
+  color: #fff;
+  background-color: #157347;
+  border-color: #146c43;
+}
+.btn-success,
+.btn-success:hover,
+.btn-primary {
+  color: #fff;
+  background-color: #157347;
+  border-color: #146c43;
+}
+
+.btn-danger,
+.remove-periodo {
+  background-color: transparent;
+  color: #d0192b;
+  border-color: #d0192b;
+  font-family: var(--r-font-family-default);
+  white-space: nowrap;
+}
+.btn-danger:hover,
+.remove-periodo:hover {
+  color: #fff;
+  background-color: #bb2d3b;
+  border-color: #b02a37;
+}
+
 input:active,
 select:active,
 input:focus,
@@ -91,9 +139,9 @@ main[id="globalmain-ira"] #chapternav {
 
 #chapternav .chapternav-content {
   width: 100%;
-  padding: 0.5em;
-  margin-left: 2em;
-  margin-right: 2em;
+  max-width: 980px;
+  padding-top: 0.5em;
+  padding-bottom: 0.5em;
   display: flex;
   flex-direction: row;
   flex-wrap: nowrap;
@@ -106,7 +154,8 @@ main[id="globalmain-ira"] #chapternav {
 
 @media screen and (max-width: 600px) {
   #chapternav .chapternav-content {
-    flex-direction: column;
+    margin-left: 1em;
+    margin-right: 1em;
   }
 }
 
@@ -131,15 +180,15 @@ main[id="globalmain-ira"] div[id="container-periodos"] {
   gap: 0.5em;
 }
 div[id="container-periodos"] > div[id^="periodo"] {
+  width: 100%;
+  max-width: 1024px;
+  margin-left: 1em;
+  margin-right: 1em;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin-left: 0.5em;
-  margin-right: 0.5em;
   gap: 0.5em;
-  width: 100%;
-  max-width: 1024px;
 }
 
 div[id="container-periodos"] div[id^="periodo"] div[class="periodo-title"],
@@ -149,11 +198,17 @@ div[id="container-periodos"] div[id^="periodo"] div[id$="-disciplinas"] {
   display: flex;
   justify-content: space-between;
   align-items: baseline;
+  flex-wrap: wrap;
 }
 div[id="container-periodos"] div[id^="periodo"] div[id$="-disciplinas"] {
   flex-direction: column;
 }
-
+@media screen and (max-width: 1080px) {
+  div[id="container-periodos"] div[id^="periodo"] div[id$="-disciplinas"] {
+    flex-direction: column;
+    row-gap: 2em;
+  }
+}
 div[id^="periodo"] > div[class="periodo-title"] div {
   margin-top: 0;
 }
@@ -170,6 +225,22 @@ div[id="container-periodos"] div[id^="periodo"] div[id$="-disciplinas"] div[clas
   gap: 1em;
   max-width: 980px;
   width: 100%;
+}
+@media screen and (max-width: 1080px) {
+  div[id="container-periodos"] div[id^="periodo"] div[id$="-disciplinas"] div[class="preencher-linha"] {
+    max-width: 980px;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    column-gap: 2em;
+  }
+}
+@media screen and (max-width: 480px) {
+  div[id="container-periodos"] div[id^="periodo"] div[id$="-disciplinas"] div[class="preencher-linha"] {
+    flex-direction: column;
+  }
 }
 
 div[id="container-periodos"] div[id^="periodo"] div[id$="-disciplinas"] div[id$="-preencher"] div[class="left"],
@@ -190,51 +261,15 @@ div[id="container-periodos"] div[id^="periodo"] div[id$="-disciplinas"] div[id$=
   div[id="container-periodos"] div[id^="periodo"] div[id$="-disciplinas"] div[id$="-preencher"] div[class="left"],
   div[id="container-periodos"] div[id^="periodo"] div[id$="-disciplinas"] div[id$="-preencher"] div[class="rigth"] {
     display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-    gap: 1em;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5em;
     width: 100%;
   }
 
   div[id="container-periodos"] div[id^="periodo"] div[id$="-disciplinas"] div[id$="-preencher"] div[class="rigth"] {
     justify-content: flex-end;
   }
-}
-
-/* 
-div[id^="periodo"] div[id$="-disciplinas"] div[id$="-preencher"] div[class="col-items"] {
-  display: block;
-} */
-
-.btn-success,
-.btn-success:hover,
-.btn-primary {
-  color: #fff;
-  background-color: #157347;
-  border-color: #146c43;
-}
-.btn-success,
-.btn-success:hover,
-.btn-primary {
-  color: #fff;
-  background-color: #157347;
-  border-color: #146c43;
-}
-
-.btn-danger,
-.remove-periodo {
-  background-color: transparent;
-  color: #d0192b;
-  border-color: #d0192b;
-  font-family: var(--r-font-family-default);
-  white-space: nowrap;
-}
-.btn-danger:hover,
-.remove-periodo:hover {
-  color: #fff;
-  background-color: #bb2d3b;
-  border-color: #b02a37;
 }
 
 #aviso-site-nao-oficial {
