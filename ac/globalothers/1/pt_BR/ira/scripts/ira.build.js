@@ -1,8 +1,14 @@
 let periodoCount = 0;
 let disciplinaCount = {};
 const maxDisciplinas = 8;
+const maxPeriodos = 20;
 
 function criaPeriodo() {
+  if (periodoCount >= maxPeriodos) {
+    alert(`Você só pode adicionar até ${maxPeriodos} períodos.`);
+    return;
+  }
+
   periodoCount++;
   disciplinaCount[periodoCount] = 0;
 
@@ -28,7 +34,7 @@ function criaPeriodo() {
         </button>
       </div>
     </div>
-    <div id="periodo${periodoCount}-disciplinas" class="row g-3"></div>
+    <div id="periodo${periodoCount}-disciplinas"></div>
   `;
 
   container.appendChild(periodoDiv);
