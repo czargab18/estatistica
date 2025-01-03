@@ -6,7 +6,6 @@ button,
 input,
 select,
 span[id^="status-"] {
-  width: 12em;
   color: #ffffff;
   padding: 0.75rem;
   border: 0.15em;
@@ -14,6 +13,20 @@ span[id^="status-"] {
   border-style: solid;
   border-color: var(--bg-color-blue-black);
   background-color: var(--bg-color-blue-black);
+}
+@media screen and (max-width: 1080px) {
+  button,
+  input,
+  select,
+  span[id^="status-"] {
+    color: #ffffff;
+    padding: 0.75rem;
+    border: 0.1em;
+    border-radius: 0.75em;
+    border-style: solid;
+    border-color: var(--bg-color-blue-black);
+    background-color: var(--bg-color-blue-black);
+  }
 }
 input:active,
 select:active,
@@ -68,9 +81,7 @@ main[id="globalmain-ira"] #chapternav {
   justify-content: space-around;
   width: 100%;
   background-color: var(--bg-color-gray);
-  margin-top: calc(
-    var(--r-globalheader-height) + var(--r-globalnavbar-height) + 32px
-  );
+  margin-top: calc(var(--r-globalheader-height) + var(--r-globalnavbar-height) + 32px);
 }
 @media screen and (max-width: 744px) {
   main[id="globalmain-ira"] #chapternav {
@@ -123,10 +134,6 @@ div[id="container-periodos"] > div[id^="periodo"] {
   justify-content: center;
   align-items: center;
 }
-div[id="container-periodos"] > div[id^="periodo"],
-div[id="container-periodos"] > div[id^="periodo"] > * {
-  width: 100%;
-}
 
 @media screen and (max-width: 1079px) {
   div[id="container-periodos"] div[id^="periodo"] {
@@ -138,52 +145,47 @@ div[id="container-periodos"] > div[id^="periodo"] > * {
     margin-bottom: 1rem;
   }
 }
-div[id^="periodo"] > div[class="periodo-title"] {
+div[id="container-periodos"] div[id^="periodo"] div[class="periodo-title"],
+div[id="container-periodos"] div[id^="periodo"] div[id$="-disciplinas"] {
+  width: 100%;
+  max-width: 980px;
   display: flex;
-  flex-direction: row;
+  justify-content: space-between;
   align-items: baseline;
-  justify-content: space-around;
+}
+
+div[id^="periodo"] > div[class="periodo-title"] div {
+  margin-top: 0;
 }
 
 div[id^="periodo"] div[class="periodo-title-btns"] button:nth-child(1) {
   margin-right: 0.5em;
 }
 
-div[id^="periodo"] > div[id$="-disciplinas"] > div[id$="-lista"] {
+div[id="container-periodos"] div[id^="periodo"] div[id$="-disciplinas"] div {
   display: flex;
   flex-direction: row;
-  justify-content: center;
+  justify-content: space-evenly;
   align-items: center;
   gap: 1em;
+  max-width: 980px;
   width: 100%;
 }
-
-div[id^="periodo"] > div[id$="-disciplinas"] > div[id$="-lista"] div {
-  display: flex;
-  flex-direction: row;
-  align-items: baseline;
-  justify-content: center;
-  flex-wrap: wrap;
-  column-gap: 3.5em;
-}
-@media screen and (max-width: 1080px) {
-  div[id^="periodo"] > div[id$="-disciplinas"] > div[id$="-lista"] div {
-    flex-direction: column;
-    justify-content: center;
-    flex-wrap: nowrap;
+/* 
+@media screen and (max-width: 1280px) {
+  div[id^="periodo"] > div[id$="-disciplinas"] > div[id$="-lista"] {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
     align-items: center;
-    row-gap: 2em;
+    gap: 1em;
+    width: 100%;
   }
 }
 
-div[id^="periodo"]
-  > div[id$="-disciplinas"]
-  > div[id$="-lista"]
-  > div[class="col-items"]
-  > * {
+div[id^="periodo"] div[id$="-disciplinas"] div[id$="-lista"] div[class="col-items"] {
   display: block;
-  width: 12em;
-}
+} */
 
 .btn-success,
 .btn-success:hover,
