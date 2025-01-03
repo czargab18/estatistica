@@ -1,23 +1,6 @@
 @charset "UTF-8";
-#globaltop {
+#globalheader {
   all: unset;
-}
-#globaltop {
-  top: 0;
-  left: 0;
-  right: 0;
-  position: absolute;
-  min-width: 320px;
-  max-height: max-content;
-  display: flex;
-  flex-direction: column;
-  justify-items: center;
-  font-size: 18px;
-  white-space: nowrap;
-  align-items: center;
-  z-index: 1;
-  max-width: 2560px;
-  margin: 0 auto;
 }
 #globalheader body {
   margin: 0;
@@ -103,10 +86,8 @@
   cursor: default;
 }
 
-#globalheader
-  :focus[data-focus-method="mouse"]:not(input):not(textarea):not(select),
-#globalheader
-  :focus[data-focus-method="touch"]:not(input):not(textarea):not(select) {
+#globalheader :focus[data-focus-method="mouse"]:not(input):not(textarea):not(select),
+#globalheader :focus[data-focus-method="touch"]:not(input):not(textarea):not(select) {
   outline: none;
 }
 #globalheader ::-moz-focus-inner {
@@ -123,10 +104,22 @@
   background-color: var(--r-globalheader-background-color-dark-blue);
   height: var(--r-globalheader-height);
   width: 100%;
-  display: flex;
   justify-content: center;
   position: relative;
   z-index: 3;
+  top: 0;
+  left: 0;
+  right: 0;
+  min-width: 320px;
+  max-height: max-content;
+  display: flex;
+  flex-direction: column;
+  justify-items: center;
+  font-size: 18px;
+  white-space: nowrap;
+  align-items: center;
+  max-width: 2560px;
+  margin: 0 auto;
 }
 
 #globalheader .globalheader-content {
@@ -155,13 +148,13 @@
   align-items: center;
 }
 
-#globaltop .globalheader-item {
+#globalheader .globalheader-item {
   box-sizing: border-box;
   height: auto;
   width: auto;
 }
 
-#globaltop .globalheader-link {
+#globalheader .globalheader-link {
   font-family: var(--r-font-family-default);
   font-size: 12px;
   font-weight: 600;
@@ -183,11 +176,11 @@
   outline-offset: -7px;
   transition: color 0.32s cubic-bezier(0.4, 0, 0.6, 1);
 }
-#globaltop .globaltop-link:lang(pt-br) {
+#globalheader .globalheader-link:lang(pt-br) {
   letter-spacing: 0em;
   font-family: var(--r-font-family-default);
 }
-#globaltop .globalheader-link svg {
+#globalheader .globalheader-link svg {
   fill: currentColor;
 }
 
@@ -196,7 +189,7 @@
   color: var(--r-globalheader-color-secondary-hover);
   text-decoration: none;
 }
-#globaltop .globalheader-link-govbr {
+#globalheader .globalheader-link-govbr {
   font-size: 17px;
   line-height: 1.2353641176;
   font-weight: 800;
@@ -205,14 +198,14 @@
   display: flex;
   align-items: center;
 }
-#globaltop .globaltop-link-govbr:lang(ar) {
+#globalheader .globalheader-link-govbr:lang(ar) {
   letter-spacing: 0em;
   font-family: var(--r-font-family-default);
 }
-#globaltop .globaltop-link-govbr-logo {
+#globalheader .globalheader-link-govbr-logo {
   height: 100%;
 }
-#globaltop .globaltop-link-govbr .globaltop-link-text {
+#globalheader .globalheader-link-govbr .globalheader-link-text {
   margin-inline-start: 4px;
   height: 100%;
   display: flex;
@@ -259,7 +252,7 @@
 
 /* mediaQuery verificado */
 @media screen and (max-width: 1024px) {
-  #globaltop,
+  #globalheader,
   .globalheader,
   .globalheader-content,
   .globalheader-list {
@@ -280,23 +273,22 @@
 }
 
 @media only screen and (max-width: 768px) {
-  #globaltop .globaltop-content {
+  #globalheader .globalheader-content {
     display: flex;
     padding: 0;
     position: absolute;
     top: 0;
     width: 100%;
     height: 100%;
-    background: var(--globaltop-background);
-    transition: background var(--r-globaltop-flyout-rate)
-      cubic-bezier(0.4, 0, 0.6, 1) 80ms;
+    background: var(--globalheader-background);
+    transition: background var(--r-globalheader-flyout-rate) cubic-bezier(0.4, 0, 0.6, 1) 80ms;
   }
-  .globaltop-content {
-    -webkit-backdrop-filter: var(--globaltop-backdrop-filter);
-    backdrop-filter: var(--globaltop-backdrop-filter);
+  .globalheader-content {
+    -webkit-backdrop-filter: var(--globalheader-backdrop-filter);
+    backdrop-filter: var(--globalheader-backdrop-filter);
   }
 
-  #globaltop .globaltop-list {
+  #globalheader .globalheader-list {
     display: flex;
     flex: 1;
     position: relative;
@@ -311,35 +303,29 @@
     box-sizing: border-box;
     -webkit-overflow-scrolling: touch;
   }
-  #globalheader:not([dir="rtl"]) #globaltop .globaltop-list {
-    padding-right: calc(
-      48px + max(0px, calc(env(safe-area-inset-right) - 16px))
-    );
+  #globalheader:not([dir="rtl"]) #globalheader .globalheader-list {
+    padding-right: calc(48px + max(0px, calc(env(safe-area-inset-right) - 16px)));
   }
-  #globalheader[dir="rtl"] #globaltop .globaltop-list {
+  #globalheader[dir="rtl"] #globalheader .globalheader-list {
     padding-left: calc(48px + max(0px, calc(env(safe-area-inset-left) - 16px)));
   }
-  #globaltop .globaltop-item {
+  #globalheader .globalheader-item {
     width: auto;
     height: auto;
     transition: color 0.32s cubic-bezier(0.4, 0, 0.6, 1);
   }
-  #globaltop .globaltop-list > .globaltop-item {
+  #globalheader .globalheader-list > .globalheader-item {
     height: 100%;
   }
-  #globaltop
-    .globaltop-list
-    > .globaltop-item:not(.globaltop-menu)
-    .globaltop-link {
+  #globalheader .globalheader-list > .globalheader-item:not(.globalheader-menu) .globalheader-link {
     opacity: 1;
     visibility: visible;
-    transition: opacity 0.24s cubic-bezier(0.4, 0, 0.6, 1) 80ms,
-      visibility 0.24s step-start 80ms;
+    transition: opacity 0.24s cubic-bezier(0.4, 0, 0.6, 1) 80ms, visibility 0.24s step-start 80ms;
   }
 }
 
 @media only screen and (max-width: 768px) {
-  #globaltop,
+  #globalheader,
   .globalheader,
   .globalheader-content,
   .globalheader-list {
@@ -357,25 +343,23 @@
   .globalheader-item-coronavarius {
     display: block;
   }
-  #globaltop .globaltop-link- {
+  #globalheader .globalheader-link- {
     font-size: 28px;
     line-height: 1.1428571429;
     font-weight: 600;
     letter-spacing: 0.007em;
     font-family: var(--r-font-family-default);
   }
-  #globaltop .globaltop-link:lang(ar) {
-    font-family: SF Pro AR, SF Pro Gulf, SF Pro Display, SF Pro Icons,
-      Helvetica Neue, Helvetica, Arial, sans-serif;
+  #globalheader .globalheader-link:lang(ar) {
+    font-family: SF Pro AR, SF Pro Gulf, SF Pro Display, SF Pro Icons, Helvetica Neue, Helvetica, Arial, sans-serif;
   }
-  #globaltop .globaltop-link:lang(zh-TW) {
-    font-family: SF Pro TC, SF Pro Display, SF Pro Icons, PingFang TC,
-      Helvetica Neue, Helvetica, Arial, sans-serif;
+  #globalheader .globalheader-link:lang(zh-TW) {
+    font-family: SF Pro TC, SF Pro Display, SF Pro Icons, PingFang TC, Helvetica Neue, Helvetica, Arial, sans-serif;
   }
 }
 
 @media only screen and (max-width: 540px) {
-  #globaltop,
+  #globalheader,
   #globalheader,
   .globalheader-content {
     width: 100%;

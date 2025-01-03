@@ -56,28 +56,9 @@
   --r-font-family-default: "SF Pro Text", "SF Pro Dislay", "SF Pro Icons",
     "Helvetica Neue", "Helvetica", "San Francisco", "Open Sans", "Noto Sans",
     "Arial", sans-serif;
-  --r-globaltop-font-size: 17px;
-
-  /* Gerais */
-  --r-globaltop-flyout-height: 0px;
-  --r-globaltop-previous-flyout-height: 0px;
-  --r-globaltop-previous-flyout-height: 0px;
-  --r-globaltop-next-flyout-height: 0px;
-
-  --r-globaltop-background: none;
-  --r-globaltop-backdrop-filter: none;
-  --r-globaltop-background-opened: #fbfbfd;
-  --r-globaltop-background-opened-dark: #161617;
 
   --r-globalfooter-background: #f5f5f7;
   --r-globalheader-background-color-dark-blue: #071d41;
-
-  --r-globaltop-flyout-spacing: 88px;
-  --r-globaltop-flyout-close-delay: 0.12s;
-  --r-globaltop-flyout-link-opacity-duration: 0.5s;
-  --r-globaltop-previous-flyout-spacing: 88px;
-  --r-globaltop-previous-flyout-close-delay: 0.12s;
-  --r-globaltop-previous-flyout-link-opacity-duration: 0.5s;
 
   /* globalnavbar.css */
   --r-globalnavbar-background-opened: #fbfbfd;
