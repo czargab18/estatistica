@@ -1,10 +1,8 @@
-[desenvolvimento] - Aprendendo Desenvolvimento Web.
-
-- website: [estatística](https://estatistica.pro/)
-
 # Estatística
 
 Bem-vindo ao repositório do site não oficial para o Departamento de Estatística! Este projeto visa fornecer uma plataforma de visualização de dados e recursos estatísticos que podem ser úteis para estudantes, pesquisadores e interessados na área. Utilizando a linguagem R e o pacote ggplot2, este site apresenta uma variedade de gráficos e análises para facilitar o entendimento de conceitos estatísticos.
+
+- [desenvolvimento website] : [https://www.estatistica.pro](https://estatistica.pro/)
 
 ## 1. Objetivo
 
