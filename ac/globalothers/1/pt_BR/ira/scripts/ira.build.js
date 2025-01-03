@@ -58,6 +58,7 @@ function adicionarDisciplina(periodoId) {
 
   const disciplinaDiv = document.createElement("div");
   disciplinaDiv.id = `periodo${periodoId}-disciplina${disciplinaId}-preencher`;
+  disciplinaDiv.className = `preencher-linha`;
   disciplinaDiv.innerHTML = `
     <div id = "periodo${periodoId}-disciplina${disciplinaId}-lista" class="left">
     <div id="col-item-discip-${disciplinaId}" class="col-items">
