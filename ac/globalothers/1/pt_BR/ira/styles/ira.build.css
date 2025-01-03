@@ -124,27 +124,24 @@ main[id="globalmain-ira"] #chapternav {
 main[id="globalmain-ira"] div[id="container-periodos"] {
   display: flex;
   flex-direction: column;
-  flex-wrap: nowrap;
+  flex-wrap: wrap;
   justify-content: center;
+  align-content: space-around;
   width: 100%;
+  gap: 0.5em;
 }
 div[id="container-periodos"] > div[id^="periodo"] {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  margin-left: 0.5em;
+  margin-right: 0.5em;
+  gap: 0.5em;
+  width: 100%;
+  max-width: 1024px;
 }
 
-@media screen and (max-width: 1079px) {
-  div[id="container-periodos"] div[id^="periodo"] {
-    display: flex;
-    flex-direction: column;
-    align-items: baseline;
-    gap: 0.5em;
-    margin-top: 0;
-    margin-bottom: 1rem;
-  }
-}
 div[id="container-periodos"] div[id^="periodo"] div[class="periodo-title"],
 div[id="container-periodos"] div[id^="periodo"] div[id$="-disciplinas"] {
   width: 100%;
@@ -152,6 +149,9 @@ div[id="container-periodos"] div[id^="periodo"] div[id$="-disciplinas"] {
   display: flex;
   justify-content: space-between;
   align-items: baseline;
+}
+div[id="container-periodos"] div[id^="periodo"] div[id$="-disciplinas"] {
+  flex-direction: column;
 }
 
 div[id^="periodo"] > div[class="periodo-title"] div {
@@ -162,28 +162,48 @@ div[id^="periodo"] div[class="periodo-title-btns"] button:nth-child(1) {
   margin-right: 0.5em;
 }
 
-div[id="container-periodos"] div[id^="periodo"] div[id$="-disciplinas"] div {
+div[id="container-periodos"] div[id^="periodo"] div[id$="-disciplinas"] div[class="preencher-linha"] {
   display: flex;
   flex-direction: row;
-  justify-content: space-evenly;
+  justify-content: space-between;
   align-items: center;
   gap: 1em;
   max-width: 980px;
   width: 100%;
 }
-/* 
-@media screen and (max-width: 1280px) {
-  div[id^="periodo"] > div[id$="-disciplinas"] > div[id$="-lista"] {
+
+div[id="container-periodos"] div[id^="periodo"] div[id$="-disciplinas"] div[id$="-preencher"] div[class="left"],
+div[id="container-periodos"] div[id^="periodo"] div[id$="-disciplinas"] div[id$="-preencher"] div[class="rigth"] {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1em;
+  width: 100%;
+}
+
+div[id="container-periodos"] div[id^="periodo"] div[id$="-disciplinas"] div[id$="-preencher"] div[class="rigth"] {
+  justify-content: flex-end;
+}
+
+@media screen and (max-width: 1080px) {
+  div[id="container-periodos"] div[id^="periodo"] div[id$="-disciplinas"] div[id$="-preencher"] div[class="left"],
+  div[id="container-periodos"] div[id^="periodo"] div[id$="-disciplinas"] div[id$="-preencher"] div[class="rigth"] {
     display: flex;
     flex-direction: row;
-    justify-content: space-around;
+    justify-content: space-between;
     align-items: center;
     gap: 1em;
     width: 100%;
   }
+
+  div[id="container-periodos"] div[id^="periodo"] div[id$="-disciplinas"] div[id$="-preencher"] div[class="rigth"] {
+    justify-content: flex-end;
+  }
 }
 
-div[id^="periodo"] div[id$="-disciplinas"] div[id$="-lista"] div[class="col-items"] {
+/* 
+div[id^="periodo"] div[id$="-disciplinas"] div[id$="-preencher"] div[class="col-items"] {
   display: block;
 } */
 
@@ -208,6 +228,7 @@ div[id^="periodo"] div[id$="-disciplinas"] div[id$="-lista"] div[class="col-item
   color: #d0192b;
   border-color: #d0192b;
   font-family: var(--r-font-family-default);
+  white-space: nowrap;
 }
 .btn-danger:hover,
 .remove-periodo:hover {
