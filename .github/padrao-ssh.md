@@ -4,6 +4,7 @@
 - Autenticação (feito no painel da hostinger):
   - GitHub |==> Hospedagem (Solicitação)
   - GitHub <==| Hospedagem (Permição)
+  
 Observação: A chave **Auth privada** criada e salva como 
 "estatistica-auth-github_hostinge" deve ser colocada no 
 repositório do GitHub e a **Auth publica** no painel da Hostinger
