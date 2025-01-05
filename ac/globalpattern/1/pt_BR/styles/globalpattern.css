@@ -796,10 +796,10 @@ main {
 }
 
 /* Global Header */
-#globalribbon {
+#globalheader {
   all: unset;
 }
-div[id="globalheader"] {
+#globalheader {
   width: 100%;
   max-width: 2560px;
   display: contents;
