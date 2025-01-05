@@ -123,10 +123,8 @@
 }
 
 #globalheader .globalheader-content {
-  margin-left: 20px;
-  margin-right: 20px;
-  width: var(--r-globalheader-width);
-
+  width: 100%;
+  max-width: var(--r-globalheader-width);
   display: flex;
   flex-direction: row;
   justify-content: space-between;
