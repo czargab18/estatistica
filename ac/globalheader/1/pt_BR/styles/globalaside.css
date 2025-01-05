@@ -1,77 +1,77 @@
 @charset "UTF-8";
-#globalheader {
+#globalaside {
   all: unset;
 }
-#globalheader body {
+#globalaside body {
   margin: 0;
   padding: 0;
 }
-#globalheader ul,
-#globalheader ol,
-#globalheader li,
-#globalheader dl,
-#globalheader dt,
-#globalheader dd,
-#globalheader h1,
-#globalheader h2,
-#globalheader h3,
-#globalheader h4,
-#globalheader h5,
-#globalheader h6,
-#globalheader hgroup,
-#globalheader p,
-#globalheader blockquote,
-#globalheader figure,
-#globalheader form,
-#globalheader fieldset,
-#globalheader input,
-#globalheader legend,
-#globalheader pre,
-#globalheader abbr,
-#globalheader button {
+#globalaside ul,
+#globalaside ol,
+#globalaside li,
+#globalaside dl,
+#globalaside dt,
+#globalaside dd,
+#globalaside h1,
+#globalaside h2,
+#globalaside h3,
+#globalaside h4,
+#globalaside h5,
+#globalaside h6,
+#globalaside hgroup,
+#globalaside p,
+#globalaside blockquote,
+#globalaside figure,
+#globalaside form,
+#globalaside fieldset,
+#globalaside input,
+#globalaside legend,
+#globalaside pre,
+#globalaside abbr,
+#globalaside button {
   margin: 0;
   padding: 0;
 }
 
-#globalheader pre,
-#globalheader code,
-#globalheader address,
-#globalheader caption,
-#globalheader th,
-#globalheader figcaption {
+#globalaside pre,
+#globalaside code,
+#globalaside address,
+#globalaside caption,
+#globalaside th,
+#globalaside figcaption {
   font-size: 1em;
   font-weight: 400;
   font-style: normal;
 }
 
-#globalheader fieldset,
-#globalheader iframe {
+#globalaside fieldset,
+#globalaside iframe {
   border: 0;
 }
 
-#globalheader caption,
-#globalheader th {
+#globalaside caption,
+#globalaside th {
   text-align: left;
 }
 
-#globalheader table {
+#globalaside table {
   border-collapse: collapse;
   border-spacing: 0;
 }
 
-#globalheader main,
-#globalheader summary,
-#globalheader details {
+#globalaside main,
+#globalaside summary,
+#globalaside details {
   display: block;
 }
 
-#globalheader audio,
-#globalheader canvas,
-#globalheader video,
-#globalheader progress {
+#globalaside audio,
+#globalaside canvas,
+#globalaside video,
+#globalaside progress {
   vertical-align: baseline;
 }
-#globalheader button {
+#globalaside button {
   background: none;
   border: 0;
   box-sizing: content-box;
@@ -82,27 +82,27 @@
   overflow: visible;
   vertical-align: inherit;
 }
-#globalheader button:disabled {
+#globalaside button:disabled {
   cursor: default;
 }
 
-#globalheader :focus[data-focus-method="mouse"]:not(input):not(textarea):not(select),
-#globalheader :focus[data-focus-method="touch"]:not(input):not(textarea):not(select) {
+#globalaside :focus[data-focus-method="mouse"]:not(input):not(textarea):not(select),
+#globalaside :focus[data-focus-method="touch"]:not(input):not(textarea):not(select) {
   outline: none;
 }
-#globalheader ::-moz-focus-inner {
+#globalaside ::-moz-focus-inner {
   border: 0;
   padding: 0;
 }
 @media print {
-  #globalheader {
+  #globalaside {
     display: none;
   }
 }
 
-#globalheader {
-  background-color: var(--r-globalheader-background-color-dark-blue);
-  height: var(--r-globalheader-height);
+#globalaside {
+  background-color: var(--r-globalaside-background-color-dark-blue);
+  height: var(--r-globalaside-height);
   width: 100%;
   justify-content: center;
   position: relative;
@@ -122,9 +122,9 @@
   margin: 0 auto;
 }
 
-#globalheader .globalheader-content {
+#globalaside .globalaside-content {
   width: 100%;
-  max-width: var(--r-globalheader-width);
+  max-width: var(--r-globalaside-width);
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -132,12 +132,12 @@
   z-index: 2;
 }
 
-.globalheader-content .globalheader-list,
-.globalheader-content .globalheader-list-unbt-gov {
+.globalaside-content .globalaside-list,
+.globalaside-content .globalaside-list-unbt-gov {
   cursor: default;
   list-style: none;
   width: auto;
-  height: var(--r-globalheader-height);
+  height: var(--r-globalaside-height);
   box-sizing: border-box;
 
   gap: 16px;
@@ -146,20 +146,20 @@
   align-items: center;
 }
 
-#globalheader .globalheader-item {
+#globalaside .globalaside-item {
   box-sizing: border-box;
   height: auto;
   width: auto;
 }
 
-#globalheader .globalheader-link {
+#globalaside .globalaside-link {
   font-family: var(--r-font-family-default);
   font-size: 12px;
   font-weight: 600;
   line-height: 1;
   letter-spacing: -0.01em;
-  height: var(--r-globalheader-height);
-  color: var(--r-globalheader-color-link);
+  height: var(--r-globalaside-height);
+  color: var(--r-globalaside-color-link);
 
   display: flex;
   align-items: center;
@@ -174,20 +174,20 @@
   outline-offset: -7px;
   transition: color 0.32s cubic-bezier(0.4, 0, 0.6, 1);
 }
-#globalheader .globalheader-link:lang(pt-br) {
+#globalaside .globalaside-link:lang(pt-br) {
   letter-spacing: 0em;
   font-family: var(--r-font-family-default);
 }
-#globalheader .globalheader-link svg {
+#globalaside .globalaside-link svg {
   fill: currentColor;
 }
 
-#globalheader .globalheader-link:hover,
-#globalheader .globalheader-link:focus[data-focus-method="key"] {
-  color: var(--r-globalheader-color-secondary-hover);
+#globalaside .globalaside-link:hover,
+#globalaside .globalaside-link:focus[data-focus-method="key"] {
+  color: var(--r-globalaside-color-secondary-hover);
   text-decoration: none;
 }
-#globalheader .globalheader-link-govbr {
+#globalaside .globalaside-link-govbr {
   font-size: 17px;
   line-height: 1.2353641176;
   font-weight: 800;
@@ -196,14 +196,14 @@
   display: flex;
   align-items: center;
 }
-#globalheader .globalheader-link-govbr:lang(ar) {
+#globalaside .globalaside-link-govbr:lang(ar) {
   letter-spacing: 0em;
   font-family: var(--r-font-family-default);
 }
-#globalheader .globalheader-link-govbr-logo {
+#globalaside .globalaside-link-govbr-logo {
   height: 100%;
 }
-#globalheader .globalheader-link-govbr .globalheader-link-text {
+#globalaside .globalaside-link-govbr .globalaside-link-text {
   margin-inline-start: 4px;
   height: 100%;
   display: flex;
@@ -211,8 +211,8 @@
   pointer-events: none;
 }
 
-/* Estilos para as classes que começam com "globalheader-link-" */
-[class^="globalheader-image-"] {
+/* Estilos para as classes que começam com "globalaside-link-" */
+[class^="globalaside-image-"] {
   height: 40px;
   width: 20px;
   font-size: 17px;
@@ -224,12 +224,12 @@
   align-items: center; /* aninhar-conteudo do link */
 }
 
-.globalheader-image-regular,
-.globalheader-image-compact {
+.globalaside-image-regular,
+.globalaside-image-compact {
   display: none;
 }
 
-.globalheader-list .globalheader-link-coronavarius .globalheader-link-text {
+.globalaside-list .globalaside-link-coronavarius .globalaside-link-text {
   --r-logo-govbr-yellow: #ffcd07;
   color: var(--r-logo-govbr-yellow);
   text-decoration: underline;
@@ -237,56 +237,56 @@
 
 /* Oculta a classe visuallyhidden */
 
-.globalheader-list span.globalheader-espacador {
+.globalaside-list span.globalaside-espacador {
   --color-espaçador: rgba(151, 151, 151, 0.5);
   height: 20px;
   width: 2px;
   background-color: var(--color-espaçador);
 }
 
-.globalheader-link-text-alternativo {
+.globalaside-link-text-alternativo {
   display: none;
 }
 
 /* mediaQuery verificado */
 @media screen and (max-width: 1024px) {
-  #globalheader,
-  .globalheader,
-  .globalheader-content,
-  .globalheader-list {
+  #globalaside,
+  .globalaside,
+  .globalaside-content,
+  .globalaside-list {
     width: 100%;
   }
-  .globalheader-item,
-  .globalheader-espacador {
+  .globalaside-item,
+  .globalaside-espacador {
     display: none;
   }
-  .globalheader-list-unbt-gov > *,
-  .globalheader-item-coronavarius,
-  .globalheader-item-orggovbr,
-  .globalheader-item-acessibilidade,
-  .globalheader-espacador-01,
-  .globalheader-espacador-05 {
+  .globalaside-list-unbt-gov > *,
+  .globalaside-item-coronavarius,
+  .globalaside-item-orggovbr,
+  .globalaside-item-acessibilidade,
+  .globalaside-espacador-01,
+  .globalaside-espacador-05 {
     display: block;
   }
 }
 
 @media only screen and (max-width: 768px) {
-  #globalheader .globalheader-content {
+  #globalaside .globalaside-content {
     display: flex;
     padding: 0;
     position: absolute;
     top: 0;
     width: 100%;
     height: 100%;
-    background: var(--globalheader-background);
-    transition: background var(--r-globalheader-flyout-rate) cubic-bezier(0.4, 0, 0.6, 1) 80ms;
+    background: var(--globalaside-background);
+    transition: background var(--r-globalaside-flyout-rate) cubic-bezier(0.4, 0, 0.6, 1) 80ms;
   }
-  .globalheader-content {
-    -webkit-backdrop-filter: var(--globalheader-backdrop-filter);
-    backdrop-filter: var(--globalheader-backdrop-filter);
+  .globalaside-content {
+    -webkit-backdrop-filter: var(--globalaside-backdrop-filter);
+    backdrop-filter: var(--globalaside-backdrop-filter);
   }
 
-  #globalheader .globalheader-list {
+  #globalaside .globalaside-list {
     display: flex;
     flex: 1;
     position: relative;
@@ -301,21 +301,21 @@
     box-sizing: border-box;
     -webkit-overflow-scrolling: touch;
   }
-  #globalheader:not([dir="rtl"]) #globalheader .globalheader-list {
+  #globalaside:not([dir="rtl"]) #globalaside .globalaside-list {
     padding-right: calc(48px + max(0px, calc(env(safe-area-inset-right) - 16px)));
   }
-  #globalheader[dir="rtl"] #globalheader .globalheader-list {
+  #globalaside[dir="rtl"] #globalaside .globalaside-list {
     padding-left: calc(48px + max(0px, calc(env(safe-area-inset-left) - 16px)));
   }
-  #globalheader .globalheader-item {
+  #globalaside .globalaside-item {
     width: auto;
     height: auto;
     transition: color 0.32s cubic-bezier(0.4, 0, 0.6, 1);
   }
-  #globalheader .globalheader-list > .globalheader-item {
+  #globalaside .globalaside-list > .globalaside-item {
     height: 100%;
   }
-  #globalheader .globalheader-list > .globalheader-item:not(.globalheader-menu) .globalheader-link {
+  #globalaside .globalaside-list > .globalaside-item:not(.globalaside-menu) .globalaside-link {
     opacity: 1;
     visibility: visible;
     transition: opacity 0.24s cubic-bezier(0.4, 0, 0.6, 1) 80ms, visibility 0.24s step-start 80ms;
@@ -323,52 +323,52 @@
 }
 
 @media only screen and (max-width: 768px) {
-  #globalheader,
-  .globalheader,
-  .globalheader-content,
-  .globalheader-list {
+  #globalaside,
+  .globalaside,
+  .globalaside-content,
+  .globalaside-list {
     width: 100%;
   }
-  .globalheader-item,
-  .globalheader-espacador {
+  .globalaside-item,
+  .globalaside-espacador {
     display: none;
   }
-  .globalheader-list-unbt-gov > * {
+  .globalaside-list-unbt-gov > * {
     display: block;
   }
-  .globalheader-item-orggovbr,
-  .globalheader-espacador-01,
-  .globalheader-item-coronavarius {
+  .globalaside-item-orggovbr,
+  .globalaside-espacador-01,
+  .globalaside-item-coronavarius {
     display: block;
   }
-  #globalheader .globalheader-link- {
+  #globalaside .globalaside-link- {
     font-size: 28px;
     line-height: 1.1428571429;
     font-weight: 600;
     letter-spacing: 0.007em;
     font-family: var(--r-font-family-default);
   }
-  #globalheader .globalheader-link:lang(ar) {
+  #globalaside .globalaside-link:lang(ar) {
     font-family: SF Pro AR, SF Pro Gulf, SF Pro Display, SF Pro Icons, Helvetica Neue, Helvetica, Arial, sans-serif;
   }
-  #globalheader .globalheader-link:lang(zh-TW) {
+  #globalaside .globalaside-link:lang(zh-TW) {
     font-family: SF Pro TC, SF Pro Display, SF Pro Icons, PingFang TC, Helvetica Neue, Helvetica, Arial, sans-serif;
   }
 }
 
 @media only screen and (max-width: 540px) {
-  #globalheader,
-  #globalheader,
-  .globalheader-content {
+  #globalaside,
+  #globalaside,
+  .globalaside-content {
     width: 100%;
   }
-  .globalheader-item,
-  .globalheader-espacador,
-  .globalheader-link-text-vacinacao {
+  .globalaside-item,
+  .globalaside-espacador,
+  .globalaside-link-text-vacinacao {
     display: none;
   }
-  .globalheader-list-unbt-gov > *,
-  .globalheader-item-coronavarius {
+  .globalaside-list-unbt-gov > *,
+  .globalaside-item-coronavarius {
     display: block;
     justify-content: right;
     font-size: 10px;
@@ -378,7 +378,7 @@
     font-family: var(--r-font-family-default);
   }
 
-  .globalheader-link-text-alternativo {
+  .globalaside-link-text-alternativo {
     --r-logo-govbr-yellow: #ffcd07;
 
     display: block;
