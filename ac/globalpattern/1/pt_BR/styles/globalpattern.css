@@ -1,33 +1,31 @@
 /* 
 - Ele é usado para definir o estilo de elementos que são comuns a várias páginas do site.
 - Ele é importado por outros arquivos CSS.
+- Defini proriedades de fonte, cor, espaçamento, alinhamento, etc.
 
-  - Defini proriedades de fonte, cor, espaçamento, alinhamento, etc.
+- Definir padrões de estilos que mais se repetem.
 */
 
 :root {
   /* Altura*/
-  --r-globaltop-height: calc(
-    var(--r-globalheader-height) + var(--r-globalnav-height) +
-      var(--r-globalribbon-height)
-  );
-  --r-globalheader-height: 40px;
+  --r-globaltop-height: calc(var(--r-globalaside-height) + var(--r-globalnav-height) + var(--r-globalribbon-height));
+  --r-globalaside-height: 40px;
   --r-globalnav-height: 44px;
   --r-globalribbon-height: 40px;
 
   /* width*/
-  --r-globalheader-width: 968px;
+  --r-globalaside-width: 968px;
   --r-globalnav-width: 968px;
   --r-globalribbon-width: 968px;
 
   /* Cores */
-  --r-globalheader-color-link: rgba(255, 255, 255, 0.8);
-  --r-globalheader-color-link-hover: #ffffff;
-  --r-globalheader-color-link-active: #ffffff;
+  --r-globalaside-color-link: rgba(255, 255, 255, 0.8);
+  --r-globalaside-color-link-hover: #ffffff;
+  --r-globalaside-color-link-active: #ffffff;
 
-  --r-globalheader-color-secondary: #ffffff;
-  --r-globalheader-color-secondary-hover: #ffffff;
-  --r-globalheader-color-secondary-active: #ffffff;
+  --r-globalaside-color-secondary: #ffffff;
+  --r-globalaside-color-secondary-hover: #ffffff;
+  --r-globalaside-color-secondary-active: #ffffff;
 
   --r-globalnav-color-primary: rgba(0, 0, 0, 0.8);
   --r-globalnav-color-primary-hover: rgba(0, 0, 0, 0.8);
@@ -53,12 +51,11 @@
   --r-bg-color-primary: #7f7f7f1a;
 
   /* Fontes */
-  --r-font-family-default: "SF Pro Text", "SF Pro Dislay", "SF Pro Icons",
-    "Helvetica Neue", "Helvetica", "San Francisco", "Open Sans", "Noto Sans",
-    "Arial", sans-serif;
+  --r-font-family-default: "SF Pro Text", "SF Pro Dislay", "SF Pro Icons", "Helvetica Neue", "Helvetica",
+    "San Francisco", "Open Sans", "Noto Sans", "Arial", sans-serif;
 
   --r-globalfooter-background: #f5f5f7;
-  --r-globalheader-background-color-dark-blue: #071d41;
+  --r-globalaside-background-color-dark-blue: #071d41;
 
   /* globalnavbar.css */
   --r-globalnavbar-background-opened: #fbfbfd;
@@ -76,8 +73,7 @@
   --globalnavbar-govbr-blue: #2864ae;
   --r-globalnavbar-govbr-yellow: #fabd10;
   --r-globalnavbar-govbr-light-green: #026e3a;
-  --font-pattern: SF Pro HK, SF Pro Display, SF Pro Icons, PingFang HK,
-    Helvetica Neue, Helvetica, Arial, sans-serif;
+  --font-pattern: SF Pro HK, SF Pro Display, SF Pro Icons, PingFang HK, Helvetica Neue, Helvetica, Arial, sans-serif;
   --globalnav-backdrop-filter: saturate(180%) blur(20px);
   --globalnav-background: rgba(251, 251, 253, 0.8);
 
@@ -231,52 +227,48 @@ button:disabled {
 }
 
 html {
-  font-family: "SF Pro Text", "SF Pro Icons", "Helvetica Neue", "Helvetica",
-    "Arial", sans-serif;
+  font-family: "SF Pro Text", "SF Pro Icons", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
   font-size: 106.25%;
   quotes: "“" "”";
 }
 
 [lang]:lang(ar) {
-  font-family: "SF Pro AR", "SF Pro Gulf", "SF Pro Text", "SF Pro Icons",
-    "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+  font-family: "SF Pro AR", "SF Pro Gulf", "SF Pro Text", "SF Pro Icons", "Helvetica Neue", "Helvetica", "Arial",
+    sans-serif;
 }
 
 [lang]:lang(ja) {
-  font-family: "SF Pro JP", "SF Pro Text", "SF Pro Icons",
-    "Hiragino Kaku Gothic Pro", "ヒラギノ角ゴ Pro W3", "メイリオ", "Meiryo",
-    "ＭＳ Ｐゴシック", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+  font-family: "SF Pro JP", "SF Pro Text", "SF Pro Icons", "Hiragino Kaku Gothic Pro", "ヒラギノ角ゴ Pro W3", "メイリオ",
+    "Meiryo", "ＭＳ Ｐゴシック", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
 }
 
 [lang]:lang(ko) {
-  font-family: "SF Pro KR", "SF Pro Text", "SF Pro Icons", "Apple Gothic",
-    "HY Gulim", "MalgunGothic", "HY Dotum", "Lexi Gulim", "Helvetica Neue",
-    "Helvetica", "Arial", sans-serif;
+  font-family: "SF Pro KR", "SF Pro Text", "SF Pro Icons", "Apple Gothic", "HY Gulim", "MalgunGothic", "HY Dotum",
+    "Lexi Gulim", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
 }
 
 [lang]:lang(th) {
-  font-family: "SF Pro TH", "SF Pro Text", "SF Pro Icons", "Helvetica Neue",
-    "Helvetica", "Arial", sans-serif;
+  font-family: "SF Pro TH", "SF Pro Text", "SF Pro Icons", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
 }
 
 [lang]:lang(zh-CN) {
-  font-family: "SF Pro SC", "SF Pro Text", "SF Pro Icons", "PingFang SC",
-    "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+  font-family: "SF Pro SC", "SF Pro Text", "SF Pro Icons", "PingFang SC", "Helvetica Neue", "Helvetica", "Arial",
+    sans-serif;
 }
 
 [lang]:lang(zh-HK) {
-  font-family: "SF Pro HK", "SF Pro Text", "SF Pro Icons", "PingFang HK",
-    "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+  font-family: "SF Pro HK", "SF Pro Text", "SF Pro Icons", "PingFang HK", "Helvetica Neue", "Helvetica", "Arial",
+    sans-serif;
 }
 
 [lang]:lang(zh-MO) {
-  font-family: "SF Pro HK", "SF Pro TC", "SF Pro Text", "SF Pro Icons",
-    "PingFang HK", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+  font-family: "SF Pro HK", "SF Pro TC", "SF Pro Text", "SF Pro Icons", "PingFang HK", "Helvetica Neue", "Helvetica",
+    "Arial", sans-serif;
 }
 
 [lang]:lang(zh-TW) {
-  font-family: "SF Pro TC", "SF Pro Text", "SF Pro Icons", "PingFang TC",
-    "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+  font-family: "SF Pro TC", "SF Pro Text", "SF Pro Icons", "PingFang TC", "Helvetica Neue", "Helvetica", "Arial",
+    sans-serif;
 }
 
 :lang(cs) {
@@ -344,8 +336,7 @@ body {
   line-height: 1.47059;
   font-weight: 400;
   letter-spacing: -0.022em;
-  font-family: "SF Pro Text", "SF Pro Icons", "Helvetica Neue", "Helvetica",
-    "Arial", sans-serif;
+  font-family: "SF Pro Text", "SF Pro Icons", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
   background-color: #fff;
   color: #1d1d1f;
   font-style: normal;
@@ -354,23 +345,21 @@ body {
 body:lang(ar) {
   line-height: 1.58824;
   letter-spacing: 0em;
-  font-family: "SF Pro AR", "SF Pro Gulf", "SF Pro Text", "SF Pro Icons",
-    "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+  font-family: "SF Pro AR", "SF Pro Gulf", "SF Pro Text", "SF Pro Icons", "Helvetica Neue", "Helvetica", "Arial",
+    sans-serif;
 }
 
 body:lang(ja) {
   letter-spacing: 0em;
-  font-family: "SF Pro JP", "SF Pro Text", "SF Pro Icons",
-    "Hiragino Kaku Gothic Pro", "ヒラギノ角ゴ Pro W3", "メイリオ", "Meiryo",
-    "ＭＳ Ｐゴシック", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+  font-family: "SF Pro JP", "SF Pro Text", "SF Pro Icons", "Hiragino Kaku Gothic Pro", "ヒラギノ角ゴ Pro W3", "メイリオ",
+    "Meiryo", "ＭＳ Ｐゴシック", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
 }
 
 body:lang(ko) {
   line-height: 1.58824;
   letter-spacing: 0em;
-  font-family: "SF Pro KR", "SF Pro Text", "SF Pro Icons", "Apple Gothic",
-    "HY Gulim", "MalgunGothic", "HY Dotum", "Lexi Gulim", "Helvetica Neue",
-    "Helvetica", "Arial", sans-serif;
+  font-family: "SF Pro KR", "SF Pro Text", "SF Pro Icons", "Apple Gothic", "HY Gulim", "MalgunGothic", "HY Dotum",
+    "Lexi Gulim", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
 }
 
 body:lang(zh) {
@@ -380,28 +369,27 @@ body:lang(zh) {
 body:lang(th) {
   line-height: 1.35296;
   letter-spacing: 0em;
-  font-family: "SF Pro TH", "SF Pro Text", "SF Pro Icons", "Helvetica Neue",
-    "Helvetica", "Arial", sans-serif;
+  font-family: "SF Pro TH", "SF Pro Text", "SF Pro Icons", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
 }
 
 body:lang(zh-CN) {
-  font-family: "SF Pro SC", "SF Pro Text", "SF Pro Icons", "PingFang SC",
-    "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+  font-family: "SF Pro SC", "SF Pro Text", "SF Pro Icons", "PingFang SC", "Helvetica Neue", "Helvetica", "Arial",
+    sans-serif;
 }
 
 body:lang(zh-HK) {
-  font-family: "SF Pro HK", "SF Pro Text", "SF Pro Icons", "PingFang HK",
-    "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+  font-family: "SF Pro HK", "SF Pro Text", "SF Pro Icons", "PingFang HK", "Helvetica Neue", "Helvetica", "Arial",
+    sans-serif;
 }
 
 body:lang(zh-MO) {
-  font-family: "SF Pro HK", "SF Pro TC", "SF Pro Text", "SF Pro Icons",
-    "PingFang HK", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+  font-family: "SF Pro HK", "SF Pro TC", "SF Pro Text", "SF Pro Icons", "PingFang HK", "Helvetica Neue", "Helvetica",
+    "Arial", sans-serif;
 }
 
 body:lang(zh-TW) {
-  font-family: "SF Pro TC", "SF Pro Text", "SF Pro Icons", "PingFang TC",
-    "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+  font-family: "SF Pro TC", "SF Pro Text", "SF Pro Icons", "PingFang TC", "Helvetica Neue", "Helvetica", "Arial",
+    sans-serif;
 }
 
 body,
@@ -755,18 +743,7 @@ main {
   text-align: inherit;
 }
 
-#globalfooter
-  :is(
-    article,
-    aside,
-    details,
-    figcaption,
-    figure,
-    footer,
-    header,
-    nav,
-    section
-  ) {
+#globalfooter :is(article, aside, details, figcaption, figure, footer, header, nav, section) {
   display: block;
 }
 #globalfooter img {
@@ -816,4 +793,14 @@ main {
   font-size: smaller;
   vertical-align: sub;
   line-height: 1;
+}
+
+/* Global Header */
+#globalribbon {
+  all: unset;
+}
+div[id="globalheader"] {
+  width: 100%;
+  max-width: 2560px;
+  display: contents;
 }
