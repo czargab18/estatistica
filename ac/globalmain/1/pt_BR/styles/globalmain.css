@@ -12,14 +12,6 @@ main {
   flex-direction: column;
   gap: 1em;
 }
-@media only screen and (max-width: 745px) {
-  /* Removi o GlobalNav em Telas Menores */
-  main {
-    padding-top: calc(
-      var(--r-globalheader-height) + var(--r-globalribbon-height)
-    );
-  }
-}
 
 section[data-module-template="heroes"] {
   display: flex;
