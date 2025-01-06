@@ -46,31 +46,29 @@
 Destinado a criar scripts python para tornar mais fácil o processo de criação das postagens. 
 
 ### Exemplo
-Suponha que tenhamos um template de um artigo bem configurado.
+Suponha que tenhamos um template de um artigo.html bem configurado.
 
 Possibilidade:
-1. Psso escrever o conteúdo do meu artigo em um **``documento google``** fazer o script.py ler esse arquivo e criar uma versão do template adicionando os textos desse documento.
+1. Posso escrever o conteúdo do meu artigo em um **``bloco de notas``** e usar o Python para ler esse arquivo e automatizar o processo de escrita de código html do artigo.
 
 2. Posso salvar os conteúdos dos meus arquivos dentro de uma pasta bem estruturada para automatizar processos.
     ```{}
       artigo/
-      │  └───nome-do-artigo.txt # ou .doc com o conteudo
+      │  └───nome-do-artigo.txt # com o conteúdo
       │  |─── imagens-formulas/ # 
       │  │ └─── nome-imagem-1.png
       │  │ └─── formula-latex-2.png
       │  │ └─── formula-latex-3.png
       │  │ └─── nome-imagem-4.png 
       │  │ └─── nome-imagem-5.png
-      │  │ └─── formula-latex-do-artigo.tex
+      │  │ └─── formula-latex-do-artigo.tex # todas as formulas LaTeX usadas no artigo.
     ```
 
-    onde `nome-do-artigo.txt` Onde os blocos devem ser separados por `<p>` e `</p>` para inicio e fim do blogo de paragrafo.
-    
-    Por `<img src="nome-da-imagem">` o local e o nome da imagem
+    onde `nome-do-artigo.txt` deve ser utilizado. Os blocos devem ser separados por `<p>` e `</p>` para indicar o início e o fim de um parágrafo.
 
-    Por `<caption>` ....
+    Utilize `<img src="nome-da-imagem">` para inserir imagens, especificando o local e o texto alternativo.
 
-    Adicionar essa pasta de um artigo especifi e jogar no diretório para o Python ler e Automatizar o processo. Depois de terminar o processo a pasta é apagada automaticamente
+    Adicione essa pasta de um artigo específico no diretório para que o Python possa ler e automatizar o processo. Após a conclusão do processo, a pasta será apagada automaticamente.
 
     Poderia salvar as disciplinas em um **`.json`** contento a estrutura de "recentes" e "antigos". Se eu publicar novos artigos e a quantidade de artigos em recentes for maior que um valor X, o conteudo mais antigo será transferido e adiciona no topo do "antigo", e o novo artigo e adicionado ao topo de "recentes".
 
@@ -79,9 +77,15 @@ Possibilidade:
 ### Estrutura da pasta `post` 
 
 ```
-lista-artigos.json.json
+posts/
+├── lista-artigos.json
+├── article/
+│   └── ...arquivos...
+└── python/
+  ├── funcoes.py        # funções auxiliares
+  └── automacao.py      # Script que faz a automacao funcionar
 ```
 
 ## Pesquisa por artigos
 
-Usar a estrutura de **`lista-artigos.json`** para pesquisar 
+Usar a estrutura de **`lista-artigos.json`** para pesquisar
