@@ -24,6 +24,5 @@ Aqui contará a estrutura do repositório da plataforma.
 
 ```{}
 estatistica.pro/
-
 ```
 
