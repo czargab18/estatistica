@@ -97,7 +97,7 @@ body#globaldocente main {
 }
 
 .img-person figure[id="unit-image-docente-cesargabrielphd"] {
-  background-image: url("/sd/images/br/retratos/docentes/cesargabrielphd.png");
+  background-image: url("sd/images/br/retratos/docentes/cesargabrielphd.png");
   width: 380px;
   height: 400px;
 }
