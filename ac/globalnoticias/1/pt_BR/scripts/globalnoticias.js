@@ -1,43 +1,43 @@
 document.addEventListener("DOMContentLoaded", function () {
-  // Get the elements
+  / Get the elements
   const gallery = document.getElementById("noticias");
   const playButton = document.getElementById("playButton");
   const playIcon = document.getElementById("playIcon");
   const pauseIcon = document.getElementById("pauseIcon");
 
-  // Variable to keep track of the slideshow state
+  / Variable to keep track of the slideshow state
   let slideshowPlaying = false;
 
-  // Function to toggle play/pause icons
+  / Function to toggle play/pause icons
   function togglePlayPauseIcons() {
     playIcon.style.display = slideshowPlaying ? "block" : "none";
     pauseIcon.style.display = slideshowPlaying ? "none" : "block";
   }
 
-  // Function to start or pause the slideshow
+  / Function to start or pause the slideshow
   function toggleSlideshow() {
     slideshowPlaying = !slideshowPlaying;
 
-    // Toggle play/pause icons
+    / Toggle play/pause icons
     togglePlayPauseIcons();
 
     if (slideshowPlaying) {
-      // Start slideshow
+      / Start slideshow
       playButton.classList.remove("paused");
       playButton.setAttribute("aria-label", "pause Apple TV plus gallery");
       gallery.classList.add("autoplay");
     } else {
-      // Pause slideshow
+      / Pause slideshow
       playButton.classList.add("paused");
       playButton.setAttribute("aria-label", "play Apple TV plus gallery");
       gallery.classList.remove("autoplay");
     }
   }
 
-  // Add click event listener to the play/pause button
-  // playButton.addEventListener("click", toggleSlideshow);
+  / Add click event listener to the play/pause button
+  / playButton.addEventListener("click", toggleSlideshow);
 
-  // Initial setup for play/pause icons
+  / Initial setup for play/pause icons
   togglePlayPauseIcons();
 });
 
@@ -68,7 +68,7 @@ document.addEventListener("DOMContentLoaded", function () {
       hideAllSlides();
       slides[index].style.display = "block";
       currentSlideIndex = index;
-      updateTablist(index); // Atualizar a classe "current" nos dots
+      updateTablist(index); / Atualizar a classe "current" nos dots
     }
   }
 
@@ -123,7 +123,7 @@ document.addEventListener("DOMContentLoaded", function () {
     togglePlayPause();
   });
 
-  // Verificar quando a seção de notícias está visível na tela
+  / Verificar quando a seção de notícias está visível na tela
   const observer = new IntersectionObserver(
     (entries) => {
       entries.forEach((entry) => {
@@ -134,12 +134,12 @@ document.addEventListener("DOMContentLoaded", function () {
         }
       });
     },
-    { threshold: 0.5 } // Define o limite de 50% de visibilidade
+    { threshold: 0.5 } / Define o limite de 50% de visibilidade
   );
 
   observer.observe(noticiasSection);
 
-  // Event listeners para os botões paddlenav
+  / Event listeners para os botões paddlenav
   paddlenav.addEventListener("click", (event) => {
     const target = event.target.closest("button");
     if (target && target.classList.contains("paddlenav-arrow")) {
@@ -153,6 +153,6 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   });
 
-  showSlide(0); // Mostrar o primeiro slide inicialmente
-  dots[0].classList.add("current"); // Adicionar classe "current" ao primeiro ponto
+  showSlide(0); / Mostrar o primeiro slide inicialmente
+  dots[0].classList.add("current"); / Adicionar classe "current" ao primeiro ponto
 });
