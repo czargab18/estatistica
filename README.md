@@ -8,7 +8,7 @@ Bem vindo ao repositório sobre Estatística. Ele se destinará a todos os estud
 
 Inspirado no [vídeo](https://youtu.be/ii5Q2fCl8C0?si=HSEXqfi3OrwKGird) do grande programador [Fábio Akita](https://www.youtube.com/@Akitando?sub_confirmation=1), busco construir o diário de Henry Jones.
 
-Utilizarei esta plataforma para escrever o que aprendo e me interesso nessa área. Tentare ser organizado possível.
+Utilizarei esta plataforma para escrever o que aprendo e me interesso nessa área. Tentare ser organizado.
 
 ## Conteúdos 
 Usarei como base o fluxograma do curso da Universidade de Brasilia, onde eu estou me graduando.
