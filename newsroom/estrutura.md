@@ -57,11 +57,11 @@ Possibilidade:
       │  └───nome-do-artigo.txt # com o conteúdo
       │  |─── imagens-formulas/ # 
       │  │ └─── nome-imagem-1.png
-      │  │ └─── formula-latex-2.png
-      │  │ └─── formula-latex-3.png
+      │  │ └─── formula-img-2.png
+      │  │ └─── formula-img-3.png
       │  │ └─── nome-imagem-4.png 
       │  │ └─── nome-imagem-5.png
-      │  │ └─── formula-latex-do-artigo.tex # todas as formulas LaTeX usadas no artigo.
+      │  │ └─── todas_as_formula_em_LaTeX.tex
     ```
 
     onde `nome-do-artigo.txt` deve ser utilizado. Os blocos devem ser separados por `<p>` e `</p>` para indicar o início e o fim de um parágrafo.
