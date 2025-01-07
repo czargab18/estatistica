@@ -1,34 +1,67 @@
-# Percorrer diretório, abrir arquivos e modificar um trecho de código
-
 import os
 import re
-# Configurações
-diretorio_base = "./"  # Substitua pelo caminho do diretório onde os arquivos estão
-padrao_antigo = r"/wss/"  # Expressão regular para corresponder /wss/
-substituicao = "wss/"  # Novo texto
 
-# Função para processar os arquivos
-def substituir_texto_em_arquivos(diretorio):
+# Diretório Raiz
+diretorio_base = "./"
+
+
+def renomear_caminhos(caminho, padroes_antigos, substituicoes):
+    for padrao_antigo, substituicao in zip(padroes_antigos, substituicoes):
+        caminho = caminho.replace(padrao_antigo, substituicao)
+    return corrigir_barras_duplas(caminho)
+
+
+def corrigir_barras_duplas(caminho):
+    caminho = re.sub(r"(estatistica/)+", "/estatistica/", caminho)
+    caminho = re.sub(r"//+", "/", caminho)
+    return caminho
+
+
+def substituir_texto_em_arquivos(diretorio, padroes_antigos, substituicoes):
     for raiz, _, arquivos in os.walk(diretorio):
         for nome_arquivo in arquivos:
-            # Processa apenas arquivos HTML, CSS e JS
-            if nome_arquivo.endswith(('.html', '.css', '.js')):
+            if nome_arquivo.endswith((".html", ".css", ".js")):
                 caminho_arquivo = os.path.join(raiz, nome_arquivo)
-
                 try:
                     with open(caminho_arquivo, "r", encoding="utf-8") as arquivo:
                         conteudo = arquivo.read()
-
-                    # Substitui o padrão
-                    novo_conteudo = re.sub(padrao_antigo, substituicao, conteudo)
-
-                    # Apenas sobrescreve o arquivo se houve mudança
-                    if conteudo != novo_conteudo:
-                        with open(caminho_arquivo, "w", encoding="utf-8") as arquivo:
-                            arquivo.write(novo_conteudo)
-                        print(f"Atualizado: {caminho_arquivo}")
+                    conteudo_modificado = renomear_caminhos(
+                        conteudo, padroes_antigos, substituicoes
+                    )
+                    with open(caminho_arquivo, "w", encoding="utf-8") as arquivo:
+                        arquivo.write(conteudo_modificado)
                 except Exception as e:
-                    print(f"Erro ao processar {caminho_arquivo}: {e}")
+                    print(f"Erro ao processar o arquivo {caminho_arquivo}: {e}")
 
-# Executa o script
-substituir_texto_em_arquivos(diretorio_base)
+
+if __name__ == "__main__":
+    ambiente = input("Digite o ambiente (hospedagem, local ou github_pages): ")
+    ambiente = ambiente.lower()
+
+    if ambiente in ["hospedagem", "h"]:
+        padroes_antigos = [
+            r"estatistica/sd/",
+            r"estatistica/ac/",
+            r"estatistica/wss/",
+            r"sd/",
+            r"ac/",
+            r"wss/",
+        ]
+        substituicoes = ["/sd/", "/ac/", "/wss/", "/sd/", "/ac/", "/wss/"]
+    elif ambiente in ["local", "l"]:
+        padroes_antigos = [
+            r"estatistica/ac/",
+            r"estatistica/wss/",
+            r"estatistica/sd/",
+            r"ac/",
+            r"wss/",
+            r"sd/",
+        ]
+        substituicoes = ["/ac/", "/wss/", "/sd/", "/ac/", "/wss/", "/sd/"]
+    elif ambiente in ["github_pages", "g", "gp"]:
+        padroes_antigos = [r"/ac/", r"/wss/", r"/sd/", r"ac/", r"wss/", r"sd/"]
+        substituicoes = ["/estatistica/ac/", "/estatistica/wss/", "/estatistica/sd/"]
+    else:
+        print("Ambiente inválido. Use 'hospedagem', 'local' ou 'github_pages'.")
+
+    substituir_texto_em_arquivos(diretorio_base, padroes_antigos, substituicoes)
