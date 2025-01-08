@@ -1,3 +1,13 @@
+"""
+Descrição sobre como se usa este script
+ - Ele é utilizado para corrigir os caminhos dos arquivos de uma página web que está sendo migrada de um ambiente para outro.
+ - O script percorre todos os arquivos de um diretório e substitui os caminhos antigos por novos.
+ - O script é executado no terminal e solicita ao usuário o ambiente de destino da migração.
+ - O script possui três ambientes de destino: hospedagem, local e github_pages.
+ - O script possui três conjuntos de padrões de caminhos antigos e novos, um para cada ambiente.
+ - O script percorre todos os arquivos de um diretório e substitui os caminhos antigos pelos novos.
+ """
+
 import os
 import re
 
