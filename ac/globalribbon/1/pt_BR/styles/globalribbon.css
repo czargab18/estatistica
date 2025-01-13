@@ -8,6 +8,7 @@
   font-size: 14px;
   background-color: var(--r-bg-color-primary);
   width: 100%;
+  max-width: 2560px;
   min-width: 320px;
   height: var(--r-globalribbon-height);
   display: flex;
