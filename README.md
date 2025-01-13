@@ -1,11 +1,10 @@
 # Estatística
 
-Bem vindo ao repositório sobre Estatística. Ele se destinará a todos os estudantes que desejam ingressar neste universo maravilho.
+Bem vindo ao repositório sobre Estatística. Ele se destinará a todos os estudantes que desejam ingressar neste universo maravilho. Além de conter informações sobre o [Departamento de Estatistica](https://est.unb.br) da [Universidade de Brasília](https://www.unb.br).
 
 - [desenvolvimento website] : [https://www.estatistica.pro](https://estatistica.pro/)
 
 ## O que é este repositório
-Este é um site conterá informações do [Departamento de Estatistica](https://est.unb.br) da [Universidade de Brasília](https://www.unb.br).
 Utilizarei esta plataforma para escrever o que aprendo e me interesso nessa área. Tentare ser organizado.
 
 Bom, inspirado no [vídeo](https://youtu.be/ii5Q2fCl8C0?si=HSEXqfi3OrwKGird) do grande programador [Fábio Akita](https://www.youtube.com/@Akitando?sub_confirmation=1), busco construir o diário de Henry Jones.
