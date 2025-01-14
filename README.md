@@ -26,3 +26,8 @@ Aqui contará a estrutura do repositório da plataforma.
 estatistica.pro/
 ```
 
+## Conhecimento
+> "Todo conhecimento é uma arte para aqueles que sabem apreciar."  
+> por César Gabriel
+
+- **observação**: Surgiu em meus pensamentos, não me recordo se é de outra pessoa.
