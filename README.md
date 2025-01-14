@@ -26,8 +26,12 @@ Aqui contará a estrutura do repositório da plataforma.
 estatistica.pro/
 ```
 
-## Conhecimento
+## Motivação
 > "Todo conhecimento é uma arte para aqueles que sabem apreciar."  
 > por César Gabriel
 
-- **observação**: Surgiu em meus pensamentos, não me recordo se é de outra pessoa.
+
+> "Dar o sangue até o útimo suspiro"  
+> por César Gabriel
+
+- **observação**: Surgiram em meus pensamentos, não me recordo se foram ditas pela mente de outros.
