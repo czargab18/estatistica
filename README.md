@@ -31,7 +31,7 @@ estatistica.pro/
 > por César Gabriel
 
 
-> "Dar o sangue até o útimo suspiro"  
+> "Dar o sangue antes do útimo suspiro"  
 > por César Gabriel
 
 - **observação**: Surgiram em meus pensamentos, não me recordo se foram ditas pela mente de outros.
