@@ -91,7 +91,7 @@ section[data-module-template="heroes"] figure[id="unit-image-calouro"] {
 }
 /* gradiente */
 section[data-module-template="heroes"] div:nth-child(2) .unit-image-warpper {
-  background: radial-gradient(circle at top, #282828 3%, #848484 50%, #000 70%);
+  background: radial-gradient(circle at top, #ffcd07 3%, rgb(245, 30, 30) 50%, #bc3131 70%);
 }
 section[data-module-template="heroes"] div:nth-child(2) .unit-image-warpper figure[id="unit-image-graduacao"] {
   width: 3008px;
