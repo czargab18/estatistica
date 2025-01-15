@@ -19,13 +19,6 @@ Observações:
 
 - Também buscarei aprender conteúdos de disciplinas de outras Universidades, mesmo que por conta própria.
 
-## Observação
-Aqui contará a estrutura do repositório da plataforma.
-
-```{}
-estatistica.pro/
-```
-
 ## Motivação
 > "Todo conhecimento é uma arte para aqueles que sabem apreciar."  
 > por César Gabriel
@@ -35,3 +28,39 @@ estatistica.pro/
 > por César Gabriel
 
 - **observação**: Surgiram em meus pensamentos, não me recordo se foram ditas pela mente de outros.
+
+## Estrutura do Repositório
+Aqui contará a estrutura do repositório da plataforma.
+
+```
+estatistica.pro/
+│  ├── ac/                     # Componentes globais do site
+│  │   ├── globalaside/        # Componentes da barra lateral global
+│  │   ├── globalfooter/       # Componentes do rodapé global
+│  │   ├── globalmain/         # Componentes da área principal global
+│  │   ├── globalnavbar/       # Componentes da barra de navegação global
+│  │   ├── globalnoticias/     # Componentes de notícias globais
+│  │   ├── globalothers/       # Outros componentes globais
+│  │   ├── globalpattern/      # Padrões globais de design
+│  │   ├── globalribbon/       # Componentes de faixa global
+│  │   └── globaltipografia/   # Componentes de tipografia global
+│  ├── docente/                # Páginas e conteúdos relacionados aos docentes
+│  │   └── cesargabrielphd/
+│  ├── errors/                 # Páginas de erro personalizadas
+│  │   └── 404/
+│  ├── ira/                    # Páginas e scripts relacionados ao Índice de Rendimento Acadêmico
+│  ├── newsroom/               # Conteúdos e artigos de notícias
+│  │   ├── articles/
+│  │   ├── assets/
+│  │   ├── images/
+│  │   ├── posts/
+│  │   └── lista-artigos.json
+│  ├── sd/                     # Dados estruturados e recursos estáticos
+│  │   ├── data/
+│  │   ├── images/
+│  │   └── seo/
+│  ├── sitemap/                # Mapa do site
+│  └── wss/                    # Fontes e estilos globais
+│  │   ├── fonts/
+│  │   └── fonts.css
+```
