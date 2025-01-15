@@ -70,8 +70,8 @@ div[class="unit-copy-warpper"] {
   font-size: 19px;
 }
 
-section[data-module-template="heroes"]  div.unit-image-warpper, 
-section[data-module-template="promos"]  div.unit-image-warpper {
+section[data-module-template="heroes"] div.unit-image-warpper,
+section[data-module-template="promos"] div.unit-image-warpper {
   width: 100%;
   height: 100%;
   background-image: linear-gradient(to bottom, #6197f5, #dad9d9);
@@ -89,7 +89,11 @@ section[data-module-template="heroes"] figure {
 section[data-module-template="heroes"] figure[id="unit-image-calouro"] {
   display: none;
 }
-section[data-module-template="heroes"] figure[id="unit-image-graduacao"] {
+/* gradiente */
+section[data-module-template="heroes"] div:nth-child(2) .unit-image-warpper {
+  background: radial-gradient(circle at top, #282828 3%, #848484 50%, #000 70%);
+}
+section[data-module-template="heroes"] div:nth-child(2) .unit-image-warpper figure[id="unit-image-graduacao"] {
   width: 3008px;
   height: 624px;
   background-size: 3008px 624px;
