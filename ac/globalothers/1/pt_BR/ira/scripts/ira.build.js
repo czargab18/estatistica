@@ -334,7 +334,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const botaoBaixar = document.createElement("button");
     botaoBaixar.id = "botao-baixar";
     botaoBaixar.className = "btn btn-success";
-    botaoBaixar.style.display = "none"; / Inicialmente oculto
+    botaoBaixar.style.display = "none";
     botaoBaixar.textContent = "Baixar Dados";
     botaoBaixar.onclick = baixarDados;
 
@@ -351,7 +351,7 @@ document.addEventListener("DOMContentLoaded", () => {
       const botaoBaixar = document.createElement("button");
       botaoBaixar.id = "botao-baixar";
       botaoBaixar.className = "btn btn-success";
-      botaoBaixar.style.display = "none"; / Inicialmente oculto
+      botaoBaixar.style.display = "none";
       botaoBaixar.textContent = "Baixar Dados";
       botaoBaixar.onclick = baixarDados;
 
