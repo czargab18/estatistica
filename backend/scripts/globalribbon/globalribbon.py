@@ -1,7 +1,10 @@
 import os
 import json
-import time
+import logging
 from bs4 import BeautifulSoup
+
+# Configuração do logging
+logging.basicConfig(level=logging.INFO)
 
 
 def globalribbon(
@@ -11,7 +14,7 @@ def globalribbon(
     tipo="avisos",  # Valor padrão
 ):
     def buscar_por_titulo(titulo):
-        json_filepath = "c:/Users/cesar.oliveira/Documents/github/estatistica/backend/scripts/globalribbon/globalribbon.json"
+        json_filepath = "backend/scripts/globalribbon/globalribbon.json"
         with open(json_filepath, "r", encoding="utf-8") as file:
             data = json.load(file)
 
@@ -26,22 +29,22 @@ def globalribbon(
                         "classes": item["classes"],
                     }
 
-        print(f"Título '{titulo}' não encontrado.")
+        logging.info(f"Título '{titulo}' não encontrado.")
         return None
 
-    def update_globalribbon(html_content, new_text, new_link, new_classes):
+    def update_globalribbon(html_content, new_text, new_link, new_classes=None):
         soup = BeautifulSoup(html_content, "html.parser")
 
         # Encontrar a div globalheader
         globalheader_div = soup.find("div", id="globalheader")
         if not globalheader_div:
-            print("Div #globalheader não encontrada.")
+            logging.error("Div #globalheader não encontrada.")
             return html_content
 
         # Encontrar a seção globalribbon dentro de globalheader
         globalribbon_section = globalheader_div.find("section", id="globalribbon")
         if not globalribbon_section:
-            print("Seção #globalribbon não encontrada dentro de #globalheader.")
+            logging.error("Seção #globalribbon não encontrada dentro de #globalheader.")
             return html_content
 
         # Atualizar o texto e as classes
@@ -102,12 +105,11 @@ def globalribbon(
                     if updated_html:
                         with open(file_path, "w", encoding="utf-8") as f:
                             f.write(updated_html)
-                        print(f"Arquivo atualizado: {file_path}")
-                        time.sleep(10)  # Espera de 10 segundos
+                        logging.info(f"Arquivo atualizado: {file_path}")
 
     item_encontrado = buscar_por_titulo(titulo)
     if item_encontrado:
-        print(f"Item encontrado: {item_encontrado}")
+        logging.info(f"Item encontrado: {item_encontrado}")
         new_text = item_encontrado["conteudo"]
         new_link = item_encontrado["link"]
         new_classes = item_encontrado["classes"]
@@ -115,15 +117,14 @@ def globalribbon(
             filepath, new_text, new_link, new_classes, display_none
         )
     else:
-        print(f"Item com título '{titulo}' não encontrado.")
+        logging.info(f"Item com título '{titulo}' não encontrado.")
 
 
 # Exemplo de uso
-filepath = "c:/Users/cesar.oliveira/Documents/github/estatistica"
-titulo = "Novo Aviso"
 
 globalribbon(
-    filepath=filepath,
-    titulo=titulo,
+    filepath="estatistica/",
+    titulo="Novo Aviso",
+    tipo="avisos",
     display_none=False,
 )
