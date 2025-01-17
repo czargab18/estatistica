@@ -44,6 +44,9 @@ estatistica.pro/
 │  │   ├── globalpattern/      # Padrões globais de design
 │  │   ├── globalribbon/       # Componentes de faixa global
 │  │   └── globaltipografia/   # Componentes de tipografia global
+│  ├── backend/                # Scripts e configurações do backend
+│  │   ├── config/
+│  │   └── scripts/            # Automações-fake (precisam de mim para serem iniciadas.)
 │  ├── docente/                # Páginas e conteúdos relacionados aos docentes
 │  │   └── cesargabrielphd/
 │  ├── errors/                 # Páginas de erro personalizadas
@@ -63,4 +66,9 @@ estatistica.pro/
 │  └── wss/                    # Fontes e estilos globais
 │  │   ├── fonts/
 │  │   └── fonts.css
+│  ├── CNAME                   # Arquivo de configuração de domínio
+│  ├── index.html              # Página inicial do site
+│  ├── .htaccess               # Arquivo de configuração do servidor
+│  ├── 404.html                # Página de erro 404
+│  ├── README.md               # Documentação do repositório
 ```
