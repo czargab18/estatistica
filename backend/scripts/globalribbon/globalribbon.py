@@ -1,5 +1,6 @@
 import os
 import json
+import time
 from bs4 import BeautifulSoup
 
 
@@ -34,19 +35,21 @@ def globalribbon(
         # Encontrar a div globalheader
         globalheader_div = soup.find("div", id="globalheader")
         if not globalheader_div:
-            return None
+            print("Div #globalheader não encontrada.")
+            return html_content
 
         # Encontrar a seção globalribbon dentro de globalheader
         globalribbon_section = globalheader_div.find("section", id="globalribbon")
         if not globalribbon_section:
-            return None
+            print("Seção #globalribbon não encontrada dentro de #globalheader.")
+            return html_content
 
-        # Atualizar o texto
+        # Atualizar o texto e as classes
         news_content = globalribbon_section.find("span", id="news-content")
         if news_content:
             news_content.string = new_text
             if new_classes:
-                news_content["class"] = new_classes
+                news_content["class"] = " ".join(new_classes)
 
         # Atualizar o link
         news_link = globalribbon_section.find("a")
@@ -61,12 +64,12 @@ def globalribbon(
         # Encontrar a div globalheader
         globalheader_div = soup.find("div", id="globalheader")
         if not globalheader_div:
-            return None
+            return html_content
 
         # Encontrar a seção globalribbon dentro de globalheader
         globalribbon_section = globalheader_div.find("section", id="globalribbon")
         if not globalribbon_section:
-            return None
+            return html_content
 
         # Adicionar ou remover o estilo inline
         if display_none:
@@ -100,6 +103,7 @@ def globalribbon(
                         with open(file_path, "w", encoding="utf-8") as f:
                             f.write(updated_html)
                         print(f"Arquivo atualizado: {file_path}")
+                        time.sleep(10)  # Espera de 10 segundos
 
     item_encontrado = buscar_por_titulo(titulo)
     if item_encontrado:
@@ -116,7 +120,7 @@ def globalribbon(
 
 # Exemplo de uso
 filepath = "c:/Users/cesar.oliveira/Documents/github/estatistica"
-titulo = "Calendário Acadêmico 2025"
+titulo = "Novo Aviso"
 
 globalribbon(
     filepath=filepath,
