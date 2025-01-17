@@ -32,6 +32,28 @@ def globalribbon(
         logging.info(f"Título '{titulo}' não encontrado.")
         return None
 
+    def update_globalribbon_style(html_content, display_none):
+        soup = BeautifulSoup(html_content, "html.parser")
+
+        # Encontrar a div globalheader
+        globalheader_div = soup.find("div", id="globalheader")
+        if not globalheader_div:
+            return html_content
+
+        # Encontrar a seção globalribbon dentro de globalheader
+        globalribbon_section = globalheader_div.find("section", id="globalribbon")
+        if not globalribbon_section:
+            return html_content
+
+        # Adicionar ou remover o estilo inline
+        if display_none:
+            globalribbon_section["style"] = "display: none;"
+        else:
+            if "style" in globalribbon_section.attrs:
+                del globalribbon_section["style"]
+
+        return str(soup)
+
     def update_globalribbon(html_content, new_text, new_link, new_classes=None):
         soup = BeautifulSoup(html_content, "html.parser")
 
@@ -58,28 +80,6 @@ def globalribbon(
         news_link = globalribbon_section.find("a")
         if news_link:
             news_link["href"] = new_link
-
-        return str(soup)
-
-    def update_globalribbon_style(html_content, display_none):
-        soup = BeautifulSoup(html_content, "html.parser")
-
-        # Encontrar a div globalheader
-        globalheader_div = soup.find("div", id="globalheader")
-        if not globalheader_div:
-            return html_content
-
-        # Encontrar a seção globalribbon dentro de globalheader
-        globalribbon_section = globalheader_div.find("section", id="globalribbon")
-        if not globalribbon_section:
-            return html_content
-
-        # Adicionar ou remover o estilo inline
-        if display_none:
-            globalribbon_section["style"] = "display: none;"
-        else:
-            if "style" in globalribbon_section.attrs:
-                del globalribbon_section["style"]
 
         return str(soup)
 
