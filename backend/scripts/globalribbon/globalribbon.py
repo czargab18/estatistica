@@ -121,10 +121,8 @@ def globalribbon(
 
 
 # Exemplo de uso
-
 globalribbon(
-    filepath="estatistica/",
+    filepath="c:/Users/cesar.oliveira/Documents/github/estatistica",
     titulo="Novo Aviso",
-    tipo="avisos",
     display_none=False,
 )
