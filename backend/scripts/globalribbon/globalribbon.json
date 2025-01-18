@@ -24,12 +24,12 @@
   "eventos": [
     {
       "id": 1,
-      "titulo": "",
-      "conteudo": "",
-      "link": "",
+      "titulo": "EVENTO QUALQUER",
+      "conteudo": "Nada de importante",
+      "link": "fuck.com",
       "classes": [
-        "",
-        ""
+        "algo1",
+        "algo2"
       ]
     },
     {
