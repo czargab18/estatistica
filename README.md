@@ -21,13 +21,17 @@ Observações:
 
 ## Motivação
 > "Todo conhecimento é uma arte para aqueles que sabem apreciar."  
-> por César Gabriel
-
+> César Gabriel
 
 > "Dar o sangue antes do útimo suspiro"  
-> por César Gabriel
+> César Gabriel
 
-- **observação**: Surgiram em meus pensamentos, não me recordo se foram ditas pela mente de outros.
+> "Tudo certo. Nada resolvido"  
+> Tiago Teixeira
+
+- **observação**: Tiago Teixeira foi um colega de trabalho do [Ministério da Ciência Tecnologia e Inovação](https://www.gov.br/mcti/pt-br/acompanhe-o-mcti/lei-do-bem), desde julho de 2024.
+
+- **observação**: As duas primeiras sitações surgiram em meus pensamentos, não me recordo se foram ditas por outros.
 
 ## Estrutura do Repositório
 Aqui contará a estrutura do repositório da plataforma.
