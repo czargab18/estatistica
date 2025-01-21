@@ -6,23 +6,25 @@ import json
 import random
 import string
 
-
 path = "posts/article/*.txt"
 path = "posts/article/imgs-*"
 
+
 def verificacao(pergunta):
     """
-       Verifica se a resposta é sim ou não
-       """
+    Verifica se a resposta é sim ou não
+    """
     if pergunta in ["sim", "s"]:
         return True
     else:
         if pergunta in ["não", "nao", "n"]:
             return False
 
+
 def continuar(pergunta):
     pergunta = input("Deseja continuar? Digite Sim ou Não: ").lower()
     verificacao(pergunta)
+
 
 def existe_files_in_article(folder="posts/article/"):
     """
@@ -36,7 +38,7 @@ def existe_files_in_article(folder="posts/article/"):
 
 def ler_nome_file(path="posts/article/"):
     """
-    Função que retorna o mês e o ano a partir do nome do arquivo .txt, sem a extensão, a partir do caminho fornecido.
+    Função que retorna o mês, o ano e o nome do arquivo .txt, sem a extensão, a partir do caminho fornecido.
     exemplo-padrão: "posts/article/mes-ano.txt"
      - mes: vai de 1 até 12
      - ano: exemplo 2025
@@ -45,11 +47,16 @@ def ler_nome_file(path="posts/article/"):
     if not arquivos_txt:
         raise FileNotFoundError("Nenhum arquivo .txt encontrado no caminho fornecido.")
 
-    nome_arquivo = os.path.splitext(os.path.basename(arquivos_txt[0]))[0]
+    nome_arquivo_com_extensao = os.path.basename(arquivos_txt[0])
+    nome_arquivo = os.path.splitext(nome_arquivo_com_extensao)[0]
     match = re.match(r"(0?[1-9]|1[0-2])-(\d{4})", nome_arquivo)
     if match:
         mes, ano = match.groups()
-        return {"mes": int(mes), "ano": int(ano)}
+        return {
+            "mes": str(mes),
+            "ano": str(ano),
+            "nome_arquivo": nome_arquivo_com_extensao,
+        }
     else:
         raise ValueError("O nome do arquivo não está no formato esperado 'mes-ano'.")
 
@@ -77,20 +84,69 @@ def gen_id_artigo():
     return identificador
 
 
-def mover_imgs_para_artigo(
-    src_path="posts/article/imgs-e-formulas/", destino="articles/pt_BR/2025/2/"
-):
+""" FUNÇÕES PARA TRATAR O CONTEÚDO DO .txt PARA index.html"""
+
+
+# Mover Arquivos da Pasta article
+
+def mover_arquivos():
     """
-    Função que move as imagens da pasta de origem para a pasta de destino.
-    A pasta de destino é construída com base no identificador do artigo.
+    Função que copia todo o conteúdo de uma pasta, incluindo subpastas e arquivos, para outra pasta.
+    Antes de mover, cria uma pasta que receberá como nome o valor do identificador.
     """
-    pass
+    resposta = str(input("Deseja MOVER os arquivos? Sim ou Não: ").lower())
+    if resposta in ["sim", "s"]:
+        # Pastas de origem e destino
+        origem_base = "posts/article/"
+        destino_base = "articles/pt_BR/"
+        src_subpasta = os.path.join(origem_base, "src")
+
+        # Gera o identificador
+        identificador = gen_id_artigo()
+
+        # Obtém o nome do arquivo .txt e as informações de ano e mês
+        arquivo_info = ler_nome_file(origem_base)
+        ano = str(arquivo_info["ano"])
+        mes = str(arquivo_info["mes"])
+
+        # Caminhos
+        src_arquivo = os.path.join(origem_base, arquivo_info["nome_arquivo"])
+        destino_final = os.path.join(destino_base, ano, mes, identificador)
+
+        # Cria a pasta do identificador dentro da estrutura de pasta existente
+        os.makedirs(destino_final, exist_ok=True)
+
+        # Copia a subpasta e seus arquivos
+        shutil.copytree(
+            src_subpasta, os.path.join(destino_final, "src"), dirs_exist_ok=True
+        )
+
+        # Copia o arquivo .txt
+        shutil.copy(src_arquivo, destino_final)
+    else:
+        return f"Processo NÃO FEZ NADA com os arquivos. Resposta '{resposta}' diferente de 'Sim'."
+
+    return destino_final, "\nProcesso finalizado!"
+
+def excluir_arquivos(resposta="Não", path="posts/article/"):
+    resposta = str(input("Deseja EXCLUIR os arquivos? Sim ou Não: ").lower())
+    if resposta in ["sim", "s"]:
+        try:
+            shutil.rmtree(path)
+            print(f"Arquivos e pastas em '{path}' foram excluídos.")
+            # A função acima exclui a pasta article e a função abaixo cria a mesma pasta
+            os.makedirs(path, exist_ok=True)
+        except FileNotFoundError:
+            print(f"Erro: O caminho '{path}' não foi encontrado.")
+        except Exception as e:
+            print(f"Erro ao excluir arquivos e pastas: {e}")
+    else:
+        return f"Processo NÃO excluiu os arquivos. Resposta '{resposta}' diferente de Sim"
 
 
 """ Teste """
 ## print(ler_nome_file(path="posts/article/"))
 ## print(ler_conteudo_arquivo(path="posts/article/2-2025.txt"))
 ## print(gen_id_artigo())
-
-
-""" FUNÇÕES PARA TRATAR O CONTEÚDO DO .txt PARA index.html"""
+# print(mover_arquivos())
+print(excluir_arquivos())
