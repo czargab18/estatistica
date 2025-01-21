@@ -1,6 +1,7 @@
 {
   "artigos": {
     "artigo 1": {
+      "id": "d5cb61509",
       "titulo": "titulo do artigo 1",
       "código-disciplina": "CODE",
       "disciplina": "disciplinas",
@@ -14,6 +15,7 @@
       ]
     },
     "artigo 2": {
+      "id": "d5eb65509",
       "titulo": "titulo do artigo 2",
       "código-disciplina": "CODE",
       "disciplina": "disciplinas",
@@ -27,6 +29,7 @@
       ]
     },
     "artigo 3": {
+      "id": "m34xmawhj",
       "titulo": "titulo do artigo 3",
       "código-disciplina": "CODE",
       "disciplina": "disciplinas",
@@ -40,6 +43,7 @@
       ]
     },
     "artigo 4": {
+      "id": "xt4txtpgv",
       "titulo": "titulo do artigo 4",
       "código-disciplina": "CODE",
       "disciplina": "disciplinas",

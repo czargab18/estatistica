@@ -21,8 +21,8 @@ posts/
 1. O conteúdo do artigo e seus complementos (imagens, códigos LaTeX, etc.) ficaram em uma subpasta chamada `posts/article/` usada como pasta `teporaria` para a automação falça.
    ```{}
      artigo/
-     │  └───artigo-mes-ano.txt
-     │  |─── /imgs-e-formulas/
+     │  └───identificador.txt
+     │  |─── /src/
      │  │  │  │  └─── hero-imag-1.png
      │  │  │  │  └─── hero-imag-2.png
      │  │  │  │  └─── formula-1.png
@@ -34,8 +34,10 @@ posts/
 
 - _Obs2_: As imagens **hero-imag-\*.png** são imagens de destaque (Hero Image). As imagens **formula-\*.png** são imagens de alguma fórmula LaTeX usada no artigo. Já o **códigos-artigo.tex** destina-se a ser um arquivo .tex contendo todo os códigos de cada fórmula usada no site, que poderá ser baixado.
 
-2. Escrevo o conteúdo em um txt bem esctruturado, chamado **artigo-mes-ano.txt** com a seguinte estrutura de conteúdo:
+2. Escrevo o conteúdo em um txt bem esctruturado, chamado **identificador
+.txt** com a seguinte estrutura de conteúdo:
 
+2. Escrevo ovo ovo o  conteúdsrc e
    - Titulo: Titulo do artigo
    - Subttulo: subtitulo do artigo
    - Imagem: Imagem de Destaque (Hero Image)
@@ -51,7 +53,7 @@ posts/
 3. Posso escrever o conteúdo do meu artigo em um **`bloco de notas`**, ou outro editor. Usar o Python para ler essa pasta `article`, contendo os arquivo, que seram usados automatizar o processo de escrita de código html do artigo. O HTML5 do artigo gerado deve ser salvo dentro da pasta `/newsroom/articles/pt_BR/`. Veja o exmplo:
 
    ```{sh}
-    /newsroom/articles/pt_BR/20xx/Z/nome-do-artigo/index.html
+    /newsroom/articles/pt_BR/20xx/Z/identificador/index.html
    ```
 
    - Onde `20xx` se refere ao ano que o artigo foi escrito
@@ -59,66 +61,67 @@ posts/
 
 4. Os títulos e links para esses arquivos devem ser salvos em um arquivo chamado `articles.json`, contendo a seguinte estrutura:
 
-- _recentes_: consistirá apenas nos primeiros 10 artigos.
-- _completo_: contém todos os artigos publicados, do mais recente oa mais antigo.
-
   ```{sh}
-    {
-    "artigos": {
-      "artigo 1": {
-        "titulo": "titulo do artigo 1",
-        "código-disciplina": "CODE",
-        "disciplina": "disciplinas",
-        "descrição": "descrição do artigo 1",
-        "data": "data do artigo 1",
-        "path": "/newsroom/articles/pt_BR/20xx/z/nome-do-artigo/index.html",
-        "tags": [
-          "tag1",
-          "tag2",
-          "tag3"
-        ]
-      },
-      "artigo 2": {
-        "titulo": "titulo do artigo 2",
-        "código-disciplina": "CODE",
-        "disciplina": "disciplinas",
-        "descrição": "descrição do artigo 2",
-        "data": "data do artigo 2",
-        "path": "/newsroom/articles/pt_BR/20xx/z/nome-do-artigo/index.html",
-        "tags": [
-          "tag1",
-          "tag2",
-          "tag3"
-        ]
-      },
-      "artigo 3": {
-        "titulo": "titulo do artigo 3",
-        "código-disciplina": "CODE",
-        "disciplina": "disciplinas",
-        "descrição": "descrição do artigo 3",
-        "data": "data do artigo 3",
-        "path": "/newsroom/articles/pt_BR/20xx/z/nome-do-artigo/index.html",
-        "tags": [
-          "tag1",
-          "tag2",
-          "tag3"
-        ]
-      },
-      "artigo 4": {
-        "titulo": "titulo do artigo 4",
-        "código-disciplina": "CODE",
-        "disciplina": "disciplinas",
-        "descrição": "descrição do artigo 4",
-        "data": "data do artigo 4",
-        "path": "/newsroom/articles/pt_BR/20xx/z/nome-do-artigo/index.html",
-        "tags": [
-          "tag1",
-          "tag2",
-          "tag3"
-        ]
+      {
+        "artigos": {
+          "artigo 1": {
+            "id": "d5cb61509",
+            "titulo": "titulo do artigo 1",
+            "código-disciplina": "CODE",
+            "disciplina": "disciplinas",
+            "descrição": "descrição do artigo 1",
+            "data": "data do artigo 1",
+            "path": "/newsroom/articles/pt_BR/2025/2/identificador/index.html",
+            "tags": [
+              "tag1",
+              "tag2",
+              "tag3"
+            ]
+          },
+          "artigo 2": {
+            "id": "d5eb65509",
+            "titulo": "titulo do artigo 2",
+            "código-disciplina": "CODE",
+            "disciplina": "disciplinas",
+            "descrição": "descrição do artigo 2",
+            "data": "data do artigo 2",
+            "path": "/newsroom/articles/pt_BR/2025/2/nome-do-artigo/index.html",
+            "tags": [
+              "tag1",
+              "tag2",
+              "tag3"
+            ]
+          },
+          "artigo 3": {
+            "id": "m34xmawhj",
+            "titulo": "titulo do artigo 3",
+            "código-disciplina": "CODE",
+            "disciplina": "disciplinas",
+            "descrição": "descrição do artigo 3",
+            "data": "data do artigo 3",
+            "path": "/newsroom/articles/pt_BR/2025/2/nome-do-artigo/index.html",
+            "tags": [
+              "tag1",
+              "tag2",
+              "tag3"
+            ]
+          },
+          "artigo 4": {
+            "id": "xt4txtpgv",
+            "titulo": "titulo do artigo 4",
+            "código-disciplina": "CODE",
+            "disciplina": "disciplinas",
+            "descrição": "descrição do artigo 4",
+            "data": "data do artigo 4",
+            "path": "/newsroom/articles/pt_BR/2025/10/nome-do-artigo/index.html",
+            "tags": [
+              "tag1",
+              "tag2",
+              "tag3"
+            ]
+          }
+        }
       }
-     }
-    }
   ```
 
 5. Haverá uma automação que atualiza a `articles.json`. O novo artigo é adicionado como primeiro elemento nesse arquivo.
@@ -126,6 +129,7 @@ posts/
 6. Após o processo encerrar, esses conteúdos serão excluídos(exceto a pasta `templates`).
 
 ## Pesquisa por artigos
+
 Consistirá em usar o arquivo `articles.json` para fazer as pesquisas.
 
 ## Estrutura da Pasta de redação
@@ -137,11 +141,13 @@ Consistirá em usar o arquivo `articles.json` para fazer as pesquisas.
   │   │   ├─── pt_BR/
   │   │   │   ├─── 20xx/                 # Ano 20xx
   │   │   │   │   ├─── 1/                # Mês de Janeiro
-  │   │   │   │   │   └─── artigo-mes-ano
-  │   │   │   │   │   │    └─── index..html
-  │   │   │   │   ├─── 10/              # Mês de Outubro
-  │   │   │   │   │   └─── artigo-mes-ano
-  │   │   │   │   │   │    └─── index..html
+  │   │   │   │   │   └── identificador
+  │   │   │   │   │   │   ├─── src/ 
+  │   │   │   │   │   │   │   └─── hero-image-1.png
+  │   │   │   │   │   │   │   └─── hero-image-2.png
+  │   │   │   │   │   │   │   └─── formula-1.png
+  │   │   │   │   │   │   │   └─── formula-2.png
+  │   │   │   │   │   │   └─── index.html
   │   │   │   └─── strutura.txt
   │   ├─── assets/                    # CSS e JS dos artigos postados
   │   │   ├─── pt_BR/
@@ -160,14 +166,4 @@ Consistirá em usar o arquivo `articles.json` para fazer as pesquisas.
   │   │   │   │   │    └─── articles.js
   │   │   │   │   ├─── styles/
   │   │   │   │   │   └─── articles.css
-  │   ├─── images/                    # Destinado a Armagenas imagens dos artigos
-  │   │   ├─── pt_BR/
-  │   │   │   ├─── Banners/
-  │   │   │   │   ├─── 20xx/ #
-  │   │   │   │   │   ├─── 1/                # Mês de Janeiro
-  │   │   │   │   │   │    └─── nome-artigo-nome-imge.png
-  │   │   │   │   │   │    └─── nome-artigo-nome-imge.png
-  │   │   │   │   │   ├─── 10/                # Mês de Outubro
-  │   │   │   │   │   │    └─── nome-artigo-nome-imge.png
-  │   │   │   │   │   │    └─── nome-artigo-nome-imge.png
 ```
