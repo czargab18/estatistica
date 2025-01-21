@@ -1,91 +1,173 @@
-# Estrutura da Pasta de redação
-```
-├─── newsroom/
-│   └─── index.html
-│   ├─── articles/
-│   │   ├─── pt_BR/
-│   │   │   ├─── 20xx/                 # Ano 20xx 
-│   │   │   │   ├─── 1/                # Mês de Janeiro
-│   │   │   │   │   └─── nome-do-artigo
-│   │   │   │   │   │    └─── index..html
-│   │   │   │   ├─── 10/              # Mês de Outubro
-│   │   │   │   │   └─── nome-do-artigo
-│   │   │   │   │   │    └─── index..html
-│   │   │   └─── strutura.txt
-│   ├─── assets/                    # CSS e JS dos artigos postados 
-│   │   ├─── pt_BR/
-│   │   │   ├─── archive/
-│   │   │   │   ├─── scripts/
-│   │   │   │   │    └─── archive.js
-│   │   │   │   ├─── styles/
-│   │   │   │   │   └─── archive.css
-│   │   │   ├─── home/
-│   │   │   │   ├─── scripts/
-│   │   │   │   │    └─── home.js
-│   │   │   │   ├─── styles/
-│   │   │   │   │   └─── home.css
-│   │   │   ├─── articles/
-│   │   │   │   ├─── scripts/
-│   │   │   │   │    └─── articles.js
-│   │   │   │   ├─── styles/
-│   │   │   │   │   └─── articles.css
-│   ├─── images/                    # Destinado a Armagenas imagens dos artigos
-│   │   ├─── pt_BR/
-│   │   │   ├─── Banners/
-│   │   │   │   ├─── 2025/ # 
-│   │   │   │   │   ├─── 1/                # Mês de Janeiro
-│   │   │   │   │   │    └─── nome-artigo-nome-imge.png
-│   │   │   │   │   │    └─── nome-artigo-nome-imge.png
-│   │   │   │   │   ├─── 10/                # Mês de Outubro
-│   │   │   │   │   │    └─── nome-artigo-nome-imge.png
-│   │   │   │   │   │    └─── nome-artigo-nome-imge.png
-```
+## **Posts**
 
+Destinado a criar `automação falça`com Python para facilitar o processo de criação de artigos em html. Não desejo precisar criar API's ou paineis para redatóres, que seriam mais difíceis.
 
-## Pasta **posts**
-Destinado a criar scripts python para tornar mais fácil o processo de criação das postagens. 
+O objetivo é evitar páginas dinâmicas.
 
-### Exemplo
-Suponha que tenhamos um template de um artigo.html bem configurado.
+### Estrutura da pasta `post`
 
-Possibilidade:
-1. Posso escrever o conteúdo do meu artigo em um **``bloco de notas``** e usar o Python para ler esse arquivo e automatizar o processo de escrita de código html do artigo.
-
-2. Posso salvar os conteúdos dos meus arquivos dentro de uma pasta bem estruturada para automatizar processos.
-    ```{}
-      artigo/
-      │  └───nome-do-artigo.txt # com o conteúdo
-      │  |─── imagens-formulas/ # 
-      │  │ └─── nome-imagem-1.png
-      │  │ └─── formula-img-2.png
-      │  │ └─── formula-img-3.png
-      │  │ └─── nome-imagem-4.png 
-      │  │ └─── nome-imagem-5.png
-      │  │ └─── todas_as_formula_em_LaTeX.tex
-    ```
-
-    onde `nome-do-artigo.txt` deve ser utilizado. Os blocos devem ser separados por `<p>` e `</p>` para indicar o início e o fim de um parágrafo.
-
-    Utilize `<img src="nome-da-imagem">` para inserir imagens, especificando o local e o texto alternativo.
-
-    Adicione essa pasta de um artigo específico no diretório para que o Python possa ler e automatizar o processo. Após a conclusão do processo, a pasta será apagada automaticamente.
-
-    Poderia salvar as disciplinas em um **`.json`** contento a estrutura de "recentes" e "antigos". Se eu publicar novos artigos e a quantidade de artigos em recentes for maior que um valor X, o conteudo mais antigo será transferido e adiciona no topo do "antigo", e o novo artigo e adicionado ao topo de "recentes".
-
-3. Consiste no passo [2.]() mas usando uma API criada mas com senha para ser usada.
-
-### Estrutura da pasta `post` 
-
-```
+```{sh}
 posts/
-├── lista-artigos.json
-├── article/
-│   └── ...arquivos...
-└── python/
-  ├── funcoes.py        # funções auxiliares
-  └── automacao.py      # Script que faz a automacao funcionar
+  ├── lista-artigos.json
+  ├── article/
+  │  │   └── ...arquivos...
+  └── python/
+    ├── funcoes.py        # funções auxiliares
+    └── automacao.py      # Script que faz a automacao funcionar
 ```
+
+## Bom, ele funcionará da seguinte maneira
+
+1. O conteúdo do artigo e seus complementos (imagens, códigos LaTeX, etc.) ficaram em uma subpasta chamada `posts/article/` usada como pasta `teporaria` para a automação falça.
+   ```{}
+     artigo/
+     │  └───artigo-mes-ano.txt
+     │  |─── /imgs-e-formulas/
+     │  │  │  │  └─── hero-imag-1.png
+     │  │  │  │  └─── hero-imag-2.png
+     │  │  │  │  └─── formula-1.png
+     │  │  │  │  └─── formula-2.png
+     │  │  │  │  └─── códigos-artigo.tex
+   ```
+
+- _Obs1_: destinado ao conteúdo do artigo explicado em [2.](#segundo-item-2)
+
+- _Obs2_: As imagens **hero-imag-\*.png** são imagens de destaque (Hero Image). As imagens **formula-\*.png** são imagens de alguma fórmula LaTeX usada no artigo. Já o **códigos-artigo.tex** destina-se a ser um arquivo .tex contendo todo os códigos de cada fórmula usada no site, que poderá ser baixado.
+
+2. Escrevo o conteúdo em um txt bem esctruturado, chamado **artigo-mes-ano.txt** com a seguinte estrutura de conteúdo:
+
+   - Titulo: Titulo do artigo
+   - Subttulo: subtitulo do artigo
+   - Imagem: Imagem de Destaque (Hero Image)
+   - Conteudo do artigo:
+     - Introdução
+     - Desenvolvimento
+     - Conclusão ou Resumo
+     - Referências: Links e Recursos Complementares
+   - Rodapé: textos explicativos sobre determinado conteúdo.
+
+   Obs: Os conteúdos devem ser separados por tags html, exemplo: `<h1>Titulo</h1>`, `<h2>Subtitulo</h2>`,... `<p introd>texto</p introd>`,...
+
+3. Posso escrever o conteúdo do meu artigo em um **`bloco de notas`**, ou outro editor. Usar o Python para ler essa pasta `article`, contendo os arquivo, que seram usados automatizar o processo de escrita de código html do artigo. O HTML5 do artigo gerado deve ser salvo dentro da pasta `/newsroom/articles/pt_BR/`. Veja o exmplo:
+
+   ```{sh}
+    /newsroom/articles/pt_BR/20xx/Z/nome-do-artigo/index.html
+   ```
+
+   - Onde `20xx` se refere ao ano que o artigo foi escrito
+   - Onde `z` se refere ao mês, onde $z = {1,2,3,...,12}$ e e cada indice representa um mês sendo Janeiro o número 1 e Dezembro o 12.
+
+4. Os títulos e links para esses arquivos devem ser salvos em um arquivo chamado `articles.json`, contendo a seguinte estrutura:
+
+- _recentes_: consistirá apenas nos primeiros 10 artigos.
+- _completo_: contém todos os artigos publicados, do mais recente oa mais antigo.
+
+  ```{sh}
+    {
+    "artigos": {
+      "artigo 1": {
+        "titulo": "titulo do artigo 1",
+        "código-disciplina": "CODE",
+        "disciplina": "disciplinas",
+        "descrição": "descrição do artigo 1",
+        "data": "data do artigo 1",
+        "path": "/newsroom/articles/pt_BR/20xx/z/nome-do-artigo/index.html",
+        "tags": [
+          "tag1",
+          "tag2",
+          "tag3"
+        ]
+      },
+      "artigo 2": {
+        "titulo": "titulo do artigo 2",
+        "código-disciplina": "CODE",
+        "disciplina": "disciplinas",
+        "descrição": "descrição do artigo 2",
+        "data": "data do artigo 2",
+        "path": "/newsroom/articles/pt_BR/20xx/z/nome-do-artigo/index.html",
+        "tags": [
+          "tag1",
+          "tag2",
+          "tag3"
+        ]
+      },
+      "artigo 3": {
+        "titulo": "titulo do artigo 3",
+        "código-disciplina": "CODE",
+        "disciplina": "disciplinas",
+        "descrição": "descrição do artigo 3",
+        "data": "data do artigo 3",
+        "path": "/newsroom/articles/pt_BR/20xx/z/nome-do-artigo/index.html",
+        "tags": [
+          "tag1",
+          "tag2",
+          "tag3"
+        ]
+      },
+      "artigo 4": {
+        "titulo": "titulo do artigo 4",
+        "código-disciplina": "CODE",
+        "disciplina": "disciplinas",
+        "descrição": "descrição do artigo 4",
+        "data": "data do artigo 4",
+        "path": "/newsroom/articles/pt_BR/20xx/z/nome-do-artigo/index.html",
+        "tags": [
+          "tag1",
+          "tag2",
+          "tag3"
+        ]
+      }
+     }
+    }
+  ```
+
+5. Haverá uma automação que atualiza a `articles.json`. O novo artigo é adicionado como primeiro elemento nesse arquivo.
+
+6. Após o processo encerrar, esses conteúdos serão excluídos(exceto a pasta `templates`).
 
 ## Pesquisa por artigos
+Consistirá em usar o arquivo `articles.json` para fazer as pesquisas.
 
-Usar a estrutura de **`lista-artigos.json`** para pesquisar
+## Estrutura da Pasta de redação
+
+```
+  ├─── newsroom/
+  │   └─── index.html
+  │   ├─── articles/
+  │   │   ├─── pt_BR/
+  │   │   │   ├─── 20xx/                 # Ano 20xx
+  │   │   │   │   ├─── 1/                # Mês de Janeiro
+  │   │   │   │   │   └─── artigo-mes-ano
+  │   │   │   │   │   │    └─── index..html
+  │   │   │   │   ├─── 10/              # Mês de Outubro
+  │   │   │   │   │   └─── artigo-mes-ano
+  │   │   │   │   │   │    └─── index..html
+  │   │   │   └─── strutura.txt
+  │   ├─── assets/                    # CSS e JS dos artigos postados
+  │   │   ├─── pt_BR/
+  │   │   │   ├─── archive/
+  │   │   │   │   ├─── scripts/
+  │   │   │   │   │    └─── archive.js
+  │   │   │   │   ├─── styles/
+  │   │   │   │   │   └─── archive.css
+  │   │   │   ├─── home/
+  │   │   │   │   ├─── scripts/
+  │   │   │   │   │    └─── home.js
+  │   │   │   │   ├─── styles/
+  │   │   │   │   │   └─── home.css
+  │   │   │   ├─── articles/
+  │   │   │   │   ├─── scripts/
+  │   │   │   │   │    └─── articles.js
+  │   │   │   │   ├─── styles/
+  │   │   │   │   │   └─── articles.css
+  │   ├─── images/                    # Destinado a Armagenas imagens dos artigos
+  │   │   ├─── pt_BR/
+  │   │   │   ├─── Banners/
+  │   │   │   │   ├─── 20xx/ #
+  │   │   │   │   │   ├─── 1/                # Mês de Janeiro
+  │   │   │   │   │   │    └─── nome-artigo-nome-imge.png
+  │   │   │   │   │   │    └─── nome-artigo-nome-imge.png
+  │   │   │   │   │   ├─── 10/                # Mês de Outubro
+  │   │   │   │   │   │    └─── nome-artigo-nome-imge.png
+  │   │   │   │   │   │    └─── nome-artigo-nome-imge.png
+```

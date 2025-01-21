@@ -1,0 +1,56 @@
+{
+  "artigos": {
+    "artigo 1": {
+      "titulo": "titulo do artigo 1",
+      "código-disciplina": "CODE",
+      "disciplina": "disciplinas",
+      "descrição": "descrição do artigo 1",
+      "data": "data do artigo 1",
+      "path": "/newsroom/articles/pt_BR/2025/2/nome-do-artigo/index.html",
+      "tags": [
+        "tag1",
+        "tag2",
+        "tag3"
+      ]
+    },
+    "artigo 2": {
+      "titulo": "titulo do artigo 2",
+      "código-disciplina": "CODE",
+      "disciplina": "disciplinas",
+      "descrição": "descrição do artigo 2",
+      "data": "data do artigo 2",
+      "path": "/newsroom/articles/pt_BR/2025/2/nome-do-artigo/index.html",
+      "tags": [
+        "tag1",
+        "tag2",
+        "tag3"
+      ]
+    },
+    "artigo 3": {
+      "titulo": "titulo do artigo 3",
+      "código-disciplina": "CODE",
+      "disciplina": "disciplinas",
+      "descrição": "descrição do artigo 3",
+      "data": "data do artigo 3",
+      "path": "/newsroom/articles/pt_BR/2025/2/nome-do-artigo/index.html",
+      "tags": [
+        "tag1",
+        "tag2",
+        "tag3"
+      ]
+    },
+    "artigo 4": {
+      "titulo": "titulo do artigo 4",
+      "código-disciplina": "CODE",
+      "disciplina": "disciplinas",
+      "descrição": "descrição do artigo 4",
+      "data": "data do artigo 4",
+      "path": "/newsroom/articles/pt_BR/2025/10/nome-do-artigo/index.html",
+      "tags": [
+        "tag1",
+        "tag2",
+        "tag3"
+      ]
+    }
+  }
+}

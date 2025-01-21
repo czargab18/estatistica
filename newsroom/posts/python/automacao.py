@@ -1,2 +1,2 @@
-from funcoes import *
+from posts.python.utils import *
 
