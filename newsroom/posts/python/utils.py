@@ -9,6 +9,7 @@ import string
 path = "/newsroom/posts/article/*.txt"
 path = "/newsroom/posts/article/imgs-*"
 
+""" FUNÇÕES ÚTEIS """
 
 def verificacao(pergunta):
     """
@@ -20,13 +21,11 @@ def verificacao(pergunta):
         if pergunta in ["não", "nao", "n"]:
             return False
 
-
 def continuar(pergunta):
     pergunta = input("Deseja continuar? Digite Sim ou Não: ").lower()
     verificacao(pergunta)
 
-
-def existe_files_in_article(folder="/newsroom/posts/article/"):
+def existe(folder="/newsroom/posts/article/"):
     """
     Função que verifica se a pasta desejada existe.
      - folder: str, nome da pasta. Padrão: '/newsroom/posts/article/'
@@ -34,7 +33,6 @@ def existe_files_in_article(folder="/newsroom/posts/article/"):
     pergunta = input(f"Há conteúdo na pasta {folder}? Digite Sim ou Não: ").lower()
     resposta = verificacao(pergunta)
     return resposta
-
 
 def ler_nome_file(path="/newsroom/posts/article/"):
     """
@@ -60,7 +58,6 @@ def ler_nome_file(path="/newsroom/posts/article/"):
     else:
         raise ValueError("O nome do arquivo não está no formato esperado 'mes-ano'.")
 
-
 def ler_conteudo_arquivo(path="/newsroom/posts/article/"):
     """
     Função que lê o arquivo e retorna o conteúdo do arquivo dentro de um objeto.
@@ -74,7 +71,6 @@ def ler_conteudo_arquivo(path="/newsroom/posts/article/"):
         print(f"Erro: O arquivo '{path}' não foi encontrado.")
         return {"path": path, "conteudo": None}
 
-
 def gen_id_artigo():
     length = 9
     characters = string.ascii_lowercase + "123456789"
@@ -84,10 +80,53 @@ def gen_id_artigo():
     return identificador
 
 
-""" FUNÇÕES PARA TRATAR O CONTEÚDO DO .txt PARA index.html"""
+""" EXTRAIR INFORMAÇÕES DO .txt """
+def extrair_titulo():
+    ...
+
+def extrair_subtitulo():
+    ...
+
+def extrair_tags():
+    ...
+
+def extrair_introducao():
+    ...
+
+def extrair_desenvolvimento():
+    ...
+
+def extrair_rodape():
+    ...
+
+""" ADICIONAR INFORMAÇÕES NO index.html """
 
 
-# Mover Arquivos da Pasta article
+""" ATUALIZA LISTA DE articles.json """
+def add_artigos_json(subpasta="/src/", json="newsroom/articles.json"):
+    """
+    Cria as informações do artigo no arquivo 'articles.json'
+    Atualizar o caminho dos arquivos movidos e o identificador
+
+    "artigo 1": {
+      "id": "d5cb61509",
+      "titulo": "titulo do artigo 1",
+      "código-disciplina": "CODE",
+      "disciplina": "disciplinas",
+      "descrição": "descrição do artigo 1",
+      "data": "data do artigo 1",
+      "path": "/newsroom/articles/pt_BR/2025/2/nome-do-artigo/index.html",
+      "tags": [
+        "tag1",
+        "tag2",
+        "tag3"
+      ]
+    },
+    """
+    ...
+
+
+""" FINALIZAR PROCESSO """
 
 def mover_arquivos():
     """
@@ -111,7 +150,9 @@ def mover_arquivos():
 
         # Caminhos
         src_arquivo = os.path.join(origem_base, arquivo_info["nome_arquivo"])
-        destino_final = os.path.join(destino_base, ano, mes, identificador)
+        destino_final = os.path.join(
+            destino_base, ano + "/", mes + "/", identificador + "/"
+        )
 
         # Cria a pasta do identificador dentro da estrutura de pasta existente
         os.makedirs(destino_final, exist_ok=True)
@@ -126,7 +167,7 @@ def mover_arquivos():
     else:
         return f"Processo NÃO FEZ NADA com os arquivos. Resposta '{resposta}' diferente de 'Sim'."
 
-    return destino_final, "\nProcesso finalizado!"
+    return {destino_final, "\nProcesso finalizado!"}
 
 def excluir_arquivos(resposta="Não", path="newsroom/posts/article/"):
     resposta = str(input("Deseja EXCLUIR os arquivos? Sim ou Não: ")).strip().lower()
@@ -147,9 +188,11 @@ def excluir_arquivos(resposta="Não", path="newsroom/posts/article/"):
         return f"Processo NÃO excluiu os arquivos. Resposta '{resposta}' diferente de Sim"
 
 
-""" Teste """
-## print(ler_nome_file(path="/newsroom/posts/article/"))
-## print(ler_conteudo_arquivo(path="/newsroom/posts/article/2-2025.txt"))
+""" TESTAR PROCESSOS """
+
+
+## print(ler_nome_file())
+## print(ler_conteudo_arquivo())
 ## print(gen_id_artigo())
 ## print(mover_arquivos())
-print(excluir_arquivos())
+## rint(excluir_arquivos())

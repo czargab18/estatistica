@@ -1,28 +1,39 @@
 Titulo: Titulo exemplo ;
 Subtitulo: Subtitulo exemplo ;
 
-Introdução:
-<p1> Conteúdo do paragrafo 1;
-<p2> Conteúdo do paragrafo 2;
-<p3> Conteúdo do paragrafo 3;
-<p4> Conteúdo do paragrafo 4;
+--- inicio Tags ---
+<t> tag1;
+<t> tag2;
+<t> tag3;
+<t> tag3;
+--- fim Tags ---
 
-Desenvolvimento:
-<p1> Conteúdo do paragrafo 1;
+--- inicio Introdução ---
+<p> Conteúdo do paragrafo 1;
+<p> Conteúdo do paragrafo 2;
+<p> Conteúdo do paragrafo 3;
+<p> Conteúdo do paragrafo 4;
+--- fim Introdução ---
+
+--- inicio Desenvolvimento ---
+<p> Conteúdo do paragrafo 1;
 <a href="/src/formula-1.png">;
-<p2> Conteúdo do paragrafo 2;
+<p> Conteúdo do paragrafo 2;
 <a href="/src/formula-2.png">;
-<p3> Conteúdo do paragrafo 3;
+<p> Conteúdo do paragrafo 3;
 <a href="/src/formula-3.png">;
-<p4> Conteúdo do paragrafo 4;
+<p> Conteúdo do paragrafo 4;
+--- fim Desenvolvimento ---
 
-Conclusão:
-<p1> Conteúdo do paragrafo 1;
-<p2> Conteúdo do paragrafo 2;
-<p3> Conteúdo do paragrafo 3;
-<p4> Conteúdo do paragrafo 4;
+--- inicio Conclusão ---
+<p> Conteúdo do paragrafo 1;
+<p> Conteúdo do paragrafo 2;
+<p> Conteúdo do paragrafo 3;
+<p> Conteúdo do paragrafo 4;
+--- fim Conclusão ---
 
-Rodapé:
-<p1> Conteúdo do paragrafo 1;
-<p2> Conteúdo do paragrafo 2;
-<a1 href="/src/nome-imagem.tex" download>
+--- inicio Rodapé ---
+<p> Conteúdo do paragrafo 1;
+<p> Conteúdo do paragrafo 2;
+<a href="/src/nome-imagem.tex" download>
+--- fim Rodapé ---
