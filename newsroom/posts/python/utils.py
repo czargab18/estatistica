@@ -6,8 +6,8 @@ import json
 import random
 import string
 
-path = "posts/article/*.txt"
-path = "posts/article/imgs-*"
+path = "/newsroom/posts/article/*.txt"
+path = "/newsroom/posts/article/imgs-*"
 
 
 def verificacao(pergunta):
@@ -26,20 +26,20 @@ def continuar(pergunta):
     verificacao(pergunta)
 
 
-def existe_files_in_article(folder="posts/article/"):
+def existe_files_in_article(folder="/newsroom/posts/article/"):
     """
     Função que verifica se a pasta desejada existe.
-     - folder: str, nome da pasta. Padrão: 'posts/article/'
+     - folder: str, nome da pasta. Padrão: '/newsroom/posts/article/'
     """
     pergunta = input(f"Há conteúdo na pasta {folder}? Digite Sim ou Não: ").lower()
     resposta = verificacao(pergunta)
     return resposta
 
 
-def ler_nome_file(path="posts/article/"):
+def ler_nome_file(path="/newsroom/posts/article/"):
     """
     Função que retorna o mês, o ano e o nome do arquivo .txt, sem a extensão, a partir do caminho fornecido.
-    exemplo-padrão: "posts/article/mes-ano.txt"
+    exemplo-padrão: "/newsroom/posts/article/mes-ano.txt"
      - mes: vai de 1 até 12
      - ano: exemplo 2025
     """
@@ -61,7 +61,7 @@ def ler_nome_file(path="posts/article/"):
         raise ValueError("O nome do arquivo não está no formato esperado 'mes-ano'.")
 
 
-def ler_conteudo_arquivo(path="posts/article/"):
+def ler_conteudo_arquivo(path="/newsroom/posts/article/"):
     """
     Função que lê o arquivo e retorna o conteúdo do arquivo dentro de um objeto.
      - path: str, nome do arquivo a ser lido.
@@ -94,10 +94,10 @@ def mover_arquivos():
     Função que copia todo o conteúdo de uma pasta, incluindo subpastas e arquivos, para outra pasta.
     Antes de mover, cria uma pasta que receberá como nome o valor do identificador.
     """
-    resposta = str(input("Deseja MOVER os arquivos? Sim ou Não: ").lower())
+    resposta = str(input("Deseja MOVER os arquivos? Sim ou Não: ")).strip().lower()
     if resposta in ["sim", "s"]:
         # Pastas de origem e destino
-        origem_base = "posts/article/"
+        origem_base = "/newsroom/posts/article/"
         destino_base = "articles/pt_BR/"
         src_subpasta = os.path.join(origem_base, "src")
 
@@ -128,25 +128,28 @@ def mover_arquivos():
 
     return destino_final, "\nProcesso finalizado!"
 
-def excluir_arquivos(resposta="Não", path="posts/article/"):
-    resposta = str(input("Deseja EXCLUIR os arquivos? Sim ou Não: ").lower())
+def excluir_arquivos(resposta="Não", path="newsroom/posts/article/"):
+    resposta = str(input("Deseja EXCLUIR os arquivos? Sim ou Não: ")).strip().lower()
     if resposta in ["sim", "s"]:
         try:
-            shutil.rmtree(path)
-            print(f"Arquivos e pastas em '{path}' foram excluídos.")
-            # A função acima exclui a pasta article e a função abaixo cria a mesma pasta
-            os.makedirs(path, exist_ok=True)
+            for item in os.listdir(path):
+                item_path = os.path.join(path, item)
+                if os.path.isdir(item_path):
+                    shutil.rmtree(item_path)
+                else:
+                    os.remove(item_path)
+            return f"Arquivos e pastas dentro de '{path}' foram excluídos."
         except FileNotFoundError:
-            print(f"Erro: O caminho '{path}' não foi encontrado.")
+            return f"Erro: O caminho '{path}' não foi encontrado."
         except Exception as e:
-            print(f"Erro ao excluir arquivos e pastas: {e}")
+            return f"Erro ao excluir arquivos e pastas: {e}"
     else:
         return f"Processo NÃO excluiu os arquivos. Resposta '{resposta}' diferente de Sim"
 
 
 """ Teste """
-## print(ler_nome_file(path="posts/article/"))
-## print(ler_conteudo_arquivo(path="posts/article/2-2025.txt"))
+## print(ler_nome_file(path="/newsroom/posts/article/"))
+## print(ler_conteudo_arquivo(path="/newsroom/posts/article/2-2025.txt"))
 ## print(gen_id_artigo())
-# print(mover_arquivos())
+## print(mover_arquivos())
 print(excluir_arquivos())

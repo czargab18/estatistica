@@ -1,0 +1,28 @@
+Titulo: Titulo exemplo ;
+Subtitulo: Subtitulo exemplo ;
+
+Introdução:
+<p1> Conteúdo do paragrafo 1;
+<p2> Conteúdo do paragrafo 2;
+<p3> Conteúdo do paragrafo 3;
+<p4> Conteúdo do paragrafo 4;
+
+Desenvolvimento:
+<p1> Conteúdo do paragrafo 1;
+<a href="/src/formula-1.png">;
+<p2> Conteúdo do paragrafo 2;
+<a href="/src/formula-2.png">;
+<p3> Conteúdo do paragrafo 3;
+<a href="/src/formula-3.png">;
+<p4> Conteúdo do paragrafo 4;
+
+Conclusão:
+<p1> Conteúdo do paragrafo 1;
+<p2> Conteúdo do paragrafo 2;
+<p3> Conteúdo do paragrafo 3;
+<p4> Conteúdo do paragrafo 4;
+
+Rodapé:
+<p1> Conteúdo do paragrafo 1;
+<p2> Conteúdo do paragrafo 2;
+<a1 href="/src/nome-imagem.tex" download>
