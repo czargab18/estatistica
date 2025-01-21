@@ -6,8 +6,8 @@ import json
 import random
 import string
 
-path = "/newsroom/posts/article/*.txt"
-path = "/newsroom/posts/article/imgs-*"
+path = "newsroom/posts/article/*.txt"
+path = "newsroom/posts/article/imgs-*"
 
 """ FUNÇÕES ÚTEIS """
 
@@ -25,19 +25,19 @@ def continuar(pergunta):
     pergunta = input("Deseja continuar? Digite Sim ou Não: ").lower()
     verificacao(pergunta)
 
-def existe(folder="/newsroom/posts/article/"):
+def existe(folder="newsroom/posts/article/"):
     """
     Função que verifica se a pasta desejada existe.
-     - folder: str, nome da pasta. Padrão: '/newsroom/posts/article/'
+     - folder: str, nome da pasta. Padrão: 'newsroom/posts/article/'
     """
     pergunta = input(f"Há conteúdo na pasta {folder}? Digite Sim ou Não: ").lower()
     resposta = verificacao(pergunta)
     return resposta
 
-def ler_nome_file(path="/newsroom/posts/article/"):
+def ler_nome_file(path="newsroom/posts/article/"):
     """
     Função que retorna o mês, o ano e o nome do arquivo .txt, sem a extensão, a partir do caminho fornecido.
-    exemplo-padrão: "/newsroom/posts/article/mes-ano.txt"
+    exemplo-padrão: "newsroom/posts/article/mes-ano.txt"
      - mes: vai de 1 até 12
      - ano: exemplo 2025
     """
@@ -58,7 +58,7 @@ def ler_nome_file(path="/newsroom/posts/article/"):
     else:
         raise ValueError("O nome do arquivo não está no formato esperado 'mes-ano'.")
 
-def ler_conteudo_arquivo(path="/newsroom/posts/article/"):
+def ler_conteudo_arquivo(path="newsroom/posts/article/"):
     """
     Função que lê o arquivo e retorna o conteúdo do arquivo dentro de um objeto.
      - path: str, nome do arquivo a ser lido.
@@ -115,7 +115,7 @@ def add_artigos_json(subpasta="/src/", json="newsroom/articles.json"):
       "disciplina": "disciplinas",
       "descrição": "descrição do artigo 1",
       "data": "data do artigo 1",
-      "path": "/newsroom/articles/pt_BR/2025/2/nome-do-artigo/index.html",
+      "path": "newsroom/articles/pt_BR/2025/2/nome-do-artigo/index.html",
       "tags": [
         "tag1",
         "tag2",
@@ -136,7 +136,7 @@ def mover_arquivos():
     resposta = str(input("Deseja MOVER os arquivos? Sim ou Não: ")).strip().lower()
     if resposta in ["sim", "s"]:
         # Pastas de origem e destino
-        origem_base = "/newsroom/posts/article/"
+        origem_base = "newsroom/posts/article/"
         destino_base = "articles/pt_BR/"
         src_subpasta = os.path.join(origem_base, "src")
 
@@ -169,6 +169,7 @@ def mover_arquivos():
 
     return {destino_final, "\nProcesso finalizado!"}
 
+
 def excluir_arquivos(resposta="Não", path="newsroom/posts/article/"):
     resposta = str(input("Deseja EXCLUIR os arquivos? Sim ou Não: ")).strip().lower()
     if resposta in ["sim", "s"]:
@@ -195,4 +196,4 @@ def excluir_arquivos(resposta="Não", path="newsroom/posts/article/"):
 ## print(ler_conteudo_arquivo())
 ## print(gen_id_artigo())
 ## print(mover_arquivos())
-## rint(excluir_arquivos())
+print(excluir_arquivos())
