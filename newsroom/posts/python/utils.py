@@ -68,7 +68,7 @@ def ler_conteudo_arquivo(path="newsroom/posts/article/"):
         print(f"Erro: O arquivo '{path}' não foi encontrado.")
         return {"path": path, "conteudo": None}
 
-def gen_id_artigo():
+def gen_identificador():
     length = 9
     characters = string.ascii_lowercase + "123456789"
     identificador = ""
@@ -104,26 +104,8 @@ def add_artigos_json(subpasta="/src/", json="newsroom/articles.json"):
     """
         Cria as informações do artigo no arquivo 'articles.json'
         Atualizar o caminho dos arquivos movidos e o identificador
-
-    {
-      "d5cb61509": {
-        "identificador": "d5cb61509",
-        "titulo": "titulo do artigo 1",
-        "código": "CODE-disciplina",
-        "disciplina": "NOME-disciplinas",
-        "descrição": "conteúdo do subtitulo",
-        "data": "data do artigo 1",
-        "path": "/newsroom/articles/pt_BR/20xx/z/identificador/index.html",
-        "tags": [
-          "tag1",
-          "tag2",
-          "tag3"
-        ]
-      }
-    }
     """
     ...
-
 
 """ FINALIZAR PROCESSO """
 
@@ -140,7 +122,7 @@ def mover_arquivos():
         src_subpasta = os.path.join(origem_base, "src")
 
         # Gera o identificador
-        identificador = gen_id_artigo()
+        identificador = gen_identificador()
 
         # Obtém o nome do arquivo .txt e as informações de ano e mês
         arquivo_info = ler_nome_file(origem_base)
@@ -168,8 +150,7 @@ def mover_arquivos():
 
     return {destino_final, "\nProcesso finalizado!"}
 
-
-# def excluir_arquivos(resposta="Não", path="newsroom/posts/article/"):
+def excluir_arquivos(resposta="Não", path="newsroom/posts/article/"):
     resposta = str(input("Deseja EXCLUIR os arquivos? Sim ou Não: ")).strip().lower()
     if resposta in ["sim", "s"]:
         try:
@@ -188,11 +169,92 @@ def mover_arquivos():
         return f"Processo NÃO excluiu os arquivos. Resposta '{resposta}' diferente de Sim"
 
 
-""" TESTAR PROCESSOS """
+""" FUNÇÃO RECEBER DADOS ITERAÇÃO """
 
 
-## print(ler_nome_file())
-## print(ler_conteudo_arquivo())
-## print(gen_id_artigo())
-## print(mover_arquivos())
-## print(excluir_arquivos())
+def conteudo(tipos=["introducao", "conclusao", "resumo"]):
+    """
+    Coleta informações de meta e conteúdo.
+
+    Para meta:
+    - Qual o título?
+    - Qual o subtítulo?
+    - Quais as tags?
+
+    Para conteúdo:
+    - Esta função coleta conteúdo para os tipos especificados (introducao, conclusao, resumo).
+    - Para cada tipo, a função pergunta ao usuário se há conteúdo a ser inserido.
+    - Se a resposta for afirmativa, a função solicita a quantidade de parágrafos, figuras ou links.
+    - Em seguida, coleta o conteúdo correspondente e o armazena em um dicionário.
+
+    Parâmetros:
+    tipos (list): Uma lista de strings que especifica os tipos de conteúdo a serem coletados.
+
+    Retorna:
+    dict: Um dicionário com as informações de meta e conteúdo coletado.
+    """
+
+    # Coleta de meta informações
+    titulo = str(input("Forneça o título: ")).strip().lower()
+    subtitulo = str(input("Forneça o subtítulo: ")).strip().lower()
+    tags = (
+        str(input("Forneça as tags separadas por vírgulas: "))
+        .strip()
+        .lower()
+        .split(",")
+    )
+    meta_info = {"titulo": titulo, "subtitulo": subtitulo, "tags": tags}
+
+    # Coleta de conteúdo
+    tipos_validos = ["introducao", "conclusao", "resumo"]
+    for tipo in tipos:
+        if tipo not in tipos_validos:
+            raise ValueError(
+                f"Tipo inválido. Use um dos seguintes: {', '.join(tipos_validos)}"
+            )
+
+    conteudo = {tipo: [] for tipo in tipos}
+
+    for tipo in tipos:
+        resposta = str(input(f"Tem {tipo}? ")).strip().lower()
+
+        if resposta in ["sim", "s", "y", "yes"]:
+            while True:
+                p_ou_f = (
+                    str(
+                        input(
+                            "Deseja inserir um paragrafo, figura ou link ? Digite p, f ou l. "
+                        )
+                    )
+                    .strip()
+                    .lower()
+                )
+                if p_ou_f in ["paragrafo", "p"]:
+                    string = str(input("Insira o seu paragrafo: ")).strip()
+                    conteudo[tipo].append(string)
+                elif p_ou_f in ["figure", "figura", "f"]:
+                    string = str(input("Insira o seu figura: ")).strip()
+                    conteudo[tipo].append(string)
+                else:
+                    string = str(input("Insira o seu link: ")).strip()
+                    conteudo[tipo].append(string)
+
+                continuar = (
+                    str(input("Deseja continuar inserindo? Digite sim ou não: "))
+                    .strip()
+                    .lower()
+                )
+                if continuar not in ["sim", "s", "y", "yes"]:
+                    break
+        else:
+            conteudo[tipo] = f"{tipo.capitalize()} sem conteúdo"
+
+    return {"meta_info": meta_info, "conteudo": conteudo}
+
+
+""" ADICIONAR DADOS AO index.html """
+
+""" MANIPULAR DADOS DO article.json """
+
+
+""" TESTANDO A FUNÇÃO """
