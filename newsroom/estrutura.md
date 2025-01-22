@@ -61,68 +61,24 @@ posts/
 
 4. Os títulos e links para esses arquivos devem ser salvos em um arquivo chamado `articles.json`, contendo a seguinte estrutura:
 
-  ```{sh}
-      {
-        "artigos": {
-          "artigo 1": {
-            "id": "d5cb61509",
+    ```{sh}
+        {
+          "d5cb61509": {
+            "identificador": "d5cb61509",
             "titulo": "titulo do artigo 1",
-            "código-disciplina": "CODE",
-            "disciplina": "disciplinas",
-            "descrição": "descrição do artigo 1",
+            "código": "CODE-disciplina",
+            "disciplina": "NOME-disciplinas",
+            "descrição": "conteúdo do subtitulo",
             "data": "data do artigo 1",
-            "path": "/newsroom/articles/pt_BR/2025/2/identificador/index.html",
+            "path": "/newsroom/articles/pt_BR/20xx/z/identificador/index.html",
             "tags": [
               "tag1",
               "tag2",
               "tag3"
             ]
           },
-          "artigo 2": {
-            "id": "d5eb65509",
-            "titulo": "titulo do artigo 2",
-            "código-disciplina": "CODE",
-            "disciplina": "disciplinas",
-            "descrição": "descrição do artigo 2",
-            "data": "data do artigo 2",
-            "path": "/newsroom/articles/pt_BR/2025/2/nome-do-artigo/index.html",
-            "tags": [
-              "tag1",
-              "tag2",
-              "tag3"
-            ]
-          },
-          "artigo 3": {
-            "id": "m34xmawhj",
-            "titulo": "titulo do artigo 3",
-            "código-disciplina": "CODE",
-            "disciplina": "disciplinas",
-            "descrição": "descrição do artigo 3",
-            "data": "data do artigo 3",
-            "path": "/newsroom/articles/pt_BR/2025/2/nome-do-artigo/index.html",
-            "tags": [
-              "tag1",
-              "tag2",
-              "tag3"
-            ]
-          },
-          "artigo 4": {
-            "id": "xt4txtpgv",
-            "titulo": "titulo do artigo 4",
-            "código-disciplina": "CODE",
-            "disciplina": "disciplinas",
-            "descrição": "descrição do artigo 4",
-            "data": "data do artigo 4",
-            "path": "/newsroom/articles/pt_BR/2025/10/nome-do-artigo/index.html",
-            "tags": [
-              "tag1",
-              "tag2",
-              "tag3"
-            ]
-          }
         }
-      }
-  ```
+    ```
 
 5. Haverá uma automação que atualiza a `articles.json`. O novo artigo é adicionado como primeiro elemento nesse arquivo.
 

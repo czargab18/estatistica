@@ -6,9 +6,6 @@ import json
 import random
 import string
 
-path = "newsroom/posts/article/*.txt"
-path = "newsroom/posts/article/imgs-*"
-
 """ FUNÇÕES ÚTEIS """
 
 def verificacao(pergunta):
@@ -105,23 +102,25 @@ def extrair_rodape():
 """ ATUALIZA LISTA DE articles.json """
 def add_artigos_json(subpasta="/src/", json="newsroom/articles.json"):
     """
-    Cria as informações do artigo no arquivo 'articles.json'
-    Atualizar o caminho dos arquivos movidos e o identificador
+        Cria as informações do artigo no arquivo 'articles.json'
+        Atualizar o caminho dos arquivos movidos e o identificador
 
-    "artigo 1": {
-      "id": "d5cb61509",
-      "titulo": "titulo do artigo 1",
-      "código-disciplina": "CODE",
-      "disciplina": "disciplinas",
-      "descrição": "descrição do artigo 1",
-      "data": "data do artigo 1",
-      "path": "newsroom/articles/pt_BR/2025/2/nome-do-artigo/index.html",
-      "tags": [
-        "tag1",
-        "tag2",
-        "tag3"
-      ]
-    },
+    {
+      "d5cb61509": {
+        "identificador": "d5cb61509",
+        "titulo": "titulo do artigo 1",
+        "código": "CODE-disciplina",
+        "disciplina": "NOME-disciplinas",
+        "descrição": "conteúdo do subtitulo",
+        "data": "data do artigo 1",
+        "path": "/newsroom/articles/pt_BR/20xx/z/identificador/index.html",
+        "tags": [
+          "tag1",
+          "tag2",
+          "tag3"
+        ]
+      }
+    }
     """
     ...
 
@@ -170,7 +169,7 @@ def mover_arquivos():
     return {destino_final, "\nProcesso finalizado!"}
 
 
-def excluir_arquivos(resposta="Não", path="newsroom/posts/article/"):
+# def excluir_arquivos(resposta="Não", path="newsroom/posts/article/"):
     resposta = str(input("Deseja EXCLUIR os arquivos? Sim ou Não: ")).strip().lower()
     if resposta in ["sim", "s"]:
         try:
@@ -196,4 +195,4 @@ def excluir_arquivos(resposta="Não", path="newsroom/posts/article/"):
 ## print(ler_conteudo_arquivo())
 ## print(gen_id_artigo())
 ## print(mover_arquivos())
-print(excluir_arquivos())
+## print(excluir_arquivos())
