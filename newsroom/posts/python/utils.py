@@ -249,9 +249,47 @@ def conteudo(tipos=["introducao", "conclusao", "resumo"]):
 
 """ MANIPULAR DADOS DO article.json """
 
+# Precisa de algo como:
+"""artigo = conteudo()"""
 
-def up_article_json(json=conteudo(), path="newsroom/data/articles.json"):
-    ...
+
+def up_article_json(artigo=None, path="newsroom/posts/data/articles.json"):
+    """
+    Atualiza o arquivo JSON com o novo conteúdo fornecido, adicionando-o como o primeiro índice.
+
+    Parâmetros:
+    artigo (dict): O novo conteúdo a ser adicionado ao arquivo JSON.
+    path (str): O caminho para o arquivo JSON a ser atualizado.
+
+    Retorna:
+    str: Mensagem indicando que o arquivo foi atualizado.
+    """
+    if artigo != None:
+        pass
+    else:
+        print("Conteúdo nãoinformado.")
+        resposta = input("Deseja executar função: conteudo()? Digite sim ou não: " ).strip().lower()
+        if resposta in ["sim","s","yes","y"]:
+            artigo = conteudo()
+            
+    # Verifica se o arquivo existe
+    if os.path.exists(path):
+        # Carrega o conteúdo existente do arquivo JSON
+        with open(path, "r", encoding="utf-8") as file:
+            try:
+                conteudo_existente = json.load(file)
+            except json.JSONDecodeError:
+                conteudo_existente = {}
+    else:
+        conteudo_existente = {}
+
+    # Cria um novo dicionário com o novo conteúdo como primeiro índice
+    conteudo_atualizado = {**artigo, **conteudo_existente}
+
+    # Escreve o conteúdo atualizado de volta ao arquivo JSON
+    with open(path, "w", encoding="utf-8") as file:
+        json.dump(conteudo_atualizado, file, ensure_ascii=False, indent=2)
+
     return "ARQUIVO ATUALIZADO: article.json"
 
 
