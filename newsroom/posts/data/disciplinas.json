@@ -1,0 +1,1731 @@
+{
+  "Estatística": {
+    "Periodo 1": {
+      "CIC0007": {
+        "código": "CIC0007",
+        "nome": "INTRODUÇÃO À CIÊNCIA DA COMPUTAÇÃO",
+        "horas": "60",
+        "professor": "",
+        "sala": "",
+        "horario": "",
+        "tipo": "Presencial"
+      },
+      "EST0001": {
+        "código": "EST0001",
+        "nome": "COMPUTAÇÃO EM ESTATÍSTICA 1",
+        "horas": "30",
+        "professor": "",
+        "sala": "",
+        "horario": "",
+        "tipo": "Presencial"
+      },
+      "EST0033": {
+        "código": "EST0033",
+        "nome": "ESTATÍSTICA EXPLORATÓRIA",
+        "horas": "60",
+        "professor": "",
+        "sala": "",
+        "horario": "",
+        "tipo": "Presencial"
+      },
+      "EST0069": {
+        "código": "EST0069",
+        "nome": "INTRODUCAO A PROBABILIDADE",
+        "horas": "60",
+        "professor": "",
+        "sala": "",
+        "horario": "",
+        "tipo": "Presencial"
+      },
+      "MAT0025": {
+        "código": "MAT0025",
+        "nome": "CÁLCULO 1",
+        "horas": "90",
+        "professor": "",
+        "sala": "",
+        "horario": "",
+        "tipo": "Presencial"
+      }
+    },
+    "Periodo 2": {
+      "EST0070": {
+        "código": "EST0070",
+        "nome": "METODOS ESTATISTICOS 1",
+        "horas": "60",
+        "professor": "",
+        "sala": "",
+        "horario": "",
+        "tipo": "Presencial"
+      },
+      "MAT0026": {
+        "código": "MAT0026",
+        "nome": "CÁLCULO 2",
+        "horas": "90",
+        "professor": "",
+        "sala": "",
+        "horario": "",
+        "tipo": "Presencial"
+      },
+      "MAT0031": {
+        "código": "MAT0031",
+        "nome": "INTRODUCAO A ALGEBRA LINEAR",
+        "horas": "60",
+        "professor": "",
+        "sala": "",
+        "horario": "",
+        "tipo": "Presencial"
+      }
+    },
+    "Periodo 3": {
+      "EST0017": {
+        "código": "EST0017",
+        "nome": "MÉTODOS ESTATÍSTICOS 2",
+        "horas": "60",
+        "professor": "",
+        "sala": "",
+        "horario": "",
+        "tipo": "Presencial"
+      },
+      "EST0087": {
+        "código": "EST0087",
+        "nome": "PRÁTICAS DE EXTENSÃO EM ESTATÍSTICA 1",
+        "horas": "30",
+        "professor": "",
+        "sala": "",
+        "horario": "",
+        "tipo": "Presencial"
+      },
+      "MAT0027": {
+        "código": "MAT0027",
+        "nome": "CÁLCULO 3",
+        "horas": "90",
+        "professor": "",
+        "sala": "",
+        "horario": "",
+        "tipo": "Presencial"
+      },
+      "MAT0053": {
+        "código": "MAT0053",
+        "nome": "CALCULO NUMERICO",
+        "horas": "60",
+        "professor": "",
+        "sala": "",
+        "horario": "",
+        "tipo": "Presencial"
+      },
+      "MAT0075": {
+        "código": "MAT0075",
+        "nome": "CALCULO DE PROBABILIDADE 1",
+        "horas": "90",
+        "professor": "",
+        "sala": "",
+        "horario": "",
+        "tipo": "Presencial"
+      }
+    },
+    "Periodo 4": {
+      "EST0035": {
+        "código": "EST0035",
+        "nome": "INFERENCIA ESTATISTICA",
+        "horas": "90",
+        "professor": "",
+        "sala": "",
+        "horario": "",
+        "tipo": "Presencial"
+      },
+      "EST0036": {
+        "código": "EST0036",
+        "nome": "TECNICAS DE AMOSTRAGEM",
+        "horas": "90",
+        "professor": "",
+        "sala": "",
+        "horario": "",
+        "tipo": "Presencial"
+      },
+      "MAT0076": {
+        "código": "MAT0076",
+        "nome": "CALCULO DE PROBABILIDADE 2",
+        "horas": "60",
+        "professor": "",
+        "sala": "",
+        "horario": "",
+        "tipo": "Presencial"
+      }
+    },
+    "Periodo 5": {
+      "EST0004": {
+        "código": "EST0004",
+        "nome": "ESTATÍSTICA COMPUTACIONAL",
+        "horas": "60",
+        "professor": "",
+        "sala": "",
+        "horario": "",
+        "tipo": "Presencial"
+      },
+      "EST0038": {
+        "código": "EST0038",
+        "nome": "ANÁLISE DE REGRESSÃO LINEAR",
+        "horas": "90",
+        "professor": "",
+        "sala": "",
+        "horario": "",
+        "tipo": "Presencial"
+      },
+      "EST0042": {
+        "código": "EST0042",
+        "nome": "DELINEAMENTO E ANÁLISE DE EXPERIMENTOS",
+        "horas": "90",
+        "professor": "",
+        "sala": "",
+        "horario": "",
+        "tipo": "Presencial"
+      },
+      "EST0048": {
+        "código": "EST0048",
+        "nome": "PROCESSOS ESTOCASTICOS",
+        "horas": "60",
+        "professor": "",
+        "sala": "",
+        "horario": "",
+        "tipo": "Presencial"
+      },
+      "EST0088": {
+        "código": "EST0088",
+        "nome": "PRÁTICAS DE EXTENSÃO EM ESTATÍSTICA 2",
+        "horas": "60",
+        "professor": "",
+        "sala": "",
+        "horario": "",
+        "tipo": "Presencial"
+      }
+    },
+    "Periodo 6": {
+      "EST0005": {
+        "código": "EST0005",
+        "nome": "INFERÊNCIA BAYESIANA",
+        "horas": "60",
+        "professor": "",
+        "sala": "",
+        "horario": "",
+        "tipo": "Presencial"
+      },
+      "EST0040": {
+        "código": "EST0040",
+        "nome": "ANÁLISE MULTIVARIADA 1",
+        "horas": "60",
+        "professor": "",
+        "sala": "",
+        "horario": "",
+        "tipo": "Presencial"
+      },
+      "EST0051": {
+        "código": "EST0051",
+        "nome": "ANÁLISE DE SÉRIES TEMPORAIS",
+        "horas": "60",
+        "professor": "",
+        "sala": "",
+        "horario": "",
+        "tipo": "Presencial"
+      },
+      "EST0064": {
+        "código": "EST0064",
+        "nome": "ANALISE DE DADOS CATEGORIZADOS",
+        "horas": "60",
+        "professor": "",
+        "sala": "",
+        "horario": "",
+        "tipo": "Presencial"
+      },
+      "EST0124": {
+        "código": "EST0124",
+        "nome": "LABORATÓRIO DE ESTATÍSTICA 1",
+        "horas": "60",
+        "professor": "",
+        "sala": "",
+        "horario": "",
+        "tipo": "Presencial"
+      }
+    },
+    "Periodo 7": {
+      "EST0006": {
+        "código": "EST0006",
+        "nome": "ANÁLISE MULTIVARIADA 2",
+        "horas": "60",
+        "professor": "",
+        "sala": "",
+        "horario": "",
+        "tipo": "Presencial"
+      },
+      "EST0041": {
+        "código": "EST0041",
+        "nome": "ANÁLISE DE DADOS LONGITUDINAIS",
+        "horas": "60",
+        "professor": "",
+        "sala": "",
+        "horario": "",
+        "tipo": "Presencial"
+      },
+      "EST0043": {
+        "código": "EST0043",
+        "nome": "DELINEAMENTO E ANÁLISE DE EXPERIMENTOS 2",
+        "horas": "60",
+        "professor": "",
+        "sala": "",
+        "horario": "",
+        "tipo": "Presencial"
+      },
+      "EST0049": {
+        "código": "EST0049",
+        "nome": "REGRESSÃO NÃO LINEAR",
+        "horas": "60",
+        "professor": "",
+        "sala": "",
+        "horario": "",
+        "tipo": "Presencial"
+      },
+      "EST0089": {
+        "código": "EST0089",
+        "nome": "PRÁTICAS DE EXTENSÃO EM ESTATÍSTICA 3",
+        "horas": "60",
+        "professor": "",
+        "sala": "",
+        "horario": "",
+        "tipo": "Presencial"
+      }
+    },
+    "Periodo 8": {
+      "EST0123": {
+        "código": "EST0123",
+        "nome": "TRABALHO DE CONCLUSÃO DE CURSO 2",
+        "horas": "90",
+        "professor": "",
+        "sala": "",
+        "horario": "",
+        "tipo": "Presencial"
+      }
+    },
+    "CADEIA DE SELETIVIDADE 1": {
+      "EST0012": {
+        "código": "EST0012",
+        "nome": "ANÁLISE DE SÉRIES TEMPORAIS 2",
+        "horas": "60",
+        "professor": "",
+        "sala": "",
+        "horario": "",
+        "tipo": "Optativa"
+      },
+      "EST0086": {
+        "código": "EST0086",
+        "nome": "ANÁLISE DE SOBREVIVÊNCIA",
+        "horas": "60",
+        "professor": "",
+        "sala": "",
+        "horario": "",
+        "tipo": "Optativa"
+      },
+      "EST0018": {
+        "código": "EST0018",
+        "nome": "ANÁLISE MULTIVARIADA 2",
+        "horas": "60",
+        "professor": "",
+        "sala": "",
+        "horario": "",
+        "tipo": "Optativa"
+      },
+      "EST0047": {
+        "código": "EST0047",
+        "nome": "APLICACOES DA ESTATISTICA 1",
+        "horas": "60",
+        "professor": "",
+        "sala": "",
+        "horario": "",
+        "tipo": "Optativa"
+      },
+      "EST0010": {
+        "código": "EST0010",
+        "nome": "CONSULTORIA",
+        "horas": "60",
+        "professor": "",
+        "sala": "",
+        "horario": "",
+        "tipo": "Optativa"
+      },
+      "EST0045": {
+        "código": "EST0045",
+        "nome": "CONTROLE ESTATISTICO DE QUALIDADE",
+        "horas": "60",
+        "professor": "",
+        "sala": "",
+        "horario": "",
+        "tipo": "Optativa"
+      },
+      "EST0044": {
+        "código": "EST0044",
+        "nome": "DELINEAMENTO E ANÁLISE DE EXPERIMENTOS 2",
+        "horas": "60",
+        "professor": "",
+        "sala": "",
+        "horario": "",
+        "tipo": "Optativa"
+      },
+      "EST0046": {
+        "código": "EST0046",
+        "nome": "DEMOGRAFIA",
+        "horas": "60",
+        "professor": "",
+        "sala": "",
+        "horario": "",
+        "tipo": "Optativa"
+      },
+      "EST0013": {
+        "código": "EST0013",
+        "nome": "DEMOGRAFIA 2",
+        "horas": "60",
+        "professor": "",
+        "sala": "",
+        "horario": "",
+        "tipo": "Optativa"
+      },
+      "EST0007": {
+        "código": "EST0007",
+        "nome": "ESTATÍSTICA ESPACIAL",
+        "horas": "60",
+        "professor": "",
+        "sala": "",
+        "horario": "",
+        "tipo": "Optativa"
+      },
+      "EST0068": {
+        "código": "EST0068",
+        "nome": "ESTATISTICA EXPLORATORIA 2",
+        "horas": "60",
+        "professor": "",
+        "sala": "",
+        "horario": "",
+        "tipo": "Optativa"
+      },
+      "EST0052": {
+        "código": "EST0052",
+        "nome": "HISTORIA DA ESTATISTICA",
+        "horas": "30",
+        "professor": "",
+        "sala": "",
+        "horario": "",
+        "tipo": "Optativa"
+      },
+      "EST0009": {
+        "código": "EST0009",
+        "nome": "LABORATÓRIO DE ESTATÍSTICA 2",
+        "horas": "60",
+        "professor": "",
+        "sala": "",
+        "horario": "",
+        "tipo": "Optativa"
+      },
+      "EST0074": {
+        "código": "EST0074",
+        "nome": "MEDIDAS DE INFORMAÇÃO E APLICAÇÕES",
+        "horas": "60",
+        "professor": "",
+        "sala": "",
+        "horario": "",
+        "tipo": "Optativa"
+      },
+      "EST0073": {
+        "código": "EST0073",
+        "nome": "MÉTODOS APLICADOS",
+        "horas": "60",
+        "professor": "",
+        "sala": "",
+        "horario": "",
+        "tipo": "Optativa"
+      },
+      "EST0016": {
+        "código": "EST0016",
+        "nome": "MODELOS LÍNEARES",
+        "horas": "60",
+        "professor": "",
+        "sala": "",
+        "horario": "",
+        "tipo": "Optativa"
+      },
+      "EST0011": {
+        "código": "EST0011",
+        "nome": "MODELOS LINEARES GENERALIZADOS",
+        "horas": "60",
+        "professor": "",
+        "sala": "",
+        "horario": "",
+        "tipo": "Optativa"
+      },
+      "EST0054": {
+        "código": "EST0054",
+        "nome": "PESQUISA OPERACIONAL 1",
+        "horas": "60",
+        "professor": "",
+        "sala": "",
+        "horario": "",
+        "tipo": "Optativa"
+      },
+      "EST0056": {
+        "código": "EST0056",
+        "nome": "PESQUISA OPERACIONAL 2",
+        "horas": "60",
+        "professor": "",
+        "sala": "",
+        "horario": "",
+        "tipo": "Optativa"
+      },
+      "EST0078": {
+        "código": "EST0078",
+        "nome": "PROGRAMAS - PRODUTO EM ESTATISTICA",
+        "horas": "60",
+        "professor": "",
+        "sala": "",
+        "horario": "",
+        "tipo": "Optativa"
+      },
+      "EST0006": {
+        "código": "EST0006",
+        "nome": "TÉCNICAS DE AMOSTRAGEM 2",
+        "horas": "60",
+        "professor": "",
+        "sala": "",
+        "horario": "",
+        "tipo": "Optativa"
+      },
+      "EST0014": {
+        "código": "EST0014",
+        "nome": "TEORIA DA RESPOSTA AO ÍTEM",
+        "horas": "60",
+        "professor": "",
+        "sala": "",
+        "horario": "",
+        "tipo": "Optativa"
+      },
+      "EST0015": {
+        "código": "EST0015",
+        "nome": "TÓPICOS EM ESTATÍSTICA 1",
+        "horas": "60",
+        "professor": "",
+        "sala": "",
+        "horario": "",
+        "tipo": "Optativa"
+      },
+      "EST0077": {
+        "código": "EST0077",
+        "nome": "TÓPICOS EM ESTATÍSTICA 2",
+        "horas": "60",
+        "professor": "",
+        "sala": "",
+        "horario": "",
+        "tipo": "Optativa"
+      }
+    },
+    "CADEIA DE SELETIVIDADE 2": {
+      "EST0003": {
+        "código": "EST0003",
+        "nome": "COMPUTAÇÃO EM ESTATÍSTICA 2",
+        "horas": "60",
+        "professor": "",
+        "sala": "",
+        "horario": "",
+        "tipo": "Optativa"
+      },
+      "EST0092": {
+        "código": "EST0092",
+        "nome": "COMPUTAÇÃO EM ESTATÍSTICA 2: PYTHON",
+        "horas": "60",
+        "professor": "",
+        "sala": "",
+        "horario": "",
+        "tipo": "Optativa"
+      },
+      "EST0091": {
+        "código": "EST0091",
+        "nome": "COMPUTAÇÃO EM ESTATÍSTICA 2: R",
+        "horas": "60",
+        "professor": "",
+        "sala": "",
+        "horario": "",
+        "tipo": "Optativa"
+      },
+      "EST0090": {
+        "código": "EST0090",
+        "nome": "COMPUTAÇÃO EM ESTATÍSTICA 2: SAS",
+        "horas": "60",
+        "professor": "",
+        "sala": "",
+        "horario": "",
+        "tipo": "Optativa"
+      }
+    },
+    "Componentes Optativos": {
+      "ADM0023": {
+        "código": "ADM0023",
+        "nome": "INTRODUÇÃO À ADMINISTRAÇÃO",
+        "horas": "60",
+        "professor": "",
+        "sala": "",
+        "horario": "",
+        "tipo": "Presencial"
+      },
+      "ADM0035": {
+        "código": "ADM0035",
+        "nome": "ANÁLISE DE DECISÕES 1",
+        "horas": "60",
+        "professor": "",
+        "sala": "",
+        "horario": "",
+        "tipo": "Presencial"
+      },
+      "ADM0052": {
+        "código": "ADM0052",
+        "nome": "FINANÇAS 1",
+        "horas": "60",
+        "professor": "",
+        "sala": "",
+        "horario": "",
+        "tipo": "Presencial"
+      },
+      "ADM0150": {
+        "código": "ADM0150",
+        "nome": "CRIACAO DE NEGOCIOS",
+        "horas": "60",
+        "professor": "",
+        "sala": "",
+        "horario": "",
+        "tipo": "Presencial"
+      },
+      "ADM0157": {
+        "código": "ADM0157",
+        "nome": "ESTRATÉGIA ORGANIZACIONAL",
+        "horas": "60",
+        "professor": "",
+        "sala": "",
+        "horario": "",
+        "tipo": "Presencial"
+      },
+      "ADM0192": {
+        "código": "ADM0192",
+        "nome": "CALCULO FINANCEIRO",
+        "horas": "60",
+        "professor": "",
+        "sala": "",
+        "horario": "",
+        "tipo": "Presencial"
+      },
+      "ADM0198": {
+        "código": "ADM0198",
+        "nome": "METODOLOGIA CIENTÍFICA APLICADA",
+        "horas": "60",
+        "professor": "",
+        "sala": "",
+        "horario": "",
+        "tipo": "Presencial"
+      },
+      "ADM0214": {
+        "código": "ADM0214",
+        "nome": "INTRODUÇÃO A TEORIAS ORGANIZACIONAIS",
+        "horas": "60",
+        "professor": "",
+        "sala": "",
+        "horario": "",
+        "tipo": "Presencial"
+      },
+      "ADM0221": {
+        "código": "ADM0221",
+        "nome": "ADMINISTRACAO EMPREENDEDORA",
+        "horas": "60",
+        "professor": "",
+        "sala": "",
+        "horario": "",
+        "tipo": "Presencial"
+      },
+      "ADM0226": {
+        "código": "ADM0226",
+        "nome": "GESTÃO DE PROJETOS",
+        "horas": "60",
+        "professor": "",
+        "sala": "",
+        "horario": "",
+        "tipo": "Presencial"
+      },
+      "ADM0320": {
+        "código": "ADM0320",
+        "nome": "ANÁLISE ORGANIZACIONAL, SISTEMAS E MÉTODOS",
+        "horas": "60",
+        "professor": "",
+        "sala": "",
+        "horario": "",
+        "tipo": "Presencial"
+      },
+      "CCA0015": {
+        "código": "CCA0015",
+        "nome": "CONTABILIDADE GERAL 1",
+        "horas": "60",
+        "professor": "",
+        "sala": "",
+        "horario": "",
+        "tipo": "Presencial"
+      },
+      "CCA0018": {
+        "código": "CCA0018",
+        "nome": "CUSTOS",
+        "horas": "60",
+        "professor": "",
+        "sala": "",
+        "horario": "",
+        "tipo": "Presencial"
+      },
+      "CCA0021": {
+        "código": "CCA0021",
+        "nome": "ANÁLISE ECONÔMICO-FINANCEIRA 1",
+        "horas": "60",
+        "professor": "",
+        "sala": "",
+        "horario": "",
+        "tipo": "Presencial"
+      },
+      "CCA0040": {
+        "código": "CCA0040",
+        "nome": "CONTABILIDADE GERAL 3",
+        "horas": "60",
+        "professor": "",
+        "sala": "",
+        "horario": "",
+        "tipo": "Presencial"
+      },
+      "CCA0056": {
+        "código": "CCA0056",
+        "nome": "AVALIAÇÃO DE PROJETOS DE INVESTIMENTO",
+        "horas": "60",
+        "professor": "",
+        "sala": "",
+        "horario": "",
+        "tipo": "Presencial"
+      },
+      "CCA0079": {
+        "código": "CCA0079",
+        "nome": "CONTABILIDADE GERAL 2",
+        "horas": "60",
+        "professor": "",
+        "sala": "",
+        "horario": "",
+        "tipo": "Presencial"
+      },
+      "CCA0103": {
+        "código": "CCA0103",
+        "nome": "INTRODUÇÃO À CONTABILIDADE",
+        "horas": "60",
+        "professor": "",
+        "sala": "",
+        "horario": "",
+        "tipo": "Presencial"
+      },
+      "CDS0002": {
+        "código": "CDS0002",
+        "nome": "HISTÓRIA AMBIENTAL DO BRASIL",
+        "horas": "60",
+        "professor": "",
+        "sala": "",
+        "horario": "",
+        "tipo": "Presencial"
+      },
+      "CDS0007": {
+        "código": "CDS0007",
+        "nome": "INTRODUÇÃO AO DESENVOLVIMENTO SUSTENTÁVEL",
+        "horas": "60",
+        "professor": "",
+        "sala": "",
+        "horario": "",
+        "tipo": "Presencial"
+      },
+      "CDS0008": {
+        "código": "CDS0008",
+        "nome": "MEIO AMBIENTE, CULTURA E SOCIEDADE",
+        "horas": "60",
+        "professor": "",
+        "sala": "",
+        "horario": "",
+        "tipo": "Presencial"
+      },
+      "CDS0010": {
+        "código": "CDS0010",
+        "nome": "TRABALHO INTERDISCIPLINAR INTEGRADO 1",
+        "horas": "30",
+        "professor": "",
+        "sala": "",
+        "horario": "",
+        "tipo": "Presencial"
+      },
+      "CDS0012": {
+        "código": "CDS0012",
+        "nome": "POLÍTICAS PÚBLICAS E MEIO AMBIENTE",
+        "horas": "60",
+        "professor": "",
+        "sala": "",
+        "horario": "",
+        "tipo": "Presencial"
+      },
+      "CDS0016": {
+        "código": "CDS0016",
+        "nome": "EDUCAÇÃO E MEIO AMBIENTE",
+        "horas": "60",
+        "professor": "",
+        "sala": "",
+        "horario": "",
+        "tipo": "Presencial"
+      },
+      "CEM0052": {
+        "código": "CEM0052",
+        "nome": "INTRODUÇÃO AOS ESTUDOS DE POPULAÇÃO",
+        "horas": "60",
+        "professor": "",
+        "sala": "",
+        "horario": "",
+        "tipo": "Presencial"
+      },
+      "CEM0097": {
+        "código": "CEM0097",
+        "nome": "DIREITOS HUMANOS E CIDADANIA",
+        "horas": "60",
+        "professor": "",
+        "sala": "",
+        "horario": "",
+        "tipo": "Presencial"
+      },
+      "CEM0126": {
+        "código": "CEM0126",
+        "nome": "DIREITOS HUMANOS",
+        "horas": "30",
+        "professor": "",
+        "sala": "",
+        "horario": "",
+        "tipo": "Presencial"
+      },
+      "CEM0133": {
+        "código": "CEM0133",
+        "nome": "MULHERES INSPIRADORAS: PERSPECTIVAS CRÍTICAS PARA A EDUCAÇÃO EM DIREITOS HUMANOS",
+        "horas": "60",
+        "professor": "",
+        "sala": "",
+        "horario": "",
+        "tipo": "Presencial"
+      },
+      "CIC0002": {
+        "código": "CIC0002",
+        "nome": "FUNDAMENTOS TEÓRICOS DA COMPUTAÇÃO",
+        "horas": "60",
+        "professor": "",
+        "sala": "",
+        "horario": "",
+        "tipo": "Presencial"
+      },
+      "CIC0090": {
+        "código": "CIC0090",
+        "nome": "ESTRUTURAS DE DADOS",
+        "horas": "60",
+        "professor": "",
+        "sala": "",
+        "horario": "",
+        "tipo": "Presencial"
+      },
+      "CIC0097": {
+        "código": "CIC0097",
+        "nome": "BANCOS DE DADOS",
+        "horas": "60",
+        "professor": "",
+        "sala": "",
+        "horario": "",
+        "tipo": "Presencial"
+      },
+      "CIC0174": {
+        "código": "CIC0174",
+        "nome": "INTRODUCAO A PROGRAMACAO CIENTIFICA",
+        "horas": "60",
+        "professor": "",
+        "sala": "",
+        "horario": "",
+        "tipo": "Presencial"
+      },
+      "CIC0175": {
+        "código": "CIC0175",
+        "nome": "PROGRAMACAO AVANCADA",
+        "horas": "60",
+        "professor": "",
+        "sala": "",
+        "horario": "",
+        "tipo": "Presencial"
+      },
+      "CIC0182": {
+        "código": "CIC0182",
+        "nome": "LÓGICA COMPUTACIONAL 1",
+        "horas": "60",
+        "professor": "",
+        "sala": "",
+        "horario": "",
+        "tipo": "Presencial"
+      },
+      "DEX1102": {
+        "código": "DEX1102",
+        "nome": "PENSAMENTO NEGRO CONTEMPORÂNEO",
+        "horas": "60",
+        "professor": "",
+        "sala": "",
+        "horario": "",
+        "tipo": "Presencial"
+      },
+      "DEX1113": {
+        "código": "DEX1113",
+        "nome": "ETNOLOGIA VISUAL DA IMAGEM DO NEGRO NO CINEMA",
+        "horas": "60",
+        "professor": "",
+        "sala": "",
+        "horario": "",
+        "tipo": "Presencial"
+      },
+      "DSC0159": {
+        "código": "DSC0159",
+        "nome": "MIGRAÇÃO, SAÚDE E DIREITOS HUMANOS",
+        "horas": "60",
+        "professor": "",
+        "sala": "",
+        "horario": "",
+        "tipo": "Presencial"
+      },
+      "ECL0033": {
+        "código": "ECL0033",
+        "nome": "ECOLOGIA 1",
+        "horas": "60",
+        "professor": "",
+        "sala": "",
+        "horario": "",
+        "tipo": "Presencial"
+      },
+      "ECO0019": {
+        "código": "ECO0019",
+        "nome": "INTRODUÇÃO À ECONOMIA",
+        "horas": "60",
+        "professor": "",
+        "sala": "",
+        "horario": "",
+        "tipo": "Presencial"
+      },
+      "ECO0023": {
+        "código": "ECO0023",
+        "nome": "FORMAÇÃO ECONÔMICA DO BRASIL",
+        "horas": "60",
+        "professor": "",
+        "sala": "",
+        "horario": "",
+        "tipo": "Presencial"
+      },
+      "ECO0050": {
+        "código": "ECO0050",
+        "nome": "CONTABILIDADE NACIONAL",
+        "horas": "60",
+        "professor": "",
+        "sala": "",
+        "horario": "",
+        "tipo": "Presencial"
+      },
+      "ECO0054": {
+        "código": "ECO0054",
+        "nome": "ECONOMETRIA",
+        "horas": "60",
+        "professor": "",
+        "sala": "",
+        "horario": "",
+        "tipo": "Presencial"
+      },
+      "ECO0056": {
+        "código": "ECO0056",
+        "nome": "ECONOMIA QUANTITATIVA 2",
+        "horas": "60",
+        "professor": "",
+        "sala": "",
+        "horario": "",
+        "tipo": "Presencial"
+      },
+      "ECO0072": {
+        "código": "ECO0072",
+        "nome": "ECONOMIA BRASILEIRA",
+        "horas": "60",
+        "professor": "",
+        "sala": "",
+        "horario": "",
+        "tipo": "Presencial"
+      },
+      "ECO0099": {
+        "código": "ECO0099",
+        "nome": "MACROECONOMIA 1",
+        "horas": "60",
+        "professor": "",
+        "sala": "",
+        "horario": "",
+        "tipo": "Presencial"
+      },
+      "ECO0126": {
+        "código": "ECO0126",
+        "nome": "MICROECONOMIA 1",
+        "horas": "60",
+        "professor": "",
+        "sala": "",
+        "horario": "",
+        "tipo": "Presencial"
+      },
+      "ECO0128": {
+        "código": "ECO0128",
+        "nome": "INTRODUCAO A ECONOMETRIA",
+        "horas": "60",
+        "professor": "",
+        "sala": "",
+        "horario": "",
+        "tipo": "Presencial"
+      },
+      "ECO0185": {
+        "código": "ECO0185",
+        "nome": "MICROECONOMIA 2",
+        "horas": "60",
+        "professor": "",
+        "sala": "",
+        "horario": "",
+        "tipo": "Presencial"
+      },
+      "ECO0189": {
+        "código": "ECO0189",
+        "nome": "MACROECONOMIA 2",
+        "horas": "60",
+        "professor": "",
+        "sala": "",
+        "horario": "",
+        "tipo": "Presencial"
+      },
+      "ECO0197": {
+        "código": "ECO0197",
+        "nome": "ECONOMIA ESTATISTICA",
+        "horas": "60",
+        "professor": "",
+        "sala": "",
+        "horario": "",
+        "tipo": "Presencial"
+      },
+      "ECO0218": {
+        "código": "ECO0218",
+        "nome": "EVOLUCAO DAS IDEIAS ECONOMICAS SOCIAIS",
+        "horas": "60",
+        "professor": "",
+        "sala": "",
+        "horario": "",
+        "tipo": "Presencial"
+      },
+      "ECO0230": {
+        "código": "ECO0230",
+        "nome": "ANALISE ECONOMICA DE SERIES DE TEMPO",
+        "horas": "60",
+        "professor": "",
+        "sala": "",
+        "horario": "",
+        "tipo": "Presencial"
+      },
+      "ECO0261": {
+        "código": "ECO0261",
+        "nome": "PLANEJAMENTO PÚBLICO E MEIO AMBIENTE",
+        "horas": "60",
+        "professor": "",
+        "sala": "",
+        "horario": "",
+        "tipo": "Presencial"
+      },
+      "ECO0272": {
+        "código": "ECO0272",
+        "nome": "MICROECONOMIA AMBIENTAL",
+        "horas": "60",
+        "professor": "",
+        "sala": "",
+        "horario": "",
+        "tipo": "Presencial"
+      },
+      "ENF0054": {
+        "código": "ENF0054",
+        "nome": "METODOLOGIA DA PESQUISA EM SAÚDE",
+        "horas": "30",
+        "professor": "",
+        "sala": "",
+        "horario": "",
+        "tipo": "Presencial"
+      },
+      "EST0003": {
+        "código": "EST0003",
+        "nome": "COMPUTAÇÃO EM ESTATÍSTICA 2",
+        "horas": "60",
+        "professor": "",
+        "sala": "",
+        "horario": "",
+        "tipo": "Presencial"
+      },
+      "EST0006": {
+        "código": "EST0006",
+        "nome": "TÉCNICAS DE AMOSTRAGEM 2",
+        "horas": "60",
+        "professor": "",
+        "sala": "",
+        "horario": "",
+        "tipo": "Presencial"
+      },
+      "EST0007": {
+        "código": "EST0007",
+        "nome": "ESTATÍSTICA ESPACIAL",
+        "horas": "60",
+        "professor": "",
+        "sala": "",
+        "horario": "",
+        "tipo": "Presencial"
+      },
+      "EST0009": {
+        "código": "EST0009",
+        "nome": "LABORATÓRIO DE ESTATÍSTICA 2",
+        "horas": "60",
+        "professor": "",
+        "sala": "",
+        "horario": "",
+        "tipo": "Presencial"
+      },
+      "EST0010": {
+        "código": "EST0010",
+        "nome": "CONSULTORIA",
+        "horas": "60",
+        "professor": "",
+        "sala": "",
+        "horario": "",
+        "tipo": "Presencial"
+      },
+      "EST0011": {
+        "código": "EST0011",
+        "nome": "MODELOS LINEARES GENERALIZADOS",
+        "horas": "60",
+        "professor": "",
+        "sala": "",
+        "horario": "",
+        "tipo": "Presencial"
+      },
+      "EST0012": {
+        "código": "EST0012",
+        "nome": "ANÁLISE DE SÉRIES TEMPORAIS 2",
+        "horas": "60",
+        "professor": "",
+        "sala": "",
+        "horario": "",
+        "tipo": "Presencial"
+      },
+      "EST0013": {
+        "código": "EST0013",
+        "nome": "DEMOGRAFIA 2",
+        "horas": "60",
+        "professor": "",
+        "sala": "",
+        "horario": "",
+        "tipo": "Presencial"
+      },
+      "EST0014": {
+        "código": "EST0014",
+        "nome": "TEORIA DA RESPOSTA AO ÍTEM",
+        "horas": "60",
+        "professor": "",
+        "sala": "",
+        "horario": "",
+        "tipo": "Presencial"
+      },
+      "EST0015": {
+        "código": "EST0015",
+        "nome": "TÓPICOS EM ESTATÍSTICA 1",
+        "horas": "60",
+        "professor": "",
+        "sala": "",
+        "horario": "",
+        "tipo": "Presencial"
+      },
+      "EST0016": {
+        "código": "EST0016",
+        "nome": "MODELOS LÍNEARES",
+        "horas": "60",
+        "professor": "",
+        "sala": "",
+        "horario": "",
+        "tipo": "Presencial"
+      },
+      "EST0018": {
+        "código": "EST0018",
+        "nome": "ANÁLISE MULTIVARIADA 2",
+        "horas": "60",
+        "professor": "",
+        "sala": "",
+        "horario": "",
+        "tipo": "Presencial"
+      },
+      "EST0044": {
+        "código": "EST0044",
+        "nome": "DELINEAMENTO E ANÁLISE DE EXPERIMENTOS 2",
+        "horas": "60",
+        "professor": "",
+        "sala": "",
+        "horario": "",
+        "tipo": "Presencial"
+      },
+      "EST0045": {
+        "código": "EST0045",
+        "nome": "CONTROLE ESTATISTICO DE QUALIDADE",
+        "horas": "60",
+        "professor": "",
+        "sala": "",
+        "horario": "",
+        "tipo": "Presencial"
+      },
+      "EST0046": {
+        "código": "EST0046",
+        "nome": "DEMOGRAFIA",
+        "horas": "60",
+        "professor": "",
+        "sala": "",
+        "horario": "",
+        "tipo": "Presencial"
+      },
+      "EST0047": {
+        "código": "EST0047",
+        "nome": "APLICACOES DA ESTATISTICA 1",
+        "horas": "60",
+        "professor": "",
+        "sala": "",
+        "horario": "",
+        "tipo": "Presencial"
+      },
+      "EST0052": {
+        "código": "EST0052",
+        "nome": "HISTORIA DA ESTATISTICA",
+        "horas": "30",
+        "professor": "",
+        "sala": "",
+        "horario": "",
+        "tipo": "Presencial"
+      },
+      "EST0054": {
+        "código": "EST0054",
+        "nome": "PESQUISA OPERACIONAL 1",
+        "horas": "60",
+        "professor": "",
+        "sala": "",
+        "horario": "",
+        "tipo": "Presencial"
+      },
+      "EST0056": {
+        "código": "EST0056",
+        "nome": "PESQUISA OPERACIONAL 2",
+        "horas": "60",
+        "professor": "",
+        "sala": "",
+        "horario": "",
+        "tipo": "Presencial"
+      },
+      "EST0059": {
+        "código": "EST0059",
+        "nome": "CONTROLE DE QUALIDADE NA PRODUCAO",
+        "horas": "60",
+        "professor": "",
+        "sala": "",
+        "horario": "",
+        "tipo": "Presencial"
+      },
+      "EST0068": {
+        "código": "EST0068",
+        "nome": "ESTATISTICA EXPLORATORIA 2",
+        "horas": "60",
+        "professor": "",
+        "sala": "",
+        "horario": "",
+        "tipo": "Presencial"
+      },
+      "EST0073": {
+        "codigo": "EST0073",
+        "nome": "MÉTODOS APLICADOS",
+        "carga_horaria": 60,
+        "modalidade": "Presencial",
+        "tipo": "OPTATIVO"
+      },
+      "EST0074": {
+        "codigo": "EST0074",
+        "nome": "MEDIDAS DE INFORMAÇÃO E APLICAÇÕES",
+        "carga_horaria": 60,
+        "modalidade": "Presencial",
+        "tipo": "OPTATIVO"
+      },
+      "codigo": "EST0077",
+      "nome": "TÓPICOS EM ESTATÍSTICA 2",
+      "carga_horaria": 60,
+      "modalidade": "Presencial",
+      "tipo": "OPTATIVO"
+    },
+    "EST0078": {
+      "codigo": "EST0078",
+      "nome": "PROGRAMAS - PRODUTO EM ESTATÍSTICA",
+      "carga_horaria": 60,
+      "modalidade": "Presencial",
+      "tipo": "OPTATIVO"
+    },
+    "EST0082": {
+      "codigo": "EST0082",
+      "nome": "TÓPICOS EM CONSULTORIA",
+      "carga_horaria": 30,
+      "modalidade": "Presencial",
+      "tipo": "OPTATIVO"
+    },
+    "EST0083": {
+      "codigo": "EST0083",
+      "nome": "PROBABILIDADE E ESTATÍSTICA 2",
+      "carga_horaria": 60,
+      "modalidade": "Presencial",
+      "tipo": "OPTATIVO"
+    },
+    "EST0086": {
+      "codigo": "EST0086",
+      "nome": "ANÁLISE DE SOBREVIVÊNCIA",
+      "carga_horaria": 60,
+      "modalidade": "Presencial",
+      "tipo": "OPTATIVO"
+    },
+    "EST0090": {
+      "codigo": "EST0090",
+      "nome": "COMPUTAÇÃO EM ESTATÍSTICA 2: SAS",
+      "carga_horaria": 60,
+      "modalidade": "Presencial",
+      "tipo": "OPTATIVO"
+    },
+    "EST0091": {
+      "codigo": "EST0091",
+      "nome": "COMPUTAÇÃO EM ESTATÍSTICA 2: R",
+      "carga_horaria": 60,
+      "modalidade": "Presencial",
+      "tipo": "OPTATIVO"
+    },
+    "EST0092": {
+      "codigo": "EST0092",
+      "nome": "COMPUTAÇÃO EM ESTATÍSTICA 2: PYTHON",
+      "carga_horaria": 60,
+      "modalidade": "Presencial",
+      "tipo": "OPTATIVO"
+    },
+    "EST0125": {
+      "codigo": "EST0125",
+      "nome": "ATIVIDADE COMPLEMENTAR",
+      "carga_horaria": 15,
+      "modalidade": "Presencial",
+      "tipo": "OPTATIVO"
+    },
+    "EST0126": {
+      "codigo": "EST0126",
+      "nome": "ATIVIDADE COMPLEMENTAR",
+      "carga_horaria": 30,
+      "modalidade": "Presencial",
+      "tipo": "OPTATIVO"
+    },
+    "EST0129": {
+      "codigo": "EST0129",
+      "nome": "ATIVIDADE COMPLEMENTAR",
+      "carga_horaria": 45,
+      "modalidade": "Presencial",
+      "tipo": "OPTATIVO"
+    },
+    "EST0132": {
+      "codigo": "EST0132",
+      "nome": "ATIVIDADE COMPLEMENTAR",
+      "carga_horaria": 60,
+      "modalidade": "Presencial",
+      "tipo": "OPTATIVO"
+    },
+    "EST0134": {
+      "codigo": "EST0134",
+      "nome": "ATIVIDADE COMPLEMENTAR",
+      "carga_horaria": 75,
+      "modalidade": "Presencial",
+      "tipo": "OPTATIVO"
+    },
+    "EST0138": {
+      "codigo": "EST0138",
+      "nome": "ATIVIDADE COMPLEMENTAR",
+      "carga_horaria": 90,
+      "modalidade": "Presencial",
+      "tipo": "OPTATIVO"
+    },
+    "EST0140": {
+      "codigo": "EST0140",
+      "nome": "ATIVIDADE COMPLEMENTAR",
+      "carga_horaria": 105,
+      "modalidade": "Presencial",
+      "tipo": "OPTATIVO"
+    },
+    "EST0143": {
+      "codigo": "EST0143",
+      "nome": "ATIVIDADE COMPLEMENTAR",
+      "carga_horaria": 120,
+      "modalidade": "Presencial",
+      "tipo": "OPTATIVO"
+    },
+    "EST0146": {
+      "codigo": "EST0146",
+      "nome": "ATIVIDADE COMPLEMENTAR",
+      "carga_horaria": 135,
+      "modalidade": "Presencial",
+      "tipo": "OPTATIVO"
+    },
+    "EST0150": {
+      "codigo": "EST0150",
+      "nome": "ATIVIDADE COMPLEMENTAR",
+      "carga_horaria": 150,
+      "modalidade": "Presencial",
+      "tipo": "OPTATIVO"
+    },
+    "EST0152": {
+      "codigo": "EST0152",
+      "nome": "ATIVIDADE COMPLEMENTAR",
+      "carga_horaria": 165,
+      "modalidade": "Presencial",
+      "tipo": "OPTATIVO"
+    },
+    "EST0153": {
+      "codigo": "EST0153",
+      "nome": "ATIVIDADE COMPLEMENTAR",
+      "carga_horaria": 180,
+      "modalidade": "Presencial",
+      "tipo": "OPTATIVO"
+    },
+    "EST0154": {
+      "codigo": "EST0154",
+      "nome": "ATIVIDADE COMPLEMENTAR",
+      "carga_horaria": 195,
+      "modalidade": "Presencial",
+      "tipo": "OPTATIVO"
+    },
+    "EST0155": {
+      "codigo": "EST0155",
+      "nome": "ATIVIDADE COMPLEMENTAR",
+      "carga_horaria": 210,
+      "modalidade": "Presencial",
+      "tipo": "OPTATIVO"
+    },
+    "EST0156": {
+      "codigo": "EST0156",
+      "nome": "ATIVIDADE COMPLEMENTAR",
+      "carga_horaria": 225,
+      "modalidade": "Presencial",
+      "tipo": "OPTATIVO"
+    },
+    "EST0157": {
+      "codigo": "EST0157",
+      "nome": "ATIVIDADE COMPLEMENTAR",
+      "carga_horaria": 240,
+      "modalidade": "Presencial",
+      "tipo": "OPTATIVO"
+    },
+    "FCE0187": {
+      "codigo": "FCE0187",
+      "nome": "EPIDEMIOLOGIA DESCRITIVA",
+      "carga_horaria": 60,
+      "modalidade": "Presencial",
+      "tipo": "OPTATIVO"
+    },
+    "FCE0206": {
+      "codigo": "FCE0206",
+      "nome": "EPIDEMIOLOGIA ANALÍTICA",
+      "carga_horaria": 60,
+      "modalidade": "Presencial",
+      "tipo": "OPTATIVO"
+    },
+    "FEF0505": {
+      "codigo": "FEF0505",
+      "nome": "PRÁTICA DESPORTIVA 1",
+      "carga_horaria": 30,
+      "modalidade": "Presencial",
+      "tipo": "OPTATIVO"
+    },
+    "FGA0157": {
+      "codigo": "FGA0157",
+      "nome": "PROBABILIDADE E ESTATÍSTICA APLICADO A ENGENHARIA",
+      "carga_horaria": 60,
+      "modalidade": "Presencial",
+      "tipo": "OPTATIVO"
+    },
+    "FIL0056": {
+      "codigo": "FIL0056",
+      "nome": "LÓGICA 1",
+      "carga_horaria": 60,
+      "modalidade": "Presencial",
+      "tipo": "OPTATIVO"
+    },
+    "FIL0077": {
+      "codigo": "FIL0077",
+      "nome": "INICIAÇÃO À METODOLOGIA CIENTÍFICA",
+      "carga_horaria": 60,
+      "modalidade": "Presencial",
+      "tipo": "OPTATIVO"
+    },
+    "FTD0007": {
+      "codigo": "FTD0007",
+      "nome": "INTRODUCAO A ATIVIDADE EMPRESARIAL",
+      "carga_horaria": 60,
+      "modalidade": "Presencial",
+      "tipo": "OPTATIVO"
+    },
+    "FTD0008": {
+      "codigo": "FTD0008",
+      "nome": "EMPRESA JUNIOR 1",
+      "carga_horaria": 90,
+      "modalidade": "Presencial",
+      "tipo": "OPTATIVO"
+    },
+    "FTD0009": {
+      "codigo": "FTD0009",
+      "nome": "EMPRESA JUNIOR 2",
+      "carga_horaria": 90,
+      "modalidade": "Presencial",
+      "tipo": "OPTATIVO"
+    },
+    "GEM0014": {
+      "codigo": "GEM0014",
+      "nome": "GENETICA BASICA",
+      "carga_horaria": 60,
+      "modalidade": "Presencial",
+      "tipo": "OPTATIVO"
+    },
+    "IFD0171": {
+      "codigo": "IFD0171",
+      "nome": "FISICA 1",
+      "carga_horaria": 60,
+      "modalidade": "Presencial",
+      "tipo": "OPTATIVO"
+    },
+    "IFD0173": {
+      "codigo": "IFD0173",
+      "nome": "FISICA 1 EXPERIMENTAL",
+      "carga_horaria": 30,
+      "modalidade": "Presencial",
+      "tipo": "OPTATIVO"
+    },
+    "IFD0353": {
+      "codigo": "IFD0353",
+      "nome": "PROGRAMAÇÃO PARA SISTEMAS FÍSICOS",
+      "carga_horaria": 60,
+      "modalidade": "Presencial",
+      "tipo": "OPTATIVO"
+    },
+    "IGD0021": {
+      "codigo": "IGD0021",
+      "nome": "GEOLOGIA GERAL",
+      "carga_horaria": 90,
+      "modalidade": "Presencial",
+      "tipo": "OPTATIVO"
+    },
+    "IGD0143": {
+      "codigo": "IGD0143",
+      "nome": "DESENHO TECNICO GEOLOGICO",
+      "carga_horaria": 90,
+      "modalidade": "Presencial",
+      "tipo": "OPTATIVO"
+    },
+    "IGD0160": {
+      "codigo": "IGD0160",
+      "nome": "INTRODUÇÃO AO SISTEMA DE INFORMAÇÕES GEOGRÁFICAS",
+      "carga_horaria": 60,
+      "modalidade": "Presencial",
+      "tipo": "OPTATIVO"
+    },
+    "IGD0183": {
+      "codigo": "IGD0183",
+      "nome": "TOPOGRAFIA",
+      "carga_horaria": 60,
+      "modalidade": "Presencial",
+      "tipo": "OPTATIVO"
+    },
+    "IGD0198": {
+      "codigo": "IGD0198",
+      "nome": "CARTOGRAFIA E GEODÉSIA",
+      "carga_horaria": 60,
+      "modalidade": "Presencial",
+      "tipo": "OPTATIVO"
+    },
+    "LET0084": {
+      "codigo": "LET0084",
+      "nome": "LÍNGUA INGLESA 1",
+      "carga_horaria": 60,
+      "modalidade": "Presencial",
+      "tipo": "OPTATIVO"
+    },
+    "LET0118": {
+      "codigo": "LET0118",
+      "nome": "LÍNGUA ESPANHOLA 1",
+      "carga_horaria": 60,
+      "modalidade": "Presencial",
+      "tipo": "OPTATIVO"
+    },
+    "LET0162": {
+      "codigo": "LET0162",
+      "nome": "INGLÊS INSTRUMENTAL 2",
+      "carga_horaria": 60,
+      "modalidade": "Presencial",
+      "tipo": "OPTATIVO"
+    },
+    "LET0331": {
+      "codigo": "LET0331",
+      "nome": "INGLÊS INSTRUMENTAL 1",
+      "carga_horaria": 60,
+      "modalidade": "Presencial",
+      "tipo": "OPTATIVO"
+    },
+    "LET0376": {
+      "codigo": "LET0376",
+      "nome": "LINGUA CHINESA 1",
+      "carga_horaria": 60,
+      "modalidade": "Presencial",
+      "tipo": "OPTATIVO"
+    },
+    "LET0377": {
+      "codigo": "LET0377",
+      "nome": "LÍNGUA CHINESA 2",
+      "carga_horaria": 60,
+      "modalidade": "Presencial",
+      "tipo": "OPTATIVO"
+    },
+    "LET0378": {
+      "codigo": "LET0378",
+      "nome": "LINGUA CHINESA 3",
+      "carga_horaria": 60,
+      "modalidade": "Presencial",
+      "tipo": "OPTATIVO"
+    },
+    "LET0431": {
+      "codigo": "LET0431",
+      "nome": "FRANCÊS 1",
+      "carga_horaria": 60,
+      "modalidade": "Presencial",
+      "tipo": "OPTATIVO"
+    },
+    "LIP0096": {
+      "codigo": "LIP0096",
+      "nome": "LEITURA E PRODUÇÃO DE TEXTOS",
+      "carga_horaria": 60,
+      "modalidade": "Presencial",
+      "tipo": "OPTATIVO"
+    },
+    "LIP0174": {
+      "codigo": "LIP0174",
+      "nome": "LÍNGUA DE SINAIS BRASILEIRA - BÁSICO",
+      "carga_horaria": 60,
+      "modalidade": "Presencial",
+      "tipo": "OPTATIVO"
+    },
+    "MAT0028": {
+      "codigo": "MAT0028",
+      "nome": "VARIAVEL COMPLEXA 1",
+      "carga_horaria": 90,
+      "modalidade": "Presencial",
+      "tipo": "OPTATIVO"
+    },
+    "MAT0034": {
+      "codigo": "MAT0034",
+      "nome": "ALGEBRA 1",
+      "carga_horaria": 60,
+      "modalidade": "Presencial",
+      "tipo": "OPTATIVO"
+    },
+    "MAT0038": {
+      "codigo": "MAT0038",
+      "nome": "TEORIA DOS NÚMEROS 1",
+      "carga_horaria": 60,
+      "modalidade": "Presencial",
+      "tipo": "OPTATIVO"
+    },
+    "MAT0045": {
+      "codigo": "MAT0045",
+      "nome": "ANALISE 1",
+      "carga_horaria": 60,
+      "modalidade": "Presencial",
+      "tipo": "OPTATIVO"
+    },
+    "MAT0046": {
+      "codigo": "MAT0046",
+      "nome": "ANALISE 2",
+      "carga_horaria": 60,
+      "modalidade": "Presencial",
+      "tipo": "OPTATIVO"
+    },
+    "MAT0054": {
+      "codigo": "MAT0054",
+      "nome": "INTRODUCAO A PROGRAMACAO LINEAR",
+      "carga_horaria": 60,
+      "modalidade": "Presencial",
+      "tipo": "OPTATIVO"
+    },
+    "MAT0057": {
+      "codigo": "MAT0057",
+      "nome": "ANALISE NUMERICA 1",
+      "carga_horaria": 60,
+      "modalidade": "Presencial",
+      "tipo": "OPTATIVO"
+    },
+    "MAT0059": {
+      "codigo": "MAT0059",
+      "nome": "METODOS MATEMÁTICOS DA FÍSICA 1",
+      "carga_horaria": 90,
+      "modalidade": "Presencial",
+      "tipo": "OPTATIVO"
+    },
+    "MAT0078": {
+      "codigo": "MAT0078",
+      "nome": "ANALISE DE ALGORITMOS",
+      "carga_horaria": 60,
+      "modalidade": "Presencial",
+      "tipo": "OPTATIVO"
+    },
+    "MAT0080": {
+      "codigo": "MAT0080",
+      "nome": "INTRODUCAO A TEORIA DOS GRAFOS",
+      "carga_horaria": 60,
+      "modalidade": "Presencial",
+      "tipo": "OPTATIVO"
+    },
+    "MAT0082": {
+      "codigo": "MAT0082",
+      "nome": "ANALISE COMBINATORIA",
+      "carga_horaria": 60,
+      "modalidade": "Presencial",
+      "tipo": "OPTATIVO"
+    },
+    "MAT0119": {
+      "codigo": "MAT0119",
+      "nome": "LÓGICA MATEMÁTICA E COMPUTACIONAL",
+      "carga_horaria": 60,
+      "modalidade": "Presencial",
+      "tipo": "OPTATIVO"
+    },
+    "MAT0120": {
+      "codigo": "MAT0120",
+      "nome": "INTRODUÇÃO À TEORIA DE MEDIDA E INTEGRAÇÃO",
+      "carga_horaria": 60,
+      "modalidade": "Presencial",
+      "tipo": "OPTATIVO"
+    },
+    "PCL0020": {
+      "codigo": "PCL0020",
+      "nome": "ETICA PROFISSIONAL",
+      "carga_horaria": 60,
+      "modalidade": "Presencial",
+      "tipo": "OPTATIVO"
+    },
+    "SOL0042": {
+      "codigo": "SOL0042",
+      "nome": "INTRODUÇÃO À SOCIOLOGIA",
+      "carga_horaria": 60,
+      "modalidade": "Presencial",
+      "tipo": "OPTATIVO"
+    }
+  }
+}
