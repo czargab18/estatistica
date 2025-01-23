@@ -16,7 +16,7 @@ def adicionar_conteudo_arquivo(arquivo, conteudo):
         f.write(conteudo)
 
 # Exemplo de uso
-diretorio_repositorio = "."  # Caminho do diretório do repositório
+diretorio_repositorio = "./" 
 index_vazios = buscar_index_vazios(diretorio_repositorio)
 conteudo_html = """<!DOCTYPE html>
 <html lang="en">
@@ -146,3 +146,85 @@ print("Arquivos index.html vazios encontrados:")
 for arquivo in index_vazios:
     print(arquivo)
     adicionar_conteudo_arquivo(arquivo, conteudo_html)
+
+import os
+
+
+novo_conteudo = """
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Estatística</title>
+    <meta charset="utf-8" />
+    <meta content="Estatística" name="estatistica" />
+    <meta content="index,follow" name="robots" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <meta
+      content="img-src 'self' https://www.estatistica.pro/; script-src 'self' https://www.estatistica.pro/ac/ https://www.estatistica.pro/sd/"
+      http-equiv="Content-Security-Policy"
+    />
+    <link
+      href="/sd/images/favicons/estatistica.svg"
+      rel="shortcut icon"
+      type="image/x-icon"
+    />
+    <link
+      href="/ac/globalpattern/1/pt_BR/styles/globalpattern.css"
+      rel="stylesheet"
+    />
+    <link
+      href="/ac/globalaside/1/pt_BR/styles/globalaside.css"
+      rel="stylesheet"
+    />
+    <link
+      href="/ac/globalnavbar/1/pt_BR/styles/globalnavbar.css"
+      rel="stylesheet"
+    />
+    <link
+      href="/ac/globalribbon/1/pt_BR/styles/globalribbon.css"
+      rel="stylesheet"
+    />
+    <link
+      href="/ac/globaltipografia/1/pt_BR/style/globaltipografia.css"
+      rel="stylesheet"
+    />
+    <link
+      href="/ac/globalothers/1/pt_BR/espaco/styles/espaco.build.css"
+      rel="stylesheet"
+    />
+    <link
+      href="/ac/globalfooter/1/pt_BR/styles/globalfooter.css"
+      rel="stylesheet"
+    />
+    <link
+      href="/wss/fonts.css?families=SF+Pro,v3|SF+Pro+Icons,v3"
+      media="all"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <script
+      defer=""
+      src="/ac/globalfooter/1/pt_BR/scripts/globalfooter.js"
+    ></script>
+  </head>
+<body>
+    <main>
+      <h1>Em desenvolvimento</h1>
+    </main>
+</body>
+</html>
+"""
+
+
+def atualizar_conteudo_index(diretorio, novo_conteudo):
+    for subdir, _, files in os.walk(diretorio):
+        for file in files:
+            if file == "index.html":
+                file_path = os.path.join(subdir, file)
+                with open(file_path, "r") as f:
+                    conteudo_atual = f.read()
+                if conteudo_atual == conteudo_html:
+                    with open(file_path, "w") as f:
+                        f.write(novo_conteudo)
+
+print("Fim!")
