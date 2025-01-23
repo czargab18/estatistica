@@ -560,7 +560,7 @@
         "tipo": "Optativa"
       }
     },
-    "Componentes Optativos": {
+    "COMPONENTES OPTATIVOS": {
       "ADM0023": {
         "código": "ADM0023",
         "nome": "INTRODUÇÃO À ADMINISTRAÇÃO",
@@ -1259,473 +1259,475 @@
         "modalidade": "Presencial",
         "tipo": "OPTATIVO"
       },
-      "codigo": "EST0077",
-      "nome": "TÓPICOS EM ESTATÍSTICA 2",
-      "carga_horaria": 60,
-      "modalidade": "Presencial",
-      "tipo": "OPTATIVO"
-    },
-    "EST0078": {
-      "codigo": "EST0078",
-      "nome": "PROGRAMAS - PRODUTO EM ESTATÍSTICA",
-      "carga_horaria": 60,
-      "modalidade": "Presencial",
-      "tipo": "OPTATIVO"
-    },
-    "EST0082": {
-      "codigo": "EST0082",
-      "nome": "TÓPICOS EM CONSULTORIA",
-      "carga_horaria": 30,
-      "modalidade": "Presencial",
-      "tipo": "OPTATIVO"
-    },
-    "EST0083": {
-      "codigo": "EST0083",
-      "nome": "PROBABILIDADE E ESTATÍSTICA 2",
-      "carga_horaria": 60,
-      "modalidade": "Presencial",
-      "tipo": "OPTATIVO"
-    },
-    "EST0086": {
-      "codigo": "EST0086",
-      "nome": "ANÁLISE DE SOBREVIVÊNCIA",
-      "carga_horaria": 60,
-      "modalidade": "Presencial",
-      "tipo": "OPTATIVO"
-    },
-    "EST0090": {
-      "codigo": "EST0090",
-      "nome": "COMPUTAÇÃO EM ESTATÍSTICA 2: SAS",
-      "carga_horaria": 60,
-      "modalidade": "Presencial",
-      "tipo": "OPTATIVO"
-    },
-    "EST0091": {
-      "codigo": "EST0091",
-      "nome": "COMPUTAÇÃO EM ESTATÍSTICA 2: R",
-      "carga_horaria": 60,
-      "modalidade": "Presencial",
-      "tipo": "OPTATIVO"
-    },
-    "EST0092": {
-      "codigo": "EST0092",
-      "nome": "COMPUTAÇÃO EM ESTATÍSTICA 2: PYTHON",
-      "carga_horaria": 60,
-      "modalidade": "Presencial",
-      "tipo": "OPTATIVO"
-    },
-    "EST0125": {
-      "codigo": "EST0125",
-      "nome": "ATIVIDADE COMPLEMENTAR",
-      "carga_horaria": 15,
-      "modalidade": "Presencial",
-      "tipo": "OPTATIVO"
-    },
-    "EST0126": {
-      "codigo": "EST0126",
-      "nome": "ATIVIDADE COMPLEMENTAR",
-      "carga_horaria": 30,
-      "modalidade": "Presencial",
-      "tipo": "OPTATIVO"
-    },
-    "EST0129": {
-      "codigo": "EST0129",
-      "nome": "ATIVIDADE COMPLEMENTAR",
-      "carga_horaria": 45,
-      "modalidade": "Presencial",
-      "tipo": "OPTATIVO"
-    },
-    "EST0132": {
-      "codigo": "EST0132",
-      "nome": "ATIVIDADE COMPLEMENTAR",
-      "carga_horaria": 60,
-      "modalidade": "Presencial",
-      "tipo": "OPTATIVO"
-    },
-    "EST0134": {
-      "codigo": "EST0134",
-      "nome": "ATIVIDADE COMPLEMENTAR",
-      "carga_horaria": 75,
-      "modalidade": "Presencial",
-      "tipo": "OPTATIVO"
-    },
-    "EST0138": {
-      "codigo": "EST0138",
-      "nome": "ATIVIDADE COMPLEMENTAR",
-      "carga_horaria": 90,
-      "modalidade": "Presencial",
-      "tipo": "OPTATIVO"
-    },
-    "EST0140": {
-      "codigo": "EST0140",
-      "nome": "ATIVIDADE COMPLEMENTAR",
-      "carga_horaria": 105,
-      "modalidade": "Presencial",
-      "tipo": "OPTATIVO"
-    },
-    "EST0143": {
-      "codigo": "EST0143",
-      "nome": "ATIVIDADE COMPLEMENTAR",
-      "carga_horaria": 120,
-      "modalidade": "Presencial",
-      "tipo": "OPTATIVO"
-    },
-    "EST0146": {
-      "codigo": "EST0146",
-      "nome": "ATIVIDADE COMPLEMENTAR",
-      "carga_horaria": 135,
-      "modalidade": "Presencial",
-      "tipo": "OPTATIVO"
-    },
-    "EST0150": {
-      "codigo": "EST0150",
-      "nome": "ATIVIDADE COMPLEMENTAR",
-      "carga_horaria": 150,
-      "modalidade": "Presencial",
-      "tipo": "OPTATIVO"
-    },
-    "EST0152": {
-      "codigo": "EST0152",
-      "nome": "ATIVIDADE COMPLEMENTAR",
-      "carga_horaria": 165,
-      "modalidade": "Presencial",
-      "tipo": "OPTATIVO"
-    },
-    "EST0153": {
-      "codigo": "EST0153",
-      "nome": "ATIVIDADE COMPLEMENTAR",
-      "carga_horaria": 180,
-      "modalidade": "Presencial",
-      "tipo": "OPTATIVO"
-    },
-    "EST0154": {
-      "codigo": "EST0154",
-      "nome": "ATIVIDADE COMPLEMENTAR",
-      "carga_horaria": 195,
-      "modalidade": "Presencial",
-      "tipo": "OPTATIVO"
-    },
-    "EST0155": {
-      "codigo": "EST0155",
-      "nome": "ATIVIDADE COMPLEMENTAR",
-      "carga_horaria": 210,
-      "modalidade": "Presencial",
-      "tipo": "OPTATIVO"
-    },
-    "EST0156": {
-      "codigo": "EST0156",
-      "nome": "ATIVIDADE COMPLEMENTAR",
-      "carga_horaria": 225,
-      "modalidade": "Presencial",
-      "tipo": "OPTATIVO"
-    },
-    "EST0157": {
-      "codigo": "EST0157",
-      "nome": "ATIVIDADE COMPLEMENTAR",
-      "carga_horaria": 240,
-      "modalidade": "Presencial",
-      "tipo": "OPTATIVO"
-    },
-    "FCE0187": {
-      "codigo": "FCE0187",
-      "nome": "EPIDEMIOLOGIA DESCRITIVA",
-      "carga_horaria": 60,
-      "modalidade": "Presencial",
-      "tipo": "OPTATIVO"
-    },
-    "FCE0206": {
-      "codigo": "FCE0206",
-      "nome": "EPIDEMIOLOGIA ANALÍTICA",
-      "carga_horaria": 60,
-      "modalidade": "Presencial",
-      "tipo": "OPTATIVO"
-    },
-    "FEF0505": {
-      "codigo": "FEF0505",
-      "nome": "PRÁTICA DESPORTIVA 1",
-      "carga_horaria": 30,
-      "modalidade": "Presencial",
-      "tipo": "OPTATIVO"
-    },
-    "FGA0157": {
-      "codigo": "FGA0157",
-      "nome": "PROBABILIDADE E ESTATÍSTICA APLICADO A ENGENHARIA",
-      "carga_horaria": 60,
-      "modalidade": "Presencial",
-      "tipo": "OPTATIVO"
-    },
-    "FIL0056": {
-      "codigo": "FIL0056",
-      "nome": "LÓGICA 1",
-      "carga_horaria": 60,
-      "modalidade": "Presencial",
-      "tipo": "OPTATIVO"
-    },
-    "FIL0077": {
-      "codigo": "FIL0077",
-      "nome": "INICIAÇÃO À METODOLOGIA CIENTÍFICA",
-      "carga_horaria": 60,
-      "modalidade": "Presencial",
-      "tipo": "OPTATIVO"
-    },
-    "FTD0007": {
-      "codigo": "FTD0007",
-      "nome": "INTRODUCAO A ATIVIDADE EMPRESARIAL",
-      "carga_horaria": 60,
-      "modalidade": "Presencial",
-      "tipo": "OPTATIVO"
-    },
-    "FTD0008": {
-      "codigo": "FTD0008",
-      "nome": "EMPRESA JUNIOR 1",
-      "carga_horaria": 90,
-      "modalidade": "Presencial",
-      "tipo": "OPTATIVO"
-    },
-    "FTD0009": {
-      "codigo": "FTD0009",
-      "nome": "EMPRESA JUNIOR 2",
-      "carga_horaria": 90,
-      "modalidade": "Presencial",
-      "tipo": "OPTATIVO"
-    },
-    "GEM0014": {
-      "codigo": "GEM0014",
-      "nome": "GENETICA BASICA",
-      "carga_horaria": 60,
-      "modalidade": "Presencial",
-      "tipo": "OPTATIVO"
-    },
-    "IFD0171": {
-      "codigo": "IFD0171",
-      "nome": "FISICA 1",
-      "carga_horaria": 60,
-      "modalidade": "Presencial",
-      "tipo": "OPTATIVO"
-    },
-    "IFD0173": {
-      "codigo": "IFD0173",
-      "nome": "FISICA 1 EXPERIMENTAL",
-      "carga_horaria": 30,
-      "modalidade": "Presencial",
-      "tipo": "OPTATIVO"
-    },
-    "IFD0353": {
-      "codigo": "IFD0353",
-      "nome": "PROGRAMAÇÃO PARA SISTEMAS FÍSICOS",
-      "carga_horaria": 60,
-      "modalidade": "Presencial",
-      "tipo": "OPTATIVO"
-    },
-    "IGD0021": {
-      "codigo": "IGD0021",
-      "nome": "GEOLOGIA GERAL",
-      "carga_horaria": 90,
-      "modalidade": "Presencial",
-      "tipo": "OPTATIVO"
-    },
-    "IGD0143": {
-      "codigo": "IGD0143",
-      "nome": "DESENHO TECNICO GEOLOGICO",
-      "carga_horaria": 90,
-      "modalidade": "Presencial",
-      "tipo": "OPTATIVO"
-    },
-    "IGD0160": {
-      "codigo": "IGD0160",
-      "nome": "INTRODUÇÃO AO SISTEMA DE INFORMAÇÕES GEOGRÁFICAS",
-      "carga_horaria": 60,
-      "modalidade": "Presencial",
-      "tipo": "OPTATIVO"
-    },
-    "IGD0183": {
-      "codigo": "IGD0183",
-      "nome": "TOPOGRAFIA",
-      "carga_horaria": 60,
-      "modalidade": "Presencial",
-      "tipo": "OPTATIVO"
-    },
-    "IGD0198": {
-      "codigo": "IGD0198",
-      "nome": "CARTOGRAFIA E GEODÉSIA",
-      "carga_horaria": 60,
-      "modalidade": "Presencial",
-      "tipo": "OPTATIVO"
-    },
-    "LET0084": {
-      "codigo": "LET0084",
-      "nome": "LÍNGUA INGLESA 1",
-      "carga_horaria": 60,
-      "modalidade": "Presencial",
-      "tipo": "OPTATIVO"
-    },
-    "LET0118": {
-      "codigo": "LET0118",
-      "nome": "LÍNGUA ESPANHOLA 1",
-      "carga_horaria": 60,
-      "modalidade": "Presencial",
-      "tipo": "OPTATIVO"
-    },
-    "LET0162": {
-      "codigo": "LET0162",
-      "nome": "INGLÊS INSTRUMENTAL 2",
-      "carga_horaria": 60,
-      "modalidade": "Presencial",
-      "tipo": "OPTATIVO"
-    },
-    "LET0331": {
-      "codigo": "LET0331",
-      "nome": "INGLÊS INSTRUMENTAL 1",
-      "carga_horaria": 60,
-      "modalidade": "Presencial",
-      "tipo": "OPTATIVO"
-    },
-    "LET0376": {
-      "codigo": "LET0376",
-      "nome": "LINGUA CHINESA 1",
-      "carga_horaria": 60,
-      "modalidade": "Presencial",
-      "tipo": "OPTATIVO"
-    },
-    "LET0377": {
-      "codigo": "LET0377",
-      "nome": "LÍNGUA CHINESA 2",
-      "carga_horaria": 60,
-      "modalidade": "Presencial",
-      "tipo": "OPTATIVO"
-    },
-    "LET0378": {
-      "codigo": "LET0378",
-      "nome": "LINGUA CHINESA 3",
-      "carga_horaria": 60,
-      "modalidade": "Presencial",
-      "tipo": "OPTATIVO"
-    },
-    "LET0431": {
-      "codigo": "LET0431",
-      "nome": "FRANCÊS 1",
-      "carga_horaria": 60,
-      "modalidade": "Presencial",
-      "tipo": "OPTATIVO"
-    },
-    "LIP0096": {
-      "codigo": "LIP0096",
-      "nome": "LEITURA E PRODUÇÃO DE TEXTOS",
-      "carga_horaria": 60,
-      "modalidade": "Presencial",
-      "tipo": "OPTATIVO"
-    },
-    "LIP0174": {
-      "codigo": "LIP0174",
-      "nome": "LÍNGUA DE SINAIS BRASILEIRA - BÁSICO",
-      "carga_horaria": 60,
-      "modalidade": "Presencial",
-      "tipo": "OPTATIVO"
-    },
-    "MAT0028": {
-      "codigo": "MAT0028",
-      "nome": "VARIAVEL COMPLEXA 1",
-      "carga_horaria": 90,
-      "modalidade": "Presencial",
-      "tipo": "OPTATIVO"
-    },
-    "MAT0034": {
-      "codigo": "MAT0034",
-      "nome": "ALGEBRA 1",
-      "carga_horaria": 60,
-      "modalidade": "Presencial",
-      "tipo": "OPTATIVO"
-    },
-    "MAT0038": {
-      "codigo": "MAT0038",
-      "nome": "TEORIA DOS NÚMEROS 1",
-      "carga_horaria": 60,
-      "modalidade": "Presencial",
-      "tipo": "OPTATIVO"
-    },
-    "MAT0045": {
-      "codigo": "MAT0045",
-      "nome": "ANALISE 1",
-      "carga_horaria": 60,
-      "modalidade": "Presencial",
-      "tipo": "OPTATIVO"
-    },
-    "MAT0046": {
-      "codigo": "MAT0046",
-      "nome": "ANALISE 2",
-      "carga_horaria": 60,
-      "modalidade": "Presencial",
-      "tipo": "OPTATIVO"
-    },
-    "MAT0054": {
-      "codigo": "MAT0054",
-      "nome": "INTRODUCAO A PROGRAMACAO LINEAR",
-      "carga_horaria": 60,
-      "modalidade": "Presencial",
-      "tipo": "OPTATIVO"
-    },
-    "MAT0057": {
-      "codigo": "MAT0057",
-      "nome": "ANALISE NUMERICA 1",
-      "carga_horaria": 60,
-      "modalidade": "Presencial",
-      "tipo": "OPTATIVO"
-    },
-    "MAT0059": {
-      "codigo": "MAT0059",
-      "nome": "METODOS MATEMÁTICOS DA FÍSICA 1",
-      "carga_horaria": 90,
-      "modalidade": "Presencial",
-      "tipo": "OPTATIVO"
-    },
-    "MAT0078": {
-      "codigo": "MAT0078",
-      "nome": "ANALISE DE ALGORITMOS",
-      "carga_horaria": 60,
-      "modalidade": "Presencial",
-      "tipo": "OPTATIVO"
-    },
-    "MAT0080": {
-      "codigo": "MAT0080",
-      "nome": "INTRODUCAO A TEORIA DOS GRAFOS",
-      "carga_horaria": 60,
-      "modalidade": "Presencial",
-      "tipo": "OPTATIVO"
-    },
-    "MAT0082": {
-      "codigo": "MAT0082",
-      "nome": "ANALISE COMBINATORIA",
-      "carga_horaria": 60,
-      "modalidade": "Presencial",
-      "tipo": "OPTATIVO"
-    },
-    "MAT0119": {
-      "codigo": "MAT0119",
-      "nome": "LÓGICA MATEMÁTICA E COMPUTACIONAL",
-      "carga_horaria": 60,
-      "modalidade": "Presencial",
-      "tipo": "OPTATIVO"
-    },
-    "MAT0120": {
-      "codigo": "MAT0120",
-      "nome": "INTRODUÇÃO À TEORIA DE MEDIDA E INTEGRAÇÃO",
-      "carga_horaria": 60,
-      "modalidade": "Presencial",
-      "tipo": "OPTATIVO"
-    },
-    "PCL0020": {
-      "codigo": "PCL0020",
-      "nome": "ETICA PROFISSIONAL",
-      "carga_horaria": 60,
-      "modalidade": "Presencial",
-      "tipo": "OPTATIVO"
-    },
-    "SOL0042": {
-      "codigo": "SOL0042",
-      "nome": "INTRODUÇÃO À SOCIOLOGIA",
-      "carga_horaria": 60,
-      "modalidade": "Presencial",
-      "tipo": "OPTATIVO"
+      "EST0077": {
+        "codigo": "EST0077",
+        "nome": "TÓPICOS EM ESTATÍSTICA 2",
+        "carga_horaria": 60,
+        "modalidade": "Presencial",
+        "tipo": "OPTATIVO"
+      },
+      "EST0078": {
+        "codigo": "EST0078",
+        "nome": "PROGRAMAS - PRODUTO EM ESTATÍSTICA",
+        "carga_horaria": 60,
+        "modalidade": "Presencial",
+        "tipo": "OPTATIVO"
+      },
+      "EST0082": {
+        "codigo": "EST0082",
+        "nome": "TÓPICOS EM CONSULTORIA",
+        "carga_horaria": 30,
+        "modalidade": "Presencial",
+        "tipo": "OPTATIVO"
+      },
+      "EST0083": {
+        "codigo": "EST0083",
+        "nome": "PROBABILIDADE E ESTATÍSTICA 2",
+        "carga_horaria": 60,
+        "modalidade": "Presencial",
+        "tipo": "OPTATIVO"
+      },
+      "EST0086": {
+        "codigo": "EST0086",
+        "nome": "ANÁLISE DE SOBREVIVÊNCIA",
+        "carga_horaria": 60,
+        "modalidade": "Presencial",
+        "tipo": "OPTATIVO"
+      },
+      "EST0090": {
+        "codigo": "EST0090",
+        "nome": "COMPUTAÇÃO EM ESTATÍSTICA 2: SAS",
+        "carga_horaria": 60,
+        "modalidade": "Presencial",
+        "tipo": "OPTATIVO"
+      },
+      "EST0091": {
+        "codigo": "EST0091",
+        "nome": "COMPUTAÇÃO EM ESTATÍSTICA 2: R",
+        "carga_horaria": 60,
+        "modalidade": "Presencial",
+        "tipo": "OPTATIVO"
+      },
+      "EST0092": {
+        "codigo": "EST0092",
+        "nome": "COMPUTAÇÃO EM ESTATÍSTICA 2: PYTHON",
+        "carga_horaria": 60,
+        "modalidade": "Presencial",
+        "tipo": "OPTATIVO"
+      },
+      "EST0125": {
+        "codigo": "EST0125",
+        "nome": "ATIVIDADE COMPLEMENTAR",
+        "carga_horaria": 15,
+        "modalidade": "Presencial",
+        "tipo": "OPTATIVO"
+      },
+      "EST0126": {
+        "codigo": "EST0126",
+        "nome": "ATIVIDADE COMPLEMENTAR",
+        "carga_horaria": 30,
+        "modalidade": "Presencial",
+        "tipo": "OPTATIVO"
+      },
+      "EST0129": {
+        "codigo": "EST0129",
+        "nome": "ATIVIDADE COMPLEMENTAR",
+        "carga_horaria": 45,
+        "modalidade": "Presencial",
+        "tipo": "OPTATIVO"
+      },
+      "EST0132": {
+        "codigo": "EST0132",
+        "nome": "ATIVIDADE COMPLEMENTAR",
+        "carga_horaria": 60,
+        "modalidade": "Presencial",
+        "tipo": "OPTATIVO"
+      },
+      "EST0134": {
+        "codigo": "EST0134",
+        "nome": "ATIVIDADE COMPLEMENTAR",
+        "carga_horaria": 75,
+        "modalidade": "Presencial",
+        "tipo": "OPTATIVO"
+      },
+      "EST0138": {
+        "codigo": "EST0138",
+        "nome": "ATIVIDADE COMPLEMENTAR",
+        "carga_horaria": 90,
+        "modalidade": "Presencial",
+        "tipo": "OPTATIVO"
+      },
+      "EST0140": {
+        "codigo": "EST0140",
+        "nome": "ATIVIDADE COMPLEMENTAR",
+        "carga_horaria": 105,
+        "modalidade": "Presencial",
+        "tipo": "OPTATIVO"
+      },
+      "EST0143": {
+        "codigo": "EST0143",
+        "nome": "ATIVIDADE COMPLEMENTAR",
+        "carga_horaria": 120,
+        "modalidade": "Presencial",
+        "tipo": "OPTATIVO"
+      },
+      "EST0146": {
+        "codigo": "EST0146",
+        "nome": "ATIVIDADE COMPLEMENTAR",
+        "carga_horaria": 135,
+        "modalidade": "Presencial",
+        "tipo": "OPTATIVO"
+      },
+      "EST0150": {
+        "codigo": "EST0150",
+        "nome": "ATIVIDADE COMPLEMENTAR",
+        "carga_horaria": 150,
+        "modalidade": "Presencial",
+        "tipo": "OPTATIVO"
+      },
+      "EST0152": {
+        "codigo": "EST0152",
+        "nome": "ATIVIDADE COMPLEMENTAR",
+        "carga_horaria": 165,
+        "modalidade": "Presencial",
+        "tipo": "OPTATIVO"
+      },
+      "EST0153": {
+        "codigo": "EST0153",
+        "nome": "ATIVIDADE COMPLEMENTAR",
+        "carga_horaria": 180,
+        "modalidade": "Presencial",
+        "tipo": "OPTATIVO"
+      },
+      "EST0154": {
+        "codigo": "EST0154",
+        "nome": "ATIVIDADE COMPLEMENTAR",
+        "carga_horaria": 195,
+        "modalidade": "Presencial",
+        "tipo": "OPTATIVO"
+      },
+      "EST0155": {
+        "codigo": "EST0155",
+        "nome": "ATIVIDADE COMPLEMENTAR",
+        "carga_horaria": 210,
+        "modalidade": "Presencial",
+        "tipo": "OPTATIVO"
+      },
+      "EST0156": {
+        "codigo": "EST0156",
+        "nome": "ATIVIDADE COMPLEMENTAR",
+        "carga_horaria": 225,
+        "modalidade": "Presencial",
+        "tipo": "OPTATIVO"
+      },
+      "EST0157": {
+        "codigo": "EST0157",
+        "nome": "ATIVIDADE COMPLEMENTAR",
+        "carga_horaria": 240,
+        "modalidade": "Presencial",
+        "tipo": "OPTATIVO"
+      },
+      "FCE0187": {
+        "codigo": "FCE0187",
+        "nome": "EPIDEMIOLOGIA DESCRITIVA",
+        "carga_horaria": 60,
+        "modalidade": "Presencial",
+        "tipo": "OPTATIVO"
+      },
+      "FCE0206": {
+        "codigo": "FCE0206",
+        "nome": "EPIDEMIOLOGIA ANALÍTICA",
+        "carga_horaria": 60,
+        "modalidade": "Presencial",
+        "tipo": "OPTATIVO"
+      },
+      "FEF0505": {
+        "codigo": "FEF0505",
+        "nome": "PRÁTICA DESPORTIVA 1",
+        "carga_horaria": 30,
+        "modalidade": "Presencial",
+        "tipo": "OPTATIVO"
+      },
+      "FGA0157": {
+        "codigo": "FGA0157",
+        "nome": "PROBABILIDADE E ESTATÍSTICA APLICADO A ENGENHARIA",
+        "carga_horaria": 60,
+        "modalidade": "Presencial",
+        "tipo": "OPTATIVO"
+      },
+      "FIL0056": {
+        "codigo": "FIL0056",
+        "nome": "LÓGICA 1",
+        "carga_horaria": 60,
+        "modalidade": "Presencial",
+        "tipo": "OPTATIVO"
+      },
+      "FIL0077": {
+        "codigo": "FIL0077",
+        "nome": "INICIAÇÃO À METODOLOGIA CIENTÍFICA",
+        "carga_horaria": 60,
+        "modalidade": "Presencial",
+        "tipo": "OPTATIVO"
+      },
+      "FTD0007": {
+        "codigo": "FTD0007",
+        "nome": "INTRODUCAO A ATIVIDADE EMPRESARIAL",
+        "carga_horaria": 60,
+        "modalidade": "Presencial",
+        "tipo": "OPTATIVO"
+      },
+      "FTD0008": {
+        "codigo": "FTD0008",
+        "nome": "EMPRESA JUNIOR 1",
+        "carga_horaria": 90,
+        "modalidade": "Presencial",
+        "tipo": "OPTATIVO"
+      },
+      "FTD0009": {
+        "codigo": "FTD0009",
+        "nome": "EMPRESA JUNIOR 2",
+        "carga_horaria": 90,
+        "modalidade": "Presencial",
+        "tipo": "OPTATIVO"
+      },
+      "GEM0014": {
+        "codigo": "GEM0014",
+        "nome": "GENETICA BASICA",
+        "carga_horaria": 60,
+        "modalidade": "Presencial",
+        "tipo": "OPTATIVO"
+      },
+      "IFD0171": {
+        "codigo": "IFD0171",
+        "nome": "FISICA 1",
+        "carga_horaria": 60,
+        "modalidade": "Presencial",
+        "tipo": "OPTATIVO"
+      },
+      "IFD0173": {
+        "codigo": "IFD0173",
+        "nome": "FISICA 1 EXPERIMENTAL",
+        "carga_horaria": 30,
+        "modalidade": "Presencial",
+        "tipo": "OPTATIVO"
+      },
+      "IFD0353": {
+        "codigo": "IFD0353",
+        "nome": "PROGRAMAÇÃO PARA SISTEMAS FÍSICOS",
+        "carga_horaria": 60,
+        "modalidade": "Presencial",
+        "tipo": "OPTATIVO"
+      },
+      "IGD0021": {
+        "codigo": "IGD0021",
+        "nome": "GEOLOGIA GERAL",
+        "carga_horaria": 90,
+        "modalidade": "Presencial",
+        "tipo": "OPTATIVO"
+      },
+      "IGD0143": {
+        "codigo": "IGD0143",
+        "nome": "DESENHO TECNICO GEOLOGICO",
+        "carga_horaria": 90,
+        "modalidade": "Presencial",
+        "tipo": "OPTATIVO"
+      },
+      "IGD0160": {
+        "codigo": "IGD0160",
+        "nome": "INTRODUÇÃO AO SISTEMA DE INFORMAÇÕES GEOGRÁFICAS",
+        "carga_horaria": 60,
+        "modalidade": "Presencial",
+        "tipo": "OPTATIVO"
+      },
+      "IGD0183": {
+        "codigo": "IGD0183",
+        "nome": "TOPOGRAFIA",
+        "carga_horaria": 60,
+        "modalidade": "Presencial",
+        "tipo": "OPTATIVO"
+      },
+      "IGD0198": {
+        "codigo": "IGD0198",
+        "nome": "CARTOGRAFIA E GEODÉSIA",
+        "carga_horaria": 60,
+        "modalidade": "Presencial",
+        "tipo": "OPTATIVO"
+      },
+      "LET0084": {
+        "codigo": "LET0084",
+        "nome": "LÍNGUA INGLESA 1",
+        "carga_horaria": 60,
+        "modalidade": "Presencial",
+        "tipo": "OPTATIVO"
+      },
+      "LET0118": {
+        "codigo": "LET0118",
+        "nome": "LÍNGUA ESPANHOLA 1",
+        "carga_horaria": 60,
+        "modalidade": "Presencial",
+        "tipo": "OPTATIVO"
+      },
+      "LET0162": {
+        "codigo": "LET0162",
+        "nome": "INGLÊS INSTRUMENTAL 2",
+        "carga_horaria": 60,
+        "modalidade": "Presencial",
+        "tipo": "OPTATIVO"
+      },
+      "LET0331": {
+        "codigo": "LET0331",
+        "nome": "INGLÊS INSTRUMENTAL 1",
+        "carga_horaria": 60,
+        "modalidade": "Presencial",
+        "tipo": "OPTATIVO"
+      },
+      "LET0376": {
+        "codigo": "LET0376",
+        "nome": "LINGUA CHINESA 1",
+        "carga_horaria": 60,
+        "modalidade": "Presencial",
+        "tipo": "OPTATIVO"
+      },
+      "LET0377": {
+        "codigo": "LET0377",
+        "nome": "LÍNGUA CHINESA 2",
+        "carga_horaria": 60,
+        "modalidade": "Presencial",
+        "tipo": "OPTATIVO"
+      },
+      "LET0378": {
+        "codigo": "LET0378",
+        "nome": "LINGUA CHINESA 3",
+        "carga_horaria": 60,
+        "modalidade": "Presencial",
+        "tipo": "OPTATIVO"
+      },
+      "LET0431": {
+        "codigo": "LET0431",
+        "nome": "FRANCÊS 1",
+        "carga_horaria": 60,
+        "modalidade": "Presencial",
+        "tipo": "OPTATIVO"
+      },
+      "LIP0096": {
+        "codigo": "LIP0096",
+        "nome": "LEITURA E PRODUÇÃO DE TEXTOS",
+        "carga_horaria": 60,
+        "modalidade": "Presencial",
+        "tipo": "OPTATIVO"
+      },
+      "LIP0174": {
+        "codigo": "LIP0174",
+        "nome": "LÍNGUA DE SINAIS BRASILEIRA - BÁSICO",
+        "carga_horaria": 60,
+        "modalidade": "Presencial",
+        "tipo": "OPTATIVO"
+      },
+      "MAT0028": {
+        "codigo": "MAT0028",
+        "nome": "VARIAVEL COMPLEXA 1",
+        "carga_horaria": 90,
+        "modalidade": "Presencial",
+        "tipo": "OPTATIVO"
+      },
+      "MAT0034": {
+        "codigo": "MAT0034",
+        "nome": "ALGEBRA 1",
+        "carga_horaria": 60,
+        "modalidade": "Presencial",
+        "tipo": "OPTATIVO"
+      },
+      "MAT0038": {
+        "codigo": "MAT0038",
+        "nome": "TEORIA DOS NÚMEROS 1",
+        "carga_horaria": 60,
+        "modalidade": "Presencial",
+        "tipo": "OPTATIVO"
+      },
+      "MAT0045": {
+        "codigo": "MAT0045",
+        "nome": "ANALISE 1",
+        "carga_horaria": 60,
+        "modalidade": "Presencial",
+        "tipo": "OPTATIVO"
+      },
+      "MAT0046": {
+        "codigo": "MAT0046",
+        "nome": "ANALISE 2",
+        "carga_horaria": 60,
+        "modalidade": "Presencial",
+        "tipo": "OPTATIVO"
+      },
+      "MAT0054": {
+        "codigo": "MAT0054",
+        "nome": "INTRODUCAO A PROGRAMACAO LINEAR",
+        "carga_horaria": 60,
+        "modalidade": "Presencial",
+        "tipo": "OPTATIVO"
+      },
+      "MAT0057": {
+        "codigo": "MAT0057",
+        "nome": "ANALISE NUMERICA 1",
+        "carga_horaria": 60,
+        "modalidade": "Presencial",
+        "tipo": "OPTATIVO"
+      },
+      "MAT0059": {
+        "codigo": "MAT0059",
+        "nome": "METODOS MATEMÁTICOS DA FÍSICA 1",
+        "carga_horaria": 90,
+        "modalidade": "Presencial",
+        "tipo": "OPTATIVO"
+      },
+      "MAT0078": {
+        "codigo": "MAT0078",
+        "nome": "ANALISE DE ALGORITMOS",
+        "carga_horaria": 60,
+        "modalidade": "Presencial",
+        "tipo": "OPTATIVO"
+      },
+      "MAT0080": {
+        "codigo": "MAT0080",
+        "nome": "INTRODUCAO A TEORIA DOS GRAFOS",
+        "carga_horaria": 60,
+        "modalidade": "Presencial",
+        "tipo": "OPTATIVO"
+      },
+      "MAT0082": {
+        "codigo": "MAT0082",
+        "nome": "ANALISE COMBINATORIA",
+        "carga_horaria": 60,
+        "modalidade": "Presencial",
+        "tipo": "OPTATIVO"
+      },
+      "MAT0119": {
+        "codigo": "MAT0119",
+        "nome": "LÓGICA MATEMÁTICA E COMPUTACIONAL",
+        "carga_horaria": 60,
+        "modalidade": "Presencial",
+        "tipo": "OPTATIVO"
+      },
+      "MAT0120": {
+        "codigo": "MAT0120",
+        "nome": "INTRODUÇÃO À TEORIA DE MEDIDA E INTEGRAÇÃO",
+        "carga_horaria": 60,
+        "modalidade": "Presencial",
+        "tipo": "OPTATIVO"
+      },
+      "PCL0020": {
+        "codigo": "PCL0020",
+        "nome": "ETICA PROFISSIONAL",
+        "carga_horaria": 60,
+        "modalidade": "Presencial",
+        "tipo": "OPTATIVO"
+      },
+      "SOL0042": {
+        "codigo": "SOL0042",
+        "nome": "INTRODUÇÃO À SOCIOLOGIA",
+        "carga_horaria": 60,
+        "modalidade": "Presencial",
+        "tipo": "OPTATIVO"
+      }
     }
   }
 }

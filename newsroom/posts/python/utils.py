@@ -5,10 +5,8 @@ import re
 import json
 import random
 import string
-from datetime import datetime
 
 """ FUNÇÕES ÚTEIS """
-
 
 def verificacao(pergunta):
     """
@@ -20,11 +18,10 @@ def verificacao(pergunta):
         if pergunta in ["não", "nao", "n"]:
             return False
 
-
-def continuar(pergunta):
-    pergunta = input("Deseja continuar? Digite Sim ou Não: ").lower()
-    verificacao(pergunta)
-
+def tentar():
+    pergunta = input("Deseja tentar novamente? Digite Sim ou Não: ").lower()
+    resposta = verificacao(pergunta)
+    return resposta
 
 def existe(folder="newsroom/posts/article/"):
     """
@@ -34,7 +31,6 @@ def existe(folder="newsroom/posts/article/"):
     pergunta = input(f"Há conteúdo na pasta {folder}? Digite Sim ou Não: ").lower()
     resposta = verificacao(pergunta)
     return resposta
-
 
 def ler_nome_file(path="newsroom/posts/article/"):
     """
@@ -60,7 +56,6 @@ def ler_nome_file(path="newsroom/posts/article/"):
     else:
         raise ValueError("O nome do arquivo não está no formato esperado 'mes-ano'.")
 
-
 def ler_conteudo_arquivo(path="newsroom/posts/article/"):
     """
     Função que lê o arquivo e retorna o conteúdo do arquivo dentro de um objeto.
@@ -74,7 +69,6 @@ def ler_conteudo_arquivo(path="newsroom/posts/article/"):
         print(f"Erro: O arquivo '{path}' não foi encontrado.")
         return {"path": path, "conteudo": None}
 
-
 def gen_identificador():
     length = 9
     characters = string.ascii_lowercase + "123456789"
@@ -82,20 +76,6 @@ def gen_identificador():
     for _ in range(length):
         identificador += random.choice(characters)
     return identificador
-
-    # def gerar_caminho_artigo(data identificador, nome_arquivo="index.html"):
-    """
-    Função que gera o caminho para um artigo baseado no identificador, ano, mês e nome do arquivo.
-    """
-    # Pastas de destino
-    destino_base = "articles/pt_BR/"
-    data = None
-
-    # Caminho final
-    destino_final = os.path.join(destino_base, ano, mes, identificador, nome_arquivo)
-
-    return destino_final
-
 
 def path_article(data, identificador):
     """
@@ -114,11 +94,25 @@ def path_article(data, identificador):
     )
     return path
 
-# print(path_article(data="31-10-2025", identificador="shbsghbsrtgd"))
+def codigo():
+    resposta = str(input("Código da disciplina (ex. EST0042): ")).strip().upper()
+    padrao = bool(re.compile(r"^[A-Z]{3}\d{4}$").match(resposta))
 
+    if padrao == True:
+        return resposta
+    else:
+        print(
+            f"O código '{resposta}' não segue o padrão de 3 letras e 4 digitos! ex. EST0043"
+        )
+        resp = tentar()
+        if resp == True:
+            resposta = codigo()
+        else:
+            print(f"Usuário informou codigo inválido! Resposta fornecida (em maiúscula): {resposta}")
+            return f"Usuário informou codigo inválido! Resposta fornecida (em maiúscula): {resposta}"
+    return resposta
 
 """ EXTRAIR INFORMAÇÕES DO .txt """
-
 
 def ocultar():
     def extrair_titulo(): ...
@@ -135,65 +129,23 @@ def ocultar():
 
     return
 
-
-""" ADICIONAR INFORMAÇÕES NO index.html """
-
-
 """ FUNÇÃO RECEBER DADOS ITERAÇÃO """
 
 def conteudo(tipos=["introducao", "conclusao", "resumo"]):
-    """
-    Coleta informações de meta e conteúdo.
 
-    Para meta:
-    - Qual o título?
-    - Qual o subtítulo?
-    - Quais as tags?
-
-    Para conteúdo:
-    - Esta função coleta conteúdo para os tipos especificados (introducao, conclusao, resumo).
-    - Para cada tipo, a função pergunta ao usuário se há conteúdo a ser inserido.
-    - Se a resposta for afirmativa, a função solicita a quantidade de parágrafos, figuras ou links.
-    - Em seguida, coleta o conteúdo correspondente e o armazena em um dicionário.
-
-    Parâmetros:
-    tipos (list): Uma lista de strings que especifica os tipos de conteúdo a serem coletados.
-
-    Retorna:
-    dict: Um dicionário com as informações de meta e conteúdo coletado.
-    """
-
-    # Coleta de meta informações
     identificador = gen_identificador()
     titulo = str(input("Forneça o título: ")).strip().lower()
     subtitulo = str(input("Forneça o subtítulo: ")).strip().lower()
-    data = (
-        str(input("Forneça a data no formato 'dia mês ano' (ex: 01 12 2026): "))
-        .strip()
-        .lower()
-    )
-    codigo = str(input("Código da disciplina (ex. EST0042): ")).strip().upper()
+    data = str(input("Forneça a data no formato 'dia mês ano' (ex: 01 12 2026): ")).strip().lower()
+    codigo_disciplina = codigo()
     disciplina = str(input("Forneça o nome da disciplina: ")).strip().upper()
     path = path_article(data=data, identificador=identificador).strip().lower()
-
     tags = (
-        str(input("Forneça as tags separadas por vírgulas: "))
+        str(input("Forneça as tags separadas por uma virgula ',': "))
         .strip()
         .lower()
         .split(",")
     )
-
-    # Informações para o .JSON
-    meta_info = {
-        "identificador": identificador,
-        "titulo": titulo,
-        "subtitulo": subtitulo,
-        "data": data,
-        "codigo": codigo,
-        "disciplina": disciplina,
-        "path": path,
-        "tags": tags,
-    }
 
     # Coleta de conteúdo
     tipos_validos = ["introducao", "conclusao", "resumo"]
@@ -203,7 +155,9 @@ def conteudo(tipos=["introducao", "conclusao", "resumo"]):
                 f"Tipo inválido. Use um dos seguintes: {', '.join(tipos_validos)}"
             )
 
-    conteudo = {tipo: [] for tipo in tipos}
+    conteudo = {}
+    for tipo in tipos:
+        conteudo[tipo] = []
 
     for tipo in tipos:
         resposta = str(input(f"Tem {tipo}? ")).strip().lower()
@@ -237,21 +191,30 @@ def conteudo(tipos=["introducao", "conclusao", "resumo"]):
                 if continuar not in ["sim", "s", "y", "yes"]:
                     break
         else:
-            conteudo[tipo] = f"{tipo.capitalize()} sem conteúdo"
+            conteudo[tipo] = f"{tipo.capitalize()} sem conte\u00fado"
 
-    info_artigo = {identificador: {"meta_info": meta_info, "conteudo": conteudo}}
+    # Informações para o .JSON
+    info_artigo = {
+        identificador: {
+            "meta_info": {
+                "identificador": identificador,
+                "titulo": titulo,
+                "subtitulo": subtitulo,
+                "data": data,
+                "codigo": codigo_disciplina,
+                "disciplina": disciplina,
+                "path": path,
+                "tags": tags,
+            },
+            "conteudo": conteudo,
+        }
+    }
 
     return json.dumps(info_artigo, indent=2)
 
-
 """ ADICIONAR DADOS AO index.html """
 
-
 """ MANIPULAR DADOS DO article.json """
-
-# Precisa de algo como:
-"""artigo = conteudo()"""
-
 
 def up_article_json(artigo=None, path="newsroom/posts/data/articles.json"):
     """
@@ -267,11 +230,11 @@ def up_article_json(artigo=None, path="newsroom/posts/data/articles.json"):
     if artigo != None:
         pass
     else:
-        print("Conteúdo nãoinformado.")
+        print("Conteúdo do artigo não foi informado!")
         resposta = input("Deseja executar função: conteudo()? Digite sim ou não: " ).strip().lower()
         if resposta in ["sim","s","yes","y"]:
             artigo = conteudo()
-            
+
     # Verifica se o arquivo existe
     if os.path.exists(path):
         # Carrega o conteúdo existente do arquivo JSON
@@ -292,9 +255,7 @@ def up_article_json(artigo=None, path="newsroom/posts/data/articles.json"):
 
     return "ARQUIVO ATUALIZADO: article.json"
 
-
 """ FINALIZAR PROCESSO """
-
 
 def mover_arquivos():
     """
@@ -337,7 +298,6 @@ def mover_arquivos():
 
     return {destino_final, "\nProcesso finalizado!"}
 
-
 def excluir_arquivos(resposta="Não", path="newsroom/posts/article/"):
     resposta = str(input("Deseja EXCLUIR os arquivos? Sim ou Não: ")).strip().lower()
     if resposta in ["sim", "s"]:
@@ -358,5 +318,5 @@ def excluir_arquivos(resposta="Não", path="newsroom/posts/article/"):
             f"Processo NÃO excluiu os arquivos. Resposta '{resposta}' diferente de Sim"
         )
 
-
 """ TESTANDO A FUNÇÃO """
+# print(conteudo())
