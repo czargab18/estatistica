@@ -1,1 +1,0 @@
-# Função para automatizar template de banners personalizados

@@ -51,6 +51,15 @@
       ```
 Seguindo esses passos, você configurará o Prettier para formatar automaticamente seus arquivos ao salvar e também poderá executá-lo manualmente quando necessário.
 
+## rodar os códigos
 
-# Referência:
+```{sh}
+  npm install -g prettier
+```
+Formatar todos os arquivos HTML no repositório usando Prettier
+```{sh}
+  prettier --write "**/*.html"
+```
+
+## Referência:
 - www.github.com/copilot/
