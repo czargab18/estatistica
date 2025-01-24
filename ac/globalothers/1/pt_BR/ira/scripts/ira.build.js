@@ -41,7 +41,6 @@ function criaPeriodo() {
 
   adicionarDisciplina(periodoCount);
 }
-
 function removerPeriodo(periodoId) {
   const periodoDiv = document.getElementById(`periodo${periodoId}`);
   if (periodoDiv) {
@@ -50,7 +49,6 @@ function removerPeriodo(periodoId) {
     periodoCount--;
   }
 }
-
 function adicionarDisciplina(periodoId) {
   if (disciplinaCount[periodoId] >= maxDisciplinas) {
     alert(`Você atingiu o limite máximo de ${maxDisciplinas} disciplinas para este período.`);
@@ -129,7 +127,6 @@ function adicionarDisciplina(periodoId) {
 
   adicionarEventosParaMonitoramento(periodoId, disciplinaId);
 }
-
 function removerDisciplina(periodoId, disciplinaId) {
   const disciplinaDiv = document.getElementById(`periodo${periodoId}-disciplina${disciplinaId}-preencher`);
   if (disciplinaDiv) {
@@ -137,7 +134,6 @@ function removerDisciplina(periodoId, disciplinaId) {
     disciplinaCount[periodoId]--;
   }
 }
-
 function determinarStatus(mencao) {
   const aprovadas = ["MM", "MS", "SS"];
   return aprovadas.includes(mencao) ? "Aprovado" : "Reprovado";
@@ -193,39 +189,6 @@ function calcularIRA() {
   console.log(`IRA calculado: ${ira.toFixed(2)}`);
   return ira;
 }
-function coletaDados() {
-  const dados = {};
-  for (let p = 1; p <= periodoCount; p++) {
-    const periodoDiv = document.getElementById(`periodo${p}`);
-    if (!periodoDiv) continue;
-    dados[`Periodo ${p}`] = [];
-    for (let d = 1; d <= (disciplinaCount[p] || 0); d++) {
-      const codigo = document.getElementById(
-        `periodo${p}-disciplina${d}-codigo`
-      )?.value || "";
-      const creditos = parseInt(
-        document.getElementById(`periodo${p}-disciplina${d}-creditos`)?.value || 0
-      );
-      const mencao = document.getElementById(
-        `periodo${p}-disciplina${d}-mencao`
-      )?.value || "";
-      const status = document.getElementById(
-        `status-${p}-${d}`
-      )?.textContent || "Incompleto";
-      if (codigo && creditos > 0 && mencao) {
-        dados[`Periodo ${p}`].push({
-          codigo: codigo,
-          mencao: mencao,
-          creditos: creditos,
-          status: status
-        });
-      }
-    }
-  }
-
-  console.log(dados);
-  return dados;
-}
 function atualizarIRA() {
   let totalCreditos = 0;
   let creditosAprovados = 0;
@@ -267,7 +230,6 @@ function adicionarEventosParaMonitoramento(periodo, disciplina) {
     calcularIRA();
   });
 }
-
 function formatarCodigo(input) {
   let valor = input.value.replace(/[^A-Za-z0-9]/g, '');
   if (valor.length > 3) {
@@ -277,7 +239,6 @@ function formatarCodigo(input) {
   }
   input.value = valor.slice(0, 7);
 }
-
 function coletaDados() {
   const dados = {};
   for (let p = 1; p <= periodoCount; p++) {
@@ -300,14 +261,47 @@ function coletaDados() {
   }
   return dados;
 }
+function coletaDados() {
+  const dados = {};
+  for (let p = 1; p <= periodoCount; p++) {
+    const periodoDiv = document.getElementById(`periodo${p}`);
+    if (!periodoDiv) continue;
+    dados[`Periodo ${p}`] = [];
+    for (let d = 1; d <= (disciplinaCount[p] || 0); d++) {
+      const codigo = document.getElementById(
+        `periodo${p}-disciplina${d}-codigo`
+      )?.value || "";
+      const creditos = parseInt(
+        document.getElementById(`periodo${p}-disciplina${d}-creditos`)?.value || 0
+      );
+      const mencao = document.getElementById(
+        `periodo${p}-disciplina${d}-mencao`
+      )?.value || "";
+      const status = document.getElementById(
+        `status-${p}-${d}`
+      )?.textContent || "Incompleto";
+      if (codigo && creditos > 0 && mencao) {
+        dados[`Periodo ${p}`].push({
+          codigo: codigo,
+          mencao: mencao,
+          creditos: creditos,
+          status: status
+        });
+      }
+    }
+  }
 
+  console.log(dados);
+  return dados;
+}
 function verificarPreenchimento() {
   const dados = coletaDados();
-  const botaoBaixar = document.getElementById("botao-baixar");
+  const botoesBaixar = document.querySelectorAll("#botao-baixar");
   let preenchido = Object.values(dados).some(periodo => periodo.length > 0);
-  botaoBaixar.style.display = preenchido ? "block" : "none";
+  botoesBaixar.forEach(botao => {
+    botao.style.display = preenchido ? "block" : "none";
+  });
 }
-
 function baixarDados() {
   const dados = coletaDados();
   const json = JSON.stringify(dados, null, 2);
@@ -318,32 +312,7 @@ function baixarDados() {
   a.download = "dados.json";
   a.click();
 }
-
 document.addEventListener("DOMContentLoaded", () => {
-  const footer = document.querySelector("footer");
-  if (footer) {
-    let avisosDiv = footer.querySelector(".avisos");
-    if (!avisosDiv) {
-      avisosDiv = document.createElement("div");
-      avisosDiv.className = "avisos";
-      footer.appendChild(avisosDiv);
-    }
-
-    const paragrafo = footer.querySelector("p");
-
-    const botaoBaixar = document.createElement("button");
-    botaoBaixar.id = "botao-baixar";
-    botaoBaixar.className = "btn btn-success";
-    botaoBaixar.style.display = "none";
-    botaoBaixar.textContent = "Baixar Dados";
-    botaoBaixar.onclick = baixarDados;
-
-    avisosDiv.appendChild(botaoBaixar);
-    if (paragrafo) {
-      avisosDiv.appendChild(paragrafo);
-    }
-  }
-
   const linhaSuperior = document.getElementById('linhaSuperior');
   if (linhaSuperior) {
     const botaoNovoPeriodo = linhaSuperior.querySelector('#novoPeriodo');
@@ -365,7 +334,6 @@ document.addEventListener("DOMContentLoaded", () => {
     container.addEventListener('change', verificarPreenchimento);
   }
 });
-
 function verificarPreenchimento() {
   const dados = coletaDados();
   const botoesBaixar = document.querySelectorAll("#botao-baixar");
