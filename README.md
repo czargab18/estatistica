@@ -2,7 +2,7 @@
 
 Bem vindo ao repositório sobre Estatística. Ele se destinará a todos os estudantes que desejam ingressar neste universo maravilho. Além de conter informações sobre o [Departamento de Estatistica](https://est.unb.br) da [Universidade de Brasília](https://www.unb.br).
 
-- [desenvolvimento website] : [https://www.estatistica.pro](https://estatistica.pro/)
+- [desenvolvimento website] : [https://estatistica.pro/](https://www.estatistica.pro/)
 
 ## O que é este repositório
 Utilizarei esta plataforma para escrever o que aprendo e me interesso nessa área. Tentare ser organizado.
