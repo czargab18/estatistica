@@ -23,19 +23,19 @@ def tentar():
     resposta = verificacao(pergunta)
     return resposta
 
-def existe(folder="newsroom/posts/article/"):
+def existe(folder="backend/scripts/newsroom/posts/article/"):
     """
     Função que verifica se a pasta desejada existe.
-     - folder: str, nome da pasta. Padrão: 'newsroom/posts/article/'
+     - folder: str, nome da pasta. Padrão: 'backend/scripts/newsroom/posts/article/'
     """
     pergunta = input(f"Há conteúdo na pasta {folder}? Digite Sim ou Não: ").lower()
     resposta = verificacao(pergunta)
     return resposta
 
-def ler_nome_file(path="newsroom/posts/article/"):
+def dados_nome(path="backend/scripts/newsroom/posts/article/"):
     """
     Função que retorna o mês, o ano e o nome do arquivo .txt, sem a extensão, a partir do caminho fornecido.
-    exemplo-padrão: "newsroom/posts/article/mes-ano.txt"
+    exemplo-padrão: "backend/scripts/newsroom/posts/article/mes-ano.txt"
      - mes: vai de 1 até 12
      - ano: exemplo 2025
     """
@@ -48,26 +48,31 @@ def ler_nome_file(path="newsroom/posts/article/"):
     match = re.match(r"(0?[1-9]|1[0-2])-(\d{4})", nome_arquivo)
     if match:
         mes, ano = match.groups()
-        return {
+        dados = {
             "mes": str(mes),
             "ano": str(ano),
-            "nome_arquivo": nome_arquivo_com_extensao,
+            "nome": nome_arquivo_com_extensao,
         }
+        return dados
     else:
         raise ValueError("O nome do arquivo não está no formato esperado 'mes-ano'.")
 
-def ler_conteudo_arquivo(path="newsroom/posts/article/"):
+
+def ler_conteudo_arquivo(path="backend/scripts/newsroom/posts/article/"):
     """
     Função que lê o arquivo e retorna o conteúdo do arquivo dentro de um objeto.
      - path: str, nome do arquivo a ser lido.
     """
     try:
+        dados_arquivo = dados_nome()
+        path = os.path.join(path, dados_arquivo["nome"])
         with open(path, "r") as arquivo:
             conteudo = arquivo.read()
             return {"path": path, "conteudo": conteudo}
     except FileNotFoundError:
         print(f"Erro: O arquivo '{path}' não foi encontrado.")
         return {"path": path, "conteudo": None}
+
 
 def gen_identificador():
     length = 9
@@ -77,7 +82,8 @@ def gen_identificador():
         identificador += random.choice(characters)
     return identificador
 
-def path_article(data, identificador):
+
+def path_article(data, identificador, pais="pt_BR"):
     """
     Função que gera o caminho para um artigo baseado no identificador, ano, mês e nome do arquivo.
     """
@@ -86,13 +92,14 @@ def path_article(data, identificador):
 
     # Caminho final
     path = os.path.join(
-        "/articles/pt_BR/",
+        f"/newsroom/articles/{pais}/",
         ano + "/",
         mes.zfill(2) + "/",
         dia + "/",
         identificador + "/",
     )
     return path
+
 
 def codigo():
     resposta = str(input("Código da disciplina (ex. EST0042): ")).strip().upper()
@@ -131,8 +138,8 @@ def ocultar():
 
 """ FUNÇÃO RECEBER DADOS ITERAÇÃO """
 
-def conteudo(tipos=["introducao", "conclusao", "resumo"]):
-
+def conteudo(tipos=["introducao", "desenvolvimento","conclusao", "rodape"]):
+   
     identificador = gen_identificador()
     titulo = str(input("Forneça o título: ")).strip().lower()
     subtitulo = str(input("Forneça o subtítulo: ")).strip().lower()
@@ -148,7 +155,7 @@ def conteudo(tipos=["introducao", "conclusao", "resumo"]):
     )
 
     # Coleta de conteúdo
-    tipos_validos = ["introducao", "conclusao", "resumo"]
+    tipos_validos = ["introducao", "desenvolvimento","conclusao", "rodape"]
     for tipo in tipos:
         if tipo not in tipos_validos:
             raise ValueError(
@@ -216,7 +223,7 @@ def conteudo(tipos=["introducao", "conclusao", "resumo"]):
 
 """ MANIPULAR DADOS DO article.json """
 
-def up_article_json(artigo=None, path="newsroom/posts/data/articles.json"):
+def up_article_json(artigo=None, path="/newsroom/posts/data/articles.json"):
     """
     Atualiza o arquivo JSON com o novo conteúdo fornecido, adicionando-o como o primeiro índice.
 
@@ -257,7 +264,8 @@ def up_article_json(artigo=None, path="newsroom/posts/data/articles.json"):
 
 """ FINALIZAR PROCESSO """
 
-def mover_arquivos():
+
+def mover(pais="pt_BR"):
     """
     Função que copia todo o conteúdo de uma pasta, incluindo subpastas e arquivos, para outra pasta.
     Antes de mover, cria uma pasta que receberá como nome o valor do identificador.
@@ -265,40 +273,33 @@ def mover_arquivos():
     resposta = str(input("Deseja MOVER os arquivos? Sim ou Não: ")).strip().lower()
     if resposta in ["sim", "s"]:
         # Pastas de origem e destino
-        origem_base = "newsroom/posts/article/"
-        destino_base = "articles/pt_BR/"
-        src_subpasta = os.path.join(origem_base, "src")
+        dados_nome_arquivo = dados_nome()
+        mes= dados_nome_arquivo["mes"]
+        ano= dados_nome_arquivo["ano"]
+        origem = "backend/scripts/newsroom/posts/article/"
+        destino = os.path.join(f"newsroom/articles/{pais}", ano + "/", mes + "/")
 
-        # Gera o identificador
-        identificador = gen_identificador()
+        # Cria a pasta de destino se não existir
+        if not os.path.exists(destino):
+            os.makedirs(destino)
 
-        # Obtém o nome do arquivo .txt e as informações de ano e mês
-        arquivo_info = ler_nome_file(origem_base)
-        ano = str(arquivo_info["ano"])
-        mes = str(arquivo_info["mes"])
+        # Move todos os arquivos e subpastas da origem para o destino
+        for item in os.listdir(origem):
+            s = os.path.join(origem, item)
+            d = os.path.join(destino, item)
+            if os.path.isdir(s):
+                shutil.move(s, d)
+            else:
+                shutil.move(s, d)
 
-        # Caminhos
-        src_arquivo = os.path.join(origem_base, arquivo_info["nome_arquivo"])
-        destino_final = os.path.join(
-            destino_base, ano + "/", mes + "/", identificador + "/"
-        )
-
-        # Cria a pasta do identificador dentro da estrutura de pasta existente
-        os.makedirs(destino_final, exist_ok=True)
-
-        # Copia a subpasta e seus arquivos
-        shutil.copytree(
-            src_subpasta, os.path.join(destino_final, "src"), dirs_exist_ok=True
-        )
-
-        # Copia o arquivo .txt
-        shutil.copy(src_arquivo, destino_final)
+        return f"Arquivos movidos com sucesso para {destino}."
     else:
         return f"Processo NÃO FEZ NADA com os arquivos. Resposta '{resposta}' diferente de 'Sim'."
 
-    return {destino_final, "\nProcesso finalizado!"}
 
-def excluir_arquivos(resposta="Não", path="newsroom/posts/article/"):
+print(mover())
+
+def excluir_arquivos(resposta="Não", path="backend/scripts/newsroom/posts/article/"):
     resposta = str(input("Deseja EXCLUIR os arquivos? Sim ou Não: ")).strip().lower()
     if resposta in ["sim", "s"]:
         try:
