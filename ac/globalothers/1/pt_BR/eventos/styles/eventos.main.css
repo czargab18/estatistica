@@ -1,0 +1,105 @@
+body > nav, body > header, body > main, body > footer, body > div {
+    width: 100%;
+    max-width: 2560px;
+}
+
+.main [data-module-template="heroes"] {
+  width: 100%;
+}
+section[data-module-template="heroes"] {
+  display: flex;
+  overflow: hidden;
+  flex-direction: column;
+  align-items: center;
+  gap: 1em;
+}
+
+[data-module-template="heroes"] [id="eventos"] {
+  width: 100%;
+}
+
+[id="eventos"] [id="modulo-content"] {
+  background-size: 3008px 624px;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+[data-module-template] [data-unit-id] .unit-wrapper {
+  --content-height: 580px;
+  height: var(--content-height);
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+div .unit-wrapper {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  gap: 2px;
+  background-color: gold;
+}
+div[class="unit-copy-warpper"] {
+  margin-top: 42px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: absolute;
+  text-align: center;
+  z-index: 5;
+  user-select: none;
+}
+
+div[class="unit-copy-warpper"] div[class="content-cta-links"] {
+  display: inline-flex;
+  gap: 1em;
+  justify-content: center;
+}
+
+[data-module-template] [data-unit-id] .unit-wrapper a.unit-link {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+a:link,
+a:visited,
+.link:link,
+.link:visited {
+  text-decoration: none;
+}
+
+a,
+.link {
+  color: #06c;
+  letter-spacing: inherit;
+}
+
+[data-module-template] [data-unit-id] .unit-wrapper {
+  --content-height: 580px;
+  height: var(--content-height);
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  overflow: hidden;
+  justify-content: center;
+}
+
+/* Background Color Animated */
+
+
