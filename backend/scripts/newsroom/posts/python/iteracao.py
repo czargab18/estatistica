@@ -1,1 +1,1 @@
-from posts.python.utils import *
+from utils import *
