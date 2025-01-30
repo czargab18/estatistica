@@ -1,0 +1,8 @@
+User-agent: *
+Disallow: /.automacao/
+Disallow: /backend/
+Disallow: /backend/data/
+Disallow: /backend/scripts/newsroom/posts/
+
+# Caminho do sitemap.xml
+Sitemap: https://www.estatistica.pro/sd/seo/sitemap.xml
