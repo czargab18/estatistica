@@ -1,10 +1,45 @@
+# import os
+# import shutil
+# import glob
+# import re
+# import json
+# import random
+# import string
+
+# AUTOMACAO PERGUNTAS: ( VERIFICAR & TENTAR ) NOVAMENTE
+
 import os
-import shutil
-import glob
-import re
-import json
-import random
 import string
+import random
+import json
+import re
+import glob
+import shutil
+def perguntas(opcao: str, pergunta: str, resposta: str):
+    """
+     * Automatizar perguntas e verificação:
+     * - (1) 'Perguntar qualquer coisa'
+     * - (2) 'Pergunta: Tentar Novamente'
+    """
+    def verificar_resposta(resposta):
+        if resposta in ["sim", "s", "yes", "y"]:
+            return True
+        elif resposta in ["não", "nao", "n", "no", "ñ"]:
+            return False
+        else:
+            return None
+
+    if opcao in ["p", "pergunta"]:
+        resposta = input(f'{pergunta}? (s/n): ').lower().strip()
+        return verificar_resposta(resposta)
+
+    elif opcao in ["t", "tentar"]:
+        resposta = input(f'{pergunta}? (s/n): ').lower().strip()
+        return verificar_resposta(resposta)
+
+    else:
+        return None
+
 
 """ FUNÇÕES ÚTEIS """
 
