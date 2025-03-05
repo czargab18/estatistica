@@ -64,3 +64,5 @@ git commit -m 'padrao(acao): mensagem' -m 'descrição detalhada.'
   - Exemplo: `feature: adiciona suporte a notificações push`
   - Exemplo: `feature: implementa sistema de comentários`
   - Exemplo: `feature: adiciona integração com API externa`
+
+- `pacotes`: referente a pacotes de funções

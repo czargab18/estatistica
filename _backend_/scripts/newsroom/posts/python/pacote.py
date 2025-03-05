@@ -2,6 +2,7 @@
  * Pacote de funções para automatizar criação de artiglos para o site:
  * AINDA NÃO SERÁ 100% AUTOMATIZADO. PRECISAREI FAZER MUITAS COISAS MANUALMENTE
 """
+
 import glob
 import shutil
 import os
@@ -9,17 +10,10 @@ import re
 import json
 import string
 import random
-import utils
 
-# Função para capturar informações de um artigo
-# Passos do scripts e funções
-
-
-def perguntas(opcao: str, pergunta: str, resposta: str):
+def fazer_pergunta(opcao: str, pergunta: str):
     """
-     * Automatizar perguntas e verificação:
-     * - (1) 'Perguntar qualquer coisa'
-     * - (2) 'Pergunta: Tentar Novamente'
+    Função para automatizar perguntas e verificação.
     """
     def verificar_resposta(resposta):
         if resposta in ["sim", "s", "yes", "y"]:
@@ -29,42 +23,10 @@ def perguntas(opcao: str, pergunta: str, resposta: str):
         else:
             return None
 
-    if opcao in ["p", "pergunta"]:
-        resposta = input(f'{pergunta}? (s/n): ').lower().strip()
-        return verificar_resposta(resposta)
-
-    elif opcao in ["t", "tentar"]:
-        resposta = input(f'{pergunta}? (s/n): ').lower().strip()
-        return verificar_resposta(resposta)
-
-    else:
-        return None
+    resposta = input(f'{pergunta}? (s/n): ').lower().strip()
+    return verificar_resposta(resposta)
 
 
-def verificacao(pergunta):
-    """
-    Verifica se a resposta é sim ou não
-    """
-    if pergunta in ["sim", "s"]:
-        return True
-    else:
-        if pergunta in ["não", "nao", "n"]:
-            return False
-
-
-def tentar():
-    pergunta = input("Deseja tentar novamente? Digite Sim ou Não: ").lower()
-    resposta = verificacao(pergunta)
-    return resposta
-
-
-def gen_identificador():
-    length = 9
-    characters = string.ascii_lowercase + "123456789"
-    identificador = ""
-    for _ in range(length):
-        identificador += random.choice(characters)
-    return identificador
 
 def path_article(data, identificador, pais="pt_BR"):
     """
@@ -73,7 +35,6 @@ def path_article(data, identificador, pais="pt_BR"):
     data = data.replace('-', ' ')
     dia, mes, ano = map(str, data.split())
 
-    # Caminho final
     path = os.path.join(
         f"/newsroom/articles/{pais}/",
         ano + "/",
@@ -83,188 +44,117 @@ def path_article(data, identificador, pais="pt_BR"):
     )
     return path
 
+
 def codigo():
-    resposta = str(input("Código da disciplina (ex. EST0042): ")
-                   ).strip().upper()
+    resposta = str(input("Código da disciplina (ex. EST0042): ")).strip().upper()
     padrao = bool(re.compile(r"^[A-Z]{3}\d{4}$").match(resposta))
 
-    if padrao == True:
+    if padrao:
         return resposta
     else:
-        print(
-            f"O código '{resposta}' não segue o padrão de 3 letras e 4 digitos! ex. EST0043"
-        )
-        resp = utils.tentar()
-        if resp == True:
-            resposta = codigo()
+        print(f"O código '{resposta}' não segue o padrão de 3 letras e 4 digitos! ex. EST0043")
+        if fazer_pergunta("t", "Deseja tentar novamente"):
+            return codigo()
         else:
-            print(
-                f"Usuário informou codigo inválido! Resposta fornecida (em maiúscula): {resposta}")
             return f"Usuário informou codigo inválido! Resposta fornecida (em maiúscula): {resposta}"
-    return resposta
 
-# - Funções para captura as informações separadamente
 
 def import_article():
-  """
-   * Função para importar o artigo
-  """
-  with open('scripts\\newsroom\\posts\\article\\artigo.txt', 'r', encoding='utf-8') as file:
-    article = file.read()
+    with open('scripts\\newsroom\\posts\\article\\artigo.txt', 'r', encoding='utf-8') as file:
+        article = file.read()
     return article
 
-def get_title(article):
-  """
-   * Função para capturar o título do artigo
-  """
-  title = re.search(r'Titulo:\s*(.*)\s*;', article).group(1)
-  return title
 
-def get_subtitle(article):
-  """
-   * Função para capturar o subtítulo do artigo
-  """
-  subtitle = re.search(r'Subtitulo:\s*(.*)\s*;', article).group(1)
-  return subtitle
+def identificador_existe(identificador):
+    try:
+        with open('data/articles.json', 'r', encoding='utf-8') as file:
+            data = json.load(file)
+            return identificador in data
+    except FileNotFoundError:
+        return False
 
-def get_date(article):
-  """
-   * Função para capturar a data do artigo
-  """
-  date = re.search(r'data:\s*(.*)\s*', article).group(1)
-  return date
+def gen_identificador():
+    length = 9
+    characters = string.ascii_lowercase + "123456789"
+    identificador = "".join(random.choice(characters) for _ in range(length))
+    
+    # Verificar se o identificador já existe no JSON
+    while identificador_existe(identificador):
+        identificador = "".join(random.choice(characters) for _ in range(length))
+    
+    return identificador
 
-def get_author(article):
-  """
-   * Função para capturar o autor do artigo
-  """
-  author = re.search(r'autor:\s*(.*)\s*', article).group(1)
-  return author
 
-def get_tags(article):
-  """
-   * Função para capturar as tags do artigo
-  """
-  tags = re.search(r'tags:\s*(.*)\s*', article).group(1).split(', ')
-  return tags
+def get_article_info(article):
+    """
+    Função para capturar todas as informações do artigo.
+    """
+    info = {
+        "titulo": re.search(r'Titulo:\s*(.*)\s*;', article).group(1),
+        "subtitulo": re.search(r'Subtitulo:\s*(.*)\s*;', article).group(1),
+        "data": re.search(r'data:\s*(.*)\s*', article).group(1),
+        "autor": re.search(r'autor:\s*(.*)\s*', article).group(1),
+        "tags": re.search(r'tags:\s*(.*)\s*', article).group(1).split(', '),
+        "categoria": re.search(r'categoria:\s*(.*)\s*', article).group(1),
+        "resumo": re.search(r'resumo:\s*(.*)\s*', article).group(1),
+        "imagens": [img.strip() for img in re.search(r'imagem:\s*\[(.*?)\]\s*', article, re.DOTALL).group(1).split('; ') if img.strip()],
+        "introducao": get_section(article, 'Introdução'),
+        "desenvolvimento": get_section(article, 'Desenvolvimento'),
+        "conclusao": get_section(article, 'Conclusão'),
+        "rodape": get_section(article, 'Rodapé')
+    }
+    return info
 
-def get_category(article):
-  """
-   * Função para capturar a categoria do artigo
-  """
-  category = re.search(r'categoria:\s*(.*)\s*', article).group(1)
-  return category
-
-def get_summary(article):
-  """
-   * Função para capturar o resumo do artigo
-  """
-  summary = re.search(r'resumo:\s*(.*)\s*', article).group(1)
-  return summary
-
-def get_images(article):
-  """
-   * Função para capturar as imagens do artigo
-  """
-  match = re.search(r'imagem:\s*\[(.*?)\]\s*', article, re.DOTALL)
-  if match:
-    images = match.group(1).split('; ')
-    return [img.strip() for img in images if img.strip()]
-  return []
 
 def get_section(article, section_name):
-  """
-   * Função para capturar uma seção do artigo
-  """
-  pattern = rf'--- inicio {section_name} ---\s*(.*?)\s*--- fim {section_name} ---'
-  match = re.search(pattern, article, re.DOTALL)
-  if match:
-    return match.group(1).strip()
-  return ''
+    pattern = rf'--- inicio {section_name} ---\s*(.*?)\s*--- fim {section_name} ---'
+    match = re.search(pattern, article, re.DOTALL)
+    if match:
+        return match.group(1).strip()
+    return ''
 
-def get_introduction(article):
-  return get_section(article, 'Introdução')
-
-def get_development(article):
-  return get_section(article, 'Desenvolvimento')
-
-def get_conclusion(article):
-  return get_section(article, 'Conclusão')
-
-def get_footer(article):
-  return get_section(article, 'Rodapé')
 
 def extract_article_info():
-  """
-   * Função para agrupar todas as funções de captura de informações
-   * e chamar cada uma delas
-  """
-  article = import_article()
-  info = {
-    "titulo": get_title(article),
-    "subtitulo": get_subtitle(article),
-    "data": get_date(article),
-    "autor": get_author(article),
-    "tags": get_tags(article),
-    "categoria": get_category(article),
-    "resumo": get_summary(article),
-    "imagens": get_images(article),
-    "introducao": get_introduction(article),
-    "desenvolvimento": get_development(article),
-    "conclusao": get_conclusion(article),
-    "rodape": get_footer(article)
-  }
-  return info
+    article = import_article()
+    return get_article_info(article)
+
 
 def save_article_info_to_json(article_info, identificador):
-  """
-   * Função para salvar as informações do artigo no arquivo JSON
-  """
-  # Estrutura do JSON
-  article_data = {
-    identificador: {
-      "meta_info": {
-        "titulo": article_info["titulo"],
-        "subtitulo": article_info["subtitulo"],
-        "data": article_info["data"],
-        "autor": article_info["autor"],
-        "tags": article_info["tags"],
-        "categoria": article_info["categoria"],
-        "resumo": article_info["resumo"],
-        "imagem": article_info["imagens"]
-      },
-      "conteudo": {
-        "introducao": article_info["introducao"].split('\n'),
-        "desenvolvimento": article_info["desenvolvimento"].split('\n'),
-        "conclusao": article_info["conclusao"].split('\n'),
-        "rodape": article_info["rodape"].split('\n')
-      }
+    article_data = {
+        identificador: {
+            "meta_info": {
+                "titulo": article_info["titulo"],
+                "subtitulo": article_info["subtitulo"],
+                "data": article_info["data"],
+                "autor": article_info["autor"],
+                "tags": article_info["tags"],
+                "categoria": article_info["categoria"],
+                "resumo": article_info["resumo"],
+                "imagem": article_info["imagens"]
+            },
+            "conteudo": {
+                "introducao": article_info["introducao"].split('\n'),
+                "desenvolvimento": article_info["desenvolvimento"].split('\n'),
+                "conclusao": article_info["conclusao"].split('\n'),
+                "rodape": article_info["rodape"].split('\n')
+            }
+        }
     }
-  }
 
-  # Carregar o conteúdo existente do arquivo JSON
-  try:
-    with open('data/articles.json', 'r', encoding='utf-8') as file:
-      data = json.load(file)
-  except FileNotFoundError:
-    data = {}
+    try:
+        with open('data/articles.json', 'r', encoding='utf-8') as file:
+            data = json.load(file)
+    except FileNotFoundError:
+        data = {}
 
-  # Atualizar o conteúdo do JSON com o novo artigo
-  data.update(article_data)
+    data.update(article_data)
 
-  # Salvar o conteúdo atualizado no arquivo JSON
-  with open('data/articles.json', 'w', encoding='utf-8') as file:
-    json.dump(data, file, ensure_ascii=False, indent=2)
-
-  print(f"Artigo salvo com sucesso em data/articles.json")
-
+    with open('data/articles.json', 'w', encoding='utf-8') as file:
+        json.dump(data, file, ensure_ascii=False, indent=2)
 
 def clean_json_data(json_data):
-    """
-    Função para tratar as informações do JSON, removendo os caracteres de escape.
-    """
     def clean_string(s):
-        return s.replace('\n', '').replace('\t', '').replace('\r', '').replace('\"', '').strip()
+        return s.replace('\n', '').replace('\t', '').replace('\r', '').replace('\"', '').replace('<p>', '').strip()
 
     def clean_list(lst):
         return [clean_string(item) for item in lst]
@@ -282,10 +172,8 @@ def clean_json_data(json_data):
 
     return cleaned_data
 
+
 def load_and_clean_json(filepath):
-    """
-    Função para carregar o JSON do arquivo, limpar os dados e salvar de volta no arquivo.
-    """
     with open(filepath, 'r', encoding='utf-8') as file:
         data = json.load(file)
 
@@ -294,40 +182,34 @@ def load_and_clean_json(filepath):
     with open(filepath, 'w', encoding='utf-8') as file:
         json.dump(cleaned_data, file, ensure_ascii=False, indent=2)
 
+
 # Exemplo de uso
 article_info = extract_article_info()
 identificador = gen_identificador()
 save_article_info_to_json(article_info, identificador)
 
 for key, value in article_info.items():
-  print(f"{key}: {value}")
+    print(f"{key}: {value}")
 
 load_and_clean_json('data/articles.json')
 
 
-# RESTOES DE FUNÇÕES =================================
+# Salvar informações do artigo em um HTML
 
 
-""" FUNÇÕES ÚTEIS """
+
+
+#################### OUTRAS FUNÇÕES ###
+
 
 def existe(folder="backend/scripts/newsroom/posts/article/"):
-    """
-    Função que verifica se a pasta desejada existe.
-     - folder: str, nome da pasta. Padrão: 'backend/scripts/newsroom/posts/article/'
-    """
     pergunta = input(
         f"Há conteúdo na pasta {folder}? Digite Sim ou Não: ").lower()
-    resposta = verificacao(pergunta)
+    resposta = fazer_pergunta("p", pergunta)
     return resposta
 
 
 def dados_nome(path="backend/scripts/newsroom/posts/article/"):
-    """
-    Função que retorna o mês, o ano e o nome do arquivo .txt, sem a extensão, a partir do caminho fornecido.
-    exemplo-padrão: "backend/scripts/newsroom/posts/article/mes-ano.txt"
-     - mes: vai de 1 até 12
-     - ano: exemplo 2025
-    """
     arquivos_txt = glob.glob(os.path.join(path, "*.txt"))
     if not arquivos_txt:
         raise FileNotFoundError(
@@ -350,10 +232,6 @@ def dados_nome(path="backend/scripts/newsroom/posts/article/"):
 
 
 def ler_conteudo_arquivo(path="backend/scripts/newsroom/posts/article/"):
-    """
-    Função que lê o arquivo e retorna o conteúdo do arquivo dentro de um objeto.
-     - path: str, nome do arquivo a ser lido.
-    """
     try:
         dados_arquivo = dados_nome()
         path = os.path.join(path, dados_arquivo["nome"])
@@ -365,17 +243,7 @@ def ler_conteudo_arquivo(path="backend/scripts/newsroom/posts/article/"):
         return {"path": path, "conteudo": None}
 
 
-
-""" EXTRAIR INFORMAÇÕES DO .txt """
-
-
-
-
-""" FUNÇÃO RECEBER DADOS ITERAÇÃO """
-
-
 def conteudo(tipos=["introducao", "desenvolvimento", "conclusao", "rodape"]):
-
     identificador = gen_identificador()
     titulo = str(input("Forneça o título: ")).strip().lower()
     subtitulo = str(input("Forneça o subtítulo: ")).strip().lower()
@@ -384,39 +252,24 @@ def conteudo(tipos=["introducao", "desenvolvimento", "conclusao", "rodape"]):
     codigo_disciplina = codigo()
     disciplina = str(input("Forneça o nome da disciplina: ")).strip().upper()
     path = path_article(data=data, identificador=identificador).strip().lower()
-    tags = (
-        str(input("Forneça as tags separadas por uma virgula ',': "))
-        .strip()
-        .lower()
-        .split(",")
-    )
+    tags = str(input("Forneça as tags separadas por uma virgula ',': ")
+               ).strip().lower().split(",")
 
-    # Coleta de conteúdo
     tipos_validos = ["introducao", "desenvolvimento", "conclusao", "rodape"]
     for tipo in tipos:
         if tipo not in tipos_validos:
             raise ValueError(
-                f"Tipo inválido. Use um dos seguintes: {', '.join(tipos_validos)}"
-            )
+                f"Tipo inválido. Use um dos seguintes: {', '.join(tipos_validos)}")
 
-    conteudo = {}
-    for tipo in tipos:
-        conteudo[tipo] = []
+    conteudo = {tipo: [] for tipo in tipos}
 
     for tipo in tipos:
         resposta = str(input(f"Tem {tipo}? ")).strip().lower()
 
         if resposta in ["sim", "s", "y", "yes"]:
             while True:
-                p_ou_f = (
-                    str(
-                        input(
-                            "Deseja inserir um paragrafo, figura ou link ? Digite p, f ou l. "
-                        )
-                    )
-                    .strip()
-                    .lower()
-                )
+                p_ou_f = str(input(
+                    "Deseja inserir um paragrafo, figura ou link ? Digite p, f ou l. ")).strip().lower()
                 if p_ou_f in ["paragrafo", "p"]:
                     string = str(input("Insira o seu paragrafo: ")).strip()
                     conteudo[tipo].append(string)
@@ -427,17 +280,13 @@ def conteudo(tipos=["introducao", "desenvolvimento", "conclusao", "rodape"]):
                     string = str(input("Insira o seu link: ")).strip()
                     conteudo[tipo].append(string)
 
-                continuar = (
-                    str(input("Deseja continuar inserindo? Digite sim ou não: "))
-                    .strip()
-                    .lower()
-                )
+                continuar = str(
+                    input("Deseja continuar inserindo? Digite sim ou não: ")).strip().lower()
                 if continuar not in ["sim", "s", "y", "yes"]:
                     break
         else:
             conteudo[tipo] = f"{tipo.capitalize()} sem conte\u00fado"
 
-    # Informações para o .JSON
     info_artigo = {
         identificador: {
             "meta_info": {
@@ -457,34 +306,13 @@ def conteudo(tipos=["introducao", "desenvolvimento", "conclusao", "rodape"]):
     return json.dumps(info_artigo, indent=2)
 
 
-""" ADICIONAR DADOS AO index.html """
-
-""" MANIPULAR DADOS DO article.json """
-
-
 def up_article_json(artigo=None, path="/newsroom/posts/data/articles.json"):
-    """
-    Atualiza o arquivo JSON com o novo conteúdo fornecido, adicionando-o como o primeiro índice.
-
-    Parâmetros:
-    artigo (dict): O novo conteúdo a ser adicionado ao arquivo JSON.
-    path (str): O caminho para o arquivo JSON a ser atualizado.
-
-    Retorna:
-    str: Mensagem indicando que o arquivo foi atualizado.
-    """
-    if artigo != None:
-        pass
-    else:
+    if artigo is None:
         print("Conteúdo do artigo não foi informado!")
-        resposta = input(
-            "Deseja executar função: conteudo()? Digite sim ou não: ").strip().lower()
-        if resposta in ["sim", "s", "yes", "y"]:
+        if fazer_pergunta("t", "Deseja executar função: conteudo()"):
             artigo = conteudo()
 
-    # Verifica se o arquivo existe
     if os.path.exists(path):
-        # Carrega o conteúdo existente do arquivo JSON
         with open(path, "r", encoding="utf-8") as file:
             try:
                 conteudo_existente = json.load(file)
@@ -493,28 +321,18 @@ def up_article_json(artigo=None, path="/newsroom/posts/data/articles.json"):
     else:
         conteudo_existente = {}
 
-    # Cria um novo dicionário com o novo conteúdo como primeiro índice
     conteudo_atualizado = {**artigo, **conteudo_existente}
 
-    # Escreve o conteúdo atualizado de volta ao arquivo JSON
     with open(path, "w", encoding="utf-8") as file:
         json.dump(conteudo_atualizado, file, ensure_ascii=False, indent=2)
 
     return "ARQUIVO ATUALIZADO: article.json"
 
 
-""" FINALIZAR PROCESSO """
-
-
 def mover(pais="pt_BR"):
-    """
-    Função que copia todo o conteúdo de uma pasta, incluindo subpastas e arquivos, para outra pasta.
-    Antes de mover, cria uma pasta que receberá como nome o valor do identificador.
-    """
     resposta = str(
         input("Deseja MOVER os arquivos? Sim ou Não: ")).strip().lower()
     if resposta in ["sim", "s"]:
-        # Pastas de origem e destino
         dados_nome_arquivo = dados_nome()
         mes = dados_nome_arquivo["mes"]
         ano = dados_nome_arquivo["ano"]
@@ -522,11 +340,9 @@ def mover(pais="pt_BR"):
         destino = os.path.join(
             f"newsroom/articles/{pais}", ano + "/", mes + "/")
 
-        # Cria a pasta de destino se não existir
         if not os.path.exists(destino):
             os.makedirs(destino)
 
-        # Move todos os arquivos e subpastas da origem para o destino
         for item in os.listdir(origem):
             s = os.path.join(origem, item)
             d = os.path.join(destino, item)
@@ -557,10 +373,4 @@ def excluir_arquivos(resposta="Não", path="backend/scripts/newsroom/posts/artic
         except Exception as e:
             return f"Erro ao excluir arquivos e pastas: {e}"
     else:
-        return (
-            f"Processo NÃO excluiu os arquivos. Resposta '{resposta}' diferente de Sim"
-        )
-
-
-""" TESTANDO A FUNÇÃO """
-# print(conteudo())
+        return f"Processo NÃO excluiu os arquivos. Resposta '{resposta}' diferente de Sim"
