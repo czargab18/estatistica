@@ -3,13 +3,13 @@
  * AINDA NÃO SERÁ 100% AUTOMATIZADO. PRECISAREI FAZER MUITAS COISAS MANUALMENTE
 """
 
-import glob
-import shutil
 import os
 import re
 import json
 import string
 import random
+from bs4 import BeautifulSoup, Comment
+import requests
 
 def fazer_pergunta(opcao: str, pergunta: str):
     """
@@ -25,7 +25,6 @@ def fazer_pergunta(opcao: str, pergunta: str):
 
     resposta = input(f'{pergunta}? (s/n): ').lower().strip()
     return verificar_resposta(resposta)
-
 
 
 def path_article(data, identificador, pais="pt_BR"):
@@ -59,8 +58,10 @@ def codigo():
             return f"Usuário informou codigo inválido! Resposta fornecida (em maiúscula): {resposta}"
 
 
-def import_article():
-    with open('scripts\\newsroom\\posts\\article\\artigo.txt', 'r', encoding='utf-8') as file:
+def import_article(filepath='scripts/newsroom/posts/article/artigo.txt'):
+    if not os.path.exists(filepath):
+        raise FileNotFoundError(f"Arquivo não encontrado: {filepath}")
+    with open(filepath, 'r', encoding='utf-8') as file:
         article = file.read()
     return article
 
@@ -77,11 +78,8 @@ def gen_identificador():
     length = 9
     characters = string.ascii_lowercase + "123456789"
     identificador = "".join(random.choice(characters) for _ in range(length))
-    
-    # Verificar se o identificador já existe no JSON
     while identificador_existe(identificador):
         identificador = "".join(random.choice(characters) for _ in range(length))
-    
     return identificador
 
 
@@ -196,181 +194,94 @@ load_and_clean_json('data/articles.json')
 
 # Salvar informações do artigo em um HTML
 
+def load_html_template(filepath):
+    with open(filepath, 'r', encoding='utf-8') as file:
+        return file.read()
 
+def save_article_to_html(article_info, template_html, output_filepath):
+    soup = BeautifulSoup(template_html, 'html.parser')
 
+    # Lista de meta tags a serem ignoradas
+    ignore_tags = ['title', 'meta:viewport', 'meta:utf']
 
-#################### OUTRAS FUNÇÕES ###
-
-
-def existe(folder="backend/scripts/newsroom/posts/article/"):
-    pergunta = input(
-        f"Há conteúdo na pasta {folder}? Digite Sim ou Não: ").lower()
-    resposta = fazer_pergunta("p", pergunta)
-    return resposta
-
-
-def dados_nome(path="backend/scripts/newsroom/posts/article/"):
-    arquivos_txt = glob.glob(os.path.join(path, "*.txt"))
-    if not arquivos_txt:
-        raise FileNotFoundError(
-            "Nenhum arquivo .txt encontrado no caminho fornecido.")
-
-    nome_arquivo_com_extensao = os.path.basename(arquivos_txt[0])
-    nome_arquivo = os.path.splitext(nome_arquivo_com_extensao)[0]
-    match = re.match(r"(0?[1-9]|1[0-2])-(\d{4})", nome_arquivo)
-    if match:
-        mes, ano = match.groups()
-        dados = {
-            "mes": str(mes),
-            "ano": str(ano),
-            "nome": nome_arquivo_com_extensao,
-        }
-        return dados
+    # Atualizar as meta tags
+    meta_title = soup.find('meta', {'data-title-article': True})
+    if meta_title:
+        meta_title['data-title-article'] = article_info['titulo']
     else:
-        raise ValueError(
-            "O nome do arquivo não está no formato esperado 'mes-ano'.")
+        new_meta = soup.new_tag('meta', **{'data-title-article': article_info['titulo']})
+        soup.head.append(new_meta)
 
-
-def ler_conteudo_arquivo(path="backend/scripts/newsroom/posts/article/"):
-    try:
-        dados_arquivo = dados_nome()
-        path = os.path.join(path, dados_arquivo["nome"])
-        with open(path, "r") as arquivo:
-            conteudo = arquivo.read()
-            return {"path": path, "conteudo": conteudo}
-    except FileNotFoundError:
-        print(f"Erro: O arquivo '{path}' não foi encontrado.")
-        return {"path": path, "conteudo": None}
-
-
-def conteudo(tipos=["introducao", "desenvolvimento", "conclusao", "rodape"]):
-    identificador = gen_identificador()
-    titulo = str(input("Forneça o título: ")).strip().lower()
-    subtitulo = str(input("Forneça o subtítulo: ")).strip().lower()
-    data = str(input(
-        "Forneça a data no formato 'dia mês ano' (ex: 01 12 2026): ")).strip().lower()
-    codigo_disciplina = codigo()
-    disciplina = str(input("Forneça o nome da disciplina: ")).strip().upper()
-    path = path_article(data=data, identificador=identificador).strip().lower()
-    tags = str(input("Forneça as tags separadas por uma virgula ',': ")
-               ).strip().lower().split(",")
-
-    tipos_validos = ["introducao", "desenvolvimento", "conclusao", "rodape"]
-    for tipo in tipos:
-        if tipo not in tipos_validos:
-            raise ValueError(
-                f"Tipo inválido. Use um dos seguintes: {', '.join(tipos_validos)}")
-
-    conteudo = {tipo: [] for tipo in tipos}
-
-    for tipo in tipos:
-        resposta = str(input(f"Tem {tipo}? ")).strip().lower()
-
-        if resposta in ["sim", "s", "y", "yes"]:
-            while True:
-                p_ou_f = str(input(
-                    "Deseja inserir um paragrafo, figura ou link ? Digite p, f ou l. ")).strip().lower()
-                if p_ou_f in ["paragrafo", "p"]:
-                    string = str(input("Insira o seu paragrafo: ")).strip()
-                    conteudo[tipo].append(string)
-                elif p_ou_f in ["figure", "figura", "f"]:
-                    string = str(input("Insira o seu figura: ")).strip()
-                    conteudo[tipo].append(string)
-                else:
-                    string = str(input("Insira o seu link: ")).strip()
-                    conteudo[tipo].append(string)
-
-                continuar = str(
-                    input("Deseja continuar inserindo? Digite sim ou não: ")).strip().lower()
-                if continuar not in ["sim", "s", "y", "yes"]:
-                    break
-        else:
-            conteudo[tipo] = f"{tipo.capitalize()} sem conte\u00fado"
-
-    info_artigo = {
-        identificador: {
-            "meta_info": {
-                "identificador": identificador,
-                "titulo": titulo,
-                "subtitulo": subtitulo,
-                "data": data,
-                "codigo": codigo_disciplina,
-                "disciplina": disciplina,
-                "path": path,
-                "tags": tags,
-            },
-            "conteudo": conteudo,
-        }
-    }
-
-    return json.dumps(info_artigo, indent=2)
-
-
-def up_article_json(artigo=None, path="/newsroom/posts/data/articles.json"):
-    if artigo is None:
-        print("Conteúdo do artigo não foi informado!")
-        if fazer_pergunta("t", "Deseja executar função: conteudo()"):
-            artigo = conteudo()
-
-    if os.path.exists(path):
-        with open(path, "r", encoding="utf-8") as file:
-            try:
-                conteudo_existente = json.load(file)
-            except json.JSONDecodeError:
-                conteudo_existente = {}
+    meta_keywords = soup.find('meta', {'data-keywords-article': True})
+    if meta_keywords:
+        meta_keywords['data-keywords-article'] = ','.join(article_info['tags'])
     else:
-        conteudo_existente = {}
+        new_meta = soup.new_tag('meta', **{'data-keywords-article': ','.join(article_info['tags'])})
+        soup.head.append(new_meta)
 
-    conteudo_atualizado = {**artigo, **conteudo_existente}
-
-    with open(path, "w", encoding="utf-8") as file:
-        json.dump(conteudo_atualizado, file, ensure_ascii=False, indent=2)
-
-    return "ARQUIVO ATUALIZADO: article.json"
-
-
-def mover(pais="pt_BR"):
-    resposta = str(
-        input("Deseja MOVER os arquivos? Sim ou Não: ")).strip().lower()
-    if resposta in ["sim", "s"]:
-        dados_nome_arquivo = dados_nome()
-        mes = dados_nome_arquivo["mes"]
-        ano = dados_nome_arquivo["ano"]
-        origem = "backend/scripts/newsroom/posts/article/"
-        destino = os.path.join(
-            f"newsroom/articles/{pais}", ano + "/", mes + "/")
-
-        if not os.path.exists(destino):
-            os.makedirs(destino)
-
-        for item in os.listdir(origem):
-            s = os.path.join(origem, item)
-            d = os.path.join(destino, item)
-            if os.path.isdir(s):
-                shutil.move(s, d)
-            else:
-                shutil.move(s, d)
-
-        return f"Arquivos movidos com sucesso para {destino}."
+    meta_identificador = soup.find('meta', {'data-identificador-article': True})
+    if meta_identificador:
+        meta_identificador['data-identificador-article'] = article_info['identificador']
     else:
-        return f"Processo NÃO FEZ NADA com os arquivos. Resposta '{resposta}' diferente de 'Sim'."
+        new_meta = soup.new_tag('meta', **{'data-identificador-article': article_info['identificador']})
+        soup.head.append(new_meta)
 
-
-def excluir_arquivos(resposta="Não", path="backend/scripts/newsroom/posts/article/"):
-    resposta = str(
-        input("Deseja EXCLUIR os arquivos? Sim ou Não: ")).strip().lower()
-    if resposta in ["sim", "s"]:
-        try:
-            for item in os.listdir(path):
-                item_path = os.path.join(path, item)
-                if os.path.isdir(item_path):
-                    shutil.rmtree(item_path)
-                else:
-                    os.remove(item_path)
-            return f"Arquivos e pastas dentro de '{path}' foram excluídos."
-        except FileNotFoundError:
-            return f"Erro: O caminho '{path}' não foi encontrado."
-        except Exception as e:
-            return f"Erro ao excluir arquivos e pastas: {e}"
+    meta_autor = soup.find('meta', {'data-autor-article': True})
+    if meta_autor:
+        meta_autor['data-autor-article'] = article_info['autor']
     else:
-        return f"Processo NÃO excluiu os arquivos. Resposta '{resposta}' diferente de Sim"
+        new_meta = soup.new_tag('meta', **{'data-autor-article': article_info['autor']})
+        soup.head.append(new_meta)
+
+    meta_descricao = soup.find('meta', {'data-descricao-article': True})
+    if meta_descricao:
+        meta_descricao['data-descricao-article'] = article_info['resumo']
+    else:
+        new_meta = soup.new_tag('meta', **{'data-descricao-article': article_info['resumo']})
+        soup.head.append(new_meta)
+
+    meta_categoria = soup.find('meta', {'data-categoria-article': True})
+    if meta_categoria:
+        meta_categoria['data-categoria-article'] = article_info['categoria']
+    else:
+        new_meta = soup.new_tag('meta', **{'data-categoria-article': article_info['categoria']})
+        soup.head.append(new_meta)
+
+    # Atualizar os títulos
+    soup.find('h1', {'id': 'headline-regular-text'}).string = article_info['titulo']
+    soup.find('h2', {'id': 'headline1-regular-text'}).string = article_info['subtitulo']
+
+    # Atualizar as seções
+    def update_section(section_name, content):
+        section_meta = soup.find('meta', {'data-section-article': section_name})
+        if section_meta:
+            div = soup.new_tag('div', **{'class': 'pagebody-copy'})
+            for paragraph in content.split('\n'):
+                p_tag = BeautifulSoup(f"{paragraph}", 'html.parser')
+                div.append(p_tag)
+            section_meta.insert_after(div)
+
+    update_section('Introdução', article_info['introducao'])
+    update_section('Desenvolvimento', article_info['desenvolvimento'])
+    update_section('Conclusão', article_info['conclusao'])
+    update_section('Rodapé', article_info['rodape'])
+
+    # Remover comentários gerados pelo artigo
+    for comment in soup.find_all(string=lambda text: isinstance(text, Comment)):
+        if "Conteúdo da" in comment:
+            comment.extract()
+
+    # Garantir que o diretório de saída exista
+    os.makedirs(os.path.dirname(output_filepath), exist_ok=True)
+
+    # Salvar o HTML final
+    with open(output_filepath, 'w', encoding='utf-8') as file:
+        file.write(str(soup))
+
+# Exemplo de uso
+template_html = load_html_template('scripts/newsroom/posts/template.html')
+article_info = extract_article_info()
+identificador = gen_identificador()
+article_info['identificador'] = identificador  # Adicionar o identificador ao article_info
+save_article_to_html(article_info, template_html, 'scripts/newsroom/posts/index.html')
+
