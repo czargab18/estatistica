@@ -8,6 +8,32 @@ import string
 
 """ FUNÇÕES ÚTEIS """
 
+
+def perguntas(opcao: str, pergunta: str, resposta: str):
+    """
+     * Automatizar perguntas e verificação:
+     * - (1) 'Perguntar qualquer coisa'
+     * - (2) 'Pergunta: Tentar Novamente'
+    """
+    def verificar_resposta(resposta):
+        if resposta in ["sim", "s", "yes", "y"]:
+            return True
+        elif resposta in ["não", "nao", "n", "no", "ñ"]:
+            return False
+        else:
+            return None
+
+    if opcao in ["p", "pergunta"]:
+        resposta = input(f'{pergunta}? (s/n): ').lower().strip()
+        return verificar_resposta(resposta)
+
+    elif opcao in ["t", "tentar"]:
+        resposta = input(f'{pergunta}? (s/n): ').lower().strip()
+        return verificar_resposta(resposta)
+
+    else:
+        return None
+    
 def verificacao(pergunta):
     """
     Verifica se a resposta é sim ou não

@@ -1,19 +1,50 @@
 {
   "identificador": {
     "meta_info": {
-      "identificador": "identificador",
-      "titulo": "titulo",
-      "subtitulo": "subtitulo",
-      "data": "data",
-      "codigo": "codigo_disciplina",
-      "disciplina": "disciplina",
-      "path": "path",
-      "tags": ["tags","tags1","tags3"]
+      "titulo": "Titulo exemplo",
+      "subtitulo": "Subtitulo exemplo",
+      "data": "dia-da-publicação",
+      "autor": "autor do artigo",
+      "tags": [
+        "tag1",
+        "tag2",
+        "tag3"
+      ],
+      "categoria": "categoria do artigo",
+      "resumo": "resumo do artigo",
+      "imagem": [
+        "/src/nome-imagem-1.png",
+        "/src/nome-imagem-2.png",
+        "/src/formulas-artigo.tex"
+      ]
     },
     "conteudo": {
-      "introducao": "Introducao sem conteúdo",
-      "conclusao": "Conclusao sem conteúdo",
-      "resumo": "Resumo sem conteúdo"
+      "introducao": [
+        "Conteúdo do paragrafo 1",
+        "Conteúdo do paragrafo 2",
+        "Conteúdo do paragrafo 3",
+        "Conteúdo do paragrafo 4"
+      ],
+      "desenvolvimento": [
+        "Conteúdo do paragrafo 1",
+        "<a href=\"/src/formula-1.png\">",
+        "Conteúdo do paragrafo 2",
+        "<a href=\"/src/formula-2.png\">",
+        "Conteúdo do paragrafo 3",
+        "<a href=\"/src/formula-3.png\">",
+        "Conteúdo do paragrafo 4"
+      ],
+      "conclusao": [
+        "Conteúdo do paragrafo 1",
+        "Conteúdo do paragrafo 2",
+        "Conteúdo do paragrafo 3",
+        "Conteúdo do paragrafo 4"
+      ],
+      "rodape": [
+        "Conteúdo do paragrafo 1",
+        "Conteúdo do paragrafo 2",
+        "<a href=\"/src/nome-imagem.tex\" download>"
+      ]
     }
   }
 }

@@ -1,12 +1,15 @@
 Titulo: Titulo exemplo ;
 Subtitulo: Subtitulo exemplo ;
-
---- inicio Tags ---
-<t> tag1;
-<t> tag2;
-<t> tag3;
-<t> tag3;
---- fim Tags ---
+data: dia-da-publicação
+autor: autor do artigo
+tags: tag1, tag2, tag3, tag3
+categoria: categoria do artigo
+resumo: resumo do artigo
+imagem: [
+  /src/nome-imagem-1.png;
+  /src/nome-imagem-2.png;
+  /src/formulas-artigo.tex;
+]
 
 --- inicio Introdução ---
 <p> Conteúdo do paragrafo 1;
