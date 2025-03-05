@@ -322,9 +322,6 @@ def mover(pais="pt_BR"):
     else:
         return f"Processo NÃO FEZ NADA com os arquivos. Resposta '{resposta}' diferente de 'Sim'."
 
-
-print(mover())
-
 def excluir_arquivos(resposta="Não", path="backend/scripts/newsroom/posts/article/"):
     resposta = str(input("Deseja EXCLUIR os arquivos? Sim ou Não: ")).strip().lower()
     if resposta in ["sim", "s"]:

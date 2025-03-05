@@ -1,5 +1,5 @@
 {
-  "identificador": {
+  "pg8tw31p4": {
     "meta_info": {
       "titulo": "Titulo exemplo",
       "subtitulo": "Subtitulo exemplo",
@@ -8,42 +8,41 @@
       "tags": [
         "tag1",
         "tag2",
+        "tag3",
         "tag3"
       ],
       "categoria": "categoria do artigo",
       "resumo": "resumo do artigo",
       "imagem": [
-        "/src/nome-imagem-1.png",
-        "/src/nome-imagem-2.png",
-        "/src/formulas-artigo.tex"
+        "/src/nome-imagem-1.png;  /src/nome-imagem-2.png;  /src/formulas-artigo.tex;"
       ]
     },
     "conteudo": {
       "introducao": [
-        "Conteúdo do paragrafo 1",
-        "Conteúdo do paragrafo 2",
-        "Conteúdo do paragrafo 3",
-        "Conteúdo do paragrafo 4"
+        "<p> Conteúdo do paragrafo 1;",
+        "<p> Conteúdo do paragrafo 2;",
+        "<p> Conteúdo do paragrafo 3;",
+        "<p> Conteúdo do paragrafo 4;"
       ],
       "desenvolvimento": [
-        "Conteúdo do paragrafo 1",
-        "<a href=\"/src/formula-1.png\">",
-        "Conteúdo do paragrafo 2",
-        "<a href=\"/src/formula-2.png\">",
-        "Conteúdo do paragrafo 3",
-        "<a href=\"/src/formula-3.png\">",
-        "Conteúdo do paragrafo 4"
+        "<p> Conteúdo do paragrafo 1;",
+        "<a href=/src/formula-1.png>;",
+        "<p> Conteúdo do paragrafo 2;",
+        "<a href=/src/formula-2.png>;",
+        "<p> Conteúdo do paragrafo 3;",
+        "<a href=/src/formula-3.png>;",
+        "<p> Conteúdo do paragrafo 4;"
       ],
       "conclusao": [
-        "Conteúdo do paragrafo 1",
-        "Conteúdo do paragrafo 2",
-        "Conteúdo do paragrafo 3",
-        "Conteúdo do paragrafo 4"
+        "<p> Conteúdo do paragrafo 1;",
+        "<p> Conteúdo do paragrafo 2;",
+        "<p> Conteúdo do paragrafo 3;",
+        "<p> Conteúdo do paragrafo 4;"
       ],
       "rodape": [
-        "Conteúdo do paragrafo 1",
-        "Conteúdo do paragrafo 2",
-        "<a href=\"/src/nome-imagem.tex\" download>"
+        "<p> Conteúdo do paragrafo 1;",
+        "<p> Conteúdo do paragrafo 2;",
+        "<a href=/src/nome-imagem.tex download>"
       ]
     }
   }
