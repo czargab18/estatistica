@@ -87,6 +87,7 @@ if __name__ == "__main__":
         substituicoes = ["/estatistica/ac/", "/estatistica/wss/", "/estatistica/sd/"]
     else:
         print("Ambiente inválido. Use 'hospedagem', 'local' ou 'github_pages'.")
+        exit()
 
     substituir_texto_em_arquivos(diretorio_base, padroes_antigos, substituicoes)
 
