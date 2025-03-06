@@ -55,29 +55,78 @@ def verificacao(pergunta: str):
 ###____ FUNÇÕES: extração para JSON ____###
 
 def identificador():
-    # (1) Gera três identificadores aleatórios
-    # (2) Verificar alguns deles não existe
-    # (3) Se não existir, retorna o identificador
-    return ...
+    """
+    Gera três identificadores aleatórios, verifica se algum deles já existe no arquivo JSON
+    e retorna um identificador que não exista.
+    """
+    def gerar_identificador():
+        return ''.join(random.choices(string.ascii_letters + string.digits, k=8))
+    caminho_json = "_backend_/data/articles.json"
+    try:
+        conteudo_json = import_content_file(caminho_json)
+        dados = json.loads(conteudo_json)
+    except FileNotFoundError:
+        dados = {}
+    for _ in range(3):
+        id_aleatorio = gerar_identificador()
+        if id_aleatorio not in dados:
+            return id_aleatorio
+    raise Exception("Não foi possível gerar um identificador único após 3 tentativas.")
 
 def meta_info():
-    # (1) Extrai meta informações do ./_backend_/scripts/newsroom/article/artigo.txt
-    # (2) Retorna um dicionário com as informações
-    #  "date-title-article": "Título do Artigo",
-    #  "date-subtitle-article": "Subtítulo do Artigo",
-    #  "date-author-article": "Autor do Artigo",
-    #  "date-article": "Data do Artigo",
-    #  "date-description-article": "Descrição do Artigo",
-    #  "date-keywords-article": "Palavras-chave do Artigo",
-    #  "date-category-article": "Categoria do Artigo",
-    #  "date-disciplina-article": "Disciplina do Artigo",
-    #  "date-codigo-disciplina-article": "Curso do Artigo"
-    return ...
+    """
+    Extrai meta informações do ./_backend_/scripts/newsroom/article/artigo.txt
+    e retorna um dicionário com as informações.
+    """
+    caminho_artigo = "./_backend_/scripts/newsroom/article/artigo.txt"
+    conteudo = import_content_file(caminho_artigo)
+
+    meta_info = {}
+    padrao = re.compile(r'date-(\w+)-article:\s*(.*)')
+
+    for linha in conteudo.split('\n'):
+        match = padrao.match(linha)
+        if match:
+            chave = f"date-{match.group(1)}-article: "
+            valor = match.group(2).strip()
+            meta_info[chave] = valor
+
+    return {"meta_info": meta_info}
+
 
 def content_article():
-    # (1) Extrai o conteúdo do ./_backend_/scripts/newsroom/article/artigo.txt
-    # (2) Retorna o conteúdo do artigo
-    return ...
+    """
+    Extrai o conteúdo do ./_backend_/scripts/newsroom/article/artigo.txt
+    e retorna o conteúdo do artigo em um dicionário.
+    """
+    caminho_artigo = "./_backend_/scripts/newsroom/article/artigo.txt"
+    conteudo = import_content_file(caminho_artigo)
+
+    content_article = {
+        "resumo": [],
+        "introducao": [],
+        "desenvolvimento": [],
+        "conclusao": [],
+        "referencias": [],
+        "anexo": [] 
+    }
+
+    secao_atual = None
+    for linha in conteudo.split('\n'):
+        linha = linha.strip()
+        if linha.startswith('--- inicio_'):
+            secao_atual = linha.replace('--- inicio_', '').replace(' ---', '')
+        elif linha.startswith('--- fim_'):
+            secao_atual = None
+        elif secao_atual:
+            if secao_atual in content_article:
+                content_article[secao_atual].append(linha)
+            else:
+                raise KeyError(f"Seção desconhecida: {secao_atual}")
+
+    return {"content_article": content_article}
+
+print(content_article())
 
 def save_content_article_in_json():
     # (1) Salva o conteúdo do artigo em um arquivo JSON
@@ -88,6 +137,7 @@ def save_content_article_in_json():
 def janitor_json():
     # (1) Tratar erros da extração do conteúdo do artigo no arquivo JSON
     # (2) Salva o conteúdo do artigo em um arquivo JSON
+    # (3) Padrões: \"
     return ...
 
 ### ____ FUNÇÕES: JSON para HTML ____###
