@@ -1,6 +1,5 @@
 .gitconfig
 node_modules
-.vscode/
-.env*
+.venv*
 
 *pycache*

@@ -9,7 +9,6 @@ import json
 import string
 import random
 from bs4 import BeautifulSoup, Comment
-import requests
 import shutil
 
 def fazer_pergunta(opcao: str, pergunta: str):
@@ -315,11 +314,9 @@ update_article_path(identificador=identificador)
 
 def mover_arquivos(identificador):
     origem_html = '_backend_/scripts/newsroom/posts/article/index.html'
-    destino_html = f'/newsroom/articles/pt_BR/{identificador}/index.html'
-
+    destino_html = f'./newsroom/articles/pt_BR/{identificador}/index.html'
     origem_src = '_backend_/scripts/newsroom/posts/article/src/'
-    destino_src = f'/newsroom/articles/pt_BR/{identificador}/src/'
-
+    destino_src = f'./newsroom/articles/pt_BR/{identificador}/src/'
     # Garantir que o diretório de destino exista
     os.makedirs(os.path.dirname(destino_html), exist_ok=True)
 
@@ -334,5 +331,4 @@ def mover_arquivos(identificador):
 
 
 # Exemplo de uso
-identificador = gen_identificador()
 mover_arquivos(identificador)

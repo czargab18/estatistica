@@ -190,5 +190,149 @@
         "<a href=/src/nome-imagem.tex download>"
       ]
     }
+  },
+  "xg6za8c4o": {
+    "meta_info": {
+      "titulo": "Titulo exemplo",
+      "subtitulo": "Subtitulo exemplo",
+      "data": "dia-da-publicação",
+      "autor": "autor do artigo",
+      "tags": [
+        "tag1",
+        "tag2",
+        "tag3",
+        "tag3"
+      ],
+      "categoria": "categoria do artigo",
+      "resumo": "resumo do artigo",
+      "imagem": [
+        "/src/nome-imagem-1.png  /src/nome-imagem-2.png  /src/formulas-artigo.tex"
+      ],
+      "path": "/newsroom/articles/pt_BR/xg6za8c4o/"
+    },
+    "conteudo": {
+      "introducao": [
+        "Conteúdo do paragrafo 1",
+        "Conteúdo do paragrafo 2",
+        "Conteúdo do paragrafo 3",
+        "Conteúdo do paragrafo 4"
+      ],
+      "desenvolvimento": [
+        "Conteúdo do paragrafo 1",
+        "<a href=/src/formula-1.png>",
+        "Conteúdo do paragrafo 2",
+        "<a href=/src/formula-2.png>",
+        "Conteúdo do paragrafo 3",
+        "<a href=/src/formula-3.png>",
+        "Conteúdo do paragrafo 4"
+      ],
+      "conclusao": [
+        "Conteúdo do paragrafo 1",
+        "Conteúdo do paragrafo 2",
+        "Conteúdo do paragrafo 3",
+        "Conteúdo do paragrafo 4"
+      ],
+      "rodape": [
+        "Conteúdo do paragrafo 1",
+        "Conteúdo do paragrafo 2",
+        "<a href=/src/nome-imagem.tex download>"
+      ]
+    }
+  },
+  "icdyu73l5": {
+    "meta_info": {
+      "titulo": "Titulo exemplo",
+      "subtitulo": "Subtitulo exemplo",
+      "data": "dia-da-publicação",
+      "autor": "autor do artigo",
+      "tags": [
+        "tag1",
+        "tag2",
+        "tag3",
+        "tag3"
+      ],
+      "categoria": "categoria do artigo",
+      "resumo": "resumo do artigo",
+      "imagem": [
+        "/src/nome-imagem-1.png  /src/nome-imagem-2.png  /src/formulas-artigo.tex"
+      ],
+      "path": "/newsroom/articles/pt_BR/icdyu73l5/"
+    },
+    "conteudo": {
+      "introducao": [
+        "Conteúdo do paragrafo 1",
+        "Conteúdo do paragrafo 2",
+        "Conteúdo do paragrafo 3",
+        "Conteúdo do paragrafo 4"
+      ],
+      "desenvolvimento": [
+        "Conteúdo do paragrafo 1",
+        "<a href=/src/formula-1.png>",
+        "Conteúdo do paragrafo 2",
+        "<a href=/src/formula-2.png>",
+        "Conteúdo do paragrafo 3",
+        "<a href=/src/formula-3.png>",
+        "Conteúdo do paragrafo 4"
+      ],
+      "conclusao": [
+        "Conteúdo do paragrafo 1",
+        "Conteúdo do paragrafo 2",
+        "Conteúdo do paragrafo 3",
+        "Conteúdo do paragrafo 4"
+      ],
+      "rodape": [
+        "Conteúdo do paragrafo 1",
+        "Conteúdo do paragrafo 2",
+        "<a href=/src/nome-imagem.tex download>"
+      ]
+    }
+  },
+  "brgs26ftv": {
+    "meta_info": {
+      "titulo": "Titulo exemplo",
+      "subtitulo": "Subtitulo exemplo",
+      "data": "dia-da-publicação",
+      "autor": "autor do artigo",
+      "tags": [
+        "tag1",
+        "tag2",
+        "tag3",
+        "tag3"
+      ],
+      "categoria": "categoria do artigo",
+      "resumo": "resumo do artigo",
+      "imagem": [
+        "/src/nome-imagem-1.png  /src/nome-imagem-2.png  /src/formulas-artigo.tex"
+      ],
+      "path": "/newsroom/articles/pt_BR/brgs26ftv/"
+    },
+    "conteudo": {
+      "introducao": [
+        "Conteúdo do paragrafo 1",
+        "Conteúdo do paragrafo 2",
+        "Conteúdo do paragrafo 3",
+        "Conteúdo do paragrafo 4"
+      ],
+      "desenvolvimento": [
+        "Conteúdo do paragrafo 1",
+        "<a href=/src/formula-1.png>",
+        "Conteúdo do paragrafo 2",
+        "<a href=/src/formula-2.png>",
+        "Conteúdo do paragrafo 3",
+        "<a href=/src/formula-3.png>",
+        "Conteúdo do paragrafo 4"
+      ],
+      "conclusao": [
+        "Conteúdo do paragrafo 1",
+        "Conteúdo do paragrafo 2",
+        "Conteúdo do paragrafo 3",
+        "Conteúdo do paragrafo 4"
+      ],
+      "rodape": [
+        "Conteúdo do paragrafo 1",
+        "Conteúdo do paragrafo 2",
+        "<a href=/src/nome-imagem.tex download>"
+      ]
+    }
   }
 }

@@ -20,11 +20,11 @@ imagem: [
 
 --- inicio Desenvolvimento ---
 <p> Conteúdo do paragrafo 1
-<a href="/src/nome-imagem-1.png">
+<a href="/src/formula-1.png">
 <p> Conteúdo do paragrafo 2
-<a href="/src/nome-imagem-2.png">
+<a href="/src/formula-2.png">
 <p> Conteúdo do paragrafo 3
-<a href="/src/nome-imagem-1.png">
+<a href="/src/formula-3.png">
 <p> Conteúdo do paragrafo 4
 --- fim Desenvolvimento ---
 
@@ -38,5 +38,5 @@ imagem: [
 --- inicio Rodapé ---
 <p> Conteúdo do paragrafo 1
 <p> Conteúdo do paragrafo 2
-<a href="/src/formulas.tex" download>
+<a href="/src/nome-imagem.tex" download>
 --- fim Rodapé ---
