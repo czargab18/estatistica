@@ -18,11 +18,11 @@ python.exe -m pip install --upgrade pip
 
 # Instale as dependências
 ```{bash}
-pip install -r requirements.txt
+pip install -r config/requirements.txt
 ```
 
 ## Salve as dependências
 
 ```{bash}
-pip freeze > requirements.txt
+pip freeze >  config/requirements.txt
 ```

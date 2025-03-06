@@ -11,18 +11,18 @@ import random
 from bs4 import BeautifulSoup, Comment
 import shutil
 
+def verificar_resposta(resposta):
+    if resposta in ["sim", "s", "yes", "y"]:
+        return True
+    elif resposta in ["não", "nao", "n", "no", "ñ"]:
+        return False
+    else:
+        return None
+
 def fazer_pergunta(opcao: str, pergunta: str):
     """
     Função para automatizar perguntas e verificação.
     """
-    def verificar_resposta(resposta):
-        if resposta in ["sim", "s", "yes", "y"]:
-            return True
-        elif resposta in ["não", "nao", "n", "no", "ñ"]:
-            return False
-        else:
-            return None
-
     resposta = input(f'{pergunta}? (s/n): ').lower().strip()
     return verificar_resposta(resposta)
 
@@ -52,7 +52,7 @@ def codigo():
         return resposta
     else:
         print(f"O código '{resposta}' não segue o padrão de 3 letras e 4 digitos! ex. EST0043")
-        if fazer_pergunta("t", "Deseja tentar novamente"):
+        if fazer_pergunta(opcao="t", pergunta="Deseja tentar novamente"):
             return codigo()
         else:
             return f"Usuário informou codigo inválido! Resposta fornecida (em maiúscula): {resposta}"
