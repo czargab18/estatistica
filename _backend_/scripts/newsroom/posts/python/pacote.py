@@ -186,75 +186,37 @@ def load_and_clean_json(filepath):
 
 def load_html_template(filepath):
     with open(filepath, 'r', encoding='utf-8') as file:
-        return file.read()
+        template_html = file.read()
+    return template_html
 
 def save_article_to_html(article_info, template_html, output_filepath):
     soup = BeautifulSoup(template_html, 'html.parser')
 
-    # Lista de meta tags a serem ignoradas
-    ignore_tags = ['title', 'meta:viewport', 'meta:utf']
-
-    # Atualizar as meta tags
-    meta_title = soup.find('meta', {'data-title-article': True})
-    if meta_title:
-        meta_title['data-title-article'] = article_info['titulo']
-    else:
-        new_meta = soup.new_tag('meta', **{'data-title-article': article_info['titulo']})
-        soup.head.append(new_meta)
-
-    meta_keywords = soup.find('meta', {'data-keywords-article': True})
-    if meta_keywords:
-        meta_keywords['data-keywords-article'] = ','.join(article_info['tags'])
-    else:
-        new_meta = soup.new_tag('meta', **{'data-keywords-article': ','.join(article_info['tags'])})
-        soup.head.append(new_meta)
-
-    meta_identificador = soup.find('meta', {'data-identificador-article': True})
-    if meta_identificador:
-        meta_identificador['data-identificador-article'] = article_info['identificador']
-    else:
-        new_meta = soup.new_tag('meta', **{'data-identificador-article': article_info['identificador']})
-        soup.head.append(new_meta)
-
-    meta_autor = soup.find('meta', {'data-autor-article': True})
-    if meta_autor:
-        meta_autor['data-autor-article'] = article_info['autor']
-    else:
-        new_meta = soup.new_tag('meta', **{'data-autor-article': article_info['autor']})
-        soup.head.append(new_meta)
-
-    meta_descricao = soup.find('meta', {'data-descricao-article': True})
-    if meta_descricao:
-        meta_descricao['data-descricao-article'] = article_info['resumo']
-    else:
-        new_meta = soup.new_tag('meta', **{'data-descricao-article': article_info['resumo']})
-        soup.head.append(new_meta)
-
-    meta_categoria = soup.find('meta', {'data-categoria-article': True})
-    if meta_categoria:
-        meta_categoria['data-categoria-article'] = article_info['categoria']
-    else:
-        new_meta = soup.new_tag('meta', **{'data-categoria-article': article_info['categoria']})
-        soup.head.append(new_meta)
-
     # Atualizar os títulos
-    soup.find('h1', {'id': 'headline-regular-text'}).string = article_info['titulo']
-    soup.find('h2', {'id': 'headline1-regular-text'}).string = article_info['subtitulo']
+    title_tag = soup.find('h1', {'id': 'title-article'})
+    if title_tag:
+        title_tag.string = article_info['titulo']
+
+    subtitle_tag = soup.find('h2', {'id': 'subtitle-article'})
+    if subtitle_tag:
+        subtitle_tag.string = article_info['subtitulo']
 
     # Atualizar as seções
     def update_section(section_name, content):
         section_meta = soup.find('meta', {'data-section-article': section_name})
         if section_meta:
-            div = soup.new_tag('div', **{'class': 'pagebody-copy'})
-            for paragraph in content.split('\n'):
-                p_tag = BeautifulSoup(f"{paragraph}", 'html.parser')
-                div.append(p_tag)
-            section_meta.insert_after(div)
+            section_div = section_meta.find_next_sibling('div', class_='pagebody-copy')
+            if section_div:
+                section_div.clear()
+                # Adicionar cada parágrafo separadamente
+                for paragraph in content.split('\n'):
+                    p_tag = soup.new_tag('p')
+                    p_tag.string = paragraph.strip()
+                    section_div.append(p_tag)
 
     update_section('Introdução', article_info['introducao'])
     update_section('Desenvolvimento', article_info['desenvolvimento'])
     update_section('Conclusão', article_info['conclusao'])
-    update_section('Rodapé', article_info['rodape'])
 
     # Remover comentários gerados pelo artigo
     for comment in soup.find_all(string=lambda text: isinstance(text, Comment)):
@@ -273,13 +235,13 @@ template_html = load_html_template('_backend_/scripts/newsroom/posts/template.ht
 article_info = extract_article_info()
 identificador = gen_identificador()
 article_info['identificador'] = identificador  # Adicionar o identificador ao article_info
-save_article_to_html(article_info, template_html, '_backend_/scripts/newsroom/posts/article/index.html')
+save_article_to_html(article_info, template_html, f'_backend_/scripts/newsroom/posts/article/{identificador}/index.html')
 
 
 # Salvar arquivos do artigo na pasta raiz: /newsroom/
 
 def update_article_path(identificador):
-    path = f"/newsroom/articles/pt_BR/{identificador}/"
+    path = f"/newsroom/articles/pt_BR/{identificador}/index.html"
     try:
         with open('_backend_/data/articles.json', 'r', encoding='utf-8') as file:
             data = json.load(file)
@@ -331,4 +293,4 @@ def mover_arquivos(identificador):
 
 
 # Exemplo de uso
-mover_arquivos(identificador)
+# mover_arquivos(identificador)
