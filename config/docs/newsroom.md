@@ -4,7 +4,7 @@ Esta pasta destinace a automatização relacionadas a publicação de artigos pa
 
 ## Estrutura de arquivos
 ```{plaintext}
-./_backend_/NEWSROOM/
+./config/NEWSROOM/
 ├── scripts
 │   ├── /newsroom/
 │   │   ├── /posts/

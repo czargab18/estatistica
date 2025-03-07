@@ -58,7 +58,7 @@ def codigo():
             return f"Usuário informou codigo inválido! Resposta fornecida (em maiúscula): {resposta}"
 
 
-def import_article(filepath='_backend_/scripts/newsroom/posts/article/artigo.txt'):
+def import_article(filepath='./config/scripts/newsroom/posts/article/artigo.txt'):
     if not os.path.exists(filepath):
         raise FileNotFoundError(f"Arquivo não encontrado: {filepath}")
     with open(filepath, 'r', encoding='utf-8') as file:
@@ -68,7 +68,7 @@ def import_article(filepath='_backend_/scripts/newsroom/posts/article/artigo.txt
 
 def identificador_existe(identificador):
     try:
-        with open('_backend_/data/articles.json', 'r', encoding='utf-8') as file:
+        with open('./config/data/articles.json', 'r', encoding='utf-8') as file:
             data = json.load(file)
             return identificador in data
     except FileNotFoundError:
@@ -140,14 +140,14 @@ def save_article_info_to_json(article_info, identificador):
     }
 
     try:
-        with open('_backend_/data/articles.json', 'r', encoding='utf-8') as file:
+        with open('./config/data/articles.json', 'r', encoding='utf-8') as file:
             data = json.load(file)
     except FileNotFoundError:
         data = {}
 
     data.update(article_data)
 
-    with open('_backend_/data/articles.json', 'w', encoding='utf-8') as file:
+    with open('./config/data/articles.json', 'w', encoding='utf-8') as file:
         json.dump(data, file, ensure_ascii=False, indent=2)
 
 def clean_json_data(json_data):
@@ -231,11 +231,11 @@ def save_article_to_html(article_info, template_html, output_filepath):
         file.write(str(soup))
 
 # Exemplo de uso
-template_html = load_html_template('_backend_/scripts/newsroom/posts/template.html')
+template_html = load_html_template('./config/scripts/newsroom/posts/template.html')
 article_info = extract_article_info()
 identificador = gen_identificador()
 article_info['identificador'] = identificador  # Adicionar o identificador ao article_info
-save_article_to_html(article_info, template_html, f'_backend_/scripts/newsroom/posts/article/{identificador}/index.html')
+save_article_to_html(article_info, template_html, f'./config/scripts/newsroom/posts/article/{identificador}/index.html')
 
 
 # Salvar arquivos do artigo na pasta raiz: /newsroom/
@@ -243,7 +243,7 @@ save_article_to_html(article_info, template_html, f'_backend_/scripts/newsroom/p
 def update_article_path(identificador):
     path = f"/newsroom/articles/pt_BR/{identificador}/index.html"
     try:
-        with open('_backend_/data/articles.json', 'r', encoding='utf-8') as file:
+        with open('./config/data/articles.json', 'r', encoding='utf-8') as file:
             data = json.load(file)
     except FileNotFoundError:
         data = {}
@@ -253,7 +253,7 @@ def update_article_path(identificador):
     else:
         print(f"Identificador {identificador} não encontrado no arquivo JSON.")
 
-    with open('_backend_/data/articles.json', 'w', encoding='utf-8') as file:
+    with open('./config/data/articles.json', 'w', encoding='utf-8') as file:
         json.dump(data, file, ensure_ascii=False, indent=2)
 
 
@@ -266,7 +266,7 @@ update_article_path(identificador)
 for key, value in article_info.items():
     print(f"{key}: {value}")
 
-load_and_clean_json('_backend_/data/articles.json')
+load_and_clean_json('./config/data/articles.json')
 
 update_article_path(identificador=identificador)
 
@@ -275,9 +275,9 @@ update_article_path(identificador=identificador)
 
 
 def mover_arquivos(identificador):
-    origem_html = '_backend_/scripts/newsroom/posts/article/index.html'
+    origem_html = './config/scripts/newsroom/posts/article/index.html'
     destino_html = f'./newsroom/articles/pt_BR/{identificador}/index.html'
-    origem_src = '_backend_/scripts/newsroom/posts/article/src/'
+    origem_src = './config/scripts/newsroom/posts/article/src/'
     destino_src = f'./newsroom/articles/pt_BR/{identificador}/src/'
     # Garantir que o diretório de destino exista
     os.makedirs(os.path.dirname(destino_html), exist_ok=True)

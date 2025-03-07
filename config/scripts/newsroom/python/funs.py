@@ -64,7 +64,7 @@ def identificador():
         LENGTH = 10
         return ''.join(random.choices(string.ascii_lowercase + string.digits, k=LENGTH))
     
-    caminho_json = "_backend_/data/articles.json"
+    caminho_json = "./config/data/articles.json"
     try:
         conteudo_json = import_content_file(caminho_json)
         dados = json.loads(conteudo_json)
@@ -79,10 +79,10 @@ def identificador():
 
 def meta_info():
     """
-    Extrai meta informações do ./_backend_/scripts/newsroom/article/artigo.txt
+    Extrai meta informações do ././config/scripts/newsroom/article/artigo.txt
     e retorna um dicionário com as informações.
     """
-    caminho_artigo = "./_backend_/scripts/newsroom/article/artigo.txt"
+    caminho_artigo = "././config/scripts/newsroom/article/artigo.txt"
     conteudo = import_content_file(caminho_artigo)
 
     meta_info = {}
@@ -99,10 +99,10 @@ def meta_info():
 
 def content_article():
     """
-    Extrai o conteúdo do ./_backend_/scripts/newsroom/article/artigo.txt
+    Extrai o conteúdo do ././config/scripts/newsroom/article/artigo.txt
     e retorna o conteúdo do artigo em um dicionário.
     """
-    caminho_artigo = "./_backend_/scripts/newsroom/article/artigo.txt"
+    caminho_artigo = "././config/scripts/newsroom/article/artigo.txt"
     conteudo = import_content_file(caminho_artigo)
 
     content_article = {
@@ -134,9 +134,9 @@ def content_article():
 def save_content_article_in_json():
     """
     Salva o conteúdo do artigo em um arquivo JSON.
-    O arquivo JSON é salvo em ./_backend_/data/article.json
+    O arquivo JSON é salvo em ././config/data/article.json
     """
-    caminho_json = "./_backend_/data/article.json"
+    caminho_json = "././config/data/article.json"
     artigo_conteudo = content_article()
     info_meta = meta_info()
     id_artigo = identificador()
@@ -167,11 +167,11 @@ def janitor():
 
 def template_html():
     """
-    Usar modelo HTML path = "./_backend_/scripts/newsroom/modelo/modelo.html"
+    Usar modelo HTML path = "././config/scripts/newsroom/modelo/modelo.html"
     Substituir as variáveis do modelo HTML pelos valores do arquivo JSON
     """
-    caminho_modelo_html = "./_backend_/scripts/newsroom/modelo/modelo.html"
-    caminho_json = "./_backend_/data/article.json"
+    caminho_modelo_html = "././config/scripts/newsroom/modelo/modelo.html"
+    caminho_json = "././config/data/article.json"
 
     # Carrega o modelo HTML
     with open(caminho_modelo_html, "r", encoding="utf-8") as arquivo:
@@ -198,7 +198,7 @@ def template_html():
                     div_tag.append(p_tag)
 
     # Salva o HTML atualizado
-    caminho_html_atualizado = "./_backend_/scripts/newsroom/modelo/modelo_atualizado.html"
+    caminho_html_atualizado = "././config/scripts/newsroom/modelo/modelo_atualizado.html"
     with open(caminho_html_atualizado, "w", encoding="utf-8") as arquivo:
         arquivo.write(str(soup))
 

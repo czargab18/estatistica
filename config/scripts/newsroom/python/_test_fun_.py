@@ -6,9 +6,9 @@ import funs
 # print(funs.create_dir(diretorio="./teste"))
 # print(funs.verificacao(pergunta="Você está bem?"))
 # print(funs.import_content_file(
-#     caminho="_backend_/scripts/newsroom/article/artigo.txt"))
+#     caminho="./config/scripts/newsroom/article/artigo.txt"))
 
-# DIR_ARTICLE_TXT = "_backend_/scripts/newsroom/article/"
+# DIR_ARTICLE_TXT = "./config/scripts/newsroom/article/"
 
 # print(funs.create_dir(diretorio=DIR_ARTICLE_TXT))
 # print(funs.import_content_file(
