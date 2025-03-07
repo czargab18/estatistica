@@ -8,7 +8,8 @@
             "date-description-article": "Descrição do Artigo",
             "date-keywords-article": "Palavras-chave do Artigo",
             "date-category-article": "Categoria do Artigo",
-            "date-disciplina-article": "Disciplina do Artigo"
+            "date-disciplina-article": "Disciplina do Artigo",
+            "date-image-article": "imagem"
         },
         "content-article": {
             "resumo": [

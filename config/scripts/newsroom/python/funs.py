@@ -204,13 +204,54 @@ def template_html():
                 div_tag.append(p_tag)
 
     # Salva o HTML atualizado
-    caminho_html_atualizado = "./config/scripts/newsroom/modelo/modelo_atualizado.html"
+    caminho_html_atualizado = "./config/scripts/newsroom/article/index.html"
     with open(caminho_html_atualizado, "w", encoding="utf-8") as arquivo:
         arquivo.write(str(soup))
 
     return caminho_html_atualizado
 
 
+# def mover_html():
+#     # (1) Mover HTML + /src/ de ./config/scripts/newsroom/article/ (/src/ + index.html) para
+#     # para: "./newsroom/articles/pt_BR/ano/mes/dia/identificador/ (/src/ + index.html)"
+#     # JSON: meta_info: "date-data-article": "05-03-2025",
+#     # JSON: identificador
+#     return ...
+
+
 def mover_html():
-    # (1) Mover HTML + /src/ para: "./newsroom/articles/pt_BR/ano/mes/identificador/"
-    return ...
+    caminho_json = "./config/data/article.json"
+    caminho_html_atualizado = "./config/scripts/newsroom/article/index.html"
+    caminho_src = "./config/scripts/newsroom/article/src/"
+
+    # Carrega o conteúdo do JSON
+    with open(caminho_json, "r", encoding="utf-8") as arquivo:
+        dados = json.load(arquivo)
+
+    # Supondo que estamos usando o primeiro artigo do JSON
+    id_artigo = list(dados.keys())[0]
+    artigo = dados[id_artigo]
+
+    # Extrai a data e o identificador do artigo
+    data_artigo = artigo["meta_info"]["date-data-article"]
+    identificador = id_artigo
+
+    # Converte a data para o formato ano/mes/dia
+    data_parts = data_artigo.split("-")
+    ano = data_parts[2]
+    mes = data_parts[1]
+    dia = data_parts[0]
+
+    # Define o caminho de destino
+    caminho_destino = f"./newsroom/articles/pt_BR/{ano}/{mes}/{dia}/{identificador}/"
+    os.makedirs(caminho_destino, exist_ok=True)
+
+    # Move o arquivo HTML para o caminho de destino
+    shutil.move(caminho_html_atualizado, os.path.join(
+        caminho_destino, "index.html"))
+
+    # Mover a pasta /src/ irmão do arquivo index.html com pasta pai: article
+    if os.path.exists(caminho_src):
+        shutil.move(caminho_src, os.path.join(caminho_destino, "src"))
+
+    return caminho_destino
