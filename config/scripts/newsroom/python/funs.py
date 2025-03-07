@@ -247,3 +247,7 @@ def mover_html():
         shutil.move(caminho_src, os.path.join(caminho_destino, "src"))
 
     return caminho_destino
+
+def list_index():
+    # (1) Pega os identificadores e criar uma lista em ./newsroom/index.html
+    return ...
