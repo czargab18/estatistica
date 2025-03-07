@@ -1,8 +1,7 @@
-
 date-title-article: Título do Artigo
 date-subtitle-article: Subtítulo do Artigo
 date-author-article: Autor do Artigo
-date-article: Data do Artigo
+date-data-article: 05-03-2025
 date-description-article: Descrição do Artigo
 date-keywords-article: Palavras-chave do Artigo
 date-category-article: Categoria do Artigo

@@ -62,8 +62,7 @@ def identificador():
     """
     def gerar_identificador():
         LENGTH = 10
-        PATTERN = string.ascii_lowercase + string.digits
-        return ''.join(random.choices(PATTERN, k=LENGTH))
+        return ''.join(random.choices(string.ascii_lowercase + string.digits, k=LENGTH))
     
     caminho_json = "_backend_/data/articles.json"
     try:
@@ -76,6 +75,7 @@ def identificador():
         if id_aleatorio not in dados:
             return id_aleatorio
     raise Exception("Não foi possível gerar um identificador único após 3 tentativas.")
+
 
 def meta_info():
     """
@@ -91,7 +91,7 @@ def meta_info():
     for linha in conteudo.split('\n'):
         match = padrao.match(linha)
         if match:
-            chave = f"date-{match.group(1)}-article: "
+            chave = f"date-{match.group(1)}-article"
             valor = match.group(2).strip()
             meta_info[chave] = valor
 
@@ -123,13 +123,9 @@ def content_article():
             secao_atual = None
         elif secao_atual:
             if secao_atual in content_article:
-                # Remove o prefixo da linha
                 if ': ' in linha:
                     prefixo, conteudo_linha = linha.split(': ', 1)
-                    if prefixo in ['p', 'a', 'img', 'dwn']:
-                        content_article[secao_atual].append(conteudo_linha)
-                    else:
-                        content_article[secao_atual].append(linha)
+                    content_article[secao_atual].append(conteudo_linha)
                 else:
                     content_article[secao_atual].append(linha)
 
@@ -144,21 +140,24 @@ def save_content_article_in_json():
     artigo_conteudo = content_article()
     info_meta = meta_info()
     id_artigo = identificador()
+
     try:
         conteudo_json = import_content_file(caminho_json)
         dados = json.loads(conteudo_json)
     except FileNotFoundError:
         dados = {}
+
     dados[id_artigo] = {
         "meta_info": info_meta,
         "content-article": artigo_conteudo
     }
+
     with open(caminho_json, "w", encoding="utf-8") as arquivo:
         json.dump(dados, arquivo, ensure_ascii=False, indent=4)
+
     return dados
 
-
-def janitor_json():
+def janitor():
     # (1) Tratar erros da extração do conteúdo do artigo no arquivo JSON
     # (2) Salva o conteúdo do artigo em um arquivo JSON
     # (3) Padrões: \"
@@ -167,9 +166,41 @@ def janitor_json():
 ### ____ FUNÇÕES: JSON para HTML ____###
 
 def template_html():
-    # (1) Importar modelo HTML
-    # (2) Corrigir links do arquivo HTML
-    return ...
+    """
+    Usar modelo HTML path = "./_backend_/scripts/newsroom/modelo/modelo.html"
+    Substituir as variáveis do modelo HTML pelos valores do arquivo JSON
+    """
+    caminho_modelo_html = "./_backend_/scripts/newsroom/modelo/modelo.html"
+    caminho_json = "./_backend_/data/article.json"
+
+    # Carrega o modelo HTML
+    with open(caminho_modelo_html, "r", encoding="utf-8") as arquivo:
+        soup = BeautifulSoup(arquivo, "html.parser")
+
+    # Carrega o conteúdo do JSON
+    with open(caminho_json, "r", encoding="utf-8") as arquivo:
+        dados = json.load(arquivo)
+
+    # Supondo que estamos usando o primeiro artigo do JSON
+    id_artigo = list(dados.keys())[0]
+    artigo = dados[id_artigo]
+
+    # Atualiza o conteúdo do HTML com os dados do JSON
+    for secao, conteudo in artigo["content-article"].items():
+        meta_tag = soup.find("meta", {"data-section-article": secao.capitalize()})
+        if meta_tag:
+            div_tag = meta_tag.find_next_sibling("div", class_="pagebody-copy")
+            if div_tag:
+                div_tag.clear()
+                for item in conteudo:
+                    p_tag = soup.new_tag("p")
+                    p_tag.string = item
+                    div_tag.append(p_tag)
+
+    # Salva o HTML atualizado
+    caminho_html_atualizado = "./_backend_/scripts/newsroom/modelo/modelo_atualizado.html"
+    with open(caminho_html_atualizado, "w", encoding="utf-8") as arquivo:
+        arquivo.write(str(soup))
 
 def mover_html():
     # (1) Mover HTML + /src/ para: "./newsroom/articles/pt_BR/ano/mes/identificador/"
