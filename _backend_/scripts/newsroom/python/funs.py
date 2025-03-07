@@ -1,3 +1,4 @@
+from operator import length_hint
 import os
 import re
 import json
@@ -60,7 +61,10 @@ def identificador():
     e retorna um identificador que não exista.
     """
     def gerar_identificador():
-        return ''.join(random.choices(string.ascii_letters + string.digits, k=8))
+        LENGTH = 10
+        PATTERN = string.ascii_lowercase + string.digits
+        return ''.join(random.choices(PATTERN, k=LENGTH))
+    
     caminho_json = "_backend_/data/articles.json"
     try:
         conteudo_json = import_content_file(caminho_json)
@@ -91,8 +95,7 @@ def meta_info():
             valor = match.group(2).strip()
             meta_info[chave] = valor
 
-    return {"meta_info": meta_info}
-
+    return meta_info
 
 def content_article():
     """
@@ -108,7 +111,7 @@ def content_article():
         "desenvolvimento": [],
         "conclusao": [],
         "referencias": [],
-        "anexo": [] 
+        "anexos": []  # Corrigido para "anexos" em vez de "anexo"
     }
 
     secao_atual = None
@@ -120,19 +123,40 @@ def content_article():
             secao_atual = None
         elif secao_atual:
             if secao_atual in content_article:
-                content_article[secao_atual].append(linha)
-            else:
-                raise KeyError(f"Seção desconhecida: {secao_atual}")
+                # Remove o prefixo da linha
+                if ': ' in linha:
+                    prefixo, conteudo_linha = linha.split(': ', 1)
+                    if prefixo in ['p', 'a', 'img', 'dwn']:
+                        content_article[secao_atual].append(conteudo_linha)
+                    else:
+                        content_article[secao_atual].append(linha)
+                else:
+                    content_article[secao_atual].append(linha)
 
-    return {"content_article": content_article}
-
-print(content_article())
+    return content_article
 
 def save_content_article_in_json():
-    # (1) Salva o conteúdo do artigo em um arquivo JSON
-    # (2) O arquivo JSON é salvo em ./_backend_/data/article.json
-    # usar: "meta_info()" e "content_article()"
-    return ...
+    """
+    Salva o conteúdo do artigo em um arquivo JSON.
+    O arquivo JSON é salvo em ./_backend_/data/article.json
+    """
+    caminho_json = "./_backend_/data/article.json"
+    artigo_conteudo = content_article()
+    info_meta = meta_info()
+    id_artigo = identificador()
+    try:
+        conteudo_json = import_content_file(caminho_json)
+        dados = json.loads(conteudo_json)
+    except FileNotFoundError:
+        dados = {}
+    dados[id_artigo] = {
+        "meta_info": info_meta,
+        "content-article": artigo_conteudo
+    }
+    with open(caminho_json, "w", encoding="utf-8") as arquivo:
+        json.dump(dados, arquivo, ensure_ascii=False, indent=4)
+    return dados
+
 
 def janitor_json():
     # (1) Tratar erros da extração do conteúdo do artigo no arquivo JSON

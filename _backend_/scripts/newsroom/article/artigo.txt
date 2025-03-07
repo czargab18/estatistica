@@ -1,13 +1,13 @@
 
-date-title-article: "Título do Artigo"
-date-subtitle-article: "Subtítulo do Artigo"
-date-author-article: "Autor do Artigo"
-date-article: "Data do Artigo"
-date-description-article: "Descrição do Artigo"
-date-keywords-article: "Palavras-chave do Artigo"
-date-category-article: "Categoria do Artigo"
-date-disciplina-article: "Disciplina do Artigo"
-date-codigo-disciplina-article: "Curso do Artigo"
+date-title-article: Título do Artigo
+date-subtitle-article: Subtítulo do Artigo
+date-author-article: Autor do Artigo
+date-article: Data do Artigo
+date-description-article: Descrição do Artigo
+date-keywords-article: Palavras-chave do Artigo
+date-category-article: Categoria do Artigo
+date-disciplina-article: Disciplina do Artigo
+date-codigo-disciplina-article: Curso do Artigo
 
 content-article: 
 
@@ -41,12 +41,12 @@ p: paragrafo 2 da conclusão
 --- inicio_referencias ---
 p: referencia 1
 a: link
-p+a: referencia 2
+p: referencia 2
 p: referencia 3 
 --- fim_referencias ---
 
---- inicio_anexo ---
+--- inicio_anexos ---
 dwn: link-download-anexo 1
 dwn: link-download-anexo 2
---- fim_anexo ---
+--- fim_anexos ---
 
