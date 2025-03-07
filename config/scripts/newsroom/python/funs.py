@@ -181,6 +181,18 @@ def template_html():
     id_artigo = list(dados.keys())[0]
     artigo = dados[id_artigo]
 
+    # Adiciona as meta tags no head do HTML
+    head_tag = soup.head
+    meta_info = artigo["meta_info"]
+    for key, value in meta_info.items():
+        meta_tag = head_tag.find("meta", {"data-" + key: True})
+        if meta_tag:
+            meta_tag.attrs["data-" + key] = value
+        else:
+            new_meta_tag = soup.new_tag("meta")
+            new_meta_tag.attrs["data-" + key] = value
+            head_tag.append(new_meta_tag)
+
     # Achar todas as divs com id igual a id="section-*"
     for secao, conteudo in artigo["content-article"].items():
         div_tag = soup.find("div", {"id": f"section-{secao}"})
