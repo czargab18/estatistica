@@ -7,6 +7,7 @@
   <meta content="Estatística" name="topic" />
   <meta content="index,follow" name="robots" />
   <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+
   <meta
     content="img-src 'self' https://www.estatistica.pro/; script-src 'self' https://www.estatistica.pro/ac/ https://www.estatistica.pro/sd/"
     http-equiv="Content-Security-Policy" />
@@ -289,11 +290,18 @@
   </div>
   <main id="main-newsroom" class="main-newsroom" role="main">
     <article id="article-content">
-      <div class="article-header"></div>
-      <div class="article-img-banner"></div>
+      <div class="article-header">
+        <h1 id="date-title-article"> </h1>
+        <h2 id="date-subtitle-article"></h2>
+        <span id="date-author-article"></span>
+        <img id="date-image-article"></img>
+      </div>
+      <div data-section-article="Resumo" id="section-resumo" class="pagebody-copy"></div>
       <div data-section-article="Introdução" id="section-introducao" class="pagebody-copy"></div>
       <div data-section-article="Desenvolvimento" id="section-desenvolvimento" class="pagebody-copy"></div>
       <div data-section-article="Conclusão" id="section-conclusao" class="pagebody-copy"></div>
+      <div data-section-article="Referencias" id="section-referencias" class="pagebody-copy"></div>
+      <div data-section-article="Anexos" id="section-anexos" class="pagebody-copy"></div>
     </article>
   </main>
 
