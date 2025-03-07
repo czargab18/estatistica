@@ -1,3 +1,4 @@
+from bs4 import BeautifulSoup
 from operator import length_hint
 import os
 import re
@@ -75,7 +76,6 @@ def identificador():
         if id_aleatorio not in dados:
             return id_aleatorio
     raise Exception("Não foi possível gerar um identificador único após 3 tentativas.")
-
 
 def meta_info():
     """
@@ -166,12 +166,8 @@ def janitor():
 ### ____ FUNÇÕES: JSON para HTML ____###
 
 def template_html():
-    """
-    Usar modelo HTML path = "././config/scripts/newsroom/modelo/modelo.html"
-    Substituir as variáveis do modelo HTML pelos valores do arquivo JSON
-    """
-    caminho_modelo_html = "././config/scripts/newsroom/modelo/modelo.html"
-    caminho_json = "././config/data/article.json"
+    caminho_modelo_html = "./config/scripts/newsroom/modelo/modelo.html"
+    caminho_json = "./config/data/article.json"
 
     # Carrega o modelo HTML
     with open(caminho_modelo_html, "r", encoding="utf-8") as arquivo:
@@ -185,22 +181,23 @@ def template_html():
     id_artigo = list(dados.keys())[0]
     artigo = dados[id_artigo]
 
-    # Atualiza o conteúdo do HTML com os dados do JSON
+    # Achar todas as divs com id igual a id="section-*"
     for secao, conteudo in artigo["content-article"].items():
-        meta_tag = soup.find("meta", {"data-section-article": secao.capitalize()})
-        if meta_tag:
-            div_tag = meta_tag.find_next_sibling("div", class_="pagebody-copy")
-            if div_tag:
-                div_tag.clear()
-                for item in conteudo:
-                    p_tag = soup.new_tag("p")
-                    p_tag.string = item
-                    div_tag.append(p_tag)
+        div_tag = soup.find("div", {"id": f"section-{secao}"})
+        if div_tag:
+            div_tag.clear()
+            for item in conteudo:
+                p_tag = soup.new_tag("p")
+                p_tag.string = item
+                div_tag.append(p_tag)
 
     # Salva o HTML atualizado
-    caminho_html_atualizado = "././config/scripts/newsroom/modelo/modelo_atualizado.html"
+    caminho_html_atualizado = "./config/scripts/newsroom/modelo/modelo_atualizado.html"
     with open(caminho_html_atualizado, "w", encoding="utf-8") as arquivo:
         arquivo.write(str(soup))
+
+    return caminho_html_atualizado
+
 
 def mover_html():
     # (1) Mover HTML + /src/ para: "./newsroom/articles/pt_BR/ano/mes/identificador/"
