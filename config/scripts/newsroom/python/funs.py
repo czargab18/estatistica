@@ -211,14 +211,6 @@ def template_html():
     return caminho_html_atualizado
 
 
-# def mover_html():
-#     # (1) Mover HTML + /src/ de ./config/scripts/newsroom/article/ (/src/ + index.html) para
-#     # para: "./newsroom/articles/pt_BR/ano/mes/dia/identificador/ (/src/ + index.html)"
-#     # JSON: meta_info: "date-data-article": "05-03-2025",
-#     # JSON: identificador
-#     return ...
-
-
 def mover_html():
     caminho_json = "./config/data/article.json"
     caminho_html_atualizado = "./config/scripts/newsroom/article/index.html"
