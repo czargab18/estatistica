@@ -89,3 +89,14 @@ Impossível:
    - treinar usando apenas livros e artigos acadêmicos suficientemente bons.
 
    referencia: cesargabrielphd
+
+-# ideias Ajudar vida academica
+  Projeto da disciplina Métodos de Desenvolvimento de Software cujo intuito é auxiliar os alunos da Faculdade do Gama na organização de suas atividades acadêmicas. A página permite ao usuário registrar sua grade e informações específicas de cada matéria, como datas das provas e notas dos trabalhos, ajudando-os a se manterem em dia com cada matéria.
+  
+  💻 Tecnologias
+  💾 Banco de Dados: Firebase
+  🎨 Prototipação: Figma
+  📋 Linguagens: TypeScript HTML CSS3
+  🖼️ Framework Web: ReactJs
+
+referências: https://github.com/unb-mds/Squad09-UnBHUB.git
