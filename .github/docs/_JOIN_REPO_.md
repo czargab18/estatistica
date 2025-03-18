@@ -15,7 +15,7 @@ Este guia descreve como integrar o repositório `api` na pasta `api` do reposit�
     ```sh
     git remote add api https://github.com/cesargabrielphd/api.git
     ```
-    **Explicação:** Aqui, você adiciona o repositório `api` como um remoto adicional chamado `api`. Isso permite acessar o conteúdo do repositório `api` sem misturá-lo diretamente.
+    **Explicação:** Certifique-se de executar este comando dentro da pasta do repositório `estatistica` (ou seja, após o comando `cd estatistica`). Isso adiciona o repositório `api` como um remoto adicional chamado `api`.
 
 3. Faça fetch do conteúdo do repositório `api`:
     ```sh
@@ -35,6 +35,19 @@ Este guia descreve como integrar o repositório `api` na pasta `api` do reposit�
     git read-tree --prefix=api/ -u api/main
     ```
     **Explicação:** Este comando insere o conteúdo do repositório `api` na pasta `api` dentro do repositório `estatistica`, preservando o histórico de commits.
+
+    **Nota:** Caso você receba o erro `Entry 'api/README.md' overlaps with 'api/README.md'. Cannot bind.`, isso significa que já existem arquivos na pasta `api` que conflitam com os arquivos do repositório `api`. Para resolver:
+
+    1. Remova ou mova os arquivos conflitantes da pasta `api` antes de executar o comando:
+        ```sh
+        rm -rf api/*
+        ```
+        **Explicação:** Este comando remove todos os arquivos existentes na pasta `api`. Certifique-se de fazer backup dos arquivos, se necessário.
+
+    2. Execute novamente o comando `git read-tree`:
+        ```sh
+        git read-tree --prefix=api/ -u api/main
+        ```
 
 6. Faça commit das mudanças:
     ```sh
@@ -80,3 +93,4 @@ Este guia descreve como integrar o repositório `api` na pasta `api` do reposit�
 
 - Certifique-se de que a branch `main` do repositório `api` contém o conteúdo desejado antes de iniciar o processo.
 - Caso o repositório `api` use uma branch principal com outro nome (por exemplo, `master`), substitua `api/main` pelo nome correto da branch.
+- Se você precisar preservar os arquivos existentes na pasta `api`, mova-os para outro local antes de executar o comando `git read-tree`.
