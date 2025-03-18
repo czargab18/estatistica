@@ -1,0 +1,68 @@
+{
+    "periodo": {
+        "2024": [
+            {
+                "período": "2024.1",
+                "início": "18/03/2024",
+                "fim": "21/09/2024"
+            },
+            {
+                "período": "2024.2",
+                "início": "14/10/2024",
+                "fim": "22/02/2025"
+            },
+            {
+                "período": "2024.4 (Verão 2025)",
+                "início": "-",
+                "fim": "-"
+            }
+        ],
+        "2025": [
+            {
+                "período": "2025.1",
+                "início": "24/03/2025",
+                "fim": "26/07/2025"
+            },
+            {
+                "período": "2025.2",
+                "início": "18/08/2025",
+                "fim": "15/12/2025"
+            },
+            {
+                "período": "2025.4 (Verão 2026)",
+                "início": "05/01/2026",
+                "fim": "14/02/2026"
+            }
+        ]
+    },
+    "matricula": [
+        "https://saa.unb.br/images/documentos/graduacao/Calendarios/Matricula/2025_1/2025_1_Calend_Mat_Grad_02_12_2024.pdf",
+        "https://saa.unb.br/images/documentos/graduacao/Calendarios/Matricula/2024_2/2024_2_Calend_Mat_Grad_16_09_2024.pdf",
+        "https://saa.unb.br/images/documentos/graduacao/Calendarios/Matricula/2024_1/2024_1_Calend_Mat_Grad_07_12_2023.pdf",
+        "https://saa.unb.br/images/documentos/graduacao/Calendarios/Matricula/2023_2/2023_2_Calend_Mat_Grad_05_07_2023_v2.pdf",
+        "https://saa.unb.br/images/documentos/graduacao/Calendarios/Matricula/2023_1/2023_1_Calend_Matricula_Grad_27_03_2023.pdf",
+        "https://saa.unb.br/images/documentos/graduacao/Calendarios/Matricula/2022_2/2022_2_Calend_Matricula_Grad.pdf",
+        "https://saa.unb.br/images/documentos/graduacao/Calendarios/Matricula/2022_1/2022_1_Cal_Grad_Matricula_v20_05_2022.pdf",
+        "https://saa.unb.br/images/documentos/graduacao/Calendarios/Matricula/CAL_MAT_GRAD_2_2021.pdf",
+        "https://saa.unb.br/images/documentos/graduacao/matri/2021_1_-_Cal_Matr_Grad.pdf",
+        "https://saa.unb.br/images/documentos/graduacao/matri/cal_mat20202.pdf",
+        "https://saa.unb.br/images/documentos/graduacao/matri/cal_mat_2020.pdf"
+    ],
+    "atividades": [
+        "https://saa.unb.br/images/documentos/graduacao/Calendarios/Atividades/2025_1/2025_1_Calend_Ativ_Grad_21_02_2025.pdf",
+        "https://saa.unb.br/images/documentos/graduacao/Calendarios/Atividades/2024_2/2024_2_Calend_Ativ_Grad_19_11_2024.pdf",
+        "https://saa.unb.br/images/documentos/graduacao/Calendarios/Atividades/2024_1/2024_1_Calend_Ativ_Grad_23_09_24.pdf",
+        "https://saa.unb.br/images/documentos/graduacao/Calendarios/Atividades/2023_2/2023_2_Calend_Ativ_Grad_15_12_2023.pdf",
+        "https://saa.unb.br/images/documentos/graduacao/Calendarios/Atividades/2023_1/2023_1_Calend_Atv_Grad_04_05_2023.pdf",
+        "https://saa.unb.br/images/documentos/graduacao/Calendarios/Atividades/2022_2/2022_2_Calend_Atv_Grad_21_12_2022.pdf",
+        "https://saa.unb.br/images/documentos/graduacao/Calendarios/Atividades/2022_1/2022_1_Calendario_Atividades-Graduacao.pdf",
+        "https://saa.unb.br/images/documentos/graduacao/Calendarios/Atividades/2021_2/2021_2_Graduacao_Atividades_2.pdf",
+        "https://saa.unb.br/images/documentos/graduacao/atividade/Calendrio_de_Atividades_GRADUAO_1_2021_-_09_08_2021.pdf",
+        "https://saa.unb.br/images/documentos/graduacao/atividade/calendario_atividade_2_2020.pdf",
+        "https://saa.unb.br/images/documentos/graduacao/atividade/calativ20201.pdf"
+    ],
+    "verao": [
+        "https://saa.unb.br/images/documentos/graduacao/verao/2020.pdf",
+        "https://saa.unb.br/images/documentos/graduacao/Calendarios/Atividades/2023_4/2023_4_Calend_Ativ_Grad_07_12_2023.pdf"
+    ]
+}

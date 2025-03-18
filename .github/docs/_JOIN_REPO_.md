@@ -36,18 +36,11 @@ Este guia descreve como integrar o repositório `api` na pasta `api` do reposit�
     ```
     **Explicação:** Este comando insere o conteúdo do repositório `api` na pasta `api` dentro do repositório `estatistica`, preservando o histórico de commits.
 
-    **Nota:** Caso você receba o erro `Entry 'api/README.md' overlaps with 'api/README.md'. Cannot bind.`, isso significa que já existem arquivos na pasta `api` que conflitam com os arquivos do repositório `api`. Para resolver:
-
-    1. Remova ou mova os arquivos conflitantes da pasta `api` antes de executar o comando:
-        ```sh
-        rm -rf api/*
-        ```
-        **Explicação:** Este comando remove todos os arquivos existentes na pasta `api`. Certifique-se de fazer backup dos arquivos, se necessário.
-
-    2. Execute novamente o comando `git read-tree`:
-        ```sh
-        git read-tree --prefix=api/ -u api/main
-        ```
+    **Nota:** Caso você deseje substituir as mudanças no repositório `api` sem remover o conteúdo existente, utilize o comando com a opção `--reset`:
+    ```sh
+    git read-tree --prefix=api/ -u --reset api/main
+    ```
+    **Explicação:** A opção `--reset` força a atualização do conteúdo na pasta `api`, sobrescrevendo os arquivos existentes com os do repositório `api`. Isso evita a necessidade de remover manualmente os arquivos conflitantes.
 
 6. Faça commit das mudanças:
     ```sh
@@ -93,4 +86,4 @@ Este guia descreve como integrar o repositório `api` na pasta `api` do reposit�
 
 - Certifique-se de que a branch `main` do repositório `api` contém o conteúdo desejado antes de iniciar o processo.
 - Caso o repositório `api` use uma branch principal com outro nome (por exemplo, `master`), substitua `api/main` pelo nome correto da branch.
-- Se você precisar preservar os arquivos existentes na pasta `api`, mova-os para outro local antes de executar o comando `git read-tree`.
+- Para substituir mudanças no repositório `api` sem remover o conteúdo existente, utilize o comando `git read-tree` com a opção `--reset`.
