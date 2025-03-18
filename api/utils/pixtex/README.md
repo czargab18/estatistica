@@ -1,0 +1,1 @@
+Destinado a ser uma API do modelo usado no repositório Pix2Text, destinado a converter formulas e textos de imagens em código LaTeX.
