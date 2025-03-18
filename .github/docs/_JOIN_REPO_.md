@@ -80,7 +80,11 @@ Este guia descreve como integrar o repositório `api` na pasta `api` do reposit�
 
 12. Pronto! O repositório `api` foi integrado na pasta `api` do repositório `estatistica`.
 
-13. Se desejar, você pode excluir o repositório `api` clonado localmente.
+13. Se desejar, você pode excluir o repositório `api` clonado localmente:
+    ```cmd
+    rmdir /s /q api
+    ```
+    **Explicação:** Este comando remove a pasta `api` e todo o seu conteúdo de forma recursiva e silenciosa. Certifique-se de estar no diretório correto antes de executar este comando para evitar a exclusão acidental de outras pastas.
 
 ### Notas Adicionais
 
