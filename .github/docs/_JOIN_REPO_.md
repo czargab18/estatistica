@@ -91,3 +91,52 @@ Este guia descreve como integrar o repositório `api` na pasta `api` do reposit�
 - Certifique-se de que a branch `main` do repositório `api` contém o conteúdo desejado antes de iniciar o processo.
 - Caso o repositório `api` use uma branch principal com outro nome (por exemplo, `master`), substitua `api/main` pelo nome correto da branch.
 - Para substituir mudanças no repositório `api` sem remover o conteúdo existente, utilize o comando `git read-tree` com a opção `--reset`.
+
+## Movendo uma Subpasta para Outro Local no Repositório
+
+Este guia descreve como mover uma subpasta para outro local dentro do repositório GitHub.
+
+### Passos Detalhados
+
+1. Clone o repositório para o seu sistema local:
+    ```bash
+    git clone https://github.com/cesargabrielphd/estatistica.git
+    cd estatistica
+    ```
+    **Explicação:** Este comando cria uma cópia local do repositório `estatistica` e navega para a pasta clonada.
+
+2. Crie um novo branch para a mudança:
+    ```bash
+    git checkout -b mover-subpasta
+    ```
+    **Explicação:** A nova branch `mover-subpasta` é criada para isolar as mudanças.
+
+3. Mova a subpasta para o novo local:  
+   Utilize o comando `mv` para mover a subpasta. Por exemplo, se você quiser mover a subpasta `docs/subpasta1` para `new_location/subpasta1`:
+    ```bash
+    mv docs/subpasta1 new_location/subpasta1
+    ```
+    **Explicação:** Este comando move a subpasta para o novo local desejado.
+
+4. Adicione as mudanças ao Git:
+    ```bash
+    git add .
+    ```
+    **Explicação:** Este comando adiciona as mudanças feitas ao índice do Git.
+
+5. Faça commit das mudanças:
+    ```bash
+    git commit -m "Mover subpasta1 para new_location"
+    ```
+    **Explicação:** O commit salva as mudanças feitas na branch `mover-subpasta`.
+
+6. Envie o branch para o repositório remoto:
+    ```bash
+    git push origin mover-subpasta
+    ```
+    **Explicação:** Este comando envia as mudanças da branch `mover-subpasta` para o repositório remoto.
+
+7. Crie um Pull Request no GitHub:  
+   Vá até o repositório no GitHub e crie um Pull Request para o branch `mover-subpasta` que você acabou de enviar.
+
+8. Após a revisão e aprovação do Pull Request, a subpasta será movida para o novo local no repositório.
