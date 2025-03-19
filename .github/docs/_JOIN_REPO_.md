@@ -92,6 +92,7 @@ Este guia descreve como integrar o repositório `api` na pasta `api` do reposit�
 - Caso o repositório `api` use uma branch principal com outro nome (por exemplo, `master`), substitua `api/main` pelo nome correto da branch.
 - Para substituir mudanças no repositório `api` sem remover o conteúdo existente, utilize o comando `git read-tree` com a opção `--reset`.
 
+<<<<<<< HEAD
 ## Movendo uma Subpasta para Outro Local no Repositório
 
 Este guia descreve como mover uma subpasta para outro local dentro do repositório GitHub.
@@ -140,3 +141,55 @@ Este guia descreve como mover uma subpasta para outro local dentro do repositór
    Vá até o repositório no GitHub e crie um Pull Request para o branch `mover-subpasta` que você acabou de enviar.
 
 8. Após a revisão e aprovação do Pull Request, a subpasta será movida para o novo local no repositório.
+=======
+### Ignorando Pastas ou Arquivos ao Juntar Repositórios
+
+Se você deseja integrar dois repositórios, mas ignorar pastas ou arquivos específicos, siga os passos abaixo:
+
+1. **Clone o repositório principal**:
+   ```bash
+   git clone <url-do-repositorio-principal>
+   cd <nome-do-repositorio-principal>
+   ```
+
+2. **Adicione o repositório secundário como remoto**:
+   ```bash
+   git remote add repo-secundario <url-do-repositorio-secundario>
+   ```
+
+3. **Busque o conteúdo do repositório secundário**:
+   ```bash
+   git fetch repo-secundario
+   ```
+
+4. **Crie uma branch para integração**:
+   ```bash
+   git checkout -b integracao-repo-secundario repo-secundario/main
+   ```
+
+5. **Remova as pastas ou arquivos que deseja ignorar**:
+   ```bash
+   git rm -r --cached <caminho-da-pasta-ou-arquivo>
+   ```
+
+6. **Mescle a branch de integração na branch principal**:
+   ```bash
+   git checkout main
+   git merge --allow-unrelated-histories integracao-repo-secundario
+   ```
+
+7. **Finalize o processo**:
+   - Confirme as alterações.
+   - Faça o commit final:
+     ```bash
+     git commit -m "Mesclando repositórios com exclusão de arquivos/pastas específicas"
+     ```
+   - Remova o remoto do repositório secundário, se necessário:
+     ```bash
+     git remote remove repo-secundario
+     ```
+
+Agora, o repositório principal conterá os arquivos do repositório secundário, exceto aqueles que foram ignorados.
+
+**Nota:** Certifique-se de substituir `<url-do-repositorio-principal>`, `<url-do-repositorio-secundario>` e `<caminho-da-pasta-ou-arquivo>` pelos valores corretos.
+>>>>>>> 740c758ccb18b0991ce149a17bcb0023ad642eed
