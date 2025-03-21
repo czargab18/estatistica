@@ -1,0 +1,16 @@
+{
+  "_comment": "Estrutura dos grupos de páginas do site",
+  "departamento": {
+    "1": [],
+    "2": []
+  },
+  "graduacao": {
+    "curso": ["descricao", "disciplinas", "documentos"],
+    "discente": ["alunoespecial", "boasvindas", "email", "plataformas", "auxilios", "editais"],
+    "administracao": ["secretaria", "docentes", "administracao", "editais", "parceiros"]
+  },
+  "posgraduacao": {},
+  "educacao": {},
+  "unb": {},
+  "outras": {}
+}
