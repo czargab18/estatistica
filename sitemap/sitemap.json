@@ -1,550 +1,175 @@
 {
-  "departamento": {
-    "dep": [
-      "historia",
-      "instalacoes",
-      "editais",
-      "departamento",
-      "secretaria",
-      "comissoes",
-      "conselho",
-      "docentes",
-      "boasvindas",
-      "instalacoes",
-      "mapas"
-    ],
-    "documentos": [
-      "calendarioacademico",
-      "formularios",
-      "fichas",
-      "links",
-      "resolucoes",
-      "regimentos",
-      "auxilios",
-      "registroacademico",
-      "matricula",
-      "eventosdeboasvindas",
-      "checklist",
-      "identidadeestudantil",
-      "servicos",
-      "manualparaestudantes",
-      "comoselocalizar",
-      "plataformas"
-    ],
-    "programas": [
-      "gestaoedesempenho",
-      "planejamentoestrategico"
-    ],
-    "parceiros": [
-      "associacoes",
-      "entidadesdefomento",
-      "parceirosacademicos"
-    ],
-    "producaoacademica": [
-      "gruposdepesquisa",
-      "producao",
-      "premios"
-    ],
-    "eventos": [
-      "eventos"
-    ],
-    "noticias": [
-      "noticias"
-    ],
-    "plataformas": [
-      "aprender",
-      "moodle",
-      "office365",
-      "email-inst"
-    ],
-    "servicos": [
-      "identidadeestudantil",
-      "biblioteca",
-      "assistenciaestudantil",
-      "transporte",
-      "alimentacao"
-    ]
-  },
-  "graduacao": {
-    "curso": [
-      "descricao",
-      "disciplinas",
-      "documentos",
-      "matricula",
-      "regulamentos"
-    ],
-    "discente": [
-      "alunoespecial",
-      "boasvindas",
-      "email",
-      "plataformas",
-      "auxilios",
-      "editais",
-      "tutoria",
-      "orientacaoacademica",
-      "acessibilidade"
-    ],
-    "administracao": [
-      "secretaria",
-      "docentes",
-      "administracao",
-      "orientacaoacademica",
-      "editais",
-      "parceiros"
-    ],
-    "oportunidades": [
-      "oportunidades"
-    ],
-    "avaliacao": [
-      "cnade"
-    ],
-    "comissao_graduacao": [
-      "comissaograduacao"
-    ],
-    "docentes": []
-  },
-  "posgraduacao": {
-    "programas": [
-      "mestrado",
-      "doutorado",
-      "especializacao"
-    ],
-    "discente": [
-      "matricula",
-      "regulamentos",
-      "defesas",
-      "auxilios",
-      "editais"
-    ],
-    "docente": [
-      "orientadores",
-      "projetos",
-      "publicacoes"
-    ],
-    "internacionalizacao": [
-      "intercambio",
-      "parcerias",
-      "programas"
-    ],
-    "bancas": [
-      "bancas"
-    ],
-    "comissao_graduacao": [
-      "comissaograduacao"
-    ],
-    "docentes": []
-  },
-  "extensão": {
-    "extencao": [
-      "monitoria",
-      "editais",
-      "programas",
-      "pet",
-      "documentos",
-      "projetos",
-      "cursos",
-      "monitoria",
-      "laboratorios",
-      "mesaredonda",
-      "palestras"
-    ],
-    "eventos": [
-      "confrencias",
-      "feiras",
-      "encontros",
-      "coloquios",
-      "seminarios",
-      "workshops",
-      "palestras"
-    ],
-    "colaboracoes": [
-      "empresas",
-      "instituicoes",
-      "ongs"
-    ],
-    "consultoria": [
-      "consultoria"
-    ],
-    "submissao_projetos": [
-      "submissaoprojetos"
-    ]
-  },
-  "educacao": {
-    "extensao": [
-      "cursoslivres",
-      "eventos",
-      "projetos"
-    ],
-    "pesquisa": [
-      "linhasdepesquisa",
-      "publicacoes",
-      "grupos"
-    ],
-    "recursos": [
-      "biblioteca",
-      "laboratorios",
-      "softwares"
-    ],
-    "tecnologia": [
-      "plataformasdigitais",
-      "ferramentas",
-      "suporte"
-    ]
-  },
-  "unb": {
-    "sobre": [
-      "historia",
-      "campus",
-      "contato"
-    ],
-    "servicos": [
-      "biblioteca",
-      "restauranteuniversitario",
-      "transporte"
-    ],
-    "hierarquia": [
-      "reitoria",
-      "decanatos",
-      "insitutos",
-      "faculdades",
-      "departamentos"
-    ],
-    "internacional": [
-      "intercambio",
-      "cooperacao",
-      "idiomas"
-    ],
-    "institucional": [
-      "historiadaunb",
-      "unbemnumeros",
-      "conhecaoscampi",
-      "comochegar",
-      "estatutoeregimento"
-    ],
-    "administrativo": [
-      "reitoria",
-      "vicereitoria",
-      "conselhosecamaras",
-      "resolucoesdosconselhossuperiores",
-      "decanatos",
-      "secretarias",
-      "prefeituradaunb",
-      "organograma",
-      "orgaosauxiliaresecomplementares",
-      "cerimonial",
-      "assessoriasesecretarias",
-      "auditoriainterna",
-      "comissaodeetica",
-      "procuradoriafederaljuntaunb",
-      "sigunb"
-    ],
-    "academico": [
-      "faculdades",
-      "institutos",
-      "centros",
-      "educacaoadistancia",
-      "assuntosinternacionais"
-    ],
-    "comunicacao": [
-      "atendimentoajornalistas",
-      "falecomasecom",
-      "canaisoficiais",
-      "marcaunb",
-      "campanhainstitucional2025",
-      "unbtv"
-    ],
-    "estrutura_academica": [
-      "faculdades",
-      "institutos",
-      "centros",
-      "campi",
-      "darcyribeiro",
-      "ceilandia",
-      "gama",
-      "planaltina"
-    ],
-    "a_unb": [
-      "historia",
-      "missao",
-      "titulosecondecoracoes",
-      "unbemnumeros",
-      "campanhasinstitucionais",
-      "contatos"
-    ]
-  },
-  "outras": {
-    "noticias": [
-      "eventos",
-      "premiacoes",
-      "parcerias"
-    ],
-    "comunidade": [
-      "alumni",
-      "parceiros",
-      "voluntariado"
-    ],
-    "faq": [
-      "duvidasfrequentes",
-      "contato"
-    ],
-    "suporte": [
-      "ajuda",
-      "contato",
-      "faq"
-    ],
-    "galeria": [
-      "dep",
-      "unb",
-      "docentes",
-      "discentes",
-      "formatura",
-      "campanhas"
-    ],
-    "unbtv": [
-      "unbtv"
-    ],
-    "hospitais": [
-      "hospitaisunb"
-    ],
-    "restaurantes": [
-      "restauranteselanchonetes"
-    ],
-    "editora": [
-      "editora"
-    ],
-    "biblioteca": [
-      "biblioteca"
-    ],
-    "arquivo_central": [
-      "arquivocentral"
-    ],
-    "marca": [
-      "unb",
-      "departamento"
-    ],
-    "academico": [
-      "faculdades",
-      "institutos",
-      "centros",
-      "educacaoadistancia",
-      "assuntosinternacionais"
-    ],
-    "hierarquia_adm": [
-      "administrativo",
-      "reitoria",
-      "vicereitoria",
-      "conselhosecamaras",
-      "decanatos",
-      "secretarias",
-      "prefeituradaunb"
-    ]
-  },
   "todas_paginas": [
-    "acessibilidade",
-    "administracao",
-    "ajuda",
-    "alimentacao",
-    "alumni",
-    "alunoespecial",
-    "aprender",
-    "arquivocentral",
-    "associacoes",
-    "assistenciaestudantil",
-    "auxilios",
-    "bancas",
-    "biblioteca",
-    "boasvindas",
-    "campanhas",
-    "campus",
-    "calendarioacademico",
-    "centros",
-    "checklist",
-    "cursos",
-    "cursoslivres",
-    "defesas",
-    "decanatos",
+    "historia",
+    "instalacoes",
+    "editais",
     "departamento",
+    "secretaria",
+    "comissoes",
+    "conselho",
+    "docentes",
+    "boasvindas",
+    "mapas",
+    "calendarioacademico",
+    "formularios",
+    "fichas",
+    "links",
+    "resolucoes",
+    "regimentos",
+    "auxilios",
+    "registroacademico",
+    "matricula",
+    "eventosdeboasvindas",
+    "checklist",
+    "identidadeestudantil",
+    "servicos",
+    "manualparaestudantes",
+    "comoselocalizar",
+    "plataformas",
+    "gestaoedesempenho",
+    "planejamentoestrategico",
+    "associacoes",
+    "entidadesdefomento",
+    "parceirosacademicos",
+    "gruposdepesquisa",
+    "producao",
+    "premios",
+    "eventos",
+    "noticias",
+    "aprender",
+    "moodle",
+    "office365",
+    "email-inst",
+    "assistenciaestudantil",
+    "transporte",
+    "alimentacao",
     "descricao",
     "disciplinas",
-    "discentes",
-    "docentes",
     "documentos",
-    "duvidasfrequentes",
-    "editais",
-    "editora",
+    "alunoespecial",
     "email",
-    "email-inst",
-    "empresas",
-    "encontros",
-    "entidadesdefomento",
-    "especializacao",
-    "eventos",
-    "eventosdeboasvindas",
-    "ferramentas",
-    "feiras",
-    "fichas",
-    "formatura",
-    "formularios",
-    "gestaoedesempenho",
-    "grupos",
-    "gruposdepesquisa",
-    "hospitaisunb",
-    "identidadeestudantil",
-    "idiomas",
-    "institutos",
-    "instalacoes",
-    "intercambio",
-    "internacional",
-    "laboratorios",
-    "linhasdepesquisa",
-    "links",
-    "manualparaestudantes",
-    "mapas",
-    "matricula",
-    "mesaredonda",
-    "mestrado",
-    "moodle",
-    "monitoria",
-    "noticias",
-    "nucleodocenteestruturante",
-    "office365",
-    "ongs",
-    "oportunidades",
+    "tutoria",
     "orientacaoacademica",
+    "acessibilidade",
+    "administracao",
+    "oportunidades",
+    "cnade",
+    "comissaograduacao",
+    "mestrado",
+    "doutorado",
+    "especializacao",
+    "defesas",
     "orientadores",
-    "parceiros",
-    "parceirosacademicos",
-    "parcerias",
-    "palestras",
-    "pet",
-    "planejamentoestrategico",
-    "plataformas",
-    "plataformasdigitais",
-    "premiacoes",
-    "premios",
-    "processosseletivos",
-    "producoes",
-    "producao",
-    "producaoacademica",
-    "programas",
     "projetos",
     "publicacoes",
-    "reitoria",
-    "registroacademico",
-    "regimentos",
-    "regulamentos",
-    "restauranteselanchonetes",
-    "restauranteuniversitario",
-    "resolucoes",
-    "secretaria",
+    "intercambio",
+    "parcerias",
+    "bancas",
+    "monitoria",
+    "pet",
+    "cursos",
+    "laboratorios",
+    "mesaredonda",
+    "palestras",
+    "confrencias",
+    "feiras",
+    "encontros",
+    "coloquios",
     "seminarios",
-    "servicos",
-    "slides",
-    "softwares",
+    "workshops",
+    "empresas",
+    "instituicoes",
+    "ongs",
+    "consultoria",
     "submissaoprojetos",
+    "cursoslivres",
+    "linhasdepesquisa",
+    "grupos",
+    "softwares",
+    "plataformasdigitais",
+    "ferramentas",
     "suporte",
-    "transporte",
-    "tutoria",
-    "unb",
-    "unbtv",
+    "campus",
+    "contato",
+    "reitoria",
+    "decanatos",
+    "insitutos",
+    "faculdades",
+    "departamentos",
+    "cooperacao",
+    "idiomas",
+    "historiadaunb",
+    "unbemnumeros",
+    "conhecaoscampi",
+    "comochegar",
+    "estatutoeregimento",
     "vicereitoria",
-    "videoaulas",
-    "voluntariado",
-    "workshops"
-  ],
-  "menu_principal": {
-    "institucional": [
-      "a-unb",
-      "administrativo",
-      "campi",
-      "estrutura-academica"
-    ],
-    "vida_academica": [
-      "estude-na-unb",
-      "portal-do-estudante",
-      "graduacao",
-      "pos-graduacao",
-      "educacao-a-distancia",
-      "extensao-universitaria",
-      "assuntos-internacionais",
-      "iniciacao-cientifica",
-      "egresso",
-      "identidade-estudantil",
-      "representacao-estudantil"
-    ],
-    "pesquisa_e_inovacao": [
-      "unb-pesquisa",
-      "grupos-de-pesquisa",
-      "infraestrutura-de-pesquisa",
-      "propriedade-intelectual-e-transferencia-de-tecnologia",
-      "empreendedorismo",
-      "parque-cientifico-e-tecnologico",
-      "iniciacao-cientifica"
-    ],
-    "cultura_e_sociedade": [
-      "extensao-universitaria",
-      "arte-e-cultura",
-      "museus",
-      "acessibilidade",
-      "diversidade",
-      "esporte-e-lazer",
-      "saude",
-      "sustentabilidade",
-      "empresa-junior"
-    ],
-    "servicos": [
-      "carta-de-servicos",
-      "central-de-servicos-sti",
-      "mapas-dos-campi",
-      "sala-de-imprensa",
-      "fale-conosco",
-      "assistencia-estudantil",
-      "apoio-psicologico",
-      "biblioteca-central",
-      "editora-unb",
-      "fazenda-agua-limpa",
-      "hospitais-veterinarios",
-      "hospital-universitario",
-      "ouvidoria",
-      "prefeitura-da-unb",
-      "restaurante-universitario",
-      "transportes",
-      "unb-idiomas",
-      "telefones-uteis",
-      "adunb",
-      "dce",
-      "sintfub"
-    ],
-    "acesso_a_informacao": [
-      "institucional",
-      "acoes-e-programas",
-      "auditoria",
-      "convenios-e-transferencias",
-      "dados-abertos",
-      "informacoes-classificadas",
-      "licitacoes-e-contratos",
-      "ouvidoria",
-      "participacao-social",
-      "perguntas-frequentes",
-      "pesquisa-publica",
-      "protecao-de-dados-pessoais-lgpd",
-      "receitas-e-despesas",
-      "sancoes-administrativas",
-      "servico-de-informacao-ao-cidadao",
-      "servidores",
-      "outros"
-    ]
-  },
-  "menu_acesso_rapido": [
-    "acessibilidade",
+    "conselhosecamaras",
+    "resolucoesdosconselhossuperiores",
+    "organograma",
+    "orgaosauxiliaresecomplementares",
+    "cerimonial",
+    "assessoriasesecretarias",
+    "auditoriainterna",
+    "comissaodeetica",
+    "procuradoriafederaljuntaunb",
+    "sigunb",
+    "darcyribeiro",
+    "ceilandia",
+    "gama",
+    "planaltina",
+    "missao",
+    "titulosecondecoracoes",
+    "campanhasinstitucionais",
+    "contatos",
+    "arte-e-cultura",
+    "museus",
+    "diversidade",
+    "esporte-e-lazer",
+    "saude",
+    "sustentabilidade",
+    "empresa-junior",
+    "carta-de-servicos",
+    "central-de-servicos-sti",
+    "mapas-dos-campi",
+    "sala-de-imprensa",
+    "fale-conosco",
+    "apoio-psicologico",
+    "biblioteca-central",
+    "editora-unb",
+    "fazenda-agua-limpa",
+    "hospitais-veterinarios",
+    "hospital-universitario",
+    "ouvidoria",
+    "prefeitura-da-unb",
+    "restaurante-universitario",
+    "transportes",
+    "unb-idiomas",
+    "telefones-uteis",
+    "adunb",
+    "dce",
+    "sintfub",
+    "acoes-e-programas",
+    "auditoria",
+    "convenios-e-transferencias",
+    "dados-abertos",
+    "informacoes-classificadas",
+    "licitacoes-e-contratos",
+    "participacao-social",
+    "perguntas-frequentes",
+    "pesquisa-publica",
+    "protecao-de-dados-pessoais-lgpd",
+    "receitas-e-despesas",
+    "sancoes-administrativas",
+    "servico-de-informacao-ao-cidadao",
+    "servidores",
+    "outros",
     "graduacao",
     "aprender-unb",
     "iniciacao-cientifica",
-    "assistencia-estudantil",
     "marca-unb",
     "avaliacao-institucional",
     "peticionamento-eletronico",
-    "biblioteca-central",
     "pos-graduacao",
     "calendario-academico",
     "sigaa",
