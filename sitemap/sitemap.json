@@ -1,21 +1,19 @@
 {
   "_comment": "Estrutura dos grupos de páginas do site",
   "departamento": {
-    "dep": ["historia", "processos_seletivos"],
-    "administracao": [
+    "dep": [
+      "historia",
+      "instalacoes",
+      "editais",
       "departamento",
       "secretaria",
       "comissoes",
       "conselho",
-      "decanatos",
-      "hierarquia",
-      "deg",
-      "ie",
-      "dep"
+      "docentes",
+      "boasvindas",
+      "instalacoes",
+      "mapas"
     ],
-    "docentes": ["docentes"],
-    "boasvindas": ["boasvindas"],
-    "instalacoes": ["mapa-dep", "unb"],
     "documentos": [
       "calendarioacademico",
       "formularios",
@@ -34,16 +32,48 @@
       "comoselocalizar",
       "plataformas"
     ],
-    "programas": ["gestaoedesempenho", "planejamentoestrategico"],
-    "parceiros": ["associacoes", "entidadesdefomento", "parceirosacademicos"],
-    "producaoacademica": ["gruposdepesquisa", "producao", "premios"],
-    "eventos": ["eventos"],
-    "noticias": ["noticias"],
-    "plataformas": ["aprender", "moodle", "office365", "email-inst"],
-    "servicos": ["identidadeestudantil", "biblioteca", "assistenciaestudantil", "transporte", "alimentacao"]
+    "programas": [
+      "gestaoedesempenho",
+      "planejamentoestrategico"
+    ],
+    "parceiros": [
+      "associacoes",
+      "entidadesdefomento",
+      "parceirosacademicos"
+    ],
+    "producaoacademica": [
+      "gruposdepesquisa",
+      "producao",
+      "premios"
+    ],
+    "eventos": [
+      "eventos"
+    ],
+    "noticias": [
+      "noticias"
+    ],
+    "plataformas": [
+      "aprender",
+      "moodle",
+      "office365",
+      "email-inst"
+    ],
+    "servicos": [
+      "identidadeestudantil",
+      "biblioteca",
+      "assistenciaestudantil",
+      "transporte",
+      "alimentacao"
+    ]
   },
   "graduacao": {
-    "curso": ["descricao", "disciplinas", "documentos", "matricula", "regulamentos"],
+    "curso": [
+      "descricao",
+      "disciplinas",
+      "documentos",
+      "matricula",
+      "regulamentos"
+    ],
     "discente": [
       "alunoespecial",
       "boasvindas",
@@ -55,19 +85,54 @@
       "orientacaoacademica",
       "acessibilidade"
     ],
-    "administracao": ["secretaria", "docentes", "administracao", "orientacaoacademica", "editais", "parceiros"],
-    "oportunidades": ["oportunidades"],
-    "avaliacao": ["cnade"],
-    "comissao_graduacao": ["comissaograduacao"],
+    "administracao": [
+      "secretaria",
+      "docentes",
+      "administracao",
+      "orientacaoacademica",
+      "editais",
+      "parceiros"
+    ],
+    "oportunidades": [
+      "oportunidades"
+    ],
+    "avaliacao": [
+      "cnade"
+    ],
+    "comissao_graduacao": [
+      "comissaograduacao"
+    ],
     "docentes"
   },
   "posgraduacao": {
-    "programas": ["mestrado", "doutorado", "especializacao"],
-    "discente": ["matricula", "regulamentos", "defesas", "auxilios", "editais"],
-    "docente": ["orientadores", "projetos", "publicacoes"],
-    "internacionalizacao": ["intercambio", "parcerias", "programas"],
-    "bancas": ["bancas"],
-    "comissao_graduacao": ["comissaograduacao"],
+    "programas": [
+      "mestrado",
+      "doutorado",
+      "especializacao"
+    ],
+    "discente": [
+      "matricula",
+      "regulamentos",
+      "defesas",
+      "auxilios",
+      "editais"
+    ],
+    "docente": [
+      "orientadores",
+      "projetos",
+      "publicacoes"
+    ],
+    "internacionalizacao": [
+      "intercambio",
+      "parcerias",
+      "programas"
+    ],
+    "bancas": [
+      "bancas"
+    ],
+    "comissao_graduacao": [
+      "comissaograduacao"
+    ],
     "docentes"
   },
   "extensão": {
@@ -84,37 +149,130 @@
       "mesaredonda",
       "palestras"
     ],
-    "eventos": ["confrencias", "feiras", "encontros", "coloquios", "seminarios", "workshops", "palestras"],
-    "colaboracoes": ["empresas", "instituicoes", "ongs"],
-    "consultoria": ["consultoria"],
-    "submissao_projetos": ["submissaoprojetos"]
+    "eventos": [
+      "confrencias",
+      "feiras",
+      "encontros",
+      "coloquios",
+      "seminarios",
+      "workshops",
+      "palestras"
+    ],
+    "colaboracoes": [
+      "empresas",
+      "instituicoes",
+      "ongs"
+    ],
+    "consultoria": [
+      "consultoria"
+    ],
+    "submissao_projetos": [
+      "submissaoprojetos"
+    ]
   },
   "educacao": {
-    "extensao": ["cursoslivres", "eventos", "projetos"],
-    "pesquisa": ["linhasdepesquisa", "publicacoes", "grupos"],
-    "recursos": ["biblioteca", "laboratorios", "softwares"],
-    "tecnologia": ["plataformasdigitais", "ferramentas", "suporte"]
+    "extensao": [
+      "cursoslivres",
+      "eventos",
+      "projetos"
+    ],
+    "pesquisa": [
+      "linhasdepesquisa",
+      "publicacoes",
+      "grupos"
+    ],
+    "recursos": [
+      "biblioteca",
+      "laboratorios",
+      "softwares"
+    ],
+    "tecnologia": [
+      "plataformasdigitais",
+      "ferramentas",
+      "suporte"
+    ]
   },
   "unb": {
-    "sobre": ["historia", "campus", "contato"],
-    "servicos": ["biblioteca", "restauranteuniversitario", "transporte"],
-    "hierarquia": ["reitoria", "decanatos", "insitutos", "faculdades", "departamentos"],
-    "internacional": ["intercambio", "cooperacao", "idiomas"]
+    "sobre": [
+      "historia",
+      "campus",
+      "contato"
+    ],
+    "servicos": [
+      "biblioteca",
+      "restauranteuniversitario",
+      "transporte"
+    ],
+    "hierarquia": [
+      "reitoria",
+      "decanatos",
+      "insitutos",
+      "faculdades",
+      "departamentos"
+    ],
+    "internacional": [
+      "intercambio",
+      "cooperacao",
+      "idiomas"
+    ]
   },
   "outras": {
-    "noticias": ["eventos", "premiacoes", "parcerias"],
-    "comunidade": ["alumni", "parceiros", "voluntariado"],
-    "faq": ["duvidasfrequentes", "contato"],
-    "suporte": ["ajuda", "contato", "faq"],
-    "galeria": ["dep", "unb", "docentes", "discentes", "formatura", "campanhas"],
-    "unbtv": ["unbtv"],
-    "hospitais": ["hospitaisunb"],
-    "restaurantes": ["restauranteselanchonetes"],
-    "editora": ["editora"],
-    "biblioteca": ["biblioteca"],
-    "arquivo_central": ["arquivocentral"],
-    "marca": ["unb", "departamento"],
-    "academico": ["faculdades", "institutos", "centros", "educacaoadistancia", "assuntosinternacionais"],
+    "noticias": [
+      "eventos",
+      "premiacoes",
+      "parcerias"
+    ],
+    "comunidade": [
+      "alumni",
+      "parceiros",
+      "voluntariado"
+    ],
+    "faq": [
+      "duvidasfrequentes",
+      "contato"
+    ],
+    "suporte": [
+      "ajuda",
+      "contato",
+      "faq"
+    ],
+    "galeria": [
+      "dep",
+      "unb",
+      "docentes",
+      "discentes",
+      "formatura",
+      "campanhas"
+    ],
+    "unbtv": [
+      "unbtv"
+    ],
+    "hospitais": [
+      "hospitaisunb"
+    ],
+    "restaurantes": [
+      "restauranteselanchonetes"
+    ],
+    "editora": [
+      "editora"
+    ],
+    "biblioteca": [
+      "biblioteca"
+    ],
+    "arquivo_central": [
+      "arquivocentral"
+    ],
+    "marca": [
+      "unb",
+      "departamento"
+    ],
+    "academico": [
+      "faculdades",
+      "institutos",
+      "centros",
+      "educacaoadistancia",
+      "assuntosinternacionais"
+    ],
     "hierarquia_adm": [
       "administrativo",
       "reitoria",
