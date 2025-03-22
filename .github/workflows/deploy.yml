@@ -1,7 +1,7 @@
 name: Deployment Estatística
 on:
   push:
-    branches: ["main"]
+    branches: ["main","dev1"]
   pull_request:
     branches: ["main"]
   workflow_dispatch:
