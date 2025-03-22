@@ -1,4 +1,16 @@
 {
+  "_comment": ["__estrutura dos GRUPOS de PÁGINAS do site__"],
+  "departamento": [],
+  "graduacao": [],
+  "posgraduacao": [],
+  "extencao": [],
+  "educacao": [],
+  "unb": [],
+  "documentos": [],
+  "noticias": [],
+  "bemvindo": [],
+
+  "_comment__": ["__SUJESTÃO DE PÁGINAS__"],
   "todas_paginas": [
     "acoes-e-programas",
     "acessibilidade",
