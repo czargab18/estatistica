@@ -1,16 +1,71 @@
 {
-  "_comment": ["__estrutura dos GRUPOS de PÁGINAS do site__"],
-  "departamento": [],
-  "graduacao": [],
-  "posgraduacao": [],
-  "extencao": [],
-  "educacao": [],
-  "unb": [],
-  "documentos": [],
-  "noticias": [],
-  "bemvindo": [],
-
-  "_comment__": ["__SUJESTÃO DE PÁGINAS__"],
+  "_comment": [
+    "__estrutura dos GRUPOS de PÁGINAS do site__"
+  ],
+  "departamento": [
+    "chefia",
+    "coordenacoes",
+    "comissoes",
+    "infraestrutura"
+  ],
+  "graduacao": [
+    "graduacao",
+    "programas-institucionais",
+    "disciplinas",
+    "discentes"
+  ],
+  "posgraduacao": [
+    "pos-graduacao",
+    "ppgmat-mestrado-e-doutorado",
+    "profmat-mestrado-profissional",
+    "avaliacao-capes",
+    "linhas-de-pesquisas"
+  ],
+  "extencao": [
+    "projetos-extensao",
+    "contato-extensao",
+    "sobre-a-extensao",
+    "acoes-de-extensao",
+    "submissao-de-propostas"
+  ],
+  "educacao": [
+    "ensino",
+    "graduacao",
+    "pos-graduacao",
+    "programas-institucionais",
+    "seminarios"
+  ],
+  "unb": [
+    "sobre-a-unb",
+    "muito-prazer-unb",
+    "campi",
+    "reitoria",
+    "vice-reitoria"
+  ],
+  "documentos": [
+    "estatuto-e-regimento-geral",
+    "regimentos",
+    "resolucoes",
+    "formularios",
+    "roteiros-e-procedimentos"
+  ],
+  "noticias": [
+    "noticias",
+    "eventos",
+    "seminarios-eventos-e-canais",
+    "coloquios",
+    "workshop"
+  ],
+  "bemvindo": [
+    "boas-vindas-unb",
+    "calendario-academico",
+    "fale-conosco",
+    "mapas-do-campi",
+    "assistencia-estudantil"
+  ],
+  "_comment__": [
+    "__SUJESTÃO DE PÁGINAS__"
+  ],
   "todas_paginas": [
     "acoes-e-programas",
     "acessibilidade",
@@ -68,7 +123,6 @@
     "discentes",
     "diversidade",
     "diploma-digital",
-    "docentes",
     "dce",
     "editais",
     "editora",
@@ -240,9 +294,6 @@
     "livreto-mat-2023",
     "ensino",
     "graduacao",
-    "bacharelado-em-matematica",
-    "licenciatura-matematica-noturno",
-    "licenciatura-matematica-diurno",
     "programas-institucionais",
     "laboratorios",
     "coordenacao",
@@ -281,7 +332,6 @@
     "enviar-mensagem",
     "solicitacoes",
     "telefones-e-e-mail",
-    "departamento-de-matematica",
     "institucional",
     "secretaria",
     "roteiros-e-procedimentos",
@@ -305,13 +355,9 @@
     "pessoas",
     "alunos-e-egressos-do-mestrado",
     "alunos-e-egressos-do-doutorado",
-    "docentes",
     "tecnicos",
     "ensino-pesquisa-e-extensao",
     "graduacao",
-    "lic-matematica-diurno",
-    "lic-matematica-noturno",
-    "bacharelado-em-matematica",
     "programas-institucionais",
     "pos-graduacao",
     "avaliacao-capes",
@@ -326,13 +372,6 @@
     "escola-de-verao",
     "workshop",
     "workshop-de-verao",
-    "nossas-redes",
-    "nosso-instagram",
-    "canal-do-mat",
-    "canal-da-pos-graduacao",
-    "canal-do-calculo-1",
-    "canal-do-pet",
-    "canal-do-giem",
     "seminarios-algebra",
     "seminarios-analise",
     "seminarios-geometria",
@@ -491,5 +530,25 @@
     "diploma-digital-unb",
     "registrar-diploma-outra-ies",
     "revalidar-diploma-estrangeiro"
+  ],
+  "não_organizar": [
+    "departamento-de-matematica",
+    "bacharelado-em-matematica",
+    "licenciatura-matematica-diurno",
+    "licenciatura-matematica-noturno",
+    "lic-matematica-diurno",
+    "lic-matematica-noturno",
+    "bacharelado-em-matematica",
+    "departamento-de-matematica",
+    "bacharelado-em-matematica",
+    "licenciatura-matematica-noturno",
+    "licenciatura-matematica-diurno",
+    "canal-do-mat",
+    "canal-da-pos-graduacao",
+    "canal-do-calculo-1",
+    "canal-do-pet",
+    "canal-do-giem",
+    "nossas-redes",
+    "nosso-instagram"
   ]
 }
