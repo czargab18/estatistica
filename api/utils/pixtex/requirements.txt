@@ -180,7 +180,7 @@ numpy==1.26.4
     #   torchvision
     #   transformers
     #   ultralytics-thop
-onnx==1.16.2
+onnx==1.17.0
     # via
     #   cnocr
     #   cnstd
