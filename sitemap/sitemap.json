@@ -1,71 +1,15 @@
 {
-  "_comment": [
-    "__estrutura dos GRUPOS de PÁGINAS do site__"
-  ],
-  "departamento": [
-    "chefia",
-    "coordenacoes",
-    "comissoes",
-    "infraestrutura"
-  ],
-  "graduacao": [
-    "graduacao",
-    "programas-institucionais",
-    "disciplinas",
-    "discentes"
-  ],
-  "posgraduacao": [
-    "pos-graduacao",
-    "ppgmat-mestrado-e-doutorado",
-    "profmat-mestrado-profissional",
-    "avaliacao-capes",
-    "linhas-de-pesquisas"
-  ],
-  "extencao": [
-    "projetos-extensao",
-    "contato-extensao",
-    "sobre-a-extensao",
-    "acoes-de-extensao",
-    "submissao-de-propostas"
-  ],
-  "educacao": [
-    "ensino",
-    "graduacao",
-    "pos-graduacao",
-    "programas-institucionais",
-    "seminarios"
-  ],
-  "unb": [
-    "sobre-a-unb",
-    "muito-prazer-unb",
-    "campi",
-    "reitoria",
-    "vice-reitoria"
-  ],
-  "documentos": [
-    "estatuto-e-regimento-geral",
-    "regimentos",
-    "resolucoes",
-    "formularios",
-    "roteiros-e-procedimentos"
-  ],
-  "noticias": [
-    "noticias",
-    "eventos",
-    "seminarios-eventos-e-canais",
-    "coloquios",
-    "workshop"
-  ],
-  "bemvindo": [
-    "boas-vindas-unb",
-    "calendario-academico",
-    "fale-conosco",
-    "mapas-do-campi",
-    "assistencia-estudantil"
-  ],
-  "_comment__": [
-    "__SUJESTÃO DE PÁGINAS__"
-  ],
+  "_comment": ["__estrutura dos GRUPOS de PÁGINAS do site__"],
+  "departamento": [],
+  "graduacao": [],
+  "posgraduacao": [],
+  "extencao": [],
+  "educacao": [],
+  "unb": [],
+  "documentos": [],
+  "noticias": [],
+  "bemvindo": [],
+  "_comment__": ["__SUJESTÃO DE PÁGINAS__"],
   "todas_paginas": [
     "acoes-e-programas",
     "acessibilidade",
