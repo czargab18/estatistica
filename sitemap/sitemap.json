@@ -8,15 +8,18 @@
       "bemvindo",
       "instalacoes",
       "documentos-dep",
+      "calendarioacademico",
       "programas",
       "parceiros",
       "producao-academica",
-      "noticias"
+      "noticias",
+      "estatutoeregimento"
     ],
     "graduacao": [
       "descricao",
       "disciplinas",
       "documentos-grad",
+      "calendarioacademico-grad",
       "aluno-especial",
       "boas-vindas",
       "administracao-grad",
@@ -24,7 +27,17 @@
       "plataformas",
       "avaliacao-cnade"
     ],
-    "posgraduacao": ["descricao", "discplinas", "programas", "comissao", "banca", "documentos", "auxilios", "docentes"],
+    "posgraduacao": [
+      "descricao",
+      "discplinas",
+      "programas",
+      "comissao",
+      "banca",
+      "documentos",
+      "auxilios",
+      "docentes",
+      "calendarioacademico-pos"
+    ],
     "extensao": [
       "monitoria",
       "editais",
@@ -43,7 +56,7 @@
       "conferencias",
       "seminarios"
     ],
-    "educacao": ["disciplinas", "artigos", "ntas-aulas", "livros", "video-aulas", "exercicios", "dicas"],
+    "educacao": ["disciplinas", "artigos", "notas-aulas", "livros", "video-aulas", "exercicios", "dicas"],
     "unb": [
       "bolsas",
       "editais",
@@ -54,11 +67,53 @@
       "bce",
       "lojas",
       "hierarquia-admin-unb",
-      "paginas-unb"
+      "paginas-unb",
+      "estatutoeregimento",
+      "regimentos",
+      "resolucoes"
     ],
-    "documentos": [],
-    "noticias": [],
-    "bemvindo": []
+    "documentos": [
+      "estatutoeregimento",
+      "regimentos",
+      "resolucoes",
+      "resolucoesdosconselhossuperiores",
+      "estatuto-e-regimento-geral",
+      "plano-de-desenvolvimento-institucional",
+      "plano-de-integridade",
+      "plano-orientador",
+      "projeto-politico-pedagogico-institucional",
+      "politica-de-gestao-de-riscos",
+      "resolucoes-dos-conselhos-superiores",
+      "manual-de-documentos-administrativos",
+      "regimento-disciplinar",
+      "termo-de-ajustamento-de-conduta",
+      "modelo-de-maturidade-em-ouvidoria-publica",
+      "carta-de-servicos-ao-usuario",
+      "relatorio-de-autoavaliacao-institucional",
+      "relatorio-de-gestao",
+      "relatorios-de-monitoramento",
+      "relato-institucional",
+      "cronograma-de-desembolso-20XX",
+      "relatorio-ilustrado-gestao-20XX-20XX",
+      "legislacao-graduacao",
+      "legislacao-pos-graduacao",
+      "normativos-graduacao",
+      "normativos-pos-graduacao"
+    ],
+    "noticias": ["noticias", "noticias-unb", "noticias-dep", "noticias-informacoes"],
+    "bemvindo": [
+      "semana-de-boas-vindas",
+      "evento-conecta-calousos",
+      "programacao-boas-vindas",
+      "registroacademico",
+      "matricula",
+      "manual-para-estudantes",
+      "identidade-estudantil",
+      "serviços",
+      "checklist",
+      "mapa-unb",
+      "plataformas"
+    ]
   },
   "_comment__": ["____________________________________________________________________________"],
   "todas_paginas": [
@@ -83,8 +138,6 @@
     "biblioteca",
     "biblioteca-central",
     "boasvindas",
-    "calendario-academico",
-    "calendarioacademico",
     "campanhasinstitucionais",
     "campanhas",
     "campi",
