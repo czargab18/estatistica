@@ -141,3 +141,9 @@ LINKS = [
 ]
 
 PATTERN_BOOKS_NAME = re.compile(r'^[A-Z]{3}\d{4}$')
+
+print(importjson())
+print(listabooks())
+print(corsearchjson())
+print(corpathlinksearchjson())
+print(corpathlinksearchjson(importjson('./data/books/books.json')))
