@@ -1,0 +1,65 @@
+.Rproj.user
+.Rhistory
+*_cache
+*_files
+_main.rds
+_book
+*.md
+search_index.json
+libs
+*.rds
+_main.*
+tmp-pdfcrop-*
+figures
+*libs
+test_*
+*.venv/
+*/.venv/
+
+# Ignorar todos as subpasta dentro de diretórios
+**/*cache*
+**/*/*/ac/
+**/*/*/wss/
+
+book/*/.quarto/
+# book/*/index_files/
+book/*/site_libs/
+book/*/.gitignore
+book/*/conteudo/*/*.html
+
+
+## OGANIZAR ESTAS LISTAS REPOSITÓRIO: cesargabrielphd/curso
+*.Rproj
+*.Rproj.*
+*.Rhistory
+*.RData
+*.Ruserdata
+*.Renviron
+*.Renviron.*
+
+*.httr-oauth
+*.DS_Store
+*.quarto
+*.DBF
+*.xlsx
+*.xls
+*.csv
+
+Trabalho 1/dataProject
+Trabalho 1/data.Need.Project/
+Trabalho 2/dataProject
+Trabalho 2/dataProject/
+Atividaes/PadronTaxas/dataProject
+Atividaes/PadronTaxas/dataProject/
+SINGAGE.XLS
+
+################################################################################
+################################## NÃO IGNORA ##################################
+################################################################################
+!**/CODE_OF_CONDUCT.md
+!**/plausible.html
+!**/wss/
+!**/public.html
+!**/.gitignore
+!**/backend/*
+!**/docs/

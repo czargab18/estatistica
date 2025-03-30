@@ -1,0 +1,226 @@
+\documentclass[12pt, a4paper, twoside]{article}
+% fonte 12, folha A4, impressão anverso (frente)
+
+\usepackage{scripts/meuscomandos}
+% meus comandos criados ajuda do bing.com e ChatGPT
+
+\usepackage[left = 3cm, top = 3cm, right = 2cm, bottom = 2cm]{geometry}
+% margens- document por geometry
+
+\usepackage[brazilian]{babel}
+% conversões tipográficas e linguísticas brasileiras
+
+\usepackage{pdfpages}
+% inserir outras pages .pdf no LaTeX
+
+\usepackage[utf8]{inputenc}
+% processar caracteres
+
+\usepackage{amsmath, amsfonts, amssymb}
+% ambientes, símbolos e fontes matemáticas.
+
+\numberwithin{equation}{subsection}
+% enumerar equação de acordo com a seção que está
+
+\usepackage{fancyhdr}
+% custom style, content e posição do cabeçalho e rodapé
+
+\usepackage{colortbl}
+% colorir células de tabelas
+
+\usepackage{titletoc,titlesec}
+% formatação dos títulos das seções
+
+\usepackage{setspace}
+% espaçamento entre linhas
+
+\usepackage{indentfirst}
+% recuar 1° linha cada parágrafo
+
+% \usepackage{natbib}
+% gerenciar referências bibliográficas
+%%%% NÃO FUNCIONA COM pacote BIBLITEX
+
+\usepackage[utf8]{inputenc}
+%
+
+\usepackage{epigraph}
+% adicionar epigrafe
+
+\usepackage{graphicx}
+% inserir img no LaTeX
+
+\usepackage[utf8]{inputenc}
+
+\usepackage{array}
+% criar e manipular tabelas
+
+\usepackage[colorlinks=true, allcolors=black]{hyperref}
+% criar links clicáveis (refer cruzadas, citações ou URLs. )
+
+% \usepackage[brazilian,hyperpageref]{backref}
+% add list pages onde cada ref bibliog foi citada
+%%%% NÃO FUNCIONA COM pacote BIBLITEX
+
+\usepackage[alf]{abntex2cite}
+% criar citaç e refer bibliog ABNT
+
+\usepackage{multirow} % https://www.ctan.org/pkg/multirow
+% criar células +1 linha
+
+\usepackage{float} % https://www.ctan.org/pkg/float
+% controlar posição de objetos flutuantes (img e tabelas)
+
+\usepackage{booktabs} % https://www.ctan.org/pkg/booktabs
+% criar tabelas mais profissionais
+
+\usepackage{enumitem} % https://www.ctan.org/pkg/enumitem
+% criar listas enumeradas (em 1,2,3... ou I, II, III, IV...)
+
+% \usepackage[brazilian,hyperpageref]{backref}
+% add list pages onde cada ref bibliog foi citada
+%%%% NÃO FUNCIONA COM pacote BIBLITEX
+
+\usepackage{epigraph}
+% inserir citações ou epígrafes no texto ou antes de um capítulo
+
+\usepackage{subfigure}
+% criar figuras com múltiplas +2img que podem ser posicionadas e rotuladas indepen
+
+\usepackage{anyfontsize}
+% selecionar qualquer tamanho de img
+
+\usepackage{caption}
+% personalizar as legendas das figuras e tabelas.
+
+\usepackage{adjustbox}
+% fornece várias macros para ajustar o conteúdo de caixas.
+% macros: é um comando que define uma sequênc de instruções p/ LaTeX executar.
+% caixa: é um objeto que contém algum conteúdo, como txt, img ou tabela
+
+\usepackage{bm}
+% colocar objetos matemáticos em negrito.
+
+
+\usepackage{placeins}
+% controlar a posição dos objetos flutuantes (como figuras e tabelas)
+
+\usepackage{float}
+%  criar e personalizar objetos flutuantes (como figuras e tabelas)
+
+\usepackage{etoolbox}
+% ajuda a programar em LaTeX + fácil e poderosa. Ele tem muitas funções % que permitem fazer coisas como modificar comandos existentes, testar % % condições, criar listas e variáveis lógicas. 
+
+\usepackage[style=abnt]{biblatex}
+% gerenciar e format citaç e refer bibliogr de acordo com as normas da ABNT
+
+\addbibresource{parte-03/00-bibliografia.bib}
+% \addbibresource{ref.bib}
+
+% \bibliographystyle{plain} % ja estou usando abnt (biblatex acima)
+% definir o estilo de format das refer bibliogr LaTeX usando o BiBTeX
+
+\raggedbottom % https://latexref.xyz/_005craggedbottom.html
+% criar layout de pagina mais agradável
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%\newtheorem{<nome>}{<cabeçalho>}[<contador>]
+% <nome> é o nome do ambiente que é definido.
+% <cabeçalho> é a palavra que será impressa, em negrito, no início do ambiente.
+% <contador> é o nome de um contador existente ao qual o ambiente será subordinado.
+
+\newtheorem{teo}{Teorema}[section]
+\newtheorem{lema}[teo]{Lema}
+\newtheorem{cor}[teo]{Corolário}
+\newtheorem{prop}[teo]{Proposição}
+\newtheorem{defi}{Definição}
+\newtheorem{exem}{Exemplo}
+
+
+% (\newtheorem{teo}{Teorema}[section]) criou um ambiente chamado teo para escrever teoremas.
+% Cada teorema terá um número seguindo o número da seção em que está.
+% Por exemplo: Teorema 1.1, Teorema 1.2, etc.
+% 
+% Você pode usar esse ambiente assim:
+% 
+% (\begin{teo} Sejam A e B conjuntos não vazios. Então A x B não é vazio. \end{teo}), ou seja,
+% 
+% Teorema 1.1 Sejam A e B conjuntos não vazios. Então A x B não é vazio.
+
+
+%%%%%%%%%% CONFIGURAÇÕES DE PÁGINA E FONTES
+
+\pagestyle{fancy}
+\fancyhf{}
+\renewcommand{\headrulewidth}{0.4pt}
+\setlength{\headheight}{16pt}
+% C - Centro, L - Esquerda, R - Direita, O - impar, E - par
+\fancyhead[RO, LE]{\thepage}
+\renewcommand{\sectionmark}[1]{\markboth{#1}{}}
+
+\titlecontents{section}[0cm]{}{\bf\thecontentslabel\ }{}{\titlerule*[.75pc]{.}\contentspage}
+\titlecontents{subsection}[0.75cm]{}{\thecontentslabel\ }{}{\titlerule*[.75pc]{.}\contentspage}
+
+\setcounter{secnumdepth}{3}
+\setcounter{tocdepth}{3}
+
+\DeclareCaptionFormat{myformat}{ \centering \fontsize{10}{12}\selectfont#1#2#3}
+\captionsetup{format=myformat}
+
+\def\blankpage{%
+      \clearpage%
+      \thispagestyle{empty}%
+      \addtocounter{page}{-1}%
+      \null%
+      \clearpage}
+
+%%%%%%%%%% CONFIGURAÇÕES DE PÁGINA E FONTE
+
+\pagenumbering{arabic}
+\setcounter{page}{2}
+\onehalfspacing
+
+\setlength{\parindent}{1.5cm}
+\setlength{\parskip}{0.2cm}
+\setlength{\intextsep}{0.5cm}
+
+\titlespacing*{\section}{0cm}{0cm}{0.5cm}
+\titlespacing*{\subsection}{0cm}{0.5cm}{0.5cm}
+\titlespacing*{\subsubsection}{0cm}{0.5cm}{0.5cm}
+\titlespacing*{\paragraph}{0cm}{0.5cm}{0.5cm}
+
+\titleformat{\paragraph}
+{\normalfont\normalsize\bfseries}{\theparagraph}{1em}{}
+
+\pagenumbering{arabic}
+\setcounter{page}{3}
+    
+\fancyhead[RE, LO]{\nouppercase{\emph\leftmark}}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%% INÍCIO DO DOCUMENTO %%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{document}
+
+%%%%%%%%%% CAPA %%%%%%%%%%
+\include{parte-00/00-capa}
+
+
+%%%%%%%%%% LOCAL- GRÁFICOS - IMAGENS %%%%%%%%%%
+\graphicspath{ {arquivos/graficos/} }
+\graphicspath{{arquivo/imgs/}}
+
+
+%%%%%%%%%% METODOLOGIA %%%%%%%%%%
+  \section{Analise e Conclusão de resultados}
+  \input{parte-02/04-metodologia}
+  \newpage  
+
+
+  %%%%%%%%%% FIM DO DOCUMENTO %%%%%%%%%%
+\end{document}
+
+

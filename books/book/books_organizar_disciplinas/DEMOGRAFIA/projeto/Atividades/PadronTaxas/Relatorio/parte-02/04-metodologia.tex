@@ -1,0 +1,162 @@
+
+Para a realização da Atividade 4.2: Padronização de taxas, para aplicação dos conceitos de padronização, direta ou indireta, para comparação de taxas de mortalidade entre dois países desejados, Brasil e República Unida da Tanzânia. Ambos os países foram escolhidos para atender ao critério da atividade: " dois países de diferentes características demográficas e socioeconômicas".
+
+Os dados dos dois países, referentes a dados sobre projeções da população, mortalidade, idade simples e sexo - masculino e feminino, foram obtidos direto do portal "online" do Department of Economic and Social Affairs (Population Division) da Organização das Nações Unidas (ONU). A analise e padronização, para comparação das taxas, foram realizadas apenas para o ano de 2019. Abaixo, segue a descrição dos cálculos e os resultados encontrados ao realizar a atividade.
+
+
+\subsection{Descrição  e manipulação das bases de dados.}
+
+Os dados referentes a mortalidade, foram obtidos pelo link: "\emph{Deaths by Single Age - Both Sexes (XLSX, 119.78 MB)}", sub grupo referente a idade simples e os dados são sobre Número de óbitos por idade simples (em milhares de pessoas).
+
+Os dados referente a projeção das populações encontravam se no link "\emph{Population by Single Age - Both Sexes (XLSX, 160.91 MB)}", referente a idade simples e descrição "\emph{PTotal population (both sexes combined) by single age. De facto population as of 1 July of the year indicated classified by single age (0, 1, 2, ..., 99, 100+). Data are presented in thousands.}".
+
+Ao baixar e importar as bases, os dados referentes as idades simples foram agrupados em grupos etários quinquenais, exceto nos primeiros grupos de: 0 a 1 ano completo e 1 a 4 anos completos. As duas bases puderam, então, ser juntadas pela coluna "grupo", referente aos grupo etários. As colunas que começam com nDx e nPx, correspondem ao numero de óbitos e a projeção da população em cada faixa etária, respectivamente. As colunas que começam com nMx, referem se ao cálculo das taxas especificas de mortalidade em cada População. Onde a letra B é referente aos dados da população do Brasil e T ao da República Unida da Tanzânia. A \ref{tab:dfBT}, na linha "\emph{População Total}" e colunas "\emph{nMxB}" e "\emph{nMxT}" já nos mostra as taxas brutas do Brasil e da Tanzânia em milhares de habitantes, sendo 0.0066 e 0.006, respectivamente.
+
+
+\begin{table}[H]
+  \centering
+  \caption{Dados sobre Mortalidade e Projeção das Populações do Brasil e República Unida da Tanzânia no ano de 2019 (em milhares de pessoas).}
+  \label{tab:dfBT}
+  \begin{tabular}{ccccccc}
+    \hline
+    Grupo & nDxB & nPxB & nMxB & nDxT & nPxT & nMxT \\
+    \hline
+    0-1    & 40.179   &  5816.67   & 0.0069 & 92.55  & 4206.26   & 0.022 \\
+    1-4    & 4.119    &  11713.30  & 4e-04  & 17.85  & 7713.8    & 0.0023 \\
+    5-9    & 3.815    &  14861.43  & 3e-04  & 7.77   & 8422.71   & 9e-04 \\
+    10-14  & 4.107    &  15551.77  & 3e-04  & 6.42   & 7488.95   & 9e-04 \\[4pt]
+    15-19  & 10.011   &  16608.99  & 6e-04  & 9.01   & 6205.12   & 0.0015 \\
+    20-24  & 16.502   &  17165.58  & 0.001  & 9.67   & 4974.64   & 0.0019 \\
+    25-29  & 20.723   &  17162.53  & 0.0012 & 9.7    & 4204.76   & 0.0023 \\
+    30-34  & 26.507   &  17601.58  & 0.0015 & 10.84  & 3743.46   & 0.0029 \\[4pt]
+    35-39  & 33.935   &  16937.54  & 0.002  & 12.42  & 3217.92   & 0.0039 \\
+    40-44  & 42.067   &  15035.07  & 0.0028 & 13.32  & 2542.29   & 0.0052 \\
+    45-49  & 52.473   &  13468.65  & 0.0039 & 14.04  & 1913.74   & 0.0073 \\
+    50-54  & 71.488   &  12468.24  & 0.0057 & 15.22  & 1453.48   & 0.0105 \\[4pt]
+    55-59  & 91.947   &  11047.03  & 0.0083 & 17.24  & 1148.58   & 0.015 \\
+    60-64  & 117.102  &  8902.98   & 0.0132 & 21.42  & 939.07    & 0.0228 \\
+    65-69  & 142.16   &  6844.66   & 0.0208 & 24.66  & 714.69    & 0.0345 \\
+    70-74  & 158.9    &  4661.291  & 0.0341 & 26.90  & 510.20    & 0.0527 \\[4pt]
+    75-79  & 177.365  &  3225.25   & 0.055  & 21.74  & 273.1     & 0.0796 \\
+    80-100 & 378.036  &  2710.23   & 0.1395 & 29.40  & 199.73    & 0.1472 \\
+    População Total   &  1391.43   & 211782.87 & 0.0066 & 360.222 & 59872.579 & 0.006 \\
+    \hline
+  \end{tabular}
+  \caption*{Fonte: Department of Economic and Social Affairs (Population Division) da Organização das Nações Unidas (ONU).}
+\end{table}
+
+Para a padronização direta e indireta, utilizou se como população padrão para as comparações, a população mundial, presentes em ambas as bases obtidas pela ONU. Optou-se por seguir a mesma nomenclatura das colunas da tabela \ref{tab:dfBT} ao analisar os dados.
+
+\begin{table}[H]
+\centering
+\captionsetup{justification=raggedright,singlelinecheck=false}
+  \caption{Dados sobre Mortalidade e Projeção da População Mundial ano de 2019 (em milhares de pessoas).}
+    \label{tab:dfW}
+\begin{tabular}{cccc}
+    \hline
+    Grupo & nDxW & nPxW & nMxW \\
+    \hline
+0-1    &  4472.946  &  272161.8345  &  0.0164 \\
+1-4    &  1054.388  &  549896.8135  &  0.0019 \\
+5-9    &  636.216   &  673815.0815  &  9e-04  \\
+10-14  &  472.182   &  638097.1725  &  7e-04  \\[4pt]
+15-19  &  709.575   &  610706.2035  &  0.0012 \\
+20-24  &  870.377   &  595436.744   &  0.0015  \\
+25-29  &  963.471   &  606868.8465  &  0.0016  \\
+30-34  &  1074.181  &  582457.586   &  0.0018  \\[4pt]
+35-39  &  1240.613  &  529248.4205  &  0.0023  \\
+40-44  &  1498.393  &  482178.481   & 0.0031   \\
+45-49  &  1993.505  &  472843.1765  & 0.0042   \\
+50-54  &  2741.625  &  428774.897   &  0.0064   \\[4pt]
+55-59  &  3407.183  &  354090.792   &  0.0096   \\
+60-64  &  4555.459  &  311299.541   &  0.0146   \\
+65-69  &  5417.377  &  245657.713   &  0.0221   \\
+70-74  &  5663.386  &  167154.179   &  0.0339   \\[4pt]
+75-79  &  6197.373  &  116519.142   &  0.0532   \\
+80+    &  14970.275 & 127744.4085   &  0.1172   \\
+População Total  &  57938.525 & 7764951.0325  & 0.0075 \\
+\hline
+\end{tabular}
+\caption*{Fonte: Department of Economic and Social Affairs (Population Division) da Organização das Nações Unidas (ONU).}
+\end{table}
+
+
+\subsection{Padronização Direta}
+A padronização direta, consiste em  multiplicar a estrutura etária da população padrão as taxas especificas de mortalidade de cada população. Assim, anula-se o efeito que as faixas etárias tem sobre as taxas de mortalidade, impossibilitando a comparação.
+
+A formula para a padronização é $ TBM^W = \sum nM^C_x \times \textcolor{red}{nC^W_x}  $ onde: $TBM^C$ é a taxa de mortalidade especifica do Brasil, ou Tanzânia, e $ nC^W_x $ é a estrutura etária da População Mundial, usada como padrão para o cálculo. A tabela \ref{tab:dfPadDir}, apresenta apenas as taxas especificas das colunas  "\emph{Bpadron}"  e  "\emph{Tpadron}" apresentam apenas os valores das taxas especificas dos dois países, $nM^W_x$, vezes a quantidade da População Mundial em cada grupo etário. Somando os valores de cada coluna e dividindo pelo total da população Mundial, obtemos as taxas padronizadas: 0.254 para o Brasil e 1.4 Tanzânia.
+
+Podemos afirmar agora que, pela padronização direta, o país africano tem taxas muito elevas em comparação com o brasil, comparando as pela População Mundial.
+
+\begin{table}[H]
+\centering
+\captionsetup{justification=raggedright,singlelinecheck=false}
+  \caption{Taxas especificas de mortalidades do Brasil e Tanzânia padronizadas para o ano de 2019.}
+  \label{tab:dfPadDir}
+\begin{tabular}{cccccc}
+\toprule
+Grupo & nMxB & nMxT & nPxW & Bpadron & Tpadron \\
+\midrule
+0-1 & 0.0069 & 0.022 & 272161.8345 & 0.01 & 0.1 \\
+1-4 & 4e-04 & 0.0023 & 549896.8135 & 0 & 0.02 \\
+5-9 & 3e-04 & 9e-04 & 673815.0815 & 0 & 0.01 \\
+10-14 & 3e-04 & 9e-04 & 638097.1725 & 0 & 0.01 \\
+15-19 & 6e-04 & 0.0015 & 610706.2035 & 0 & 0.02 \\
+20-24 & 0.001 & 0.0019 & 595436.744 & 0 & 0.02 \\
+25-29 & 0.0012 & 0.0023 & 606868.8465 & 0 & 0.02 \\
+30-34 & 0.0015 & 0.0029 & 582457.586 & 0 & 0.03 \\
+35-39 & 0.002 & 0.0039 & 529248.4205 & 0 & 0.03 \\
+40-44 & 0.0028 & 0.0052 & 482178.481 & 0.01 & 0.04 \\
+45-49 & 0.0039 & 0.0073 & 472843.1765 & 0.01 & 0.06 \\
+50-54 & 0.0057 & 0.0105 & 428774.897 & 0.01 & 0.08 \\
+55-59 & 0.0083 & 0.015 & 354090.792 & 0.01 & 0.09 \\
+60-64 & 0.0132 & 0.0228 & 311299.541 & 0.02 & 0.12 \\
+65-69 & 0.0208 & 0.0345 & 245657.713 & 0.02 & 0.14 \\
+70-74 & 0.0341 & 0.0527 & 167154.179 & 0.03 & 0.15 \\
+75-79 & 0.055 & 0.0796 & 116519.142 & 0.03 & 0.15 \\
+80+ & 0.1395 & 0.1472 & 127744.4085 & 0.08 & 0.31 \\
+População Total & 0.0066 & 0.006 & 7764951.0325 & 0.24 & 0.78 \\
+\bottomrule
+\end{tabular}
+\caption*{Fonte: Department of Economic and Social Affairs (Population Division) da Organização das Nações Unidas (ONU).}
+\end{table}
+
+
+
+\subsection{Padronização Indireta}
+
+A padronização indireta consiste em utilizar a taxa de mortalidade da população padrão, no caso a População Mundial, e multiplicar pelas faixas etárias das populações em estudo de comparação, $ TBM^C = \sum  \textcolor{red}{nM^W_x} \times{nC^C_x}  $. Em seguida, calcula-se o índice de intensidade de mortalidade, razão entre a Taxa de Mortalidade Bruta e a Taxa padronizada indiretamente das populações em estudo de comparação, \(\frac{   {\sum nM^C_x \times nC^Cx} }
+{ {\sum \textcolor{red}{nMPx} \times nC^Cx}} \).
+
+\begin{table}[H]
+\centering
+  \caption{Taxas especificas de mortalidades do Brasil e Tanzânia padronizadas para o ano de 2019.}
+  \label{tab:dfPadInd}
+\begin{tabular}{cccc}
+\toprule
+Grupo & nMxB & nMxT & nPxW \\
+\midrule
+0-1 & 0.0069 & 0.022 & 272161.8345 \\
+1-4 & 4e-04 & 0.0023 & 549896.8135 \\
+5-9 & 3e-04 & 9e-04 & 673815.0815 \\
+10-14 & 3e-04 & 9e-04 & 638097.1725 \\
+15-19 & 6e-04 & 0.0015 & 610706.2035 \\
+20-24 & 0.001 & 0.0019 & 595436.744 \\
+25-29 & 0.0012 & 0.0023 & 606868.8465 \\
+30-34 & 0.0015 & 0.0029 & 582457.586 \\
+35-39 & 0.002 & 0.0039 & 529248.4205 \\
+40-44 & 0.0028 & 0.0052 & 482178.481 \\
+45-49 & 0.0039 & 0.0073 & 472843.1765 \\
+50-54 & 0.0057 & 0.0105 & 428774.897 \\
+55-59 & 0.0083 & 0.015 & 354090.792 \\
+60-64 & 0.0132 & 0.0228 & 311299.541 \\
+65-69 & 0.0208 & 0.0345 & 245657.713 \\
+70-74 & 0.0341 & 0.0527 & 167154.179 \\
+75-79 & 0.055 & 0.0796 & 116519.142 \\
+80-100 & 0.1395 & 0.1472 & 127744.4085 \\
+PopulaçãoTotal & 0.0066 & 0.006 & 7764951.0325 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+Utilizando os valores da tabela \ref{tab:dfPadInd} para se calcular o índice da intensidade de mortalidade de cada país em relação a População Mundial, obteve-se que o Brasil, em 2019, tinha 8.5\% de intensidade menor que a população padrão e a República Unida da Tanzânia 140\% acima da população padrão, indicando uma intensidade de mortalidade mais severa que a população padrão.
