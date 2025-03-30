@@ -1,0 +1,8 @@
+*cache*
+**/books
+/teste/**
+
+!**/books/*/*.json
+!**/books/*/*.html
+!**/teste/*__.py
+/teste/list_dir.txt
