@@ -1,78 +1,104 @@
-## Juntando o Repositório
+# Juntando o Repositório: documentação: Atualizando a Pasta `backend` com o Conteúdo do Repositório `api`
 
-Este guia descreve como integrar o repositório `repo2` na pasta `repo2` do repositório `repo1`, sobrescrevendo os arquivos existentes e preservando o histórico de commits.
+Este guia descreve como mesclar o conteúdo do repositório `api` na pasta `backend` do repositório `estatistica`, preservando o histórico de commits e atualizando apenas os arquivos modificados.
 
-### Passos Detalhados
+## Passos Detalhados
 
-1. Clone o repositório principal (`repo1`):
-    ```sh
-    git clone https://github.com/usuario/repo1.git
-    cd repo1
-    ```
-    **Explicação:** Este comando cria uma cópia local do repositório `repo1` e navega para a pasta clonada.
+### 1. Clone o repositório `estatistica`
+```sh
+git clone https://github.com/cesargabrielphd/estatistica.git
+cd estatistica
+```
+**Explicação:**
+- `git clone https://github.com/cesargabrielphd/estatistica.git`: Este comando cria uma cópia local do repositório `estatistica`.
+- `cd estatistica`: Navega para a pasta clonada.
 
-2. Adicione o repositório secundário (`repo2`) como um remoto separado:
-    ```sh
-    git remote add repo2 https://github.com/usuario/repo2.git
-    ```
-    **Explicação:** Certifique-se de executar este comando dentro da pasta do repositório `repo1`. Isso adiciona o repositório `repo2` como um remoto adicional chamado `repo2`.
+### 2. Adicione o repositório `api` como um remoto separado e faça o fetch
+```sh
+git remote add repo2 https://github.com/cesargabrielphd/api.git
+git fetch repo2
+```
+**Explicação:**
+- `git remote add repo2 https://github.com/cesargabrielphd/api.git`: Adiciona o repositório `api` como um remoto adicional chamado `repo2`.
+- `git fetch repo2`: Baixa o histórico de commits e o conteúdo do repositório `repo2`, mas não os aplica ao repositório atual.
 
-3. Faça fetch do conteúdo do repositório `repo2`:
-    ```sh
-    git fetch repo2
-    ```
-    **Explicação:** Este comando baixa o histórico de commits e o conteúdo do repositório `repo2`, mas não os aplica ao repositório atual.
+### 3. Crie uma nova branch para o merge
+```sh
+git checkout -b joinrepo
+```
+**Explicação:**
+- `git checkout -b joinrepo`: Cria e troca para uma nova branch chamada `joinrepo` para isolar as mudanças.
 
-4. Crie uma nova branch para o merge e uma pasta `repo2` para o conteúdo:
-    ```sh
-    git checkout -b repo2-merge
-    mkdir -p repo2
-    ```
-    **Explicação:** A nova branch `repo2-merge` é criada para isolar as mudanças. A pasta `repo2` será usada para armazenar o conteúdo do repositório `repo2`.
+### 4. Faça o merge dos arquivos modificados do `repo2` na pasta `backend` utilizando `git read-tree`
+```sh
+git read-tree --prefix=backend/ -u repo2/main
+```
+**Explicação:**
+- `git read-tree --prefix=backend/ -u repo2/main`: Este comando mescla o conteúdo do `repo2` na pasta `backend` do `repo1`, preservando o histórico de commits e atualizando apenas os arquivos modificados.
 
-5. Faça o merge do conteúdo do repositório `repo2` na pasta `repo2`, sobrescrevendo os arquivos existentes:
-    ```sh
-    git read-tree --prefix=repo2/ -u --reset repo2/main
-    ```
-    **Explicação:** Este comando insere o conteúdo do repositório `repo2` na pasta `repo2` dentro do repositório `repo1`, sobrescrevendo os arquivos existentes e preservando o histórico de commits.
+### 5. Faça commit das mudanças com o padrão especificado
+```sh
+git commit -m "repo(merge): atualizando pasta:repo2 com o repo:repo2"
+```
+**Explicação:**
+- `git commit -m "repo(merge): atualizando pasta:repo2 com o repo:repo2"`: Faz commit das mudanças na branch `joinrepo`, preservando o histórico de commits e utilizando o padrão de mensagem especificado.
 
-6. Faça commit das mudanças:
-    ```sh
-    git commit -m "Merge repo2 into repo2 folder while preserving history"
-    ```
-    **Explicação:** O commit salva as mudanças feitas na branch `repo2-merge`, incluindo o conteúdo do repositório `repo2`.
+### 6. Volte para a branch principal e faça o merge
+```sh
+git checkout main
+git merge joinrepo
+```
+**Explicação:**
+- `git checkout main`: Troca para a branch principal (`main`) do repositório `estatistica`.
+- `git merge joinrepo`: Aplica as mudanças da branch `joinrepo` na branch principal, integrando o conteúdo do `repo2`.
 
-7. Volte para a branch principal:
-    ```sh
-    git checkout main
-    ```
-    **Explicação:** Este comando retorna para a branch principal (`main`) do repositório `repo1`.
+### 7. Empurre as mudanças para o repositório remoto
+```sh
+git push origin main
+```
+**Explicação:**
+- `git push origin main`: Envia as mudanças da branch principal para o repositório remoto `estatistica`.
 
-8. Integre as mudanças:
-    ```sh
-    git merge repo2-merge
-    ```
-    **Explicação:** O merge aplica as mudanças da branch `repo2-merge` na branch principal, integrando o conteúdo do repositório `repo2`.
+### 8. Remova a branch temporária e o remoto adicional
+```sh
+git branch -d joinrepo
+git remote remove repo2
+```
+**Explicação:**
+- `git branch -d joinrepo`: Remove a branch temporária `joinrepo` após o merge.
+- `git remote remove repo2`: Remove o remoto `repo2`, que não é mais necessário, para evitar confusão futura.
 
-9. Empurre as mudanças para o repositório remoto:
-    ```sh
-    git push origin main
-    ```
-    **Explicação:** Este comando envia as mudanças da branch principal para o repositório remoto `repo1`.
+## Resumo dos Comandos
 
-10. Remova a branch temporária:
-    ```sh
-    git branch -d repo2-merge
-    ```
-    **Explicação:** Após o merge, a branch `repo2-merge` não é mais necessária e pode ser excluída para manter o repositório organizado.
+```sh
+# Clone o repositório estatistica
+git clone https://github.com/cesargabrielphd/estatistica.git
+cd estatistica
 
-11. Remova o remoto adicional:
-    ```sh
-    git remote remove repo2
-    ```
-    **Explicação:** O remoto `repo2` também não é mais necessário e pode ser removido para evitar confusão futura.
+# Adicione o repositório api e faça fetch
+git remote add repo2 https://github.com/cesargabrielphd/api.git
+git fetch repo2
 
-12. Pronto! O repositório `repo2` foi integrado na pasta `repo2` do repositório `repo1`, sobrescrevendo os arquivos existentes e preservando os históricos de commits.
+# Crie uma nova branch para o merge
+git checkout -b joinrepo
+
+# Faça o merge dos arquivos modificados do repo2 na pasta backend utilizando git read-tree
+git read-tree --prefix=backend/ -u repo2/main
+
+# Faça commit das mudanças com o padrão especificado
+git commit -m "repo(merge): atualizando pasta:repo2 com o repo:repo2"
+
+# Volte para a branch principal e faça o merge
+git checkout main
+git merge joinrepo
+
+# Empurre as mudanças para o repositório remoto
+git push origin main
+
+# Remova a branch temporária e o remoto adicional
+git branch -d joinrepo
+git remote remove repo2
+```
 
 ### Notas Adicionais
 
