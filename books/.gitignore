@@ -1,3 +1,7 @@
+################################################
+############ .GITIGNORE PASTA:BOOKS ############
+################################################
+############ IGNORAR
 .Rproj.user
 .Rhistory
 *_cache
@@ -15,20 +19,13 @@ figures
 test_*
 *.venv/
 */.venv/
-
-# Ignorar todos as subpasta dentro de diretórios
 **/*cache*
 **/*/*/ac/
 **/*/*/wss/
-
 book/*/.quarto/
-# book/*/index_files/
 book/*/site_libs/
 book/*/.gitignore
 book/*/conteudo/*/*.html
-
-
-## OGANIZAR ESTAS LISTAS REPOSITÓRIO: cesargabrielphd/curso
 *.Rproj
 *.Rproj.*
 *.Rhistory
@@ -45,21 +42,21 @@ book/*/conteudo/*/*.html
 *.xls
 *.csv
 
-Trabalho 1/dataProject
-Trabalho 1/data.Need.Project/
-Trabalho 2/dataProject
-Trabalho 2/dataProject/
-Atividaes/PadronTaxas/dataProject
-Atividaes/PadronTaxas/dataProject/
-SINGAGE.XLS
+**/Trabalho 1/dataProject
+**/Trabalho 1/data.Need.Project/
+**/Trabalho 2/dataProject
+**/Trabalho 2/dataProject/
+**/Atividaes/PadronTaxas/dataProject
+**/Atividaes/PadronTaxas/dataProject/
+**/SINGAGE.XLS
+**/SINGAGE.XLSX
 
-################################################################################
-################################## NÃO IGNORA ##################################
-################################################################################
-!**/CODE_OF_CONDUCT.md
-!**/plausible.html
-!**/wss/
-!**/public.html
-!**/.gitignore
-!**/backend/*
-!**/docs/
+########################
+############ NÃO IGNORAR
+!**/books/CODE_OF_CONDUCT.md
+!**/books/plausible.html
+!**/books/wss/
+!**/books/public.html
+!**/books/.gitignore
+!**/books/backend/*
+!**/books/docs/
