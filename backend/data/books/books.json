@@ -3,5 +3,10 @@
         "/books/TAS0000/index.html",
         "/books/TAS0000/references.html",
         "/books/TAS0000/search.json"
+    ],
+    "TAS0013": [
+        "/books/TAS0013/index.html",
+        "/books/TAS0013/references.html",
+        "/books/TAS0013/search.json"
     ]
 }
