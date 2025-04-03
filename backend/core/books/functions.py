@@ -1,14 +1,53 @@
 # ADICIONAR links de CSS e JavaScript em cada <head> dos html
+import markdown
 import os
 import json
 from pickle import TRUE
 import re
 from bs4 import BeautifulSoup
 
-def importjson(caminho: str = "./data/books/books.json"):
+def readjson(caminho: str = "./data/books/books.json"):
     with open(caminho, 'r', encoding='utf-8') as file:
         return json.load(file)
 
+def readmeqmd(
+    caminho: str = "./newshub/build/conteudo/",
+    extensoes: list = ['.qmd', '.bib'],
+    buscar: bool = True
+):
+    """
+    Processa arquivos em um diretório ou um único arquivo e retorna um JSON com o conteúdo.
+
+    :param caminho: Caminho do diretório ou arquivo.
+    :param extensoes: Lista de extensões de arquivo a serem procuradas (usado apenas se buscar=True).
+    :param buscar: Booleano que indica se deve buscar arquivos no diretório ou processar um único arquivo.
+    :return: JSON com o nome do arquivo como chave e o conteúdo como valor.
+    """
+    resultado = {}
+
+    if buscar:
+        arquivos_encontrados = []
+        for root, _, files in os.walk(caminho):
+            for file in files:
+                if any(file.endswith(ext) for ext in extensoes):
+                    arquivos_encontrados.append(os.path.join(root, file))
+    else:
+        # Trata como um único arquivo.
+        arquivos_encontrados = [caminho]
+
+    for arquivo in arquivos_encontrados:
+        try:
+            with open(arquivo, 'r', encoding='utf-8') as file:
+                conteudo = file.read()
+            conteudo_html = markdown.markdown(
+                conteudo, extensions=['extra', 'tables', 'toc'])
+            resultado[os.path.basename(arquivo)] = conteudo_html
+        except Exception as e:
+            resultado[os.path.basename(
+                arquivo)] = f"Erro ao processar o arquivo: {e}"
+
+    return json.dumps(resultado, ensure_ascii=False, indent=4)
+    
 def listabooks(path: str = "./books/docs/"):
     """
     Lista as pastas do tipo: '3 lestras e 4 numéros'
@@ -49,7 +88,7 @@ def corsearchjson(books: bool = True, path: str = "./data/books/books.json"):
     if not os.path.exists(path): 
         listabooks = listabooks()
     else:
-        listabooks = importjson(path)
+        listabooks = readjson(path)
 
     # scripts para mover subpastas de books/docs/ para books/
     destino = "./books/"
@@ -77,7 +116,7 @@ def corsearchjson(books: bool = True, path: str = "./data/books/books.json"):
     for book, arquivos in listabooks.items():
         search_json_path = f"./books/{book}/search.json"
         if os.path.exists(search_json_path):
-            search_data = importjson(search_json_path)
+            search_data = readjson(search_json_path)
             for item in search_data:
                 if "objectID" in item:
                     item["objectID"] = f"/books/{book}/{item['objectID']}"
@@ -88,7 +127,7 @@ def corsearchjson(books: bool = True, path: str = "./data/books/books.json"):
 
     return listabooks
 
-def corpathlinksearchjson(listabooks: dict = importjson('./data/books/books.json')):
+def corpathlinksearchjson(listabooks: dict = readjson('./data/books/books.json')):
     """
     Corrige Links do ./BOOKS/{books}/SEARCH.JSON
     :param listabooks: dict com os livros
@@ -104,7 +143,7 @@ def corpathlinksearchjson(listabooks: dict = importjson('./data/books/books.json
             json.dump(data, json_file, ensure_ascii=False, indent=4)
         return True
     for book in listabooks:
-        searchjsonbook = importjson(os.path.join(f"./books/{book}/search.json"))
+        searchjsonbook = readjson(os.path.join(f"./books/{book}/search.json"))
         for item in searchjsonbook:
             object_id = item.get("objectID")
             href = item.get("href")
@@ -138,12 +177,14 @@ LINKS = [
     '<script src="/ac/books/quarto-search/autocomplete.umd.js"></script>',
     '<script src="/ac/books/quarto-search/fuse.min.js"></script>',
     '<script src="/ac/books/quarto-search/quarto-search.js"></script>',
+    '<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>'
 ]
 
 PATTERN_BOOKS_NAME = re.compile(r'^[A-Z]{3}\d{4}$')
 
-print(importjson())
-print(listabooks())
-print(corsearchjson())
-print(corpathlinksearchjson())
-print(corpathlinksearchjson(importjson('./data/books/books.json')))
+if __name__ == '__main__':
+    diretorio = "./newshub/build/conteudo/"
+    extensoes = ['.qmd']
+    resultado = readmeqmd(
+        caminho=diretorio, extensoes=extensoes, buscar=True)
+    print(resultado)

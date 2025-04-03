@@ -1,8 +1,29 @@
+########### IGNORAR
 *cache*
-**/books
-/teste/**
+.quarto
 
+######## NÃO IGNORAR
 !**/books/*/*.json
 !**/books/*/*.html
 !**/teste/*__.py
 /teste/list_dir.txt
+
+
+################################################
+############ .GITIGNORE newshub/ ##########
+################################################
+
+########################
+############ IGNORAR
+*cache*
+newshub\build\.gitignore
+newshub/**/.quarto/
+newshub/**/.quarto/
+newshub/build/.gitignore
+
+**/books_ger/*/ac
+
+########################
+############ NÃO IGNORAR
+!**/artigo_html
+!**/books_ger/ac/

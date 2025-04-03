@@ -1,3 +1,21 @@
+
+# GERAR SITEMAP.xml com base na estrutura do repositório
+import os
+from sitemap import Sitemap
+
+
+def generate_sitemap(directory):
+    sitemap = Sitemap()
+    for root, dirs, files in os.walk(directory):
+        for file in files:
+            file_path = os.path.join(root, file)
+            sitemap.add(file_path)
+    sitemap.write('sitemap.xml')
+
+
+if __name__ == "__main__":
+    generate_sitemap("caminho/do/seu/repositorio")
+
 # crie um script python que vasculhe o meu repositório e
 # crie uma estrutura sitemap.xml
 # para seo 

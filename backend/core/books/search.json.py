@@ -1,13 +1,13 @@
 import os
 import re
 import json
-
+from core import *
 
 def corrigirSearchJson():
     """
     Corrige os caminhos duplicados no arquivo SEARCH.JSON
     """
-    listabooks = listaBooks()
+    listabooks = listabooks()
     for book in listabooks:
         # path = f'./books/{book}/search.json'
         path = f'./automacao/restos/{book}/search.json'
