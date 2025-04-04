@@ -52,6 +52,14 @@ git merge joinrepo
 - `git checkout main`: Troca para a branch principal (`main`) do repositório `estatistica`.
 - `git merge joinrepo`: Aplica as mudanças da branch `joinrepo` na branch principal, integrando o conteúdo do `repo2`.
 
+### 6.1. Priorize as mudanças da branch `joinrepo` em caso de conflitos
+```sh
+git merge -X theirs joinrepo
+```
+**Explicação:**
+- Inicie o merge com a branch `joinrepo` priorizando as mudanças dela.
+- Use a estratégia de merge `theirs` para resolver automaticamente os conflitos, garantindo que as alterações da branch `joinrepo` prevaleçam.
+
 ### 7. Empurre as mudanças para o repositório remoto
 ```sh
 git push origin main
@@ -91,6 +99,9 @@ git commit -m "repo(merge): atualizando pasta:repo2 com o repo:repo2"
 # Volte para a branch principal e faça o merge
 git checkout main
 git merge joinrepo
+
+# Priorize as mudanças da branch joinrepo em caso de conflitos
+git merge -X theirs joinrepo
 
 # Empurre as mudanças para o repositório remoto
 git push origin main
