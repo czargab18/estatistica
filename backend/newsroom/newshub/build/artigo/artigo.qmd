@@ -1,0 +1,30 @@
+---
+date-meta: "probabilidade, teoria da probabilidade"
+---
+
+# Calculo de Probabilidade {#headline-title .headline}
+
+##  {#introducao .pagragrafo .visuallyhidden}
+
+A Teoria da Probabilidade busca estudar os chamados *eventos aleatórios.* Tais
+eventos não possuem uma regulridade deterministíca, ou seja,
+não é possível observar com clareza uma regularidade em seus resultados sobre as
+mesmas condiçoes. Entretanto, após sucessivas repetições sob mesmas condições
+obtem-se uma regularidade pela frequência de seus resultados  chamada
+regularidade estatistica.
+
+###  {#introducao .paragrafo .visuallyhidden}
+
+####  {#introducao .paragrafo .visuallyhidden}
+
+$$
+f(x) = \frac{1}{\sqrt{2\pi\sigma^2}} e^{-\frac{(x - \mu)^2}{2\sigma^2}}
+$$
+
+# 
+::: {#.div-name}
+:::
+
+::: {#nova-div .exemplo-classe}
+Este é um exemplo de conteúdo dentro de uma div criada em Markdown.
+:::

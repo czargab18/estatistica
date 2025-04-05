@@ -3,8 +3,18 @@ import os
 import markdown
 ## pip install markdown
 
-def readqmd(
-    diretorio_ou_arquivo: str = "./newshub/build/conteudo/",
+
+def readarticleqmd(diretorio: str = "./newsroom/newshub/build/artigo/artigo.qmd"):
+    with open(diretorio, 'r', encoding='utf-8') as file:
+        conteudo = file.read()
+    return markdown.markdown(conteudo, extensions=['extra', 'tables', 'toc'])
+
+
+print(readarticleqmd())
+
+
+def qmdtojson(
+    diretorio_ou_arquivo: str = "./newsroom/newshub/build/artigo/",
     extensoes: list = ['.qmd', '.bib'],
     buscar: bool = True
     ):
@@ -38,9 +48,9 @@ def readqmd(
 
     return json.dumps(resultado, ensure_ascii=False, indent=4)
 
-if __name__ == '__main__':
-    diretorio = "./newshub/build/conteudo/"
-    extensoes = ['.qmd']
-    resultado = readqmd(diretorio_ou_arquivo=diretorio,
-                        extensoes=extensoes, buscar=True)
-    print(resultado)
+# if __name__ == '__main__':
+#     diretorio = "./newsroom/newshub/build/artigo/"
+#     extensoes = ['.qmd']
+#     resultado = qmdtojson(diretorio_ou_arquivo=diretorio,
+#                         extensoes=extensoes, buscar=True)
+#     print(resultado)
