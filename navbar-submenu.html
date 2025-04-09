@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Menu com Submenu</title>
+  <style>
+    /* Estilos básicos para o menu */
+    ul#links-navbar {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: flex;
+    }
+
+    ul#links-navbar>li#item-link {
+      position: relative;
+      margin: 0 10px;
+    }
+
+    li#item-link>div#submenu {
+      display: none;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      background: #f1f1f1;
+      padding: 10px;
+      border: 1px solid #ccc;
+      z-index: 100;
+    }
+
+    /* Exibir submenu ao passar o mouse */
+    li#item-link:hover>div#submenu,
+    li#item-link>div#submenu:hover {
+      display: block;
+    }
+
+    div#submenu>ul#itm-submenu {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    div#submenu>ul#itm-submenu>li#itemsubmenu {
+      margin: 5px 0;
+    }
+  </style>
+</head>
+
+<body>
+  <ul id="links-navbar">
+    <li id="item-link">
+      Link 1
+      <div id="submenu">
+        <ul id="itm-submenu">
+          <li id="itemsubmenu">Subitem 1</li>
+          <li id="itemsubmenu">Subitem 2</li>
+          <li id="itemsubmenu">Subitem 3</li>
+          <li id="itemsubmenu">Subitem 4</li>
+          <li id="itemsubmenu">Subitem 5</li>
+          <li id="itemsubmenu">Subitem 6</li>
+        </ul>
+      </div>
+    </li>
+    <li id="item-link">
+      Link 2
+      <div id="submenu">
+        <ul id="itm-submenu">
+          <li id="itemsubmenu">Subitem 1</li>
+          <li id="itemsubmenu">Subitem 2</li>
+          <li id="itemsubmenu">Subitem 3</li>
+          <li id="itemsubmenu">Subitem 4</li>
+          <li id="itemsubmenu">Subitem 5</li>
+          <li id="itemsubmenu">Subitem 6</li>
+        </ul>
+      </div>
+    </li>
+    <!-- Repita mais itens conforme necessário -->
+  </ul>
+</body>
+
+</html>
