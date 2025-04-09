@@ -24,7 +24,7 @@ ul.globalnavbar-list > li.globalnavbar-item {
         height: 100%
     }
 li.globalnavbar-item .globalnav-flyout-scroll-container {
-  display: block;
+  display: none;
   position: absolute;
   top: 100%;
   left: 0;
