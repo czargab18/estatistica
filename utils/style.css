@@ -1,61 +1,14 @@
-/* Estilos básicos para o menu */
-ul.globalnavbar-list {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-  display: flex;
+#globalnavbar {
+  all: unset;
 }
 
-ul.globalnavbar-list > li.globalnavbar-item {
-  position: relative;
-  margin: 0 10px;
-}
-
-    #globalnav .globalnav-flyout .globalnav-menu-list,#globalnav .globalnav-flyout .globalnav-flyout-scroll-container {
-        height: auto;
-        padding-bottom: 84px
-    }
-
-    #globalnav.globalnav-animating .globalnav-flyout .globalnav-menu-list,#globalnav.globalnav-animating .globalnav-flyout .globalnav-flyout-scroll-container {
-        overflow: hidden
-    }
-
-    #globalnav.globalnav-animating.globalnav-with-menu-open:not(.globalnav-with-submenu-open) .globalnav-flyout .globalnav-flyout-scroll-container {
-        height: 100%
-    }
-li.globalnavbar-item .globalnav-flyout-scroll-container {
-  display: none;
+#globalnavbar div.globalnavbar-submenu {
+  --r-globalnavbar-submenu-header-color: rgb(110, 110, 115);
+  --r-globalnavbar-flyout-height: 0;
+  background: var(--r-globalnavbar-background-opened);
   position: absolute;
-  top: 100%;
   left: 0;
-  background: #f1f1f1;
-  padding: 10px;
-  border: 1px solid #ccc;
-  z-index: 100;
-  width: 300px; /* Ajuste conforme necessário */
-}
-
-/* Exibir submenu ao passar o mouse */
-li.globalnavbar-item:hover .globalnav-flyout-scroll-container,
-li.globalnavbar-item .globalnav-flyout-scroll-container:hover {
-  display: block;
-}
-
-.globalnav-submenu-list {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-
-.globalnav-submenu-list-item {
-  margin: 5px 0;
-}
-
-.globalnav-submenu-list-item a {
-  text-decoration: none;
-  color: #000;
-}
-
-.globalnav-submenu-list-item a:hover {
-  text-decoration: underline;
+  right: 0;
+  text-align: start;
+  display: inherit;
 }
