@@ -169,3 +169,16 @@ li.globalnavbar-item .globalnavbar-flyout-scroll-container:hover {
     opacity var(--r-globalnavbar-flyout-rate) ease-in-out;
   visibility: visible;
 }
+
+nav{
+  width: 100% !important;
+}
+
+li.globalnavbar-item:hover ~ #globalnavbar,
+#globalnavbar:hover {
+  background-color: #f5f5f7;
+}
+
+#globalnavbar.nav-hover-active {
+  background-color: #f5f5f7;
+}
