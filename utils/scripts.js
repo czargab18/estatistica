@@ -1,40 +1,33 @@
-  document.addEventListener('DOMContentLoaded', function() {
-    const navbar = document.getElementById('globalnavbar');
-  const navItems = document.querySelectorAll('.globalnavbar-item'); // Todos os itens da nav
+function handleNavbarHover() {
+  const navbar = document.getElementById('globalnavbar');
+  const navItems = document.querySelectorAll('.globalnavbar-item');
 
-    navItems.forEach(item => {
-      // Verifica se o item tem um submenu (caso contrário, ignora)
-      const hasSubmenu = item.querySelector('.globalnavbar-submenu') !== null;
+  navItems.forEach(item => {
+    // Verifica se o item tem submenu (ignora itens como "Estatística")
+    const hasSubmenu = item.querySelector('.globalnavbar-submenu') !== null;
 
-  if (hasSubmenu) {
-        const link = item.querySelector('.globalnavbar-link'); // Link principal do item
+    if (hasSubmenu) {
+      const link = item.querySelector('.globalnavbar-link');
 
-        link.addEventListener('mouseenter', () => {
-    navbar.style.backgroundColor = '#f5f5f7'; // Cor quando hover no link com submenu
-        });
+      // Adiciona a classe no hover do link principal
+      link.addEventListener('mouseenter', () => {
+        navbar.classList.add('globalnavbar-hover-active');
+      });
 
-        link.addEventListener('mouseleave', () => {
-          // Só volta ao normal se o mouse não estiver no submenu
-          if (!item.querySelector('.globalnavbar-submenu:hover')) {
-    navbar.style.backgroundColor = 'transparent';
-          }
-        });
-      }
-    });
-
-    // Reseta a cor se o mouse sair completamente da navbar
-    navbar.addEventListener('mouseleave', () => {
-    navbar.style.backgroundColor = 'transparent';
-    });
+      // Remove a classe ao sair do link (se não estiver no submenu)
+      link.addEventListener('mouseleave', () => {
+        if (!item.querySelector('.globalnavbar-submenu:hover')) {
+          navbar.classList.remove('globalnavbar-hover-active');
+        }
+      });
+    }
   });
 
-// Dentro do if (hasSubmenu)...
-link.addEventListener('mouseenter', () => {
-  navbar.classList.add('nav-hover-active');
-});
+  // Remove a classe se o mouse sair completamente da navbar
+  navbar.addEventListener('mouseleave', () => {
+    navbar.classList.remove('globalnavbar-hover-active');
+  });
+}
 
-link.addEventListener('mouseleave', () => {
-  if (!item.querySelector('.globalnavbar-submenu:hover')) {
-    navbar.classList.remove('nav-hover-active');
-  }
-});
+// Função para mudar cor globalnav quando submenu:houver
+document.addEventListener('DOMContentLoaded', handleNavbarHover);
