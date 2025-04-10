@@ -3,7 +3,7 @@
 }
 
 #globalnavbar div.globalnavbar-submenu {
-  --r-globalnavbar-submenu-header-color: rgb(110, 110, 115);
+  --r-globalnavbar-submenu-header-color: rgb(0, 0, 255);
   --r-globalnavbar-flyout-height: 0;
   background: var(--r-globalnavbar-background-opened);
   position: absolute;
@@ -11,4 +11,21 @@
   right: 0;
   text-align: start;
   display: inherit;
+}
+
+li.globalnavbar-item .globalnavbar-flyout-scroll-container {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background: #f1f1f1;
+  padding: 10px;
+  border: 1px solid #ccc;
+  z-index: 100;
+  width: 300px;
+}
+
+li.globalnavbar-item:hover .globalnavbar-flyout-scroll-container,
+li.globalnavbar-item .globalnavbar-flyout-scroll-container:hover {
+  display: block;
 }
