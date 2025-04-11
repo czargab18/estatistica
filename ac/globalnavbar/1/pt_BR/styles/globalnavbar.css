@@ -500,3 +500,10 @@ nav{
 }
 
 
+.globalnavbar-submenu-list-item-elevated:nth-last-child(-n+2) .globalnavbar-submenu-link{
+  font-size: 12px;
+  line-height: 16px;
+}
+.globalnavbar-submenu-list-item-elevated:nth-last-child(2) {
+  margin-top: 12px !important;
+}
