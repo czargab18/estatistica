@@ -1,21 +1,22 @@
 {
   "departamentos": {
     "destaque": [
-      "hitoria-instalacoes",
+      "hitoria",
+      "instalacoes",
       "administracao",
       "secretária",
       "docentes",
       "producao-academica",
       "calendario-academico",
       "estatuto-e-regimento",
-      "programas-e-orientações"
+      "plataformas"
     ],
     "links-rapidos": [
       "ouvidoria",
-      "biblioteca central",
-      "Hospital Universitário de Brasilia"
+      "biblioteca-central"
     ],
     "explorar": [
+      "programas-e-orientações",
       "Planejamento Estrategico",
       "Programa de Gestão e Desempenho",
       "parceiros",
@@ -31,6 +32,10 @@
       "oportunidades"
     ],
     "ajuda": [
+      "bemvindo",
+      "secretaria",
+      "secretaria",
+      "instalações",
       "bolsas",
       "estagios",
       "auxilios",
