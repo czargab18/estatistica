@@ -38,6 +38,7 @@
 #globalnavbar .globalnavbar-submenu-content {
   box-sizing: border-box;
   display: flex;
+  justify-content: space-between;
   margin: 0 auto;
   max-width: calc(1024px - var(--r-globalnavbar-scrollbar-width));
   padding-bottom: 84px;
@@ -49,8 +50,8 @@
 }
 
 li.globalnavbar-item .globalnavbar-flyout-scroll-container {
-  display: none;
   box-sizing: border-box;
+  display: none;
   justify-items: center;
   left: 0;
   max-height: calc(100% - 44px);
@@ -76,7 +77,6 @@ li.globalnavbar-item .globalnavbar-flyout-scroll-container:hover {
   box-sizing: border-box;
 }
 
-#globalnavbar .globalnavbar-submenu-group, 
 #globalnavbar .globalnavbar-submenu-group-elevated {
   max-width: 50%;
   padding-inline-end: 88px;
