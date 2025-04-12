@@ -1,3 +1,4 @@
+/* Reset de estilos globais */
 #globalnavbar {
   all: unset;
 }
@@ -79,47 +80,29 @@
   cursor: default;
 }
 
-#globalnavbar:focus {
-  outline: 4px solid rgba(0, 125, 250, 0.6);
-  outline-offset: 1px;
-}
-
-#globaheader:focus[data-focus-method="mouse"]:not(input):not(textarea):not(select),
-#globaheader:focus[data-focus-method="touch"]:not(input):not(textarea):not(select) {
-  outline: none;
-}
-
 #globalnavbar ::-moz-focus-inner {
   border: 0;
   padding: 0;
 }
-/* var-header */
+
+/* Estilos de layout e estrutura */
 #globalnavbar {
   position: sticky;
   top: 0;
   right: 0;
   left: 0;
   z-index: 9999;
-  display: block;
   display: flex;
   flex-direction: column;
   align-content: center;
-  margin: 0;
-  padding: 0;
   width: 100%;
   max-width: 2560px;
-  height: var(-r-globalnav-height);
-  font-size: 17px;
-  -webkit-user-select: none;
-  user-select: none;
-  /* cor fundo */
-  -webkit-backdrop-filter: var(--globalnavbar-backdrop-filter);
-  backdrop-filter: var(--globalnavbar-backdrop-filter);
-  /* background-color: var(--r-globalnavbar-color-secondary-black) !important; */
+  height: var(--r-globalnav-height);
+  margin: 0;
+  padding: 0;
 }
 
 #globalnavbar .globalnavbar-content {
-  --r-globalnavbar-duration-medium: 0.24s;
   margin: 0 auto;
   box-sizing: border-box;
   width: 100%;
@@ -129,21 +112,38 @@
 }
 
 #globalnavbar .globalnavbar-list {
-  cursor: default;
-  /* margin: 0 -9px; */
   width: 100%;
   height: 44px;
   display: flex;
   justify-content: space-between;
-  -webkit-user-select: none;
-  user-select: none;
   list-style: none;
 }
 
 #globalnavbar .globalnavbar-item {
   box-sizing: border-box;
-  height: 44px;
   height: auto;
+}
+
+#globalnavbar .globalnavbar-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  z-index: 1;
+  padding: 0 calc(9px / var(--r-globalnavbar-text-zoom-scale, 1));
+  height: 44px;
+  text-decoration: none;
+  white-space: nowrap;
+  outline-offset: -7px;
+}
+
+/* Estilos visuais */
+#globalnavbar {
+  font-size: 17px;
+  -webkit-user-select: none;
+  user-select: none;
+  -webkit-backdrop-filter: var(--globalnavbar-backdrop-filter);
+  backdrop-filter: var(--globalnavbar-backdrop-filter);
 }
 
 #globalnavbar .globalnavbar-link {
@@ -152,19 +152,8 @@
   letter-spacing: -0.01em;
   font-family: var(--font-pattern);
   line-height: 1;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  /* color: var(--r-globalnavbar-color-primary-wihte); */
   color: var(--r-globalnavbar-color-secondary-black);
-  position: relative;
-  z-index: 1;
-  padding: 0 calc(9px / var(--r-globalnavbar-text-zoom-scale, 1));
-  height: 44px;
   background: no-repeat;
-  text-decoration: none;
-  white-space: nowrap;
-  outline-offset: -7px;
   transition: color 0.32s cubic-bezier(0.4, 0, 0.6, 1);
 }
 
@@ -177,28 +166,13 @@
   color: var(--r-globalnavbar-color-secondary-black) !important;
   text-decoration: none;
 }
-/* IMG:svg - de cada Palavra da navbar - Não serão exibidos */
+
 #globalnavbar span[class*="-regular"] {
   height: auto;
   display: none;
   align-items: center;
 }
 
-/* IMG:svg - navbar */
-#globalnavbar span[class*="-regular"] {
-  height: auto;
-  display: none;
-  align-items: center;
-}
-
-/* IMG:svg - Logo - Estatística */
-#globalnavbar span[class*="-estatistica-regular"] {
-  height: auto;
-  display: flex;
-  align-items: center;
-}
-
-/* texto-logo */
 #globalnavbar .globalnavbar-link-estatistica {
   font-size: 17px;
   line-height: 1.2353641176;
@@ -214,7 +188,48 @@
   margin-inline-start: 4px;
 }
 
-/* texto-logo */
+#globalnavbar .globalnavbar-link-estatistica .globalnavbar-link-text-estatistica {
+  display: none;
+}
+
+#globalnavbar .globalnavbar-link-estatistica:lang(pt-br) {
+  letter-spacing: 0em;
+  font-family: var(--font-pattern);
+}
+
+/* Estilos de interação */
+#globalnavbar:focus {
+  outline: 4px solid rgba(0, 125, 250, 0.6);
+  outline-offset: 1px;
+}
+
+#globalnavbar.globalnavbar-hover-active {
+  background-color: var(--r-globalnavbar-background-opened);
+  transition: background-color 0s ease;
+}
+
+/* Media queries */
+@media only screen and (min-width: 834px) {
+  #globalnavbar {
+    background: var(--globalnavbar-background);
+  }
+}
+
+@media only screen and (max-width: 833px) {
+  #globalnavbar {
+    display: none;
+  }
+}
+
+#globaheader:focus[data-focus-method="mouse"]:not(input):not(textarea):not(select),
+#globaheader:focus[data-focus-method="touch"]:not(input):not(textarea):not(select) {
+  outline: none;
+}
+
+#globalnavbar .globalnavbar-link-estatistica .globalnavbar-link-text {
+  margin-inline-start: 4px;
+}
+
 #globalnavbar .globalnavbar-link-estatistica .globalnavbar-link-text-estatistica {
   display: none;
 }
@@ -239,10 +254,6 @@
     Remover GlobalNavBar em telas menores que 833px
     temporariamente até tentar conscertar a responsividade
     para essas telas.
-    referências para isso:
-     - https://outu.be/wXeq7mZgK7Y?si=hN1_mPBRbxoDj8SJ
-     - https://outu.be/ozbmKSr0G8o?si=VR0bHP2yE9Nw5kyT
-     - https://outu.be/xqHCW6CTB4w?si=a6slg9PJweJ9N2Ov
     */
   }
   #globalnavbar {
@@ -493,12 +504,6 @@ li.globalnavbar-item .globalnavbar-flyout-scroll-container:hover {
 nav{
   width: 100% !important;
 }
-
-#globalnavbar.globalnavbar-hover-active {
-  background-color: var(--r-globalnavbar-background-opened);
-  transition: background-color 0s ease;
-}
-
 
 .globalnavbar-submenu-list-item-elevated:nth-last-child(-n+2) .globalnavbar-submenu-link{
   font-size: 12px;
