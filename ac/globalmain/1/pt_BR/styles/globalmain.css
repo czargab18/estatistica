@@ -21,14 +21,19 @@ section[data-module-template="heroes"] {
   gap: 1em;
 }
 
-[data-module-template="heroes"] [id="calouro"],
+[data-module-template="heroes"] [id="boasvindas"],
 [data-module-template="heroes"] [id="graduacao"],
 [data-module-template="heroes"] [id="posgraduacao"],
 [data-module-template="heroes"] [id="docentes"] {
   width: 100%;
 }
+[data-module-template="heroes"] div[data-unit-id]:nth-child(1) {
+  /* Destacar Primeira Main.Seção: Boas Vindas */
+  --main-section-destaque-height: calc(684px - 10px - 40px);
+  height: var(--main-section-destaque-height);
+}
 
-[id="calouro"] [id="modulo-content"],
+[id="boasvindas"] [id="modulo-content"],
 [id="graduacao"] [id="modulo-content"],
 [id="posgraduacao"] [id="modulo-content"],
 [id="docentes"] [id="modulo-content"] {
@@ -86,7 +91,7 @@ section[data-module-template="heroes"] figure {
   background-color: transparent;
 }
 
-section[data-module-template="heroes"] figure[id="unit-image-calouro"] {
+section[data-module-template="heroes"] figure[id="unit-image-boasvindas"] {
   display: none;
 }
 /* gradiente */
@@ -259,6 +264,9 @@ section[data-module-template="promos"] figure[id="unit-image-contato"] {
   -ms-flex-direction: column;
   flex-direction: column;
   overflow: hidden;
+}
+[data-module-template="heroes"] div[data-unit-id]:nth-child(1) .unit-wrapper {
+  height: var(--main-section-destaque-height, calc(calc(684px - 12px - 44px)));
 }
 
 [data-module-template] [data-unit-id] .unit-image {
