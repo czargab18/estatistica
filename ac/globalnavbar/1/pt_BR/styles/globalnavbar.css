@@ -321,30 +321,29 @@
 
   /* IMG:svg - navbar */
   #globalnavbar span[class*="-regular"],
-	/* remover-texto-navbar-833px */
-	#globalnavbar span[class="globalnavbar-link-text"] {
-    /* aninhar-conteudo do link */
+  #globalnavbar span[class="globalnavbar-link-text"] {
     display: none;
   }
 
   /* IMG:svg - Logo - Estatística */
   #globalnavbar span[class*="-estatistica-regular"] {
     height: auto;
-    /* aninhar-conteudo do link */
     display: flex;
     align-items: center;
   }
 }
 
-/* testo de código */
-/* 2-imgs-links */
 #globalnavbar .globalnavbar-image-compact {
   display: flex;
 }
 #globalnavbar .globalnavbar-image-regular {
   display: none;
 }
-
+#globalnavbar span[class*="globalnavbar-estatistica-regular"] {
+  display: block;
+  height: auto;
+  align-items: center;
+}
 /* 
 **  CSS: submenu:houver
 */
@@ -363,13 +362,13 @@
   --r-globalnavbar-scrollbar-width: 15px;
   --r-globalnavbar-submenu-header-color: rgb(255, 255, 255);
   --r-globalnavbar-background-opened: #fafafc;
-  
+
   --r-globalnavbar-background-opened-dark: #161617;
   --r-globalnavbar-submenu-header-color: rgb(110, 110, 115);
-  --r-globalnavbar-color: rgba(0, 0, 0, .8);
+  --r-globalnavbar-color: rgba(0, 0, 0, 0.8);
   --r-globalnavbar-color-secondary: #333336;
   --r-globalnavbar-color-hover: #000000;
-  --globalnavbar-background: rgba(255, 255, 255, .8);
+  --globalnavbar-background: rgba(255, 255, 255, 0.8);
 }
 
 #globalnavbar .globalnavbar-submenu {
@@ -427,7 +426,7 @@ li.globalnavbar-item .globalnavbar-flyout-scroll-container:hover {
   box-sizing: border-box;
 }
 
-#globalnavbar .globalnavbar-submenu-group, 
+#globalnavbar .globalnavbar-submenu-group,
 #globalnavbar .globalnavbar-submenu-group-elevated {
   max-width: 50%;
   padding-inline-end: 88px;
@@ -501,11 +500,11 @@ li.globalnavbar-item .globalnavbar-flyout-scroll-container:hover {
   margin-inline-start: -11px;
 }
 
-nav{
+nav {
   width: 100% !important;
 }
 
-.globalnavbar-submenu-list-item-elevated:nth-last-child(-n+2) .globalnavbar-submenu-link{
+.globalnavbar-submenu-list-item-elevated:nth-last-child(-n + 2) .globalnavbar-submenu-link {
   font-size: 12px;
   line-height: 16px;
 }
