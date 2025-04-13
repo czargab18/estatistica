@@ -12,13 +12,18 @@
   --r-globalnavbar-scrollbar-width: 15px;
   --r-globalnavbar-submenu-header-color: rgb(255, 255, 255);
   --r-globalnavbar-background-opened: #fafafc;
-  
+
   --r-globalnavbar-background-opened-dark: #161617;
   --r-globalnavbar-submenu-header-color: rgb(110, 110, 115);
-  --r-globalnavbar-color: rgba(0, 0, 0, .8);
+  --r-globalnavbar-color: rgba(0, 0, 0, 0.8);
   --r-globalnavbar-color-secondary: #333336;
   --r-globalnavbar-color-hover: #000000;
-  --globalnavbar-background: rgba(255, 255, 255, .8);
+  --globalnavbar-background: rgba(255, 255, 255, 0.8);
+
+  --r-globalnav-flyout-item-total: 0;
+  --r-globalnav-flyout-group-number: 0;
+  --r-globalnav-flyout-height: 552px;
+  --r-globalnav-flyout-rate: 254ms;
 }
 
 #globalnavbar .globalnavbar-submenu {
@@ -33,6 +38,9 @@
   visibility: visible;
   width: 100%;
   z-index: 100;
+  transition: height var(--r-globalnav-flyout-rate) cubic-bezier(0.4, 0, 0.6, 1),
+    visibility var(--r-globalnav-flyout-rate) step-start,
+    background var(--r-globalnav-flyout-rate) cubic-bezier(0.4, 0, 0.6, 1);
 }
 
 #globalnavbar .globalnavbar-submenu-content {
@@ -76,7 +84,7 @@ li.globalnavbar-item .globalnavbar-flyout-scroll-container:hover {
   box-sizing: border-box;
 }
 
-#globalnavbar .globalnavbar-submenu-group, 
+#globalnavbar .globalnavbar-submenu-group,
 #globalnavbar .globalnavbar-submenu-group-elevated {
   max-width: 50%;
   padding-inline-end: 88px;
@@ -150,7 +158,7 @@ li.globalnavbar-item .globalnavbar-flyout-scroll-container:hover {
   margin-inline-start: -11px;
 }
 
-nav{
+nav {
   width: 100% !important;
 }
 

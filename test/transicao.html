@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Transição de Submenu</title>
+  <style>
+    /* Estilos básicos para a barra de navegação */
+    .navbar {
+      background-color: #333;
+      padding: 10px 20px;
+    }
+
+    .navbar-list {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      gap: 20px;
+    }
+
+    .navbar-item {
+      position: relative;
+    }
+
+    .navbar-link {
+      color: white;
+      text-decoration: none;
+      padding: 10px 15px;
+      display: block;
+    }
+
+    .navbar-link:hover {
+      background-color: #555;
+    }
+
+    /* Submenu oculto inicialmente */
+    .submenu {
+      position: absolute;
+      top: 100%;
+      left: 0;
+      background-color: #444;
+      overflow: hidden;
+      height: 0;
+      /* Submenu escondido inicialmente */
+      visibility: hidden;
+      /* Invisível inicialmente */
+      transition: height var(--r-globalnav-flyout-rate, 0.3s) cubic-bezier(.4, 0, .6, 1),
+        visibility var(--r-globalnav-flyout-rate, 0.3s) step-start,
+        background var(--r-globalnav-flyout-rate, 0.3s) cubic-bezier(.4, 0, .6, 1);
+    }
+
+    .submenu a {
+      color: white;
+      text-decoration: none;
+      padding: 10px 20px;
+      display: block;
+      white-space: nowrap;
+    }
+
+    .submenu a:hover {
+      background-color: #666;
+    }
+
+    /* Exibir submenu ao passar o mouse */
+    .navbar-item:hover .submenu {
+      height: 200px;
+      /* Define a altura do submenu ao exibir */
+      visibility: visible;
+      /* Torna o submenu visível */
+    }
+  </style>
+</head>
+
+<body>
+  <nav class="navbar">
+    <ul class="navbar-list">
+      <li class="navbar-item">
+        <a href="#" class="navbar-link">Menu 1</a>
+      </li>
+      <li class="navbar-item">
+        <a href="#" class="navbar-link">Menu 2</a>
+        <!-- Submenu -->
+        <div class="submenu">
+          <a href="#">Submenu 1</a>
+          <a href="#">Submenu 2</a>
+          <a href="#">Submenu 3</a>
+        </div>
+      </li>
+      <li class="navbar-item">
+        <a href="#" class="navbar-link">Menu 3</a>
+      </li>
+    </ul>
+  </nav>
+</body>
+
+</html>
