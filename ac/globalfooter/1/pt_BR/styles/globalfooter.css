@@ -56,8 +56,8 @@
 /* ========== NOTAS-INFO ========== */
 #globalfooter #globalfooter-note {
   border-bottom: 1px solid var(--footer-border-color);
-  padding: 0px 11px;
   padding-bottom: 16px;
+  padding-left: 0px;
 }
 #globalfooter #globalfooter-note a {
   text-decoration: underline;
@@ -152,9 +152,7 @@
   }
 }
 
-#globalfooter
-  .gf-directory-column-section-title
-  > .gf-directory-column-section-title-text,
+#globalfooter .gf-directory-column-section-title > .gf-directory-column-section-title-text,
 #globalfooter .gf-directory-column-section-title-button {
   font-size: 12px;
   line-height: 1.33337;
@@ -238,16 +236,12 @@
   }
 }
 
-#globalfooter
-  .gf-directory-column-section-title
-  > .gf-directory-column-section-title-text {
+#globalfooter .gf-directory-column-section-title > .gf-directory-column-section-title-text {
   display: block;
 }
 
 @media only screen and (max-width: 833px) {
-  #globalfooter
-    .gf-directory-column-section-title
-    > .gf-directory-column-section-title-text {
+  #globalfooter .gf-directory-column-section-title > .gf-directory-column-section-title-text {
     display: none;
   }
 }
@@ -309,21 +303,15 @@
 }
 
 @media only screen and (max-width: 833px) {
-  #globalfooter
-    .gf-directory-column-section.gf-directory-column-expanded
-    .gf-directory-column-section-title {
+  #globalfooter .gf-directory-column-section.gf-directory-column-expanded .gf-directory-column-section-title {
     color: var(--footer-directory-title-color-hover);
   }
 
-  #globalfooter
-    .gf-directory-column-section.gf-directory-column-expanded
-    .gf-directory-column-section-title-icon {
+  #globalfooter .gf-directory-column-section.gf-directory-column-expanded .gf-directory-column-section-title-icon {
     transform: rotate(45deg) scale(1.08);
   }
 
-  #globalfooter
-    .gf-directory-column-section.gf-directory-column-expanded
-    .gf-directory-column-section-list {
+  #globalfooter .gf-directory-column-section.gf-directory-column-expanded .gf-directory-column-section-list {
     position: static;
     visibility: visible;
     z-index: 1;
