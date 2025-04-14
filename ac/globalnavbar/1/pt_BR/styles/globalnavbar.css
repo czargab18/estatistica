@@ -348,9 +348,6 @@
 **  CSS: submenu:houver
 */
 
-#globalnavbar {
-  all: unset;
-}
 
 :root {
   --r-globalnavbar-flyout-elevated-group-count: 1;
@@ -500,14 +497,36 @@ li.globalnavbar-item .globalnavbar-flyout-scroll-container:hover {
   margin-inline-start: -11px;
 }
 
-nav {
-  width: 100% !important;
-}
-
 .globalnavbar-submenu-list-item-elevated:nth-last-child(-n + 2) .globalnavbar-submenu-link {
   font-size: 12px;
   line-height: 16px;
 }
 .globalnavbar-submenu-list-item-elevated:nth-last-child(2) {
   margin-top: 12px !important;
+}
+
+:root {
+  --globalnav-transition-rate: 0.3s; /* Controle o tempo de transição */
+  --easing-curve: cubic-bezier(0.4, 0, 0.6, 1);
+}
+
+/* Estilo básico do dropdown */
+.globalnavbar-submenu {
+  max-height: 0;
+  opacity: 0;
+  visibility: hidden;
+  overflow: hidden;
+  transform-origin: top;
+  transition: max-height var(--globalnav-transition-rate) var(--easing-curve),
+    opacity var(--globalnav-transition-rate) var(--easing-curve), visibility var(--globalnav-transition-rate) step-end;
+}
+
+/* Quando o dropdown é ativado (hover ou focus) */
+.globalnavbar-item:hover .globalnavbar-submenu,
+.globalnavbar-item:focus-within .globalnavbar-submenu {
+  max-height: 500px; /* Ajuste para acomodar o conteúdo */
+  opacity: 1;
+  visibility: visible;
+  transition: max-height var(--globalnav-transition-rate) var(--easing-curve),
+    opacity var(--globalnav-transition-rate) var(--easing-curve), visibility var(--globalnav-transition-rate) step-start;
 }
