@@ -1,59 +1,37 @@
+# Ignorar global
+
+node_modules
 *cache*
-# .gitconfig
-# node_modules
-# .venv*
+.*env*
+*.*env*
+*.*quarto*
+.gitignore
 
-# *pycache*
-# */*pycache*
+*libs
+*_files*
+*_main.rds
+*_book*
 
-# # Ignorar arquivos e pastas relacionados ao R
-# .Rproj.user
-# .Rhistory
-# *_cache
-# *_files
-# _main.rds
-# _book
-# *.md
-# search_index.json
-# libs
-# *.rds
-# _main.*
-# tmp-pdfcrop-*
-# figures
-# *libs
-# test_*
-# *.venv/
-# */.venv/
+*temp*
+*tmp*
 
-# # Ignorar todos as subpasta dentro de diretórios
-# **/*cache*
-# **/*/*/ac/
-# **/*/*/wss/
+*.httr-oauth
+*.DS_Store
+*.DBF
+*.xlsx
+*.xls
+*.csv
+*.pdf
 
-# # Ignorar arquivos e pastas específicas do livro
-# build/*/.quarto/
-# build/*/site_libs/
-# build/*/.gitignore
-# build/*/conteudo/*/*.html
-# books/build/**/**/.gitignore
-# **/.gitignore
+*.Rproj
+*.Rproj.*
+*.Rhistory
+*.RData
+*.Ruserdata
+*.Renviron
+*.Renviron.*
 
-# # Ignorar arquivos e configurações do repositório cesargabrielphd/curso
-# *.Rproj
-# *.Rproj.*
-# *.Rhistory
-# *.RData
-# *.Ruserdata
-# *.Renviron
-# *.Renviron.*
-
-# *.httr-oauth
-# *.DS_Store
-# *.quarto
-# *.DBF
-# *.xlsx
-# *.xls
-# *.csv
+################################## ANALISAR #################################
 
 # Trabalho 1/dataProject
 # Trabalho 1/data.Need.Project/
@@ -63,24 +41,14 @@
 # Atividaes/PadronTaxas/dataProject/
 # SINGAGE.XLS
 
-# **/.gitignore
-# **/README.md
-
-
-# ################################################################################
-# ################################## NÃO IGNORA ##################################
-# ################################################################################
-# !**/CODE_OF_CONDUCT.md
-# !**/plausible.html
-# !**/wss/
-# !**/public.html
-# !**/.gitignore
-# !**/backend/*
-# !**/docs/
-# !**/docs/ac/*_libs
-
-# !README.md
-# !.github/**/*
-# !.vscode
-# **/.gitignore
-# !/.gitignore
+################################################################################
+################################## NÃO IGNORAR #################################
+################################################################################
+!fluxograma.pdf
+!teste
+!*.md
+!.github
+!.vscode
+!/.gitignore
+!.htaccess
+!CNAME
