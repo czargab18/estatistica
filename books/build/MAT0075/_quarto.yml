@@ -1,0 +1,35 @@
+project:
+  title: "CALCULO DE PROBABILIDADE"
+  type: book
+  output-dir: "./../../docs/MAT0075"
+  lib-dir: "./../ac/books"
+  preview:
+    port: 4200
+    browser: false
+
+number-sections: false
+
+book:
+  favicon: "./../sd/imagens/favicons/estatistica.svg"
+  chapters:
+    - index.qmd
+    - conteudo/1.espacoprob.qmd
+
+    # - part: conteudo/1.espacoprob.qmd
+    #   # chapters:
+    #   #   - conteudo/1.1.subcaptulos.qmd
+
+    - conteudo/references.qmd
+
+bibliography: references.bib
+
+format:
+  html:
+    css: "./../ac/custombooks.css"
+    toc: false
+    sidebar: true
+    theme:
+      - cosmo
+      - brand
+    code-link: true
+    search: true

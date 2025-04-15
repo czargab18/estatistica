@@ -3,4 +3,27 @@
   "python.terminal.activateEnvironment": true,
   "python.terminal.activateEnvInCurrentTerminal": true,
   "python-envs.pythonProjects": [],
+  "files.exclude": {
+    "**/.svn": true,
+    "**/.hg": true,
+    "**/.DS_Store": true,
+    "**/Thumbs.db": true,
+    "**/.quarto/": true,
+    "**/*/.gitignore/": false,
+    "**/*/index_files/": true,
+    "**/*/*/ac/": true,
+    "**/*/*/site_libs": true,
+    "**/docs/ac/": false,
+    "**/docs/ac/books_libs": false
+  },
+  "python.testing.unittestEnabled": false,
+  "python.testing.pytestEnabled": true,
+  "editor.rulers": [80, 120],
+  "editor.wordWrap": "on",
+  "editor.wordWrapColumn": 80,
+  "terminal.integrated.env.windows": {
+    "PYTHONIOENCODING": "utf-8"
+  }
+  // "terminal.integrated.cwd": "c:/Users/cesargabrielphd/Documents/github/books/",
+  // "quarto.path": "c:/Users/cesargabrielphd/AppData/Local/Programs/Quarto/bin/",
 }

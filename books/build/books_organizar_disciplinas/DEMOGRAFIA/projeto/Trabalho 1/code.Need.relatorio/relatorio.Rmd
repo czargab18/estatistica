@@ -1,0 +1,1299 @@
+---
+title: Análise demográfica sobre Natalidade, Fecundidade e Mortalidade de Goiás dos
+  anos de 2000 a 2021.
+author: "César Gabriel e Eraldo"
+date: 'Semestre: 1.2023'
+output:
+  html_document: default
+subtitle: "Demografia- Prof. Dr(a) Ana Maria Nogales Vasconcelos "
+---
+
+```{r setup, include=FALSE, cache = TRUE}
+knitr::opts_chunk$set(
+	fig.height = 10,
+	fig.width = 12,
+	include = FALSE
+)
+#  PACOTES 
+library(fs)
+library(purrr)
+library(stringr)
+library(tidyverse)
+# library(kableExtra)
+
+ # instalar o pacote read.dbc GITHUB
+ if(!require(read.dbc)){
+  devtools::install_github("danicat/read.dbc")
+} else {
+  library(read.dbc)
+}
+
+```
+
+
+```{r all.Bases.Dados, include=FALSE, cache = TRUE}
+
+'IMPORTANDO SINASC'
+pf.sinasc<-fs::dir_ls("dados/sinasc-dados/", glob = "*.DBC|*.dbc") |>
+  stringr::str_remove_all(pattern = ".DBC|.dbc") |>
+  stringr::str_c(pattern=".dbc")
+
+sinascdf<-
+  purrr::map2(
+    .x = pf.sinasc,
+    .y = 2000:2021,
+    .f = ~ read.dbc::read.dbc(.x) |>
+      # cria coluna ANO dentro de cada lista
+      dplyr::mutate(ano = .y),
+    .progress = TRUE
+  ) |>
+  dplyr::bind_rows() |>
+  janitor::clean_names()
+
+rm(pf.sinasc)
+
+'IMPORTANDO SIM'
+
+pf.sim<-fs::dir_ls("dados/sim-dados/", glob = "*DOGO*.DBC|*DOGO*.dbc") |>
+  stringr::str_remove_all(pattern = ".DBC|.dbc") |>
+  stringr::str_c(pattern=".dbc")
+
+simdf<-
+  purrr::map2(
+    .x = pf.sim,
+    .y = 2000:2021,
+    .f = ~ read.dbc::read.dbc(.x) |> dplyr::mutate(ano = .y),
+    .progress = TRUE
+  ) |>
+  dplyr::bind_rows() |>
+  janitor::clean_names()
+
+rm(pf.sim)
+
+"PROJEÇÕES POPULAÇÃO"
+pop_estimada<-
+  readxl::read_xlsx(
+    path = "estimativa_projecao/projecoes_2018_populacao_2010_2060_20200406.xlsx",
+    skip = 4) |> 
+  janitor::clean_names()
+
+```
+
+## Introdução 
+
+
+### Objetivo Geral 
+Este estudo tem como motivação a aplicação dos conceitos e técnicas, de análise demográfica, para o estudo da Natalidade, Fecundidade e Mortalidade. da Unidade Federativa de Goiás, entre os anos de 2000 e 2021. As bases de dados para o estudo são: Sistema de Informação sobre Nascidos Vivos (SINASC) e Sistema de Informação sobre Mortalidade (SIM). Ambas as bases estão sob disponíveis no portal “online” do Departamento de Informática do Sistema Único de Saúde (DATASUS), do Ministério da Saúde”.  
+
+### objetivos especificos
+O foco principal deste estudo é avaliar a qualidade da informação dos Sistemas de Informação sobre Nascidos Vivos (SINASC) e Mortalidade (SIM) do Ministério da Saúde para análise da fecundidade e mortalidade de Goiás. Além da habituação com os bancos de dados de nascidos vivos, da base do SINASC, e óbitos, SIM.  
+
+### Referencial Teorico
+
+#### Natalidade e Fecundidade
+
+#### Mortalidade
+
+### Metodologia 
+
+#### Carregamento dos pacotes necessários
+
+
+ Descrição rápida sobre os pacotes:  
+ - O pacote`fs` fornece funções úteis para trabalhar com arquivos e diretórios no R. 
+   
+ - O pacote `purrr` é parte do pacote `tidyverse` e fornece uma sintaxe consistente e intuitiva para programação funcional.   
+   
+ - O pacote `stringr` é outra parte do pacote `tidyverse` e fornece ferramentas para manipulação de strings no R.  
+   
+ - O pacote `tidyverse` é uma coleção de pacotes R inter-relacionados que foram projetados para facilitar a análise de dados. 
+  
+  
+#####  Bases de Dados
+  
+ As bases de dados do SINAS e SIM, podem ser baixadas diretamente pelo pacote **[microdatasus](https://github.com/rfsaldanha/microdatasus)**, criado por Raphael de Freitas SALDANHA, Ronaldo Rocha BASTOS e Christovam BARCELLOS.
+  
+```{r microDATASUS, eval=FALSE, include=TRUE, cache = TRUE}
+if(!require(microdatasus)){
+  devtools::install_github("rfsaldanha/microdatasus")
+}
+
+library(microdatasus)
+  dados <-
+   fetch_datasus(
+     year_start = 2002,
+     year_end = 2021, uf = "GO",
+     information_system = "SIM-DO") |>
+   process_sim()
+```
+  
+  
+#### Questão 1: Diagrama de Lexis
+
+```{r code.Need.Q1, include=FALSE, cache = TRUE}
+"como 'sim.data$idade %in% 405' cuja 'id.simples' >= 5,
+a seleção FOI feita de 400:404"
+
+sim.data<-
+  simdf[simdf$idade %in% 400:404,c("idade","ano","dtobito", "dtnasc")] |>
+  as.data.frame() |>
+  rename(data.obito=dtobito,data.nasc=dtnasc) |>
+  mutate(
+    # IDADE SIMPLES
+    id.simples=map2(
+      .x = dmy(data.obito),
+      .y = dmy(data.nasc),
+      .f = ~round(
+        (as.numeric(.x-.y)/365),
+        digits = 1)
+    )
+  ) |>
+  unnest(id.simples)
+
+"Pego o ano, dtobtido e dtnasc, POR 400<Idade<405(completa)
+  para obter as datas para o diagrama (linha de vida).
+Observação: Há um individuo que MORREU 1 DIAA ANTES
+ de completar 5 anos de vida. Logo, entre em menor <5 anos"
+
+# Numero de NASCIMENTOS DO SINASC
+sinasc.data<-
+  sinascdf$dtnasc |>
+  stringr::str_replace(" ","") |>
+  lubridate::dmy() |> 
+  format("%Y") |>
+  table() |>
+  data.frame() |>
+  rename(ano=Var1,nascidos=Freq)
+
+# Numero de NASCIMENTOS PELO DO SIM
+sim.data<-
+  sim.data$data.obito |>
+  lubridate::dmy() |> 
+  format("%Y") |>
+  table() |>
+  data.frame() |>
+  rename(ano=Var1,obtos=Freq)
+
+# JUNTANDO BASES
+dadoDiagLex <-
+  merge(
+    x = sinasc.data,
+    y = sim.data,
+    by = "ano") |> 
+  filter( ano %in%  c(2000:2021)
+  )
+
+```
+
+
+a) Construir o Diagrama de Lexis para os dados de nascidos vivos de 2000 a 2021 da UF escolhida (SINASC) e de óbitos menores de 5 anos (idades simples) para o mesmo período segundo ano de nascimento.
+
+```{r code.Respost.Need.Q1A, echo=FALSE, cache=FALSE}
+# CAMADA DO DIAGRAMA 
+library(LexisPlotR)
+library(ggplot2)
+
+# diagLexis <-
+  LexisPlotR::lexis_grid(
+    year_start = 2000,
+    year_end = 2021,
+    age_start = 0,
+    age_end = 5,
+    delta = 1
+  ) +
+  
+  # DIAGRAMA - LEXIS  FINAL 
+    annotate("text",
+           x = seq(as.Date("2000-8-1"), as.Date("2021-8-1"), "years"),
+           y = 0.13,
+           label = dadoDiagLex$nascidos,
+           color='#1b429e',size = 3.5) +
+  annotate("text",
+           x = seq(as.Date("2000-8-1"), as.Date("2021-8-1"), "years"),
+           y = 2.5,
+           label = dadoDiagLex$obtos,
+           color='red',size = 5) +
+  
+  # ROTULOS DO DIAGRAMA 
+  labs(
+    title = "Diagrama de Lexis sobre nascimentos e óbitos menores que 5 anos de Goiás.",
+    subtitle = "Dados relacionados aos anos de 2000 à 2021.", 
+    x = "Coortes",
+    y = "Anos Completos"
+  ) +
+  theme(
+    # plot.margin = margin(1, .5, 1, 1, unit = "cm"),
+    plot.title = element_text(size = 14),
+    plot.subtitle = element_text(size = 12),
+    axis.title.x = element_text(size = 10),
+    axis.title.y = element_text(size = 10),
+    axis.text.x = element_text(size = 10)
+  )
+```
+```{r co.Remove.NOT.Q1A, include=FALSE}
+rm(sim.data)
+rm(sinasc.data)
+rm(sim.data)
+rm(dadoDiagLex)
+
+```
+
+
+b) Supondo população fechada (inexistência de migração), calcule a probabilidade de um recém-nascido na UF ou território de escolha sobreviver à idade exata 5 para as coortes de 2000 a 2016.
+
+
+```{r code.Need.Q1B, include=FALSE}
+library(tidyverse)
+# coluna 'IDADE', dados da 'DECLARAÇÃO DE OBITO'
+"4: Anos, o segundo subcampo varia de 00 a 99.
+    Exemplo: 410 == 10 anos"
+
+# OBTOS 
+n.obtos<-
+  simdf[simdf$idade %in% 400:405,] |>
+  dplyr::select(dtobito) |>
+  dplyr::mutate(
+    dtobito=format(
+      dmy(dtobito),"%Y")
+  ) |>
+  table() |>
+  as.data.frame() |>
+  dplyr::rename(ano=dtobito,obtos=Freq) |>
+  dplyr::filter(
+    ano %in%  c(2000:2016)
+  ) |> 
+  dplyr::select(ano,obtos)
+
+# n.obtos<-n.obtos[
+#   n.obtos$ano %in% 2000:2016,c("ano","obtos")]
+
+
+# NASCIMENTOS
+n.nascimentos<-
+  sinascdf |>
+  select(dtnasc) |>
+  dplyr::mutate(
+    dtnasc=format(
+      lubridate::dmy(dtnasc),"%Y")
+  ) |>
+  table() |>
+  as.data.frame() |>
+  dplyr::rename(ano=dtnasc,nasc=Freq) |> 
+    filter(
+    ano %in%  2000:2016
+  ) |> 
+  dplyr::select(ano,nasc)
+
+
+# n.nascimentos<-n.nascimentos[
+#   n.nascimentos$ano %in% 2000:2016,c("ano","nasc")]
+
+
+# DATAFRAME  COMPLETO 
+dadoSobrev<-
+  merge(n.nascimentos,n.obtos, by = "ano") |> 
+
+# "sobreV=1-[soma(mortos)/nascidos-vivos]*1mil"
+# PROBABILIDADE DE SOBREVIVER EM CADA ANO
+  mutate(
+    pb.sobrev=map2(
+      .x = obtos,
+      .y = nasc,
+      .f = ~round(1-((.x/.y)),digits=4),
+      .progress = TRUE
+    )
+  ) |>
+  unnest(pb.sobrev)
+
+
+
+```
+
+```{r code.Respost.Need.Q1B, echo=FALSE, , echo=FALSE}
+library(kableExtra)
+# TABELA
+knitr::kable(
+  x = dadoSobrev,
+             align = "c",
+             caption = "Tabela 1: Probabilidade de um recém-nascido de Goias, das coortes de 2000 a 2016, sobreviver ao primeiro aniversário.",
+             col.names = 
+               c("Ano","Número de Nascimentos", "Numero de Obtos", "Probabilidade de Sobreviver (em cada ano)")) |> 
+  kableExtra::add_footnote(label = "Fonte: Sistemas de Informação sobre Nascidos Vivos (SINASC) e Mortalidade (SIM) do Ministério da Saúde da Unidade Federativa de Goiás, entre os anos de 2000 a 2016.")
+
+```
+
+
+```{r co.Remove.NOT.Q1B, include=FALSE}
+rm(n.obtos)
+rm(n.nascimentos)
+rm(dadoSobrev)
+
+```
+
+c) Considerando o mesmo pressuposto, calcule a probabilidade de sobreviver ao primeiro aniversário dos recém-nascidos no período de 2000 a 2020.
+
+
+```{r code.Need.Q1C, include=FALSE}
+#  COLUNA IDADE: 400:401 (menor de 1 ano).
+n.obtos<-
+  simdf[simdf$idade %in% 400:401,] |>
+  select(dtobito) |>
+  dplyr::mutate(
+    dtobito=format(
+      dmy(dtobito),"%Y")
+  ) |>
+  table() |>
+  as.data.frame() |>
+  rename(ano=dtobito,obtos=Freq) |> 
+  filter( 
+    ano %in%  c(2000:2020)
+  ) |> 
+  select(ano,obtos)
+
+
+
+# NASCIMENTOS 
+n.nascimentos<-
+  sinascdf |>
+  select(dtnasc) |>
+  dplyr::mutate(
+    dtnasc=format(dmy(dtnasc),"%Y")) |>
+  table() |>
+  as.data.frame() |>
+  rename(ano=dtnasc,nasc=Freq) |> 
+    filter( 
+    ano %in%  c(2000:2020)
+  ) |> 
+  select(ano,nasc)
+
+
+# DATAFRAME  COMPLETO 
+dadoSobrev<-
+  merge(
+    x = n.nascimentos,
+    y = n.obtos,
+    by = "ano") |> 
+
+# PROBABILIDADE DE SOBREVIVER AO PRIMEIRO ANO
+# " sobre=1-[soma-mortos/nascidos-vivos]*1mil"
+
+  mutate(
+    pb.sobrev=map2(
+      .x = obtos,
+      .y = nasc,
+      
+      .f = ~round((1-(.x/.y)),digits=7),
+      .progress = TRUE
+    )
+  ) |>
+  unnest(pb.sobrev)
+
+```
+
+
+```{r tabela.1C, echo=FALSE}
+knitr::kable(
+  x = dadoSobrev,
+             align = "c",
+             caption = "Tabela 1: Probabilidade de um recém-nascido de Goias, das coortes de 2000 a 2020, sobreviver ao primeiro aniversário.",
+             col.names = 
+               c("Ano","Número de Nascimentos", "Numero de Obtos", "Probabilidade de Sobreviver (em cada ano)")) |> 
+  kableExtra::add_footnote(label = "Fonte: Sistemas de Informação sobre Nascidos Vivos (SINASC) e Mortalidade (SIM) do Ministério da Saúde da Unidade Federativa de Goiás, entre os anos de 2000 a 2020.")
+
+```
+
+```{r co.Remove.NOT.Q1C, include=FALSE}
+rm(n.obtos)
+rm(n.nascimentos)
+rm(dadoSobrev)
+
+```
+
+d) Comente sobre os valores encontrados. Não esquecer a qualidade da informação trabalhada.  
+  
+  
+#### Questão 2: Natalidade e Fecundidade
+
+  
+```{r code.Need.Q2, include=FALSE, cache = TRUE}
+
+# Dado completo ESTIMADA -----
+
+pop_estimada<-
+  readxl::read_xlsx(
+    path = "estimativa_projecao/projecoes_2018_populacao_2010_2060_20200406.xlsx",
+    skip = 4) |> 
+  janitor::clean_names()
+
+#  PROJEÇÕES DA POPULAÇÃO 
+library(tidyverse)
+
+popTotal<-
+  pop_estimada[46:66,c("grupo_etario","x2010","x2019","x2021")] |>
+  pivot_longer(
+    cols = starts_with("x20"),
+    names_to = "ano",
+    values_to = "populacao") |>
+  mutate(
+    ano = as.numeric(str_remove_all(ano,pattern = "x"))
+  ) |> 
+  arrange(ano)
+
+#  PROJEÇÕES DA POPULAÇÃO POR SEXO "MULHER"
+
+popMul<- pop_estimada[24:43,c("grupo_etario","x2010","x2019","x2021")] |>
+  pivot_longer(
+    cols = starts_with("x20"),
+    names_to = "ano",
+    values_to = "populacao") |>
+  mutate(
+    ano = as.numeric(str_remove_all(ano,pattern = "x"))
+  ) |> 
+  arrange(ano)
+#  PROJEÇÕES DA POPULAÇÃO POR SEXO "HOMEM"
+
+popHom <-
+  pop_estimada[1:20,c("grupo_etario","x2010","x2019","x2021")]|> 
+  pivot_longer(
+    cols = starts_with("x20"),
+    names_to = "ano",
+    values_to = "populacao") |>
+  mutate(
+    ano = as.numeric(str_remove_all(ano,pattern = "x"))
+  ) |> 
+  arrange(ano)
+
+# NUMERO DE NASCIMENTOS 
+nascimentos<-
+  sinascdf$dtnasc |>
+  stringr::str_replace(" ","") |>
+  lubridate::dmy() |> 
+  format("%Y") |>
+  table() |>
+  data.frame() |>
+  rename(ano=Var1,nascidos=Freq) |> 
+  filter(
+    ano %in% c(2010,2019,2021)
+  )
+
+```
+  
+a) Com base nos dados do SINASC para os de 2010, 2019 e  2021 e na população por sexo e idade estimada (projetada), construa os seguintes indicadores para a Unidade da Federação:
+
+Os dados sobre [População Projetadas](https://view.officeapps.live.com/op/view.aspx?src=https%3A%2F%2Fftp.ibge.gov.br%2FProjecao_da_Populacao%2FProjecao_da_Populacao_2018%2Fprojecoes_2018_populacao_2010_2060_20200406.xls&wdOrigin=BROWSELINK) foram realizados pelo [IBGE](https://www.ibge.gov.br/estatisticas/sociais/populacao/9109-projecao-da-populacao.html).
+
+- Taxa Bruta de Natalidade (TBN)
+$$
+TBN = \frac{N}{\bar{P}} \times 1000
+$$
+Onde: N é número total de nascidos vivos em um determinado período e P é é a população total em um determinado período.
+
+```{r  code.Need.Q2A.TBN, include=FALSE}
+# 'TBN = (nascidos/população)'
+'Juntando dados necessarios "popTotal" e "nascimentos".
+Calculando TBN-TOTAL'
+
+dadoTBNatali<-
+  merge(x = popTotal,y = nascimentos,  by = "ano", all.x = TRUE ) |>
+  relocate(grupo_etario, .before = "ano") |>
+  mutate(
+    tbnTotal=map2(
+      .x = nascidos,
+      .y = populacao,
+      
+      .f = ~round(((.x/.y)*1000), digits = 2),
+      .progress = TRUE
+    )
+  ) |> 
+  unnest(tbnTotal)|>
+  rename(populacaoTotal=populacao) |> 
+  filter(
+    grupo_etario == "Total" 
+  )
+dadoTBNatali<-dadoTBNatali[,-1]
+```
+
+
+A Taxa Bruta de Natalidade analisadas para 2010 foi 0.44 por hil habitantantes. Nesse ano, a população de Goiás (projetada) erá de 194.8 milhão e 84.4mil nascidos vivos.
+Já em 2019, a TBM foi de 0.45 por hil habitantantes, com 210.1 milhão de habitantes e 96 mil nascidos vivos. Em 2021, com uma população projetada de 213.3 milhão e 91mil nascidos vivos, a TBN ficou por volta de 0.42 por mil habitantes.
+
+```{r tabela.1A, echo=FALSE}
+knitr::kable(
+  x = dadoTBNatali,
+             align = "c",
+             caption = "tabela: Taxa Bruta de Natalidade analisadas para 2010, 2019 e 2021",
+             col.names = 
+               c("Ano","População Projetada", "Numero de Nascimentos", "TBN")) |> 
+  kableExtra::add_footnote(label = "Fonte: Sistemas de Informação sobre Nascidos Vivos (SINASC) do Ministério da Saúde da Unidade Federativa de Goiás, entre os anos de 2000 a 2020. e IBGE")
+
+```
+
+
+```{r co.Remove.NOT.TBN, include=FALSE}
+rm(dadoTBNatali)
+rm(nascimentos)
+```
+  
+  - Taxa Fecundidade Geral (TFG) e Taxas específicas de fecundidade - TEF (Grafique esses valores)  
+
+
+$$
+TFG = \frac{\text{número de nascidos vivos}}{\text{número de mulheres em idade reprodutiva}}
+$$
+``````{r code.Need.Q2A.TFG, include=FALSE}
+# NUMERO DE NASCIMENTOS 
+nascimentos<-
+  sinascdf$dtnasc |>
+  stringr::str_replace(" ","") |>
+  lubridate::dmy() |> 
+  format("%Y") |>
+  table() |>
+  data.frame() |>
+  rename(ano=Var1,nascidos=Freq) |> 
+  filter(
+    ano %in% c(2010,2019,2021)
+  )
+
+
+tfg.mulher <-
+  merge(x = popMul,y = nascimentos,  by = "ano", all.x = TRUE ) |>
+  relocate(grupo_etario, .before = "ano") |>
+  filter(
+    # row_number() %in% c(1,5:11,21,25:31,41, 45:51)
+    row_number() %in% c(5:11,25:31,45:51)
+  ) |> 
+  mutate(
+    TFG=map2(
+      .x = nascidos,
+      .y = populacao,
+      
+      .f = ~((.x/.y)*1000),
+      .progress = TRUE
+    )
+  ) |>
+  unnest(TFG) 
+# |>
+  #   rename(
+  #   `Grupo Etário de Mulheres` = grupo_etario,
+  #   `População Feminina Projetada` = populacao,
+  #   `Numero de Nascimentos` = nascidos,
+  #   `Ano` = ano
+  #   )
+
+tfg.mulher
+# nascidos -- 2010 = 87476 
+# nascidos -- 2019 =  96112 
+# nascidos -- 2021 =  90961 
+
+```
+
+```{r tabela.2A.TFG, echo=FALSE}
+knitr::kable(
+  x = tfg.mulher,
+  align = "c",
+  caption = "tabela: Taxa Fecundidade Geral em 2010, 2019 e 2021.",
+  label = "Fonte: Sistemas de Informação sobre Nascidos Vivos (SINASC) do Ministério da Saúde da Unidade Federativa de Goiás, para 2010, 2019 e 2021. e IBGE."
+  )
+```
+
+
+$$
+\text{TEF} = \frac{\text{número de filhos nascidos vivos tidos por mulher}}{\text{ano das faixas etárias}}
+$$
+
+```{r code.Need.Q2B.TEF, include=FALSE}
+
+"Como 'tbm.mulher.dado', tanto os 'grupos etários como 'população total',
+ambos pelo ano, ao aplicar a função abaixo, obtemos as duas taxas 'TFG e TEF'
+, basta olhar as linhas da coluna 'grupo_etario'."
+
+# A TFG e a TEF estão dentro do DATAFRAME "tbm.mulher.dado"
+# TOTAL POR ANO = linhas 1,21 e 41 obs: # (N/Pbar)*1000 'Basta multiplicar as linhas por 1mil'
+# GRUPO ETARIO= linhas 2:20, 22:40 e 42:60
+
+"nascidos por idade da mãe em 2010 19 e 2021"
+nascimentos<-
+  sinascdf |> 
+  mutate(idademae = as.numeric(as.character(idademae)),
+         grupo_etario = cut(
+           idademae, c(15, 20, 25, 30, 35, 40, 45,50),
+           labels = c("15-19", "20-24", "25-29", "30-34", "35-39", "40-44", "45-49"),
+           include.lowest = TRUE)) |> 
+  select(ano,grupo_etario) |> 
+  group_by() |> 
+  table() |> as.data.frame() |> arrange(ano) |> 
+  relocate(grupo_etario, .before = "ano") |> 
+  rename(nasc.IDADE=Freq) 
+
+# JUNTANDO BASES E CALCULANDO A TEF
+tef.mulher <-
+  popMul |> 
+  filter(
+    grupo_etario %in% c("15-19", "20-24", "25-29", "30-34", "35-39", "40-44", "45-49")
+  ) |> 
+  merge(y = nascimentos,  by = c("grupo_etario","ano"), all.x = TRUE ) |>
+  mutate(
+    TEF=map2(
+      .x = nasc.IDADE,
+      .y = populacao,
+      
+      .f = ~round(((.x/.y)), digits = 4),
+      .progress = TRUE
+    )
+  ) |> 
+  unnest(TEF)
+
+  # rename(
+  #   `Grupo Etário de Mulheres` = grupo_etario,
+  #   `População Feminina Projetada` = populacao,
+  #   `Numero de Nascimentos por Idade da Mãe` = nasc.IDADE,
+  #   `Ano` = ano
+  # )
+# tef.mulher
+
+```
+
+```{r}
+# GRAFICO TEF ----
+
+library(ggplot2)
+library(dplyr)
+
+plot.tfg.mulher<-
+  tef.mulher
+
+plot.tef.ano<-
+  tef.mulher |> 
+    ggplot( aes(x = grupo_etario, y = TEF, color = factor(ano))) +
+  geom_line(data = filter(tef.mulher,ano == 2010),
+            group = 1,size = 1.5,) +
+  geom_line(data = filter(tef.mulher,ano == 2019),
+            group = 1,size = 1.5,) +
+  geom_line(data = filter(tef.mulher,ano == 2021),
+            group = 1,size = 1.5) +
+  geom_point(size = 3.5) +
+  scale_color_manual(values = c("blue", "green", "red")) +
+  scale_y_log10() +
+
+  theme_minimal() + 
+  theme(
+    panel.grid.major.x = element_line(size = .7, color = "grey"),
+    panel.grid.major.y = element_line(size = 0.5),
+    axis.text.x = element_text(size = 16),
+    axis.text.y = element_text(size = 16)
+    
+  ) +
+  labs(
+    title = "Taxa de Fecundidade Geral de mulheres em idade Reprodutiva",
+    subtitle = "Dados referentes aos anos de 2010, 2019 e 2021",
+    x = "Anoa",
+    y = "Taxa de Fecundidade Geral",
+    caption = "Ano")
+
+
+plot.tef.ano
+
+
+ggsave(path = "imagens/",
+       filename = "plot.tef.ano.png", plot = plot.tef.ano,
+       dpi = 300,
+       width = 12,
+       height = 8,
+       units = "cm",
+       scale = 2
+)
+
+
+
+
+```
+
+```{r tabela.2A.TEF, echo=FALSE}
+knitr::kable(
+  x = tfg.mulher,
+  align = "c",
+  caption = "tabela: Taxa Especifica de Natalidade em 2010, 2019 e 2021.",
+  label = "Fonte: Sistemas de Informação sobre Nascidos Vivos (SINASC) do Ministério da Saúde da Unidade Federativa de Goiás, para 2010, 2019 e 2021. e IBGE."
+  )
+```
+
+- Taxa Bruta de Reprodução    
+
+```{r}
+# TBR ----
+# Taxa Bruta de Reprodução
+
+tef.mulher<- tef.mulher |> 
+  arrange(ano)
+
+TEF.2010<-
+  tef.mulher |> 
+  filter(
+    grupo_etario %in% c("15-19", "20-24", "25-29", "30-34", "35-39", "40-44", "45-49") & ano %in% 2010  ) |> 
+  select(TEF)|> 
+  sum()
+
+
+TEF.2019<-
+    tef.mulher |> 
+  filter(
+    grupo_etario %in% c("15-19", "20-24", "25-29", "30-34", "35-39", "40-44", "45-49") & ano %in% 2019  ) |> 
+  select(TEF)|> 
+  sum()
+
+
+TEF.2021<-
+    tef.mulher |> 
+  filter(
+    grupo_etario %in% c("15-19", "20-24", "25-29", "30-34", "35-39", "40-44", "45-49") & ano %in% 2021  ) |> 
+  select(TEF)|> 
+  sum()
+
+# RESPOSTA
+TEF.2010.5<-5*TEF.2010
+TEF.2019.5<-5*TEF.2019
+TEF.2021.5<-5*TEF.2021
+
+"
+TEF.2010 == 2.001883
+TEF.2019 == 2.072548
+TEF.2021 == 1.953119
+"
+
+```
+
+
+- Taxa Bruta de Reprodução (Relação entre TEF e TBN)  
+
+```{r}
+# RELAÇÃO (TFT E TBR) ----
+# 1,M = MASCULINO
+# 2,F = FEMININO
+
+library(dplyr)
+
+Numero.H.M<-
+  sinascdf |> 
+  filter(ano %in% c(2010, 2019, 2021))  |> 
+  group_by(ano) |> 
+  summarize(
+    mulheres = sum(sexo %in% c(2, "F")),
+    homens = sum(sexo %in% c(1, "M"))
+  )
+
+# TAXA BRUTA DE REPRODUÇÃO
+# TBR = TEF/(1+RS)
+
+Relac.H.M.2010<-
+  TEF.2010.5 |> 
+  map(
+    .f = ~ ((.x)/(1+(Numero.H.M$homens[1]/Numero.H.M$mulheres[1])))
+  )
+
+Relac.H.M.2019<-
+  TEF.2019.5 |> 
+  map(
+    .f = ~ ((.x)/(1+(Numero.H.M$homens[2]/Numero.H.M$mulheres[2])))
+  )
+
+Relac.H.M.2021<-
+  TEF.2021.5 |> 
+  map(
+    .f = ~ ((.x)/(1+(Numero.H.M$homens[3]/Numero.H.M$mulheres[3])))
+  )
+
+# relação 
+
+Relac.H.M.2010
+Relac.H.M.2019
+Relac.H.M.2021
+
+```
+
+
+
+
+
+
+
+
+- Taxa Líquida de Reprodução (é necessária a informação da função L da Tábua de Vida)  
+  
+    
+b) Compare os seus resultados com os valores obtidos  pelo IBGE (projeções), e para o Brasil, pelo estudo GBD, pelas Nações Unidas (UN Population) e aqueles publicados no site do Datasus para 2010 (RIPSA - Indicadores e dados básicos - http://tabnet.datasus.gov.br/cgi/idb2012/matriz.htm ). Como  os indicadores de reprodução não aparecem nessas listas, a partir das TFT, calcule esses indicadores para comparação.
+
+c) Comente esses resultados (inclusive os gráficos das nfx), fazendo referência a artigos já publicados sobre o assunto.
+
+d) Para os dados do SINASC para 2021, analise a associação entre (apresente ao menos uma medida de associação):
+
+idade e escolaridade da mãe 
+tipo de parto e escolaridade da mãe
+Apresente graficamente os dados e obtenha medidas para essa associação.
+
+
+ 
+
+#### Questão 3: Mortalidade
+
+a) Com base nos dados sobre óbitos do SIM para 2010, 2019 e  2021 e a população por sexo e idade estimada (projetada) para a UF, obtenha os seguintes indicadores:
+```{r}
+dtobto<-
+  simdf[simdf$ano %in% c("2010","2019","2021"),c("ano","dtobito")] |>
+  select("ano") |>
+  table() |>
+  data.frame() |>
+  rename(numero=Freq)
+
+popHom
+popMul
+
+```
+
+ - Taxa Bruta de Mortalidade  
+```{r}
+# TBM HOMENS
+tbmHomem<-
+  merge( x = popHom, y = dtobto, by = "ano",all.x = TRUE) |> 
+  mutate(
+    TBM=map2(
+      .x = numero,
+      .y = populacao,
+      
+      .f = ~((.x/.y)*1000),
+      .progress = TRUE
+    )
+  )  |> unnest(TBM)
+
+# TBM MULHERES 
+tbmMulher<-
+  merge(x = popMul, y = dtobto, by = "ano",all.x = TRUE) |> 
+  mutate(
+    TBM=map2(
+      .x = numero,
+      .y = populacao,
+      
+      .f = ~((.x/.y)*1000),
+      .progress = TRUE
+    )
+  ) |> unnest(TBM)
+
+# RESPOSTA ----
+
+tbmHomem |> 
+  filter(
+    grupo_etario %in% "Total"
+  )
+
+tbmMulher |> 
+  filter(
+    grupo_etario %in% "Total"
+  )
+
+```
+  
+  
+ - Taxas específicas de mortalidade por sexo e idade - nMx (grafique)  
+ 
+```{r}
+
+#  RESPOSTA 
+tbmHomem |> 
+  filter(
+   ! grupo_etario %in% "Total"
+  )
+
+tbmMulher |> 
+  filter(
+  !  grupo_etario %in% "Total"
+  )
+
+
+
+
+"Em 'df.M.Q3A', Há as informações de total de homens e os grupos etários.
+Assim, nessas linhas 'Totais' já contem a informação da TBM e TEM por idade,
+nas outras linhas - 'grupos etarios'. Para os anos de interesse"
+
+
+"O mesmo para 'df.H.Q3A'."
+```
+
+ 
+b) Calcule a TMI, utilizando o número médio de óbitos ocorridos entre 2019 e 2021 e o número de nascimentos de 2020. Calcule os indicadores: taxa de mortalidade neonatal, neonatal precoce, neonatal tardia, posneonatal. Agregando a informação sobre óbitos fetais para os mesmos anos, calcule a taxa de mortalidade perinatal.
+
+
+```{r}
+# SINASC 
+sinasc.data<-
+  sinascdf$dtnasc |>
+  stringr::str_replace(" ","") |>
+  lubridate::dmy() |> 
+  format("%Y") |>
+  table() |>
+  data.frame() |>
+  rename(ano=Var1,nascidos=Freq) |> 
+  filter(
+    ano == 2020
+  )
+
+```
+
+
+```{r}
+#  CÁLCULO TMI 5qx 
+"TMI = obitos<5/nascimentos"
+
+# Numero Médio Óbitos
+
+num.medio<-
+  simdf[simdf$idade %in% 400:404,c("ano","dtobito")] |> 
+  select(dtobito) |>
+  mutate(
+    dtobito=format(
+      dmy(dtobito),"%Y"),
+  ) |> 
+  filter(
+    dtobito %in% 2019:2021
+  ) |> 
+  table() |> 
+  mean()
+
+  
+
+# RESPOSTA
+
+tmi.5q0 <-
+  (num.medio/sinasc.data$nascidos)*1000
+
+tmi.5q0
+'TMI.5qx = 1.961883'
+```
+```{r}
+#  CÁLCULO TMI 1qx ----
+"TMI = obitos<1/nascimentos"
+
+num.medio<-
+  simdf[simdf$idade %in% 400:401,c("ano","dtobito")] |> 
+  select(dtobito) |>
+  mutate(
+    dtobito=format(
+      dmy(dtobito),"%Y"),
+  ) |> 
+  filter(
+    dtobito %in% 2019:2021
+  ) |> 
+  table() |> 
+  mean()
+
+ # RESPOSTA
+tmi.1q0 <- 
+  (num.medio/sinasc.data$nascidos)*1000
+
+tmi.1q0 
+'TMI.1q0 == tmi == 0.8767391'
+
+```
+
+```{r}
+# TMINeo ----
+"TMI = obitos<1/nascimentos"
+
+# SINASC 
+sinasc.data<-
+  sinascdf$dtnasc |>
+  stringr::str_replace(" ","") |>
+  lubridate::dmy() |> 
+  format("%Y") |>
+  table() |>
+  data.frame() |>
+  rename(ano=Var1,nascidos=Freq) |> 
+  filter(
+    ano %in% c(2019,2020,2021)
+  )
+
+# IDADE SIMPLES 
+tmi.dado<-
+  simdf[simdf$ano %in% c(2019, 2021),c("ano","idade","dtnasc", "dtobito")] |> 
+  mutate(
+    id.simpl = map2(
+      .x = dmy(dtobito),
+      .y = dmy(dtnasc),
+      .f = ~round(
+        (as.numeric(.x-.y)),digits = 3),
+      .progress = TRUE
+      )
+    ) |>
+  unnest(id.simpl) |>
+  filter(id.simpl < 365)
+
+"Assumindo que de 200:229 representam os dias com base na nomenclatura da documentação
+SIM Anterior"
+tmi.dado[tmi.dado$idade %in% 200:229,c("ano","idade","dtnasc", "dtobito","id.simpl")] |> 
+  select(dtobito,id.simpl) |>
+  mutate(
+    dtobito=format(
+      dmy(dtobito),"%Y"),
+  ) |> 
+  filter(
+    dtobito %in% 2019:2021 & id.simpl <27
+  ) |> 
+ count()
+
+
+
+# Soma de 2019:2021. Não há dados sobre 2020 
+num.medio<- (1068)/3
+
+# RESPOSTA
+tmineo <- (num.medio/sinasc.data$nascidos)*1000
+
+
+"TMINeo  2019 == 3.704012 2020 == 3.837530 2021 == 3.913765"
+
+
+# 0: Idade ignorada, o segundo subcampo e 
+# 1: Horas, o segundo subcampo varia de 01 a 23 
+# 2: Dias, o segundo subcampo varia de 01 a 29 
+# 3: Meses, o segundo subcampo varia de 01 a 11 
+# 000: Idade ignorada 
+# 020: 20 minutos 
+# 103: 3 horas 
+# 204: 4 dias 
+# 305: 5 meses 
+
+```
+
+```{r}
+# TMIpos ----
+
+tmi.dado[tmi.dado$idade %in% 200:312,c("ano","idade","dtnasc", "dtobito","id.simpl")] |> 
+  select(dtobito,id.simpl) |>
+  mutate(
+    dtobito=format(
+      dmy(dtobito),"%Y"),
+  ) |> 
+  filter(
+    dtobito %in% 2019:2021 & id.simpl >=28 & id.simpl<=365
+  ) |> 
+  count()
+
+num.medio<-(636)/3
+
+# RESPOSTA
+tmi <- (num.medio/sinasc.data$nascidos)*1000
+
+"TMIPos  2019 == 2.205760  2020 == 2.285271 2021 == 2.330669"
+
+
+
+
+```
+
+
+```{r}
+
+# TMIprec ----
+tmi.dado[tmi.dado$idade %in% 200:229,c("ano","idade","dtnasc", "dtobito","id.simpl")] |> 
+  select(dtobito,id.simpl) |>
+  mutate(
+    dtobito=format(
+      dmy(dtobito),"%Y"),
+  ) |> 
+  filter(
+    dtobito %in% 2019:2021 & id.simpl<=6
+  ) |> 
+  count()
+
+num.medio<-(677)/3
+tmi <- (num.medio/sinasc.data$nascidos)*1000
+
+# Resposta
+"TMIPrec  2019 == 2.347955 2020 == 2.432592 2021 == 2.480917"
+
+
+```
+```{r}
+n.nasc.mort <-
+  simdf |> 
+  filter(
+    tpmorteoco %in% 1 & ano == c(2019:2021)
+  ) |> 
+  select(ano,tpmorteoco)
+
+n.nasc.mort <- sum(as.numeric(n.nasc.mort))
+
+# tmiperineo<-
+
+n.nasc.mort
+sinasc.data
+```
+
+
+
+
+
+c) Compare os seus resultados com os valores obtidos pelo estudo GBD, pela Nações Unidas (UN Population) e aqueles publicados no site do Datasus (RIPSA - Indicadores e dados básicos - http://tabnet.datasus.gov.br/cgi/idb2012/matriz.htm ). . Para a TMI, compare com os valores obtidos na questão 1. Comente sobre os aspectos metodológicos dessas duas formas de cálculo.
+
+d) Compare a estrutura de mortalidade por causas entre 2010 e 2021. Utilize 20 primeiras grupos de causas segundo Grupos CID-10 (ver Tabnet - Datasus),  segundo sexo para os anos selecionado. Comente os resultados. Destacar a mortalidade por Covid-19 (CID B34.2). 
+
+d) Construa Tábuas de Vida para cada sexo para a UF escolhida para 2021, a partir das taxas específicas de mortalidade obtidas no item a:
+
+
+```{r}
+# DADOS NECESSÁRIOS ----
+
+'2010,2019,2021'
+# OBTOS < 1 ANO
+n1.obtos<-
+  simdf[simdf$idade %in% 400:401,] |>
+  select(dtobito) |>
+  dplyr::mutate(
+    dtobito=format(
+      dmy(dtobito),"%Y")
+  ) |>
+  table() |>
+  as.data.frame() |>
+  rename(ano=dtobito,obtos=Freq)
+
+n1.obtos<-n1.obtos[
+  n1.obtos$ano %in% c(2010,2019,2021),c("ano","obtos")] |>
+  rename(obtos.1ano=obtos)
+
+# OBTO < 5 ANOS
+n5.obtos<-
+  simdf[simdf$idade %in% 400:404,c("idade","ano","dtobito", "dtnasc")] |> 
+  select(dtobito) |>
+  dplyr::mutate(
+    dtobito=format(
+      dmy(dtobito),"%Y")
+  ) |>
+  table() |>
+  as.data.frame() |>
+  rename(ano=dtobito,obtos=Freq)
+  
+n5.obtos<-n5.obtos[
+  n5.obtos$ano %in% c(2010,2019,2021),c("ano","obtos")] |>
+  rename(obtos.5ano=obtos)
+
+
+# DADOS ----
+
+# óbtos menores que 1 anos exato
+n1.obtos[n1.obtos$ano %in% c(2010,2019,2021),c("ano","obtos.1ano")]
+
+# óbtos menores que 5 anos exato
+# n5.obtos[n5.obtos$ano %in% c(2010,2019,2021),]
+n5.obtos[n5.obtos$ano %in% c(2010,2019,2021),c("ano","obtos.5ano")]
+
+# nascimentos
+sinasc.data
+
+# DATA FRAME 
+"No caso de 1q0,'Idades < 1', se os dados são de boa qualidade, pode-se
+utilizar os valores obtidos a partir do cálculo direto da 'Taxa de
+Mortalidade Infantil'
+"
+
+TMInfantil <-
+  merge(
+    x = n5.obtos,
+    y = sinasc.data$nascidos ,all.x = TRUE) |> 
+  rename(
+    nascidos = y
+  ) |> 
+
+
+  merge(
+    y = n1.obtos[n1.obtos$ano %in% c(2010, 2019, 2021), c("ano", "obtos.1ano")],
+    by = "ano") |>
+  mutate(
+    TMI.1q0 = map2(
+    .x = obtos.1ano,
+    .y = nascidos,
+    .f = ~round(((.x/.y)),digits = 5)),
+    TMI.5q0 = map2(
+      .x = obtos.5ano,
+      .y = nascidos,
+      .f = ~round(((.x/.y)),digits = 5)),
+    ) |> 
+  unnest(c(TMI.5q0,TMI.1q0))
+
+TMInfantil
+
+# OBTOS PARA A nMx
+
+obtos<-
+  simdf[simdf$ano %in% c(2010,2019,2021),] |>
+  select(dtobito) |>
+  dplyr::mutate(
+    dtobito=format(
+      dmy(dtobito),"%Y")
+  ) |>
+  table() |>
+  as.data.frame() |>
+  rename(ano=dtobito,n.obtos=Freq)
+
+obtos
+
+
+#  BASE DE DADOS ----
+# base.completa<-
+  popTotal[popTotal$ano %in% c(2010,2019,2021),] |> 
+  filter(
+    ! grupo_etario %in% c("Total","GRUPO ET\u00c1RIO")
+    # row_number() %in% c(4:21,25:42,46:63)
+    # !row_number() %in% c(22:23, 43:44)
+  ) |>
+  merge( y = obtos, by = "ano", all.x = TRUE
+  ) |> 
+  merge( y = TMInfantil, by = "ano", all.x = TRUE
+  ) |>
+  relocate(
+    grupo_etario,.before = "ano"
+  ) |> 
+  mutate(
+    nMx = map2( 
+      .x = n.obtos, .y = populacao, 
+      .f = ~round(((.x/.y)),digits = 5), .progress = TRUE
+    )
+  ) |> unnest(nMx) |> 
+  select(grupo_etario,ano,populacao,TMI.1q0, TMI.5q0, nMx) |> 
+      mutate(
+      nqx = map(
+        .x = nMx,
+        .f = ~(4*(.x)/(1+(4-2)*.x))
+        )
+      ) |> 
+    unnest(nqx)
+
+
+
+```
+
+
+
+Utilize a TMI obtida no item b ou do estudo Global Burden of Disease - GBD. Lembre que deve-se obter a TMI para cada sexo em separado.
+
+Estime os fatores de separação, para cada sexo, para as idades 0-1 e 1-4 com base nos microdados do SIM.
+
+ Compare os valores da função esperança de vida para as idades exatas 0 e 60 com aqueles obtidos pelo estudo GBD, pelas Nações Unidas (UN Population). Comente sobre os resultados obtidos e sobre o significado desses indicadores.
+ 
+Com base na TV calculada, grafique as funções lx e nqx para cada sexo e comente os resultados. Se lo=1, qual o significado da função lx? Interprete, neste caso, l20 e l60.
+
+
+Comente os resultados à luz de artigos recém publicados.
+  
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
