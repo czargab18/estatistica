@@ -5,7 +5,7 @@ node_modules
 .*env*
 *.*env*
 *.*quarto*
-.gitignore
+**/.gitignore
 
 *libs
 *_files*
@@ -47,8 +47,12 @@ node_modules
 !fluxograma.pdf
 !teste
 !*.md
+!*.qmd
 !.github
 !.vscode
 !/.gitignore
 !.htaccess
 !CNAME
+
+!utils/libs
+!newsroom
