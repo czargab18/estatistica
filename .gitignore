@@ -1,85 +1,86 @@
-.gitconfig
-node_modules
-.venv*
+*cache*
+# .gitconfig
+# node_modules
+# .venv*
 
-*pycache*
-*/*pycache*
+# *pycache*
+# */*pycache*
 
-# Ignorar arquivos e pastas relacionados ao R
-.Rproj.user
-.Rhistory
-*_cache
-*_files
-_main.rds
-_book
-*.md
-search_index.json
-libs
-*.rds
-_main.*
-tmp-pdfcrop-*
-figures
-*libs
-test_*
-*.venv/
-*/.venv/
+# # Ignorar arquivos e pastas relacionados ao R
+# .Rproj.user
+# .Rhistory
+# *_cache
+# *_files
+# _main.rds
+# _book
+# *.md
+# search_index.json
+# libs
+# *.rds
+# _main.*
+# tmp-pdfcrop-*
+# figures
+# *libs
+# test_*
+# *.venv/
+# */.venv/
 
-# Ignorar todos as subpasta dentro de diretórios
-**/*cache*
-**/*/*/ac/
-**/*/*/wss/
+# # Ignorar todos as subpasta dentro de diretórios
+# **/*cache*
+# **/*/*/ac/
+# **/*/*/wss/
 
-# Ignorar arquivos e pastas específicas do livro
-build/*/.quarto/
-build/*/site_libs/
-build/*/.gitignore
-build/*/conteudo/*/*.html
-books/build/**/**/.gitignore
-**/.gitignore
+# # Ignorar arquivos e pastas específicas do livro
+# build/*/.quarto/
+# build/*/site_libs/
+# build/*/.gitignore
+# build/*/conteudo/*/*.html
+# books/build/**/**/.gitignore
+# **/.gitignore
 
-# Ignorar arquivos e configurações do repositório cesargabrielphd/curso
-*.Rproj
-*.Rproj.*
-*.Rhistory
-*.RData
-*.Ruserdata
-*.Renviron
-*.Renviron.*
+# # Ignorar arquivos e configurações do repositório cesargabrielphd/curso
+# *.Rproj
+# *.Rproj.*
+# *.Rhistory
+# *.RData
+# *.Ruserdata
+# *.Renviron
+# *.Renviron.*
 
-*.httr-oauth
-*.DS_Store
-*.quarto
-*.DBF
-*.xlsx
-*.xls
-*.csv
+# *.httr-oauth
+# *.DS_Store
+# *.quarto
+# *.DBF
+# *.xlsx
+# *.xls
+# *.csv
 
-Trabalho 1/dataProject
-Trabalho 1/data.Need.Project/
-Trabalho 2/dataProject
-Trabalho 2/dataProject/
-Atividaes/PadronTaxas/dataProject
-Atividaes/PadronTaxas/dataProject/
-SINGAGE.XLS
+# Trabalho 1/dataProject
+# Trabalho 1/data.Need.Project/
+# Trabalho 2/dataProject
+# Trabalho 2/dataProject/
+# Atividaes/PadronTaxas/dataProject
+# Atividaes/PadronTaxas/dataProject/
+# SINGAGE.XLS
 
-**/.gitignore
-**/README.md
+# **/.gitignore
+# **/README.md
 
 
-################################################################################
-################################## NÃO IGNORA ##################################
-################################################################################
-!**/CODE_OF_CONDUCT.md
-!**/plausible.html
-!**/wss/
-!**/public.html
-!**/.gitignore
-!**/backend/*
-!**/docs/
-!**/docs/ac/*_libs
+# ################################################################################
+# ################################## NÃO IGNORA ##################################
+# ################################################################################
+# !**/CODE_OF_CONDUCT.md
+# !**/plausible.html
+# !**/wss/
+# !**/public.html
+# !**/.gitignore
+# !**/backend/*
+# !**/docs/
+# !**/docs/ac/*_libs
 
-!README.md
-!.github/**/*
-!.vscode
-**/.gitignore
-!/.gitignore
+# !README.md
+# !.github/**/*
+# !.vscode
+# **/.gitignore
+# !/.gitignore
