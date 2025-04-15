@@ -54,5 +54,5 @@ node_modules
 !.htaccess
 !CNAME
 
-!utils/libs
+!utils
 !newsroom
