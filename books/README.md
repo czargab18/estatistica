@@ -29,44 +29,52 @@ Para alguns, a ansiedade é um ponto fraco — o meu caso! Talvez eu me empolgue
 - "Andando no escuro para achar uma tomada" por [Cesar Gabriel](https://github.com/cesargabrielphd)
 - "Se é fácil para encontrar é rápido para consumir" por [Cesar Gabriel](https://github.com/cesargabrielphd)
 
-## Estrutura do Repositório
+## Estrutura Recomendada do Repositório
 
-As subpastas `./NameBook/**` são geradas por `./book/NameBook/` e armazenadas na raiz do projeto como arquivos HTML.
+Para organizar múltiplos livros online usando Quarto, sugiro a seguinte estrutura:
 
 ```plaintext
-book/
-  ├── automacao/            # Scripts de automação
-  │   ├── dados/
-  │   │   └── books.json    # Arquivo JSON com os caminhos dos livros
-  │   ├── package/
-  │   └── restos/
-  ├── docs/                 # Documentação e arquivos gerados
-  │   └── prettier.md
-  ├── ac/                   # Assets comuns (imagens, estilos, etc.)
-  │   ├── image/
-  │   │   └── logo/
-  │   ├── r4ds.scss
-  │   └── site_libs/
-  │       ├── bootstrap/
-  │       ├── clipboard/
-  │       ├── quarto-html/
-  │       ├── quarto-nav/
-  │       └── quarto-search/
-  ├── book/                 # Código Quarto que gera os livros
-  │   ├── EST0033/          # Livro Quarto EST0033
-  │   └── EST0064/          # Livro Quarto EST0064
-  ├── EST0033/              # HTML do Livro Quarto EST0033
-  ├── EST0064/              # HTML do Livro Quarto EST0064
-  ├── wss/                  # Web Static Site (fonts, css, etc.)
-  │   ├── fonts/
-  │   └── fonts.css
-  ├── index.html            # Página de redirecionamento para os livros
-  ├── README.md
-  ├── .github/              # Configurações do GitHub
+books/
+  ├── automacao/            # Scripts e ferramentas de automação
+  │   ├── dados/            # Dados auxiliares (ex.: JSON com metadados dos livros)
+  │   ├── scripts/          # Scripts para geração e deploy
+  │   └── logs/             # Logs de execução
+  ├── docs/                 # Documentação geral do projeto
+  │   └── guia.md           # Guia de uso e contribuição
+  ├── assets/               # Recursos compartilhados (imagens, estilos, etc.)
+  │   ├── imagens/
+  │   ├── estilos/
+  │   └── fontes/
+  ├── livros/               # Código-fonte dos livros em Quarto
+  │   ├── EST0033/          # Livro específico (ex.: EST0033)
+  │   │   ├── index.qmd     # Arquivo principal do livro
+  │   │   └── capítulos/    # Capítulos do livro
+  │   ├── EST0064/          # Outro livro (ex.: EST0064)
+  │   └── ...               # Outros livros
+  ├── public/               # Arquivos HTML gerados (prontos para deploy)
+  │   ├── EST0033/          # HTML do Livro EST0033
+  │   ├── EST0064/          # HTML do Livro EST0064
+  │   └── ...               # Outros livros
+  ├── wss/                  # Recursos estáticos para o site (CSS, fontes, etc.)
+  ├── index.html            # Página inicial com links para os livros
+  ├── README.md             # Documentação principal do repositório
+  ├── .github/              # Configurações e workflows do GitHub
   ├── .vscode/              # Configurações do Visual Studio Code
-  ├── .gitignore
-  └── .gitattributes
+  ├── .gitignore            # Arquivos ignorados pelo Git
+  └── .gitattributes        # Configurações de atributos do Git
 ```
+
+## Detalhes da Estrutura
+
+- **`automacao/`**: Scripts para automatizar tarefas como geração de livros, deploy e backups.
+- **`docs/`**: Documentação geral do projeto, incluindo guias de contribuição e uso.
+- **`assets/`**: Recursos reutilizáveis, como imagens e estilos, para manter consistência visual.
+- **`livros/`**: Código-fonte dos livros organizados em subpastas, cada uma representando um livro.
+- **`public/`**: Saída gerada pelo Quarto, pronta para ser publicada.
+- **`wss/`**: Recursos estáticos compartilhados entre os livros, como fontes e CSS.
+- **`index.html`**: Página inicial que lista e redireciona para os livros disponíveis.
+
+Essa estrutura facilita a manutenção, escalabilidade e colaboração no projeto.
 
 # Referências
 
