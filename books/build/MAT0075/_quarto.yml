@@ -10,7 +10,6 @@ project:
 number-sections: false
 
 book:
-  favicon: "./../sd/imagens/favicons/estatistica.svg"
   chapters:
     - index.qmd
     - conteudo/1.espacoprob.qmd

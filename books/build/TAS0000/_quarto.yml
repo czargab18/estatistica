@@ -1,8 +1,8 @@
 project:
   title: "The Art of Statistics"
   type: book
-  output-dir: "./../../docs/TAS0000"
-  lib-dir:  "./../ac/books_libs"
+  output-dir: "./../../TAS0000"
+  lib-dir:  "./../delete/site_libs"
   preview:
     port: 4200
     browser: false
@@ -18,6 +18,7 @@ bibliography: references.bib
 
 format:
   html:
+    include-in-header: "./../include-in-head"
     toc: false
     sidebar: true
     theme:
