@@ -1,5 +1,7 @@
-# Ignorar global
+# NÃO IGNORAR NADA
+!**/*
 
+# Ignorar global
 node_modules
 *cache*
 .*env*
@@ -53,6 +55,3 @@ node_modules
 !/.gitignore
 !.htaccess
 !CNAME
-
-!utils
-!newsroom
