@@ -1,0 +1,34 @@
+# Capa
+Bibliografia a ser seguida:  
+[@rolla2025]  
+  1. Espaços de Probabilidade  
+  2. Probabilidade Condicional e Independência  
+  3. Variáveis Aleatórias  
+  4. Vetores Aleatórios  
+  5. Esperança Matemática  
+  6. Momentos e Desigualdades  
+  7. Convergência de Variáveis Aleatórias  
+  8. Lei dos Grandes Números  
+  9. Teorema do Limite Central  
+  10. Transformadas  
+  11. Esperança Condicional  
+  12. Martingales  
+  13. Leis 0-1 e Séries Aleatórias  
+  14. Teoria Ergódica  
+  15. Grandes Desvios  
+  16. Lista de Figuras  
+  17. Referências  
+
+[@baratela2025]    
+  1. Espaço de Probabilidade  
+  2. Condicionamento e Independência    
+  3. Análise Combinatória (noções)  
+  4. Variável Aleatória Discreta    
+  5. Vetor Aleatório Discreto    
+  6. Esperança e Momentos de uma Variável Aleatória Discreta  
+  7. Função Geratriz de Probabilidade e de Momentos de Variável Aleatória Contínua  
+  8. Vetor Aleatório Contínuo  
+  9.  Esperança e Momentos de uma Variável Aleatória Contínua    
+  10. Função Geratriz de Probabilidade e Momentos  
+  11. Leis Fraca e Forte dos Grandes Números  
+  12. Teorema do Limite Central    

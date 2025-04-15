@@ -1,107 +1,66 @@
-################################################
-############ .GITIGNORE geral ##########
-################################################
+.Rproj.user
+.Rhistory
+*_cache
+*_files
+_main.rds
+_book
+*.md
+search_index.json
+libs
+*.rds
+_main.*
+tmp-pdfcrop-*
+figures
+*libs
+test_*
+*.venv/
+*/.venv/
 
-########################
-############ IGNORAR
-*cache*
+# Ignorar todos as subpasta dentro de diretórios
+**/*cache*
+**/*/*/ac/
+**/*/*/wss/
 
-########################
-############ NÃO IGNORAR
-
-
-
-################################################
-############ .GITIGNORE PASTA:books ############
-################################################
-
-####################
-############ IGNORAR
-books/.Rproj.user
-books/.Rhistory
-books/*_cache
-books/*_files
-books/_main.rds
-books/_book
-books/*.md
-books/search_index.json
-books/libs
-books/*.rds
-books/_main.*
-books/tmp-pdfcrop-*
-books/figures
-books/*libs
-books/test_*
-books/*.venv/
-books/*/.venv/
-books/**/*cache*
-books/**/*/*/ac/
-books/**/*/*/wss/
-books/book/*/.quarto/
-books/book/*/site_libs/
-books/book/*/.gitignore
-books/book/*/conteudo/*/*.html
-books/*.Rproj
-books/*.Rproj.*
-books/*.RData
-books/*.Ruserdata
-books/*.Renviron
-books/*.Renviron.*
-
-books/*.httr-oauth
-books/*.DS_Store
-books/*.quarto
-books/*.DBF
-books/*.xlsx
-books/*.xls
-books/*.csv
-
-books/**/Trabalho 1/dataProject/
-books/**/Trabalho 1/data.Need.Project/
-books/**/Trabalho 2/dataProject/
-books/**/Atividaes/PadronTaxas/dataProject/
-books/**/SINGAGE.XLS
-books/**/SINGAGE.XLSX
-
-########################
-############ NÃO IGNORAR
-!books/**/CODE_OF_CONDUCT.md
-!books/**/plausible.html
-!books/**/wss/
-!books/**/public.html
-!books/**/.gitignore
-!books/**/backend/*
-!books/**/docs/
+book/*/.quarto/
+# book/*/index_files/
+book/*/site_libs/
+book/*/.gitignore
+book/*/conteudo/*/*.html
 
 
+## OGANIZAR ESTAS LISTAS REPOSITÓRIO: cesargabrielphd/curso
+*.Rproj
+*.Rproj.*
+*.Rhistory
+*.RData
+*.Ruserdata
+*.Renviron
+*.Renviron.*
 
-################################################
-############ .GITIGNORE PASTA:backend ##########
-################################################
+*.httr-oauth
+*.DS_Store
+*.quarto
+*.DBF
+*.xlsx
+*.xls
+*.csv
 
-########################
-############ IGNORAR
-backend/*cache*
-backend/**/books
-backend/teste/**
-backend/teste/list_dir.txt
+Trabalho 1/dataProject
+Trabalho 1/data.Need.Project/
+Trabalho 2/dataProject
+Trabalho 2/dataProject/
+Atividaes/PadronTaxas/dataProject
+Atividaes/PadronTaxas/dataProject/
+SINGAGE.XLS
 
-########################
-############ NÃO IGNORAR
-
-!backend/**/books/*/*.json
-!backend/**/books/*/*.html
-!backend/**/teste/*__.py
-
-
-################################################
-############ .GITIGNORE PASTA:... ##########
-################################################
-
-########################
-############ IGNORAR
-
-
-########################
-############ NÃO IGNORAR
-
+################################################################################
+################################## NÃO IGNORA ##################################
+################################################################################
+!**/CODE_OF_CONDUCT.md
+!**/plausible.html
+!**/wss/
+!**/public.html
+!**/.gitignore
+!**/backend/*
+!**/docs/
+!**/docs/ac/*_libs

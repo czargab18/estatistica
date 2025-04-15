@@ -1,0 +1,76 @@
+# Estatística
+
+Este projeto será apenas uma diversão para momentos vagos e opacos da graduação. Busco desenvolver a habilidade fundamental do home, a escrita. A escrita propociona a clareza dos pensamentos, o que mais preciso no momento!
+
+O pensamento inicial é construir o que Fábio Akita chama de "O Diário de Henry Jones", veja (AKITA, 2025).
+
+Como ele, o conteúdo que aqui estará presente terá foco total e exclusivo no meu desenvolvimento. Tenho uma facilidade em aprender e esquecer! Estou andando no escuro para achar uma tomada. Não sei se resolverá meu problema mas se ajudar a resolve-lo, será de grande valia.
+
+Assim como [@akita2025] ter algo para consulta é essencial. Se é fácil para encontrar é rápido para consumir! Sempre que possível, buscarei melhorar a escrita dos assuntos, mesmo que signifique ter que refazer tudo ou a maior parte do conteúdo.
+
+## Questões rápidas
+
+1.  O que é estatística?
+
+    De forma geral, a Estatística é uma ciência que busca maximizar o poder de escolha sobre algum assunto. Bem diferente do que está escrito em muitos livros. Bom, meu ponto é que a estatistica é usada sempre para tirar conclusões mais acertivas com base em um conjunto menor de informações. Por exemplo. Um pesquisador pode estar estudando sobre a eficacia de um produto A sobre outro B. Pode chegar a conclusão que o primeiro é 30% melhor. A decisão de comercializar o produto não será do pesquisador. Afinal, suponhamos que A também seja mais caro para ser produzido. Essa decisão será do pesquisador? Não, ele pode até fazer outro estudo sobre a viabilidade da comercialização do produto mas a decisão ainda não será tomada por ele. Se essa for sua tarefa, concerteza está trabalhando por 2 e recebendo por um!
+
+2.  Por que estatistica?
+
+    Primeiro, devemos pensar na essência da estatística. Uma ciência que prefere ter uma informação, com certo grau de certeza de sucesso ou fracasso, para tomar uma decisão. Por uma leve reflexão, podemos perceber que essa mentalidade está bastante difundida em muitas áreas do conhecimento humano. Talvez seja por isso que o homem não consiga atingir a perfeição, apenas ter a um vislumbre. Bom, para muitos a Matemática é considerada a essencia da vida. Se isso é verdadeiro, me arrisco a dizer que a Estatística seria uma transformação (função) que pega essa "essência da vida" e a transforma em "outra mais evoluida". Uma transformação que produz bastantes erros.
+
+    De forma bem descarada, darei um motivo para doutrina-lo a ter esta mentalidade. Suponha um carro qualquer recém lançado e dito o mais seguro possível. Este carro possui um grande numéro de erros embutinos nele por uma escolha do fabricante, para lucrar sem tomar processos. Na Estatística há uma área chamada "Controle Estatístico de Qualidade". Muito usado na industria automotiva para a produção de peças que têm margens de erros mas são tão pequenas que podemos usa-las. Como dito anteriormente, é uma escolha do fabricante. É muito difícil e custoso produzir algo com muita perfeição. Escolhe-se vender o produto com essa chance de falha pequena por acreditar-se que será muito provável o acidente. Essa é a essência jovem padawan! O problema talvez seja o acumulo de pequenos erros em cada peça do carro. Não se preocupe! Isso concerteza talbém é controlado. Mas por precaução, use o cinto e respeite as Leis de Transito para ter mais segurança!
+
+## Processo de desenvolvimento
+
+Seguirei o processo normal de desenvolvimento:
+
+1.  Disponibilizar o que já existe, mesmo que não agregue valor por falta de clareza.
+2.  Melhorar o conteúdo, mesmo que necessite mudar a essência.
+3.  Adicionar exemplos e exercícios.
+4.  Repetir os processoas anteriores, não para chegar na Magnum Opus mas em algo aceitavél para consumo.
+5.  Finalizar tudo e "entregar", assim que possível.
+
+## Futuro do Projeto
+
+Bom, o futuro nunca é certo! É apenas um monte de eventos presentes que podem determinar o curso de nossas vidas.
+
+Para alguns, a ansiedade é ponto fraco. Meu caso! Talvez eu me empolgue neste projeto ou o jogue no eterno vázio chamado esquecimento.
+
+## Estrutura das notas
+
+obs: Demonstrar tudo que for possível.
+
+-   "Storytteling with data": se não sou eu que tenho controle, deve dar a maior quantidade de informação e o leitor escolhe o que consumir.
+
+1.  Texto Introdutório: apresentação do conteúdo e algumas explicações.
+
+2.  Exemplos e raciocínio para resolver
+
+    1.  Fácil
+
+    2.  médio
+
+    3.  difícil
+
+3.  Construção da Demonstração (Lemas, etc...)
+
+4.  Desenvolvimento da demonstração (definição final).
+
+5.  Usando a demonstração \[4.\] para resolver os problemas de \[2.\]
+
+6.  Mais exemplos pela definição
+
+7.  Exercícios
+
+    1.  Apenas cálcular: botar na receita \[4.\] e resolver.
+
+    2.  Problemas teóricos (demonstrar algo)
+
+    3.  Problemas de lógica (fazer alguma manipulação para resolver o problema usando a definição)
+
+### Algumas sitações
+
+-   "Andando no escuro para achar uma tomada" por [Cesar Gabriel](https://github.com/cesargabrielphd)
+-   "Se é fácil para encontrar é rápido para consumir" por [Cesar Gabriel](https://github.com/cesargabrielphd)
+
+#
