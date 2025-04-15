@@ -9,7 +9,7 @@
     "**/.DS_Store": true,
     "**/Thumbs.db": true,
     "**/.quarto/": true,
-    "**/*/.gitignore/": true,
+    "**/*/.gitignore/": false,
     "**/*/index_files/": true,
     "**/*/*/ac/": true,
     "**/*/*/site_libs": true,

@@ -30,10 +30,11 @@ test_*
 **/*/*/wss/
 
 # Ignorar arquivos e pastas específicas do livro
-book/*/.quarto/
-book/*/site_libs/
-book/*/.gitignore
-book/*/conteudo/*/*.html
+build/*/.quarto/
+build/*/site_libs/
+build/*/.gitignore
+build/*/conteudo/*/*.html
+books/build/**/.git*
 
 # Ignorar arquivos e configurações do repositório cesargabrielphd/curso
 *.Rproj
