@@ -1,8 +1,8 @@
 project:
   title: "CALCULO DE PROBABILIDADE"
   type: book
-  output-dir: "./../../docs/MAT0075"
-  lib-dir: "./../ac/books"
+  output-dir: "./../../MAT0075"
+  lib-dir:  "./../delete/site_libs"
   preview:
     port: 4200
     browser: false
@@ -20,11 +20,11 @@ book:
 
     - conteudo/references.qmd
 
-bibliography: references.bib
+bibliography: conteudo/references.bib
 
 format:
   html:
-    css: "./../ac/custombooks.css"
+    include-in-header: "./../include-in-head"
     toc: false
     sidebar: true
     theme:
