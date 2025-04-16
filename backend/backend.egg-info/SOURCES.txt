@@ -1,0 +1,11 @@
+README.md
+setup.py
+backend.egg-info/PKG-INFO
+backend.egg-info/SOURCES.txt
+backend.egg-info/dependency_links.txt
+backend.egg-info/requires.txt
+backend.egg-info/top_level.txt
+core/__init__.py
+data/__init__.py
+teste/__init__.py
+teste/__teste__.py
