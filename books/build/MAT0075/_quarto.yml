@@ -25,7 +25,7 @@ bibliography: conteudo/references.bib
 
 format:
   html:
-    include-in-header: "./../include-in-head"
+    include-in-header: "./../include/include-in-head"
     toc: false
     sidebar: true
     theme:
