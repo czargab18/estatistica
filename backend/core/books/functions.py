@@ -278,7 +278,8 @@ def corrlinksheadbooks(listabooks: dict, base_path: str = "./books", ignore: lis
                 except Exception as e:
                     print(f"Erro ao processar {absolute_path}: {e}")
 
-def includeinbody(pathbooks: str = "./books/", tipoarquivo: str = ".html", include_file: str = "./books/build/include-in-body"):
+
+def includeinbody(pathbooks: str = "./books/", tipoarquivo: str = ".html", include_file: str = "./books/build/include/include-in-body"):
     """
     Adiciona o conteúdo do globalheader e globalfooter nos arquivos HTML dos books.
 
@@ -306,14 +307,17 @@ def includeinbody(pathbooks: str = "./books/", tipoarquivo: str = ".html", inclu
                     with open(filepath, 'r', encoding='utf-8') as f:
                         soup = BeautifulSoup(f, 'html.parser')
 
-                    # Adicionar globalheader como o primeiro filho do body
-                    body = soup.find('body')
-                    if body:
-                        body.insert(0, BeautifulSoup(globalheader, 'html.parser'))
+                    # Verificar se já existe o globalheader
+                    if not soup.find('div', id='globalheader'):
+                        body = soup.find('body')
+                        if body:
+                            body.insert(0, BeautifulSoup(globalheader, 'html.parser'))
 
-                    # Adicionar globalfooter como o último filho do body
-                    if body:
-                        body.append(BeautifulSoup(globalfooter, 'html.parser'))
+                    # Verificar se já existe o globalfooter
+                    if not soup.find('footer', id='globalfooter'):
+                        body = soup.find('body')
+                        if body:
+                            body.append(BeautifulSoup(globalfooter, 'html.parser'))
 
                     # Salvar as alterações no arquivo
                     with open(filepath, 'w', encoding='utf-8') as f:
