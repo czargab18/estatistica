@@ -239,15 +239,18 @@ def includeinhead(linkstoinclude, pathbooks: str = "./books/", tipoarquivo: str 
     return arquivos_processados
 
 
-def corrlinksheadbooks(listabooks: dict, base_path: str = "./books", ignore: list = None, rm:bool=True, remove: list = ["delete/site_libs"]):
+def corrlinksheadbooks(listabooks: dict, base_path: str = "./books", ignore: list = None, rm: bool = True, remove: list = ["delete/site_libs"]):
     """
     Corrige os links no head dos arquivos HTML listados em listabooks,
-    substituindo './' por '/'.
+    substituindo './' por '/'. Remove links e scripts que contenham padrões
+    especificados na lista remove, se rm for True.
 
     Args:
         listabooks (dict): Dicionário com os livros e seus respectivos arquivos HTML.
         base_path (str): Caminho base onde os arquivos estão localizados.
         ignore (list): Lista de partes do caminho ou links a serem ignorados. Se None, corrige todos os links.
+        rm (bool): Se True, remove links e scripts que contenham padrões na lista remove.
+        remove (list): Lista de padrões de links ou scripts a serem removidos.
     """
     if ignore is None:
         ignore = []  # Define uma lista vazia se nenhum padrão for fornecido
@@ -266,6 +269,12 @@ def corrlinksheadbooks(listabooks: dict, base_path: str = "./books", ignore: lis
                     head = soup.head
                     if head:
                         for tag in head.find_all(['link', 'script']):
+                            # Remover tags que contenham padrões na lista remove
+                            if rm and (tag.has_attr('href') and any(pattern in tag['href'] for pattern in remove) or
+                                       tag.has_attr('src') and any(pattern in tag['src'] for pattern in remove)):
+                                tag.decompose()  # Remove a tag do documento
+                                continue
+                            
                             # Verificar e corrigir o atributo 'href'
                             if tag.has_attr('href') and not any(ignored in tag['href'] for ignored in ignore):
                                 tag['href'] = tag['href'].replace('./', '/')
