@@ -317,8 +317,55 @@ def corrlinksheadbooks(listabooks: dict, base_path: str = "./books", ignore: lis
                 except Exception as e:
                     print(f"Erro ao processar {absolute_path}: {e}")
 
+def includeinbody(pathbooks: str = "./books/", tipoarquivo: str = ".html", include_file: str = "./books/build/include-in-body"):
+    """
+    Adiciona o conteúdo do globalheader e globalfooter nos arquivos HTML dos books.
+
+    :param pathbooks: Caminho base onde os arquivos HTML estão localizados.
+    :param tipoarquivo: Tipo de arquivo a ser processado (por padrão, ".html").
+    :param include_file: Caminho do arquivo contendo os conteúdos de globalheader e globalfooter.
+    :return: Dicionário com os arquivos processados e seu status.
+    """
+    arquivos_processados = {}
+
+    # Ler o conteúdo do arquivo include-in-body
+    try:
+        with open(include_file, 'r', encoding='utf-8') as f:
+            include_content = f.read()
+        globalheader = include_content.split('globalheader = """')[1].split('"""')[0]
+        globalfooter = include_content.split('globalfooter = """')[1].split('"""')[0]
+    except Exception as e:
+        return {"Erro": f"Não foi possível ler o arquivo include-in-body: {e}"}
+
+    for root, _, files in os.walk(pathbooks):
+        for file in files:
+            if file.endswith(tipoarquivo):
+                filepath = os.path.join(root, file)
+                try:
+                    with open(filepath, 'r', encoding='utf-8') as f:
+                        soup = BeautifulSoup(f, 'html.parser')
+
+                    # Adicionar globalheader como o primeiro filho do body
+                    body = soup.find('body')
+                    if body:
+                        body.insert(0, BeautifulSoup(globalheader, 'html.parser'))
+
+                    # Adicionar globalfooter como o último filho do body
+                    if body:
+                        body.append(BeautifulSoup(globalfooter, 'html.parser'))
+
+                    # Salvar as alterações no arquivo
+                    with open(filepath, 'w', encoding='utf-8') as f:
+                        f.write(str(soup))
+
+                    arquivos_processados[filepath] = "Sucesso"
+                except Exception as e:
+                    arquivos_processados[filepath] = f"Erro: {e}"
+
+    return arquivos_processados
 
 if __name__ == '__main__':
     books = listabooks(path="./books")
     corrlinksheadbooks(books, base_path="./books")
+    includeinbody()
     print("-"*13, "Links corrigidos com sucesso!", "-"*13,sep=" ")
