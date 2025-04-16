@@ -6,7 +6,48 @@ from pickle import TRUE
 import re
 from bs4 import BeautifulSoup
 
-def readjson(caminho: str = "./data/books/books.json"):
+# Parametros
+LINKS = [
+    "<meta charset='utf-8' />",
+    "<meta content='Estatística' name='topic' />",
+    "<meta content='index,follow' name='robots' />",
+    "<meta content='width=device-width, initial-scale=1.0' name='viewport' />",
+    "<meta content=\"img-src 'self' https://www.estatistica.pro/; script-src 'self' https://www.estatistica.pro/ac/ https://www.estatistica.pro/sd/\" http-equiv='Content-Security-Policy' />",
+    "<link href='/sd/images/favicons/estatistica.svg' rel='shortcut icon' type='image/x-icon' />",
+    "<link href='/ac/globalpattern/1/pt_BR/styles/globalpattern.css' rel='stylesheet' />",
+    "<link href='/ac/globalaside/1/pt_BR/styles/globalaside.css' rel='stylesheet' />",
+    "<link href='/ac/globalnavbar/1/pt_BR/styles/globalnavbar.css' rel='stylesheet' />",
+    "<link href='/ac/globalribbon/1/pt_BR/styles/globalribbon.css' rel='stylesheet' />",
+    "<link href='/ac/globaltipografia/1/pt_BR/style/globaltipografia.css' rel='stylesheet' />",
+    "<link href='/ac/globalmain/1/pt_BR/styles/globalmain.css' rel='stylesheet' />",
+    "<link href='/ac/globalnoticias/1/pt_BR/style/globalnoticias.css' rel='stylesheet' />",
+    "<link href='/ac/globalfooter/1/pt_BR/styles/globalfooter.css' rel='stylesheet' />",
+    "<link href='/wss/fonts.css?families=SF+Pro,v3|SF+Pro+Icons,v3' media='all' rel='stylesheet' type='text/css' />",
+    "<script defer='' src='/ac/globalnoticias/1/pt_BR/scripts/globalnoticias.js'></script>",
+    "<script defer='' src='/ac/globalpattern/1/pt_BR/scripts/globalpattern.js'></script>",
+    "<script defer='' src='/ac/globalfooter/1/pt_BR/scripts/globalfooter.js'></script>",
+    "<script defer='' src='/utils/libs/js/navbar.js'></script>",
+    "<link rel='stylesheet' href='/ac/books/custombooks.css'>",
+    "<link rel='stylesheet' href='/ac/books/bootstrap/bootstrap.min.css'>",
+    "<link rel='stylesheet' href='/ac/books/bootstrap/bootstrap-icons.css'>",
+    "<link rel='stylesheet' href='/ac/books/quarto-html/quarto-syntax-highlighting.css'>",
+    "<link rel='stylesheet' href='/ac/books/quarto-html/tippy.css'>",
+    "<script src='/ac/books/bootstrap/bootstrap.min.js'></script>",
+    "<script src='/ac/books/clipboard/clipboard.min.js'></script>",
+    "<script src='/ac/books/quarto-html/anchor.min.js'></script>",
+    "<script src='/ac/books/quarto-html/popper.min.js'></script>",
+    "<script src='/ac/books/quarto-html/quarto.js'></script>",
+    "<script src='/ac/books/quarto-html/tippy.umd.min.js'></script>",
+    "<script src='/ac/books/quarto-nav/headroom.min.js'></script>",
+    "<script src='/ac/books/quarto-nav/quarto-nav.js'></script>",
+    "<script src='/ac/books/quarto-search/autocomplete.umd.js'></script>",
+    "<script src='/ac/books/quarto-search/fuse.min.js'></script>",
+    "<script src='/ac/books/quarto-search/quarto-search.js'></script>"
+]
+
+PATTERN_BOOKS_NAME = re.compile(r'^[A-Z]{3}\d{4}$')
+
+def readjson(caminho: str = "./backend/data/books/books.json"):
     with open(caminho, 'r', encoding='utf-8') as file:
         return json.load(file)
 
@@ -76,12 +117,12 @@ def listabooks(path: str = "./books/docs/"):
                     CAMINHOS_ARQUIVOS[pasta].append(caminho_completo)
 
     if not os.makedirs('./data/books/', exist_ok=True): 
-        with open('./data/books/books.json', 'w', encoding='utf-8') as file:
+        with open('./backend/data/books/books.json', 'w', encoding='utf-8') as file:
             json.dump(CAMINHOS_ARQUIVOS, file, ensure_ascii=False, indent=4)
 
     return CAMINHOS_ARQUIVOS
 
-def corsearchjson(books: bool = True, path: str = "./data/books/books.json"):
+def corsearchjson(books: bool = True, path: str = "./backend/data/books/books.json"):
     """
     Corrige os caminhos duplicados no arquivo SEARCH.JSON
     """
@@ -127,7 +168,7 @@ def corsearchjson(books: bool = True, path: str = "./data/books/books.json"):
 
     return listabooks
 
-def corpathlinksearchjson(listabooks: dict = readjson('./data/books/books.json')):
+def corpathlinksearchjson(listabooks: dict = readjson('./backend/data/books/books.json')):
     """
     Corrige Links do ./BOOKS/{books}/SEARCH.JSON
     :param listabooks: dict com os livros
@@ -154,37 +195,88 @@ def corpathlinksearchjson(listabooks: dict = readjson('./data/books/books.json')
         exportjson(searchjsonbook, os.path.join(f"./books/{book}/search.json"))
     return "Atualização concluída."
 
-# funções adicionais
+def includeinhead(linkstoinclude, pathbooks: str = "./books/", tipoarquivo: str = ".html"):
+    """
+    Inclui os links especificados no <head> de arquivos HTML encontrados no diretório especificado.
 
-LINKS = [
-    '<link href="/wss/fonts.css?families=SF+Pro,v3"  rel="stylesheet"/>',
-    '<link href="/ac/img/logo/estatistica.svg" rel="icon" type="image/svg+xml"/>',
-    '<link href="/ac/img/logo/logo.png" rel="icon" type="image/png"/>',
-    '<link href="/ac/styles.css" rel="stylesheet"/>',
-    '<link href="/ac/books/bootstrap/bootstrap.min.css" rel="stylesheet"/>',
-    '<link href="/ac/books/bootstrap/bootstrap-icons.css" rel="stylesheet"/>',
-    '<link href="/ac/books/bootstrap/bootstrap-icons.woff" rel="stylesheet"/>',
-    '<script src="/ac/books/bootstrap/bootstrap.min.js"></script>',
-    '<script src="/ac/books/clipboard/clipboard.min.js"></script>',
-    '<script src="/ac/books/quarto-html/anchor.min.js"></script>',
-    '<script src="/ac/books/quarto-html/popper.min.js"></script>',
-    '<link href="/ac/books/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet"/>',
-    '<script src="/ac/books/quarto-html/quarto.js"></script>',
-    '<link href="/ac/books/quarto-html/tippy.css" rel="stylesheet"/>',
-    '<script src="/ac/books/quarto-html/tippy.umd.min.js"></script>',
-    '<script src="/ac/books/quarto-nav/headroom.min.js"></script>',
-    '<script src="/ac/books/quarto-nav/quarto-nav.js"></script>',
-    '<script src="/ac/books/quarto-search/autocomplete.umd.js"></script>',
-    '<script src="/ac/books/quarto-search/fuse.min.js"></script>',
-    '<script src="/ac/books/quarto-search/quarto-search.js"></script>',
-    '<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>'
-]
+    :param pathbooks: Caminho base onde os arquivos HTML estão localizados.
+    :param tipoarquivo: Tipo de arquivo a ser processado (por padrão, ".html").
+    :param linkstoinclude: Lista de links a serem incluídos no <head>.
+    :return: Dicionário com os arquivos processados e seu status.
+    """
+    arquivos_processados = {}
 
-PATTERN_BOOKS_NAME = re.compile(r'^[A-Z]{3}\d{4}$')
+    for root, _, files in os.walk(pathbooks):
+        for file in files:
+            if file.endswith(tipoarquivo):
+                caminho_arquivo = os.path.join(root, file)
+                try:
+                    with open(caminho_arquivo, 'r', encoding='utf-8') as f:
+                        conteudo = f.read()
+
+                    # Verifica se o <head> já contém os links
+                    if any(link in conteudo for link in linkstoinclude):
+                        arquivos_processados[caminho_arquivo] = "Links já incluídos"
+                        continue
+
+                    # Insere os links no <head>
+                    if "<head>" in conteudo:
+                        conteudo = conteudo.replace(
+                            "<head>", f"<head>\n{''.join(linkstoinclude)}\n"
+                        )
+                    else:
+                        arquivos_processados[caminho_arquivo] = "Tag <head> não encontrada"
+                        continue
+
+                    # Salva o arquivo atualizado
+                    with open(caminho_arquivo, 'w', encoding='utf-8') as f:
+                        f.write(conteudo)
+
+                    arquivos_processados[caminho_arquivo] = "Links incluídos com sucesso"
+                except Exception as e:
+                    arquivos_processados[caminho_arquivo] = f"Erro: {e}"
+
+    return arquivos_processados
+
+def corrlinksheadbooks(listabooks: dict, base_path: str = "./books"):
+    """
+    Corrige os links no head dos arquivos HTML listados em listabooks,
+    substituindo './' por '/'.
+
+    Args:
+        listabooks (dict): Dicionário com os livros e seus respectivos arquivos HTML.
+        base_path (str): Caminho base onde os arquivos estão localizados.
+    """
+    for book, files in listabooks.items():
+        for filepath in files:
+            # Construir caminho absoluto e normalizar as barras
+            relative_path = filepath.lstrip('/')  # Remove a barra inicial, se existir
+            absolute_path = os.path.normpath(os.path.join(base_path, relative_path.replace("books/", "")))
+            if absolute_path.endswith(".html"):
+                try:
+                    with open(absolute_path, 'r', encoding='utf-8') as f:
+                        soup = BeautifulSoup(f, 'html.parser')
+                    
+                    # Corrigir links no <head>
+                    head = soup.head
+                    if head:
+                        for tag in head.find_all(['link', 'script']):
+                            if tag.has_attr('href'):
+                                tag['href'] = tag['href'].replace('./', '/')
+                            if tag.has_attr('src'):
+                                tag['src'] = tag['src'].replace('./', '/')
+                    
+                    # Sobrescrever o arquivo com o conteúdo corrigido
+                    with open(absolute_path, 'w', encoding='utf-8') as f:
+                        f.write(str(soup))
+                except FileNotFoundError:
+                    print(f"Arquivo não encontrado: {absolute_path}")
+                except Exception as e:
+                    print(f"Erro ao processar {absolute_path}: {e}")
+
 
 if __name__ == '__main__':
-    diretorio = "./newshub/build/conteudo/"
-    extensoes = ['.qmd']
-    resultado = readmeqmd(
-        caminho=diretorio, extensoes=extensoes, buscar=True)
-    print(resultado)
+    # A função listabooks já está definida neste arquivo
+    books = listabooks(path="./books")
+    corrlinksheadbooks(books, base_path="./books")
+    print("Fim!!!")
