@@ -1,88 +1,72 @@
 <!DOCTYPE html>
 
-<html lang="en" xml:lang="en" xmlns="http://www.w3.org/1999/xhtml">
-<head>
+<html lang="en" xml:lang="en" xmlns="http://www.w3.org/1999/xhtml"><head>
 <meta charset="utf-8"/>
-<meta content="quarto-1.6.40" name="generator"/>
+<meta content="quarto-1.6.42" name="generator"/>
 <meta content="width=device-width, initial-scale=1.0, user-scalable=yes" name="viewport"/>
 <title>The Art of Statistics</title>
 <style>
-      code {
-        white-space: pre-wrap;
-      }
-      span.smallcaps {
-        font-variant: small-caps;
-      }
-      div.columns {
-        display: flex;
-        gap: min(4vw, 1.5em);
-      }
-      div.column {
-        flex: auto;
-        overflow-x: auto;
-      }
-      div.hanging-indent {
-        margin-left: 1.5em;
-        text-indent: -1.5em;
-      }
-      ul.task-list {
-        list-style: none;
-      }
-      ul.task-list li input[type="checkbox"] {
-        width: 0.8em;
-        margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */
-        vertical-align: middle;
-      }
-      /* CSS for citations */
-      div.csl-bib-body {
-      }
-      div.csl-entry {
-        clear: both;
-        margin-bottom: 0em;
-      }
-      .hanging-indent div.csl-entry {
-        margin-left: 2em;
-        text-indent: -2em;
-      }
-      div.csl-left-margin {
-        min-width: 2em;
-        float: left;
-      }
-      div.csl-right-inline {
-        margin-left: 2em;
-        padding-left: 1em;
-      }
-      div.csl-indent {
-        margin-left: 2em;
-      }
-    </style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+  margin-bottom: 0em;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
 <meta content="./" name="quarto:offset"/>
 <link href="/references.html" rel="next"/>
-<script id="quarto-search-options" type="application/json">
-      {
-        "location": "sidebar",
-        "copy-button": false,
-        "collapse-after": 3,
-        "panel-placement": "start",
-        "type": "textbox",
-        "limit": 50,
-        "keyboard-shortcut": ["f", "/", "s"],
-        "show-item-context": false,
-        "language": {
-          "search-no-results-text": "No results",
-          "search-matching-documents-text": "matching documents",
-          "search-copy-link-title": "Copy link to search",
-          "search-hide-matches-text": "Hide additional matches",
-          "search-more-match-text": "more match in this document",
-          "search-more-matches-text": "more matches in this document",
-          "search-clear-button-title": "Clear",
-          "search-text-placeholder": "",
-          "search-detached-cancel-button-title": "Cancel",
-          "search-submit-button-title": "Submit",
-          "search-label": "Search"
-        }
-      }
-    </script>
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
 <meta charset="utf-8"/>
 <meta content="Estatística" name="topic"/>
 <meta content="index,follow" name="robots"/>
@@ -97,11 +81,11 @@
 <link href="/ac/globalmain/1/pt_BR/styles/globalmain.css" rel="stylesheet"/>
 <link href="/ac/globalnoticias/1/pt_BR/style/globalnoticias.css" rel="stylesheet"/>
 <link href="/ac/globalfooter/1/pt_BR/styles/globalfooter.css" rel="stylesheet"/>
-<link href="/wss/fonts.css?families=SF+Pro,v3|SF+Pro+Icons,v3" media="all" rel="stylesheet" type="text/css"/>
 <script defer="" src="/ac/globalnoticias/1/pt_BR/scripts/globalnoticias.js"></script>
 <script defer="" src="/ac/globalpattern/1/pt_BR/scripts/globalpattern.js"></script>
 <script defer="" src="/ac/globalfooter/1/pt_BR/scripts/globalfooter.js"></script>
 <script defer="" src="/utils/libs/js/navbar.js"></script>
+<link href="/wss/fonts.css?families=SF+Pro,v3|SF+Pro+Icons,v3" media="all" rel="stylesheet" type="text/css"/>
 <link href="/ac/books/custombooks.css" rel="stylesheet"/>
 <link href="/ac/books/bootstrap/bootstrap.min.css" rel="stylesheet"/>
 <link href="/ac/books/bootstrap/bootstrap-icons.css" rel="stylesheet"/>
@@ -220,8 +204,8 @@
 <div class="globalnavbar-flyout-content globalnavbar-submenu-content">
 <div class="globalnavbar-submenu-group globalnavbar-submenu-group-elevated">
 <h2 class="globalnavbar-submenu-header" id="c64e0a00">
-                          Departamento
-                        </h2>
+                    Departamento
+                  </h2>
 <ul class="globalnavbar-submenu-list">
 <li class="globalnavbar-submenu-list-item-elevated">
 <a class="globalnavbar-submenu-link" href="#">História</a>
@@ -251,8 +235,8 @@
 </div>
 <div class="globalnavbar-submenu-group">
 <h2 class="globalnavbar-submenu-header" id="b80e39ed">
-                          Links rápidas
-                        </h2>
+                    Links rápidas
+                  </h2>
 <ul class="globalnavbar-submenu-list">
 <li class="globalnavbar-submenu-list-item">
 <a class="globalnavbar-submenu-link" href="#">Manual para estudantes</a>
@@ -333,8 +317,8 @@
 </div>
 <div class="globalnavbar-submenu-group">
 <h2 class="globalnavbar-submenu-header" id="b80e39ed">
-                          Links rápidas
-                        </h2>
+                    Links rápidas
+                  </h2>
 <ul class="globalnavbar-submenu-list">
 <li class="globalnavbar-submenu-list-item">
 <a class="globalnavbar-submenu-link" href="/retail/">Calendário Acadêmico</a>
@@ -394,7 +378,7 @@
 <div class="globalnavbar-flyout-content globalnavbar-submenu-content">
 <div class="globalnavbar-submenu-group globalnavbar-submenu-group-elevated">
 <h2 class="globalnavbar-submenu-header"> Pós Graduacao
-                        </h2>
+                  </h2>
 <ul class="globalnavbar-submenu-list">
 <li class="globalnavbar-submenu-list-item-elevated">
 <a class="globalnavbar-submenu-link" href="#">Programa</a>
@@ -424,8 +408,8 @@
 </div>
 <div class="globalnavbar-submenu-group">
 <h2 class="globalnavbar-submenu-header">
-                          Links rápidas
-                        </h2>
+                    Links rápidas
+                  </h2>
 <ul class="globalnavbar-submenu-list">
 <li class="globalnavbar-submenu-list-item">
 <a class="globalnavbar-submenu-link" href="order/list">Calendário Acadêmico</a>
@@ -446,8 +430,8 @@
 </div>
 <div class="globalnavbar-submenu-group">
 <h2 class="globalnavbar-submenu-header">
-                          Explorar
-                        </h2>
+                    Explorar
+                  </h2>
 <ul class="globalnavbar-submenu-list">
 <li class="globalnavbar-submenu-list-item">
 <a class="globalnavbar-submenu-link" href="special_deals">Parceiros</a>
@@ -481,8 +465,8 @@
 <div class="globalnavbar-flyout-content globalnavbar-submenu-content">
 <div class="globalnavbar-submenu-group globalnavbar-submenu-group-elevated">
 <h2 class="globalnavbar-submenu-header" id="c64e0a00">
-                          Departamento
-                        </h2>
+                    Departamento
+                  </h2>
 <ul aria-labelledby="c64e0a00" class="globalnavbar-submenu-list">
 <li class="globalnavbar-submenu-list-item-elevated">
 <a class="globalnavbar-submenu-link" href="#">História</a>
@@ -512,8 +496,8 @@
 </div>
 <div class="globalnavbar-submenu-group">
 <h2 class="globalnavbar-submenu-header" id="b80e39ed">
-                          Links rápidas
-                        </h2>
+                    Links rápidas
+                  </h2>
 <ul aria-labelledby="b80e39ed" class="globalnavbar-submenu-list">
 <li class="globalnavbar-submenu-list-item">
 <a class="globalnavbar-submenu-link" href="/retail/">Find a Store</a>
@@ -534,8 +518,8 @@
 </div>
 <div class="globalnavbar-submenu-group">
 <h2 class="globalnavbar-submenu-header" id="68805228">
-                          Ajuda
-                        </h2>
+                    Ajuda
+                  </h2>
 <ul aria-labelledby="68805228" class="globalnavbar-submenu-list">
 <li class="globalnavbar-submenu-list-item">
 <a class="globalnavbar-submenu-link" href="special_deals">Certified Refurbished</a>
@@ -548,7 +532,7 @@
 </li>
 <li class="globalnavbar-submenu-list-item">
 <a class="globalnavbar-submenu-link" href="eppstore/veteransandmilitary">Veterans and
-                              Military</a>
+                        Military</a>
 </li>
 <li class="globalnavbar-submenu-list-item">
 <a class="globalnavbar-submenu-link" href="/r/store/government/">Government</a>
@@ -576,8 +560,8 @@
 <div class="globalnavbar-flyout-content globalnavbar-submenu-content">
 <div class="globalnavbar-submenu-group globalnavbar-submenu-group-elevated">
 <h2 class="globalnavbar-submenu-header" id="c64e0a00">
-                          Departamento
-                        </h2>
+                    Departamento
+                  </h2>
 <ul aria-labelledby="c64e0a00" class="globalnavbar-submenu-list">
 <li class="globalnavbar-submenu-list-item-elevated">
 <a class="globalnavbar-submenu-link" href="#">História</a>
@@ -607,8 +591,8 @@
 </div>
 <div class="globalnavbar-submenu-group">
 <h2 class="globalnavbar-submenu-header" id="b80e39ed">
-                          Links rápidas
-                        </h2>
+                    Links rápidas
+                  </h2>
 <ul aria-labelledby="b80e39ed" class="globalnavbar-submenu-list">
 <li class="globalnavbar-submenu-list-item">
 <a class="globalnavbar-submenu-link" href="/retail/">Find a Store</a>
@@ -629,8 +613,8 @@
 </div>
 <div class="globalnavbar-submenu-group">
 <h2 class="globalnavbar-submenu-header" id="68805228">
-                          Ajuda
-                        </h2>
+                    Ajuda
+                  </h2>
 <ul aria-labelledby="68805228" class="globalnavbar-submenu-list">
 <li class="globalnavbar-submenu-list-item">
 <a class="globalnavbar-submenu-link" href="special_deals">Certified Refurbished</a>
@@ -643,7 +627,7 @@
 </li>
 <li class="globalnavbar-submenu-list-item">
 <a class="globalnavbar-submenu-link" href="eppstore/veteransandmilitary">Veterans and
-                              Military</a>
+                        Military</a>
 </li>
 <li class="globalnavbar-submenu-list-item">
 <a class="globalnavbar-submenu-link" href="/r/store/government/">Government</a>
@@ -671,8 +655,8 @@
 <div class="globalnavbar-flyout-content globalnavbar-submenu-content">
 <div class="globalnavbar-submenu-group globalnavbar-submenu-group-elevated">
 <h2 class="globalnavbar-submenu-header" id="c64e0a00">
-                          Departamento
-                        </h2>
+                    Departamento
+                  </h2>
 <ul aria-labelledby="c64e0a00" class="globalnavbar-submenu-list">
 <li class="globalnavbar-submenu-list-item-elevated">
 <a class="globalnavbar-submenu-link" href="#">História</a>
@@ -702,8 +686,8 @@
 </div>
 <div class="globalnavbar-submenu-group">
 <h2 class="globalnavbar-submenu-header" id="b80e39ed">
-                          Links rápidas
-                        </h2>
+                    Links rápidas
+                  </h2>
 <ul aria-labelledby="b80e39ed" class="globalnavbar-submenu-list">
 <li class="globalnavbar-submenu-list-item">
 <a class="globalnavbar-submenu-link" href="/retail/">Find a Store</a>
@@ -724,8 +708,8 @@
 </div>
 <div class="globalnavbar-submenu-group">
 <h2 class="globalnavbar-submenu-header" id="68805228">
-                          Ajuda
-                        </h2>
+                    Ajuda
+                  </h2>
 <ul aria-labelledby="68805228" class="globalnavbar-submenu-list">
 <li class="globalnavbar-submenu-list-item">
 <a class="globalnavbar-submenu-link" href="special_deals">Certified Refurbished</a>
@@ -738,7 +722,7 @@
 </li>
 <li class="globalnavbar-submenu-list-item">
 <a class="globalnavbar-submenu-link" href="eppstore/veteransandmilitary">Veterans and
-                              Military</a>
+                        Military</a>
 </li>
 <li class="globalnavbar-submenu-list-item">
 <a class="globalnavbar-submenu-link" href="/r/store/government/">Government</a>
@@ -766,8 +750,8 @@
 <div class="globalnavbar-flyout-content globalnavbar-submenu-content">
 <div class="globalnavbar-submenu-group globalnavbar-submenu-group-elevated">
 <h2 class="globalnavbar-submenu-header" id="c64e0a00">
-                          Departamento
-                        </h2>
+                    Departamento
+                  </h2>
 <ul aria-labelledby="c64e0a00" class="globalnavbar-submenu-list">
 <li class="globalnavbar-submenu-list-item-elevated">
 <a class="globalnavbar-submenu-link" href="#">História</a>
@@ -797,8 +781,8 @@
 </div>
 <div class="globalnavbar-submenu-group">
 <h2 class="globalnavbar-submenu-header" id="b80e39ed">
-                          Links rápidas
-                        </h2>
+                    Links rápidas
+                  </h2>
 <ul aria-labelledby="b80e39ed" class="globalnavbar-submenu-list">
 <li class="globalnavbar-submenu-list-item">
 <a class="globalnavbar-submenu-link" href="/retail/">Find a Store</a>
@@ -819,8 +803,8 @@
 </div>
 <div class="globalnavbar-submenu-group">
 <h2 class="globalnavbar-submenu-header" id="68805228">
-                          Ajuda
-                        </h2>
+                    Ajuda
+                  </h2>
 <ul aria-labelledby="68805228" class="globalnavbar-submenu-list">
 <li class="globalnavbar-submenu-list-item">
 <a class="globalnavbar-submenu-link" href="special_deals">Certified Refurbished</a>
@@ -833,7 +817,7 @@
 </li>
 <li class="globalnavbar-submenu-list-item">
 <a class="globalnavbar-submenu-link" href="eppstore/veteransandmilitary">Veterans and
-                              Military</a>
+                        Military</a>
 </li>
 <li class="globalnavbar-submenu-list-item">
 <a class="globalnavbar-submenu-link" href="/r/store/government/">Government</a>
@@ -861,8 +845,8 @@
 <div class="globalnavbar-flyout-content globalnavbar-submenu-content">
 <div class="globalnavbar-submenu-group globalnavbar-submenu-group-elevated">
 <h2 class="globalnavbar-submenu-header" id="c64e0a00">
-                          Departamento
-                        </h2>
+                    Departamento
+                  </h2>
 <ul aria-labelledby="c64e0a00" class="globalnavbar-submenu-list">
 <li class="globalnavbar-submenu-list-item-elevated">
 <a class="globalnavbar-submenu-link" href="#">História</a>
@@ -892,8 +876,8 @@
 </div>
 <div class="globalnavbar-submenu-group">
 <h2 class="globalnavbar-submenu-header" id="b80e39ed">
-                          Links rápidas
-                        </h2>
+                    Links rápidas
+                  </h2>
 <ul aria-labelledby="b80e39ed" class="globalnavbar-submenu-list">
 <li class="globalnavbar-submenu-list-item">
 <a class="globalnavbar-submenu-link" href="/retail/">Find a Store</a>
@@ -914,8 +898,8 @@
 </div>
 <div class="globalnavbar-submenu-group">
 <h2 class="globalnavbar-submenu-header" id="68805228">
-                          Ajuda
-                        </h2>
+                    Ajuda
+                  </h2>
 <ul aria-labelledby="68805228" class="globalnavbar-submenu-list">
 <li class="globalnavbar-submenu-list-item">
 <a class="globalnavbar-submenu-link" href="special_deals">Certified Refurbished</a>
@@ -928,7 +912,7 @@
 </li>
 <li class="globalnavbar-submenu-list-item">
 <a class="globalnavbar-submenu-link" href="eppstore/veteransandmilitary">Veterans and
-                              Military</a>
+                        Military</a>
 </li>
 <li class="globalnavbar-submenu-list-item">
 <a class="globalnavbar-submenu-link" href="/r/store/government/">Government</a>
@@ -956,8 +940,8 @@
 <div class="globalnavbar-flyout-content globalnavbar-submenu-content">
 <div class="globalnavbar-submenu-group globalnavbar-submenu-group-elevated">
 <h2 class="globalnavbar-submenu-header" id="c64e0a00">
-                          Departamento
-                        </h2>
+                    Departamento
+                  </h2>
 <ul aria-labelledby="c64e0a00" class="globalnavbar-submenu-list">
 <li class="globalnavbar-submenu-list-item-elevated">
 <a class="globalnavbar-submenu-link" href="#">História</a>
@@ -987,8 +971,8 @@
 </div>
 <div class="globalnavbar-submenu-group">
 <h2 class="globalnavbar-submenu-header" id="b80e39ed">
-                          Links rápidas
-                        </h2>
+                    Links rápidas
+                  </h2>
 <ul aria-labelledby="b80e39ed" class="globalnavbar-submenu-list">
 <li class="globalnavbar-submenu-list-item">
 <a class="globalnavbar-submenu-link" href="/retail/">Find a Store</a>
@@ -1009,8 +993,8 @@
 </div>
 <div class="globalnavbar-submenu-group">
 <h2 class="globalnavbar-submenu-header" id="68805228">
-                          Ajuda
-                        </h2>
+                    Ajuda
+                  </h2>
 <ul aria-labelledby="68805228" class="globalnavbar-submenu-list">
 <li class="globalnavbar-submenu-list-item">
 <a class="globalnavbar-submenu-link" href="special_deals">Certified Refurbished</a>
@@ -1023,7 +1007,7 @@
 </li>
 <li class="globalnavbar-submenu-list-item">
 <a class="globalnavbar-submenu-link" href="eppstore/veteransandmilitary">Veterans and
-                              Military</a>
+                        Military</a>
 </li>
 <li class="globalnavbar-submenu-list-item">
 <a class="globalnavbar-submenu-link" href="/r/store/government/">Government</a>
@@ -1067,6 +1051,7 @@
 </div>
 </nav>
 </div>
+
 <div id="quarto-search-results"></div>
 <header class="headroom fixed-top" id="quarto-header">
 <nav class="quarto-secondary-nav">
@@ -1074,13 +1059,7 @@
 <button aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" class="quarto-btn-toggle btn" data-bs-target=".quarto-sidebar-collapse-item" data-bs-toggle="collapse" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }" role="button" type="button">
 <i class="bi bi-layout-text-sidebar-reverse"></i>
 </button>
-<nav aria-label="breadcrumb" class="quarto-page-breadcrumbs">
-<ol class="breadcrumb">
-<li class="breadcrumb-item">
-<a href="./index.html"><span class="chapter-title">Estatística</span></a>
-</li>
-</ol>
-</nav>
+<nav aria-label="breadcrumb" class="quarto-page-breadcrumbs"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./index.html"><span class="chapter-title">Estatística</span></a></li></ol></nav>
 <a aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" class="flex-grow-1" data-bs-target=".quarto-sidebar-collapse-item" data-bs-toggle="collapse" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }" role="navigation">
 </a>
 <button aria-label="Search" class="btn quarto-search-button" onclick="window.quartoOpenSearch();" type="button">
@@ -1122,152 +1101,91 @@
 <div class="quarto-sidebar-collapse-item" data-bs-target=".quarto-sidebar-collapse-item" data-bs-toggle="collapse" id="quarto-sidebar-glass"></div>
 <!-- margin-sidebar -->
 <!-- main -->
-<main class="content" id="quarto-document-content">
-<header class="quarto-title-block" id="title-block-header"></header>
+<main class="content" id="quarto-document-content"><header class="quarto-title-block" id="title-block-header"></header>
 <section class="level1" id="estatística">
 <h1>Estatística</h1>
-<p>
-            Este projeto será apenas uma diversão para momentos vagos e opacos da graduação. Busco desenvolver a
-            habilidade fundamental do home, a escrita. A escrita propociona a clareza dos pensamentos, o que mais
-            preciso no momento!
-          </p>
-<p>
-            O pensamento inicial é construir o que Fábio Akita chama de “O Diário de Henry Jones”, veja (AKITA, 2025).
-          </p>
-<p>
-            Como ele, o conteúdo que aqui estará presente terá foco total e exclusivo no meu desenvolvimento. Tenho uma
-            facilidade em aprender e esquecer! Estou andando no escuro para achar uma tomada. Não sei se resolverá meu
-            problema mas se ajudar a resolve-lo, será de grande valia.
-          </p>
-<p>
-            Assim como
-            <span class="citation" data-cites="akita2025">(<a href="references.html#ref-akita2025" role="doc-biblioref">Akita, n.d.</a>)</span>
-            ter algo para consulta é essencial. Se é fácil para encontrar é rápido para consumir! Sempre que possível,
-            buscarei melhorar a escrita dos assuntos, mesmo que signifique ter que refazer tudo ou a maior parte do
-            conteúdo.
-          </p>
+<p>Este projeto é muitas coisas e nada ao mesmo tempo. Algumas coisas são apenas para desenvolver habilidades, como o design do projeto é para a criatividade ou os <strong>books</strong> para desenvolver a escrita. Outras para criar problemas e suas devidas soluções, mesmo que tenha que ter <code>n</code> soluções para cada problema.</p>
+<p>Buscarei nos tempos livres da graduação dedicar-me ao projeto.</p>
+<section class="level2" id="qual-ponto-de-ignição">
+<h2 class="anchored" data-anchor-id="qual-ponto-de-ignição">Qual ponto de ignição?</h2>
+<p>Primeiro, um ponto de ignição é um ponto que sucede o caminho. O começo de tudo.</p>
+<p>Inicialmente, encantei-me pelo design e programação web. Tentei desenvolver essas habilidades ao redesenhar e construir o site do Departamento de Estatística da Universidade de Brasília.</p>
+</section>
+<section class="level2" id="caminho">
+<h2 class="anchored" data-anchor-id="caminho">Caminho</h2>
+<p>Muitas coisas foram incorporadas a este repositório. <strong>books</strong> é o meu desejo de construir livros sobre estatistica com base em minhas notas de aulas e exercícios resolvidos, da maneira que eu desejar. Sujeito a escrever e reescrever quantas vezes eu desejar até ficar do meu agrado.</p>
+<p>….. mais coisas</p>
+<section class="level3" id="bom-para-que-é-este-projeto">
+<h3 class="anchored" data-anchor-id="bom-para-que-é-este-projeto">Bom, para que é este projeto?</h3>
+<p>Eu o desenvolverem para mim mesmo. Assim como no vídeo intitulado “O Diário de Henry Jones”, veja (AKITA, 2025), buscarei o mesmo mas para minha área. A ideia ter algo que contenha tudo o que estudei ou estudarei me parece essencial para meu progresso na área, além de um bom ponto de partida para referências.</p>
+</section>
+</section>
+</section>
+<section class="level1" id="reescrever">
+<h1>reescrever</h1>
+<p>Este projeto será apenas uma diversão para momentos vagos e opacos da graduação. Busco desenvolver a habilidade fundamental do home, a escrita. A escrita propociona a clareza dos pensamentos, o que mais preciso no momento!</p>
+<p>O pensamento inicial é construir o que Fábio Akita chama de “O Diário de Henry Jones”, veja (AKITA, 2025).</p>
+<p>Como ele, o conteúdo que aqui estará presente terá foco total e exclusivo no meu desenvolvimento. Tenho uma facilidade em aprender e esquecer! Estou andando no escuro para achar uma tomada. Não sei se resolverá meu problema mas se ajudar a resolve-lo, será de grande valia.</p>
+<p>Assim como <span class="citation" data-cites="akita2025">(<a href="references.html#ref-akita2025" role="doc-biblioref">Akita, n.d.</a>)</span> ter algo para consulta é essencial. Se é fácil para encontrar é rápido para consumir! Sempre que possível, buscarei melhorar a escrita dos assuntos, mesmo que signifique ter que refazer tudo ou a maior parte do conteúdo.</p>
+</section>
+<section class="level1" id="novo-capítulo">
+<h1>NOVO CAPÍTULO</h1>
 <section class="level2" id="questões-rápidas">
-<h2 class="anchored" data-anchor-id="questões-rápidas">
-              Questões rápidas
-            </h2>
+<h2 class="anchored" data-anchor-id="questões-rápidas">Questões rápidas</h2>
 <ol type="1">
-<li>
-<p>O que é estatística?</p>
-<p>
-                  De forma geral, a Estatística é uma ciência que busca maximizar o poder de escolha sobre algum
-                  assunto. Bem diferente do que está escrito em muitos livros. Bom, meu ponto é que a estatistica é
-                  usada sempre para tirar conclusões mais acertivas com base em um conjunto menor de informações. Por
-                  exemplo. Um pesquisador pode estar estudando sobre a eficacia de um produto A sobre outro B. Pode
-                  chegar a conclusão que o primeiro é 30% melhor. A decisão de comercializar o produto não será do
-                  pesquisador. Afinal, suponhamos que A também seja mais caro para ser produzido. Essa decisão será do
-                  pesquisador? Não, ele pode até fazer outro estudo sobre a viabilidade da comercialização do produto
-                  mas a decisão ainda não será tomada por ele. Se essa for sua tarefa, concerteza está trabalhando por 2
-                  e recebendo por um!
-                </p>
-</li>
-<li>
-<p>Por que estatistica?</p>
-<p>
-                  Primeiro, devemos pensar na essência da estatística. Uma ciência que prefere ter uma informação, com
-                  certo grau de certeza de sucesso ou fracasso, para tomar uma decisão. Por uma leve reflexão, podemos
-                  perceber que essa mentalidade está bastante difundida em muitas áreas do conhecimento humano. Talvez
-                  seja por isso que o homem não consiga atingir a perfeição, apenas ter a um vislumbre. Bom, para muitos
-                  a Matemática é considerada a essencia da vida. Se isso é verdadeiro, me arrisco a dizer que a
-                  Estatística seria uma transformação (função) que pega essa “essência da vida” e a transforma em “outra
-                  mais evoluida”. Uma transformação que produz bastantes erros.
-                </p>
-<p>
-                  De forma bem descarada, darei um motivo para doutrina-lo a ter esta mentalidade. Suponha um carro
-                  qualquer recém lançado e dito o mais seguro possível. Este carro possui um grande numéro de erros
-                  embutinos nele por uma escolha do fabricante, para lucrar sem tomar processos. Na Estatística há uma
-                  área chamada “Controle Estatístico de Qualidade”. Muito usado na industria automotiva para a produção
-                  de peças que têm margens de erros mas são tão pequenas que podemos usa-las. Como dito anteriormente, é
-                  uma escolha do fabricante. É muito difícil e custoso produzir algo com muita perfeição. Escolhe-se
-                  vender o produto com essa chance de falha pequena por acreditar-se que será muito provável o acidente.
-                  Essa é a essência jovem padawan! O problema talvez seja o acumulo de pequenos erros em cada peça do
-                  carro. Não se preocupe! Isso concerteza talbém é controlado. Mas por precaução, use o cinto e respeite
-                  as Leis de Transito para ter mais segurança!
-                </p>
-</li>
+<li><p>O que é estatística?</p>
+<p>De forma geral, a Estatística é uma ciência que busca maximizar o poder de escolha sobre algum assunto. Bem diferente do que está escrito em muitos livros. Bom, meu ponto é que a estatistica é usada sempre para tirar conclusões mais acertivas com base em um conjunto menor de informações. Por exemplo. Um pesquisador pode estar estudando sobre a eficacia de um produto A sobre outro B. Pode chegar a conclusão que o primeiro é 30% melhor. A decisão de comercializar o produto não será do pesquisador. Afinal, suponhamos que A também seja mais caro para ser produzido. Essa decisão será do pesquisador? Não, ele pode até fazer outro estudo sobre a viabilidade da comercialização do produto mas a decisão ainda não será tomada por ele. Se essa for sua tarefa, concerteza está trabalhando por 2 e recebendo por um!</p></li>
+<li><p>Por que estatistica?</p>
+<p>Primeiro, devemos pensar na essência da estatística. Uma ciência que prefere ter uma informação, com certo grau de certeza de sucesso ou fracasso, para tomar uma decisão. Por uma leve reflexão, podemos perceber que essa mentalidade está bastante difundida em muitas áreas do conhecimento humano. Talvez seja por isso que o homem não consiga atingir a perfeição, apenas ter a um vislumbre. Bom, para muitos a Matemática é considerada a essencia da vida. Se isso é verdadeiro, me arrisco a dizer que a Estatística seria uma transformação (função) que pega essa “essência da vida” e a transforma em “outra mais evoluida”. Uma transformação que produz bastantes erros.</p>
+<p>De forma bem descarada, darei um motivo para doutrina-lo a ter esta mentalidade. Suponha um carro qualquer recém lançado e dito o mais seguro possível. Este carro possui um grande numéro de erros embutinos nele por uma escolha do fabricante, para lucrar sem tomar processos. Na Estatística há uma área chamada “Controle Estatístico de Qualidade”. Muito usado na industria automotiva para a produção de peças que têm margens de erros mas são tão pequenas que podemos usa-las. Como dito anteriormente, é uma escolha do fabricante. É muito difícil e custoso produzir algo com muita perfeição. Escolhe-se vender o produto com essa chance de falha pequena por acreditar-se que será muito provável o acidente. Essa é a essência jovem padawan! O problema talvez seja o acumulo de pequenos erros em cada peça do carro. Não se preocupe! Isso concerteza talbém é controlado. Mas por precaução, use o cinto e respeite as Leis de Transito para ter mais segurança!</p></li>
 </ol>
 </section>
 <section class="level2" id="processo-de-desenvolvimento">
-<h2 class="anchored" data-anchor-id="processo-de-desenvolvimento">
-              Processo de desenvolvimento
-            </h2>
+<h2 class="anchored" data-anchor-id="processo-de-desenvolvimento">Processo de desenvolvimento</h2>
 <p>Seguirei o processo normal de desenvolvimento:</p>
 <ol type="1">
 <li>Disponibilizar o que já existe, mesmo que não agregue valor por falta de clareza.</li>
 <li>Melhorar o conteúdo, mesmo que necessite mudar a essência.</li>
 <li>Adicionar exemplos e exercícios.</li>
-<li>
-                Repetir os processoas anteriores, não para chegar na Magnum Opus mas em algo aceitavél para consumo.
-              </li>
+<li>Repetir os processoas anteriores, não para chegar na Magnum Opus mas em algo aceitavél para consumo.</li>
 <li>Finalizar tudo e “entregar”, assim que possível.</li>
 </ol>
 </section>
 <section class="level2" id="futuro-do-projeto">
-<h2 class="anchored" data-anchor-id="futuro-do-projeto">
-              Futuro do Projeto
-            </h2>
-<p>
-              Bom, o futuro nunca é certo! É apenas um monte de eventos presentes que podem determinar o curso de nossas
-              vidas.
-            </p>
-<p>
-              Para alguns, a ansiedade é ponto fraco. Meu caso! Talvez eu me empolgue neste projeto ou o jogue no eterno
-              vázio chamado esquecimento.
-            </p>
+<h2 class="anchored" data-anchor-id="futuro-do-projeto">Futuro do Projeto</h2>
+<p>Bom, o futuro nunca é certo! É apenas um monte de eventos presentes que podem determinar o curso de nossas vidas.</p>
+<p>Para alguns, a ansiedade é ponto fraco. Meu caso! Talvez eu me empolgue neste projeto ou o jogue no eterno vázio chamado esquecimento.</p>
 </section>
 <section class="level2" id="estrutura-das-notas">
-<h2 class="anchored" data-anchor-id="estrutura-das-notas">
-              Estrutura das notas
-            </h2>
+<h2 class="anchored" data-anchor-id="estrutura-das-notas">Estrutura das notas</h2>
 <p>obs: Demonstrar tudo que for possível.</p>
 <ul>
-<li>
-                “Storytteling with data”: se não sou eu que tenho controle, deve dar a maior quantidade de informação e
-                o leitor escolhe o que consumir.
-              </li>
+<li>“Storytteling with data”: se não sou eu que tenho controle, deve dar a maior quantidade de informação e o leitor escolhe o que consumir.</li>
 </ul>
 <ol type="1">
 <li><p>Texto Introdutório: apresentação do conteúdo e algumas explicações.</p></li>
-<li>
-<p>Exemplos e raciocínio para resolver</p>
+<li><p>Exemplos e raciocínio para resolver</p>
 <ol type="1">
 <li><p>Fácil</p></li>
 <li><p>médio</p></li>
 <li><p>difícil</p></li>
-</ol>
-</li>
+</ol></li>
 <li><p>Construção da Demonstração (Lemas, etc…)</p></li>
 <li><p>Desenvolvimento da demonstração (definição final).</p></li>
 <li><p>Usando a demonstração [4.] para resolver os problemas de [2.]</p></li>
 <li><p>Mais exemplos pela definição</p></li>
-<li>
-<p>Exercícios</p>
+<li><p>Exercícios</p>
 <ol type="1">
 <li><p>Apenas cálcular: botar na receita [4.] e resolver.</p></li>
 <li><p>Problemas teóricos (demonstrar algo)</p></li>
-<li>
-<p>Problemas de lógica (fazer alguma manipulação para resolver o problema usando a definição)</p>
-</li>
-</ol>
-</li>
+<li><p>Problemas de lógica (fazer alguma manipulação para resolver o problema usando a definição)</p></li>
+</ol></li>
 </ol>
 <section class="level3" id="algumas-sitações">
-<h3 class="anchored" data-anchor-id="algumas-sitações">
-                Algumas sitações
-              </h3>
+<h3 class="anchored" data-anchor-id="algumas-sitações">Algumas sitações</h3>
 <ul>
-<li>
-                  “Andando no escuro para achar uma tomada” por
-                  <a href="https://github.com/cesargabrielphd">Cesar Gabriel</a>
-</li>
-<li>
-                  “Se é fácil para encontrar é rápido para consumir” por
-                  <a href="https://github.com/cesargabrielphd">Cesar Gabriel</a>
-</li>
+<li>“Andando no escuro para achar uma tomada” por <a href="https://github.com/cesargabrielphd">Cesar Gabriel</a></li>
+<li>“Se é fácil para encontrar é rápido para consumir” por <a href="https://github.com/cesargabrielphd">Cesar Gabriel</a></li>
 </ul>
 </section>
 </section>
@@ -1276,500 +1194,484 @@
 <h1></h1>
 <div class="references csl-bib-body hanging-indent" data-entry-spacing="0" id="refs" role="list" style="display: none">
 <div class="csl-entry" id="ref-akita2025" role="listitem">
-              Akita, F. n.d. <span>“Motivação: O Diário de Henry Jones.”</span>
-<a class="uri" href="https://www.youtube.com/watch?v=ii5Q2fCl8C0&amp;pp=ygURaGVucnkgam9uZXMgYWtpdGE%3D">https://www.youtube.com/watch?v=ii5Q2fCl8C0&amp;pp=ygURaGVucnkgam9uZXMgYWtpdGE%3D</a>.
-            </div>
+Akita, F. n.d. <span>“Motivação: O Diário de Henry Jones.”</span> <a class="uri" href="https://www.youtube.com/watch?v=ii5Q2fCl8C0&amp;pp=ygURaGVucnkgam9uZXMgYWtpdGE%3D">https://www.youtube.com/watch?v=ii5Q2fCl8C0&amp;pp=ygURaGVucnkgam9uZXMgYWtpdGE%3D</a>.
+</div>
 </div>
 </section>
-</main>
-<!-- /main -->
+</main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
-        window.document.addEventListener("DOMContentLoaded", function (event) {
-          const toggleBodyColorMode = (bsSheetEl) => {
-            const mode = bsSheetEl.getAttribute("data-mode");
-            const bodyEl = window.document.querySelector("body");
-            if (mode === "dark") {
-              bodyEl.classList.add("quarto-dark");
-              bodyEl.classList.remove("quarto-light");
-            } else {
-              bodyEl.classList.add("quarto-light");
-              bodyEl.classList.remove("quarto-dark");
-            }
-          };
-          const toggleBodyColorPrimary = () => {
-            const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
-            if (bsSheetEl) {
-              toggleBodyColorMode(bsSheetEl);
-            }
-          };
-          toggleBodyColorPrimary();
-          const icon = "";
-          const anchorJS = new window.AnchorJS();
-          anchorJS.options = {
-            placement: "right",
-            icon: icon,
-          };
-          anchorJS.add(".anchored");
-          const isCodeAnnotation = (el) => {
-            for (const clz of el.classList) {
-              if (clz.startsWith("code-annotation-")) {
-                return true;
-              }
-            }
-            return false;
-          };
-          const onCopySuccess = function (e) {
-            // button target
-            const button = e.trigger;
-            // don't keep focus
-            button.blur();
-            // flash "checked"
-            button.classList.add("code-copy-button-checked");
-            var currentTitle = button.getAttribute("title");
-            button.setAttribute("title", "Copied!");
-            let tooltip;
-            if (window.bootstrap) {
-              button.setAttribute("data-bs-toggle", "tooltip");
-              button.setAttribute("data-bs-placement", "left");
-              button.setAttribute("data-bs-title", "Copied!");
-              tooltip = new bootstrap.Tooltip(button, {
-                trigger: "manual",
-                customClass: "code-copy-button-tooltip",
-                offset: [0, -8],
-              });
-              tooltip.show();
-            }
-            setTimeout(function () {
-              if (tooltip) {
-                tooltip.hide();
-                button.removeAttribute("data-bs-title");
-                button.removeAttribute("data-bs-toggle");
-                button.removeAttribute("data-bs-placement");
-              }
-              button.setAttribute("title", currentTitle);
-              button.classList.remove("code-copy-button-checked");
-            }, 1000);
-            // clear code selection
-            e.clearSelection();
-          };
-          const getTextToCopy = function (trigger) {
-            const codeEl = trigger.previousElementSibling.cloneNode(true);
-            for (const childEl of codeEl.children) {
-              if (isCodeAnnotation(childEl)) {
-                childEl.remove();
-              }
-            }
-            return codeEl.innerText;
-          };
-          const clipboard = new window.ClipboardJS(".code-copy-button:not([data-in-quarto-modal])", {
-            text: getTextToCopy,
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const onCopySuccess = function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  }
+  const getTextToCopy = function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+    text: getTextToCopy
+  });
+  clipboard.on('success', onCopySuccess);
+  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+      text: getTextToCopy,
+      container: window.document.getElementById('quarto-embedded-source-code-modal')
+    });
+    clipboardModal.on('success', onCopySuccess);
+  }
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp('/' + window.location.host + '/');
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+      }
+    }
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+    const config = {
+      allowHTML: true,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start',
+    };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
           });
-          clipboard.on("success", onCopySuccess);
-          if (window.document.getElementById("quarto-embedded-source-code-modal")) {
-            const clipboardModal = new window.ClipboardJS(".code-copy-button[data-in-quarto-modal]", {
-              text: getTextToCopy,
-              container: window.document.getElementById("quarto-embedded-source-code-modal"),
-            });
-            clipboardModal.on("success", onCopySuccess);
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
           }
-          var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
-          var mailtoRegex = new RegExp(/^mailto:/);
-          var filterRegex = new RegExp("/" + window.location.host + "/");
-          var isInternal = (href) => {
-            return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
-          };
-          // Inspect non-navigation links and adorn them if external
-          var links = window.document.querySelectorAll(
-            "a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)"
-          );
-          for (var i = 0; i < links.length; i++) {
-            const link = links[i];
-            if (!isInternal(link.href)) {
-              // undo the damage that might have been done by quarto-nav.js in the case of
-              // links that we want to consider external
-              if (link.dataset.originalHref !== undefined) {
-                link.href = link.dataset.originalHref;
-              }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
             }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            div.style.left = 0;
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
           }
-          function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
-            const config = {
-              allowHTML: true,
-              maxWidth: 500,
-              delay: 100,
-              arrow: false,
-              appendTo: function (el) {
-                return el.parentElement;
-              },
-              interactive: true,
-              interactiveBorder: 10,
-              theme: "quarto",
-              placement: "bottom-start",
-            };
-            if (contentFn) {
-              config.content = contentFn;
-            }
-            if (onTriggerFn) {
-              config.onTrigger = onTriggerFn;
-            }
-            if (onUntriggerFn) {
-              config.onUntrigger = onUntriggerFn;
-            }
-            window.tippy(el, config);
-          }
-          const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
-          for (var i = 0; i < noterefs.length; i++) {
-            const ref = noterefs[i];
-            tippyHover(ref, function () {
-              // use id or data attribute instead here
-              let href = ref.getAttribute("data-footnote-href") || ref.getAttribute("href");
-              try {
-                href = new URL(href).hash;
-              } catch {}
-              const id = href.replace(/^#\/?/, "");
-              const note = window.document.getElementById(id);
-              if (note) {
-                return note.innerHTML;
-              } else {
-                return "";
-              }
-            });
-          }
-          const xrefs = window.document.querySelectorAll("a.quarto-xref");
-          const processXRef = (id, note) => {
-            // Strip column container classes
-            const stripColumnClz = (el) => {
-              el.classList.remove("page-full", "page-columns");
-              if (el.children) {
-                for (const child of el.children) {
-                  stripColumnClz(child);
-                }
-              }
-            };
-            stripColumnClz(note);
-            if (id === null || id.startsWith("sec-")) {
-              // Special case sections, only their first couple elements
-              const container = document.createElement("div");
-              if (note.children && note.children.length > 2) {
-                container.appendChild(note.children[0].cloneNode(true));
-                for (let i = 1; i < note.children.length; i++) {
-                  const child = note.children[i];
-                  if (child.tagName === "P" && child.innerText === "") {
-                    continue;
-                  } else {
-                    container.appendChild(child.cloneNode(true));
-                    break;
-                  }
-                }
-                if (window.Quarto?.typesetMath) {
-                  window.Quarto.typesetMath(container);
-                }
-                return container.innerHTML;
-              } else {
-                if (window.Quarto?.typesetMath) {
-                  window.Quarto.typesetMath(note);
-                }
-                return note.innerHTML;
-              }
-            } else {
-              // Remove any anchor links if they are present
-              const anchorLink = note.querySelector("a.anchorjs-link");
-              if (anchorLink) {
-                anchorLink.remove();
-              }
-              if (window.Quarto?.typesetMath) {
-                window.Quarto.typesetMath(note);
-              }
-              if (note.classList.contains("callout")) {
-                return note.outerHTML;
-              } else {
-                return note.innerHTML;
-              }
-            }
-          };
-          for (var i = 0; i < xrefs.length; i++) {
-            const xref = xrefs[i];
-            tippyHover(
-              xref,
-              undefined,
-              function (instance) {
-                instance.disable();
-                let url = xref.getAttribute("href");
-                let hash = undefined;
-                if (url.startsWith("#")) {
-                  hash = url;
-                } else {
-                  try {
-                    hash = new URL(url).hash;
-                  } catch {}
-                }
-                if (hash) {
-                  const id = hash.replace(/^#\/?/, "");
-                  const note = window.document.getElementById(id);
-                  if (note !== null) {
-                    try {
-                      const html = processXRef(id, note.cloneNode(true));
-                      instance.setContent(html);
-                    } finally {
-                      instance.enable();
-                      instance.show();
-                    }
-                  } else {
-                    // See if we can fetch this
-                    fetch(url.split("#")[0])
-                      .then((res) => res.text())
-                      .then((html) => {
-                        const parser = new DOMParser();
-                        const htmlDoc = parser.parseFromString(html, "text/html");
-                        const note = htmlDoc.getElementById(id);
-                        if (note !== null) {
-                          const html = processXRef(id, note);
-                          instance.setContent(html);
-                        }
-                      })
-                      .finally(() => {
-                        instance.enable();
-                        instance.show();
-                      });
-                  }
-                } else {
-                  // See if we can fetch a full url (with no hash to target)
-                  // This is a special case and we should probably do some content thinning / targeting
-                  fetch(url)
-                    .then((res) => res.text())
-                    .then((html) => {
-                      const parser = new DOMParser();
-                      const htmlDoc = parser.parseFromString(html, "text/html");
-                      const note = htmlDoc.querySelector("main.content");
-                      if (note !== null) {
-                        // This should only happen for chapter cross references
-                        // (since there is no id in the URL)
-                        // remove the first header
-                        if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
-                          note.children[0].remove();
-                        }
-                        const html = processXRef(null, note);
-                        instance.setContent(html);
-                      }
-                    })
-                    .finally(() => {
-                      instance.enable();
-                      instance.show();
-                    });
-                }
-              },
-              function (instance) {}
-            );
-          }
-          let selectedAnnoteEl;
-          const selectorForAnnotation = (cell, annotation) => {
-            let cellAttr = 'data-code-cell="' + cell + '"';
-            let lineAttr = 'data-code-annotation="' + annotation + '"';
-            const selector = "span[" + cellAttr + "][" + lineAttr + "]";
-            return selector;
-          };
-          const selectCodeLines = (annoteEl) => {
-            const doc = window.document;
-            const targetCell = annoteEl.getAttribute("data-target-cell");
-            const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
-            const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
-            const lines = annoteSpan.getAttribute("data-code-lines").split(",");
-            const lineIds = lines.map((line) => {
-              return targetCell + "-" + line;
-            });
-            let top = null;
-            let height = null;
-            let parent = null;
-            if (lineIds.length > 0) {
-              //compute the position of the single el (top and bottom and make a div)
-              const el = window.document.getElementById(lineIds[0]);
-              top = el.offsetTop;
-              height = el.offsetHeight;
-              parent = el.parentElement.parentElement;
-              if (lineIds.length > 1) {
-                const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
-                const bottom = lastEl.offsetTop + lastEl.offsetHeight;
-                height = bottom - top;
-              }
-              if (top !== null && height !== null && parent !== null) {
-                // cook up a div (if necessary) and position it
-                let div = window.document.getElementById("code-annotation-line-highlight");
-                if (div === null) {
-                  div = window.document.createElement("div");
-                  div.setAttribute("id", "code-annotation-line-highlight");
-                  div.style.position = "absolute";
-                  parent.appendChild(div);
-                }
-                div.style.top = top - 2 + "px";
-                div.style.height = height + 4 + "px";
-                div.style.left = 0;
-                let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
-                if (gutterDiv === null) {
-                  gutterDiv = window.document.createElement("div");
-                  gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
-                  gutterDiv.style.position = "absolute";
-                  const codeCell = window.document.getElementById(targetCell);
-                  const gutter = codeCell.querySelector(".code-annotation-gutter");
-                  gutter.appendChild(gutterDiv);
-                }
-                gutterDiv.style.top = top - 2 + "px";
-                gutterDiv.style.height = height + 4 + "px";
-              }
-              selectedAnnoteEl = annoteEl;
-            }
-          };
-          const unselectCodeLines = () => {
-            const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
-            elementsIds.forEach((elId) => {
-              const div = window.document.getElementById(elId);
-              if (div) {
-                div.remove();
-              }
-            });
-            selectedAnnoteEl = undefined;
-          };
-          // Handle positioning of the toggle
-          window.addEventListener(
-            "resize",
-            throttle(() => {
-              elRect = undefined;
-              if (selectedAnnoteEl) {
-                selectCodeLines(selectedAnnoteEl);
-              }
-            }, 10)
-          );
-          function throttle(fn, ms) {
-            let throttle = false;
-            let timer;
-            return (...args) => {
-              if (!throttle) {
-                // first call gets through
-                fn.apply(this, args);
-                throttle = true;
-              } else {
-                // all the others get throttled
-                if (timer) clearTimeout(timer); // cancel #2
-                timer = setTimeout(() => {
-                  fn.apply(this, args);
-                  timer = throttle = false;
-                }, ms);
-              }
-            };
-          }
-          // Attach click handler to the DT
-          const annoteDls = window.document.querySelectorAll("dt[data-target-cell]");
-          for (const annoteDlNode of annoteDls) {
-            annoteDlNode.addEventListener("click", (event) => {
-              const clickedEl = event.target;
-              if (clickedEl !== selectedAnnoteEl) {
-                unselectCodeLines();
-                const activeEl = window.document.querySelector("dt[data-target-cell].code-annotation-active");
-                if (activeEl) {
-                  activeEl.classList.remove("code-annotation-active");
-                }
-                selectCodeLines(clickedEl);
-                clickedEl.classList.add("code-annotation-active");
-              } else {
-                // Unselect the line
-                unselectCodeLines();
-                clickedEl.classList.remove("code-annotation-active");
-              }
-            });
-          }
-          const findCites = (el) => {
-            const parentEl = el.parentElement;
-            if (parentEl) {
-              const cites = parentEl.dataset.cites;
-              if (cites) {
-                return {
-                  el,
-                  cites: cites.split(" "),
-                };
-              } else {
-                return findCites(el.parentElement);
-              }
-            } else {
-              return undefined;
-            }
-          };
-          var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
-          for (var i = 0; i < bibliorefs.length; i++) {
-            const ref = bibliorefs[i];
-            const citeInfo = findCites(ref);
-            if (citeInfo) {
-              tippyHover(citeInfo.el, function () {
-                var popup = window.document.createElement("div");
-                citeInfo.cites.forEach(function (cite) {
-                  var citeDiv = window.document.createElement("div");
-                  citeDiv.classList.add("hanging-indent");
-                  citeDiv.classList.add("csl-entry");
-                  var biblioDiv = window.document.getElementById("ref-" + cite);
-                  if (biblioDiv) {
-                    citeDiv.innerHTML = biblioDiv.innerHTML;
-                  }
-                  popup.appendChild(citeDiv);
-                });
-                return popup.innerHTML;
-              });
-            }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
           }
         });
-      </script>
+        selectedAnnoteEl = undefined;
+      };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
 <nav class="page-navigation">
-<div class="nav-page nav-page-previous"></div>
+<div class="nav-page nav-page-previous">
+</div>
 <div class="nav-page nav-page-next">
 <a aria-label="References" class="pagination-link" href="./references.html">
 <span class="nav-page-text">References</span> <i class="bi bi-arrow-right-short"></i>
 </a>
 </div>
 </nav>
-</div>
-<!-- /content -->
+</div> <!-- /content -->
+
 <footer class="" id="globalfooter">
 <div id="globalfooter-content">
 <h2 class="globalfooter-content-label" id="globalfooter-content-label" style="display: none">
-            Estatistica
-          </h2>
+      Estatistica
+    </h2>
 <section aria-label="Footnotes" id="globalfooter-note">
 <ul>
 <li>
 <span id="footnote-1">1.</span>
 <p class="globalfooter-footnote-paragraph">
-                  Este site foi criado com o objetivo de oferecer aos estudantes de estatística e áreas afins um espaço de
-                  aprendizagem, troca e atualização sobre os principais conceitos, métodos e aplicações da ciência dos
-                  dados. Aqui você encontrará materiais didáticos, exercícios, vídeos, links úteis e outras informações
-                  relevantes para o seu desenvolvimento acadêmico e profissional na área de estatística.
-                </p>
+            Este site foi criado com o objetivo de oferecer aos estudantes de estatística e áreas afins um espaço de
+            aprendizagem, troca e atualização sobre os principais conceitos, métodos e aplicações da ciência dos
+            dados. Aqui você encontrará materiais didáticos, exercícios, vídeos, links úteis e outras informações
+            relevantes para o seu desenvolvimento acadêmico e profissional na área de estatística.
+          </p>
 </li>
 <li>
-                Para mais informações sobre o departamento de estatística, visite o site
-                <a href="https://est.unb.br" rel="noopener" target="_blank">clicando aqui</a>.
-              </li>
+          Para mais informações sobre o departamento de estatística, visite o site
+          <a href="https://est.unb.br" rel="noopener" target="_blank">clicando aqui</a>.
+        </li>
 <li>
 <span id="footnote-2">2. </span>
 <p class="globalfooter-footnote-paragraph">
-                  O Departamento de Estatística da UnB é um órgão do Instituto de Ciências Exatas que se dedica ao ensino,
-                  pesquisa e extensão em Estatística e Ciência de Dados, formando profissionais qualificados e
-                  contribuindo para o desenvolvimento científico e tecnológico em diversas áreas do conhecimento. O
-                  departamento oferece cursos de graduação e pós-graduação em Estatística, além de disciplinas que atendem
-                  a diversos departamentos da universidade. O departamento também possui um site que oferece aos
-                  estudantes de estatística e áreas afins um espaço de aprendizagem, troca e atualização sobre os
-                  principais conceitos, métodos e aplicações da ciência dos dados, com materiais didáticos, exercícios,
-                  vídeos, links úteis e outras informações relevantes.
-                </p>
+            O Departamento de Estatística da UnB é um órgão do Instituto de Ciências Exatas que se dedica ao ensino,
+            pesquisa e extensão em Estatística e Ciência de Dados, formando profissionais qualificados e
+            contribuindo para o desenvolvimento científico e tecnológico em diversas áreas do conhecimento. O
+            departamento oferece cursos de graduação e pós-graduação em Estatística, além de disciplinas que atendem
+            a diversos departamentos da universidade. O departamento também possui um site que oferece aos
+            estudantes de estatística e áreas afins um espaço de aprendizagem, troca e atualização sobre os
+            principais conceitos, métodos e aplicações da ciência dos dados, com materiais didáticos, exercícios,
+            vídeos, links úteis e outras informações relevantes.
+          </p>
 </li>
 <li>
 <span id="footnote-3">3. </span>
 <p class="globalfooter-footnote-paragraph">
-                  A Universidade de Brasília (UnB) é uma universidade pública brasileira situada na capital federal,
-                  Brasília. Ela é uma das maiores e mais prestigiadas instituições de ensino superior da região
-                  Centro-Oeste e do Brasil.
-                </p>
+            A Universidade de Brasília (UnB) é uma universidade pública brasileira situada na capital federal,
+            Brasília. Ela é uma das maiores e mais prestigiadas instituições de ensino superior da região
+            Centro-Oeste e do Brasil.
+          </p>
 </li>
 <li>
-                Para mais informações sobre a Universidade de Brasília, visite o site
-                <a href="https://www.unb.br" rel="noopener" target="_blank">unb.br</a>.
-              </li>
+          Para mais informações sobre a Universidade de Brasília, visite o site
+          <a href="https://www.unb.br" rel="noopener" target="_blank">unb.br</a>.
+        </li>
 </ul>
 </section>
 <nav class="ac-gf-directory with-5-columns" id="globalfooter-navgation">
@@ -1785,53 +1687,53 @@
 <ul class="gf-directory-column-section-list" id="footer-directory-column-section-products" role="list">
 <li class="gf-directory-column-section-item" role="listitem">
 <a class="gf-directory-column-section-link" href="#">
-                      Graduação
-                    </a>
+                Graduação
+              </a>
 </li>
 <li class="gf-directory-column-section-item" role="listitem">
 <a class="gf-directory-column-section-link" href="#">
-                      Pós-Graduação
-                    </a>
+                Pós-Graduação
+              </a>
 </li>
 <li class="gf-directory-column-section-item" role="listitem">
 <a class="gf-directory-column-section-link" href="#">
-                      Extensão
-                    </a>
+                Extensão
+              </a>
 </li>
 <li class="gf-directory-column-section-item" role="listitem">
 <a class="gf-directory-column-section-link" href="#">
-                      Docentes
-                    </a>
+                Docentes
+              </a>
 </li>
 <li class="gf-directory-column-section-item" role="listitem">
 <a class="gf-directory-column-section-link" href="#">
-                      Pesquisa
-                    </a>
+                Pesquisa
+              </a>
 </li>
 <li class="gf-directory-column-section-item" role="listitem">
 <a class="gf-directory-column-section-link" href="#">
-                      Eventos
-                    </a>
+                Eventos
+              </a>
 </li>
 <li class="gf-directory-column-section-item" role="listitem">
 <a class="gf-directory-column-section-link" href="#">
-                      Instalações
-                    </a>
+                Instalações
+              </a>
 </li>
 <li class="gf-directory-column-section-item" role="listitem">
 <a class="gf-directory-column-section-link" href="#">
-                      Notícias
-                    </a>
+                Notícias
+              </a>
 </li>
 <li class="gf-directory-column-section-item" role="listitem">
 <a class="gf-directory-column-section-link" href="#">
-                      Contato
-                    </a>
+                Contato
+              </a>
 </li>
 <li class="gf-directory-column-section-item" role="listitem">
 <a class="gf-directory-column-section-link" href="#">
-                      Ouvidoria
-                    </a>
+                Ouvidoria
+              </a>
 </li>
 </ul>
 </div>
@@ -1848,43 +1750,43 @@
 <ul class="gf-directory-column-section-list" id="footer-directory-column-section-products" role="list">
 <li class="gf-directory-column-section-item" role="listitem">
 <a class="gf-directory-column-section-link" href="#">
-                      Boas Viandas a Unb
-                    </a>
+                Boas Viandas a Unb
+              </a>
 </li>
 <li class="gf-directory-column-section-item" role="listitem">
 <a class="gf-directory-column-section-link" href="#">
-                      Calendário acadêmico
-                    </a>
+                Calendário acadêmico
+              </a>
 </li>
 <li class="gf-directory-column-section-item" role="listitem">
 <a class="gf-directory-column-section-link" href="#">
-                      Perguntas Frequentes
-                    </a>
+                Perguntas Frequentes
+              </a>
 </li>
 <li class="gf-directory-column-section-item" role="listitem">
 <a class="gf-directory-column-section-link" href="#">
-                      Assistência Estudantil
-                    </a>
+                Assistência Estudantil
+              </a>
 </li>
 <li class="gf-directory-column-section-item" role="listitem">
 <a class="gf-directory-column-section-link" href="#">
-                      Canais oficiais - Unb
-                    </a>
+                Canais oficiais - Unb
+              </a>
 </li>
 <li class="gf-directory-column-section-item" role="listitem">
 <a class="gf-directory-column-section-link" href="#">
-                      Marca UnB
-                    </a>
+                Marca UnB
+              </a>
 </li>
 <li class="gf-directory-column-section-item" role="listitem">
 <a class="gf-directory-column-section-link" href="#">
-                      Campanha Institucional 2023
-                    </a>
+                Campanha Institucional 2023
+              </a>
 </li>
 <li class="gf-directory-column-section-item" role="listitem">
 <a class="gf-directory-column-section-link" href="#">
-                      UnBTV
-                    </a>
+                UnBTV
+              </a>
 </li>
 </ul>
 </div>
@@ -1901,58 +1803,58 @@
 <ul class="gf-directory-column-section-list" id="footer-directory-column-section-products" role="list">
 <li class="gf-directory-column-section-item" role="listitem">
 <a class="gf-directory-column-section-link" href="#">
-                      Identidade estudantil
-                    </a>
+                Identidade estudantil
+              </a>
 </li>
 <li class="gf-directory-column-section-item" role="listitem">
 <a class="gf-directory-column-section-link" href="#">
-                      Passe estudantil
-                    </a>
+                Passe estudantil
+              </a>
 </li>
 <li class="gf-directory-column-section-item" role="listitem">
 <a class="gf-directory-column-section-link" href="#">
-                      Diploma Digital
-                    </a>
+                Diploma Digital
+              </a>
 </li>
 <li class="gf-directory-column-section-item" role="listitem">
 <a class="gf-directory-column-section-link" href="#">
-                      Emissão de Documentos Acadêmicos
-                    </a>
+                Emissão de Documentos Acadêmicos
+              </a>
 </li>
 <li class="gf-directory-column-section-item" role="listitem">
 <a class="gf-directory-column-section-link" href="#">
-                      Registro Acadêmico
-                    </a>
+                Registro Acadêmico
+              </a>
 </li>
 <li class="gf-directory-column-section-item" role="listitem">
 <a class="gf-directory-column-section-link" href="#">
-                      SIGAA - Graduação e Pós-Graduação
-                    </a>
+                SIGAA - Graduação e Pós-Graduação
+              </a>
 </li>
 <li class="gf-directory-column-section-item" role="listitem">
 <a class="gf-directory-column-section-link" href="#">
-                      Emissão do Diploma
-                    </a>
+                Emissão do Diploma
+              </a>
 </li>
 <li class="gf-directory-column-section-item" role="listitem">
 <a class="gf-directory-column-section-link" href="#">
-                      Transporte
-                    </a>
+                Transporte
+              </a>
 </li>
 <li class="gf-directory-column-section-item" role="listitem">
 <a class="gf-directory-column-section-link" href="#">
-                      Unb Idiomas
-                    </a>
+                Unb Idiomas
+              </a>
 </li>
 <li class="gf-directory-column-section-item" role="listitem">
 <a class="gf-directory-column-section-link" href="#">
-                      Diretório Central dos Estudantes - DCE
-                    </a>
+                Diretório Central dos Estudantes - DCE
+              </a>
 </li>
 <li class="gf-directory-column-section-item" role="listitem">
 <a class="gf-directory-column-section-link" href="#">
-                      Legislação Graduação e Pós-Graduação
-                    </a>
+                Legislação Graduação e Pós-Graduação
+              </a>
 </li>
 </ul>
 </div>
@@ -1969,38 +1871,38 @@
 <ul class="gf-directory-column-section-list" id="footer-directory-column-section-products" role="list">
 <li class="gf-directory-column-section-item" role="listitem">
 <a class="gf-directory-column-section-link" href="#">
-                      Reitoria
-                    </a>
+                Reitoria
+              </a>
 </li>
 <li class="gf-directory-column-section-item" role="listitem">
 <a class="gf-directory-column-section-link" href="#">
-                      Vice-Reitoria
-                    </a>
+                Vice-Reitoria
+              </a>
 </li>
 <li class="gf-directory-column-section-item" role="listitem">
 <a class="gf-directory-column-section-link" href="#">
-                      Conselhos e câmaras
-                    </a>
+                Conselhos e câmaras
+              </a>
 </li>
 <li class="gf-directory-column-section-item" role="listitem">
 <a class="gf-directory-column-section-link" href="#">
-                      Resoluções dos Conselhos Superiores
-                    </a>
+                Resoluções dos Conselhos Superiores
+              </a>
 </li>
 <li class="gf-directory-column-section-item" role="listitem">
 <a class="gf-directory-column-section-link" href="#">
-                      Decanatos
-                    </a>
+                Decanatos
+              </a>
 </li>
 <li class="gf-directory-column-section-item" role="listitem">
 <a class="gf-directory-column-section-link" href="#">
-                      Secretarias
-                    </a>
+                Secretarias
+              </a>
 </li>
 <li class="gf-directory-column-section-item" role="listitem">
 <a class="gf-directory-column-section-link" href="#">
-                      Prefeitura da UnB
-                    </a>
+                Prefeitura da UnB
+              </a>
 </li>
 </ul>
 </div>
@@ -2017,43 +1919,43 @@
 <ul class="gf-directory-column-section-list" id="footer-directory-column-section-products" role="list">
 <li class="gf-directory-column-section-item" role="listitem">
 <a class="gf-directory-column-section-link" href="#">
-                      Arquivo Central
-                    </a>
+                Arquivo Central
+              </a>
 </li>
 <li class="gf-directory-column-section-item" role="listitem">
 <a class="gf-directory-column-section-link" href="#">
-                      Biblioteca Central
-                    </a>
+                Biblioteca Central
+              </a>
 </li>
 <li class="gf-directory-column-section-item" role="listitem">
 <a class="gf-directory-column-section-link" href="#">
-                      Editora UnB
-                    </a>
+                Editora UnB
+              </a>
 </li>
 <li class="gf-directory-column-section-item" role="listitem">
 <a class="gf-directory-column-section-link" href="#">
-                      Equipe de Tratamento e Resposta a Incidentes Cibernéticos
-                    </a>
+                Equipe de Tratamento e Resposta a Incidentes Cibernéticos
+              </a>
 </li>
 <li class="gf-directory-column-section-item" role="listitem">
 <a class="gf-directory-column-section-link" href="#">
-                      Fazenda Água Limpo
-                    </a>
+                Fazenda Água Limpo
+              </a>
 </li>
 <li class="gf-directory-column-section-item" role="listitem">
 <a class="gf-directory-column-section-link" href="#">
-                      Hospital Universitário
-                    </a>
+                Hospital Universitário
+              </a>
 </li>
 <li class="gf-directory-column-section-item" role="listitem">
 <a class="gf-directory-column-section-link" href="#">
-                      Hospitais Veterinários
-                    </a>
+                Hospitais Veterinários
+              </a>
 </li>
 <li class="gf-directory-column-section-item" role="listitem">
 <a class="gf-directory-column-section-link" href="#">
-                      Restaurante Universitário
-                    </a>
+                Restaurante Universitário
+              </a>
 </li>
 </ul>
 </div>
@@ -2062,15 +1964,15 @@
 <section id="globalfooter-copyright">
 <div class="gf-copyright-secretaria">
 <span class="gf-copyright-secretaria-text">
-                Para mais informações, o email da Secretária do Departamento de Estatistica é
-                <a href="mailto:est@unb.br">est@unb.br</a>. Ou ligue para o numero
-                <a href="tel:+553131073697">3107-3697</a> ou <a href="tel:+553131073696">3107-3696</a>.
-              </span>
+          Para mais informações, o email da Secretária do Departamento de Estatistica é
+          <a href="mailto:est@unb.br">est@unb.br</a>. Ou ligue para o numero
+          <a href="tel:+553131073697">3107-3697</a> ou <a href="tel:+553131073696">3107-3696</a>.
+        </span>
 <span class="gf-copyright-secretaria-locale">
-                Localização por google mapas:
-                <a class="locale-dep-unb gf-copyright-locale-link" href="https://maps.app.goo.gl/S6zJwSsEXmhADdct8" rel="noopener" target="_blank">
-                  UNIVERSIDADE DE BRASÍLIA - PRÉDIO CIC/EST CAMPUS DARCY RIBEIRO - Asa Norte, Brasília - DF, 70910-900
-                </a>
+          Localização por google mapas:
+          <a class="locale-dep-unb gf-copyright-locale-link" href="https://maps.app.goo.gl/S6zJwSsEXmhADdct8" rel="noopener" target="_blank">
+            UNIVERSIDADE DE BRASÍLIA - PRÉDIO CIC/EST CAMPUS DARCY RIBEIRO - Asa Norte, Brasília - DF, 70910-900
+          </a>
 </span>
 </div>
 <div id="gf-copyright-legal">
@@ -2086,16 +1988,15 @@
 <span class="footer-espacador"> </span>
 <li class="gf-copy-legal-links-item" role="listitem">
 <a class="gf-copy-legal-link" href="/sitemap/">
-                    Site Map</a>
+              Site Map</a>
 </li>
 </ul>
 <div class="gf-copyright-locale">
 <a class="gf-copyright-locale-link locale-BR" href="#" rel="noopener" target="_blank">Brasil
-                </a>
+          </a>
 </div>
 </div>
 </section>
 </div>
 </footer>
-</body>
-</html>
+</body></html>

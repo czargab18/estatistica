@@ -6,48 +6,9 @@ from pickle import TRUE
 import re
 from bs4 import BeautifulSoup
 
-# Parametros
-LINKS = [
-    "<meta charset='utf-8' />",
-    "<meta content='Estatística' name='topic' />",
-    "<meta content='index,follow' name='robots' />",
-    "<meta content='width=device-width, initial-scale=1.0' name='viewport' />",
-    "<meta content=\"img-src 'self' https://www.estatistica.pro/; script-src 'self' https://www.estatistica.pro/ac/ https://www.estatistica.pro/sd/\" http-equiv='Content-Security-Policy' />",
-    "<lin href='/sd/images/favicons/estatistica.svg' rel='shortcut icon' type='image/x-icon' />",
-    "<link href='/ac/globalpattern/1/pt_BR/styles/globalpattern.css' rel='stylesheet' />",
-    "<link href='/ac/globalaside/1/pt_BR/styles/globalaside.css' rel='stylesheet' />",
-    "<link href='/ac/globalnavbar/1/pt_BR/styles/globalnavbar.css' rel='stylesheet />",
-    "<link href='/ac/globalribbon/1/pt_BR/styles/globalribbon.css' rel='stylesheet' />",
-    "<link href='/ac/globaltipografia/1/pt_BR/style/globaltipografia.css' rel='stylesheet' />",
-    "<link href='/ac/globalmain/1/pt_BR/styles/globalmain.css' rel='stylesheet' />",
-    "<link href'/ac/globalnoticias/1/pt_BR/style/globalnoticias.css' rel='stylesheet' />",
-    "<link href='/ac/globalfooter/1/pt_BR/styles/globalfooter.css' rel='stylesheet' />",
-    "<link href='/wss/fonts.css?families=SF+Pro,v3|SF+Pro+Icons,v3' media='all' rel='stylesheet' type='text/css' />",
-    "<script defer='' src='/ac/globalnoticias/1/pt_BR/scripts/globalnoticias.js'></script>",
-    "<script defer='' src='/ac/globalpattern/1/pt_BR/scripts/globalpattern.js'></script>",
-    "<script defer='' src='/ac/globalfooter/1/pt_BR/scripts/globalfooter.js'></script>",
-    "<script defer='' src='/utils/libs/js/navbar.js'></script>",
-    "<link rel='stylesheet' href='/ac/books/custombooks.css'>",
-    "<link rel='stylesheet' href='/ac/books/bootstrap/bootstrap.min.css'>",
-    "<link rel='stylesheet' href='/ac/books/bootstrap/bootstrap-icons.css'>",
-    "<link rel='stylesheet' href='/ac/books/quarto-html/quarto-syntax-highlighting.css'>",
-    "<link rel='stylesheet' href='/ac/books/quarto-html/tippy.css'>",
-    "<script src='/ac/books/bootstrap/bootstrap.min.js'></script>",
-    "<script src='/ac/books/clipboard/clipboard.min.js'></script>",
-    "<script src='/ac/books/quarto-html/anchor.min.js'></script>",
-    "<script src='/ac/books/quarto-html/popper.min.js'></script>",
-    "<script src='/ac/books/quarto-html/quarto.js'></script>",
-    "<script src='/ac/books/quarto-html/tippy.umd.min.js'></script>",
-    "<script src='/ac/books/quarto-nav/headroom.min.js'></script>",
-    "<script src='/ac/books/quarto-nav/quarto-nav.js'></script>",
-    "<script src='/ac/books/quarto-search/autocomplete.umd.js'></script>",
-    "<script src='/ac/books/quarto-search/fuse.min.js'></script>",
-    "<script src='/ac/books/quarto-search/quarto-search.js'></script>"
-]
-
 PATTERN_BOOKS_NAME = re.compile(r'^[A-Z]{3}\d{4}$')
 
-def readjson(caminho: str = "C:/Users/cesar.oliveira/Documents/github/estatistica/backend/data/books/books.json"):
+def readjson(caminho: str = "./backend/data/books/books.json"):
     with open(caminho, 'r', encoding='utf-8') as file:
         return json.load(file)
 
@@ -129,12 +90,12 @@ def listabooks(path: str = "./books/"):
 
     # Salvar o resultado em um arquivo JSON
     os.makedirs('./data/books/', exist_ok=True)
-    with open('C:/Users/cesar.oliveira/Documents/github/estatistica/backend/data/books/books.json', 'w', encoding='utf-8') as file:
+    with open('./backend/data/books/books.json', 'w', encoding='utf-8') as file:
         json.dump(CAMINHOS_ARQUIVOS, file, ensure_ascii=False, indent=4)
 
     return CAMINHOS_ARQUIVOS
 
-def corsearchjson(books: bool = True, path: str = "C:/Users/cesar.oliveira/Documents/github/estatistica/backend/data/books/books.json"):
+def corsearchjson(books: bool = True, path: str = "./backend/data/books/books.json"):
     """
     Corrige os caminhos duplicados no arquivo SEARCH.JSON
     """
@@ -181,7 +142,7 @@ def corsearchjson(books: bool = True, path: str = "C:/Users/cesar.oliveira/Docum
     return listabooks
 
 
-def corpathlinksearchjson(listabooks: dict = readjson('C:/Users/cesar.oliveira/Documents/github/estatistica/backend/data/books/books.json')):
+def corpathlinksearchjson(listabooks: dict = readjson('./backend/data/books/books.json')):
     """
     Corrige Links do ./BOOKS/{books}/SEARCH.JSON
     :param listabooks: dict com os livros

@@ -8,7 +8,7 @@ setup(
         "attrs==25.3.0",
         "Automat==24.8.1",
         # "egg=backend&subdirectory=backend",
-        "-e git+https://github.com/cesargabrielphd/estatistica.git@701474089ee9ef514fde4702a6e03693a96a8fc6",
+        "git+https://github.com/cesargabrielphd/estatistica.git@701474089ee9ef514fde4702a6e03693a96a8fc6",
         "beautifulsoup4==4.13.3",
         "bibtexparser==1.4.3",
         "bs4==0.0.2",
