@@ -238,7 +238,7 @@ def includeinhead(linkstoinclude, pathbooks: str = "./books/", tipoarquivo: str 
 
     return arquivos_processados
 
-def corrlinksheadbooks(listabooks: dict, base_path: str = "./books"):
+def corrlinksheadbooks(listabooks: dict, base_path: str = "./books", ignore: list = ["conteudo"]):
     """
     Corrige os links no head dos arquivos HTML listados em listabooks,
     substituindo './' por '/'.
@@ -246,9 +246,15 @@ def corrlinksheadbooks(listabooks: dict, base_path: str = "./books"):
     Args:
         listabooks (dict): Dicionário com os livros e seus respectivos arquivos HTML.
         base_path (str): Caminho base onde os arquivos estão localizados.
+        ignore (list): Lista de partes do caminho ou links a serem ignorados.
     """
     for book, files in listabooks.items():
         for filepath in files:
+            # Ignorar arquivos ou caminhos que contenham palavras da lista ignore
+            if any(ignored in filepath for ignored in ignore):
+                print(f"Ignorando arquivo: {filepath}")
+                continue
+
             # Construir caminho absoluto e normalizar as barras
             relative_path = filepath.lstrip('/')  # Remove a barra inicial, se existir
             absolute_path = os.path.normpath(os.path.join(base_path, relative_path.replace("books/", "")))
@@ -261,9 +267,9 @@ def corrlinksheadbooks(listabooks: dict, base_path: str = "./books"):
                     head = soup.head
                     if head:
                         for tag in head.find_all(['link', 'script']):
-                            if tag.has_attr('href'):
+                            if tag.has_attr('href') and not any(ignored in tag['href'] for ignored in ignore):
                                 tag['href'] = tag['href'].replace('./', '/')
-                            if tag.has_attr('src'):
+                            if tag.has_attr('src') and not any(ignored in tag['src'] for ignored in ignore):
                                 tag['src'] = tag['src'].replace('./', '/')
                     
                     # Sobrescrever o arquivo com o conteúdo corrigido
@@ -273,7 +279,6 @@ def corrlinksheadbooks(listabooks: dict, base_path: str = "./books"):
                     print(f"Arquivo não encontrado: {absolute_path}")
                 except Exception as e:
                     print(f"Erro ao processar {absolute_path}: {e}")
-
 
 if __name__ == '__main__':
     # A função listabooks já está definida neste arquivo
