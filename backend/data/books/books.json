@@ -1,12 +1,13 @@
 {
+    "MAT0075": [
+        "/books/MAT0075/index.html",
+        "/books/MAT0075/search.json",
+        "/books/MAT0075/conteudo/1.espacoprob.html",
+        "/books/MAT0075/conteudo/references.html"
+    ],
     "TAS0000": [
         "/books/TAS0000/index.html",
         "/books/TAS0000/references.html",
         "/books/TAS0000/search.json"
-    ],
-    "TAS0013": [
-        "/books/TAS0013/index.html",
-        "/books/TAS0013/references.html",
-        "/books/TAS0013/search.json"
     ]
 }

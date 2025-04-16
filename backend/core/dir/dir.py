@@ -59,8 +59,28 @@ def listdir(caminho: str = "./", output_file: str = None):
         print(f"Erro: {e}")
 
 
-# Exemplo de uso:
+def list_caminhos(caminho):
+    """
+    Lista os caminhos completos de todos os arquivos em uma pasta e suas subpastas.
+
+    :param caminho: Caminho da pasta onde os arquivos serão listados.
+    :return: Lista de caminhos completos dos arquivos.
+    """
+    if not os.path.exists(caminho):
+        return []
+
+    caminhos_completos = []
+    for raiz, subpastas, arquivos in os.walk(caminho):
+        for arquivo in arquivos:
+            caminho_completo = os.path.join(raiz, arquivo).replace("\\", "/")
+            caminhos_completos.append(caminho_completo)
+    return caminhos_completos
+
+
 if __name__ == "__main__":
-    caminho = "./"  # Caminho do diretório a ser listado
-    output_file_path = "core/dir/directory_structure.txt"  # Arquivo de saída (opcional)
-    listdir(caminho, output_file_path)
+    caminho = r"ac/books"
+    paths = list_caminhos(caminho)
+    for path in paths:
+        print(path)
+    # output_file_path = "./directory_structure.txt"
+    # listdir(caminho, output_file_path)

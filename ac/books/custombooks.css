@@ -1,5 +1,27 @@
 /* Algumas modificações usando css */
-
+body {
+  padding-top: 0px !important;
+}
 main[id = "lists-book"] {
   justify-items: center;
+}
+#quarto-content> main {
+    padding-top: 0px;
+}
+main {
+    margin-top: 0px !important;
+    margin-bottom: 0px !important;
+}
+main header[id="title-block-header"] {
+  display: none;
+}
+
+.fixed-top {
+    position: relative !important;
+    top: 0;
+    right: 0;
+    left: 0;
+    z-index: 1030;
+    width: 100%;
+    max-width: 2560px;
 }
