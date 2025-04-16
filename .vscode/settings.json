@@ -24,7 +24,8 @@
   "editor.wordWrapColumn": 80,
   "terminal.integrated.env.windows": {
     "PYTHONIOENCODING": "utf-8"
-  }
+  },
   // "terminal.integrated.cwd": "c:/Users/cesargabrielphd/Documents/github/books/",
   // "quarto.path": "c:/Users/cesargabrielphd/AppData/Local/Programs/Quarto/bin/",
+  "terminal.integrated.cwd": "${workspaceFolder}",
 }
