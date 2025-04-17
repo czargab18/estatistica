@@ -40,12 +40,19 @@ main[id="globalbookshome"]
     picture,
     samp,
     section,
-    summarize,
+    summary,
     time
   ) {
-  all: unset;
+  all: inherit;
   margin: 0;
   padding: 0;
+}
+main[id="globalbookshome"] :is(h1, h2, h3, h4, h5, h6, p, div, span) {
+  display: block;
+  margin: 0;
+  padding: 0;
+  font-family: var(--r-font-family-default);
+  font-size: 16px;
 }
 
 main[id="globalbookshome"] :is(pre, code, address, caption, th, figcaption) {
@@ -69,14 +76,7 @@ main[id="globalbookshome"] :is(summary, details) {
 main[id="globalbookshome"] :is(audio, canvas, video, progress) {
   vertical-align: baseline;
 }
-main[id="globalbookshome"] :is(h1, h2, h3, h4, h5, h6, p, div, span) {
-  all: unset;
-  display: block;
-  margin: 0;
-  padding: 0;
-  font-family: var(--r-font-family-default);
-  font-size: 16px;
-}
+
 
 main[id="globalbookshome"] {
   display: flex;

@@ -1,7 +1,82 @@
-/* Algumas modificações usando css */
-body {
-  padding-top: 0px !important;
+main[id="lists-book"]
+  :is(
+    ul,
+    ol,
+    li,
+    dl,
+    dt,
+    dd,
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6,
+    hgroup,
+    p,
+    blockquote,
+    figure,
+    form,
+    fieldset,
+    input,
+    legend,
+    pre,
+    abbr,
+    button,
+    canvas,
+    caption,
+    code,
+    details,
+    div,
+    dl,
+    dt,
+    figcaption,
+    img,
+    label,
+    main,
+    mark,
+    nav,
+    ol,
+    picture,
+    samp,
+    section,
+    summary,
+    time
+  ) {
+  all: initial;
+  margin: 0;
+  padding: 0;
 }
+main[id="lists-book"] :is(h1, h2, h3, h4, h5, h6, p, div, span) {
+  display: block;
+  margin: 0;
+  padding: 0;
+  font-family: var(--r-font-family-default);
+  font-size: 16px;
+}
+
+main[id="lists-book"] :is(pre, code, address, caption, th, figcaption) {
+  font-size: 1em;
+  font-weight: 400;
+  font-style: normal;
+}
+
+main[id="lists-book"] :is(fieldset, iframe) {
+  border: 0;
+}
+
+main[id="lists-book"] :is(caption, th) {
+  text-align: left;
+}
+
+main[id="lists-book"] :is(summary, details) {
+  display: block;
+}
+
+main[id="lists-book"] :is(audio, canvas, video, progress) {
+  vertical-align: baseline;
+}
+
 main[id="lists-book"] {
   justify-items: center;
 }
