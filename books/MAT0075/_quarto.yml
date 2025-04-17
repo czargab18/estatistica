@@ -1,10 +1,10 @@
 project:
   title: "CALCULO DE PROBABILIDADE"
   type: book
-  resources: "${QUARTO_BASE_DIR}/"
-  output-dir: "${QUARTO_BASE_DIR}/books/build/MAT0075"
-  lib-dir:  "${QUARTO_BASE_DIR}/books/build/delete/site_libs"
-  post-render:  "${QUARTO_BASE_DIR}/books/build/include/post-render.py"
+  resources: "./../../../"
+  output-dir: "./../../MAT0075"
+  lib-dir:  "./../delete/site_libs"
+  post-render:  "./../include/post-render.py"
   preview:
     port: 4200
     browser: false
@@ -26,7 +26,7 @@ bibliography: conteudo/references.bib
 
 format:
   html:
-    include-in-header: "${QUARTO_BASE_DIR}/books/build/include/include-in-head"
+    include-in-header: "./../include/include-in-head"
     toc: false
     sidebar: true
     theme:

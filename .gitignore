@@ -9,6 +9,7 @@ node_modules
 *.*quarto*
 **/.gitignore
 
+/src
 *libs
 *_files*
 *_main.rds
