@@ -1,3 +1,6 @@
+.main [data-module-template="noticias"] {
+   all: initial;
+}
 .main [data-module-template="noticias"],
 .main [data-module-template="noticias"] .standalone-module,
 .main [data-module-template] div[clas="home-section"] {

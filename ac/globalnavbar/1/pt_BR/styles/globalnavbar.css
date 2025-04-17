@@ -1,6 +1,6 @@
 /* Reset de estilos globais */
 #globalnavbar {
-  all: unset;
+ all: initial;
 }
 
 #globalnavbar ul,
@@ -28,6 +28,7 @@
 #globalnavbar button {
   margin: 0;
   padding: 0;
+  border: 0;
 }
 
 #globalnavbar pre,

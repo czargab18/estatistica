@@ -1,4 +1,8 @@
 #ac-localnav {
+   all: initial;
+}
+#ac-localnav {
+   all: initial;
   font-weight: normal;
   -webkit-text-size-adjust: 100%;
   -moz-text-size-adjust: 100%;

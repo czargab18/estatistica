@@ -1,4 +1,7 @@
 #globalfooter {
+   all: initial;
+}
+#globalfooter {
   font-weight: normal;
   text-size-adjust: 100%;
   font-family: var(--r-font-family-default);

@@ -1,3 +1,7 @@
+.main [data-module-template="noticias"] {
+   all: initial;
+}
+
 .main [data-module-template="noticias"] .gallery .inner {
   position: absolute;
   top: 0;

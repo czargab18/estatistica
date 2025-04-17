@@ -1,6 +1,6 @@
 @charset "UTF-8";
 #main404 {
-  all: unset;
+ all: initial;
 }
 
 #main404 {

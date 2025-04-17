@@ -1,6 +1,6 @@
 @charset "UTF-8";
 body#globaldocente {
-  all: unset;
+ all: initial;
 }
 body#globaldocente main {
   font-size: 17px;
