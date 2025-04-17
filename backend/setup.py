@@ -4,11 +4,13 @@ setup(
     name="backend",
     version="0.1",
     packages=find_packages(include=[
-                           "core", "core.*", "data", "data.*", "newsroom", "newsroom.*", "teste", "teste.*"]),
+                           "core", "core.*", "data", "data.*", "books", "books.*", "book", "book.*", "teste", "teste.*"]),
     include_package_data=True,
     package_data={
         "": ["*.json", "*.csv", "*.pdf", "*.txt", "*.html", "*.qmd", "*.bib"],
         "core": ["**/*"],
+        "books": ["**/*"],
+        "book": ["**/*"],
         "data": ["avisos/*", "books/*"],
         "teste": ["**/*"],
         "newsroom": ["**/*"],
