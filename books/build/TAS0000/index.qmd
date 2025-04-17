@@ -1,9 +1,25 @@
-# A arte da Estatística
+# A Arte da Estatística
+O nome desta série é  inspirado na famosa coleção de Donald Knuth chamada "The Art of Computer Programming", veja (tarara, xxx).
 
-## Questões rápidas
+Esta série ou coleção será construída com base em minhas notas e exercícios de aulas.
+
+## Algumas perguntas que acredito serem úteis.
+
 
 1.  O que é estatística?
+Em muitos bibliográfias a resposta segue o padrão "[...] ... [...]". Está definição busca ser a mais abrangente possível para está área, o que é uma tática boa para muitos cenários.
 
+Acredito que a definição de Noether em seu livro .... é melhor.
+
+Usarei como base a definição de Noether [...]
+e definirem estatistica puramente como 
+
+.....
+
+
+
+
+## reescrever....
     De forma geral, a Estatística é uma ciência que busca maximizar o poder de escolha sobre algum assunto. Bem diferente do que está escrito em muitos livros. Bom, meu ponto é que a estatistica é usada sempre para tirar conclusões mais acertivas com base em um conjunto menor de informações. Por exemplo. Um pesquisador pode estar estudando sobre a eficacia de um produto A sobre outro B. Pode chegar a conclusão que o primeiro é 30% melhor. A decisão de comercializar o produto não será do pesquisador. Afinal, suponhamos que A também seja mais caro para ser produzido. Essa decisão será do pesquisador? Não, ele pode até fazer outro estudo sobre a viabilidade da comercialização do produto mas a decisão ainda não será tomada por ele. Se essa for sua tarefa, concerteza está trabalhando por 2 e recebendo por um!
 
 2.  Por que estatistica?
