@@ -1,38 +1,4 @@
-# Estatística
-
-Este projeto é muitas coisas e nada ao mesmo tempo. Algumas coisas são apenas para desenvolver habilidades, como o design do projeto é para a criatividade ou os **books** para desenvolver a escrita. Outras para criar problemas e suas devidas soluções, mesmo que tenha que ter `n` soluções para cada problema.
-
-Buscarei nos tempos livres da graduação dedicar-me ao projeto.
-
-## Qual o ponto de ignição?
-Primeiro, um ponto de ignição é um ponto que sucede o caminho. O começo de tudo.
-
-Inicialmente, encantei-me pelo design e programação web. Tentei desenvolver essas habilidades ao redesenhar e construir o site do Departamento de Estatística da Universidade de Brasília.
-
-## Caminho
-
-Muitas coisas foram incorporadas a este repositório. **books** é o meu desejo de construir livros sobre estatistica com base em minhas notas de aulas e exercícios resolvidos, da maneira que eu desejar. Sujeito a escrever e reescrever quantas vezes eu desejar até ficar do meu agrado.
-
-..... mais coisas
-
-### Bom, para que é este projeto?
-Eu o desenvolverem para mim mesmo. Assim como no vídeo intitulado "O Diário de Henry Jones", veja (AKITA, 2025), buscarei o mesmo mas para minha área. A ideia ter algo que contenha tudo   o que estudei ou estudarei me parece essencial para meu progresso na área, além de um bom ponto de partida para referências.
-
-
-
-
-# reescrever 
-
-Este projeto será apenas uma diversão para momentos vagos e opacos da graduação. Busco desenvolver a habilidade fundamental do home, a escrita. A escrita propociona a clareza dos pensamentos, o que mais preciso no momento!
-
-O pensamento inicial é construir o que Fábio Akita chama de "O Diário de Henry Jones", veja (AKITA, 2025).
-
-Como ele, o conteúdo que aqui estará presente terá foco total e exclusivo no meu desenvolvimento. Tenho uma facilidade em aprender e esquecer! Estou andando no escuro para achar uma tomada. Não sei se resolverá meu problema mas se ajudar a resolve-lo, será de grande valia.
-
-Assim como [@akita2025] ter algo para consulta é essencial. Se é fácil para encontrar é rápido para consumir! Sempre que possível, buscarei melhorar a escrita dos assuntos, mesmo que signifique ter que refazer tudo ou a maior parte do conteúdo.
-
-# NOVO CAPÍTULO
-
+# A arte da Estatística
 
 ## Questões rápidas
 
