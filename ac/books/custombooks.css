@@ -2,26 +2,70 @@
 body {
   padding-top: 0px !important;
 }
-main[id = "lists-book"] {
+main[id="lists-book"] {
   justify-items: center;
 }
-#quarto-content> main {
-    padding-top: 0px;
+div[id="quarto-content"] {
+  width: 1024px !important;
+  min-height: calc(0px + 100vh);
+  max-width: 2560px;
+  width: 1024px;
+}
+
+#quarto-content > main {
+  padding-top: 0px;
 }
 main {
-    margin-top: 0px !important;
-    margin-bottom: 0px !important;
+  margin-top: 0px !important;
+  margin-bottom: 0px !important;
 }
 main header[id="title-block-header"] {
   display: none;
 }
 
 .fixed-top {
-    position: relative !important;
-    top: 0;
-    right: 0;
-    left: 0;
-    z-index: 1030;
-    width: 100%;
-    max-width: 2560px;
+  position: relative !important;
+  top: 0;
+  right: 0;
+  left: 0;
+  z-index: 1030;
+  width: 100%;
+  max-width: 2560px;
+}
+
+#quarto-content nav {
+  padding-top: 0;
+}
+nav[id="quarto-sidebar"] {
+  padding: 0 !important;
+}
+
+#quarto-sidebar :is(nav, div, span) {
+  padding-right: 0;
+}
+nav .mt-2 {
+  margin-top: 0 !important;
+}
+nav div[class*="sidebar-header"] {
+  margin-top: 0 !important;
+}
+.sidebar-title {
+  margin-top: 0;
+  padding-bottom: 0;
+  font-size: 1.3rem;
+  line-height: 1.6rem;
+  visibility: visible;
+}
+.sidebar.sidebar-navigation > * {
+  padding-top: 0 !important;
+}
+body.floating .sidebar.sidebar-navigation {
+  gap: 12px !important;
+}
+
+nav[id="quarto-sidebar"] > div:nth-child(n+3) {
+  padding-left: 12px !important;
+}
+nav[id="quarto-sidebar"] form div:first-child {
+  padding-left: 4px !important;
 }
