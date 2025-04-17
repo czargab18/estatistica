@@ -6,11 +6,27 @@ from pickle import TRUE
 import re
 from bs4 import BeautifulSoup
 
-PATTERN_BOOKS_NAME = re.compile(r'^[A-Z]{3}\d{4}$')
+caminhos = [
+    re.compile(r'^[A-Z]{3}\d{4}$'),  # PATTERN_BOOKS_NAME
+    os.path.normpath("/backend/data/books/books.json"),  # PATH_BOOKS_JSON
+    # Caminho para readmeqmd
+    os.path.normpath("./newshub/build/conteudo/"),
+    os.path.normpath("./books/"),  # Caminho base para listabooks
+    os.path.normpath("./data/books/"),  # Caminho para salvar JSON
+    os.path.normpath("./books/docs/"),  # Origem para corsearchjson
+    os.path.normpath("./books/"),  # Destino para corsearchjson
+    # Caminho para corpathlinksearchjson
+    os.path.normpath("./backend/data/books/books.json"),
+    # Caminho para includeinbody
+    os.path.normpath("./books/build/include/include-in-body"),
+]
+
+
 
 def readjson(caminho: str ):
     with open(caminho, 'r', encoding='utf-8') as file:
         return json.load(file)
+
 
 def readmeqmd(
     caminho: str = "./newshub/build/conteudo/",

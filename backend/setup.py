@@ -3,12 +3,19 @@ from setuptools import setup, find_packages
 setup(
     name="backend",
     version="0.1",
-    packages=find_packages(),
+    packages=find_packages(include=[
+                           "core", "core.*", "data", "data.*", "newsroom", "newsroom.*", "teste", "teste.*"]),
+    include_package_data=True,
+    package_data={
+        "": ["*.json", "*.csv", "*.pdf", "*.txt", "*.html", "*.qmd", "*.bib"],
+        "core": ["**/*"],
+        "data": ["avisos/*", "books/*"],
+        "teste": ["**/*"],
+        "newsroom": ["**/*"],
+    },
     install_requires=[
         "attrs==25.3.0",
         "Automat==24.8.1",
-        # "egg=backend&subdirectory=backend",
-        "git+https://github.com/cesargabrielphd/estatistica.git@701474089ee9ef514fde4702a6e03693a96a8fc6",
         "beautifulsoup4==4.13.3",
         "bibtexparser==1.4.3",
         "bs4==0.0.2",
@@ -66,6 +73,7 @@ setup(
         "PyMuPDF==1.25.3",
         "pyOpenSSL==25.0.0",
         "pyparsing==3.2.3",
+        "PyPDF2==3.0.1",
         "PySocks==1.7.1",
         "python-dateutil==2.9.0.post0",
         "pytz==2025.2",
