@@ -8,7 +8,7 @@ from bs4 import BeautifulSoup
 
 PATTERN_BOOKS_NAME = re.compile(r'^[A-Z]{3}\d{4}$')
 
-def readjson(caminho: str = "./backend/data/books/books.json"):
+def readjson(caminho: str ):
     with open(caminho, 'r', encoding='utf-8') as file:
         return json.load(file)
 
@@ -95,7 +95,8 @@ def listabooks(path: str = "./books/"):
 
     return CAMINHOS_ARQUIVOS
 
-def corsearchjson(books: bool = True, path: str = "./backend/data/books/books.json"):
+
+def corsearchjson(path: str ,books: bool = True):
     """
     Corrige os caminhos duplicados no arquivo SEARCH.JSON
     """
@@ -329,8 +330,8 @@ def includeinbody(pathbooks: str = "./books/", tipoarquivo: str = ".html", inclu
 
     return arquivos_processados
 
-if __name__ == '__main__':
-    books = listabooks(path="./books")
-    corrlinksheadbooks(books, base_path="./books")
-    includeinbody()
-    print("-"*13, "Links corrigidos com sucesso!", "-"*13,sep=" ")
+# if __name__ == '__main__':
+#     books = listabooks(path="./books")
+#     corrlinksheadbooks(books, base_path="./books")
+#     includeinbody()
+#     print("-"*13, "Links corrigidos com sucesso!", "-"*13,sep=" ")
