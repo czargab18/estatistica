@@ -1,142 +1,95 @@
-# Documentação do Repositório
+# Backend
 
-## Estrutura do Projeto
+O diretório `backend` é o núcleo do projeto, responsável por gerenciar dados, executar processos automatizados e fornecer suporte para diversas funcionalidades relacionadas à Estatística e ao ambiente acadêmico. Ele inclui scripts, dados estruturados e ferramentas utilitárias que suportam tanto o frontend quanto a API.
 
-O repositório está organizado da seguinte forma:
+---
 
-```
-_backend_/
-├── data/
-│   ├── avisos/
-│   │   ├── avisos.json
-│   │   ├── eventos.json
-│   ├── books/
-│   │   ├── disciplinas.json
-│   ├── newsroom/
-│       ├── article.json
-├── newsroom/
-│   ├── article/
-│   │   ├── artigo.txt
-│   ├── modelo/
-│   │   ├── modelo.html
-│   │   ├── src/
-│   ├── iterativo.py
-│   ├── manual.py
-│   ├── resto_funcoes.py
-├── repositorio/
-│   ├── create_dir.py
-│   ├── ger_sitemap.py
-│   ├── rename_links.py
-│   ├── requirements.txt
+## Estrutura do Diretório
+
+```plaintext
+.vscode/              # Configurações específicas do Visual Studio Code
+backend.egg-info/     # Metadados do pacote Python
+core/                 # Scripts principais e utilitários
+data/                 # Dados utilizados pelo backend
+newsroom/             # Sistema de publicação de artigos
+teste/                # Scripts de teste e experimentação
 ```
 
 ---
 
-## Descrição das Pastas e Arquivos
+## Descrição dos Subdiretórios
 
-### `_backend_/data/`
-Contém os dados utilizados pelo sistema.
+### `.vscode/`
+- Contém configurações específicas para o editor Visual Studio Code.
+- **Arquivos importantes**:
+  - `settings.json`: Configurações do ambiente de desenvolvimento.
 
-- **avisos/**: Contém arquivos JSON relacionados a avisos e eventos.
-  - `avisos.json`: Lista de avisos.
-  - `eventos.json`: Lista de eventos.
-- **books/**: Contém informações sobre disciplinas.
-  - `disciplinas.json`: Dados sobre disciplinas, incluindo código, nome, carga horária, e tipo.
-- **newsroom/**: Contém dados relacionados a artigos.
-  - `article.json`: Informações sobre artigos criados.
+### `backend.egg-info/`
+- Metadados do pacote Python gerados durante a instalação ou desenvolvimento.
+- **Arquivos importantes**:
+  - `PKG-INFO`: Informações sobre o pacote.
+  - `requires.txt`: Dependências do projeto.
 
----
+### `core/`
+- Contém scripts utilitários e funções principais para o backend.
+- **Subdiretórios**:
+  - `books/`: Scripts relacionados a livros e materiais acadêmicos.
+  - `dir/`: Scripts para manipulação de diretórios e arquivos.
+  - `utils/`: Scripts utilitários gerais.
+- **Arquivos importantes**:
+  - `books/functions.py`: Funções para manipulação de livros.
+  - `dir/list_paths_folders.py`: Lista caminhos e pastas.
+  - `utils/ger_sitemap.py`: Gera o arquivo `sitemap.xml`.
 
-### `_backend_/newsroom/`
-Contém scripts e templates para manipulação de artigos.
+### `data/`
+- Armazena dados estruturados e arquivos de suporte.
+- **Subdiretórios**:
+  - `avisos/`: Dados relacionados a avisos e eventos.
+  - `books/`: Dados sobre disciplinas e livros.
+  - `newsroom/`: Dados para o sistema de publicação.
+- **Arquivos importantes**:
+  - `books/disciplinas.json`: Informações detalhadas sobre disciplinas acadêmicas.
+  - `avisos/avisos.json`: Lista de avisos.
 
-- **article/**:
-  - `artigo.txt`: Modelo de conteúdo de um artigo.
-- **modelo/**:
-  - `modelo.html`: Template HTML para artigos.
-  - `src/`: Diretório para arquivos auxiliares do modelo.
-- **iterativo.py**: Script para interagir com o usuário e coletar informações sobre artigos.
-- **manual.py**: Contém funções para manipulação de artigos, como salvar conteúdo em JSON, mover arquivos e gerar templates HTML.
-- **resto_funcoes.py**: Funções auxiliares para manipulação de artigos, como geração de identificadores e atualização de caminhos.
+### `newsroom/`
+- Sistema de publicação de artigos e gerenciamento de conteúdo.
+- **Subdiretórios**:
+  - `articles/`: Artigos publicados.
+  - `assets/`: Recursos estáticos como scripts e estilos.
+  - `images/`: Imagens utilizadas nos artigos.
+  - `newshub/`: Modelos e conteúdo gerado.
+- **Arquivos importantes**:
+  - `index.html`: Página inicial do sistema de publicação.
+  - `NEWSROOM.md`: Documentação do sistema.
 
----
-
-### `_backend_/repositorio/`
-Scripts utilitários para manutenção do repositório.
-
-- **create_dir.py**: Cria a estrutura de diretórios e arquivos necessários.
-- **ger_sitemap.py**: Gera um arquivo `sitemap.xml` para SEO.
-- **rename_links.py**: Corrige e ajusta links em arquivos HTML, CSS e JS.
-- **requirements.txt**: Lista de dependências do projeto.
-
----
-
-## Funcionalidades Principais
-
-1. **Manipulação de Artigos**:
-   - Criação e edição de artigos utilizando templates.
-   - Salvamento de artigos em formato JSON.
-   - Geração de arquivos HTML para publicação.
-
-2. **Manutenção do Repositório**:
-   - Criação de diretórios e arquivos necessários.
-   - Geração de `sitemap.xml` para SEO.
-   - Ajuste de links para diferentes ambientes (local, hospedagem, GitHub Pages).
-
-3. **Gerenciamento de Dados**:
-   - Manipulação de dados de disciplinas, avisos e eventos.
+### `teste/`
+- Scripts de teste e experimentação.
+- **Arquivos importantes**:
+  - `t2.py`: Script de teste.
+  - `__teste__.py`: Arquivo de experimentação.
 
 ---
 
-## Como Executar
+## Funcionalidades
 
-### Requisitos
-Certifique-se de ter as dependências instaladas. Use o arquivo `requirements.txt` para instalar:
-
-```bash
-pip install -r _backend_/repositorio/requirements.txt
-```
-
-### Scripts Principais
-
-- **Gerar Sitemap**:
-  ```bash
-  python _backend_/repositorio/ger_sitemap.py
-  ```
-
-- **Criar Estrutura de Diretórios**:
-  ```bash
-  python _backend_/repositorio/create_dir.py
-  ```
-
-- **Manipular Artigos**:
-  Execute os scripts na pasta `_backend_/newsroom/` para criar, editar ou mover artigos.
+- **Geração de Sitemap**: Criação de um arquivo `sitemap.xml` para organizar links do projeto.
+- **Manipulação de Dados Acadêmicos**: Scripts para processar e organizar informações sobre disciplinas.
+- **Publicação de Artigos**: Sistema integrado para criar e gerenciar artigos.
+- **Automação de Tarefas**: Scripts para atualização de dados e manutenção do sistema.
+- **Gerenciamento de Recursos**: Organização de imagens, scripts e estilos para publicações.
 
 ---
 
-## Contribuição
+## Como Utilizar
 
-1. Faça um fork do repositório.
-2. Crie uma branch para sua feature ou correção:
-   ```bash
-   git checkout -b minha-feature
-   ```
-3. Faça commit das suas alterações:
-   ```bash
-   git commit -m "Minha nova feature"
-   ```
-4. Envie para o repositório remoto:
-   ```bash
-   git push origin minha-feature
-   ```
-5. Abra um Pull Request.
+1. Certifique-se de que todas as dependências estão instaladas.
+2. Execute os scripts no diretório conforme necessário:
+   - Para gerar o sitemap: `python core/utils/ger_sitemap.py`.
+   - Para processar livros: `python core/books/functions.py`.
+   - Para publicar artigos: Utilize os recursos do diretório `newsroom/`.
 
 ---
 
-## Licença
+## Observações
 
-Este projeto está licenciado sob a [MIT License](LICENSE).
-
-## Referências
-- [github.com/copilot](https://www.github.com/copilot)
-
+O diretório `backend` é projetado para ser modular e extensível. Novos serviços, scripts e dados podem ser adicionados conforme as necessidades do projeto evoluem.
