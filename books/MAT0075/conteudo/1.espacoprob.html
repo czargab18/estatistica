@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>CALCULO DE PROBABILIDADE</title>
+<title>Espaço de Probabilidade – CALCULO DE PROBABILIDADE</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -20,46 +20,27 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-/* CSS for citations */
-div.csl-bib-body { }
-div.csl-entry {
-  clear: both;
-  margin-bottom: 0em;
-}
-.hanging-indent div.csl-entry {
-  margin-left:2em;
-  text-indent:-2em;
-}
-div.csl-left-margin {
-  min-width:2em;
-  float:left;
-}
-div.csl-right-inline {
-  margin-left:2em;
-  padding-left:1em;
-}
-div.csl-indent {
-  margin-left: 2em;
-}</style>
+</style>
 
 
-<script src="${QUARTO_BASE_DIR}/books/build/delete/site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="${QUARTO_BASE_DIR}/books/build/delete/site_libs/quarto-nav/headroom.min.js"></script>
-<script src="${QUARTO_BASE_DIR}/books/build/delete/site_libs/clipboard/clipboard.min.js"></script>
-<script src="${QUARTO_BASE_DIR}/books/build/delete/site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="${QUARTO_BASE_DIR}/books/build/delete/site_libs/quarto-search/fuse.min.js"></script>
-<script src="${QUARTO_BASE_DIR}/books/build/delete/site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="./">
-<link href="./conteudo/1.espacoprob.html" rel="next">
-<script src="${QUARTO_BASE_DIR}/books/build/delete/site_libs/quarto-html/quarto.js"></script>
-<script src="${QUARTO_BASE_DIR}/books/build/delete/site_libs/quarto-html/popper.min.js"></script>
-<script src="${QUARTO_BASE_DIR}/books/build/delete/site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="${QUARTO_BASE_DIR}/books/build/delete/site_libs/quarto-html/anchor.min.js"></script>
-<link href="${QUARTO_BASE_DIR}/books/build/delete/site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="${QUARTO_BASE_DIR}/books/build/delete/site_libs/quarto-html/quarto-syntax-highlighting-549806ee2085284f45b00abea8c6df48.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="${QUARTO_BASE_DIR}/books/build/delete/site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="${QUARTO_BASE_DIR}/books/build/delete/site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="${QUARTO_BASE_DIR}/books/build/delete/site_libs/bootstrap/bootstrap-8da5b4427184b79ecddefad3d342027e.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script src="../../delete/site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../delete/site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../delete/site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../delete/site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../delete/site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../delete/site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<link href="../conteudo/references.html" rel="next">
+<link href="../index.html" rel="prev">
+<script src="../../delete/site_libs/quarto-html/quarto.js"></script>
+<script src="../../delete/site_libs/quarto-html/popper.min.js"></script>
+<script src="../../delete/site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../delete/site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../delete/site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../delete/site_libs/quarto-html/quarto-syntax-highlighting-549806ee2085284f45b00abea8c6df48.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../delete/site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../delete/site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../delete/site_libs/bootstrap/bootstrap-8da5b4427184b79ecddefad3d342027e.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -87,6 +68,42 @@ div.csl-indent {
     "search-label": "Search"
   }
 }</script>
+<meta charset="utf-8">
+<meta content="Estatística" name="topic">
+<meta content="index,follow" name="robots">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<meta content="img-src 'self' https://www.estatistica.pro/; script-src 'self' https://www.estatistica.pro/ac/ https://www.estatistica.pro/sd/" http-equiv="Content-Security-Policy">
+<link href="../sd/images/favicons/estatistica.svg" rel="shortcut icon" type="image/x-icon">
+<link href="../ac/globalpattern/1/pt_BR/styles/globalpattern.css" rel="stylesheet">
+<link href="../ac/globalaside/1/pt_BR/styles/globalaside.css" rel="stylesheet">
+<link href="../ac/globalnavbar/1/pt_BR/styles/globalnavbar.css" rel="stylesheet">
+<link href="../ac/globalribbon/1/pt_BR/styles/globalribbon.css" rel="stylesheet">
+<link href="../ac/globaltipografia/1/pt_BR/style/globaltipografia.css" rel="stylesheet">
+<link href="../ac/globalmain/1/pt_BR/styles/globalmain.css" rel="stylesheet">
+<link href="../ac/globalnoticias/1/pt_BR/style/globalnoticias.css" rel="stylesheet">
+<link href="../ac/globalfooter/1/pt_BR/styles/globalfooter.css" rel="stylesheet">
+<script defer="" src="../ac/globalnoticias/1/pt_BR/scripts/globalnoticias.js"></script>
+<script defer="" src="../ac/globalpattern/1/pt_BR/scripts/globalpattern.js"></script>
+<script defer="" src="../ac/globalfooter/1/pt_BR/scripts/globalfooter.js"></script>
+<script defer="" src="../utils/libs/js/navbar.js"></script>
+<link href="../wss/fonts.css?families=SF+Pro,v3|SF+Pro+Icons,v3" media="all" rel="stylesheet" type="text/css">
+<link href="../ac/books/1/pt_BR/styles/bootstrap-icons.css" rel="stylesheet">
+<link href="../ac/books/1/pt_BR/styles/bootstrap.min.css" rel="stylesheet">
+<link href="../ac/books/1/pt_BR/styles/custombooks.css" rel="stylesheet">
+<link href="../ac/books/1/pt_BR/styles/homebooks.css" rel="stylesheet">
+<link href="../ac/books/1/pt_BR/styles/quarto-syntax-highlighting.css" rel="stylesheet">
+<link href="../ac/books/1/pt_BR/styles/tippy.css" rel="stylesheet">
+<script defer="" src="../ac/books/1/pt_BR/scripts/anchor.min.js"></script>
+<script defer="" src="../ac/books/1/pt_BR/scripts/autocomplete.umd.js"></script>
+<script defer="" src="../ac/books/1/pt_BR/scripts/bootstrap.min.js"></script>
+<script defer="" src="../ac/books/1/pt_BR/scripts/clipboard.min.js"></script>
+<script defer="" src="../ac/books/1/pt_BR/scripts/fuse.min.js"></script>
+<script defer="" src="../ac/books/1/pt_BR/scripts/headroom.min.js"></script>
+<script defer="" src="../ac/books/1/pt_BR/scripts/popper.min.js"></script>
+<script defer="" src="../ac/books/1/pt_BR/scripts/quarto-nav.js"></script>
+<script defer="" src="../ac/books/1/pt_BR/scripts/quarto-search.js"></script>
+<script defer="" src="../ac/books/1/pt_BR/scripts/quarto.js"></script>
+<script defer="" src="../ac/books/1/pt_BR/scripts/tippy.umd.min.js"></script>
 
 
 </head>
@@ -100,7 +117,7 @@ div.csl-indent {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./index.html"><span class="chapter-title">Capa</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../conteudo/1.espacoprob.html"><span class="chapter-title">Espaço de Probabilidade</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -115,7 +132,7 @@ div.csl-indent {
   <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
     <div class="pt-lg-2 mt-2 text-left sidebar-header">
     <div class="sidebar-title mb-0 py-0">
-      <a href="./">CALCULO DE PROBABILIDADE</a> 
+      <a href="../">CALCULO DE PROBABILIDADE</a> 
     </div>
       </div>
         <div class="mt-2 flex-shrink-0 align-items-center">
@@ -127,17 +144,17 @@ div.csl-indent {
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./index.html" class="sidebar-item-text sidebar-link active"><span class="chapter-title">Capa</span></a>
+  <a href="../index.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Capa</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./conteudo/1.espacoprob.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Espaço de Probabilidade</span></a>
+  <a href="../conteudo/1.espacoprob.html" class="sidebar-item-text sidebar-link active"><span class="chapter-title">Espaço de Probabilidade</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./conteudo/references.html" class="sidebar-item-text sidebar-link">
+  <a href="../conteudo/references.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">References</span></a>
   </div>
 </li>
@@ -148,56 +165,29 @@ div.csl-indent {
 <!-- margin-sidebar -->
     
 <!-- main -->
-<main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block"></header>
+<main class="content" id="quarto-document-content">
 
-
-
-
-<section id="capa" class="level1">
-<h1>Capa</h1>
-<p>Bibliografia a ser seguida:<br>
-<span class="citation" data-cites="rolla2025">(<a href="conteudo/references.html#ref-rolla2025" role="doc-biblioref">Rolla and Lima, n.d.</a>)</span><br>
-1. Espaços de Probabilidade<br>
-2. Probabilidade Condicional e Independência<br>
-3. Variáveis Aleatórias<br>
-4. Vetores Aleatórios<br>
-5. Esperança Matemática<br>
-6. Momentos e Desigualdades<br>
-7. Convergência de Variáveis Aleatórias<br>
-8. Lei dos Grandes Números<br>
-9. Teorema do Limite Central<br>
-10. Transformadas<br>
-11. Esperança Condicional<br>
-12. Martingales<br>
-13. Leis 0-1 e Séries Aleatórias<br>
-14. Teoria Ergódica<br>
-15. Grandes Desvios<br>
-16. Lista de Figuras<br>
-17. Referências</p>
-<p><span class="citation" data-cites="baratela2025">(<a href="conteudo/references.html#ref-baratela2025" role="doc-biblioref">Silva Baratela Martins Neto 2025</a>)</span><br>
-1. Espaço de Probabilidade<br>
-2. Condicionamento e Independência<br>
-3. Análise Combinatória (noções)<br>
-4. Variável Aleatória Discreta<br>
-5. Vetor Aleatório Discreto<br>
-6. Esperança e Momentos de uma Variável Aleatória Discreta<br>
-7. Função Geratriz de Probabilidade e de Momentos de Variável Aleatória Contínua<br>
-8. Vetor Aleatório Contínuo<br>
-9. Esperança e Momentos de uma Variável Aleatória Contínua<br>
-10. Função Geratriz de Probabilidade e Momentos<br>
-11. Leis Fraca e Forte dos Grandes Números<br>
-12. Teorema do Limite Central</p>
-
-
-<div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list" style="display: none">
-<div id="ref-rolla2025" class="csl-entry" role="listitem">
-Rolla, Leonardo T., and Bernardo N. B. de Lima. n.d. <span>“Probabilidade.”</span> <a href="https://www.ime.usp.br/~leorolla/probabilidade/" class="uri">https://www.ime.usp.br/~leorolla/probabilidade/</a>.
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title"><span class="chapter-title">Espaço de Probabilidade</span></h1>
 </div>
-<div id="ref-baratela2025" class="csl-entry" role="listitem">
-Silva Baratela Martins Neto, Daniele da. 2025. <span>“Cálculo de Probabilidade 1 - Plano de Ensino 2025-1, Turma 2.”</span>
-</div>
-</div>
-</section>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+
+
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -619,10 +609,13 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
+      <a href="../index.html" class="pagination-link" aria-label="Capa">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-title">Capa</span></span>
+      </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./conteudo/1.espacoprob.html" class="pagination-link" aria-label="Espaço de Probabilidade">
-        <span class="nav-page-text"><span class="chapter-title">Espaço de Probabilidade</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="../conteudo/references.html" class="pagination-link" aria-label="References">
+        <span class="nav-page-text">References</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
