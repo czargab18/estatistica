@@ -2,11 +2,11 @@
   {
     "objectID": "index.html",
     "href": "index.html",
-    "title": "Estatística",
+    "title": "A Arte da Estatística",
     "section": "",
-    "text": "Estatística\nEste projeto é muitas coisas e nada ao mesmo tempo. Algumas coisas são apenas para desenvolver habilidades, como o design do projeto é para a criatividade ou os books para desenvolver a escrita. Outras para criar problemas e suas devidas soluções, mesmo que tenha que ter n soluções para cada problema.\nBuscarei nos tempos livres da graduação dedicar-me ao projeto.",
+    "text": "A Arte da Estatística\nO nome desta série é inspirado na famosa coleção de Donald Knuth chamada “The Art of Computer Programming”, veja (tarara, xxx).\nEsta série ou coleção será construída com base em minhas notas e exercícios de aulas.",
     "crumbs": [
-      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Estatística</span>"
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>A Arte da Estatística</span>"
     ]
   },
   {
@@ -42,31 +42,31 @@
   {
     "objectID": "index.html#processo-de-desenvolvimento",
     "href": "index.html#processo-de-desenvolvimento",
-    "title": "Estatística",
+    "title": "A Arte da Estatística",
     "section": "Processo de desenvolvimento",
     "text": "Processo de desenvolvimento\nSeguirei o processo normal de desenvolvimento:\n\nDisponibilizar o que já existe, mesmo que não agregue valor por falta de clareza.\nMelhorar o conteúdo, mesmo que necessite mudar a essência.\nAdicionar exemplos e exercícios.\nRepetir os processoas anteriores, não para chegar na Magnum Opus mas em algo aceitavél para consumo.\nFinalizar tudo e “entregar”, assim que possível.",
     "crumbs": [
-      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Estatística</span>"
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>A Arte da Estatística</span>"
     ]
   },
   {
     "objectID": "index.html#futuro-do-projeto",
     "href": "index.html#futuro-do-projeto",
-    "title": "Estatística",
+    "title": "A Arte da Estatística",
     "section": "Futuro do Projeto",
     "text": "Futuro do Projeto\nBom, o futuro nunca é certo! É apenas um monte de eventos presentes que podem determinar o curso de nossas vidas.\nPara alguns, a ansiedade é ponto fraco. Meu caso! Talvez eu me empolgue neste projeto ou o jogue no eterno vázio chamado esquecimento.",
     "crumbs": [
-      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Estatística</span>"
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>A Arte da Estatística</span>"
     ]
   },
   {
     "objectID": "index.html#estrutura-das-notas",
     "href": "index.html#estrutura-das-notas",
-    "title": "Estatística",
+    "title": "A Arte da Estatística",
     "section": "Estrutura das notas",
     "text": "Estrutura das notas\nobs: Demonstrar tudo que for possível.\n\n“Storytteling with data”: se não sou eu que tenho controle, deve dar a maior quantidade de informação e o leitor escolhe o que consumir.\n\n\nTexto Introdutório: apresentação do conteúdo e algumas explicações.\nExemplos e raciocínio para resolver\n\nFácil\nmédio\ndifícil\n\nConstrução da Demonstração (Lemas, etc…)\nDesenvolvimento da demonstração (definição final).\nUsando a demonstração [4.] para resolver os problemas de [2.]\nMais exemplos pela definição\nExercícios\n\nApenas cálcular: botar na receita [4.] e resolver.\nProblemas teóricos (demonstrar algo)\nProblemas de lógica (fazer alguma manipulação para resolver o problema usando a definição)\n\n\n\nAlgumas sitações\n\n“Andando no escuro para achar uma tomada” por Cesar Gabriel\n“Se é fácil para encontrar é rápido para consumir” por Cesar Gabriel",
     "crumbs": [
-      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Estatística</span>"
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>A Arte da Estatística</span>"
     ]
   },
   {
@@ -74,9 +74,29 @@
     "href": "references.html",
     "title": "References",
     "section": "",
-    "text": "Akita, F. n.d. “Motivação: O Diário de Henry Jones.” https://www.youtube.com/watch?v=ii5Q2fCl8C0&pp=ygURaGVucnkgam9uZXMgYWtpdGE%3D.",
+    "text": "Noether. n.d. “Motivação: O Diário de Henry Jones.” https://www.youtube.com/watch?v=ii5Q2fCl8C0&pp=ygURaGVucnkgam9uZXMgYWtpdGE%3D.",
     "crumbs": [
       "References"
+    ]
+  },
+  {
+    "objectID": "index.html#algumas-perguntas-que-acredito-serem-úteis.",
+    "href": "index.html#algumas-perguntas-que-acredito-serem-úteis.",
+    "title": "A Arte da Estatística",
+    "section": "Algumas perguntas que acredito serem úteis.",
+    "text": "Algumas perguntas que acredito serem úteis.\n\nO que é estatística?\nEm muitos bibliográfias a a definição parar a questão é dada da seguinte maneira: “ciencia tararara …” (ALGUEM, XXXXX)\nEstá definição busca ser a mais abrangente possível para a área. A definição anterior é uma tática boa para muitos cenários. A definição a seguir é que acho mais adequada para responder a questão.\n“A estatística trata de ideas e métodos que visam a aperfeiçoar a obtenção de conclusões a partir das informações numéricas, na presença da incerteza” (Noether, n.d.).\nUsarei a definição de Noether para apresentar a que eu acredito que seja a melhor para este projeto. O ponto central é que a estatistica é usada para tirar conclusões mais acertivas com base em um conjunto de informações. A defnição é a seguinte: “De forma geral, a Estatística é uma ciência que busca maximizar o poder de escolha sobre um determinado assuntode em estudo” .\nDefenderei a definição com seguinte exemplo: Um Estatístico é contratado para trabalhar em uma empresas especializada na venda de 2 produtos químicos. Após uma analise minucioso, ele conclui que produto A é 30% melhor que o B mas é 65% mais caro. A decisão de comercializar o produto será da empresa. Seus estudos ajudarão na decisão. Ele melhorou as opções de escolha. Em outras palavras, ele maximixou o poder de escolha da empresa com base em seus estudos.\nPor que estatistica? Primeiro, devemos pensar na essência da estatística. Uma ciência que prefere ter uma informação, com certo grau de certeza de sucesso ou fracasso, para tomar uma decisão. Por uma leve reflexão, podemos perceber que essa mentalidade está bastante difundida em muitas áreas do conhecimento humano. Talvez seja por isso que o homem não consiga atingir a perfeição, apenas ter a um vislumbre. Bom, para muitos a Matemática é considerada a essencia da vida. Se isso é verdadeiro, me arrisco a dizer que a Estatística seria uma transformação (função) que pega essa “essência da vida” e a transforma em “outra mais evoluida”. Uma transformação que produz bastantes erros.\nDe forma bem descarada, darei um motivo para doutrina-lo a ter esta mentalidade. Suponha um carro qualquer recém lançado e dito o mais seguro possível. Este carro possui um grande numéro de erros embutinos nele por uma escolha do fabricante, para lucrar sem tomar processos. Na Estatística há uma área chamada “Controle Estatístico de Qualidade”. Muito usado na industria automotiva para a produção de peças que têm margens de erros mas são tão pequenas que podemos usa-las. Como dito anteriormente, é uma escolha do fabricante. É muito difícil e custoso produzir algo com muita perfeição. Escolhe-se vender o produto com essa chance de falha pequena por acreditar-se que será muito provável o acidente. Essa é a essência jovem padawan! O problema talvez seja o acumulo de pequenos erros em cada peça do carro. Não se preocupe! Isso concerteza talbém é controlado. Mas por precaução, use o cinto e respeite as Leis de Transito para ter mais segurança!",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>A Arte da Estatística</span>"
+    ]
+  },
+  {
+    "objectID": "index.html#reescrever.",
+    "href": "index.html#reescrever.",
+    "title": "A Arte da Estatística",
+    "section": "reescrever….",
+    "text": "reescrever….\n. Por exemplo. Um pesquisador pode estar estudando sobre a eficacia de um produto A sobre outro B. Pode chegar a conclusão que o primeiro é 30% melhor. A decisão de comercializar o produto não será do pesquisador. Afinal, suponhamos que A também seja mais caro para ser produzido. Essa decisão será do pesquisador? Não, ele pode até fazer outro estudo sobre a viabilidade da comercialização do produto mas a decisão ainda não será tomada por ele. Se essa for sua tarefa, concerteza está trabalhando por 2 e recebendo por um!\n\nPor que estatistica?\nPrimeiro, devemos pensar na essência da estatística. Uma ciência que prefere ter uma informação, com certo grau de certeza de sucesso ou fracasso, para tomar uma decisão. Por uma leve reflexão, podemos perceber que essa mentalidade está bastante difundida em muitas áreas do conhecimento humano. Talvez seja por isso que o homem não consiga atingir a perfeição, apenas ter a um vislumbre. Bom, para muitos a Matemática é considerada a essencia da vida. Se isso é verdadeiro, me arrisco a dizer que a Estatística seria uma transformação (função) que pega essa “essência da vida” e a transforma em “outra mais evoluida”. Uma transformação que produz bastantes erros.\nDe forma bem descarada, darei um motivo para doutrina-lo a ter esta mentalidade. Suponha um carro qualquer recém lançado e dito o mais seguro possível. Este carro possui um grande numéro de erros embutinos nele por uma escolha do fabricante, para lucrar sem tomar processos. Na Estatística há uma área chamada “Controle Estatístico de Qualidade”. Muito usado na industria automotiva para a produção de peças que têm margens de erros mas são tão pequenas que podemos usa-las. Como dito anteriormente, é uma escolha do fabricante. É muito difícil e custoso produzir algo com muita perfeição. Escolhe-se vender o produto com essa chance de falha pequena por acreditar-se que será muito provável o acidente. Essa é a essência jovem padawan! O problema talvez seja o acumulo de pequenos erros em cada peça do carro. Não se preocupe! Isso concerteza talbém é controlado. Mas por precaução, use o cinto e respeite as Leis de Transito para ter mais segurança!",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>A Arte da Estatística</span>"
     ]
   }
 ]

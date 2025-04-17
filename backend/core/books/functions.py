@@ -346,8 +346,8 @@ def includeinbody(pathbooks: str = "./books/", tipoarquivo: str = ".html", inclu
 
     return arquivos_processados
 
-# if __name__ == '__main__':
-#     books = listabooks(path="./books")
-#     corrlinksheadbooks(books, base_path="./books")
-#     includeinbody()
-#     print("-"*13, "Links corrigidos com sucesso!", "-"*13,sep=" ")
+if __name__ == '__main__':
+    books = listabooks(path="./books")
+    corrlinksheadbooks(books, base_path="./books")
+    includeinbody()
+    print("-"*13, "Links corrigidos com sucesso!", "-"*13,sep=" ")

@@ -6,24 +6,24 @@ Esta série ou coleção será construída com base em minhas notas e exercício
 ## Algumas perguntas que acredito serem úteis.
 
 
-1.  O que é estatística?
-Em muitos bibliográfias a resposta segue o padrão "[...] ... [...]". Está definição busca ser a mais abrangente possível para está área, o que é uma tática boa para muitos cenários.
+- [O que é estatística?]{.headline-question}
 
-Acredito que a definição de Noether em seu livro .... é melhor.
+    Em muitos bibliográfias a a definição parar a questão é dada da seguinte maneira:
+    ["ciencia tararara ..." (ALGUEM, XXXXX)]{.citation-long}
 
-Usarei como base a definição de Noether [...]
-e definirem estatistica puramente como 
+    Está definição busca ser a mais abrangente possível para a área. A definição anterior é uma tática boa para muitos cenários. A definição a seguir é que acho mais adequada para responder a questão. 
 
-.....
+    ["A estatística trata de ideas e métodos que visam a aperfeiçoar a obtenção de conclusões a partir das informações numéricas, na presença da incerteza" [@noethernonparametric].]{.citation-long}
 
+    Usarei a definição de Noether para apresentar a que eu acredito que seja a melhor para este projeto.
+    O ponto central é que a estatistica é usada para tirar conclusões mais acertivas com base em um conjunto de informações. 
+    A defnição é a seguinte: ["De forma geral, a Estatística é uma ciência que busca maximizar o poder de escolha sobre um determinado assuntode em estudo"]{.citation-short} .
 
+    Defenderei a definição com seguinte exemplo: Um Estatístico é contratado para trabalhar em uma empresas especializada na venda de 2 produtos químicos. Após uma analise minucioso, ele conclui que produto A é 30% melhor que o B mas é 65% mais caro. A decisão de comercializar o produto será da empresa. Seus estudos ajudarão na decisão. Ele melhorou as opções de escolha. Em outras palavras, ele maximixou o poder de escolha da empresa com base em seus estudos.
 
+# reescrever
 
-## reescrever....
-    De forma geral, a Estatística é uma ciência que busca maximizar o poder de escolha sobre algum assunto. Bem diferente do que está escrito em muitos livros. Bom, meu ponto é que a estatistica é usada sempre para tirar conclusões mais acertivas com base em um conjunto menor de informações. Por exemplo. Um pesquisador pode estar estudando sobre a eficacia de um produto A sobre outro B. Pode chegar a conclusão que o primeiro é 30% melhor. A decisão de comercializar o produto não será do pesquisador. Afinal, suponhamos que A também seja mais caro para ser produzido. Essa decisão será do pesquisador? Não, ele pode até fazer outro estudo sobre a viabilidade da comercialização do produto mas a decisão ainda não será tomada por ele. Se essa for sua tarefa, concerteza está trabalhando por 2 e recebendo por um!
-
-2.  Por que estatistica?
-
+-  [Por que estatistica?]{.headline-question}
     Primeiro, devemos pensar na essência da estatística. Uma ciência que prefere ter uma informação, com certo grau de certeza de sucesso ou fracasso, para tomar uma decisão. Por uma leve reflexão, podemos perceber que essa mentalidade está bastante difundida em muitas áreas do conhecimento humano. Talvez seja por isso que o homem não consiga atingir a perfeição, apenas ter a um vislumbre. Bom, para muitos a Matemática é considerada a essencia da vida. Se isso é verdadeiro, me arrisco a dizer que a Estatística seria uma transformação (função) que pega essa "essência da vida" e a transforma em "outra mais evoluida". Uma transformação que produz bastantes erros.
 
     De forma bem descarada, darei um motivo para doutrina-lo a ter esta mentalidade. Suponha um carro qualquer recém lançado e dito o mais seguro possível. Este carro possui um grande numéro de erros embutinos nele por uma escolha do fabricante, para lucrar sem tomar processos. Na Estatística há uma área chamada "Controle Estatístico de Qualidade". Muito usado na industria automotiva para a produção de peças que têm margens de erros mas são tão pequenas que podemos usa-las. Como dito anteriormente, é uma escolha do fabricante. É muito difícil e custoso produzir algo com muita perfeição. Escolhe-se vender o produto com essa chance de falha pequena por acreditar-se que será muito provável o acidente. Essa é a essência jovem padawan! O problema talvez seja o acumulo de pequenos erros em cada peça do carro. Não se preocupe! Isso concerteza talbém é controlado. Mas por precaução, use o cinto e respeite as Leis de Transito para ter mais segurança!
