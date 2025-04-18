@@ -1,0 +1,96 @@
+# Exercícios da Lista 1 - Tópico 1
+
+UNB - CÁLCULO DE PROBABILIDADE I\
+Profª Daniele Baratela
+
+**LISTA DE EXERCÍCIOS 1**
+
+1.  Seja (Ω, F, 𝛲) um espaço de probabilidade, onde 𝒜 é a σ-álgebra de todos os subconjuntos de Ω e P uma medida de probabilidade que associa a probabilidade p \> 0 a cada conjunto de um ponto de Ω.
+    1.  Mostre que Ω deve ter um número finito de pontos. Sugestão: mostre que Ω não pode ter mais de p-1 pontos.
+
+        [Resposta inicial (estupida)]{.reposta-inicial .resp-estupida}
+            Algumas definições de [@baratela2025] e [@leorolla2025]
+                - P(\vazio) = 0
+                - P(\omega) = 1
+                - P(A) >= 0
+                - P(\uniao_i A_i) = \sum_i {P(A_i)}
+            Para uma  F = {\vazio, A_i, \omega}
+            Temos que 0 <= P(A) <= 1
+            Para P( \union A_i) = \sum P(A_i) 
+
+
+    2.  Mostre que se n é o número de pontos em Ω, então p deve ser igual a n-1. Nos exercícios de 2 a 6, descreva primeiramente um espaço de probabilidade adequado ao experimento em questão.
+
+2.  Pode-se construir um modelo para um “spinner” aleatório tomando um espaço uniforme de probabilidade sobre a circunferência de um círculo de raio 1, de modo que a probabilidade de que o ponteiro do “spinner” pare sobre um arco de comprimento s é 𝑠/2𝜋. Suponha que o círculo esteja dividido em 37 zonas numeradas de 1 a 37. Determine a probabilidade de que o ponteiro pare sobre uma zona par.
+
+3.  Considere um ponto escolhido ao acaso sobre um quadrado unitário. Determine a probabilidade de que o ponto esteja no triângulo limitado por x = 0, y = 0 e x + y = 1.
+
+4.  Seja P um ponto escolhido ao acaso sobre um círculo unitário. Determine a probabilidade de que P esteja no setor angular de 0 a π/4 radianos.
+
+5.  Uma caixa contém 10 bolas numeradas de 1 a 10. Extrai-se ao acaso uma bola da caixa. Determine a probabilidade de que o número da bola seja 3, 4 ou 5.
+
+6.  Suponha que se lance um par de dados e que os 36 resultados possíveis são igualmente prováveis. Determine a probabilidade de que a soma dos números observados seja par.
+
+7.  Suponha que A e B sejam eventos tais que: 𝑃(𝐴) = 2/5, 𝑃(𝐵) = 2/5 e 𝑃(𝐴 ∪ 𝐵) = 1/2. Determine 𝑃(𝐴 ∩ 𝐵).
+
+8.  Se 𝑃(𝐴) = 1/3, 𝑃(𝐴 ∪ 𝐵) = 1/2 e 𝑃(𝐴 ∩ 𝐵) = 1/4, determine 𝑃(𝐵).
+
+9.  Suponha que se escolha ao acaso um ponto sobre um quadrado unitário. Seja A o evento de que o ponto está no triângulo limitado por y = 0, x = 1 e x = y, e B o evento de que o ponto está no retângulo com vértices em (0,0), (1,0), (1, 1/2) e (0,1/2). Determine 𝑃(𝐴 ∪ 𝐵) e 𝑃(𝐴 ∩ 𝐵).
+
+10.  Suponha que temos quatro cofres, cada um com 2 gavetas. Os cofres 1 e 2 têm uma moeda de ouro em uma gaveta e uma de prata na outra. O cofre 3 tem duas moedas de ouro e o cofre 4 tem duas de prata. Escolhe-se um cofre ao acaso, abre-se uma gaveta e encontra-se uma moeda de ouro. Determine a probabilidade de que a outra gaveta contenha:
+    1.  Uma moeda de prata;
+    2.  Uma moeda de ouro.
+
+11.  Uma caixa contém 10 bolas das quais 6 são pretas e 4 são brancas. Remove-se três bolas sem observar suas cores. Determine a probabilidade de que uma quarta bola removida da caixa seja branca. Assuma que as 10 bolas são igualmente prováveis de serem removidas da caixa.
+
+12.  Para uma caixa de mesma composição que a do exercício 11, determine a probabilidade de que todas as 3 primeiras bolas removidas sejam pretas, sabendo-se que pelo menos uma delas é preta.
+
+13.  Nesta questão, descreva os eventos envolvidos e use a teoria para resolvê-la. Suponha que uma fábrica tem duas máquinas A e B, responsáveis, respectivamente, por 60% e 40% da produção total. A máquina A produz 3% de itens defeituosos, enquanto a máquina B produz 5% de itens defeituosos. Determine a probabilidade de que um dado item defeituoso foi produzido pela máquina B.
+
+14.  Nesta questão, descreva os eventos envolvidos e use a teoria para resolvê-la. Um estudante se submete a um exame de múltipla escolha no qual cada questão tem 5 respostas possíveis das quais exatamente uma é correta. O estudante seleciona a resposta correta se ele sabe a resposta. Caso contrário, ele seleciona ao acaso uma resposta entre as 5 possíveis. Suponha que o estudante saiba a resposta de 70% das questões.
+    1.  Qual a probabilidade de que o estudante escolha a resposta correta para uma dada questão?
+    2.  Se o estudante escolhe a resposta correta para uma dada questão, qual a probabilidade de que ele sabia a resposta?
+
+15.  Suponha que se escolha ao acaso um ponto sobre um quadrado unitário. Sabendo-se que o ponto está no retângulo limitado por y = 0, y = 1 e x = 0 e x = 1/2, qual é a probabilidade de que o ponto esteja no triângulo limitado por y = 0, x = 1/2 e x + y = 1?
+
+16.  Suponha que uma caixa contenha r bolas vermelhas e b bolas pretas. Extrai-se ao acaso uma bola da caixa e a seguir extrai-se, também ao acaso, uma segunda bola dentre as que ficaram na caixa. Determine a probabilidade de que:
+    1.  Ambas as bolas sejam vermelhas;
+    2.  A primeira bola seja vermelha e a segunda preta;
+    3.  A primeira bola seja preta e a segunda vermelha;
+    4.  Ambas as bolas sejam pretas.
+
+17.  Nesta questão, descreva os eventos envolvidos e use a teoria para resolvê-la. Uma caixa contém 10 bolas vermelhas e 5 pretas. Extrai-se uma bola da caixa. Se ela é vermelha, ela é recolocada na caixa. Se é preta, além de recolocá-la na caixa, adiciona-se duas bolas pretas à caixa. Determine a probabilidade de que uma segunda bola extraída da caixa seja:
+    1.  Vermelha;
+    2.  Preta.
+
+18.  Extrai-se duas bolas, com reposição da primeira, de uma caixa contendo 3 bolas brancas e 2 bolas pretas.
+    1.  Construa um espaço amostral com pontos igualmente prováveis para este experimento.
+    2.  Determine a probabilidade de que as bolas extraídas sejam da mesma cor.
+    3.  Determine a probabilidade de que, pelo menos, uma das bolas extraídas seja branca.
+
+19.  Resolva o exercício 18, caso a primeira bola não seja reposta na caixa.
+
+20.  Nesta questão, descreva os eventos envolvidos e use a teoria para resolvê-la. Uma caixa contém 3 bolas brancas e 2 bolas pretas. Selecionam-se duas bolas sem reposição.
+    1.  Calcule a probabilidade de que a segunda bola seja preta, dado que a primeira é preta.
+    2.  Calcule a probabilidade de que a segunda bola seja da mesma cor da primeira.
+    3.  Calcule a probabilidade de que a primeira bola seja branca, dado que a segunda é branca.
+
+21.  Nesta questão, descreva os eventos envolvidos e use a teoria para resolvê-la. Suponha que existisse um teste para câncer com probabilidade de que 90% das pessoas com câncer e 5% das pessoas sem câncer reagem positivamente. Admita que 1% dos pacientes de um hospital tem câncer. Qual a probabilidade de que um paciente escolhido ao acaso, que reage positivamente a esse teste, realmente tenha câncer?
+
+22.  Suponha que se lança três moedas idênticas e perfeitamente equilibradas. Seja Ai o evento de observar cara na i-ésima moeda. Mostre que os eventos A1, A2 e A3 são mutuamente independentes.
+
+23.  Suponha que as seis faces de um dado têm igual probabilidade de ocorrência e que sucessivos lançamentos do dado são independentes. Construa um espaço de probabilidade para o experimento composto de três lançamentos do dado.
+
+24.  Suponha que A, B e C são eventos mutuamente independentes e 𝑃(𝐴 ∩ 𝐵) ≠ 0. Mostre que 𝑃(𝐶|𝐴 ∩ 𝐵) = 𝑃(𝐶).
+
+25.  Experiência mostra que 20% das pessoas que fazem reservas de mesa num certo restaurante deixam de comparecer. Se o restaurante tem 50 mesas e aceita 52 reservas, qual a probabilidade de que seja capaz de acomodar todos os fregueses?
+
+26.  Um certo componente de um motor de foguete falha 5% das vezes quando o motor é acionado. Para obter maior confiabilidade no funcionamento do motor, usa-se n componentes em paralelo, de maneira que o motor falha somente se todos os componentes falharem. Suponha que as falhas dos componentes sejam independentes uma das outras. Qual é o menor valor de n que pode ser usado para garantir que o motor funcione 99% das vezes?
+
+27.  Nesta questão, descreva os eventos envolvidos e use a teoria para resolvê-la. Existem 4 reis num baralho de 52 cartas. Extrai-se uma carta do baralho, registra-se o seu valor e a seguir repõe-se a carta extraída. Este procedimento é repetido 4 vezes. Determine a probabilidade de que existam exatamente 2 reis entre as cartas selecionadas, sabendo-se que entre elas existe pelo menos um rei.
+
+28.  Mostre que se A, B e C são eventos tais que 𝑃(𝐴 ∩ 𝐵 ∩ 𝐶) ≠ 0 e 𝑃(𝐶|𝐴 ∩ 𝐵) = 𝑃(𝐶|𝐵), então 𝑃(𝐴|𝐵 ∩ 𝐶) = 𝑃(𝐴|𝐵).
+
+29.  Um homem dispara 12 tiros independentes num alvo. Qual a probabilidade de que ele atinja o alvo pelo menos uma vez, se tem probabilidade 9/10 de atingir o alvo em qualquer tiro?
+
+30.  No Exercício 29 qual a probabilidade de que o alvo seja atingido pelo menos duas vezes, sabendo-se que o mesmo foi atingido pelo menos uma vez?

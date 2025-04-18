@@ -3,25 +3,24 @@ project:
   type: book
   output-dir: "./../../MAT0075"
   lib-dir: "./../delete/site_libs"
-  post-render: "./../include/post-render.py"
+#  post-render: "./../include/post-render.py"
   preview:
     port: 4200
     browser: false
 
 number-sections: false
+bibliography: postextuais/references.bib
 
 book:
   chapters:
     - index.qmd
-    - conteudo/1.espacoprob.qmd
 
-    # - part: conteudo/1.espacoprob.qmd
-    #   # chapters:
-    #   #   - conteudo/1.1.subcaptulos.qmd
+    - part: "Espaço de Probabilidade"
+      chapters:
+        - textuais/topico1.qmd
+        - exercicios/topico1.qmd
 
-    - conteudo/references.qmd
-
-bibliography: conteudo/references.bib
+    - postextuais/references.qmd
 
 format:
   html:

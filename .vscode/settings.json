@@ -10,7 +10,7 @@
     "**/Thumbs.db": true,
     "**/.quarto/": true,
     "**/*/.gitignore/": false,
-    "**/delete": true,
+    "**/**/delete": true,
     "**/*/index_files/": true,
     "**/site_libs": true,
     "**/*/*/ac/": true,
