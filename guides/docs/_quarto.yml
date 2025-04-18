@@ -1,0 +1,25 @@
+project: 
+  type: book
+  output-dir: "./../"
+  preview:
+    watch-inputs: true
+    timeout: 1
+    browser: false
+    port: 4200
+
+number-sections: false
+book:
+  chapters:
+    - index.qmd # README.qmd
+    - part: "Guides"
+      chapters:
+        - VENV.qmd
+        - JOIN_REPO.qmd
+        - NEWSROOM.qmd
+        - PRETTIER.qmd
+        - PATTERNS.qmd
+
+format: 
+  html:
+    include-in-header: "include-in-head"
+    sidebar: true

@@ -1,0 +1,15 @@
+<meta charset="utf-8" />
+<meta content="Estatística" name="topic" />
+<meta content="index,follow" name="robots" />
+<meta content="width=device-width, initial-scale=1.0" name="viewport" />
+<meta
+  content="img-src 'self' https://www.estatistica.pro/; script-src 'self' https://www.estatistica.pro/ac/ https://www.estatistica.pro/sd/"
+  http-equiv="Content-Security-Policy" />
+<link href="/sd/images/favicons/estatistica.svg" rel="shortcut icon" type="image/x-icon" />
+<link href="/wss/fonts.css?families=SF+Pro,v3|SF+Pro+Icons,v3" media="all" rel="stylesheet" type="text/css" />
+<link rel="stylesheet" href="/ac/markdown/1/pt_BR/style/markdown.css">
+<link rel="stylesheet" href="/ac/markdown/1/pt_BR/style/sindresorhus.css">
+<link rel="stylesheet" href="/ac/markdown/1/pt_BR/style/markdownlight.css">
+<link rel="stylesheet" href="/ac/markdown/1/pt_BR/style/markdowndark.css">
+<script src="/ac/markdown/1/pt_BR/scripts/mathjax3.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@4.0.0-beta.7/tex-chtml.js"></script>
