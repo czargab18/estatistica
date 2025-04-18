@@ -10,8 +10,8 @@ import re
  * - corrigir links do search.json de cada book_html.
  * - criar e deletar a lista dos books disponíveis no repositório.
  * - Algumas funções:
- *      - read: Lê o conteúdo de um arquivo no caminho especificado.
- *      - escrever: Escreve o conteúdo em um arquivo no caminho especificado.
+ *      - [x] read: Lê o conteúdo de um arquivo no caminho especificado.
+ *      - [x]  escrever: Sobrescreve o conteúdo em um arquivo no caminho especificado.
  *      - tempadrao: Compara se path tem o padrão informado
  *      - caminho: Retorna o caminho absoluto diretório ou subdiretórios.
  *      - corigirlinks: Corrige os links no head dos arquivos book_html.
@@ -30,6 +30,7 @@ CAMINHOS = {
     "dir_include": os.path.normpath("./books/build/include/"),
     "lista_books": os.path.normpath("./backend/data/books/books.json"),
 }
+
 
 def ler(path: str = None):
     """
@@ -78,14 +79,8 @@ def escrever(path, conteudo):
     -------
     None
     """
-    with open(path, "w", encoding="utf-8") as file: 
+    with open(path, "w", encoding="utf-8") as file:
         file.write(conteudo)
         return True
-    
-if __name__ == "__main__":
-    for key, value in CAMINHOS.items():
-        if key == "lista_books":
-            value = os.path.join("./", value.replace("\\", "/"))
-            print(escrever(path=value, conteudo=ler(path=value)))
 
-    print("Fim da execução do script!")
+
