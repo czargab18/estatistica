@@ -12,8 +12,10 @@
     "**/*/.gitignore/": false,
     "**/delete": true,
     "**/*/index_files/": true,
+    "**/site_libs": true,
     "**/*/*/ac/": true,
-    "**/*/*/site_libs": true,
+    "**/*/**/.gitignore": true,
+    "**/*.quarto_ipynb": true,
     "**/docs/ac/": false,
     "**/docs/ac/books_libs": false
   },
@@ -25,7 +27,5 @@
   "terminal.integrated.env.windows": {
     "PYTHONIOENCODING": "utf-8"
   },
-  // "terminal.integrated.cwd": "c:/Users/cesargabrielphd/Documents/github/books/",
-  // "quarto.path": "c:/Users/cesargabrielphd/AppData/Local/Programs/Quarto/bin/",
   "terminal.integrated.cwd": "${workspaceFolder}",
 }
