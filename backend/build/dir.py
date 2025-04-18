@@ -1,47 +1,52 @@
 import os
+import core
 
-
-def createdir(structure: list = None):
-    for path in structure:
-        dir_path = os.path.dirname(path)
-        os.makedirs(dir_path, existindo=True)
-        with open(path, "w") as file: 
-            pass
-
-# Executar a função
-# createdir()
-
-def listdir(caminho: str = "./", output_file: str = None):
+def listdir(folder: str = None, save: str = None):
     """
-    Lista todos os arquivos e diretórios em um caminho especificado e salva a estrutura em um arquivo, se fornecido.
+    Lista todos os diretórios e arquivos na pasta especificada, retornando caminhos completos.
 
-    :param caminho: Caminho do diretório a ser listado.
-    :param output_file: Caminho do arquivo de saída para salvar a estrutura do diretório.
+    :param folder: Caminho do diretório a ser listado.
+    :param save: Caminho do arquivo de saída para salvar a estrutura do diretório.
+    :return: Lista com a estrutura do diretório no formato completo.
     """
-    try:
-        # Verifica se o caminho existe
-        if not os.path.exists(caminho):
-            raise FileNotFoundError(f"O caminho '{caminho}' não existe.")
+    if not folder:
+        raise ValueError("O parâmetro 'folder' precisa ser especificado.")
 
-        # Abre o arquivo de saída, se especificado
-        with open(output_file, 'w', encoding='utf-8') if output_file else None as f:
-            # Lista todos os arquivos e diretórios
-            for dirpath, dirnames, filenames in os.walk(caminho):
-                level = dirpath.replace(caminho, '').count(os.sep)
-                indent = '    ' * level
-                dir_line = f"{indent}{os.path.basename(dirpath)}/"
-                print(dir_line)
-                if f:
-                    f.write(dir_line + "\n")
-                sub_indent = '    ' * (level + 1)
-                for filename in filenames:
-                    file_line = f"{sub_indent}{filename}"
-                    print(file_line)
-                    if f:
-                        f.write(file_line + "\n")
+    structure = []
 
-    except Exception as e:
-        print(f"Erro: {e}")
+    # Percorre os arquivos e diretórios
+    for root, dirs, files in os.walk(folder):
+        for direrc in dirs:
+            structure.append(os.path.join(root, direrc).replace("\\", "/"))
+        for file in files:
+            structure.append(os.path.join(root, file).replace("\\", "/"))
+
+    # Salva a estrutura em um arquivo, se especificado
+    if save:
+        with open(save, 'w', encoding='utf-8') as file:
+            file.write("\n".join(structure))
+
+    return structure
+
+if __name__ == "__main__":
+    # Corrigido para criar diretórios e arquivos separadamente
+    paths = [
+        "test/dir.txt",  # Arquivo
+        "test/dir",      # Arquivo
+        "test/dir/"      # Diretório (conflito com o caminho anterior)
+    ]
+
+    # Cria a estrutura de diretórios e arquivos
+    core.createdir(paths)
+
+    # Explicação sobre o erro
+    print("\nNota: Apenas o último caminho ('test/dir/') não é criado devido ao conflito com 'test/dir'.")
+
+    # Lista a estrutura de um diretório e salva em um arquivo
+    estrutura = listdir(folder="test/dir", save="estrutura.txt")
+
+    # Apenas retorna a estrutura sem salvar
+    estrutura = listdir(folder="test/dir")
 
 
 def list_caminhos(caminho):
