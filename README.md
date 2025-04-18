@@ -1,16 +1,3 @@
----
-author: cesargabrielphd
-version: 0.0.1
-stylesheet:
-  - /sd/images/favicons/estatistica.svg
-  - /ac/markdown/1/pt_BR/style/normalize.css
-  - /ac/markdown/1/pt_BR/style/markdown.css
-  - /ac/markdown/1/pt_BR/style/markdownlight.css
-  - /ac/markdown/1/pt_BR/style/markdowndark.css
-scripts:
-  - /ac/markdown/1/pt_BR/scripts/mathjax3.js
-  - https://cdn.jsdelivr.net/npm/mathjax@4.0.0-beta.7/tex-chtml.js
----
 # Estatística
 
 Este projeto é muitas coisas e nada ao mesmo tempo. Algumas coisas são apenas para desenvolver habilidades, como o design do projeto é para a criatividade ou os **books** para a escrita. Outras para criar problemas e suas devidas soluções, mesmo que tenha que ter `n` soluções para cada problema. Buscarei nos tempos livres da graduação dedicar-me ao projeto.
@@ -25,3 +12,12 @@ Muitas coisas foram incorporadas a este repositório. **books** é o meu desejo 
 
 ### Bom, para quem é este projeto?
 Eu o desenvolverei principalmentee exclusivamente para mim. Assim como no vídeo intitulado "O Diário de Henry Jones", veja (AKITA, 2025), buscarei o mesmo mas para a  área de Estatística. A ideia de possuir algo que contenha tudo o que estudei ou estudarei me parece essencial para meu progresso na área, além de um bom ponto de partida para referências bibliográficas.
+
+
+<link rel="" href="/sd/images/favicons/estatistica.svg">
+<link rel="" href="/ac/markdown/1/pt_BR/style/normalize.css">
+<link rel="" href="/ac/markdown/1/pt_BR/style/markdown.css">
+<link rel="" href="/ac/markdown/1/pt_BR/style/markdownlight.css">
+<link rel="" href="/ac/markdown/1/pt_BR/style/markdowndark.css">
+<script src="/ac/markdown/1/pt_BR/scripts/mathjax3.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@4.0.0-beta.7/tex-chtml.js"></script>
