@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>5&nbsp; Tutorial para Configurar e Usar o Prettier no VS Code</title>
+<title>Tutorial para Configurar e Usar o Prettier no VS Code</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -30,8 +30,8 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./PATTERNS.html" rel="next">
-<link href="./NEWSROOM.html" rel="prev">
+<link href="./patterns.html" rel="next">
+<link href="./joinrepo.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -68,7 +68,21 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Search"
   }
 }</script>
-<link rel="icon" href="./sd/images/favicons/estatistica.svg">
+<title>Estatistica</title>
+
+<meta charset="utf-8">
+
+<meta content="Estatística" name="topic">
+
+<meta content="index,follow" name="robots">
+
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+<meta content="img-src 'self' https://www.estatistica.pro/; script-src 'self' https://www.estatistica.pro/ac/ https://www.estatistica.pro/sd/" http-equiv="Content-Security-Policy">
+
+<link href="./sd/images/favicons/estatistica.svg" rel="shortcut icon" type="image/x-icon">
+
+<link href="./wss/fonts.css?families=SF+Pro,v3|SF+Pro+Icons,v3" media="all" rel="stylesheet" type="text/css">
 
 <link rel="stylesheet" href="./ac/markdown/1/pt_BR/style/markdown.css">
 
@@ -82,10 +96,48 @@ ul.task-list li input[type="checkbox"] {
 
 <script src="https://cdn.jsdelivr.net/npm/mathjax@4.0.0-beta.7/tex-chtml.js"></script>
 
+<link href="./wss/fonts.css?families=SF+Pro,v3|SF+Pro+Icons,v3" media="all" rel="stylesheet" type="text/css">
+
+
+
+<link href="./ac/books/1/pt_BR/styles/bootstrap-icons.css" rel="stylesheet">
+
+<link href="./ac/books/1/pt_BR/styles/bootstrap.min.css" rel="stylesheet">
+
+<link href="./ac/books/1/pt_BR/styles/custombooks.css" rel="stylesheet">
+
+<link href="./ac/books/1/pt_BR/styles/homebooks.css" rel="stylesheet">
+
+<link href="./ac/books/1/pt_BR/styles/quarto-syntax-highlighting.css" rel="stylesheet">
+
+<link href="./ac/books/1/pt_BR/styles/tippy.css" rel="stylesheet">
+
+<script defer="" src="./ac/books/1/pt_BR/scripts/anchor.min.js"></script>
+
+<script defer="" src="./ac/books/1/pt_BR/scripts/autocomplete.umd.js"></script>
+
+<script defer="" src="./ac/books/1/pt_BR/scripts/bootstrap.min.js"></script>
+
+<script defer="" src="./ac/books/1/pt_BR/scripts/clipboard.min.js"></script>
+
+<script defer="" src="./ac/books/1/pt_BR/scripts/fuse.min.js"></script>
+
+<script defer="" src="./ac/books/1/pt_BR/scripts/headroom.min.js"></script>
+
+<script defer="" src="./ac/books/1/pt_BR/scripts/popper.min.js"></script>
+
+<script defer="" src="./ac/books/1/pt_BR/scripts/quarto-nav.js"></script>
+
+<script defer="" src="./ac/books/1/pt_BR/scripts/quarto-search.js"></script>
+
+<script defer="" src="./ac/books/1/pt_BR/scripts/quarto.js"></script>
+
+<script defer="" src="./ac/books/1/pt_BR/scripts/tippy.umd.min.js"></script>
+
 
 </head>
 
-<body class="nav-sidebar floating">
+<body class="nav-sidebar floating slimcontent">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
@@ -94,7 +146,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./PRETTIER.html"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Tutorial para Configurar e Usar o Prettier no VS Code</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./venv.html">Guides</a></li><li class="breadcrumb-item"><a href="./prettier.html"><span class="chapter-title">Tutorial para Configurar e Usar o Prettier no VS Code</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -116,40 +168,56 @@ ul.task-list li input[type="checkbox"] {
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Estatística</span></span></a>
+  <a href="./index.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Estatística</span></a>
   </div>
 </li>
-        <li class="sidebar-item">
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true">
+ <span class="menu-text">Documentações</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./VENV.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Instalar o .venv</span></span></a>
+  <a href="./newsroom.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Documentação da pasta newsroom</span></a>
   </div>
 </li>
-        <li class="sidebar-item">
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true">
+ <span class="menu-text">Guides</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./JOIN_REPO.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Juntando o Repositório: documentação: Atualizando a Pasta <code>backend</code> com o Conteúdo do Repositório <code>api</code></span></span></a>
+  <a href="./venv.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Instalar o .venv</span></a>
   </div>
 </li>
-        <li class="sidebar-item">
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./NEWSROOM.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Documentação da pasta <strong>_backend_/NEWSROOM</strong></span></span></a>
+  <a href="./joinrepo.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Juntar 2 repositórios</span></a>
   </div>
 </li>
-        <li class="sidebar-item">
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./PRETTIER.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Tutorial para Configurar e Usar o Prettier no VS Code</span></span></a>
+  <a href="./prettier.html" class="sidebar-item-text sidebar-link active"><span class="chapter-title">Tutorial para Configurar e Usar o Prettier no VS Code</span></a>
   </div>
 </li>
-        <li class="sidebar-item">
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./PATTERNS.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Define os padrões usados no Repositório</span></span></a>
+  <a href="./patterns.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Define os padrões usados no Repositório</span></a>
   </div>
 </li>
+      </ul>
+  </li>
     </ul>
     </div>
 </nav>
@@ -160,22 +228,22 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#passo-1-instalar-node.js-e-npm" id="toc-passo-1-instalar-node.js-e-npm" class="nav-link active" data-scroll-target="#passo-1-instalar-node.js-e-npm"><span class="header-section-number">5.1</span> Passo 1: Instalar Node.js e npm</a></li>
-  <li><a href="#passo-2-instalar-o-prettier" id="toc-passo-2-instalar-o-prettier" class="nav-link" data-scroll-target="#passo-2-instalar-o-prettier"><span class="header-section-number">5.2</span> Passo 2: Instalar o Prettier</a></li>
-  <li><a href="#passo-3-configurar-o-prettier-no-vs-code" id="toc-passo-3-configurar-o-prettier-no-vs-code" class="nav-link" data-scroll-target="#passo-3-configurar-o-prettier-no-vs-code"><span class="header-section-number">5.3</span> Passo 3: Configurar o Prettier no VS Code</a></li>
-  <li><a href="#passo-4-configuração-adicional-no-settings.json-opcional" id="toc-passo-4-configuração-adicional-no-settings.json-opcional" class="nav-link" data-scroll-target="#passo-4-configuração-adicional-no-settings.json-opcional"><span class="header-section-number">5.4</span> Passo 4: Configuração adicional no <code>settings.json</code> (opcional)</a></li>
-  <li><a href="#passo-5-executar-o-prettier-manualmente" id="toc-passo-5-executar-o-prettier-manualmente" class="nav-link" data-scroll-target="#passo-5-executar-o-prettier-manualmente"><span class="header-section-number">5.5</span> Passo 5: Executar o Prettier manualmente</a></li>
-  <li><a href="#rodar-os-códigos" id="toc-rodar-os-códigos" class="nav-link" data-scroll-target="#rodar-os-códigos"><span class="header-section-number">5.6</span> rodar os códigos</a></li>
-  <li><a href="#referência" id="toc-referência" class="nav-link" data-scroll-target="#referência"><span class="header-section-number">5.7</span> Referência:</a></li>
+  <li><a href="#passo-1-instalar-node.js-e-npm" id="toc-passo-1-instalar-node.js-e-npm" class="nav-link active" data-scroll-target="#passo-1-instalar-node.js-e-npm">Passo 1: Instalar Node.js e npm</a></li>
+  <li><a href="#passo-2-instalar-o-prettier" id="toc-passo-2-instalar-o-prettier" class="nav-link" data-scroll-target="#passo-2-instalar-o-prettier">Passo 2: Instalar o Prettier</a></li>
+  <li><a href="#passo-3-configurar-o-prettier-no-vs-code" id="toc-passo-3-configurar-o-prettier-no-vs-code" class="nav-link" data-scroll-target="#passo-3-configurar-o-prettier-no-vs-code">Passo 3: Configurar o Prettier no VS Code</a></li>
+  <li><a href="#passo-4-configuração-adicional-no-settings.json-opcional" id="toc-passo-4-configuração-adicional-no-settings.json-opcional" class="nav-link" data-scroll-target="#passo-4-configuração-adicional-no-settings.json-opcional">Passo 4: Configuração adicional no <code>settings.json</code> (opcional)</a></li>
+  <li><a href="#passo-5-executar-o-prettier-manualmente" id="toc-passo-5-executar-o-prettier-manualmente" class="nav-link" data-scroll-target="#passo-5-executar-o-prettier-manualmente">Passo 5: Executar o Prettier manualmente</a></li>
+  <li><a href="#rodar-os-códigos" id="toc-rodar-os-códigos" class="nav-link" data-scroll-target="#rodar-os-códigos">rodar os códigos</a></li>
+  <li><a href="#referência" id="toc-referência" class="nav-link" data-scroll-target="#referência">Referência:</a></li>
   </ul>
 </nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default">
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./venv.html">Guides</a></li><li class="breadcrumb-item"><a href="./prettier.html"><span class="chapter-title">Tutorial para Configurar e Usar o Prettier no VS Code</span></a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Tutorial para Configurar e Usar o Prettier no VS Code</span></h1>
+<h1 class="title"><span class="chapter-title">Tutorial para Configurar e Usar o Prettier no VS Code</span></h1>
 </div>
 
 
@@ -192,8 +260,8 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<section id="passo-1-instalar-node.js-e-npm" class="level2" data-number="5.1">
-<h2 data-number="5.1" class="anchored" data-anchor-id="passo-1-instalar-node.js-e-npm"><span class="header-section-number">5.1</span> Passo 1: Instalar Node.js e npm</h2>
+<section id="passo-1-instalar-node.js-e-npm" class="level2">
+<h2 class="anchored" data-anchor-id="passo-1-instalar-node.js-e-npm">Passo 1: Instalar Node.js e npm</h2>
 <ol type="1">
 <li><p>Baixe e instale o Node.js a partir do site oficial: https://nodejs.org/</p></li>
 <li><p>Durante a instalação, certifique-se de que a opção para instalar o npm (Node Package Manager) está selecionada.</p></li>
@@ -202,15 +270,15 @@ ul.task-list li input[type="checkbox"] {
 npm -v</code></pre></li>
 </ol>
 </section>
-<section id="passo-2-instalar-o-prettier" class="level2" data-number="5.2">
-<h2 data-number="5.2" class="anchored" data-anchor-id="passo-2-instalar-o-prettier"><span class="header-section-number">5.2</span> Passo 2: Instalar o Prettier</h2>
+<section id="passo-2-instalar-o-prettier" class="level2">
+<h2 class="anchored" data-anchor-id="passo-2-instalar-o-prettier">Passo 2: Instalar o Prettier</h2>
 <ol type="1">
 <li><p>No terminal, instale o Prettier globalmente executando o comando:</p>
 <pre class="{sh}"><code>npm install -g prettier</code></pre></li>
 </ol>
 </section>
-<section id="passo-3-configurar-o-prettier-no-vs-code" class="level2" data-number="5.3">
-<h2 data-number="5.3" class="anchored" data-anchor-id="passo-3-configurar-o-prettier-no-vs-code"><span class="header-section-number">5.3</span> Passo 3: Configurar o Prettier no VS Code</h2>
+<section id="passo-3-configurar-o-prettier-no-vs-code" class="level2">
+<h2 class="anchored" data-anchor-id="passo-3-configurar-o-prettier-no-vs-code">Passo 3: Configurar o Prettier no VS Code</h2>
 <ol type="1">
 <li>Abra o VS Code.</li>
 <li>Vá para a aba de extensões (ícone de quadrado no lado esquerdo ou <code>Ctrl+Shift+X</code>).</li>
@@ -220,8 +288,8 @@ npm -v</code></pre></li>
 <li>Certifique-se de que o Prettier é o formatador padrão. Procure por “Default Formatter” e selecione “Prettier - Code formatter”.</li>
 </ol>
 </section>
-<section id="passo-4-configuração-adicional-no-settings.json-opcional" class="level2" data-number="5.4">
-<h2 data-number="5.4" class="anchored" data-anchor-id="passo-4-configuração-adicional-no-settings.json-opcional"><span class="header-section-number">5.4</span> Passo 4: Configuração adicional no <code>settings.json</code> (opcional)</h2>
+<section id="passo-4-configuração-adicional-no-settings.json-opcional" class="level2">
+<h2 class="anchored" data-anchor-id="passo-4-configuração-adicional-no-settings.json-opcional">Passo 4: Configuração adicional no <code>settings.json</code> (opcional)</h2>
 <ol type="1">
 <li><p>Abra o arquivo de configurações JSON (<code>Ctrl+Shift+P</code> e digite “Preferences: Open Settings (JSON)”).</p></li>
 <li><p>Adicione as seguintes configurações para garantir que o Prettier seja usado para formatação:</p>
@@ -240,8 +308,8 @@ npm -v</code></pre></li>
 }</code></pre></li>
 </ol>
 </section>
-<section id="passo-5-executar-o-prettier-manualmente" class="level2" data-number="5.5">
-<h2 data-number="5.5" class="anchored" data-anchor-id="passo-5-executar-o-prettier-manualmente"><span class="header-section-number">5.5</span> Passo 5: Executar o Prettier manualmente</h2>
+<section id="passo-5-executar-o-prettier-manualmente" class="level2">
+<h2 class="anchored" data-anchor-id="passo-5-executar-o-prettier-manualmente">Passo 5: Executar o Prettier manualmente</h2>
 <ol type="1">
 <li><p>Abra o terminal integrado no VS Code (<code>Ctrl+</code> ou<code>View &gt; Terminal</code>).</p></li>
 <li><p>Navegue até o diretório do seu projeto.</p></li>
@@ -250,15 +318,15 @@ npm -v</code></pre></li>
 </ol>
 <p>Seguindo esses passos, você configurará o Prettier para formatar automaticamente seus arquivos ao salvar e também poderá executá-lo manualmente quando necessário.</p>
 </section>
-<section id="rodar-os-códigos" class="level2" data-number="5.6">
-<h2 data-number="5.6" class="anchored" data-anchor-id="rodar-os-códigos"><span class="header-section-number">5.6</span> rodar os códigos</h2>
+<section id="rodar-os-códigos" class="level2">
+<h2 class="anchored" data-anchor-id="rodar-os-códigos">rodar os códigos</h2>
 <pre class="{sh}"><code>  npm install -g prettier</code></pre>
 <p>Formatar todos os arquivos HTML no repositório usando Prettier</p>
 <pre class="{sh}"><code>  prettier --write "**/*.html"
   prettier --write \"**/*.{js,jsx,ts,tsx,json,css,scss,md}\""</code></pre>
 </section>
-<section id="referência" class="level2" data-number="5.7">
-<h2 data-number="5.7" class="anchored" data-anchor-id="referência"><span class="header-section-number">5.7</span> Referência:</h2>
+<section id="referência" class="level2">
+<h2 class="anchored" data-anchor-id="referência">Referência:</h2>
 <ul>
 <li>www.github.com/copilot/</li>
 </ul>
@@ -686,13 +754,13 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./NEWSROOM.html" class="pagination-link" aria-label="Documentação da pasta **\_backend\_/NEWSROOM**">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Documentação da pasta <strong>_backend_/NEWSROOM</strong></span></span>
+      <a href="./joinrepo.html" class="pagination-link" aria-label="Juntar 2 repositórios">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-title">Juntar 2 repositórios</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./PATTERNS.html" class="pagination-link" aria-label="Define os padrões usados no Repositório">
-        <span class="nav-page-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Define os padrões usados no Repositório</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./patterns.html" class="pagination-link" aria-label="Define os padrões usados no Repositório">
+        <span class="nav-page-text"><span class="chapter-title">Define os padrões usados no Repositório</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
