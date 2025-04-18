@@ -4,16 +4,14 @@ setup(
     name="backend",
     version="0.1",
     packages=find_packages(include=[
-                           "core", "core.*", "data", "data.*", "books", "books.*", "book", "book.*", "teste", "teste.*"]),
+                           "core", "core.*", "data", "data.*", "build", "build.*"]),
     include_package_data=True,
     package_data={
         "": ["*.json", "*.csv", "*.pdf", "*.txt", "*.html", "*.qmd", "*.bib"],
         "core": ["**/*"],
-        "books": ["**/*"],
-        "book": ["**/*"],
+        "build": ["**/*"],
         "data": ["avisos/*", "books/*"],
         "teste": ["**/*"],
-        "newsroom": ["**/*"],
     },
     install_requires=[
         "attrs==25.3.0",
