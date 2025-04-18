@@ -1,3 +1,3 @@
-from .quartorender import ler, escrever
-# Este arquivo pode ser deixado vazio ou conter inicializações do pacote.
-# ...adicione outras funções ou classes que deseja expor...
+from .quartorender import *
+from .dir import *
+

@@ -1,27 +1,12 @@
 import os
 
 
-def createdir():
-    # Diretórios a serem criados
-    directories = ["eventos/sem", "eventos/data", "eventos/com"]
-
-    # Arquivos a serem criados
-    files = [
-        "eventos/sem/index.html",
-        "eventos/data/eventos.json",
-        "eventos/com/index.html",
-    ]
-
-    # Criar diretórios
-    for indice in directories:
-        os.makedirs(indice, exist_ok=True)
-
-    # Criar arquivos
-    for indice in files:
-        with open(indice, "w") as f:
+def createdir(structure: list = None):
+    for path in structure:
+        dir_path = os.path.dirname(path)
+        os.makedirs(dir_path, existindo=True)
+        with open(path, "w") as file: 
             pass
-
-    print("Estrutura do projeto criada com sucesso!")
 
 # Executar a função
 # createdir()
@@ -77,10 +62,10 @@ def list_caminhos(caminho):
     return caminhos_completos
 
 
-if __name__ == "__main__":
-    caminho = r"ac/books"
-    paths = list_caminhos(caminho)
-    for path in paths:
-        print(path)
-    # output_file_path = "./directory_structure.txt"
-    # listdir(caminho, output_file_path)
+# if __name__ == "__main__":
+#     caminho = r"ac/books"
+#     paths = list_caminhos(caminho)
+#     for path in paths:
+#         print(path)
+#     # output_file_path = "./directory_structure.txt"
+#     # listdir(caminho, output_file_path)
