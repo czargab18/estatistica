@@ -1,14 +1,10 @@
 {
     "MAT0075": [
         "/books/MAT0075/index.html",
-        "/books/MAT0075/index.qmd",
         "/books/MAT0075/search.json",
-        "/books/MAT0075/_quarto.yml",
-        "/books/MAT0075/conteudo/1.espacoprob.html",
-        "/books/MAT0075/conteudo/1.espacoprob.qmd",
-        "/books/MAT0075/conteudo/references.bib",
-        "/books/MAT0075/conteudo/references.html",
-        "/books/MAT0075/conteudo/references.qmd"
+        "/books/MAT0075/exercicios/topico1.html",
+        "/books/MAT0075/postextuais/references.html",
+        "/books/MAT0075/textuais/topico1.html"
     ],
     "TAS0000": [
         "/books/TAS0000/index.html",
