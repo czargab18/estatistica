@@ -1,7 +1,7 @@
-name: Deploy GitHub Pages
+name: Deploy - dev1
 on:
   push:
-    branches: ["main"]
+    branches: ["dev1"]
   workflow_dispatch:
 permissions:
   contents: read
@@ -14,7 +14,8 @@ jobs:
   deploy:
     environment:
       name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
+      url: ${{ vars.PAGE_URL_DEV1 }}
+
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
