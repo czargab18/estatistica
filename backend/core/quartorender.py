@@ -1,5 +1,6 @@
 import os
 import re
+import json
 
 """
  * Este script é destinado a auxiliar na automatização de books quarto.
@@ -30,7 +31,6 @@ CAMINHOS = {
     "dir_include": os.path.normpath("./books/build/include/"),
     "lista_books": os.path.normpath("./backend/data/books/books.json"),
 }
-
 
 def ler(path: str = None):
     """
@@ -63,7 +63,6 @@ def ler(path: str = None):
     with open(path, "r", encoding="utf-8") as file:
         return file.read()
 
-
 def escrever(path, conteudo):
     """
     Escreve conteúdo em um arquivo.
@@ -83,4 +82,49 @@ def escrever(path, conteudo):
         file.write(conteudo)
         return True
 
+
+def listarbooks(path: str = None, salvedir: str = None):
+    if path is None or not os.path.exists(path):
+        return "Erro: Não aponta para um arquivo ou diretório válido!"
+    
+    path = path.replace("\\", "/")
+    CAMINHOS_ARQUIVOS = {}
+    PATTERN_BOOKS_NAME = CAMINHOS["pattern_book"]
+
+    
+    # try:
+    #     for pasta in next(os.walk(path))[1]:
+    #         if PATTERN_BOOKS_NAME.match(pasta):
+    #             CAMINHO_PASTAS = os.path.join(path, pasta)
+    #             CAMINHOS_ARQUIVOS[pasta] = []
+    #             for subroot, subpastas, subarquivos in os.walk(CAMINHO_PASTAS):
+    #                 subpastas_filtradas = [
+    #                     subpasta for subpasta in subpastas if subpasta not in ['ac', 'wss', 'book', '.quarto', 'site_libs']
+    #                 ]
+    #                 subpastas[:] = subpastas_filtradas
+
+    #                 for arquivo in subarquivos:
+    #                     caminho_relativo = os.path.relpath(
+    #                         os.path.join(subroot, arquivo), path
+    #                     ).replace("\\", "/")
+    #                     caminho_completo = f"/books/{caminho_relativo}"
+    #                     CAMINHOS_ARQUIVOS[pasta].append(caminho_completo)
+    # except StopIteration:
+    #     print(
+    #         f"Erro: O diretório '{path}' está vazio ou não contém subdiretórios.")
+    #     return {}
+
+    if salvedir is None:
+        return CAMINHOS_ARQUIVOS
+    else:
+        os.makedirs(salvedir, exist_ok=True)
+        salvedir = os.path.join(salvedir, "books.json").replace("\\", "/")
+        with open(salvedir, 'w', encoding='utf-8') as file:
+            json.dump(CAMINHOS_ARQUIVOS, file, ensure_ascii=False, indent=4)
+
+
+    return CAMINHOS_ARQUIVOS, salvedir, path, CAMINHOS["pattern_book"]
+
+
+# print(listarbooks(path="./data/books/books.json", salvedir="./test/data/books"))
 

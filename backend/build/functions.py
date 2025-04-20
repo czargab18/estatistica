@@ -27,7 +27,6 @@ def readjson(caminho: str ):
     with open(caminho, 'r', encoding='utf-8') as file:
         return json.load(file)
 
-
 def readmeqmd(
     caminho: str = "./newshub/build/conteudo/",
     extensoes: list = ['.qmd', '.bib'],
@@ -65,6 +64,7 @@ def readmeqmd(
                 arquivo)] = f"Erro ao processar o arquivo: {e}"
 
     return json.dumps(resultado, ensure_ascii=False, indent=4)
+
     
 def listabooks(path: str = "./books/"):
     """
