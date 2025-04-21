@@ -1,4 +1,4 @@
-name: Deploy GitHub Pages
+name: deploy(static)
 on:
   push:
     branches: ["dev1"]
@@ -14,7 +14,7 @@ jobs:
   deploy:
     environment:
       name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
+      url: ${{ vars.URL }}
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
