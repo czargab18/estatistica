@@ -32,6 +32,9 @@ CAMINHOS = {
     "lista_books": os.path.normpath("./backend/data/books/books.json"),
 }
 
+def criardir(path: str = None):
+    return os.makedirs(path, exist_ok=True)
+
 def ler(path: str = None):
     """
     Lê o conteúdo de um arquivo no caminho especificado.
@@ -83,48 +86,42 @@ def escrever(path, conteudo):
         return True
 
 
-def listarbooks(path: str = None, salvedir: str = None):
+def listarbooks(path: str = None, salvedir: str = None, nomefile: str = "books.json"):
     if path is None or not os.path.exists(path):
         return "Erro: Não aponta para um arquivo ou diretório válido!"
+    
+    if not os.path.isdir(path):
+        return "Erro: O caminho especificado não é um diretório!"
     
     path = path.replace("\\", "/")
     CAMINHOS_ARQUIVOS = {}
     PATTERN_BOOKS_NAME = CAMINHOS["pattern_book"]
 
-    
-    # try:
-    #     for pasta in next(os.walk(path))[1]:
-    #         if PATTERN_BOOKS_NAME.match(pasta):
-    #             CAMINHO_PASTAS = os.path.join(path, pasta)
-    #             CAMINHOS_ARQUIVOS[pasta] = []
-    #             for subroot, subpastas, subarquivos in os.walk(CAMINHO_PASTAS):
-    #                 subpastas_filtradas = [
-    #                     subpasta for subpasta in subpastas if subpasta not in ['ac', 'wss', 'book', '.quarto', 'site_libs']
-    #                 ]
-    #                 subpastas[:] = subpastas_filtradas
+    try:
+        for pasta in os.listdir(path):
+            pasta_path = os.path.join(path, pasta)
+            if os.path.isdir(pasta_path) and PATTERN_BOOKS_NAME.match(pasta):
+                CAMINHOS_ARQUIVOS[pasta] = []
+                for subroot, subpastas, subarquivos in os.walk(pasta_path):
+                    subpastas[:] = [
+                        subpasta for subpasta in subpastas if subpasta not in ['ac', 'wss', 'book', '.quarto', 'site_libs']
+                    ]
+                    for arquivo in subarquivos:
+                        caminho_relativo = os.path.relpath(
+                            os.path.join(subroot, arquivo), path
+                        ).replace("\\", "/")
+                        caminho_completo = f"/books/{caminho_relativo}"
+                        CAMINHOS_ARQUIVOS[pasta].append(caminho_completo)
+    except Exception as e:
+        print(f"Erro ao processar o diretório '{path}': {e}")
+        return {}
 
-    #                 for arquivo in subarquivos:
-    #                     caminho_relativo = os.path.relpath(
-    #                         os.path.join(subroot, arquivo), path
-    #                     ).replace("\\", "/")
-    #                     caminho_completo = f"/books/{caminho_relativo}"
-    #                     CAMINHOS_ARQUIVOS[pasta].append(caminho_completo)
-    # except StopIteration:
-    #     print(
-    #         f"Erro: O diretório '{path}' está vazio ou não contém subdiretórios.")
-    #     return {}
-
-    if salvedir is None:
-        return CAMINHOS_ARQUIVOS
-    else:
+    if salvedir is not None:
         os.makedirs(salvedir, exist_ok=True)
-        salvedir = os.path.join(salvedir, "books.json").replace("\\", "/")
+        salvedir = os.path.join(salvedir, nomefile).replace("\\", "/")
         with open(salvedir, 'w', encoding='utf-8') as file:
             json.dump(CAMINHOS_ARQUIVOS, file, ensure_ascii=False, indent=4)
+    else:
+        return CAMINHOS_ARQUIVOS
 
-
-    return CAMINHOS_ARQUIVOS, salvedir, path, CAMINHOS["pattern_book"]
-
-
-# print(listarbooks(path="./data/books/books.json", salvedir="./test/data/books"))
-
+print(listarbooks(path= "./books", salvedir="./backend/data/books/"))
