@@ -1,153 +1,288 @@
 <!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
-<html lang="en" xml:lang="en" xmlns="http://www.w3.org/1999/xhtml"><head><meta charset="utf-8"/>
-<meta content="Estatística" name="topic"/>
-<meta content="index,follow" name="robots"/>
-<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<meta content="img-src 'self' https://www.estatistica.pro/; script-src 'self' https://www.estatistica.pro/ac/ https://www.estatistica.pro/sd/" http-equiv="Content-Security-Policy"/>
-<link href="/sd/images/favicons/estatistica.svg" rel="shortcut icon" type="image/x-icon"/>
-<link href="/ac/globalpattern/1/pt_BR/styles/globalpattern.css" rel="stylesheet"/>
-<link href="/ac/globalaside/1/pt_BR/styles/globalaside.css" rel="stylesheet"/>
-<link href="/ac/globalnavbar/1/pt_BR/styles/globalnavbar.css" rel="stylesheet"/>
-<link href="/ac/globalribbon/1/pt_BR/styles/globalribbon.css" rel="stylesheet"/>
-<link href="/ac/globaltipografia/1/pt_BR/style/globaltipografia.css" rel="stylesheet"/>
-<link href="/ac/globalmain/1/pt_BR/styles/globalmain.css" rel="stylesheet"/>
-<link href="/ac/globalnoticias/1/pt_BR/style/globalnoticias.css" rel="stylesheet"/>
-<link href="/ac/globalfooter/1/pt_BR/styles/globalfooter.css" rel="stylesheet"/>
-<script defer="" src="/ac/globalnoticias/1/pt_BR/scripts/globalnoticias.js"></script>
-<script defer="" src="/ac/globalpattern/1/pt_BR/scripts/globalpattern.js"></script>
-<script defer="" src="/ac/globalfooter/1/pt_BR/scripts/globalfooter.js"></script>
-<script defer="" src="/utils/libs/js/navbar.js"></script>
-<link href="/wss/fonts.css?families=SF+Pro,v3|SF+Pro+Icons,v3" media="all" rel="stylesheet" type="text/css"/>
-<link href="/ac/books/1/pt_BR/styles/bootstrap-icons.css" rel="stylesheet"/>
-<link href="/ac/books/1/pt_BR/styles/bootstrap.min.css" rel="stylesheet"/>
-<link href="/ac/books/1/pt_BR/styles/custombooks.css" rel="stylesheet"/>
-<link href="/ac/books/1/pt_BR/styles/homebooks.css" rel="stylesheet"/>
-<link href="/ac/books/1/pt_BR/styles/quarto-syntax-highlighting.css" rel="stylesheet"/>
-<link href="/ac/books/1/pt_BR/styles/tippy.css" rel="stylesheet"/>
-<script defer="" src="/ac/books/1/pt_BR/scripts/anchor.min.js"></script>
-<script defer="" src="/ac/books/1/pt_BR/scripts/autocomplete.umd.js"></script>
-<script defer="" src="/ac/books/1/pt_BR/scripts/bootstrap.min.js"></script>
-<script defer="" src="/ac/books/1/pt_BR/scripts/clipboard.min.js"></script>
-<script defer="" src="/ac/books/1/pt_BR/scripts/fuse.min.js"></script>
-<script defer="" src="/ac/books/1/pt_BR/scripts/headroom.min.js"></script>
-<script defer="" src="/ac/books/1/pt_BR/scripts/popper.min.js"></script>
-<script defer="" src="/ac/books/1/pt_BR/scripts/quarto-nav.js"></script>
-<script defer="" src="/ac/books/1/pt_BR/scripts/quarto-search.js"></script>
-<script defer="" src="/ac/books/1/pt_BR/scripts/quarto.js"></script>
-<script defer="" src="/ac/books/1/pt_BR/scripts/tippy.umd.min.js"></script><link href="style.css" rel="stylesheet"/></head>
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.6.42">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>CALCULO DE PROBABILIDADE</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+  margin-bottom: 0em;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
+
+
+<script src="../delete/site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../delete/site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../delete/site_libs/clipboard/clipboard.min.js"></script>
+<script src="../delete/site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../delete/site_libs/quarto-search/fuse.min.js"></script>
+<script src="../delete/site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<link href="./textuais/topico1.html" rel="next">
+<script src="../delete/site_libs/quarto-html/quarto.js"></script>
+<script src="../delete/site_libs/quarto-html/popper.min.js"></script>
+<script src="../delete/site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../delete/site_libs/quarto-html/anchor.min.js"></script>
+<link href="../delete/site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../delete/site_libs/quarto-html/quarto-syntax-highlighting-2f5df379a58b258e96c21c0638c20c03.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../delete/site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../delete/site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../delete/site_libs/bootstrap/bootstrap-8da5b4427184b79ecddefad3d342027e.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+<meta charset="utf-8">
+
+<meta content="Estatística" name="topic">
+
+<meta content="index,follow" name="robots">
+
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+<meta content="img-src 'self' https://www.estatistica.pro/; script-src 'self' https://www.estatistica.pro/ac/ https://www.estatistica.pro/sd/" http-equiv="Content-Security-Policy">
+
+<link href="./sd/images/favicons/estatistica.svg" rel="shortcut icon" type="image/x-icon">
+
+<link href="./ac/globalpattern/1/pt_BR/styles/globalpattern.css" rel="stylesheet">
+
+<link href="./ac/globalaside/1/pt_BR/styles/globalaside.css" rel="stylesheet">
+
+<link href="./ac/globalnavbar/1/pt_BR/styles/globalnavbar.css" rel="stylesheet">
+
+<link href="./ac/globalribbon/1/pt_BR/styles/globalribbon.css" rel="stylesheet">
+
+<link href="./ac/globaltipografia/1/pt_BR/style/globaltipografia.css" rel="stylesheet">
+
+<link href="./ac/globalmain/1/pt_BR/styles/globalmain.css" rel="stylesheet">
+
+<link href="./ac/globalnoticias/1/pt_BR/style/globalnoticias.css" rel="stylesheet">
+
+<link href="./ac/globalfooter/1/pt_BR/styles/globalfooter.css" rel="stylesheet">
+
+<script defer="" src="./ac/globalnoticias/1/pt_BR/scripts/globalnoticias.js"></script>
+
+<script defer="" src="./ac/globalpattern/1/pt_BR/scripts/globalpattern.js"></script>
+
+<script defer="" src="./ac/globalfooter/1/pt_BR/scripts/globalfooter.js"></script>
+
+<script defer="" src="./utils/libs/js/navbar.js"></script>
+
+<link href="./wss/fonts.css?families=SF+Pro,v3|SF+Pro+Icons,v3" media="all" rel="stylesheet" type="text/css">
+
+<link href="./ac/books/1/pt_BR/styles/bootstrap-icons.css" rel="stylesheet">
+
+<link href="./ac/books/1/pt_BR/styles/bootstrap.min.css" rel="stylesheet">
+
+<link href="./ac/books/1/pt_BR/styles/custombooks.css" rel="stylesheet">
+
+<link href="./ac/books/1/pt_BR/styles/homebooks.css" rel="stylesheet">
+
+<link href="./ac/books/1/pt_BR/styles/quarto-syntax-highlighting.css" rel="stylesheet">
+
+<link href="./ac/books/1/pt_BR/styles/tippy.css" rel="stylesheet">
+
+<script defer="" src="./ac/books/1/pt_BR/scripts/anchor.min.js"></script>
+
+<script defer="" src="./ac/books/1/pt_BR/scripts/autocomplete.umd.js"></script>
+
+<script defer="" src="./ac/books/1/pt_BR/scripts/bootstrap.min.js"></script>
+
+<script defer="" src="./ac/books/1/pt_BR/scripts/clipboard.min.js"></script>
+
+<script defer="" src="./ac/books/1/pt_BR/scripts/fuse.min.js"></script>
+
+<script defer="" src="./ac/books/1/pt_BR/scripts/headroom.min.js"></script>
+
+<script defer="" src="./ac/books/1/pt_BR/scripts/popper.min.js"></script>
+
+<script defer="" src="./ac/books/1/pt_BR/scripts/quarto-nav.js"></script>
+
+<script defer="" src="./ac/books/1/pt_BR/scripts/quarto-search.js"></script>
+
+<script defer="" src="./ac/books/1/pt_BR/scripts/quarto.js"></script>
+
+<script defer="" src="./ac/books/1/pt_BR/scripts/tippy.umd.min.js"></script>
+
+
+</head>
+
 <body class="nav-sidebar floating fullcontent">
+
 <div id="quarto-search-results"></div>
-<header class="headroom fixed-top" id="quarto-header">
-<nav class="quarto-secondary-nav">
-<div class="container-fluid d-flex">
-<button aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" class="quarto-btn-toggle btn" data-bs-target=".quarto-sidebar-collapse-item" data-bs-toggle="collapse" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }" role="button" type="button">
-<i class="bi bi-layout-text-sidebar-reverse"></i>
-</button>
-<nav aria-label="breadcrumb" class="quarto-page-breadcrumbs"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./index.html"><span class="chapter-title">Sumário</span></a></li></ol></nav>
-<a aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" class="flex-grow-1" data-bs-target=".quarto-sidebar-collapse-item" data-bs-toggle="collapse" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }" role="navigation">
-</a>
-<button aria-label="Search" class="btn quarto-search-button" onclick="window.quartoOpenSearch();" type="button">
-<i class="bi bi-search"></i>
-</button>
-</div>
-</nav>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./index.html"><span class="chapter-title">Sumário</span></a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+      <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav>
 </header>
 <!-- content -->
-<div class="quarto-container page-columns page-rows-contents page-layout-article" id="quarto-content">
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
 <!-- sidebar -->
-<nav class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto" id="quarto-sidebar">
-<div class="pt-lg-2 mt-2 text-left sidebar-header">
-<div class="sidebar-title mb-0 py-0">
-<a href="./">CALCULO DE PROBABILIDADE</a>
-</div>
-</div>
-<div class="mt-2 flex-shrink-0 align-items-center">
-<div class="sidebar-search">
-<div class="" id="quarto-search" title="Search"></div>
-</div>
-</div>
-<div class="sidebar-menu-container">
-<ul class="list-unstyled mt-1">
-<li class="sidebar-item">
-<div class="sidebar-item-container">
-<a class="sidebar-item-text sidebar-link active" href="./index.html"><span class="chapter-title">Sumário</span></a>
-</div>
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+    <div class="sidebar-title mb-0 py-0">
+      <a href="./">CALCULO DE PROBABILIDADE</a> 
+    </div>
+      </div>
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./index.html" class="sidebar-item-text sidebar-link active"><span class="chapter-title">Sumário</span></a>
+  </div>
 </li>
-<li class="sidebar-item sidebar-item-section">
-<div class="sidebar-item-container">
-<a aria-expanded="true" class="sidebar-item-text sidebar-link text-start" data-bs-target="#quarto-sidebar-section-1" data-bs-toggle="collapse" role="navigation">
-<span class="menu-text">Espaço de Probabilidade</span></a>
-<a aria-expanded="true" aria-label="Toggle section" class="sidebar-item-toggle text-start" data-bs-target="#quarto-sidebar-section-1" data-bs-toggle="collapse" role="navigation">
-<i class="bi bi-chevron-right ms-2"></i>
-</a>
-</div>
-<ul class="collapse list-unstyled sidebar-section depth1 show" id="quarto-sidebar-section-1">
-<li class="sidebar-item">
-<div class="sidebar-item-container">
-<a class="sidebar-item-text sidebar-link" href="./textuais/topico1.html"><span class="chapter-title">Espaço amostral</span></a>
-</div>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true">
+ <span class="menu-text">Espaço de Probabilidade</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./textuais/topico1.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Espaço amostral</span></a>
+  </div>
 </li>
-<li class="sidebar-item">
-<div class="sidebar-item-container">
-<a class="sidebar-item-text sidebar-link" href="./exercicios/topico1.html"><span class="chapter-title">Exercícios da Lista 1 - Tópico 1</span></a>
-</div>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./exercicios/topico1.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Exercícios da Lista 1 - Tópico 1</span></a>
+  </div>
 </li>
-</ul>
+      </ul>
+  </li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./postextuais/references.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">References</span></a>
+  </div>
 </li>
-<li class="sidebar-item">
-<div class="sidebar-item-container">
-<a class="sidebar-item-text sidebar-link" href="./postextuais/references.html">
-<span class="menu-text">References</span></a>
-</div>
-</li>
-</ul>
-</div>
+    </ul>
+    </div>
 </nav>
-<div class="quarto-sidebar-collapse-item" data-bs-target=".quarto-sidebar-collapse-item" data-bs-toggle="collapse" id="quarto-sidebar-glass"></div>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
+    
 <!-- main -->
-<main class="content" id="quarto-document-content"><header class="quarto-title-block" id="title-block-header"></header>
-<section class="level1 headline2" id="sumario">
+<main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block"></header>
+
+
+
+
+<section id="sumario" class="level1 headline2">
 <h1 class="headline2">Sumário</h1>
-<p>Bibliografia a ser seguida:<br/>
-<span class="citation" data-cites="rolla2025">(<a href="postextuais/references.html#ref-rolla2025" role="doc-biblioref"><strong>rolla2025?</strong></a>)</span><br/>
-1. Espaços de Probabilidade<br/>
-2. Probabilidade Condicional e Independência<br/>
-3. Variáveis Aleatórias<br/>
-4. Vetores Aleatórios<br/>
-5. Esperança Matemática<br/>
-6. Momentos e Desigualdades<br/>
-7. Convergência de Variáveis Aleatórias<br/>
-8. Lei dos Grandes Números<br/>
-9. Teorema do Limite Central<br/>
-10. Transformadas<br/>
-11. Esperança Condicional<br/>
-12. Martingales<br/>
-13. Leis 0-1 e Séries Aleatórias<br/>
-14. Teoria Ergódica<br/>
-15. Grandes Desvios<br/>
-16. Lista de Figuras<br/>
+<p>Bibliografia a ser seguida:<br>
+<span class="citation" data-cites="rolla2025">(<a href="postextuais/references.html#ref-rolla2025" role="doc-biblioref"><strong>rolla2025?</strong></a>)</span><br>
+1. Espaços de Probabilidade<br>
+2. Probabilidade Condicional e Independência<br>
+3. Variáveis Aleatórias<br>
+4. Vetores Aleatórios<br>
+5. Esperança Matemática<br>
+6. Momentos e Desigualdades<br>
+7. Convergência de Variáveis Aleatórias<br>
+8. Lei dos Grandes Números<br>
+9. Teorema do Limite Central<br>
+10. Transformadas<br>
+11. Esperança Condicional<br>
+12. Martingales<br>
+13. Leis 0-1 e Séries Aleatórias<br>
+14. Teoria Ergódica<br>
+15. Grandes Desvios<br>
+16. Lista de Figuras<br>
 17. Referências</p>
-<p><span class="citation" data-cites="baratela2025">(<a href="postextuais/references.html#ref-baratela2025" role="doc-biblioref">Silva Baratela Martins Neto 2025</a>)</span><br/>
-1. Espaço de Probabilidade<br/>
-2. Condicionamento e Independência<br/>
-3. Análise Combinatória (noções)<br/>
-4. Variável Aleatória Discreta<br/>
-5. Vetor Aleatório Discreto<br/>
-6. Esperança e Momentos de uma Variável Aleatória Discreta<br/>
-7. Função Geratriz de Probabilidade e de Momentos de Variável Aleatória Contínua<br/>
-8. Vetor Aleatório Contínuo<br/>
-9. Esperança e Momentos de uma Variável Aleatória Contínua<br/>
-10. Função Geratriz de Probabilidade e Momentos<br/>
-11. Leis Fraca e Forte dos Grandes Números<br/>
+<p><span class="citation" data-cites="baratela2025">(<a href="postextuais/references.html#ref-baratela2025" role="doc-biblioref">Silva Baratela Martins Neto 2025</a>)</span><br>
+1. Espaço de Probabilidade<br>
+2. Condicionamento e Independência<br>
+3. Análise Combinatória (noções)<br>
+4. Variável Aleatória Discreta<br>
+5. Vetor Aleatório Discreto<br>
+6. Esperança e Momentos de uma Variável Aleatória Discreta<br>
+7. Função Geratriz de Probabilidade e de Momentos de Variável Aleatória Contínua<br>
+8. Vetor Aleatório Contínuo<br>
+9. Esperança e Momentos de uma Variável Aleatória Contínua<br>
+10. Função Geratriz de Probabilidade e Momentos<br>
+11. Leis Fraca e Forte dos Grandes Números<br>
 12. Teorema do Limite Central</p>
-<div class="references csl-bib-body hanging-indent" data-entry-spacing="0" id="refs" role="list" style="display: none">
-<div class="csl-entry" id="ref-baratela2025" role="listitem">
+
+
+<div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list" style="display: none">
+<div id="ref-baratela2025" class="csl-entry" role="listitem">
 Silva Baratela Martins Neto, Daniele da. 2025. <span>“Cálculo de Probabilidade 1.”</span> Notas de aula.
 </div>
 </div>
 </section>
+
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
@@ -567,13 +702,17 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 });
 </script>
 <nav class="page-navigation">
-<div class="nav-page nav-page-previous">
-</div>
-<div class="nav-page nav-page-next">
-<a aria-label="Espaço amostral" class="pagination-link" href="./textuais/topico1.html">
-<span class="nav-page-text"><span class="chapter-title">Espaço amostral</span></span> <i class="bi bi-arrow-right-short"></i>
-</a>
-</div>
+  <div class="nav-page nav-page-previous">
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="./textuais/topico1.html" class="pagination-link" aria-label="Espaço amostral">
+        <span class="nav-page-text"><span class="chapter-title">Espaço amostral</span></span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
 </nav>
 </div> <!-- /content -->
+
+
+
+
 </body></html>
