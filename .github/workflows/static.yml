@@ -1,4 +1,5 @@
 name: deploy(main) - static.yml 
+on:
   push:
     branches: ["main"]
   workflow_dispatch:
