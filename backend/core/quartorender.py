@@ -1,6 +1,7 @@
 import os
 import re
 import json
+from bs4 import BeautifulSoup
 
 """
  * Este script é destinado a auxiliar na automatização de books quarto.
@@ -32,8 +33,6 @@ CAMINHOS = {
     "lista_books": os.path.normpath("./backend/data/books/books.json"),
 }
 
-def criardir(path: str = None):
-    return os.makedirs(path, exist_ok=True)
 
 def ler(path: str = None):
     """
@@ -85,7 +84,6 @@ def escrever(path, conteudo):
         file.write(conteudo)
         return True
 
-
 def listarbooks(path: str = None, salvedir: str = None, nomefile: str = "books.json"):
     if path is None or not os.path.exists(path):
         return "Erro: Não aponta para um arquivo ou diretório válido!"
@@ -124,4 +122,4 @@ def listarbooks(path: str = None, salvedir: str = None, nomefile: str = "books.j
     else:
         return CAMINHOS_ARQUIVOS
 
-print(listarbooks(path= "./books", salvedir="./backend/data/books/"))
+
