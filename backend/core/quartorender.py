@@ -26,15 +26,17 @@ from bs4 import BeautifulSoup
  *    *      - incluirinbody: Inclui o conteúdo de um arquivo no body dos arquivos book_html.
 """
 
+CAMINHO_BASE = os.path.abspath(__file__).split("estatistica")[0] + "estatistica"
 CAMINHOS = {
     "pattern_book": re.compile(r"^[A-Z]{3}\d{4}$"),
-    "dir_base": os.path.abspath(
-        os.path.join(os.path.dirname(__file__), "../../../")
-    ).replace("\\", "/"),
+    "dir_base": os.path.abspath(__file__).split("estatistica")[0] + "estatistica",
     "dir_include": os.path.normpath("./books/build/include/"),
-    "lista_books": os.path.normpath("./backend/data/books/books.json"),
+    "lista_books": os.path.join(CAMINHO_BASE, "backend/data/books/books.json").replace(
+        "\\", "/"
+    ),
+    "path_books": os.path.join(CAMINHO_BASE, "books").replace("\\", "/"),
 }
-
+print(CAMINHOS["path_books"])
 
 def ler(path: str = None):
     """
