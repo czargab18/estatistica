@@ -3,7 +3,7 @@ project:
   type: book
   output-dir: "./../../MAT0075"
   lib-dir: "./../delete/site_libs"
-  # post-render: "./../include/post-render.py"
+  post-render: "./../automacao.py"
   preview:
     port: 4200
     browser: false

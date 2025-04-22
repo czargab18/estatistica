@@ -10,33 +10,13 @@
     ]
   },
   {
-    "objectID": "index.html#qual-o-ponto-de-ignição",
-    "href": "index.html#qual-o-ponto-de-ignição",
-    "title": "Estatística",
-    "section": "Qual o ponto de ignição?",
-    "text": "Qual o ponto de ignição?\nPrimeiro, um ponto de ignição é um ponto que sucede o caminho. O começo de tudo.\nInicialmente, encantei-me pelo design e programação web. Tentei desenvolver essas habilidades ao redesenhar e construir o site do Departamento de Estatística da Universidade de Brasília.",
+    "objectID": "index.html#algumas-perguntas-que-acredito-serem-úteis.",
+    "href": "index.html#algumas-perguntas-que-acredito-serem-úteis.",
+    "title": "A Arte da Estatística",
+    "section": "Algumas perguntas que acredito serem úteis.",
+    "text": "Algumas perguntas que acredito serem úteis.\n\nO que é estatística?\nEm muitos bibliográfias a a definição parar a questão é dada da seguinte maneira: “ciencia tararara …” (ALGUEM, XXXXX)\nEstá definição busca ser a mais abrangente possível para a área. A definição anterior é uma tática boa para muitos cenários. A definição a seguir é que acho mais adequada para responder a questão.\n“A estatística trata de ideas e métodos que visam a aperfeiçoar a obtenção de conclusões a partir das informações numéricas, na presença da incerteza” (Noether, n.d.).\nUsarei a definição de Noether para apresentar a que eu acredito que seja a melhor para este projeto. O ponto central é que a estatistica é usada para tirar conclusões mais acertivas com base em um conjunto de informações. A defnição é a seguinte: “De forma geral, a Estatística é uma ciência que busca maximizar o poder de escolha sobre um determinado assuntode em estudo” .\nDefenderei a definição com seguinte exemplo: Um Estatístico é contratado para trabalhar em uma empresas especializada na venda de 2 produtos químicos. Após uma analise minucioso, ele conclui que produto A é 30% melhor que o B mas é 65% mais caro. A decisão de comercializar o produto será da empresa. Seus estudos ajudarão na decisão. Ele melhorou as opções de escolha. Em outras palavras, ele maximixou o poder de escolha da empresa com base em seus estudos.",
     "crumbs": [
-      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Estatística</span>"
-    ]
-  },
-  {
-    "objectID": "index.html#caminho",
-    "href": "index.html#caminho",
-    "title": "Estatística",
-    "section": "Caminho",
-    "text": "Caminho\nMuitas coisas foram incorporadas a este repositório. books é o meu desejo de construir livros sobre estatistica com base em minhas notas de aulas e exercícios resolvidos, da maneira que eu desejar. Sujeito a escrever e reescrever quantas vezes eu desejar até ficar do meu agrado.\n….. mais coisas\n\nBom, para que é este projeto?\nEu o desenvolverem para mim mesmo. Assim como no vídeo intitulado “O Diário de Henry Jones”, veja (AKITA, 2025), buscarei o mesmo mas para minha área. A ideia ter algo que contenha tudo o que estudei ou estudarei me parece essencial para meu progresso na área, além de um bom ponto de partida para referências.",
-    "crumbs": [
-      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Estatística</span>"
-    ]
-  },
-  {
-    "objectID": "index.html#questões-rápidas",
-    "href": "index.html#questões-rápidas",
-    "title": "Estatística",
-    "section": "Questões rápidas",
-    "text": "Questões rápidas\n\nO que é estatística?\nDe forma geral, a Estatística é uma ciência que busca maximizar o poder de escolha sobre algum assunto. Bem diferente do que está escrito em muitos livros. Bom, meu ponto é que a estatistica é usada sempre para tirar conclusões mais acertivas com base em um conjunto menor de informações. Por exemplo. Um pesquisador pode estar estudando sobre a eficacia de um produto A sobre outro B. Pode chegar a conclusão que o primeiro é 30% melhor. A decisão de comercializar o produto não será do pesquisador. Afinal, suponhamos que A também seja mais caro para ser produzido. Essa decisão será do pesquisador? Não, ele pode até fazer outro estudo sobre a viabilidade da comercialização do produto mas a decisão ainda não será tomada por ele. Se essa for sua tarefa, concerteza está trabalhando por 2 e recebendo por um!\nPor que estatistica?\nPrimeiro, devemos pensar na essência da estatística. Uma ciência que prefere ter uma informação, com certo grau de certeza de sucesso ou fracasso, para tomar uma decisão. Por uma leve reflexão, podemos perceber que essa mentalidade está bastante difundida em muitas áreas do conhecimento humano. Talvez seja por isso que o homem não consiga atingir a perfeição, apenas ter a um vislumbre. Bom, para muitos a Matemática é considerada a essencia da vida. Se isso é verdadeiro, me arrisco a dizer que a Estatística seria uma transformação (função) que pega essa “essência da vida” e a transforma em “outra mais evoluida”. Uma transformação que produz bastantes erros.\nDe forma bem descarada, darei um motivo para doutrina-lo a ter esta mentalidade. Suponha um carro qualquer recém lançado e dito o mais seguro possível. Este carro possui um grande numéro de erros embutinos nele por uma escolha do fabricante, para lucrar sem tomar processos. Na Estatística há uma área chamada “Controle Estatístico de Qualidade”. Muito usado na industria automotiva para a produção de peças que têm margens de erros mas são tão pequenas que podemos usa-las. Como dito anteriormente, é uma escolha do fabricante. É muito difícil e custoso produzir algo com muita perfeição. Escolhe-se vender o produto com essa chance de falha pequena por acreditar-se que será muito provável o acidente. Essa é a essência jovem padawan! O problema talvez seja o acumulo de pequenos erros em cada peça do carro. Não se preocupe! Isso concerteza talbém é controlado. Mas por precaução, use o cinto e respeite as Leis de Transito para ter mais segurança!",
-    "crumbs": [
-      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Estatística</span>"
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>A Arte da Estatística</span>"
     ]
   },
   {
@@ -77,26 +57,6 @@
     "text": "Noether. n.d. “Motivação: O Diário de Henry Jones.” https://www.youtube.com/watch?v=ii5Q2fCl8C0&pp=ygURaGVucnkgam9uZXMgYWtpdGE%3D.",
     "crumbs": [
       "References"
-    ]
-  },
-  {
-    "objectID": "index.html#algumas-perguntas-que-acredito-serem-úteis.",
-    "href": "index.html#algumas-perguntas-que-acredito-serem-úteis.",
-    "title": "A Arte da Estatística",
-    "section": "Algumas perguntas que acredito serem úteis.",
-    "text": "Algumas perguntas que acredito serem úteis.\n\nO que é estatística?\nEm muitos bibliográfias a a definição parar a questão é dada da seguinte maneira: “ciencia tararara …” (ALGUEM, XXXXX)\nEstá definição busca ser a mais abrangente possível para a área. A definição anterior é uma tática boa para muitos cenários. A definição a seguir é que acho mais adequada para responder a questão.\n“A estatística trata de ideas e métodos que visam a aperfeiçoar a obtenção de conclusões a partir das informações numéricas, na presença da incerteza” (Noether, n.d.).\nUsarei a definição de Noether para apresentar a que eu acredito que seja a melhor para este projeto. O ponto central é que a estatistica é usada para tirar conclusões mais acertivas com base em um conjunto de informações. A defnição é a seguinte: “De forma geral, a Estatística é uma ciência que busca maximizar o poder de escolha sobre um determinado assuntode em estudo” .\nDefenderei a definição com seguinte exemplo: Um Estatístico é contratado para trabalhar em uma empresas especializada na venda de 2 produtos químicos. Após uma analise minucioso, ele conclui que produto A é 30% melhor que o B mas é 65% mais caro. A decisão de comercializar o produto será da empresa. Seus estudos ajudarão na decisão. Ele melhorou as opções de escolha. Em outras palavras, ele maximixou o poder de escolha da empresa com base em seus estudos.",
-    "crumbs": [
-      "<span class='chapter-number'>1</span>  <span class='chapter-title'>A Arte da Estatística</span>"
-    ]
-  },
-  {
-    "objectID": "index.html#reescrever.",
-    "href": "index.html#reescrever.",
-    "title": "A Arte da Estatística",
-    "section": "reescrever….",
-    "text": "reescrever….\n. Por exemplo. Um pesquisador pode estar estudando sobre a eficacia de um produto A sobre outro B. Pode chegar a conclusão que o primeiro é 30% melhor. A decisão de comercializar o produto não será do pesquisador. Afinal, suponhamos que A também seja mais caro para ser produzido. Essa decisão será do pesquisador? Não, ele pode até fazer outro estudo sobre a viabilidade da comercialização do produto mas a decisão ainda não será tomada por ele. Se essa for sua tarefa, concerteza está trabalhando por 2 e recebendo por um!\n\nPor que estatistica?\nPrimeiro, devemos pensar na essência da estatística. Uma ciência que prefere ter uma informação, com certo grau de certeza de sucesso ou fracasso, para tomar uma decisão. Por uma leve reflexão, podemos perceber que essa mentalidade está bastante difundida em muitas áreas do conhecimento humano. Talvez seja por isso que o homem não consiga atingir a perfeição, apenas ter a um vislumbre. Bom, para muitos a Matemática é considerada a essencia da vida. Se isso é verdadeiro, me arrisco a dizer que a Estatística seria uma transformação (função) que pega essa “essência da vida” e a transforma em “outra mais evoluida”. Uma transformação que produz bastantes erros.\nDe forma bem descarada, darei um motivo para doutrina-lo a ter esta mentalidade. Suponha um carro qualquer recém lançado e dito o mais seguro possível. Este carro possui um grande numéro de erros embutinos nele por uma escolha do fabricante, para lucrar sem tomar processos. Na Estatística há uma área chamada “Controle Estatístico de Qualidade”. Muito usado na industria automotiva para a produção de peças que têm margens de erros mas são tão pequenas que podemos usa-las. Como dito anteriormente, é uma escolha do fabricante. É muito difícil e custoso produzir algo com muita perfeição. Escolhe-se vender o produto com essa chance de falha pequena por acreditar-se que será muito provável o acidente. Essa é a essência jovem padawan! O problema talvez seja o acumulo de pequenos erros em cada peça do carro. Não se preocupe! Isso concerteza talbém é controlado. Mas por precaução, use o cinto e respeite as Leis de Transito para ter mais segurança!",
-    "crumbs": [
-      "<span class='chapter-number'>1</span>  <span class='chapter-title'>A Arte da Estatística</span>"
     ]
   }
 ]
