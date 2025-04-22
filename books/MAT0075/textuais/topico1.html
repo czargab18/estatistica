@@ -1,12 +1,9 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
-<meta charset="utf-8">
-<meta name="generator" content="quarto-1.6.42">
-
-<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
-
-
+<html lang="en" xml:lang="en" xmlns="http://www.w3.org/1999/xhtml"><head>
+<meta charset="utf-8"/>
+<meta content="quarto-1.6.40" name="generator"/>
+<meta content="width=device-width, initial-scale=1.0, user-scalable=yes" name="viewport"/>
 <title>Espaço amostral – CALCULO DE PROBABILIDADE</title>
 <style>
 code{white-space: pre-wrap;}
@@ -23,24 +20,22 @@ ul.task-list li input[type="checkbox"] {
 </style>
 
 
-<script src="../../delete/site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="../../delete/site_libs/quarto-nav/headroom.min.js"></script>
-<script src="../../delete/site_libs/clipboard/clipboard.min.js"></script>
-<script src="../../delete/site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="../../delete/site_libs/quarto-search/fuse.min.js"></script>
-<script src="../../delete/site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="../">
-<link href="../exercicios/topico1.html" rel="next">
-<link href="../index.html" rel="prev">
-<script src="../../delete/site_libs/quarto-html/quarto.js"></script>
-<script src="../../delete/site_libs/quarto-html/popper.min.js"></script>
-<script src="../../delete/site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="../../delete/site_libs/quarto-html/anchor.min.js"></script>
-<link href="../../delete/site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../../delete/site_libs/quarto-html/quarto-syntax-highlighting-2f5df379a58b258e96c21c0638c20c03.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="../../delete/site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="../../delete/site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../../delete/site_libs/bootstrap/bootstrap-8da5b4427184b79ecddefad3d342027e.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+
+
+
+
+<meta content="../" name="quarto:offset"/>
+<link href="./exercicios/topico1.html" rel="next"/>
+<link href="./index.html" rel="prev"/>
+
+
+
+
+
+
+
+
+
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -68,175 +63,122 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Search"
   }
 }</script>
-<meta charset="utf-8">
-
-<meta content="Estatística" name="topic">
-
-<meta content="index,follow" name="robots">
-
-<meta content="width=device-width, initial-scale=1.0" name="viewport">
-
-<meta content="img-src 'self' https://www.estatistica.pro/; script-src 'self' https://www.estatistica.pro/ac/ https://www.estatistica.pro/sd/" http-equiv="Content-Security-Policy">
-
-<link href="../sd/images/favicons/estatistica.svg" rel="shortcut icon" type="image/x-icon">
-
-<link href="../ac/globalpattern/1/pt_BR/styles/globalpattern.css" rel="stylesheet">
-
-<link href="../ac/globalaside/1/pt_BR/styles/globalaside.css" rel="stylesheet">
-
-<link href="../ac/globalnavbar/1/pt_BR/styles/globalnavbar.css" rel="stylesheet">
-
-<link href="../ac/globalribbon/1/pt_BR/styles/globalribbon.css" rel="stylesheet">
-
-<link href="../ac/globaltipografia/1/pt_BR/style/globaltipografia.css" rel="stylesheet">
-
-<link href="../ac/globalmain/1/pt_BR/styles/globalmain.css" rel="stylesheet">
-
-<link href="../ac/globalnoticias/1/pt_BR/style/globalnoticias.css" rel="stylesheet">
-
-<link href="../ac/globalfooter/1/pt_BR/styles/globalfooter.css" rel="stylesheet">
-
-<script defer="" src="../ac/globalnoticias/1/pt_BR/scripts/globalnoticias.js"></script>
-
-<script defer="" src="../ac/globalpattern/1/pt_BR/scripts/globalpattern.js"></script>
-
-<script defer="" src="../ac/globalfooter/1/pt_BR/scripts/globalfooter.js"></script>
-
-<script defer="" src="../utils/libs/js/navbar.js"></script>
-
-<link href="../wss/fonts.css?families=SF+Pro,v3|SF+Pro+Icons,v3" media="all" rel="stylesheet" type="text/css">
-
-<link href="../ac/books/1/pt_BR/styles/bootstrap-icons.css" rel="stylesheet">
-
-<link href="../ac/books/1/pt_BR/styles/bootstrap.min.css" rel="stylesheet">
-
-<link href="../ac/books/1/pt_BR/styles/custombooks.css" rel="stylesheet">
-
-<link href="../ac/books/1/pt_BR/styles/homebooks.css" rel="stylesheet">
-
-<link href="../ac/books/1/pt_BR/styles/quarto-syntax-highlighting.css" rel="stylesheet">
-
-<link href="../ac/books/1/pt_BR/styles/tippy.css" rel="stylesheet">
-
-<script defer="" src="../ac/books/1/pt_BR/scripts/anchor.min.js"></script>
-
-<script defer="" src="../ac/books/1/pt_BR/scripts/autocomplete.umd.js"></script>
-
-<script defer="" src="../ac/books/1/pt_BR/scripts/bootstrap.min.js"></script>
-
-<script defer="" src="../ac/books/1/pt_BR/scripts/clipboard.min.js"></script>
-
-<script defer="" src="../ac/books/1/pt_BR/scripts/fuse.min.js"></script>
-
-<script defer="" src="../ac/books/1/pt_BR/scripts/headroom.min.js"></script>
-
-<script defer="" src="../ac/books/1/pt_BR/scripts/popper.min.js"></script>
-
-<script defer="" src="../ac/books/1/pt_BR/scripts/quarto-nav.js"></script>
-
-<script defer="" src="../ac/books/1/pt_BR/scripts/quarto-search.js"></script>
-
-<script defer="" src="../ac/books/1/pt_BR/scripts/quarto.js"></script>
-
-<script defer="" src="../ac/books/1/pt_BR/scripts/tippy.umd.min.js"></script>
-
-
+<meta charset="utf-8"/>
+<meta content="Estatística" name="topic"/>
+<meta content="index,follow" name="robots"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta content="img-src 'self' https://www.estatistica.pro/; script-src 'self' https://www.estatistica.pro/ac/ https://www.estatistica.pro/sd/" http-equiv="Content-Security-Policy"/>
+<link href="./sd/images/favicons/estatistica.svg" rel="shortcut icon" type="image/x-icon"/>
+<link href="./ac/globalpattern/1/pt_BR/styles/globalpattern.css" rel="stylesheet"/>
+<link href="./ac/globalaside/1/pt_BR/styles/globalaside.css" rel="stylesheet"/>
+<link href="./ac/globalnavbar/1/pt_BR/styles/globalnavbar.css" rel="stylesheet"/>
+<link href="./ac/globalribbon/1/pt_BR/styles/globalribbon.css" rel="stylesheet"/>
+<link href="./ac/globaltipografia/1/pt_BR/style/globaltipografia.css" rel="stylesheet"/>
+<link href="./ac/globalmain/1/pt_BR/styles/globalmain.css" rel="stylesheet"/>
+<link href="./ac/globalnoticias/1/pt_BR/style/globalnoticias.css" rel="stylesheet"/>
+<link href="./ac/globalfooter/1/pt_BR/styles/globalfooter.css" rel="stylesheet"/>
+<script defer="" src="./ac/globalnoticias/1/pt_BR/scripts/globalnoticias.js"></script>
+<script defer="" src="./ac/globalpattern/1/pt_BR/scripts/globalpattern.js"></script>
+<script defer="" src="./ac/globalfooter/1/pt_BR/scripts/globalfooter.js"></script>
+<script defer="" src="./utils/libs/js/navbar.js"></script>
+<link href="./wss/fonts.css?families=SF+Pro,v3|SF+Pro+Icons,v3" media="all" rel="stylesheet" type="text/css"/>
+<link href="./ac/books/1/pt_BR/styles/bootstrap-icons.css" rel="stylesheet"/>
+<link href="./ac/books/1/pt_BR/styles/bootstrap.min.css" rel="stylesheet"/>
+<link href="./ac/books/1/pt_BR/styles/custombooks.css" rel="stylesheet"/>
+<link href="./ac/books/1/pt_BR/styles/homebooks.css" rel="stylesheet"/>
+<link href="./ac/books/1/pt_BR/styles/quarto-syntax-highlighting.css" rel="stylesheet"/>
+<link href="./ac/books/1/pt_BR/styles/tippy.css" rel="stylesheet"/>
+<script defer="" src="./ac/books/1/pt_BR/scripts/anchor.min.js"></script>
+<script defer="" src="./ac/books/1/pt_BR/scripts/autocomplete.umd.js"></script>
+<script defer="" src="./ac/books/1/pt_BR/scripts/bootstrap.min.js"></script>
+<script defer="" src="./ac/books/1/pt_BR/scripts/clipboard.min.js"></script>
+<script defer="" src="./ac/books/1/pt_BR/scripts/fuse.min.js"></script>
+<script defer="" src="./ac/books/1/pt_BR/scripts/headroom.min.js"></script>
+<script defer="" src="./ac/books/1/pt_BR/scripts/popper.min.js"></script>
+<script defer="" src="./ac/books/1/pt_BR/scripts/quarto-nav.js"></script>
+<script defer="" src="./ac/books/1/pt_BR/scripts/quarto-search.js"></script>
+<script defer="" src="./ac/books/1/pt_BR/scripts/quarto.js"></script>
+<script defer="" src="./ac/books/1/pt_BR/scripts/tippy.umd.min.js"></script>
 </head>
-
 <body class="nav-sidebar floating fullcontent">
-
 <div id="quarto-search-results"></div>
-  <header id="quarto-header" class="headroom fixed-top">
-  <nav class="quarto-secondary-nav">
-    <div class="container-fluid d-flex">
-      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
-        <i class="bi bi-layout-text-sidebar-reverse"></i>
-      </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../textuais/topico1.html">Espaço de Probabilidade</a></li><li class="breadcrumb-item"><a href="../textuais/topico1.html"><span class="chapter-title">Espaço amostral</span></a></li></ol></nav>
-        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
-        </a>
-      <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
-        <i class="bi bi-search"></i>
-      </button>
-    </div>
-  </nav>
+<header class="headroom fixed-top" id="quarto-header">
+<nav class="quarto-secondary-nav">
+<div class="container-fluid d-flex">
+<button aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" class="quarto-btn-toggle btn" data-bs-target=".quarto-sidebar-collapse-item" data-bs-toggle="collapse" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }" role="button" type="button">
+<i class="bi bi-layout-text-sidebar-reverse"></i>
+</button>
+<nav aria-label="breadcrumb" class="quarto-page-breadcrumbs"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../textuais/topico1.html">Espaço de Probabilidade</a></li><li class="breadcrumb-item"><a href="../textuais/topico1.html"><span class="chapter-title">Espaço amostral</span></a></li></ol></nav>
+<a aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" class="flex-grow-1" data-bs-target=".quarto-sidebar-collapse-item" data-bs-toggle="collapse" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }" role="navigation">
+</a>
+<button aria-label="Search" class="btn quarto-search-button" onclick="window.quartoOpenSearch();" type="button">
+<i class="bi bi-search"></i>
+</button>
+</div>
+</nav>
 </header>
 <!-- content -->
-<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<div class="quarto-container page-columns page-rows-contents page-layout-article" id="quarto-content">
 <!-- sidebar -->
-  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
-    <div class="pt-lg-2 mt-2 text-left sidebar-header">
-    <div class="sidebar-title mb-0 py-0">
-      <a href="../">CALCULO DE PROBABILIDADE</a> 
-    </div>
-      </div>
-        <div class="mt-2 flex-shrink-0 align-items-center">
-        <div class="sidebar-search">
-        <div id="quarto-search" class="" title="Search"></div>
-        </div>
-        </div>
-    <div class="sidebar-menu-container"> 
-    <ul class="list-unstyled mt-1">
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../index.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Sumário</span></a>
-  </div>
+<nav class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto" id="quarto-sidebar">
+<div class="pt-lg-2 mt-2 text-left sidebar-header">
+<div class="sidebar-title mb-0 py-0">
+<a href="../">CALCULO DE PROBABILIDADE</a>
+</div>
+</div>
+<div class="mt-2 flex-shrink-0 align-items-center">
+<div class="sidebar-search">
+<div class="" id="quarto-search" title="Search"></div>
+</div>
+</div>
+<div class="sidebar-menu-container">
+<ul class="list-unstyled mt-1">
+<li class="sidebar-item">
+<div class="sidebar-item-container">
+<a class="sidebar-item-text sidebar-link" href="../index.html"><span class="chapter-title">Sumário</span></a>
+</div>
 </li>
-        <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true">
- <span class="menu-text">Espaço de Probabilidade</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../textuais/topico1.html" class="sidebar-item-text sidebar-link active"><span class="chapter-title">Espaço amostral</span></a>
-  </div>
+<li class="sidebar-item sidebar-item-section">
+<div class="sidebar-item-container">
+<a aria-expanded="true" class="sidebar-item-text sidebar-link text-start" data-bs-target="#quarto-sidebar-section-1" data-bs-toggle="collapse" role="navigation">
+<span class="menu-text">Espaço de Probabilidade</span></a>
+<a aria-expanded="true" aria-label="Toggle section" class="sidebar-item-toggle text-start" data-bs-target="#quarto-sidebar-section-1" data-bs-toggle="collapse" role="navigation">
+<i class="bi bi-chevron-right ms-2"></i>
+</a>
+</div>
+<ul class="collapse list-unstyled sidebar-section depth1 show" id="quarto-sidebar-section-1">
+<li class="sidebar-item">
+<div class="sidebar-item-container">
+<a class="sidebar-item-text sidebar-link active" href="../textuais/topico1.html"><span class="chapter-title">Espaço amostral</span></a>
+</div>
 </li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../exercicios/topico1.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Exercícios da Lista 1 - Tópico 1</span></a>
-  </div>
+<li class="sidebar-item">
+<div class="sidebar-item-container">
+<a class="sidebar-item-text sidebar-link" href="../exercicios/topico1.html"><span class="chapter-title">Exercícios da Lista 1 - Tópico 1</span></a>
+</div>
 </li>
-      </ul>
-  </li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../postextuais/references.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">References</span></a>
-  </div>
+</ul>
 </li>
-    </ul>
-    </div>
+<li class="sidebar-item">
+<div class="sidebar-item-container">
+<a class="sidebar-item-text sidebar-link" href="../postextuais/references.html">
+<span class="menu-text">References</span></a>
+</div>
+</li>
+</ul>
+</div>
 </nav>
-<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<div class="quarto-sidebar-collapse-item" data-bs-target=".quarto-sidebar-collapse-item" data-bs-toggle="collapse" id="quarto-sidebar-glass"></div>
 <!-- margin-sidebar -->
-    
 <!-- main -->
 <main class="content" id="quarto-document-content">
-
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../textuais/topico1.html">Espaço de Probabilidade</a></li><li class="breadcrumb-item"><a href="../textuais/topico1.html"><span class="chapter-title">Espaço amostral</span></a></li></ol></nav>
+<header class="quarto-title-block default" id="title-block-header"><nav aria-label="breadcrumb" class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../textuais/topico1.html">Espaço de Probabilidade</a></li><li class="breadcrumb-item"><a href="../textuais/topico1.html"><span class="chapter-title">Espaço amostral</span></a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title"><span id="headline2" class="quarto-section-identifier"><span class="chapter-title">Espaço amostral</span></span></h1>
+<h1 class="title"><span class="quarto-section-identifier" id="headline2"><span class="chapter-title">Espaço amostral</span></span></h1>
 </div>
-
-
-
 <div class="quarto-title-meta">
-
-    
-  
-    
-  </div>
-  
-
-
+</div>
 </header>
-
-
 <p>Na Teoria da Probabilidade ….tarara….</p>
 <dl>
 <dt>espaço amostral</dt>
@@ -247,15 +189,12 @@ ul.task-list li input[type="checkbox"] {
 <p>test</p>
 </dd>
 </dl>
-<section id="sigma-álgebra" class="level2">
+<section class="level2" id="sigma-álgebra">
 <h2 class="anchored" data-anchor-id="sigma-álgebra">Sigma Álgebra</h2>
 </section>
-<section id="medida-de-probabilidade" class="level2">
+<section class="level2" id="medida-de-probabilidade">
 <h2 class="anchored" data-anchor-id="medida-de-probabilidade">Medida de Probabilidade</h2>
-
-
 </section>
-
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
@@ -675,20 +614,16 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 });
 </script>
 <nav class="page-navigation">
-  <div class="nav-page nav-page-previous">
-      <a href="../index.html" class="pagination-link" aria-label="Sumário">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-title">Sumário</span></span>
-      </a>          
-  </div>
-  <div class="nav-page nav-page-next">
-      <a href="../exercicios/topico1.html" class="pagination-link" aria-label="Exercícios da Lista 1 - Tópico 1">
-        <span class="nav-page-text"><span class="chapter-title">Exercícios da Lista 1 - Tópico 1</span></span> <i class="bi bi-arrow-right-short"></i>
-      </a>
-  </div>
+<div class="nav-page nav-page-previous">
+<a aria-label="Sumário" class="pagination-link" href="../index.html">
+<i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-title">Sumário</span></span>
+</a>
+</div>
+<div class="nav-page nav-page-next">
+<a aria-label="Exercícios da Lista 1 - Tópico 1" class="pagination-link" href="../exercicios/topico1.html">
+<span class="nav-page-text"><span class="chapter-title">Exercícios da Lista 1 - Tópico 1</span></span> <i class="bi bi-arrow-right-short"></i>
+</a>
+</div>
 </nav>
 </div> <!-- /content -->
-
-
-
-
 </body></html>

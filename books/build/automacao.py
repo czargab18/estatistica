@@ -1,6 +1,6 @@
 import os
 import json
-from backend.core import ler, corrlinksheadbooks, CAMINHOS
+from core import ler, corrlinksheadbooks, CAMINHOS
 
 if __name__ == "__main__":
     caminho = CAMINHOS["lista_books"]
