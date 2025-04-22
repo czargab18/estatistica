@@ -28,6 +28,7 @@ from bs4 import BeautifulSoup
 
 CAMINHO_BASE = os.path.abspath(__file__).split("estatistica")[0] + "estatistica"
 CAMINHOS = {
+    "rm_head": "/delete/site_libs/",
     "pattern_book": re.compile(r"^[A-Z]{3}\d{4}$"),
     "dir_base": os.path.abspath(__file__).split("estatistica")[0] + "estatistica",
     "dir_include": os.path.normpath("./books/build/include/"),
@@ -226,3 +227,103 @@ def corrlinksheadbooks(
                     print(f"Arquivo não encontrado: {absolute_path}")
                 except Exception as e:
                     print(f"Erro ao processar {absolute_path}: {e}")
+
+
+def corrigirlinksinhead(path: str, corrections: dict, rmhead: str, patternfolders: str):
+    """
+    Processa pastas que contenham o padrão especificado e executa as funções de correção e remoção de links.
+
+    :param path: Caminho do diretório base.
+    :param corrections: Dicionário com padrões antigos como chave e substituições como valor.
+    :param rmhead: Texto que, se encontrado no href ou src, indica que o elemento deve ser removido.
+    :param patternfolders: Padrão para identificar pastas relevantes.
+    """
+    from bs4 import BeautifulSoup
+    import os
+    import re
+
+    def buscar_pastas_com_padrao(base_path, pattern):
+        """Busca pastas que correspondem ao padrão especificado."""
+        return [
+            os.path.join(base_path, pasta)
+            for pasta in os.listdir(base_path)
+            if os.path.isdir(os.path.join(base_path, pasta)) and re.match(pattern, pasta)
+        ]
+
+    def corrigir_links(tags, corrections):
+        """Corrige os atributos href ou src das tags encontradas."""
+        for tag in tags:
+            if tag.has_attr("href"):
+                for old, new in corrections.items():
+                    if old in tag["href"]:
+                        tag["href"] = tag["href"].replace(old, new)
+            if tag.has_attr("src"):
+                for old, new in corrections.items():
+                    if old in tag["src"]:
+                        tag["src"] = tag["src"].replace(old, new)
+
+    def remover_links_e_scripts(tags, texto_para_remover):
+        """Remove tags <link> e <script> que contenham o texto no href ou src."""
+        for tag in tags:
+            if tag.has_attr("href") and texto_para_remover in tag["href"]:
+                tag.decompose()  # Remove a tag do documento
+            elif tag.has_attr("src") and texto_para_remover in tag["src"]:
+                tag.decompose()  # Remove a tag do documento
+
+    def salvar_arquivo(filepath, soup):
+        """Sobrescreve o arquivo HTML com as alterações."""
+        with open(filepath, "w", encoding="utf-8") as file:
+            file.write(str(soup))
+
+    # Busca pastas que correspondem ao padrão
+    pastas_relevantes = buscar_pastas_com_padrao(path, patternfolders)
+
+    for pasta in pastas_relevantes:
+        # Percorre todas as subpastas e arquivos HTML
+        for root, _, files in os.walk(pasta):
+            for file in files:
+                if file.endswith(".html"):
+                    filepath = os.path.join(root, file)
+                    with open(filepath, "r", encoding="utf-8") as f:
+                        soup = BeautifulSoup(f, "html.parser")
+                    head = soup.head
+                    if head:
+                        tags = head.find_all(["link", "script"])
+                        corrigir_links(tags, corrections)
+                        remover_links_e_scripts(tags, rmhead)
+                        salvar_arquivo(filepath, soup)
+
+
+corrections = {
+    "./": "/",           # Caminho relativo redundante
+    "../": "/",          # Caminho para o diretório pai
+    "././": "/",         # Caminho redundante para o mesmo diretório
+    "//": "/",           # Caminho com barras duplas
+    "../../": "/",       # Caminho para dois níveis acima
+    "./../../": "/",     # Caminho redundante para dois níveis acima
+    "////": "/",         # Caminho com múltiplas barras
+    "./../": "/",        # Caminho redundante para o diretório pai
+    "./././": "/",       # Caminho redundante para o mesmo diretório
+    "../../../": "/",    # Caminho para três níveis acima
+    "./../../../": "/",  # Caminho redundante para três níveis acima
+    "index.html/": "index.html",  # Caminho incorreto com barra no final
+    "/./": "/",          # Caminho redundante com barra inicial
+    "/../": "/",         # Caminho redundante com barra inicial para o diretório pai
+    "//./": "/",         # Caminho com barra dupla e redundância
+    "//../": "/",        # Caminho com barra dupla e redundância para o diretório pai
+    "///": "/",
+    "///": "/",          # Caminho com três barras
+    "////": "/",         # Caminho com quatro barras
+    "/////": "/",        # Caminho com cinco barras
+    "/././": "/",        # Caminho redundante com barras e pontos
+    "/.././": "/",       # Caminho redundante para o diretório pai com barra inicial
+    "././././": "/",     # Caminho redundante com múltiplos pontos
+    "////./": "/",       # Caminho com múltiplas barras e ponto
+    "////../": "/",      # Caminho com múltiplas barras e diretório pai
+    "././.././": "/",    # Caminho redundante com mistura de pontos e diretório pai
+    "////././": "/",     # Caminho com múltiplas barras e redundância
+    "estatistica/ac/": "/ac/",
+    "estatistica/sd/": "/sd/"
+}
+corrigirlinksinhead("./books", corrections=corrections, rmhead="/delete/site_libs/", patternfolders=CAMINHOS["pattern_book"])
+

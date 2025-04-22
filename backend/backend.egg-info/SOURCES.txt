@@ -10,10 +10,8 @@ core/__init__.py
 core/dir.py
 core/quartorender.py
 core/__pycache__/__init__.cpython-313.pyc
-core/__pycache__/dir.cpython-313.pyc
-core/__pycache__/quartorender.cpython-313.pyc
+core/books/__pycache__/functions.cpython-313.pyc
 data/__init__.py
-data/__pycache__/__init__.cpython-313.pyc
 data/avisos/__init__.py
 data/avisos/avisos.json
 data/avisos/eventos.json
