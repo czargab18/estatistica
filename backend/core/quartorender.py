@@ -2,6 +2,9 @@ import os
 import re
 import json
 from bs4 import BeautifulSoup
+from core import *
+from core.variaveis import CAMINHO_BASE, CAMINHOS, CORRECOESLINK
+from core import *
 
 """
  * Este script é destinado a auxiliar na automatização de books quarto.
@@ -25,8 +28,6 @@ from bs4 import BeautifulSoup
  *    *      - incluirinhead: Inclui o conteúdo de um arquivo no head dos arquivos book_html.
  *    *      - incluirinbody: Inclui o conteúdo de um arquivo no body dos arquivos book_html.
 """
-
-
 
 def listarbooks(path: str = None, salvedir: str = None, nomefile: str = "books.json"):
     if path is None or not os.path.exists(path):
@@ -166,40 +167,72 @@ def corrlinksheadbooks(
                     print(f"Erro ao processar {absolute_path}: {e}")
 
 
-def corrigirlinksinhead(path: str, corrections: dict, rmhead: str, patternfolders: str):
+def corrigirlinksinhead(
+    path: str,
+    corlink: dict,
+    rmhead: str,
+    patternfolders: str,
+    tipoarquivo: str = ".html",
+    cordefer: bool = False,
+):
     """
-    Processa pastas que contenham o padrão especificado e executa as funções de correção e remoção de links.
+    Inclui ou corrige links no <head> de arquivos HTML encontrados no diretório especificado.
 
-    :param path: Caminho do diretório base.
-    :param corrections: Dicionário com padrões antigos como chave e substituições como valor.
-    :param rmhead: Texto que, se encontrado no href ou src, indica que o elemento deve ser removido.
-    :param patternfolders: Padrão para identificar pastas relevantes.
+    A função processa todos os arquivos HTML no diretório base e seus subdiretórios, realizando as seguintes operações:
+    1. Adiciona links especificados ao elemento <head>.
+    2. Corrige links existentes com base em padrões fornecidos.
+    3. Remove links ou scripts desnecessários que contenham um texto específico no atributo `href` ou `src`.
+
+    :param path: Caminho do diretório base onde os arquivos HTML estão localizados.
+    :param corlink: Dicionário com padrões antigos como chave e substituições como valor, usado para corrigir links existentes.
+    :param rmhead: Texto que, se encontrado no atributo `href` ou `src`, indica que a tag <link> ou <script> deve ser removida.
+    :param patternfolders: Padrão para identificar pastas relevantes dentro do diretório base.
+    :param tipoarquivo: Tipo de arquivo a ser processado (padrão: ".html").
+    :return: Nenhum retorno explícito, mas os arquivos HTML são atualizados diretamente no disco.
+
+    Detalhes adicionais:
+    - A função busca pastas que correspondem ao padrão especificado em `patternfolders`.
+    - Links e scripts no <head> são corrigidos ou removidos com base nos parâmetros fornecidos.
+    - O conteúdo atualizado é salvo diretamente nos arquivos HTML processados.
     """
-    from bs4 import BeautifulSoup
-    import os
-    import re
 
-    def buscar_pastas_com_padrao(base_path, pattern):
+    def buscarpasta(base_path, pattern):
         """Busca pastas que correspondem ao padrão especificado."""
         return [
             os.path.join(base_path, pasta)
             for pasta in os.listdir(base_path)
-            if os.path.isdir(os.path.join(base_path, pasta)) and re.match(pattern, pasta)
+            if os.path.isdir(os.path.join(base_path, pasta))
+            and re.match(pattern, pasta)
         ]
 
-    def corrigir_links(tags, corrections):
+    def corrigirlinks(tags, corlink):
         """Corrige os atributos href ou src das tags encontradas."""
         for tag in tags:
             if tag.has_attr("href"):
-                for old, new in corrections.items():
+                for old, new in corlink.items():
                     if old in tag["href"]:
                         tag["href"] = tag["href"].replace(old, new)
             if tag.has_attr("src"):
-                for old, new in corrections.items():
+                for old, new in corlink.items():
                     if old in tag["src"]:
                         tag["src"] = tag["src"].replace(old, new)
 
-    def remover_links_e_scripts(tags, texto_para_remover):
+    def cordefer(tags):
+        """Corrige scripts com: 'defer=""' => 'defer'."""
+        for tag in tags:
+            if tag.has_attr("defer"):
+                # Remove o valor do atributo, deixando apenas 'defer'
+                tag["defer"] = None
+
+    def corlinkrel(tags, corlink):
+        """
+        Corrige o links das páginas de links que tenham atributo rel:
+         exemplos de
+         rel="next" : <link href="/books/{book}/references.html" rel="next"/> 
+         rel="prev": <link href="/books/{book}/index.html" rel="prev"/> 
+        """
+
+    def removerhead(tags, texto_para_remover):
         """Remove tags <link> e <script> que contenham o texto no href ou src."""
         for tag in tags:
             if tag.has_attr("href") and texto_para_remover in tag["href"]:
@@ -213,7 +246,7 @@ def corrigirlinksinhead(path: str, corrections: dict, rmhead: str, patternfolder
             file.write(str(soup))
 
     # Busca pastas que correspondem ao padrão
-    pastas_relevantes = buscar_pastas_com_padrao(path, patternfolders)
+    pastas_relevantes = buscarpasta(path, patternfolders)
 
     for pasta in pastas_relevantes:
         # Percorre todas as subpastas e arquivos HTML
@@ -226,42 +259,29 @@ def corrigirlinksinhead(path: str, corrections: dict, rmhead: str, patternfolder
                     head = soup.head
                     if head:
                         tags = head.find_all(["link", "script"])
-                        corrigir_links(tags, corrections)
-                        remover_links_e_scripts(tags, rmhead)
+                        corrigirlinks(tags, corlink)
+                        removerhead(tags, rmhead)
+                        cordefer(tags)
                         salvar_arquivo(filepath, soup)
 
 
-CORRECOESLINK = {
-    "./": "/",           # Caminho relativo redundante
-    "../": "/",          # Caminho para o diretório pai
-    "././": "/",         # Caminho redundante para o mesmo diretório
-    "//": "/",           # Caminho com barras duplas
-    "../../": "/",       # Caminho para dois níveis acima
-    "./../../": "/",     # Caminho redundante para dois níveis acima
-    "////": "/",         # Caminho com múltiplas barras
-    "./../": "/",        # Caminho redundante para o diretório pai
-    "./././": "/",       # Caminho redundante para o mesmo diretório
-    "../../../": "/",    # Caminho para três níveis acima
-    "./../../../": "/",  # Caminho redundante para três níveis acima
-    "index.html/": "index.html",  # Caminho incorreto com barra no final
-    "/./": "/",          # Caminho redundante com barra inicial
-    "/../": "/",         # Caminho redundante com barra inicial para o diretório pai
-    "//./": "/",         # Caminho com barra dupla e redundância
-    "//../": "/",        # Caminho com barra dupla e redundância para o diretório pai
-    "///": "/",
-    "///": "/",          # Caminho com três barras
-    "////": "/",         # Caminho com quatro barras
-    "/////": "/",        # Caminho com cinco barras
-    "/././": "/",        # Caminho redundante com barras e pontos
-    "/.././": "/",       # Caminho redundante para o diretório pai com barra inicial
-    "././././": "/",     # Caminho redundante com múltiplos pontos
-    "////./": "/",       # Caminho com múltiplas barras e ponto
-    "////../": "/",      # Caminho com múltiplas barras e diretório pai
-    "././.././": "/",    # Caminho redundante com mistura de pontos e diretório pai
-    "////././": "/",     # Caminho com múltiplas barras e redundância
-    "estatistica/ac/": "/ac/",
-    "estatistica/sd/": "/sd/"
-}
-corrigirlinksinhead("./books", corrections=CORRECOESLINK,
-                    rmhead="/delete/site_libs/", patternfolders=CAMINHOS["pattern_book"])
+# if __name__ == "__main__":
+#     # Caminho para a pasta ./books
+#     path = "./books"
 
+#     # Parâmetros de teste
+#     # Exemplo de padrões para corrigir links
+#     corlink = CORRECOESLINK
+#     rmhead = "delete/site_libs"
+#     patternfolders = CAMINHOS["pattern_book"]
+#     tipoarquivo = ".html"
+
+#     # Chama a função para corrigir os arquivos HTML na pasta ./books
+#     corrigirlinksinhead(
+#         path=path,
+#         corlink=corlink,
+#         rmhead=rmhead,
+#         patternfolders=patternfolders,
+#         tipoarquivo=tipoarquivo,
+#         cordefer=True,  # Ativa a correção do atributo defer
+#     )
