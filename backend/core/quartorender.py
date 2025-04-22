@@ -26,69 +26,6 @@ from bs4 import BeautifulSoup
  *    *      - incluirinbody: Inclui o conteúdo de um arquivo no body dos arquivos book_html.
 """
 
-CAMINHO_BASE = os.path.abspath(__file__).split("estatistica")[0] + "estatistica"
-CAMINHOS = {
-    "rm_head": "/delete/site_libs/",
-    "pattern_book": re.compile(r"^[A-Z]{3}\d{4}$"),
-    "dir_base": os.path.abspath(__file__).split("estatistica")[0] + "estatistica",
-    "dir_include": os.path.normpath("./books/build/include/"),
-    "lista_books": os.path.join(CAMINHO_BASE, "backend/data/books/books.json").replace(
-        "\\", "/"
-    ),
-    "path_books": os.path.join(CAMINHO_BASE, "books").replace("\\", "/"),
-}
-print(CAMINHOS["path_books"])
-
-def ler(path: str = None):
-    """
-    Lê o conteúdo de um arquivo no caminho especificado.
-
-    Parâmetros:
-    ----------
-    path : str
-        O caminho completo para o arquivo que será lido.
-    tipefile : list, opcional
-        Uma lista de tipos de arquivos suportados (não utilizado atualmente na lógica).
-
-    Retorna:
-    -------
-    str
-        O conteúdo do arquivo como uma string, caso seja um arquivo de texto.
-
-    Exceções:
-    --------
-    FileNotFoundError
-        Se o arquivo especificado no caminho não for encontrado.
-    UnicodeDecodeError
-        Se o arquivo não puder ser decodificado como UTF-8.
-
-    Exemplo:
-    --------
-    >>> content = ler("caminho/para/arquivo.txt")
-    >>> print(content)
-    """
-    with open(path, "r", encoding="utf-8") as file:
-        return file.read()
-
-
-def escrever(path, conteudo):
-    """
-    Escreve conteúdo em um arquivo.
-
-    Parâmetros:
-    ----------
-    path : str
-        O caminho completo para o arquivo onde o conteúdo será escrito.
-    conteudo : str
-        O conteúdo que será escrito no arquivo.
-
-    Retorna:
-    -------
-    None
-    """
-    with open(path, "w", encoding="utf-8") as file:
-        file.write(conteudo)
-        return True
 
 
 def listarbooks(path: str = None, salvedir: str = None, nomefile: str = "books.json"):
@@ -294,7 +231,7 @@ def corrigirlinksinhead(path: str, corrections: dict, rmhead: str, patternfolder
                         salvar_arquivo(filepath, soup)
 
 
-corrections = {
+CORRECOESLINK = {
     "./": "/",           # Caminho relativo redundante
     "../": "/",          # Caminho para o diretório pai
     "././": "/",         # Caminho redundante para o mesmo diretório
@@ -325,5 +262,6 @@ corrections = {
     "estatistica/ac/": "/ac/",
     "estatistica/sd/": "/sd/"
 }
-corrigirlinksinhead("./books", corrections=corrections, rmhead="/delete/site_libs/", patternfolders=CAMINHOS["pattern_book"])
+corrigirlinksinhead("./books", corrections=CORRECOESLINK,
+                    rmhead="/delete/site_libs/", patternfolders=CAMINHOS["pattern_book"])
 

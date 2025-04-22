@@ -1,64 +1,137 @@
-# def includeinhead(linkstoinclude, pathbooks: str = "./books/", tipoarquivo: str = ".html"):
-#     """
-#     Inclui os links especificados no <head> de arquivos HTML encontrados no diretório especificado.
-#     :param pathbooks: Caminho base onde os arquivos HTML estão localizados.
-#     :param tipoarquivo: Tipo de arquivo a ser processado (por padrão, ".html").
-#     :param linkstoinclude: Lista de links a serem incluídos no <head>.
-#     :return: Dicionário com os arquivos processados e seu status.
-#     """
-#     arquivos_processados = {}
-#     for root, _, files in os.walk(pathbooks):
-#         for file in files:
-#             if file.endswith(tipoarquivo):
-#                 caminho_arquivo = os.path.join(root, file)
-#                 try:
-#                     with open(caminho_arquivo, 'r', encoding='utf-8') as f:
-#                         conteudo = f.read()
-#                     # Verifica se o <head> já contém os links
-#                     if any(link in conteudo for link in linkstoinclude):
-#                         arquivos_processados[caminho_arquivo] = "Links já incluídos"
-#                         continue
-#                     # Insere os links no <head>
-#                     if "<head>" in conteudo:
-#                         conteudo = conteudo.replace(
-#                             "<head>", f"<head>\n{''.join(linkstoinclude)}\n"
-#                         )
-#                     else:
-#                         arquivos_processados[caminho_arquivo] = "Tag <head> não encontrada"
-#                         continue
-#                     # Salva o arquivo atualizado
-#                     with open(caminho_arquivo, 'w', encoding='utf-8') as f:
-#                         f.write(conteudo)
-#                     arquivos_processados[caminho_arquivo] = "Links incluídos com sucesso"
-#                 except Exception as e:
-#                     arquivos_processados[caminho_arquivo] = f"Erro: {e}"
-#     return arquivos_processados
-
 from bs4 import BeautifulSoup
-import core
 import os
 import re
+from core import *
+from core.variaveis import CAMINHOS
 
-def includeinheadbooks(
-    links,
-    booksin: str = "./books/",
+
+def corrigirlinksinhead(
+    path: str,
+    corlink: dict,
+    rmhead: str,
+    patternfolders: str,
     tipoarquivo: str = ".html",
-    linksin: str = "./books/build/include/include-in-head",
-    headclean: bool = False,
+    cordefer: bool = False,
 ):
     """
-    Inclui links no <head> de arquivos HTML encontrados no diretório especificado.
+    Inclui ou corrige links no <head> de arquivos HTML encontrados no diretório especificado.
 
-    :param links: Lista de links (ex.: tags <link> ou <script>) a serem incluídos no <head>.
-    :param booksin: Caminho base onde os arquivos HTML dos books estão localizados (padrão: "./books/").
+    A função processa todos os arquivos HTML no diretório base e seus subdiretórios, realizando as seguintes operações:
+    1. Adiciona links especificados ao elemento <head>.
+    2. Corrige links existentes com base em padrões fornecidos.
+    3. Remove links ou scripts desnecessários que contenham um texto específico no atributo `href` ou `src`.
+
+    :param path: Caminho do diretório base onde os arquivos HTML estão localizados.
+    :param corlink: Dicionário com padrões antigos como chave e substituições como valor, usado para corrigir links existentes.
+    :param rmhead: Texto que, se encontrado no atributo `href` ou `src`, indica que a tag <link> ou <script> deve ser removida.
+    :param patternfolders: Padrão para identificar pastas relevantes dentro do diretório base.
     :param tipoarquivo: Tipo de arquivo a ser processado (padrão: ".html").
-    :param linksin: Caminho para um arquivo contendo links adicionais a serem incluídos no <head>.
-    :param headclean: Se True, limpa o conteúdo existente do <head> antes de adicionar os novos links.
-    :return: Dicionário com os arquivos processados e seu status, indicando sucesso ou erros encontrados.
+    :return: Nenhum retorno explícito, mas os arquivos HTML são atualizados diretamente no disco.
 
-    A função processa todos os arquivos no diretório especificado e seus subdiretórios.
-    Se `headclean` for True, o conteúdo existente do <head> será removido antes de adicionar os links.
-    Links adicionais podem ser carregados de um arquivo especificado em  linksin`.
+    Detalhes adicionais:
+    - A função busca pastas que correspondem ao padrão especificado em `patternfolders`.
+    - Links e scripts no <head> são corrigidos ou removidos com base nos parâmetros fornecidos.
+    - O conteúdo atualizado é salvo diretamente nos arquivos HTML processados.
     """
-    # ...existing code...
-    return ...
+     
+    def buscarpasta(base_path, pattern):
+        """Busca pastas que correspondem ao padrão especificado."""
+        return [
+            os.path.join(base_path, pasta)
+            for pasta in os.listdir(base_path)
+            if os.path.isdir(os.path.join(base_path, pasta))
+            and re.match(pattern, pasta)
+        ]
+
+    def corrigirlinks(tags, corlink):
+        """Corrige os atributos href ou src das tags encontradas."""
+        for tag in tags:
+            if tag.has_attr("href"):
+                for old, new in corlink.items():
+                    if old in tag["href"]:
+                        tag["href"] = tag["href"].replace(old, new)
+            if tag.has_attr("src"):
+                for old, new in corlink.items():
+                    if old in tag["src"]:
+                        tag["src"] = tag["src"].replace(old, new)
+
+
+    def cordefer(tags):
+        """Corrige scripts com: 'defer=""' => 'defer'."""
+        for tag in tags:
+            if tag.has_attr("defer") and tag["defer"] == "":
+                tag["defer"] = "defer"
+
+    def removerhead(tags, texto_para_remover):
+        """Remove tags <link> e <script> que contenham o texto no href ou src."""
+        for tag in tags:
+            if tag.has_attr("href") and texto_para_remover in tag["href"]:
+                tag.decompose()  # Remove a tag do documento
+            elif tag.has_attr("src") and texto_para_remover in tag["src"]:
+                tag.decompose()  # Remove a tag do documento
+
+    def salvar_arquivo(filepath, soup):
+        """Sobrescreve o arquivo HTML com as alterações."""
+        with open(filepath, "w", encoding="utf-8") as file:
+            file.write(str(soup))
+
+    # Busca pastas que correspondem ao padrão
+    pastas_relevantes = buscarpasta(path, patternfolders)
+
+    for pasta in pastas_relevantes:
+        # Percorre todas as subpastas e arquivos HTML
+        for root, _, files in os.walk(pasta):
+            for file in files:
+                if file.endswith(".html"):
+                    filepath = os.path.join(root, file)
+                    with open(filepath, "r", encoding="utf-8") as f:
+                        soup = BeautifulSoup(f, "html.parser")
+                    head = soup.head
+                    if head:
+                        tags = head.find_all(["link", "script"])
+                        corrigirlinks(tags, corlink)
+                        removerhead(tags, rmhead)
+                        salvar_arquivo(filepath, soup)
+
+
+
+
+
+
+if __name__ == "__main__":
+
+        # HTML de exemplo para criar tags
+    html_exemplo = """
+    <html>
+    <head>
+        <script src="script1.js" defer=""></script>
+        <script src="script2.js"></script>
+        <script src="script3.js" defer=""></script>
+        <script src="script4.js" defer="defer"></script>
+    </head>
+    <body>
+    </body>
+    </html>
+    """
+
+    # Parseando o HTML com BeautifulSoup
+    soup = BeautifulSoup(html_exemplo, "html.parser")
+
+    # Selecionando todas as tags <script>
+    tags = soup.find_all("script")
+
+    # Função cordefer
+
+
+    def cordefer(tags):
+        """Corrige scripts com: 'defer=""' => 'defer'."""
+        for tag in tags:
+            if tag.has_attr("defer") and tag["defer"] == "":
+                tag["defer"] = "defer"
+
+
+    # Testando a função
+    cordefer(tags)
+
+    # Verificando o resultado
+    print(soup.prettify())

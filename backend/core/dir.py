@@ -53,3 +53,54 @@ def listdir(folder: str = None, save: str = None):
             file.write("\n".join(structure))
     return structure
 
+
+def ler(path: str = None):
+    """
+    Lê o conteúdo de um arquivo no caminho especificado.
+
+    Parâmetros:
+    ----------
+    path : str
+        O caminho completo para o arquivo que será lido.
+    tipefile : list, opcional
+        Uma lista de tipos de arquivos suportados (não utilizado atualmente na lógica).
+
+    Retorna:
+    -------
+    str
+        O conteúdo do arquivo como uma string, caso seja um arquivo de texto.
+
+    Exceções:
+    --------
+    FileNotFoundError
+        Se o arquivo especificado no caminho não for encontrado.
+    UnicodeDecodeError
+        Se o arquivo não puder ser decodificado como UTF-8.
+
+    Exemplo:
+    --------
+    >>> content = ler("caminho/para/arquivo.txt")
+    >>> print(content)
+    """
+    with open(path, "r", encoding="utf-8") as file:
+        return file.read()
+
+
+def escrever(path, conteudo):
+    """
+    Escreve conteúdo em um arquivo.
+
+    Parâmetros:
+    ----------
+    path : str
+        O caminho completo para o arquivo onde o conteúdo será escrito.
+    conteudo : str
+        O conteúdo que será escrito no arquivo.
+
+    Retorna:
+    -------
+    None
+    """
+    with open(path, "w", encoding="utf-8") as file:
+        file.write(conteudo)
+        return True
