@@ -267,23 +267,42 @@ def corrigirlinksinhead(
                 if file.endswith(".html"):
                     filepath = os.path.join(root, file)
                     with open(filepath, "r", encoding="utf-8") as f:
-                        html_content = f.read()
+                        # Processar o HTML com BeautifulSoup
+                        soup = BeautifulSoup(f, "html.parser")
 
                     # Chamar corlinkrel para corrigir os links
-                    html_corrigido = corlinkrel(html_content, nome_livro)
+                    # Passar o objeto soup e o nome do livro
+                    corlinkrel(soup, nome_livro)
 
-                    # Salvar o conteúdo corrigido
-                    salvar_arquivo(filepath, BeautifulSoup(html_corrigido, "html.parser"))
-
-                    # Reabrir o arquivo corrigido para aplicar outras correções
-                    with open(filepath, "r", encoding="utf-8") as f:
-                        soup = BeautifulSoup(f, "html.parser")
+                    # Aplicar as outras correções e salvar no final
                     head = soup.head
                     if head:
                         tags = head.find_all(["link", "script"])
-                        corrigirlinks(tags, corlink)
+                        corrigirlinks(tags, corlink)  # Corrigir os links
+                        # Remover links desnecessários
                         removerhead(tags, rmhead)
-                        cordefer(tags)
-                        salvar_arquivo(filepath, soup)
+                        cordefer(tags)  # Ajustar scripts com defer
+
+                    # Salvar o HTML final com todas as alterações
+                    salvar_arquivo(filepath, soup)
 
 
+if __name__ == "__main__":
+    path = "./books"
+
+   # Parâmetros de teste
+   # Exemplo de padrões para corrigir links
+    corlink = CORRECOESLINK
+    rmhead = "delete/site_libs"
+    patternfolders = CAMINHOS["pattern_book"]
+    tipoarquivo = ".html"
+
+    #Chama a função para corrigir os arquivos HTML na pasta ./books
+    corrigirlinksinhead(
+        path=path,
+        corlink=corlink,
+        rmhead=rmhead,
+        patternfolders=patternfolders,
+        tipoarquivo=tipoarquivo,
+        cordefer=True,  #Ativa a correção do atributo defer
+    )
