@@ -1,3 +1,4 @@
+from bs4.dammit import html_meta
 import os
 import re
 import json
@@ -224,13 +225,24 @@ def corrigirlinksinhead(
                 # Remove o valor do atributo, deixando apenas 'defer'
                 tag["defer"] = None
 
-    def corlinkrel(tags, corlink):
+
+    def corlinkrel(soup: BeautifulSoup, nome_livro: str):
         """
-        Corrige o links das páginas de links que tenham atributo rel:
-         exemplos de
-         rel="next" : <link href="/books/{book}/references.html" rel="next"/> 
-         rel="prev": <link href="/books/{book}/index.html" rel="prev"/> 
+        Corrige os links das páginas de links que tenham atributo rel="next" ou rel="prev".
+        
+        Args:
+            soup (BeautifulSoup): Objeto BeautifulSoup representando o conteúdo HTML.
+            nome_livro (str): Nome do livro para ajustar os caminhos no atributo href.
+
+        Returns:
+            None: As alterações são feitas diretamente no objeto `soup`.
         """
+        # Corrigir links com rel="next" ou rel="prev"
+        for tag in soup.find_all("link", rel=["next", "prev"]):
+            href_atual = tag.get("href")
+            if href_atual and not href_atual.startswith("/books/"):
+                # Atualizar o atributo href
+                tag["href"] = f"/books/{nome_livro}{href_atual}"
 
     def removerhead(tags, texto_para_remover):
         """Remove tags <link> e <script> que contenham o texto no href ou src."""
@@ -249,11 +261,21 @@ def corrigirlinksinhead(
     pastas_relevantes = buscarpasta(path, patternfolders)
 
     for pasta in pastas_relevantes:
-        # Percorre todas as subpastas e arquivos HTML
+        nome_livro = os.path.basename(pasta)  # Extrair o nome do livro
         for root, _, files in os.walk(pasta):
             for file in files:
                 if file.endswith(".html"):
                     filepath = os.path.join(root, file)
+                    with open(filepath, "r", encoding="utf-8") as f:
+                        html_content = f.read()
+
+                    # Chamar corlinkrel para corrigir os links
+                    html_corrigido = corlinkrel(html_content, nome_livro)
+
+                    # Salvar o conteúdo corrigido
+                    salvar_arquivo(filepath, BeautifulSoup(html_corrigido, "html.parser"))
+
+                    # Reabrir o arquivo corrigido para aplicar outras correções
                     with open(filepath, "r", encoding="utf-8") as f:
                         soup = BeautifulSoup(f, "html.parser")
                     head = soup.head
@@ -265,23 +287,3 @@ def corrigirlinksinhead(
                         salvar_arquivo(filepath, soup)
 
 
-# if __name__ == "__main__":
-#     # Caminho para a pasta ./books
-#     path = "./books"
-
-#     # Parâmetros de teste
-#     # Exemplo de padrões para corrigir links
-#     corlink = CORRECOESLINK
-#     rmhead = "delete/site_libs"
-#     patternfolders = CAMINHOS["pattern_book"]
-#     tipoarquivo = ".html"
-
-#     # Chama a função para corrigir os arquivos HTML na pasta ./books
-#     corrigirlinksinhead(
-#         path=path,
-#         corlink=corlink,
-#         rmhead=rmhead,
-#         patternfolders=patternfolders,
-#         tipoarquivo=tipoarquivo,
-#         cordefer=True,  # Ativa a correção do atributo defer
-#     )
