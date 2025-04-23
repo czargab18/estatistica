@@ -30,6 +30,7 @@ from core import *
  *    *      - incluirinbody: Inclui o conteúdo de um arquivo no body dos arquivos book_html.
 """
 
+
 def listarbooks(path: str = None, salvedir: str = None, nomefile: str = "books.json"):
     if path is None or not os.path.exists(path):
         return "Erro: Não aponta para um arquivo ou diretório válido!"
@@ -138,11 +139,10 @@ def corrigirlinksinhead(
                 # Remove o valor do atributo, deixando apenas 'defer'
                 tag["defer"] = None
 
-
     def corlinkrel(soup: BeautifulSoup, nome_livro: str):
         """
         Corrige os links das páginas de links que tenham atributo rel="next" ou rel="prev".
-        
+
         Args:
             soup (BeautifulSoup): Objeto BeautifulSoup representando o conteúdo HTML.
             nome_livro (str): Nome do livro para ajustar os caminhos no atributo href.
@@ -200,22 +200,81 @@ def corrigirlinksinhead(
                     salvar_arquivo(filepath, soup)
 
 
+def includeinbody(
+    pathbooks: str = "./books/",
+    tipoarquivo: str = ".html",
+    include_file: str = "./books/build/include/include-in-body",
+):
+    """
+    Adiciona o conteúdo do globalheader e globalfooter nos arquivos HTML dos books.
+
+    :param pathbooks: Caminho base onde os arquivos HTML estão localizados.
+    :param tipoarquivo: Tipo de arquivo a ser processado (por padrão, ".html").
+    :param include_file: Caminho do arquivo contendo os conteúdos de globalheader e globalfooter.
+    :return: Dicionário com os arquivos processados e seu status.
+    """
+    arquivos_processados = {}
+
+    # Ler o conteúdo do arquivo include-in-body
+    try:
+        with open(include_file, "r", encoding="utf-8") as f:
+            include_content = f.read()
+        globalheader = include_content.split('globalheader = """')[1].split('"""')[0]
+        globalfooter = include_content.split('globalfooter = """')[1].split('"""')[0]
+    except Exception as e:
+        return {"Erro": f"Não foi possível ler o arquivo include-in-body: {e}"}
+
+    for root, _, files in os.walk(pathbooks):
+        for file in files:
+            if file.endswith(tipoarquivo):
+                filepath = os.path.join(root, file)
+                try:
+                    with open(filepath, "r", encoding="utf-8") as f:
+                        soup = BeautifulSoup(f, "html.parser")
+
+                    # Verificar se já existe o globalheader
+                    if not soup.find("div", id="globalheader"):
+                        body = soup.find("body")
+                        if body:
+                            body.insert(0, BeautifulSoup(globalheader, "html.parser"))
+
+                    # Verificar se já existe o globalfooter
+                    if not soup.find("footer", id="globalfooter"):
+                        body = soup.find("body")
+                        if body:
+                            body.append(BeautifulSoup(globalfooter, "html.parser"))
+
+                    # Salvar as alterações no arquivo
+                    with open(filepath, "w", encoding="utf-8") as f:
+                        f.write(str(soup))
+
+                    arquivos_processados[filepath] = "Sucesso"
+                except Exception as e:
+                    arquivos_processados[filepath] = f"Erro: {e}"
+
+    return arquivos_processados
+
+
 if __name__ == "__main__":
     path = "./books"
-
-   # Parâmetros de teste
-   # Exemplo de padrões para corrigir links
+    includeinbody(
+        pathbooks=path,
+        tipoarquivo=".html",
+        include_file="./books/build/include/include-in-body",
+    )
+    # Parâmetros de teste
+    # Exemplo de padrões para corrigir links
     corlink = CORRECOESLINK
     rmhead = "delete/site_libs"
     patternfolders = CAMINHOS["pattern_book"]
     tipoarquivo = ".html"
 
-    #Chama a função para corrigir os arquivos HTML na pasta ./books
+    # Chama a função para corrigir os arquivos HTML na pasta ./books
     corrigirlinksinhead(
         path=path,
         corlink=corlink,
         rmhead=rmhead,
         patternfolders=patternfolders,
         tipoarquivo=tipoarquivo,
-        cordefer=True,  #Ativa a correção do atributo defer
+        cordefer=True,  # Ativa a correção do atributo defer
     )
