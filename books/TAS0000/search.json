@@ -4,7 +4,7 @@
     "href": "index.html",
     "title": "A Arte da Estatística",
     "section": "",
-    "text": "A Arte da Estatística\nO nome desta série é inspirado na famosa coleção de Donald Knuth chamada “The Art of Computer Programming”, veja (tarara, xxx).\nEsta série ou coleção será construída com base em minhas notas e exercícios de aulas.",
+    "text": "A Arte da Estatística\nO nome desta série é inspirado na famosa coleção de Donald Knuth chamada “The Art of Computer Programming”, veja (tarara, xxx). Esta série ou coleção será construída com base em minhas notas e exercícios de aulas.",
     "crumbs": [
       "<span class='chapter-number'>1</span>  <span class='chapter-title'>A Arte da Estatística</span>"
     ]
@@ -14,7 +14,7 @@
     "href": "index.html#algumas-perguntas-que-acredito-serem-úteis.",
     "title": "A Arte da Estatística",
     "section": "Algumas perguntas que acredito serem úteis.",
-    "text": "Algumas perguntas que acredito serem úteis.\n\nO que é estatística?\nEm muitos bibliográfias a a definição parar a questão é dada da seguinte maneira: “ciencia tararara …” (ALGUEM, XXXXX)\nEstá definição busca ser a mais abrangente possível para a área. A definição anterior é uma tática boa para muitos cenários. A definição a seguir é que acho mais adequada para responder a questão.\n“A estatística trata de ideas e métodos que visam a aperfeiçoar a obtenção de conclusões a partir das informações numéricas, na presença da incerteza” (Noether, n.d.).\nUsarei a definição de Noether para apresentar a que eu acredito que seja a melhor para este projeto. O ponto central é que a estatistica é usada para tirar conclusões mais acertivas com base em um conjunto de informações. A defnição é a seguinte: “De forma geral, a Estatística é uma ciência que busca maximizar o poder de escolha sobre um determinado assuntode em estudo” .\nDefenderei a definição com seguinte exemplo: Um Estatístico é contratado para trabalhar em uma empresas especializada na venda de 2 produtos químicos. Após uma analise minucioso, ele conclui que produto A é 30% melhor que o B mas é 65% mais caro. A decisão de comercializar o produto será da empresa. Seus estudos ajudarão na decisão. Ele melhorou as opções de escolha. Em outras palavras, ele maximixou o poder de escolha da empresa com base em seus estudos.",
+    "text": "Algumas perguntas que acredito serem úteis.\n\nO que é estatística?\nEm muitos bibliográfias a a definição parar a questão é dada da seguinte maneira: “ciencia tararara …” (ALGUEM, XXXXX)\nEstá definição busca ser a mais abrangente possível para a área. A definição anterior é uma tática boa para muitos cenários. A definição a seguir é que acho mais adequada para responder a questão.\n“A estatística trata de ideas e métodos que visam a aperfeiçoar a obtenção de conclusões a partir das informações numéricas, na presença da incerteza” (Noether 1991).\nUsarei a definição de Noether para apresentar a que eu acredito que seja a melhor para este projeto. O ponto central é que a estatistica é usada para tirar conclusões mais acertivas com base em um conjunto de informações. A defnição é a seguinte: “De forma geral, a Estatística é uma ciência que busca maximizar o poder de escolha sobre um determinado assuntode em estudo” .\nDefenderei a definição com seguinte exemplo: Um Estatístico é contratado para trabalhar em uma empresas especializada na venda de 2 produtos químicos. Após uma analise minucioso, ele conclui que produto A é 30% melhor que o B mas é 65% mais caro. A decisão de comercializar o produto será da empresa. Seus estudos ajudarão na decisão. Ele melhorou as opções de escolha. Em outras palavras, ele maximixou o poder de escolha da empresa com base em seus estudos.",
     "crumbs": [
       "<span class='chapter-number'>1</span>  <span class='chapter-title'>A Arte da Estatística</span>"
     ]
@@ -23,8 +23,8 @@
     "objectID": "index.html#processo-de-desenvolvimento",
     "href": "index.html#processo-de-desenvolvimento",
     "title": "A Arte da Estatística",
-    "section": "Processo de desenvolvimento",
-    "text": "Processo de desenvolvimento\nSeguirei o processo normal de desenvolvimento:\n\nDisponibilizar o que já existe, mesmo que não agregue valor por falta de clareza.\nMelhorar o conteúdo, mesmo que necessite mudar a essência.\nAdicionar exemplos e exercícios.\nRepetir os processoas anteriores, não para chegar na Magnum Opus mas em algo aceitavél para consumo.\nFinalizar tudo e “entregar”, assim que possível.",
+    "section": "Processo de Desenvolvimento",
+    "text": "Processo de Desenvolvimento\nO processo de desenvolvimento seguirá os seguintes passos:\n\nDisponibilização inicial: Publicar o conteúdo atual, mesmo que ainda não esteja completamente claro ou refinado.\nAprimoramento contínuo: Melhorar o material, ajustando ou até reformulando sua essência quando necessário.\nAdição de exemplos e exercícios: Enriquecer o conteúdo com exemplos práticos e exercícios em diferentes níveis de dificuldade.\nIteração: Repetir os passos anteriores até alcançar um nível aceitável para consumo, sem a pretensão de criar uma obra-prima, mas algo funcional e útil.\nEntrega final: Concluir e disponibilizar o material assim que possível.",
     "crumbs": [
       "<span class='chapter-number'>1</span>  <span class='chapter-title'>A Arte da Estatística</span>"
     ]
@@ -43,8 +43,8 @@
     "objectID": "index.html#estrutura-das-notas",
     "href": "index.html#estrutura-das-notas",
     "title": "A Arte da Estatística",
-    "section": "Estrutura das notas",
-    "text": "Estrutura das notas\nobs: Demonstrar tudo que for possível.\n\n“Storytteling with data”: se não sou eu que tenho controle, deve dar a maior quantidade de informação e o leitor escolhe o que consumir.\n\n\nTexto Introdutório: apresentação do conteúdo e algumas explicações.\nExemplos e raciocínio para resolver\n\nFácil\nmédio\ndifícil\n\nConstrução da Demonstração (Lemas, etc…)\nDesenvolvimento da demonstração (definição final).\nUsando a demonstração [4.] para resolver os problemas de [2.]\nMais exemplos pela definição\nExercícios\n\nApenas cálcular: botar na receita [4.] e resolver.\nProblemas teóricos (demonstrar algo)\nProblemas de lógica (fazer alguma manipulação para resolver o problema usando a definição)\n\n\n\nAlgumas sitações\n\n“Andando no escuro para achar uma tomada” por Cesar Gabriel\n“Se é fácil para encontrar é rápido para consumir” por Cesar Gabriel",
+    "section": "Estrutura das Notas",
+    "text": "Estrutura das Notas\nNota: Sempre que possível, todos os conceitos e ideias serão demonstrados de forma prática.\n\n“Storytelling with data”: A ideia é oferecer a maior quantidade de informações possível, permitindo que o leitor escolha o que consumir com base em suas necessidades.\n\n\nTexto introdutório: Apresentação geral do conteúdo e explicações iniciais.\nExemplos e raciocínios para resolução:\n\nExemplos simples.\nExemplos de dificuldade intermediária.\nExemplos avançados.\n\nConstrução da demonstração: Estruturação lógica do conceito (lemas, definições, etc.).\nDesenvolvimento da demonstração: Apresentação da definição ou conclusão final.\nAplicação prática: Utilização da demonstração (item 4) para resolver os problemas dos exemplos (item 2).\nMais exemplos: Casos adicionais baseados na definição apresentada.\nExercícios:\n\nCálculo prático: Aplicar diretamente a fórmula ou definição (item 4).\nProblemas teóricos: Desenvolver demonstrações ou justificar conceitos.\nProblemas de lógica: Manipular conceitos e aprimorar pensamento lógico para resolver os desafios.\n\n\n\n\n\n\nNoether, Gottfried E. 1991. Introduction to Statistics: The Nonparametric Way. 1st ed. Springer Texts in Statistics. Springer New York, NY. https://doi.org/10.1007/978-1-4612-0943-0.",
     "crumbs": [
       "<span class='chapter-number'>1</span>  <span class='chapter-title'>A Arte da Estatística</span>"
     ]
@@ -57,6 +57,16 @@
     "text": "Noether. n.d. “Motivação: O Diário de Henry Jones.” https://www.youtube.com/watch?v=ii5Q2fCl8C0&pp=ygURaGVucnkgam9uZXMgYWtpdGE%3D.",
     "crumbs": [
       "References"
+    ]
+  },
+  {
+    "objectID": "index.html#dinâmica-do-projeto",
+    "href": "index.html#dinâmica-do-projeto",
+    "title": "A Arte da Estatística",
+    "section": "Dinâmica do Projeto",
+    "text": "Dinâmica do Projeto\nA falta de dedicação exclusiva é o principal fator que define o ritmo do projeto. Por não oferecer retorno financeiro, mas sim intelectual, ele é desenvolvido nos momentos livres, como férias ou finais de semana. Além disso, o projeto não possui um ponto final definido, permitindo uma abordagem flexível e sem pressa para sua conclusão.\nOutro ponto relevante é a necessidade constante de reestruturação de partes do material. Embora esse processo demande tempo, ele é essencial para assegurar o bom funcionamento e a consistência do projeto. A reestruturação, por sua vez, pode ser realizada em paralelo ao desenvolvimento ativo, tornando o progresso mais dinâmico e adaptável.\nPor não haver prazos rígidos ou metas finais inflexíveis, o projeto avança de forma natural, sem pressões externas.",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>A Arte da Estatística</span>"
     ]
   }
 ]
