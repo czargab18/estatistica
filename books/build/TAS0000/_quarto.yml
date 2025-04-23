@@ -1,5 +1,4 @@
 project:
-  title: "The Art of Statistics"
   type: book
   output-dir: "./../../TAS0000"
   lib-dir:  "./../delete/site_libs"
@@ -21,7 +20,7 @@ format:
   html:
     include-in-header: "./../include/include-in-head"
     toc: false
-    sidebar: true
+    sidebar: 
     theme:
       - cosmo
       - brand
