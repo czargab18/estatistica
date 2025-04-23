@@ -1,3 +1,7 @@
+main[id="globalbookshome"] {
+  all: unset;
+}
+
 main[id="globalbookshome"]
   :is(
     ul,
@@ -43,7 +47,6 @@ main[id="globalbookshome"]
     summary,
     time
   ) {
-  all: inherit;
   margin: 0;
   padding: 0;
 }
@@ -76,7 +79,6 @@ main[id="globalbookshome"] :is(summary, details) {
 main[id="globalbookshome"] :is(audio, canvas, video, progress) {
   vertical-align: baseline;
 }
-
 
 main[id="globalbookshome"] {
   display: flex;
@@ -118,4 +120,17 @@ main[id="globalbookshome"] ul[id="books-lista"] li:first-child {
 
 main[id="globalbookshome"] ul[id="books-lista"] li:last-child {
   margin-bottom: 0;
+}
+
+main[id="globalbookshome"] main[id="sumario"] {
+  all: inherit;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+main[id="globalbookshome"] main[class="content"] :is(h1, h2, h3, h4, h5, h6, p, span, p, div) {
+  display: contents !important;
+  margin:  0 auto;
 }
