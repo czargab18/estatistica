@@ -1,0 +1,9 @@
+/* 
+* Definição de variáveis globais para o projeto.
+* As variáveis são definidas em CSS e podem ser utilizadas em qualquer parte do projeto.
+*/
+
+:root {
+  --r-globalmain-maxwidth: 2560px;
+  --r-pg-home-sections-headline: calc(98dvh - 84px);
+}
