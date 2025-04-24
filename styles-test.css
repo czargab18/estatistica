@@ -1,0 +1,9 @@
+
+
+main[id = "globalmain"] section[data-module-template]:nth-child(n+2),
+main[id = "globalmain"] section[data-module-template="heroes"] div[data-unit-id]:nth-child(n+2),
+footer[id="globalfooter"],
+footer {
+  all: unset;
+  display: none !important;
+}

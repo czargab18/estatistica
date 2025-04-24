@@ -1,6 +1,6 @@
 @charset "UTF-8";
-main[id="globalmain"]  {
-   all: initial;
+main[id="globalmain"] {
+  all: initial;
 }
 
 main[id="globalmain"] {
@@ -28,8 +28,7 @@ main[id="globalmain"] [data-module-template="heroes"] [id="docentes"] {
   width: 100%;
 }
 main[id="globalmain"] [data-module-template="heroes"] div[data-unit-id]:nth-child(1) {
-  /* Destacar Primeira Main.Seção: Boas Vindas */
-  --main-section-destaque-height: calc(684px - 10px - 40px);
+  --main-section-destaque-height: calc(94vh - 10px - 40px);
   height: var(--main-section-destaque-height);
 }
 
@@ -99,7 +98,11 @@ main[id="globalmain"] section[data-module-template="heroes"] div:nth-child(2) .u
   background: radial-gradient(circle at top, #ffcd07 3%, rgb(245, 30, 30) 50%, #bc3131 70%);
 }
 
-main[id="globalmain"] section[data-module-template="heroes"] div:nth-child(2) .unit-image-warpper figure[id="unit-image-graduacao"] {
+main[id="globalmain"]
+  section[data-module-template="heroes"]
+  div:nth-child(2)
+  .unit-image-warpper
+  figure[id="unit-image-graduacao"] {
   width: 3008px;
   height: 624px;
   background-size: 3008px 624px;
@@ -111,13 +114,13 @@ main[id="globalmain"] section[data-module-template="heroes"] div:nth-child(2) .u
   only screen and (min-resolution: 1.5dppx),
   (-webkit-min-device-pixel-ratio: 1.5),
   (min-resolution: 144dpi) {
-  main[id="globalmain"]  [data-module-template="heroes"] .unit-image-wrapper .unit-image.unit-image-graduacao {
+  main[id="globalmain"] [data-module-template="heroes"] .unit-image-wrapper .unit-image.unit-image-graduacao {
     background-image: url("/sd/images/br/banners/heroes/home/graduacao-banner-grande.png");
   }
 }
 
 @media only screen and (max-width: 1068px) {
-  main[id="globalmain"]  [data-module-template="heroes"] .unit-image-wrapper .unit-image.unit-image-graduacao {
+  main[id="globalmain"] [data-module-template="heroes"] .unit-image-wrapper .unit-image.unit-image-graduacao {
     width: 1068px;
     height: 617px;
     background-size: 1068px 617px;
@@ -129,13 +132,13 @@ main[id="globalmain"] section[data-module-template="heroes"] div:nth-child(2) .u
 @media only screen and (max-width: 1068px) and (-webkit-min-device-pixel-ratio: 1.5),
   only screen and (max-width: 1068px) and (min-resolution: 1.5dppx),
   only screen and (max-width: 1068px) and (min-resolution: 144dpi) {
-  main[id="globalmain"]  [data-module-template="heroes"] .unit-image-wrapper .unit-image.unit-image-graduacao {
+  main[id="globalmain"] [data-module-template="heroes"] .unit-image-wrapper .unit-image.unit-image-graduacao {
     background-image: url("/sd/images/br/banners/heroes/home/graduacao-banner-grande.png");
   }
 }
 
 @media only screen and (max-width: 734px) {
-  main[id="globalmain"]  [data-module-template="heroes"] .unit-image-wrapper .unit-image.unit-image-graduacao {
+  main[id="globalmain"] [data-module-template="heroes"] .unit-image-wrapper .unit-image.unit-image-graduacao {
     width: 734px;
     height: 548px;
     background-size: 734px 548px;
@@ -147,13 +150,13 @@ main[id="globalmain"] section[data-module-template="heroes"] div:nth-child(2) .u
 @media only screen and (max-width: 734px) and (-webkit-min-device-pixel-ratio: 1.5),
   only screen and (max-width: 734px) and (min-resolution: 1.5dppx),
   only screen and (max-width: 734px) and (min-resolution: 144dpi) {
-  main[id="globalmain"]  [data-module-template="heroes"] .unit-image-wrapper .unit-image.unit-image-graduacao {
+  main[id="globalmain"] [data-module-template="heroes"] .unit-image-wrapper .unit-image.unit-image-graduacao {
     background-image: url("/sd/images/br/banners/heroes/home/graduacao-banner-grande.png");
   }
 }
 
 @media only screen and (min-width: 1069px) and (min-height: 776px) {
-  main[id="globalmain"]  [data-module-template="heroes"] .unit-image-wrapper .unit-image.unit-image-graduacao {
+  main[id="globalmain"] [data-module-template="heroes"] .unit-image-wrapper .unit-image.unit-image-graduacao {
     width: 3008px;
     height: 736px;
     background-size: 3008px 736px;
@@ -165,13 +168,13 @@ main[id="globalmain"] section[data-module-template="heroes"] div:nth-child(2) .u
 @media only screen and (min-width: 1069px) and (min-height: 776px) and (-webkit-min-device-pixel-ratio: 1.5),
   only screen and (min-width: 1069px) and (min-height: 776px) and (min-resolution: 1.5dppx),
   only screen and (min-width: 1069px) and (min-height: 776px) and (min-resolution: 144dpi) {
-  main[id="globalmain"]  [data-module-template="heroes"] .unit-image-wrapper .unit-image.unit-image-graduacao {
+  main[id="globalmain"] [data-module-template="heroes"] .unit-image-wrapper .unit-image.unit-image-graduacao {
     background-image: url("/sd/images/br/banners/heroes/home/graduacao-banner-grande.png");
   }
 }
 
 @media only screen and (max-width: 1068px) and (min-width: 735px) and (min-height: 734px) {
-  main[id="globalmain"]  [data-module-template="heroes"] .unit-image-wrapper .unit-image.unit-image-graduacao {
+  main[id="globalmain"] [data-module-template="heroes"] .unit-image-wrapper .unit-image.unit-image-graduacao {
     width: 1068px;
     height: 694px;
     background-size: 1068px 694px;
@@ -183,7 +186,7 @@ main[id="globalmain"] section[data-module-template="heroes"] div:nth-child(2) .u
 @media only screen and (max-width: 1068px) and (min-width: 735px) and (min-height: 734px) and (-webkit-min-device-pixel-ratio: 1.5),
   only screen and (max-width: 1068px) and (min-width: 735px) and (min-height: 734px) and (min-resolution: 1.5dppx),
   only screen and (max-width: 1068px) and (min-width: 735px) and (min-height: 734px) and (min-resolution: 144dpi) {
-  main[id="globalmain"]  [data-module-template="heroes"] .unit-image-wrapper .unit-image.unit-image-graduacao {
+  main[id="globalmain"] [data-module-template="heroes"] .unit-image-wrapper .unit-image.unit-image-graduacao {
     background-image: url("/sd/images/br/banners/heroes/home/graduacao-banner-grande.png");
   }
 }
@@ -199,7 +202,7 @@ main[id="globalmain"] section[data-module-template="heroes"] figure[id="unit-ima
   background-image: url("/sd/images/br/banners/heroes/home/docente-banner-grande.png");
 }
 
-main[id="globalmain"]  [data-module-template="heroes"] {
+main[id="globalmain"] [data-module-template="heroes"] {
   width: 100%;
 }
 
