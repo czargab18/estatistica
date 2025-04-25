@@ -7,3 +7,7 @@ footer {
   all: unset;
   display: none !important;
 }
+
+div[id="globalheader"] ul[class="globalnavbar-list"] :is(li[class*="globalnavbar-profile"], li[class*="globalnavbar-search"]) {
+  display: none;
+}
