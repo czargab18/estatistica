@@ -4,6 +4,14 @@ const maxDisciplinas = 8;
 const maxPeriodos = 20;
 
 function criaPeriodo() {
+  const container = document.getElementById("container-periodos");
+
+  // Verificar se o container existe
+  if (!container) {
+    console.error("Elemento com ID 'container-periodos' não encontrado.");
+    return;
+  }
+
   if (periodoCount >= maxPeriodos) {
     alert(`Você só pode adicionar até ${maxPeriodos} períodos.`);
     return;
@@ -12,26 +20,14 @@ function criaPeriodo() {
   periodoCount++;
   disciplinaCount[periodoCount] = 0;
 
-  const container = document.getElementById("container-periodos");
-
   const periodoDiv = document.createElement("div");
   periodoDiv.id = `periodo${periodoCount}`;
   periodoDiv.innerHTML = `
     <div class="periodo-title">
       <h3>${periodoCount}º Período</h3>
       <div class="periodo-title-btns">
-      <button
-          class="btn btn-danger remove-periodo"
-          onclick="removerPeriodo(${periodoCount})"
-        >
-          Remover Período
-        </button>
-        <button
-          class="btn btn-primary"
-          onclick="adicionarDisciplina(${periodoCount})"
-        >
-          Adicionar Disciplina
-        </button>
+        <button class="btn btn-danger remove-periodo">Remover Período</button>
+        <button class="btn btn-primary add-disciplina">Adicionar Disciplina</button>
       </div>
     </div>
     <div id="periodo${periodoCount}-disciplinas"></div>
@@ -39,8 +35,16 @@ function criaPeriodo() {
 
   container.appendChild(periodoDiv);
 
+  // Adicionar eventos dinamicamente
+  const btnRemoverPeriodo = periodoDiv.querySelector(".remove-periodo");
+  btnRemoverPeriodo.addEventListener("click", () => removerPeriodo(periodoCount));
+
+  const btnAdicionarDisciplina = periodoDiv.querySelector(".add-disciplina");
+  btnAdicionarDisciplina.addEventListener("click", () => adicionarDisciplina(periodoCount));
+
   adicionarDisciplina(periodoCount);
 }
+
 function removerPeriodo(periodoId) {
   const periodoDiv = document.getElementById(`periodo${periodoId}`);
   if (periodoDiv) {
@@ -325,13 +329,26 @@ document.addEventListener("DOMContentLoaded", () => {
       botaoBaixar.onclick = baixarDados;
 
       linhaSuperior.insertBefore(botaoBaixar, botaoNovoPeriodo);
+
+      // Adicionar evento de clique ao botão "Criar Período"
+      botaoNovoPeriodo.addEventListener("click", () => {
+        console.log("Botão 'Criar Período' clicado."); // Log para depuração
+        criaPeriodo();
+      });
+    } else {
+      console.error("Botão com ID 'novoPeriodo' não encontrado.");
     }
+  } else {
+    console.error("Elemento com ID 'linhaSuperior' não encontrado.");
   }
 
-  const container = document.getElementById('container');
+  // Corrigir a verificação do elemento 'container'
+  const container = document.getElementById('container-periodos'); // Ajustar para o ID correto
   if (container) {
     container.addEventListener('input', verificarPreenchimento);
     container.addEventListener('change', verificarPreenchimento);
+  } else {
+    console.error("Elemento com ID 'container-periodos' não encontrado."); // Ajustar mensagem de erro
   }
 });
 function verificarPreenchimento() {

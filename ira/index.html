@@ -11,25 +11,26 @@
     content="img-src 'self' https://www.estatistica.pro/; script-src 'self' https://www.estatistica.pro/ac/ https://www.estatistica.pro/sd/"
     http-equiv="Content-Security-Policy" />
   <link href="/sd/images/favicons/estatistica.svg" rel="shortcut icon" type="image/x-icon" />
+  <link href="/ac/globalothers/1/pt_BR/ira/styles/ira.build.css" rel="stylesheet" />
   <link href="/ac/globalpattern/1/pt_BR/styles/globalpattern.css" rel="stylesheet" />
-  <link href="/ac/globalpattern/1/pt_BR/styles/globalvariaveis.css" rel="stylesheet" />
   <link href="/ac/globalaside/1/pt_BR/styles/globalaside.css" rel="stylesheet" />
   <link href="/ac/globalnavbar/1/pt_BR/styles/globalnavbar.css" rel="stylesheet" />
+
   <link href="/ac/globalribbon/1/pt_BR/styles/globalribbon.css" rel="stylesheet" />
   <link href="/ac/globaltipografia/1/pt_BR/style/globaltipografia.css" rel="stylesheet" />
   <link href="/ac/globalmain/1/pt_BR/styles/globalmain.css" rel="stylesheet" />
-  <link href="/ac/globalnoticias/1/pt_BR/style/globalnoticias.css" rel="stylesheet" />
   <link href="/ac/globalfooter/1/pt_BR/styles/globalfooter.css" rel="stylesheet" />
   <link href="/wss/fonts.css?families=SF+Pro,v3|SF+Pro+Icons,v3" media="all" rel="stylesheet" type="text/css" />
-  <script defer="" src="/ac/globalnoticias/1/pt_BR/scripts/globalnoticias.js"></script>
-  <script defer="" src="/ac/globalpattern/1/pt_BR/scripts/globalpattern.js"></script>
-  <script defer="" src="/ac/globalfooter/1/pt_BR/scripts/globalfooter.js"></script>
-  <script defer="" src="/utils/libs/js/navbar.js"></script>
+
+  <script defer src="/ac/globalpattern/1/pt_BR/scripts/globalpattern.js"></script>
+  <script defer src="/ac/globalfooter/1/pt_BR/scripts/globalfooter.js"></script>
+  <script defer src="/utils/libs/js/navbar.js"></script>
+  <script defer src="/ac/globalothers/1/pt_BR/ira/scripts/ira.build.js"></script>
   <!-- Estilos para Testes -->
-  <link rel="stylesheet" href="/styles-test.css">
+  <link rel="stylesheet" href="/test/styles-test.css">
 </head>
 
-<body>
+<body onload="criaPeriodo();">
   <div id="globalheader">
     <aside id="globalaside">
       <div class="globalaside-content">
@@ -55,8 +56,7 @@
             </a>
           </li>
           <li class="globalaside-item globalaside-item-unbtv">
-            <a class="globalaside-link globalaside-link-unbtv" href="https://unbtv.unb.br" rel="noopener"
-              target="_blank">
+            <a class="globalaside-link globalaside-link-unbtv" href="https://unbtv.unb.br" rel="noopener" target="_blank">
               <span class="globalaside-image-regular globalnav-link-image"> </span>
               <span class="globalaside-link-text">eduplayUnBTV</span>
             </a>
@@ -89,8 +89,8 @@
           </li>
           <span class="globalaside-espacador"></span>
           <li class="globalaside-item globalaside-item-legislacao">
-            <a class="globalaside-link globalaside-link-legislacao" href="http:/planalto.gov.br/legislacao"
-              rel="noopener" target="_blank">
+            <a class="globalaside-link globalaside-link-legislacao" href="http:/planalto.gov.br/legislacao" rel="noopener"
+              target="_blank">
               <span class="globalaside-image-regular globalaside-link-image"> </span>
               <span class="globalaside-link-text">Legislação</span>
             </a>
@@ -1004,28 +1004,28 @@
       </div>
     </nav>
   </div>
-  <main id="globalmain boasvindas-main" class="boasvindas">
-    <h1 id="title-desenvolvimento">Em desenvolvimento</h1>
+  <main id="globalmain-ira" onload="criaPeriodo();">
+    <div id="chapternav">
+      <div class="chapternav-content">
+        <!--         <h1 id="titulo">Calculadora de IRA</h1> -->
+        <h3 id="ira-mp">IRA: 0.00 MP: 0.00</h3>
+        <div id="linhaSuperior">
+          <button class="btn btn-success" id="novoPeriodo" onclick="criaPeriodo()">
+            Novo Período
+          </button>
+        </div>
+      </div>
+    </div>
+    <div id="container-periodos"></div>
   </main>
-  <footer id="globalfooter boasvindas-footer" class="boasvindas"></footer>
+  <div id="aviso-site-nao-oficial">
+    <div class="avisos">
+      <p>
+        Este não é um site oficial da Universidade de Brasília. O IRA calculado aqui não pode ser utilizado para fins
+        de
+        <strong class="aviso">comprovação de rendimento acadêmico</strong>.
+      </p>
+    </div>
+  </div>
 </body>
-<style>
-  main {
-    display: flex;
-    align-items: center;
-    margin: 0 auto;
-    width: 100%;
-    max-width: 2560px;
-    height: var(--r-pg-home-sections-headline);
-    justify-content: center;
-    background-color: #ffcd07;
-  }
-
-  main h1 {
-    font-size: 5rem;
-    color: #333;
-    text-align: center;
-  }
-</style>
-
 </html>

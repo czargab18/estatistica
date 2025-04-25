@@ -13,7 +13,7 @@ span[id^="status-"],
   font-size: 16px;
   margin-top: 0.25em;
   color: #ffffff;
-  padding: 0.5em 1em;
+  padding: 0.5em 1em !important;
   border: 0.15em;
   border-radius: 0.75em;
   border-style: solid;
