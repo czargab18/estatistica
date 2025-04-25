@@ -36,13 +36,15 @@ function criaPeriodo() {
   container.appendChild(periodoDiv);
 
   // Adicionar eventos dinamicamente
+  const currentPeriodoId = periodoCount; // Capturar o valor atual de periodoCount
+
   const btnRemoverPeriodo = periodoDiv.querySelector(".remove-periodo");
-  btnRemoverPeriodo.addEventListener("click", () => removerPeriodo(periodoCount));
+  btnRemoverPeriodo.addEventListener("click", () => removerPeriodo(currentPeriodoId));
 
   const btnAdicionarDisciplina = periodoDiv.querySelector(".add-disciplina");
-  btnAdicionarDisciplina.addEventListener("click", () => adicionarDisciplina(periodoCount));
+  btnAdicionarDisciplina.addEventListener("click", () => adicionarDisciplina(currentPeriodoId));
 
-  adicionarDisciplina(periodoCount);
+  adicionarDisciplina(currentPeriodoId); // Usar currentPeriodoId aqui
 }
 
 function removerPeriodo(periodoId) {
@@ -132,10 +134,12 @@ function adicionarDisciplina(periodoId) {
   disciplinasDiv.appendChild(disciplinaDiv);
 
   // Adicionar evento ao botão de remover disciplina
-  const botaoRemover = disciplinaDiv.querySelector(".remove-disciplina");
-  botaoRemover.addEventListener("click", () => removerDisciplina(periodoId, disciplinaId));
+  const currentDisciplinaId = disciplinaId; // Capturar o valor atual de disciplinaId
 
-  adicionarEventosParaMonitoramento(periodoId, disciplinaId);
+  const botaoRemover = disciplinaDiv.querySelector(".remove-disciplina");
+  botaoRemover.addEventListener("click", () => removerDisciplina(periodoId, currentDisciplinaId));
+
+  adicionarEventosParaMonitoramento(periodoId, currentDisciplinaId); // Usar currentDisciplinaId aqui
 }
 function removerDisciplina(periodoId, disciplinaId) {
   const disciplinaDiv = document.getElementById(`periodo${periodoId}-disciplina${disciplinaId}-preencher`);
