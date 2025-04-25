@@ -122,12 +122,18 @@ function adicionarDisciplina(periodoId) {
       <span id="status-${periodoId}-${disciplinaId}">Status</span>
     </div>
     <div id="col-item-discip-${disciplinaId}">
-      <button class="btn btn-danger" onclick="removerDisciplina(${periodoId}, ${disciplinaId})">Remover Disciplina</button>
+      <button class="btn btn-danger remove-disciplina" data-periodo="${periodoId}" data-disciplina="${disciplinaId}">
+        Remover Disciplina
+      </button>
     </div>
     </div>
   `;
 
   disciplinasDiv.appendChild(disciplinaDiv);
+
+  // Adicionar evento ao botão de remover disciplina
+  const botaoRemover = disciplinaDiv.querySelector(".remove-disciplina");
+  botaoRemover.addEventListener("click", () => removerDisciplina(periodoId, disciplinaId));
 
   adicionarEventosParaMonitoramento(periodoId, disciplinaId);
 }
