@@ -4,14 +4,6 @@ const maxDisciplinas = 8;
 const maxPeriodos = 20;
 
 function criaPeriodo() {
-  const container = document.getElementById("container-periodos");
-
-  // Verificar se o container existe
-  if (!container) {
-    console.error("Elemento com ID 'container-periodos' não encontrado.");
-    return;
-  }
-
   if (periodoCount >= maxPeriodos) {
     alert(`Você só pode adicionar até ${maxPeriodos} períodos.`);
     return;
@@ -20,14 +12,26 @@ function criaPeriodo() {
   periodoCount++;
   disciplinaCount[periodoCount] = 0;
 
+  const container = document.getElementById("container-periodos");
+
   const periodoDiv = document.createElement("div");
   periodoDiv.id = `periodo${periodoCount}`;
   periodoDiv.innerHTML = `
     <div class="periodo-title">
       <h3>${periodoCount}º Período</h3>
       <div class="periodo-title-btns">
-        <button class="btn btn-danger remove-periodo">Remover Período</button>
-        <button class="btn btn-primary add-disciplina">Adicionar Disciplina</button>
+      <button
+          class="btn btn-danger remove-periodo"
+          onclick="removerPeriodo(${periodoCount})"
+        >
+          Remover Período
+        </button>
+        <button
+          class="btn btn-primary"
+          onclick="adicionarDisciplina(${periodoCount})"
+        >
+          Adicionar Disciplina
+        </button>
       </div>
     </div>
     <div id="periodo${periodoCount}-disciplinas"></div>
@@ -35,16 +39,8 @@ function criaPeriodo() {
 
   container.appendChild(periodoDiv);
 
-  // Adicionar eventos dinamicamente
-  const btnRemoverPeriodo = periodoDiv.querySelector(".remove-periodo");
-  btnRemoverPeriodo.addEventListener("click", () => removerPeriodo(periodoCount));
-
-  const btnAdicionarDisciplina = periodoDiv.querySelector(".add-disciplina");
-  btnAdicionarDisciplina.addEventListener("click", () => adicionarDisciplina(periodoCount));
-
   adicionarDisciplina(periodoCount);
 }
-
 function removerPeriodo(periodoId) {
   const periodoDiv = document.getElementById(`periodo${periodoId}`);
   if (periodoDiv) {
@@ -53,7 +49,6 @@ function removerPeriodo(periodoId) {
     periodoCount--;
   }
 }
-
 function adicionarDisciplina(periodoId) {
   if (disciplinaCount[periodoId] >= maxDisciplinas) {
     alert(`Você atingiu o limite máximo de ${maxDisciplinas} disciplinas para este período.`);
@@ -69,80 +64,69 @@ function adicionarDisciplina(periodoId) {
   disciplinaDiv.id = `periodo${periodoId}-disciplina${disciplinaId}-preencher`;
   disciplinaDiv.className = `preencher-linha`;
   disciplinaDiv.innerHTML = `
-    <div id="periodo${periodoId}-disciplina${disciplinaId}-lista" class="left">
-      <div id="col-item-discip-${disciplinaId}" class="col-items">
-        <input
-          type="text"
-          id="periodo${periodoId}-disciplina${disciplinaId}-codigo"
-          class="form-control"
-          placeholder="Código da Disciplina"
-          pattern="[A-Z]{3}[0-9]{4}"
-          title="O código será automaticamente formatado para 3 letras maiúsculas e 4 números (ex.: ABC1234)."
-          maxlength="7"
-        />
-      </div>
-      <div id="col-item-discip-${disciplinaId}" class="col-items">
-        <select
-          id="periodo${periodoId}-disciplina${disciplinaId}-creditos"
-          class="form-control"
-        >
-          <option value="" selected disabled>Selecione os Créditos</option>
-          <option value="2">2 Créditos</option>
-          <option value="3">3 Créditos</option>
-          <option value="4">4 Créditos</option>
-          <option value="6">6 Créditos</option>
-          <option value="8">8 Créditos</option>
-          <option value="10">10 Créditos</option>
-          <option value="12">12 Créditos</option>
-          <option value="16">16 Créditos</option>
-          <option value="22">22 Créditos</option>
-          <option value="40">40 Créditos</option>
-          <option value="52">52 Créditos</option>
-          <option value="64">64 Créditos</option>
-        </select>
-      </div>
-      <div id="col-item-discip-${disciplinaId}" class="col-items">
-        <select
-          id="periodo${periodoId}-disciplina${disciplinaId}-mencao"
-          class="form-control"
-        >
-          <option value="" selected disabled>Menção</option>
-          <option value="SR">SR</option>
-          <option value="II">II</option>
-          <option value="MI">MI</option>
-          <option value="MM">MM</option>
-          <option value="MS">MS</option>
-          <option value="SS">SS</option>
-        </select>
-      </div>
+    <div id = "periodo${periodoId}-disciplina${disciplinaId}-lista" class="left">
+    <div id="col-item-discip-${disciplinaId}" class="col-items">
+      <input
+        type="text"
+        id="periodo${periodoId}-disciplina${disciplinaId}-codigo"
+        class="form-control"
+        placeholder="Código da Disciplina"
+        pattern="[A-Z]{3}[0-9]{4}"
+        title="O código será automaticamente formatado para 3 letras maiúsculas e 4 números (ex.: ABC1234)."
+        oninput="formatarCodigo(this)"
+        maxlength="7"
+      />
+    </div>
+    <div id="col-item-discip-${disciplinaId}"" class="col-items">
+      <select
+        id="periodo${periodoId}-disciplina${disciplinaId}-creditos"
+        class="form-control"
+      >
+        <option value="" selected disabled>Selecione os Créditos</option>
+        <option value="2">2 Créditos</option>
+        <option value="3">3 Créditos</option>
+        <option value="4">4 Créditos</option>
+        <option value="6">6 Créditos</option>
+        <option value="8">8 Créditos</option>
+        <option value="10">10 Créditos</option>
+        <option value="12">12 Créditos</option>
+        <option value="16">16 Créditos</option>
+        <option value="22">22 Créditos</option>
+        <option value="40">40 Créditos</option>
+        <option value="52">52 Créditos</option>
+        <option value="64">64 Créditos</option>
+      </select>
+    </div>
+    <div id="col-item-discip-${disciplinaId}" class="col-items">
+      <select
+        id="periodo${periodoId}-disciplina${disciplinaId}-mencao"
+        class="form-control"
+        onchange="atualizarStatus(${periodoId}, ${disciplinaId})"
+      >
+        <option value="" selected disabled>Menção</option>
+        <option value="SR">SR</option>
+        <option value="II">II</option>
+        <option value="MI">MI</option>
+        <option value="MM">MM</option>
+        <option value="MS">MS</option>
+        <option value="SS">SS</option>
+      </select>
+    </div>
     </div>
     <div id="periodo${periodoId}-disciplina${disciplinaId}-status-removeDiscp" class="rigth">
-      <div id="col-item-status-discip-${disciplinaId}" class="col-items">
-        <span id="status-${periodoId}-${disciplinaId}">Status</span>
-      </div>
-      <div id="col-item-discip-${disciplinaId}">
-        <button class="btn btn-danger remove-disciplina" data-periodo="${periodoId}" data-disciplina="${disciplinaId}">
-          Remover Disciplina
-        </button>
-      </div>
+    <div id="col-item-status-discip-${disciplinaId}" class="col-items">
+      <span id="status-${periodoId}-${disciplinaId}">Status</span>
+    </div>
+    <div id="col-item-discip-${disciplinaId}">
+      <button class="btn btn-danger" onclick="removerDisciplina(${periodoId}, ${disciplinaId})">Remover Disciplina</button>
+    </div>
     </div>
   `;
 
   disciplinasDiv.appendChild(disciplinaDiv);
 
-  // Adicionar evento ao botão de remover disciplina
-  const botaoRemover = disciplinaDiv.querySelector(".remove-disciplina");
-  botaoRemover.addEventListener("click", () => removerDisciplina(periodoId, disciplinaId));
-
-  const inputCodigo = disciplinaDiv.querySelector(`#periodo${periodoId}-disciplina${disciplinaId}-codigo`);
-  inputCodigo.addEventListener("input", () => formatarCodigo(inputCodigo));
-
-  const selectMencao = disciplinaDiv.querySelector(`#periodo${periodoId}-disciplina${disciplinaId}-mencao`);
-  selectMencao.addEventListener("change", () => atualizarStatus(periodoId, disciplinaId));
-
   adicionarEventosParaMonitoramento(periodoId, disciplinaId);
 }
-
 function removerDisciplina(periodoId, disciplinaId) {
   const disciplinaDiv = document.getElementById(`periodo${periodoId}-disciplina${disciplinaId}-preencher`);
   if (disciplinaDiv) {
@@ -150,7 +134,6 @@ function removerDisciplina(periodoId, disciplinaId) {
     disciplinaCount[periodoId]--;
   }
 }
-
 function determinarStatus(mencao) {
   const aprovadas = ["MM", "MS", "SS"];
   return aprovadas.includes(mencao) ? "Aprovado" : "Reprovado";
@@ -339,7 +322,7 @@ document.addEventListener("DOMContentLoaded", () => {
       botaoBaixar.className = "btn btn-success";
       botaoBaixar.style.display = "none";
       botaoBaixar.textContent = "Baixar Dados";
-      botaoBaixar.onload = baixarDados;
+      botaoBaixar.onclick = baixarDados;
 
       linhaSuperior.insertBefore(botaoBaixar, botaoNovoPeriodo);
     }
