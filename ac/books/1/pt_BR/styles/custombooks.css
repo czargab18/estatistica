@@ -51,7 +51,7 @@ main[id="lists-book"] :is(h1, h2, h3, h4, h5, h6, p, div, span) {
   display: block;
   margin: 0;
   padding: 0;
-  font-family: var(--r-font-family-default);
+  font-family: var(--r-globalfont-family);
   font-size: 16px;
 }
 

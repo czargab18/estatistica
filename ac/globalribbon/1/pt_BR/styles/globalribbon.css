@@ -4,7 +4,7 @@
 }
 
 #globalribbon {
-  font-family: var(--r-font-family-default);
+  font-family: var(--r-globalfont-family);
   font-size: 14px;
   background-color: var(--r-bg-color-primary);
   width: 100%;
