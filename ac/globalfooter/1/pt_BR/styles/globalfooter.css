@@ -4,7 +4,7 @@
 #globalfooter {
   font-weight: normal;
   text-size-adjust: 100%;
-  font-family: var(--r-font-family-default);
+  font-family: var(--r-globalfont-family);
   max-width: 2560px;
   width: 100%;
 }
@@ -20,7 +20,7 @@
   line-height: 1.33337;
   font-weight: 400;
   letter-spacing: -0.01em;
-  font-family: var(--r-font-family-default);
+  font-family: var(--r-globalfont-family);
   background: var(--footer-background);
   color: var(--footer-text-color);
   min-width: 320px;
@@ -91,7 +91,7 @@
   line-height: 1.33337;
   font-weight: 400;
   letter-spacing: -0.01em;
-  font-family: var(--r-font-family-default);
+  font-family: var(--r-globalfont-family);
 }
 
 #globalfooter #globalfooter-note small {
@@ -104,7 +104,7 @@
   line-height: 1.33337;
   font-weight: 400;
   letter-spacing: -0.01em;
-  font-family: var(--r-font-family-default);
+  font-family: var(--r-globalfont-family);
   display: flex;
   flex-wrap: nowrap;
   padding-top: 20px;
@@ -161,7 +161,7 @@
   line-height: 1.33337;
   font-weight: 400;
   letter-spacing: -0.01em;
-  font-family: var(--r-font-family-default);
+  font-family: var(--r-globalfont-family);
   font-weight: 600;
   margin-right: 20px;
   margin-bottom: 0.8em;

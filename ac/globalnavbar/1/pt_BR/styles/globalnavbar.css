@@ -151,7 +151,7 @@
   font-size: 12px;
   font-weight: 400;
   letter-spacing: -0.01em;
-  font-family: var(--font-pattern);
+  font-family: var(--r-globalfont-family);
   line-height: 1;
   color: var(--r-globalnavbar-color-secondary-black);
   background: no-repeat;
@@ -179,7 +179,7 @@
   line-height: 1.2353641176;
   font-weight: 600;
   letter-spacing: -0.022em;
-  font-family: var(--font-pattern);
+  font-family: var(--r-globalfont-family);
   display: flex;
   align-items: center;
   height: 100%;
@@ -195,7 +195,7 @@
 
 #globalnavbar .globalnavbar-link-estatistica:lang(pt-br) {
   letter-spacing: 0em;
-  font-family: var(--font-pattern);
+  font-family: var(--r-globalfont-family);
 }
 
 /* Estilos de interação */
@@ -237,7 +237,7 @@
 
 #globalnavbar .globalnavbar-link-estatistica:lang(pt-br) {
   letter-spacing: 0em;
-  font-family: var(--font-pattern);
+  font-family: var(--r-globalfont-family);
 }
 
 @media only screen and (min-width: 834px) {
@@ -314,10 +314,10 @@
     line-height: 1.1428571429;
     font-weight: 600;
     letter-spacing: 0.007em;
-    font-family: var(--font-pattern);
+    font-family: var(--r-globalfont-family);
   }
   #globalnav .globalnav-link:lang(pt-br) {
-    font-family: var(--font-pattern);
+    font-family: var(--r-globalfont-family);
   }
 
   /* IMG:svg - navbar */
