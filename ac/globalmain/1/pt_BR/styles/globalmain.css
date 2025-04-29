@@ -292,3 +292,19 @@ main[id="globalmain"] [data-module-template] [data-unit-id] .unit-image {
 main[id="globalmain"] section[data-module-template="noticias"] {
   display: none;
 }
+
+/* 
+** DESENVOLVER AS PÁGINAS
+** REMOVER DEPOIS DOS TESTES
+*/
+
+main[id = "globalmain"] section[data-module-template]:nth-child(n+2),
+/* main[id = "globalmain"] section[data-module-template="heroes"] div[data-unit-id]:nth-child(n+2), */
+footer[id="globalfooter"] {
+  all: unset;
+  display: none !important;
+}
+
+div[id="globalheader"] ul[class="globalnavbar-list"] :is(li[class*="globalnavbar-profile"], li[class*="globalnavbar-search"]) {
+  display: none;
+}
