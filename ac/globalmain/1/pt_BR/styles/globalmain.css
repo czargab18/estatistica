@@ -28,8 +28,9 @@ main[id="globalmain"] [data-module-template="heroes"] [id="docentes"] {
   width: 100%;
 }
 main[id="globalmain"] [data-module-template="heroes"] div[data-unit-id]:nth-child(1) {
-  --main-section-destaque-height: calc(94vh - 10px - 40px);
+  --main-section-destaque-height: 100vh;
   height: var(--main-section-destaque-height);
+  max-height: 690px;
 }
 
 main[id="globalmain"] [id="boasvindas"] [id="modulo-content"],
@@ -289,5 +290,21 @@ main[id="globalmain"] [data-module-template] [data-unit-id] .unit-image {
 }
 
 main[id="globalmain"] section[data-module-template="noticias"] {
+  display: none;
+}
+
+/* 
+** DESENVOLVER AS PÁGINAS
+** REMOVER DEPOIS DOS TESTES
+*/
+
+main[id = "globalmain"] section[data-module-template]:nth-child(n+2),
+/* main[id = "globalmain"] section[data-module-template="heroes"] div[data-unit-id]:nth-child(n+2), */
+footer[id="globalfooter"] {
+  all: unset;
+  display: none !important;
+}
+
+div[id="globalheader"] ul[class="globalnavbar-list"] :is(li[class*="globalnavbar-profile"], li[class*="globalnavbar-search"]) {
   display: none;
 }
