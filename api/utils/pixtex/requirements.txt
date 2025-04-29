@@ -362,7 +362,7 @@ tifffile==2024.2.12
     # via scikit-image
 tokenizers==0.15.2
     # via transformers
-torch==2.6.0
+torch==2.7.0
     # via
     #   -r requirements.in
     #   cnocr
