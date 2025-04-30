@@ -3,7 +3,7 @@
 Este projeto é muitas coisas e nada ao mesmo tempo. Algumas coisas são apenas para desenvolver habilidades, como o design do projeto é para a criatividade ou os **books** para a escrita. Outras para criar problemas e suas devidas soluções, mesmo que tenha que ter `n` soluções para cada problema. Buscarei nos tempos livres da graduação dedicar-me ao projeto.
 
 ## Qual o ponto de ignição?
-Primeiro, um ponto de ignição é um ponto que sucede o caminho. O começo de tudo.
+Primeiro, um ponto de ignição é um ponto que antecede o caminho. O começo de tudo.
 Inicialmente, encantei-me pelo design e programação web. Tentei desenvolver essas habilidades ao redesenhar e construir o site do Departamento de Estatística da Universidade de Brasília.
 
 ## Caminho
