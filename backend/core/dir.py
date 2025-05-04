@@ -29,12 +29,14 @@ def createdir(structure: list = None):
             print(f"Erro ao tentar criar '{path}': {erro}")
 
 
-def listdir(folder: str = None, save: str = None):
+def listdir(folder: str = None, save: str = None, ignore: list = None, ignoretype: list = None):
     """
     Lista todos os diretórios e arquivos na pasta especificada, retornando caminhos completos.
 
     :param folder: Caminho do diretório a ser listado.
     :param save: Caminho do arquivo de saída para salvar a estrutura do diretório.
+    :ignore: Lista de arquivos ou diretórios a serem ignorados.
+    :ignoretype: Lista de tipos de arquivos a serem ignorados.
     :return: Lista com a estrutura do diretório no formato completo.
     """
     if not folder:
@@ -46,13 +48,26 @@ def listdir(folder: str = None, save: str = None):
 
     structure = []
     for root, dirs, files in os.walk(folder):
+        # Filtrar diretórios ignorados
+        filtered_dirs = []
+        for d in dirs:
+            dir_path = os.path.join(root, d).replace("\\", "/")
+            if not ignore or dir_path not in ignore:
+                filtered_dirs.append(d)
+        dirs[:] = filtered_dirs
+
         for file in files:
-            structure.append(os.path.join(root, file).replace("\\", "/"))
+            filepath = os.path.join(root, file).replace("\\", "/")
+            verificacao = (ignore and filepath in ignore) or (
+                ignoretype and any(filepath.endswith(ext) for ext in ignoretype))
+            if verificacao:
+                continue
+            structure.append(filepath)
+
     if save:
         with open(save, 'w', encoding='utf-8') as file:
             file.write("\n".join(structure))
     return structure
-
 
 def ler(path: str = None):
     """
