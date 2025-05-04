@@ -1,7 +1,9 @@
 name: deploy(static)
 on:
   push:
-    branches: ["dev1"]
+    branches: ["main"]
+  pull_request:
+    branches: ["main","dev1"]
   workflow_dispatch:
 permissions:
   contents: read
