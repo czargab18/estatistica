@@ -28,9 +28,8 @@ main[id="globalmain"] [data-module-template="heroes"] [id="docentes"] {
   width: 100%;
 }
 main[id="globalmain"] [data-module-template="heroes"] div[data-unit-id]:nth-child(1) {
-  --main-section-destaque-height: 100vh;
+  --main-section-destaque-height: 692px;
   height: var(--main-section-destaque-height);
-  max-height: 690px;
 }
 
 main[id="globalmain"] [id="boasvindas"] [id="modulo-content"],
