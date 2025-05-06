@@ -1,0 +1,382 @@
+.main [data-module-template="heroes"] .unit-image-wrapper .unit-image.unit-image-iphone-16e-hero-iphone-16e {
+  width: 3008px;
+  height: 580px;
+  background-size: 3008px 580px;
+  background-repeat: no-repeat;
+  background-image: url("/v/home/ce/images/heroes/iphone-16e/hero_iphone_16e__f5aoann5v1me_large.jpg");
+}
+
+@media only screen and (-webkit-min-device-pixel-ratio: 1.5),
+  only screen and (min-resolution: 1.5dppx),
+  (-webkit-min-device-pixel-ratio: 1.5),
+  (min-resolution: 144dpi) {
+  .main [data-module-template="heroes"] .unit-image-wrapper .unit-image.unit-image-iphone-16e-hero-iphone-16e {
+    background-image: url("/v/home/ce/images/heroes/iphone-16e/hero_iphone_16e__f5aoann5v1me_large_2x.jpg");
+  }
+}
+
+@media only screen and (max-width: 1068px) {
+  .main [data-module-template="heroes"] .unit-image-wrapper .unit-image.unit-image-iphone-16e-hero-iphone-16e {
+    width: 1068px;
+    height: 570px;
+    background-size: 1068px 570px;
+    background-repeat: no-repeat;
+    background-image: url("/v/home/ce/images/heroes/iphone-16e/hero_iphone_16e__f5aoann5v1me_medium.jpg");
+  }
+}
+
+@media only screen and (max-width: 1068px) and (-webkit-min-device-pixel-ratio: 1.5),
+  only screen and (max-width: 1068px) and (min-resolution: 1.5dppx),
+  only screen and (max-width: 1068px) and (min-resolution: 144dpi) {
+  .main [data-module-template="heroes"] .unit-image-wrapper .unit-image.unit-image-iphone-16e-hero-iphone-16e {
+    background-image: url("/v/home/ce/images/heroes/iphone-16e/hero_iphone_16e__f5aoann5v1me_medium_2x.jpg");
+  }
+}
+
+@media only screen and (max-width: 734px) {
+  .main [data-module-template="heroes"] .unit-image-wrapper .unit-image.unit-image-iphone-16e-hero-iphone-16e {
+    width: 734px;
+    height: 500px;
+    background-size: 734px 500px;
+    background-repeat: no-repeat;
+    background-image: url("/v/home/ce/images/heroes/iphone-16e/hero_iphone_16e__f5aoann5v1me_small.jpg");
+  }
+}
+
+@media only screen and (max-width: 734px) and (-webkit-min-device-pixel-ratio: 1.5),
+  only screen and (max-width: 734px) and (min-resolution: 1.5dppx),
+  only screen and (max-width: 734px) and (min-resolution: 144dpi) {
+  .main [data-module-template="heroes"] .unit-image-wrapper .unit-image.unit-image-iphone-16e-hero-iphone-16e {
+    background-image: url("/v/home/ce/images/heroes/iphone-16e/hero_iphone_16e__f5aoann5v1me_small_2x.jpg");
+  }
+}
+
+@media only screen and (min-width: 1069px) and (min-height: 776px) {
+  .main [data-module-template="heroes"] .unit-image-wrapper .unit-image.unit-image-iphone-16e-hero-iphone-16e {
+    width: 3008px;
+    height: 692px;
+    background-size: 3008px 692px;
+    background-repeat: no-repeat;
+    background-image: url("/v/home/ce/images/heroes/iphone-16e/hero_iphone_16e__f5aoann5v1me_largetall.jpg");
+  }
+}
+
+@media only screen and (min-width: 1069px) and (min-height: 776px) and (-webkit-min-device-pixel-ratio: 1.5),
+  only screen and (min-width: 1069px) and (min-height: 776px) and (min-resolution: 1.5dppx),
+  only screen and (min-width: 1069px) and (min-height: 776px) and (min-resolution: 144dpi) {
+  .main [data-module-template="heroes"] .unit-image-wrapper .unit-image.unit-image-iphone-16e-hero-iphone-16e {
+    background-image: url("/v/home/ce/images/heroes/iphone-16e/hero_iphone_16e__f5aoann5v1me_largetall_2x.jpg");
+  }
+}
+
+@media only screen and (max-width: 1068px) and (min-width: 735px) and (min-height: 734px) {
+  .main [data-module-template="heroes"] .unit-image-wrapper .unit-image.unit-image-iphone-16e-hero-iphone-16e {
+    width: 1068px;
+    height: 650px;
+    background-size: 1068px 650px;
+    background-repeat: no-repeat;
+    background-image: url("/v/home/ce/images/heroes/iphone-16e/hero_iphone_16e__f5aoann5v1me_mediumtall.jpg");
+  }
+}
+
+@media only screen and (max-width: 1068px) and (min-width: 735px) and (min-height: 734px) and (-webkit-min-device-pixel-ratio: 1.5),
+  only screen and (max-width: 1068px) and (min-width: 735px) and (min-height: 734px) and (min-resolution: 1.5dppx),
+  only screen and (max-width: 1068px) and (min-width: 735px) and (min-height: 734px) and (min-resolution: 144dpi) {
+  .main [data-module-template="heroes"] .unit-image-wrapper .unit-image.unit-image-iphone-16e-hero-iphone-16e {
+    background-image: url("/v/home/ce/images/heroes/iphone-16e/hero_iphone_16e__f5aoann5v1me_mediumtall_2x.jpg");
+  }
+}
+
+.main [data-module-template="heroes"] .unit-image-wrapper .unit-image.unit-image-iphone-16e-hero-iphone-16e-avail {
+  width: 3008px;
+  height: 580px;
+  background-size: 3008px 580px;
+  background-repeat: no-repeat;
+  background-image: url("/v/home/ce/images/heroes/iphone-16e/hero_iphone_16e_avail__fezxa3z6yxme_large.jpg");
+}
+
+@media only screen and (-webkit-min-device-pixel-ratio: 1.5),
+  only screen and (min-resolution: 1.5dppx),
+  (-webkit-min-device-pixel-ratio: 1.5),
+  (min-resolution: 144dpi) {
+  .main [data-module-template="heroes"] .unit-image-wrapper .unit-image.unit-image-iphone-16e-hero-iphone-16e-avail {
+    background-image: url("/v/home/ce/images/heroes/iphone-16e/hero_iphone_16e_avail__fezxa3z6yxme_large_2x.jpg");
+  }
+}
+
+@media only screen and (max-width: 1068px) {
+  .main [data-module-template="heroes"] .unit-image-wrapper .unit-image.unit-image-iphone-16e-hero-iphone-16e-avail {
+    width: 1068px;
+    height: 570px;
+    background-size: 1068px 570px;
+    background-repeat: no-repeat;
+    background-image: url("/v/home/ce/images/heroes/iphone-16e/hero_iphone_16e_avail__fezxa3z6yxme_medium.jpg");
+  }
+}
+
+@media only screen and (max-width: 1068px) and (-webkit-min-device-pixel-ratio: 1.5),
+  only screen and (max-width: 1068px) and (min-resolution: 1.5dppx),
+  only screen and (max-width: 1068px) and (min-resolution: 144dpi) {
+  .main [data-module-template="heroes"] .unit-image-wrapper .unit-image.unit-image-iphone-16e-hero-iphone-16e-avail {
+    background-image: url("/v/home/ce/images/heroes/iphone-16e/hero_iphone_16e_avail__fezxa3z6yxme_medium_2x.jpg");
+  }
+}
+
+@media only screen and (max-width: 734px) {
+  .main [data-module-template="heroes"] .unit-image-wrapper .unit-image.unit-image-iphone-16e-hero-iphone-16e-avail {
+    width: 734px;
+    height: 500px;
+    background-size: 734px 500px;
+    background-repeat: no-repeat;
+    background-image: url("/v/home/ce/images/heroes/iphone-16e/hero_iphone_16e_avail__fezxa3z6yxme_small.jpg");
+  }
+}
+
+@media only screen and (max-width: 734px) and (-webkit-min-device-pixel-ratio: 1.5),
+  only screen and (max-width: 734px) and (min-resolution: 1.5dppx),
+  only screen and (max-width: 734px) and (min-resolution: 144dpi) {
+  .main [data-module-template="heroes"] .unit-image-wrapper .unit-image.unit-image-iphone-16e-hero-iphone-16e-avail {
+    background-image: url("/v/home/ce/images/heroes/iphone-16e/hero_iphone_16e_avail__fezxa3z6yxme_small_2x.jpg");
+  }
+}
+
+@media only screen and (min-width: 1069px) and (min-height: 776px) {
+  .main [data-module-template="heroes"] .unit-image-wrapper .unit-image.unit-image-iphone-16e-hero-iphone-16e-avail {
+    width: 3008px;
+    height: 692px;
+    background-size: 3008px 692px;
+    background-repeat: no-repeat;
+    background-image: url("/v/home/ce/images/heroes/iphone-16e/hero_iphone_16e_avail__fezxa3z6yxme_largetall.jpg");
+  }
+}
+
+@media only screen and (min-width: 1069px) and (min-height: 776px) and (-webkit-min-device-pixel-ratio: 1.5),
+  only screen and (min-width: 1069px) and (min-height: 776px) and (min-resolution: 1.5dppx),
+  only screen and (min-width: 1069px) and (min-height: 776px) and (min-resolution: 144dpi) {
+  .main [data-module-template="heroes"] .unit-image-wrapper .unit-image.unit-image-iphone-16e-hero-iphone-16e-avail {
+    background-image: url("/v/home/ce/images/heroes/iphone-16e/hero_iphone_16e_avail__fezxa3z6yxme_largetall_2x.jpg");
+  }
+}
+
+@media only screen and (max-width: 1068px) and (min-width: 735px) and (min-height: 734px) {
+  .main [data-module-template="heroes"] .unit-image-wrapper .unit-image.unit-image-iphone-16e-hero-iphone-16e-avail {
+    width: 1068px;
+    height: 650px;
+    background-size: 1068px 650px;
+    background-repeat: no-repeat;
+    background-image: url("/v/home/ce/images/heroes/iphone-16e/hero_iphone_16e_avail__fezxa3z6yxme_mediumtall.jpg");
+  }
+}
+
+@media only screen and (max-width: 1068px) and (min-width: 735px) and (min-height: 734px) and (-webkit-min-device-pixel-ratio: 1.5),
+  only screen and (max-width: 1068px) and (min-width: 735px) and (min-height: 734px) and (min-resolution: 1.5dppx),
+  only screen and (max-width: 1068px) and (min-width: 735px) and (min-height: 734px) and (min-resolution: 144dpi) {
+  .main [data-module-template="heroes"] .unit-image-wrapper .unit-image.unit-image-iphone-16e-hero-iphone-16e-avail {
+    background-image: url("/v/home/ce/images/heroes/iphone-16e/hero_iphone_16e_avail__fezxa3z6yxme_mediumtall_2x.jpg");
+  }
+}
+
+.main [data-module-template="heroes"] .unit-image-wrapper .unit-image.unit-image-iphone-16e-hero-iphone-16e-endframe {
+  width: 874px;
+  height: 184px;
+  background-size: 874px 184px;
+  background-repeat: no-repeat;
+  background-image: url("/v/home/ce/images/heroes/iphone-16e/hero_iphone_16e_endframe__enpjcl8w7fyq_large.png");
+}
+
+@media only screen and (-webkit-min-device-pixel-ratio: 1.5),
+  only screen and (min-resolution: 1.5dppx),
+  (-webkit-min-device-pixel-ratio: 1.5),
+  (min-resolution: 144dpi) {
+  .main [data-module-template="heroes"] .unit-image-wrapper .unit-image.unit-image-iphone-16e-hero-iphone-16e-endframe {
+    background-image: url("/v/home/ce/images/heroes/iphone-16e/hero_iphone_16e_endframe__enpjcl8w7fyq_large_2x.png");
+  }
+}
+
+@media only screen and (max-width: 1068px) {
+  .main [data-module-template="heroes"] .unit-image-wrapper .unit-image.unit-image-iphone-16e-hero-iphone-16e-endframe {
+    width: 732px;
+    height: 154px;
+    background-size: 732px 154px;
+    background-repeat: no-repeat;
+    background-image: url("/v/home/ce/images/heroes/iphone-16e/hero_iphone_16e_endframe__enpjcl8w7fyq_medium.png");
+  }
+}
+
+@media only screen and (max-width: 1068px) and (-webkit-min-device-pixel-ratio: 1.5),
+  only screen and (max-width: 1068px) and (min-resolution: 1.5dppx),
+  only screen and (max-width: 1068px) and (min-resolution: 144dpi) {
+  .main [data-module-template="heroes"] .unit-image-wrapper .unit-image.unit-image-iphone-16e-hero-iphone-16e-endframe {
+    background-image: url("/v/home/ce/images/heroes/iphone-16e/hero_iphone_16e_endframe__enpjcl8w7fyq_medium_2x.png");
+  }
+}
+
+@media only screen and (max-width: 734px) {
+  .main [data-module-template="heroes"] .unit-image-wrapper .unit-image.unit-image-iphone-16e-hero-iphone-16e-endframe {
+    width: 160px;
+    height: 228px;
+    background-size: 160px 228px;
+    background-repeat: no-repeat;
+    background-image: url("/v/home/ce/images/heroes/iphone-16e/hero_iphone_16e_endframe__enpjcl8w7fyq_small.png");
+  }
+}
+
+@media only screen and (max-width: 734px) and (-webkit-min-device-pixel-ratio: 1.5),
+  only screen and (max-width: 734px) and (min-resolution: 1.5dppx),
+  only screen and (max-width: 734px) and (min-resolution: 144dpi) {
+  .main [data-module-template="heroes"] .unit-image-wrapper .unit-image.unit-image-iphone-16e-hero-iphone-16e-endframe {
+    background-image: url("/v/home/ce/images/heroes/iphone-16e/hero_iphone_16e_endframe__enpjcl8w7fyq_small_2x.png");
+  }
+}
+
+@media only screen and (min-width: 1069px) and (min-height: 776px) {
+  .main [data-module-template="heroes"] .unit-image-wrapper .unit-image.unit-image-iphone-16e-hero-iphone-16e-endframe {
+    width: 952px;
+    height: 200px;
+    background-size: 952px 200px;
+    background-repeat: no-repeat;
+    background-image: url("/v/home/ce/images/heroes/iphone-16e/hero_iphone_16e_endframe__enpjcl8w7fyq_largetall.png");
+  }
+}
+
+@media only screen and (min-width: 1069px) and (min-height: 776px) and (-webkit-min-device-pixel-ratio: 1.5),
+  only screen and (min-width: 1069px) and (min-height: 776px) and (min-resolution: 1.5dppx),
+  only screen and (min-width: 1069px) and (min-height: 776px) and (min-resolution: 144dpi) {
+  .main [data-module-template="heroes"] .unit-image-wrapper .unit-image.unit-image-iphone-16e-hero-iphone-16e-endframe {
+    background-image: url("/v/home/ce/images/heroes/iphone-16e/hero_iphone_16e_endframe__enpjcl8w7fyq_largetall_2x.png");
+  }
+}
+
+@media only screen and (max-width: 1068px) and (min-width: 735px) and (min-height: 734px) {
+  .main [data-module-template="heroes"] .unit-image-wrapper .unit-image.unit-image-iphone-16e-hero-iphone-16e-endframe {
+    width: 730px;
+    height: 154px;
+    background-size: 730px 154px;
+    background-repeat: no-repeat;
+    background-image: url("/v/home/ce/images/heroes/iphone-16e/hero_iphone_16e_endframe__enpjcl8w7fyq_mediumtall.png");
+  }
+}
+
+@media only screen and (max-width: 1068px) and (min-width: 735px) and (min-height: 734px) and (-webkit-min-device-pixel-ratio: 1.5),
+  only screen and (max-width: 1068px) and (min-width: 735px) and (min-height: 734px) and (min-resolution: 1.5dppx),
+  only screen and (max-width: 1068px) and (min-width: 735px) and (min-height: 734px) and (min-resolution: 144dpi) {
+  .main [data-module-template="heroes"] .unit-image-wrapper .unit-image.unit-image-iphone-16e-hero-iphone-16e-endframe {
+    background-image: url("/v/home/ce/images/heroes/iphone-16e/hero_iphone_16e_endframe__enpjcl8w7fyq_mediumtall_2x.png");
+  }
+}
+
+.main [data-module-template="heroes"] .unit-image-wrapper .unit-image.unit-image-iphone-16e-hero-iphone-16e-startframe {
+  width: 874px;
+  height: 184px;
+  background-size: 874px 184px;
+  background-repeat: no-repeat;
+  background-image: url("/v/home/ce/images/heroes/iphone-16e/hero_iphone_16e_startframe__c4c9icmgmdua_large.png");
+}
+
+@media only screen and (-webkit-min-device-pixel-ratio: 1.5),
+  only screen and (min-resolution: 1.5dppx),
+  (-webkit-min-device-pixel-ratio: 1.5),
+  (min-resolution: 144dpi) {
+  .main
+    [data-module-template="heroes"]
+    .unit-image-wrapper
+    .unit-image.unit-image-iphone-16e-hero-iphone-16e-startframe {
+    background-image: url("/v/home/ce/images/heroes/iphone-16e/hero_iphone_16e_startframe__c4c9icmgmdua_large_2x.png");
+  }
+}
+
+@media only screen and (max-width: 1068px) {
+  .main
+    [data-module-template="heroes"]
+    .unit-image-wrapper
+    .unit-image.unit-image-iphone-16e-hero-iphone-16e-startframe {
+    width: 732px;
+    height: 154px;
+    background-size: 732px 154px;
+    background-repeat: no-repeat;
+    background-image: url("/v/home/ce/images/heroes/iphone-16e/hero_iphone_16e_startframe__c4c9icmgmdua_medium.png");
+  }
+}
+
+@media only screen and (max-width: 1068px) and (-webkit-min-device-pixel-ratio: 1.5),
+  only screen and (max-width: 1068px) and (min-resolution: 1.5dppx),
+  only screen and (max-width: 1068px) and (min-resolution: 144dpi) {
+  .main
+    [data-module-template="heroes"]
+    .unit-image-wrapper
+    .unit-image.unit-image-iphone-16e-hero-iphone-16e-startframe {
+    background-image: url("/v/home/ce/images/heroes/iphone-16e/hero_iphone_16e_startframe__c4c9icmgmdua_medium_2x.png");
+  }
+}
+
+@media only screen and (max-width: 734px) {
+  .main
+    [data-module-template="heroes"]
+    .unit-image-wrapper
+    .unit-image.unit-image-iphone-16e-hero-iphone-16e-startframe {
+    width: 160px;
+    height: 228px;
+    background-size: 160px 228px;
+    background-repeat: no-repeat;
+    background-image: url("/v/home/ce/images/heroes/iphone-16e/hero_iphone_16e_startframe__c4c9icmgmdua_small.png");
+  }
+}
+
+@media only screen and (max-width: 734px) and (-webkit-min-device-pixel-ratio: 1.5),
+  only screen and (max-width: 734px) and (min-resolution: 1.5dppx),
+  only screen and (max-width: 734px) and (min-resolution: 144dpi) {
+  .main
+    [data-module-template="heroes"]
+    .unit-image-wrapper
+    .unit-image.unit-image-iphone-16e-hero-iphone-16e-startframe {
+    background-image: url("/v/home/ce/images/heroes/iphone-16e/hero_iphone_16e_startframe__c4c9icmgmdua_small_2x.png");
+  }
+}
+
+@media only screen and (min-width: 1069px) and (min-height: 776px) {
+  .main
+    [data-module-template="heroes"]
+    .unit-image-wrapper
+    .unit-image.unit-image-iphone-16e-hero-iphone-16e-startframe {
+    width: 952px;
+    height: 200px;
+    background-size: 952px 200px;
+    background-repeat: no-repeat;
+    background-image: url("/v/home/ce/images/heroes/iphone-16e/hero_iphone_16e_startframe__c4c9icmgmdua_largetall.png");
+  }
+}
+
+@media only screen and (min-width: 1069px) and (min-height: 776px) and (-webkit-min-device-pixel-ratio: 1.5),
+  only screen and (min-width: 1069px) and (min-height: 776px) and (min-resolution: 1.5dppx),
+  only screen and (min-width: 1069px) and (min-height: 776px) and (min-resolution: 144dpi) {
+  .main
+    [data-module-template="heroes"]
+    .unit-image-wrapper
+    .unit-image.unit-image-iphone-16e-hero-iphone-16e-startframe {
+    background-image: url("/v/home/ce/images/heroes/iphone-16e/hero_iphone_16e_startframe__c4c9icmgmdua_largetall_2x.png");
+  }
+}
+
+@media only screen and (max-width: 1068px) and (min-width: 735px) and (min-height: 734px) {
+  .main
+    [data-module-template="heroes"]
+    .unit-image-wrapper
+    .unit-image.unit-image-iphone-16e-hero-iphone-16e-startframe {
+    width: 730px;
+    height: 154px;
+    background-size: 730px 154px;
+    background-repeat: no-repeat;
+    background-image: url("/v/home/ce/images/heroes/iphone-16e/hero_iphone_16e_startframe__c4c9icmgmdua_mediumtall.png");
+  }
+}
+
+@media only screen and (max-width: 1068px) and (min-width: 735px) and (min-height: 734px) and (-webkit-min-device-pixel-ratio: 1.5),
+  only screen and (max-width: 1068px) and (min-width: 735px) and (min-height: 734px) and (min-resolution: 1.5dppx),
+  only screen and (max-width: 1068px) and (min-width: 735px) and (min-height: 734px) and (min-resolution: 144dpi) {
+  .main
+    [data-module-template="heroes"]
+    .unit-image-wrapper
+    .unit-image.unit-image-iphone-16e-hero-iphone-16e-startframe {
+    background-image: url("/v/home/ce/images/heroes/iphone-16e/hero_iphone_16e_startframe__c4c9icmgmdua_mediumtall_2x.png");
+  }
+}
