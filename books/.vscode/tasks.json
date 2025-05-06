@@ -1,0 +1,22 @@
+// filepath: c:\Users\cesargabrielphd\Documents\github\books\.vscode\tasks.json
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "Run Quarto Book",
+      "type": "shell",
+      "command": "cmd",
+      "args": [
+        "/c",
+        "echo 'Executando Quarto...' && quarto render ./book/TAS0000/index.qmd"
+      ],
+      "options": {
+        "cwd": "c:/Users/cesargabrielphd/Documents/github/books/"
+      },
+      "group": {
+        "kind": "build",
+        "isDefault": true
+      }
+    }
+  ]
+}
