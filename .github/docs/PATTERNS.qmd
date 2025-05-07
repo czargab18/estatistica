@@ -7,7 +7,7 @@
 
 - `main`: branch "simula" o ambiente de **`produção`**. Como uso o GiHub Pages, apenas o que estiver finalizado deve ser jogado empurado para ela (única).
 - `stag`: branch "simula" o ambiente de **`pre-produção`** (estagío). Usada mais para corrigir problemas de `merge` e testes (única).
-- `dev*`: branch "simula" o ambiente de **`desenvolvimento`**. para cada "*" é um possível desenvolvedor que pode contribuir. Além diso podemos ter branchs dessesdesenvolvedores com: `dev1renbr` que é a branch de ``renderização de books`` do ``dev1``
+- `dev*`: branch "simula" o ambiente de **`desenvolvimento`**. para cada "*" é um possível desenvolvedor que pode contribuir. Além diso podemos ter branchs dessesdesenvolvedores com: `dev1books` que é a branch de ``renderização de books`` do ``dev1``
 
 
 ## Padrões de commits usados neste Repositório

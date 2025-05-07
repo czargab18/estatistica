@@ -1,0 +1,113 @@
+name: Renderizar Books Quarto
+
+on:
+  schedule:
+    - cron: "0 0 * * 1"
+  push:
+    branches: [dev1books]
+    paths:
+      - "./books/build/**"
+      - "./books/requi*.txt"
+      - "!./books/build/books*/**"
+      - "!./books/build/include/**"
+      - "!./books/build/autom*.py"
+  workflow_dispatch:
+  pull_request:
+    branches: [
+      dev1books, # qualquer coisa relacionado a /books/
+      ]
+
+permissions:
+  contents: write
+  pages: write
+
+jobs:
+  config-r:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout do repositório
+        uses: actions/checkout@v4
+
+      - name: Configura a Linguagem R
+        uses: r-lib/actions/setup-r@v2
+
+      - name: Cache de Pacotes R
+        uses: actions/cache@v3
+        with:
+          path: ~/.R
+          key: ${{ runner.os }}-R-${{ hashFiles('**/DESCRIPTION') }}
+          restore-keys: |
+            ${{ runner.os }}-R-
+
+      - name: Instalar Pacotes R
+        run: |
+          Rscript -e '
+          pacotes <- c("knitr", "rmarkdown", "downlit", "xml2") 
+          for (pacote in pacotes) {
+            if (!require(pacote, character.only = TRUE)) {
+              install.packages(pacote, dependencies = TRUE)
+            }
+          }'
+
+  config-python:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout do repositório
+        uses: actions/checkout@v4
+
+      - name: Cache de Dependências Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.x'
+          cache: 'pip'
+
+      - name: Instalar Dependências Python
+        run: pip install -r requirements.txt || echo "Ignorando dependências incompatíveis"
+
+  config-quarto:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout do repositório
+        uses: actions/checkout@v4
+        
+      - name: Configura o Quarto
+        uses: quarto-dev/quarto-actions/setup@v2
+
+  detect-modificacao:
+    runs-on: ubuntu-latest
+    needs: [config-r, config-python, config-quarto]
+    steps:
+      - name: Checkout do repositório
+        uses: actions/checkout@v4
+
+      - name: Confere o repositório
+        uses: actions/checkout@v4
+
+      - name: Detectar modificações em "./build/{books}"
+        id: detect-changes
+        run: |
+          git fetch --depth=2
+          MODIFIED_PATHS=$(git diff --name-only HEAD~1 HEAD | grep '^build/')
+          echo "Arquivos modificados: $MODIFIED_PATHS"
+          MATCHED_SUBFOLDERS=$(echo "$MODIFIED_PATHS" | grep -E '^build/[A-Z]{3}[0-9]{4}/' | cut -d'/' -f2 | uniq)
+          echo "Subfolders detectados: $MATCHED_SUBFOLDERS"
+          echo "subfolders=$MATCHED_SUBFOLDERS" >> $GITHUB_OUTPUT
+
+  renderizar-books:
+    runs-on: ubuntu-latest
+    needs: [detect-modificacao]
+    steps:
+      - name: Checkout do repositório
+        uses: actions/checkout@v4
+
+      - name: Renderizar cada book modificado
+        if: steps.detect-changes.outputs.subfolders != ''
+        run: |
+          for folder in ${{ steps.detect-changes.outputs.subfolders }}; do
+            echo "Rendering book in build/$folder"
+            quarto render build/$folder --to html
+          done
+
+      - name: Nenhuma Modificação Detectada
+        if: steps.detect-changes.outputs.subfolders == ''
+        run: echo "Nenhuma modificação detectada nos subdiretórios de build."
