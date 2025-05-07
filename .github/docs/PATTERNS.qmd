@@ -3,13 +3,20 @@
 - padrões de chaves `ssh`
 - padrões do ambiente virtual `.venv`
 
+## Estrutura e padrões das `branchs`
+
+- `main`: branch "simula" o ambiente de **`produção`**. Como uso o GiHub Pages, apenas o que estiver finalizado deve ser jogado empurado para ela (única).
+- `stag`: branch "simula" o ambiente de **`pre-produção`** (estagío). Usada mais para corrigir problemas de `merge` e testes (única).
+- `dev*`: branch "simula" o ambiente de **`desenvolvimento`**. para cada "*" é um possível desenvolvedor que pode contribuir. Além diso podemos ter branchs dessesdesenvolvedores com: `dev1books` que é a branch de ``renderização de books`` do ``dev1``
+
+
 ## Padrões de commits usados neste Repositório
 
 O commit semântico possui os elementos estruturais abaixo (tipos), que informam a intenção do seu commit ao utilizador(a) de seu código.
 
 Isso indica algo
 ```{bash}
-git commit -m 'padrao(acao): mensagem' -m 'descrição detalhada.'
+git commit -m 'padrao(acao): mensagem' -m 'descrição.'
 ```
 
 - `docs` Commits do tipo docs indicam que houveram **mudanças na documentação**, como por exemplo no Readme do seu repositório. (Não inclui alterações em código).
