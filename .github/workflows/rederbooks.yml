@@ -9,11 +9,11 @@ on:
     paths:
       - "./books/**"
       - "./backend/**"
-  pull_request:
-    branches-ignore: [main]
-    paths: 
-      - "./books/**"
-      - "./backend/**"
+    pull_request:
+      branches-ignore: [main]
+      paths: 
+        - "./books/**"
+        - "./backend/**"
 permissions:
   contents: write
   pages: write
@@ -98,14 +98,14 @@ jobs:
           echo "subfolders=$MATCHED_SUBFOLDERS" >> $GITHUB_ENV
 
       - name: Validação de subdiretórios
-        id: validate-subfolders
+        if: ${{ env.subfolders == '' }}
         run: |
-          if [[ -z "${{ env.subfolders }}" ]]; then
-            echo "Nenhum subdiretório correspondente encontrado."
-            exit 1
-          else
-            echo "Subfolders detectados: ${{ env.subfolders }}"
-          fi
+          echo "Nenhum subdiretório correspondente encontrado."
+          exit 0
+
+      - name: Saída final
+        run: |
+          echo "Subfolders detectados: ${{ env.subfolders }}"
 
   config-r:
     needs: [detect-modificacao]
@@ -191,6 +191,7 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Renderizar cada book modificado
+        if: ${{ env.subfolders != '' }}
         run: |
           for folder in ${{ env.subfolders }}; do
             echo "Rendering book in build/$folder"
