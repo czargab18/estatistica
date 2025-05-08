@@ -60,11 +60,18 @@ jobs:
               # Salvar a resposta da API no ambiente em um formato seguro
               echo "api_response=$(echo "$API_RESPONSE" | jq -c .)" >> $GITHUB_ENV
 
+      - name: Depurar resposta da API
+        run: |
+          echo "Depurando resposta da API:"
+          echo "${{ env.api_response }}" | jq .
+
       - name: Processar arquivos modificados
         id: process-changed-files
         run: |
           # Processar a resposta da API para obter os arquivos modificados
-          CHANGED_FILES=$(echo "${{ env.api_response }}" | jq -r '.[].filename' | grep '^build/' || echo "")
+          echo "${{ env.api_response }}" | jq -c . > sanitized_response.json
+
+          CHANGED_FILES=$(jq -r '.files[].filename' sanitized_response.json | grep '^build/' || echo "")
           echo "arquivos_modificados=$CHANGED_FILES" >> $GITHUB_ENV
 
       - name: Verificar arquivos modificados
