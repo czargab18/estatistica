@@ -75,6 +75,7 @@ jobs:
 
   config-r:
     needs: [detect-modificacao]
+    if: ${{ needs.detect-modificacao.outputs.subfolders != '' }}
     runs-on: ubuntu-latest
     steps:
       - name: Checkout do repositório
@@ -103,6 +104,7 @@ jobs:
 
   config-python:
     needs: [detect-modificacao]
+    if: ${{ needs.detect-modificacao.outputs.subfolders != '' }}
     runs-on: ubuntu-latest
     steps:
       - name: Checkout do repositório
@@ -129,6 +131,7 @@ jobs:
 
   config-quarto:
     needs: [detect-modificacao]
+    if: ${{ needs.detect-modificacao.outputs.subfolders != '' }}
     runs-on: ubuntu-latest
     steps:
       - name: Checkout do repositório
@@ -148,18 +151,18 @@ jobs:
   renderizar-books:
     runs-on: ubuntu-latest
     needs: [config-r, config-python, config-quarto]
+    if: ${{ needs.detect-modificacao.outputs.subfolders != '' }}
     steps:
       - name: Checkout do repositório
         uses: actions/checkout@v4
 
       - name: Renderizar cada book modificado
-        if: ${{ steps.detect-subfolders.outputs.subfolders != '' }}
         run: |
-          for folder in ${{ steps.detect-subfolders.outputs.subfolders }}; do
+          for folder in ${{ needs.detect-modificacao.outputs.subfolders }}; do
             echo "Rendering book in build/$folder"
             quarto render build/$folder --to html
           done
 
       - name: Nenhuma Modificação Detectada
-        if: ${{ steps.detect-subfolders.outputs.subfolders == '' }}
+        if: ${{ needs.detect-modificacao.outputs.subfolders == '' }}
         run: echo "Nenhuma modificação detectada nos subdiretórios de build."
