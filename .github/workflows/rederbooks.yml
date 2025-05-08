@@ -8,10 +8,10 @@ on:
     branches-ignore: [main]
     paths:
       - "./books/**"
-    pull_request:
-      branches-ignore: [main]
-      paths: 
-        - "./books/**"
+  pull_request:
+    branches-ignore: [main]
+    paths:
+      - "./books/**"
 
 permissions:
   contents: write
@@ -61,50 +61,17 @@ jobs:
             exit 1
           }
 
-          # Save sanitized response to a GitHub environment variable
-          echo "api_response=$(cat api_response.json)" >> $GITHUB_ENV
-
-      - name: Debug API response with jq
-        run: |
-          echo "Debugging API response:"
-          cat api_response.json | jq . || {
-            echo "Error processing JSON."
-            exit 1
-          }
-
       - name: Processar arquivos modificados
         id: process-changed-files
         run: |
-          # Verificar e processar arquivos modificados
-          CHANGED_FILES=$(jq -r '.files[].filename' sanitized_response.json | grep '^build/' || echo "")
-          echo "arquivos_modificados=$CHANGED_FILES" >> $GITHUB_ENV
-
-      - name: Verificar arquivos modificados
-        id: verify-changed-files
-        run: |
-          # Verificar se há arquivos modificados
-          if [[ -z "${{ env.arquivos_modificados }}" ]]; then
-            echo "Nenhum arquivo modificado detectado."
-            exit 0
-          else
-            echo "Arquivos modificados detectados: ${{ env.arquivos_modificados }}"
-          fi
+          CHANGED_FILES=$(jq -r '.files[].filename' api_response.json | grep '^build/' || echo "")
+          echo "::set-output name=arquivos_modificados::$CHANGED_FILES"
 
       - name: Identificar subdiretórios correspondentes
         id: detect-subfolders
         run: |
-          MATCHED_SUBFOLDERS=$(echo "${{ env.arquivos_modificados }}" | grep -E '^build/[A-Z]{3}[0-9]{4}/' | cut -d'/' -f2 | uniq || echo "")
-          echo "subfolders=$MATCHED_SUBFOLDERS" >> $GITHUB_ENV
-
-      - name: Validação de subdiretórios
-        if: ${{ env.subfolders == '' }}
-        run: |
-          echo "Nenhum subdiretório correspondente encontrado."
-          exit 0
-
-      - name: Saída final
-        run: |
-          echo "Subfolders detectados: ${{ env.subfolders }}"
+          MATCHED_SUBFOLDERS=$(echo "${{ steps.process-changed-files.outputs.arquivos_modificados }}" | grep -E '^build/[A-Z]{3}[0-9]{4}/' | cut -d'/' -f2 | uniq || echo "")
+          echo "::set-output name=subfolders::$MATCHED_SUBFOLDERS"
 
   config-r:
     needs: [detect-modificacao]
@@ -183,12 +150,13 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Renderizar cada book modificado
-        if: ${{ env.subfolders != '' }}
+        if: ${{ steps.detect-subfolders.outputs.subfolders != '' }}
         run: |
-          for folder in ${{ env.subfolders }}; do
+          for folder in ${{ steps.detect-subfolders.outputs.subfolders }}; do
             echo "Rendering book in build/$folder"
             quarto render build/$folder --to html
           done
 
       - name: Nenhuma Modificação Detectada
-        if: ${{ env.subfolders == '' }}
+        if: ${{ steps.detect-subfolders.outputs.subfolders == '' }}
+        run: echo "Nenhuma modificação detectada nos subdiretórios de build."
