@@ -73,7 +73,7 @@ jobs:
         id: detect-subfolders
         run: |
           MATCHED_SUBFOLDERS=$(echo "${{ env.arquivos_modificados }}" | grep -E '^build/[A-Z]{3}[0-9]{4}/' | cut -d'/' -f2 | uniq || echo "")
-          echo "::set-output name=subfolders::$MATCHED_SUBFOLDERS"
+          echo "subfolders=$MATCHED_SUBFOLDERS" >> $GITHUB_ENV
 
   config-r:
     needs: [detect-modificacao]
