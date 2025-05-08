@@ -1,7 +1,8 @@
-# A Arte da Estatística {.headline-title #title}
+# A Arte da Estatística {#title .headline-title}
 
-O nome desta série é inspirado na famosa coleção de Donald Knuth chamada "The Art of Computer Programming", veja (tarara, xxx).
-Esta série ou coleção será construída com base em minhas notas e exercícios de aulas.
+## TESTANDO A ACTION-RENDERBOOKS.YML
+
+O nome desta série é inspirado na famosa coleção de Donald Knuth chamada "The Art of Computer Programming", veja (tarara, xxx). Esta série ou coleção será construída com base em minhas notas e exercícios de aulas.
 
 ## Algumas perguntas que acredito serem úteis.
 
@@ -42,7 +43,6 @@ A falta de dedicação exclusiva é o principal fator que define o ritmo do proj
 Outro ponto relevante é a necessidade constante de reestruturação de partes do material. Embora esse processo demande tempo, ele é essencial para assegurar o bom funcionamento e a consistência do projeto. A reestruturação, por sua vez, pode ser realizada em paralelo ao desenvolvimento ativo, tornando o progresso mais dinâmico e adaptável.
 
 Por não haver prazos rígidos ou metas finais inflexíveis, o projeto avança de forma natural, sem pressões externas.
-
 
 ## Estrutura das Notas
 

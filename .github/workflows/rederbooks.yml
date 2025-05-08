@@ -21,6 +21,8 @@ permissions:
 jobs:
   detect-modificacao:
     runs-on: ubuntu-latest
+    outputs:
+      subfolders: ${{ steps.detect-subfolders.outputs.subfolders }}
     steps:
       - name: Instalar jq
         run: sudo apt-get update && sudo apt-get install -y jq
@@ -65,13 +67,18 @@ jobs:
         id: process-changed-files
         run: |
           CHANGED_FILES=$(jq -r '.files[].filename' api_response.json | grep '^build/' || echo "")
-          echo "::set-output name=arquivos_modificados::$CHANGED_FILES"
+          if [[ -z "$CHANGED_FILES" ]]; then
+            echo "Nenhum arquivo modificado encontrado no diretório 'build/'."
+          else
+            echo "Arquivos modificados: $CHANGED_FILES"
+          fi
+          echo "arquivos_modificados=$CHANGED_FILES" >> $GITHUB_ENV
 
       - name: Identificar subdiretórios correspondentes
         id: detect-subfolders
         run: |
           MATCHED_SUBFOLDERS=$(echo "${{ steps.process-changed-files.outputs.arquivos_modificados }}" | grep -E '^build/[A-Z]{3}[0-9]{4}/' | cut -d'/' -f2 | uniq || echo "")
-          echo "::set-output name=subfolders::$MATCHED_SUBFOLDERS"
+          echo "subfolders=$MATCHED_SUBFOLDERS" >> $GITHUB_ENV
 
   config-r:
     needs: [detect-modificacao]
@@ -166,8 +173,8 @@ jobs:
       - name: Correções com Python
         run: |
           for folder in ${{ needs.detect-modificacao.outputs.subfolders }}; do
-            echo "corrigindo book in build/$folder"
-            python -m 
+            echo "Corrigindo book in build/$folder"
+            python -m corrigir_script build/$folder
           done
 
       - name: Nenhuma Modificação Detectada
