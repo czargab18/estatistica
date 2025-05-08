@@ -76,9 +76,7 @@ jobs:
       - name: Processar arquivos modificados
         id: process-changed-files
         run: |
-          # Processar a resposta da API para obter os arquivos modificados
-          echo "${{ env.api_response }}" | jq -c . > sanitized_response.json
-
+          # Verificar e processar arquivos modificados
           CHANGED_FILES=$(jq -r '.files[].filename' sanitized_response.json | grep '^build/' || echo "")
           echo "arquivos_modificados=$CHANGED_FILES" >> $GITHUB_ENV
 
