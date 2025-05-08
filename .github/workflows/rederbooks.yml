@@ -27,7 +27,8 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           if [[ "${{ github.event_name }}" == "pull_request" ]]; then
-            CHANGED_FILES=$(curl -s -H "Authorization: Bearer $GITHUB_TOKEN" \
+            CHANGED_FILES=$(
+            curl -s -H "Authorization: Bearer $GITHUB_TOKEN" \
               -H "Accept: application/vnd.github.v3+json" \
               "${{ github.event.pull_request.url }}/files" \
               | jq -r '.[].filename' | grep '^build/')
