@@ -14,10 +14,10 @@ on:
       paths: 
         - "./books/**"
         - "./backend/**"
-  permissions:
-    contents: write
-    pages: write
-    pull-requests: read
+permissions:
+  contents: write
+  pages: write
+  pull-requests: read
 
 jobs:
   detect-modificacao:
