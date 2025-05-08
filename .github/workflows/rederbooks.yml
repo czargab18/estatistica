@@ -5,11 +5,11 @@ on:
   schedule:
     - cron: "0 0 * * 1"
   push:
-    branches-ignore: [main,books]
+    branches-ignore: [main]
     paths:
       - "./books/**"
   pull_request:
-    branches-ignore: [main,books]
+    branches-ignore: [main]
     paths:
       - "./books/**"
 
