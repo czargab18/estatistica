@@ -124,6 +124,9 @@ jobs:
       - name: Instalar Dependências Python
         run: pip install -r requirements.txt || echo "Ignorando dependências incompatíveis"
 
+      - name: Instalar Pacote backend
+        run: pip install -e backend
+
   config-quarto:
     needs: [detect-modificacao]
     runs-on: ubuntu-latest
