@@ -67,7 +67,11 @@ jobs:
       - name: Depurar resposta da API com jq
         run: |
           echo "Depurando resposta da API com jq:"
-          echo "${{ env.api_response }}" | jq . || echo "A resposta não é um JSON válido."
+          # Salvar a resposta da API em um arquivo temporário
+          echo "${{ env.api_response }}" > api_response.json
+          
+          # Validar o JSON usando jq
+          jq . api_response.json || echo "A resposta não é um JSON válido."
 
       - name: Processar arquivos modificados
         id: process-changed-files
