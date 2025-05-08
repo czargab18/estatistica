@@ -1,20 +1,16 @@
 name: Renderizar Books Quarto
 
 on:
+  workflow_dispatch:
   schedule:
     - cron: "0 0 * * 1"
   push:
-    branches: [dev1books]
+    branches-ignore:  [main]
     paths:
-      - "./books/build/**"
-      - "./books/requi*.txt"
-      - "!./books/build/books*/**"
-      - "!./books/build/include/**"
-      - "!./books/build/autom*.py"
-  workflow_dispatch:
+      - "./books/**"
+      - "./backend/**"
   pull_request:
-    branches:
-      - dev1books
+    branches-ignore: [main]
 
 permissions:
   contents: write
@@ -25,40 +21,47 @@ jobs:
   detect-modificacao:
     runs-on: ubuntu-latest
     steps:
-      - name: Detectar modificações via API do GitHub
-        id: detect-changes
+      - name: Detectar arquivos modificados
+        id: detect-changed-files
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
-            if [[ "${{ github.event_name }}" == "pull_request" ]]; then
-              CHANGED_FILES=$(curl -s -H "Authorization: Bearer $GITHUB_TOKEN" \
-                -H "Accept: application/vnd.github.v3+json" \
-                "${{ github.event.pull_request.url }}/files" \
-                | jq -r '.[].filename' | grep '^build/')
-            else
-              CHANGED_FILES=$(curl -s -H "Authorization: Bearer $GITHUB_TOKEN" \
-                -H "Accept: application/vnd.github.v3+json" \
-                "https://api.github.com/repos/${{ github.repository }}/commits/${{ github.sha }}" \
-                | jq -r '.files[].filename' | grep '^build/')
-            fi
+          if [[ "${{ github.event_name }}" == "pull_request" ]]; then
+            CHANGED_FILES=$(curl -s -H "Authorization: Bearer $GITHUB_TOKEN" \
+              -H "Accept: application/vnd.github.v3+json" \
+              "${{ github.event.pull_request.url }}/files" \
+              | jq -r '.[].filename' | grep '^build/')
+          else
+            CHANGED_FILES=$(curl -s -H "Authorization: Bearer $GITHUB_TOKEN" \
+              -H "Accept: application/vnd.github.v3+json" \
+              "https://api.github.com/repos/${{ github.repository }}/commits/${{ github.sha }}" \
+              | jq -r '.files[].filename' | grep '^build/')
+          fi
 
-            if [[ -z "$CHANGED_FILES" ]]; then
-              echo "Nenhum arquivo modificado encontrado no diretório 'build/'."
-              echo "subfolders=" >> $GITHUB_OUTPUT
-              exit 0
-            fi
+          echo "arquivos_modificados=$CHANGED_FILES" >> $GITHUB_OUTPUT
 
-            echo "Arquivos modificados: $CHANGED_FILES"
-            MATCHED_SUBFOLDERS=$(echo "$CHANGED_FILES" | grep -E '^build/[A-Z]{3}[0-9]{4}/' | cut -d'/' -f2 | uniq)
+      - name: Validar arquivos modificados
+        if: ${{ steps.detect-changed-files.outputs.arquivos_modificados == '' }}
+        run: |
+          echo "Nenhum arquivo modificado encontrado no diretório 'build/'."
+          echo "subfolders=" >> $GITHUB_OUTPUT
+          exit 0
 
-            if [[ -z "$MATCHED_SUBFOLDERS" ]]; then
-              echo "Nenhum subdiretório correspondente encontrado."
-              echo "subfolders=" >> $GITHUB_OUTPUT
-              exit 0
-            fi
+      - name: Identificar subdiretórios correspondentes
+        id: detect-subfolders
+        run: |
+          MATCHED_SUBFOLDERS=$(echo "${{ steps.detect-changed-files.outputs.arquivos_modificados }}" | grep -E '^build/[A-Z]{3}[0-9]{4}/' | cut -d'/' -f2 | uniq)
+          echo "subfolders=$MATCHED_SUBFOLDERS" >> $GITHUB_OUTPUT
 
-            echo "Subfolders detectados: $MATCHED_SUBFOLDERS"
-            echo "subfolders=$MATCHED_SUBFOLDERS" >> $GITHUB_OUTPUT
+      - name: Validação de subdiretórios
+        if: ${{ steps.detect-subfolders.outputs.subfolders == '' }}
+        run: |
+          echo "Nenhum subdiretório correspondente encontrado."
+          exit 0
+
+      - name: Saída final
+        run: |
+          echo "Subfolders detectados: ${{ steps.detect-subfolders.outputs.subfolders }}"
 
   config-r:
     needs: [detect-modificacao]
