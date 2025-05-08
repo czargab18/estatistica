@@ -77,7 +77,7 @@ jobs:
       - name: Identificar subdiretórios correspondentes
         id: detect-subfolders
         run: |
-          MATCHED_SUBFOLDERS=$(echo "${{ env.arquivos_modificados }}" | grep -E '^build/[A-Z]{3}[0-9]{4}/' | cut -d'/' -f2 | uniq || echo "")
+          MATCHED_SUBFOLDERS=$(echo "${{ steps.process-changed-files.outputs.arquivos_modificados }}" | grep -E '^build/[A-Z]{3}[0-9]{4}/' | cut -d'/' -f2 | uniq || echo "")
           echo "subfolders=$MATCHED_SUBFOLDERS" >> $GITHUB_ENV
 
   config-r:
