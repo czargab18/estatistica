@@ -163,6 +163,13 @@ jobs:
             quarto render build/$folder --to html
           done
 
+      - name: Correções com Python
+        run: |
+          for folder in ${{ needs.detect-modificacao.outputs.subfolders }}; do
+            echo "corrigindo book in build/$folder"
+            python -m 
+          done
+
       - name: Nenhuma Modificação Detectada
         if: ${{ needs.detect-modificacao.outputs.subfolders == '' }}
         run: echo "Nenhuma modificação detectada nos subdiretórios de build."
