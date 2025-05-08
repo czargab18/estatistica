@@ -67,6 +67,11 @@ jobs:
         id: process-changed-files
         run: |
           CHANGED_FILES=$(jq -r '.files[].filename' api_response.json | grep '^build/' || echo "")
+          if [[ -z "$CHANGED_FILES" ]]; then
+            echo "Nenhum arquivo modificado encontrado no diretório 'build/'."
+          else
+            echo "Arquivos modificados: $CHANGED_FILES"
+          fi
           echo "arquivos_modificados=$CHANGED_FILES" >> $GITHUB_ENV
 
       - name: Identificar subdiretórios correspondentes
