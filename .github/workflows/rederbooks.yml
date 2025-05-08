@@ -1,17 +1,13 @@
 name: Renderizar Books Quarto
 
 on:
-  workflow_dispatch:
+  push:
+    branches: [main, dev1, books]
+  pull_request:
+      branches: [main, dev1, books]
   schedule:
     - cron: "0 0 * * 1"
-  push:
-    branches-ignore: [main]
-    paths:
-      - "./books/**"
-  pull_request:
-    branches-ignore: [main]
-    paths:
-      - "./books/**"
+  workflow_dispatch:
 
 permissions:
   contents: write
