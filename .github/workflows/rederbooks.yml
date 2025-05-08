@@ -108,7 +108,6 @@ jobs:
 
   config-r:
     needs: [detect-modificacao]
-    if: ${{ env.subfolders != '' }}
     runs-on: ubuntu-latest
     steps:
       - name: Checkout do repositório
@@ -137,7 +136,6 @@ jobs:
 
   config-python:
     needs: [detect-modificacao]
-    if: ${{ env.subfolders != '' }}
     runs-on: ubuntu-latest
     steps:
       - name: Checkout do repositório
@@ -159,12 +157,8 @@ jobs:
       - name: Instalar Dependências Python
         run: pip install -r requirements.txt || echo "Ignorando dependências incompatíveis"
 
-      - name: Instalar Pacote backend
-        run: pip install -e ./backend
-
   config-quarto:
     needs: [detect-modificacao]
-    if: ${{ env.subfolders != '' }}
     runs-on: ubuntu-latest
     steps:
       - name: Checkout do repositório
@@ -184,7 +178,6 @@ jobs:
   renderizar-books:
     runs-on: ubuntu-latest
     needs: [config-r, config-python, config-quarto]
-    if: ${{ env.subfolders != '' }}
     steps:
       - name: Checkout do repositório
         uses: actions/checkout@v4
@@ -199,4 +192,3 @@ jobs:
 
       - name: Nenhuma Modificação Detectada
         if: ${{ env.subfolders == '' }}
-        run: echo "Nenhuma modificação detectada nos subdiretórios de build."
