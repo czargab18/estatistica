@@ -65,17 +65,17 @@ jobs:
         id: process-changed-files
         run: |
           CHANGED_FILES=$(jq -r '.files[].filename' api_response.json | grep '^build/' || echo "")
-          echo "::set-output name=arquivos_modificados::$CHANGED_FILES"
+          echo "arquivos_modificados=$CHANGED_FILES" >> $GITHUB_ENV
 
       - name: Identificar subdiretórios correspondentes
         id: detect-subfolders
         run: |
-          MATCHED_SUBFOLDERS=$(echo "${{ steps.process-changed-files.outputs.arquivos_modificados }}" | grep -E '^build/[A-Z]{3}[0-9]{4}/' | cut -d'/' -f2 | uniq || echo "")
-          echo "::set-output name=subfolders::$MATCHED_SUBFOLDERS"
+          MATCHED_SUBFOLDERS=$(echo "${{ env.arquivos_modificados }}" | grep -E '^build/[A-Z]{3}[0-9]{4}/' | cut -d'/' -f2 | uniq || echo "")
+          echo "subfolders=$MATCHED_SUBFOLDERS" >> $GITHUB_ENV
 
   config-r:
     needs: [detect-modificacao]
-    if: ${{ needs.detect-modificacao.outputs.subfolders != '' }}
+    if: ${{ env.subfolders != '' }}
     runs-on: ubuntu-latest
     steps:
       - name: Checkout do repositório
@@ -104,7 +104,7 @@ jobs:
 
   config-python:
     needs: [detect-modificacao]
-    if: ${{ needs.detect-modificacao.outputs.subfolders != '' }}
+    if: ${{ env.subfolders != '' }}
     runs-on: ubuntu-latest
     steps:
       - name: Checkout do repositório
@@ -131,7 +131,7 @@ jobs:
 
   config-quarto:
     needs: [detect-modificacao]
-    if: ${{ needs.detect-modificacao.outputs.subfolders != '' }}
+    if: ${{ env.subfolders != '' }}
     runs-on: ubuntu-latest
     steps:
       - name: Checkout do repositório
@@ -151,25 +151,25 @@ jobs:
   renderizar-books:
     runs-on: ubuntu-latest
     needs: [config-r, config-python, config-quarto]
-    if: ${{ needs.detect-modificacao.outputs.subfolders != '' }}
+    if: ${{ env.subfolders != '' }}
     steps:
       - name: Checkout do repositório
         uses: actions/checkout@v4
 
       - name: Renderizar cada book modificado
         run: |
-          for folder in ${{ needs.detect-modificacao.outputs.subfolders }}; do
+          for folder in ${{ env.subfolders }}; do
             echo "Rendering book in build/$folder"
             quarto render build/$folder --to html
           done
 
       - name: Correções com Python
         run: |
-          for folder in ${{ needs.detect-modificacao.outputs.subfolders }}; do
-            echo "corrigindo book in build/$folder"
-            python -m 
+          for folder in ${{ env.subfolders }}; do
+            echo "Corrigindo book in build/$folder"
+            python -m corrigir_script build/$folder
           done
 
       - name: Nenhuma Modificação Detectada
-        if: ${{ needs.detect-modificacao.outputs.subfolders == '' }}
+        if: ${{ env.subfolders == '' }}
         run: echo "Nenhuma modificação detectada nos subdiretórios de build."
