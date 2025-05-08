@@ -60,13 +60,17 @@ jobs:
               # Salvar a resposta da API no ambiente em um formato seguro
               echo "api_response=$(echo "$API_RESPONSE" | jq -c .)" >> $GITHUB_ENV
 
-      # - name: Depurar resposta da API com jq
-      #   run: |
-      #     echo "Depurando resposta da API com jq:"
-      #     # Salvar a resposta da API em um arquivo temporário
-      #     echo "${{ env.api_response }}" > api_response.json
-      #     # Validar o JSON usando jq
-      #     jq . api_response.json || echo "A resposta não é um JSON válido."
+      - name: Depurar resposta da API com jq
+        run: |
+          echo "Depurando resposta da API com jq:"
+          echo "${{ env.api_response }}" | jq -c . > api_response.json 2>/dev/null || {
+            echo "A resposta não é um JSON válido."
+            cat api_response.json
+            exit 1
+          }
+
+          # Validar novamente o JSON
+          jq . api_response.json || echo "Erro ao processar o JSON."
 
       - name: Processar arquivos modificados
         id: process-changed-files
