@@ -8,12 +8,11 @@ on:
     branches-ignore: [main]
     paths:
       - "./books/**"
-      - "./backend/**"
     pull_request:
       branches-ignore: [main]
       paths: 
         - "./books/**"
-        - "./backend/**"
+
 permissions:
   contents: write
   pages: write
