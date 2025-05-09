@@ -84,7 +84,7 @@ jobs:
       - name: Depurar variáveis de ambiente
         env:
           arquivos_modificados: ${{ env.arquivos_modificados }}
-          subfolders: ${{ env.subfolders }}"
+          subfolders: ${{ env.subfolders }}
         run: |
           echo "Valor de arquivos_modificados: ${{ env.arquivos_modificados }}"
           echo "Valor de subfolders: ${{ env.subfolders }}"
