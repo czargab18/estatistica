@@ -118,11 +118,11 @@ jobs:
           echo "Subdiretórios detectados: $MATCHED_SUBFOLDERS"
 
           # Exportar subdiretórios como saída da etapa
-          echo "subfolders=$MATCHED_SUBFOLDERS" >> $GITHUB_ENV
+          echo "subfolders=$MATCHED_SUBFOLDERS" >> $GITHUB_OUTPUT
 
       - name: Depurar variável subfolders
         run: |
-          echo "Valor de subfolders: ${{ env.subfolders }}"
+           echo "Valor de subfolders configurado: ${{ steps.detect-subfolders.outputs.subfolders }}"
 
   config-r:
     needs: [detect-modificacao]
@@ -131,6 +131,7 @@ jobs:
     steps:
       - name: Verificar subdiretórios
         run: |
+          echo "Subdiretórios detectados: ${{ needs.detect-modificacao.outputs.subfolders }}"
           if [[ -z "${{ needs.detect-modificacao.outputs.subfolders }}" ]]; then
             echo "Nenhum subdiretório foi detectado. Pulando etapa."
           fi
@@ -164,6 +165,13 @@ jobs:
     if: ${{ needs.detect-modificacao.outputs.subfolders != '' }}
     runs-on: ubuntu-latest
     steps:
+      - name: Verificar subdiretórios
+        run: |
+          echo "Subdiretórios detectados: ${{ needs.detect-modificacao.outputs.subfolders }}"
+          if [[ -z "${{ needs.detect-modificacao.outputs.subfolders }}" ]]; then
+            echo "Nenhum subdiretório foi detectado. Pulando etapa."
+          fi
+
       - name: Checkout do repositório
         uses: actions/checkout@v4
 
@@ -191,6 +199,14 @@ jobs:
     if: ${{ needs.detect-modificacao.outputs.subfolders != '' }}
     runs-on: ubuntu-latest
     steps:
+      - name: Verificar subdiretórios
+        run: |
+          echo "Subdiretórios detectados: ${{ needs.detect-modificacao.outputs.subfolders }}"
+          if [[ -z "${{ needs.detect-modificacao.outputs.subfolders }}" ]]; then
+            echo "Nenhum subdiretório foi detectado. Pulando etapa."
+          fi
+
+
       - name: Checkout do repositório
         uses: actions/checkout@v4
 
@@ -210,6 +226,14 @@ jobs:
     needs: [config-r, config-python, config-quarto]
     if: ${{ needs.detect-modificacao.outputs.subfolders != '' }}
     steps:
+      - name: Verificar subdiretórios
+        run: |
+          echo "Subdiretórios detectados: ${{ needs.detect-modificacao.outputs.subfolders }}"
+          if [[ -z "${{ needs.detect-modificacao.outputs.subfolders }}" ]]; then
+            echo "Nenhum subdiretório foi detectado. Pulando etapa."
+          fi
+
+
       # - name: Checkout do repositório
       #   uses: actions/checkout@v4
 
