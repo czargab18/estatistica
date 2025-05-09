@@ -9,15 +9,6 @@ Profª Daniele Baratela
     1.  Mostre que Ω deve ter um número finito de pontos. Sugestão: mostre que Ω não pode ter mais de p-1 pontos.
 
         [Resposta inicial (estupida)]{.reposta-inicial .resp-estupida}
-            Algumas definições de [@baratela2025] e [@leorolla2025]
-                - P(\vazio) = 0
-                - P(\omega) = 1
-                - P(A) >= 0
-                - P(\uniao_i A_i) = \sum_i {P(A_i)}
-            Para uma  F = {\vazio, A_i, \omega}
-            Temos que 0 <= P(A) <= 1
-            Para P( \union A_i) = \sum P(A_i) 
-
 
     2.  Mostre que se n é o número de pontos em Ω, então p deve ser igual a n-1. Nos exercícios de 2 a 6, descreva primeiramente um espaço de probabilidade adequado ao experimento em questão.
 
