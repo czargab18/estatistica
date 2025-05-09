@@ -124,41 +124,40 @@ jobs:
         run: |
            echo "Valor de subfolders configurado: ${{ steps.detect-subfolders.outputs.subfolders }}"
 
-  config-r:
-    needs: [detect-modificacao]
-    if: ${{ needs.detect-modificacao.outputs.subfolders != '' }}
-    runs-on: ubuntu-latest
-    steps:
-      - name: Verificar subdiretórios
-        run: |
-          echo "Subdiretórios detectados: ${{ needs.detect-modificacao.outputs.subfolders }}"
-          if [[ -z "${{ needs.detect-modificacao.outputs.subfolders }}" ]]; then
-            echo "Nenhum subdiretório foi detectado. Pulando etapa."
-          fi
+  # config-r:
+  #   needs: [detect-modificacao]
+  #   if: ${{ needs.detect-modificacao.outputs.subfolders != '' }}
+  #   runs-on: ubuntu-latest
+  #   steps:
+  #     - name: Verificar subdiretórios
+  #       run: |
+  #         echo "Subdiretórios detectados: ${{ needs.detect-modificacao.outputs.subfolders }}"
+  #         if [[ -z "${{ needs.detect-modificacao.outputs.subfolders }}" ]]; then
+  #           echo "Nenhum subdiretório foi detectado. Pulando etapa."
+  #         fi
       
-      - name: Checkout do repositório
-        uses: actions/checkout@v4
+  #     - name: Checkout do repositório
+  #       uses: actions/checkout@v4
 
-      - name: Cache de Pacotes R
-        uses: actions/cache@v3
-        with:
-          path: ~/.R/library
-          key: ${{ runner.os }}-R-library-${{ hashFiles('**/DESCRIPTION') }}
-          restore-keys: |
-            ${{ runner.os }}-R-library-
+  #     - name: Cache de Pacotes R
+  #       uses: actions/cache@v3
+  #       with:
+  #         path: ~/.R/library
+  #         key: ${{ runner.os }}-R-library-${{ hashFiles('**/DESCRIPTION') }}
+  #         restore-keys: |
+  #           ${{ runner.os }}-R-library-
 
-      - name: Configura a Linguagem R
-        uses: r-lib/actions/setup-r@v2
+  #     - name: Configura a Linguagem R
+  #       uses: r-lib/actions/setup-r@v2
 
-      - name: Instalar Pacotes R
-        run: |
-          Rscript -e '
-          pacotes <- c("knitr", "rmarkdown", "downlit", "xml2") 
-          for (pacote in pacotes) {
-            if (!requireNamespace(pacote, quietly = TRUE)) {
-              install.packages(pacote, dependencies = TRUE)
-            }
-          }'
+  #     - name: Instalar Pacotes R (em paralelo)
+  #       run: |
+  #         Rscript -e '
+  #         if (!requireNamespace("pak", quietly = TRUE)) {
+  #           install.packages("pak")
+  #         }
+  #         pak::pkg_install(c("knitr", "rmarkdown", "downlit", "xml2"))'
+
 
   config-python:
     needs: [detect-modificacao]
@@ -179,7 +178,7 @@ jobs:
         uses: actions/cache@v3
         with:
           path: ~/.cache/pip
-          key: ${{ runner.os }}-pip-${{ hashFiles('**/requirements.txt') }}
+          key: ${{ runner.os }}-pip-${{ hashFiles('**/backend/requirements.txt') }}
           restore-keys: |
             ${{ runner.os }}-pip-
 
@@ -206,7 +205,6 @@ jobs:
             echo "Nenhum subdiretório foi detectado. Pulando etapa."
           fi
 
-
       - name: Checkout do repositório
         uses: actions/checkout@v4
 
@@ -223,7 +221,7 @@ jobs:
 
   renderizar-books:
     runs-on: ubuntu-latest
-    needs: [config-r, config-python, config-quarto]
+    needs: [config-python, config-quarto] # config-r,
     if: ${{ needs.detect-modificacao.outputs.subfolders != '' }}
     steps:
       - name: Verificar subdiretórios
