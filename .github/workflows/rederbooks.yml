@@ -161,25 +161,25 @@ jobs:
       - name: Instalar Pacote backend
         run: pip install -e backend
 
-# Configura R
-#     - name: Cache de Pacotes R
-#       uses: actions/cache@v3
-#       with:
-#         path: ~/.R/library
-#         key: ${{ runner.os }}-R-library-${{ hashFiles('**/DESCRIPTION') }}
-#         restore-keys: |
-#           ${{ runner.os }}-R-library-
+    # Configura R
+    #     - name: Cache de Pacotes R
+    #       uses: actions/cache@v3
+    #       with:
+    #         path: ~/.R/library
+    #         key: ${{ runner.os }}-R-library-${{ hashFiles('**/DESCRIPTION') }}
+    #         restore-keys: |
+    #           ${{ runner.os }}-R-library-
 
-#     - name: Configura a Linguagem R
-#       uses: r-lib/actions/setup-r@v2
+    #     - name: Configura a Linguagem R
+    #       uses: r-lib/actions/setup-r@v2
 
-#     - name: Instalar Pacotes R (em paralelo)
-#       run: |
-#         Rscript -e '
-#         if (!requireNamespace("pak", quietly = TRUE)) {
-#           install.packages("pak")
-#         }
-#         pak::pkg_install(c("knitr", "rmarkdown", "downlit", "xml2"))'
+    #     - name: Instalar Pacotes R (em paralelo)
+    #       run: |
+    #         Rscript -e '
+    #         if (!requireNamespace("pak", quietly = TRUE)) {
+    #           install.packages("pak")
+    #         }
+    #         pak::pkg_install(c("knitr", "rmarkdown", "downlit", "xml2"))'
 
       # Configura Quarto
 
