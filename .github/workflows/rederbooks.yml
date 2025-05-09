@@ -81,10 +81,10 @@ jobs:
             exit 1
           }
 
-      - name: Depurar variáveis de ambiente
-        run: |
-          echo "Valor de arquivos_modificados: ${{ env.arquivos_modificados }}"
-          echo "Valor de subfolders: ${{ env.subfolders }}"
+      # - name: Depurar variáveis de ambiente
+      #   run: |
+      #     echo "Valor de arquivos_modificados: ${{ env.arquivos_modificados }}"
+      #     echo "Valor de subfolders: ${{ env.subfolders }}"
 
       - name: Processar arquivos modificados
         id: process-changed-files
@@ -102,17 +102,39 @@ jobs:
             echo "arquivos_modificados=$CHANGED_FILES" >> $GITHUB_ENV
           fi
 
+      # - name: v1 Identificar subdiretórios correspondentes
+      #   id: detect-subfolders
+      #   run: |
+      #     MATCHED_SUBFOLDERS=$(echo "${{ steps.process-changed-files.outputs.arquivos_modificados }}" | grep -E '^books/build/[A-Z]{3}[0-9]{4}/' | cut -d'/' -f2 | uniq || echo "")
+      #     echo "subfolders=$MATCHED_SUBFOLDERS" >> $GITHUB_ENV
+
       - name: Identificar subdiretórios correspondentes
         id: detect-subfolders
         run: |
-          MATCHED_SUBFOLDERS=$(echo "${{ steps.process-changed-files.outputs.arquivos_modificados }}" | grep -E '^books/build/[A-Z]{3}[0-9]{4}/' | cut -d'/' -f2 | uniq || echo "")
+          echo "Arquivos modificados: ${{ env.arquivos_modificados }}"
+          
+          # Identificar subdiretórios dentro de books/build/
+          MATCHED_SUBFOLDERS=$(echo "${{ env.arquivos_modificados }}" | grep -oE '^books/build/[A-Z]{3}[0-9]{4}/' | cut -d'/' -f3 | uniq || echo "")
+          echo "Subdiretórios detectados: $MATCHED_SUBFOLDERS"
+
+          # Exportar subdiretórios como saída da etapa
           echo "subfolders=$MATCHED_SUBFOLDERS" >> $GITHUB_ENV
+
+      - name: Depurar variável subfolders
+        run: |
+          echo "Valor de subfolders: ${{ env.subfolders }}"
 
   config-r:
     needs: [detect-modificacao]
     if: ${{ needs.detect-modificacao.outputs.subfolders != '' }}
     runs-on: ubuntu-latest
     steps:
+      - name: Verificar subdiretórios
+        run: |
+          if [[ -z "${{ needs.detect-modificacao.outputs.subfolders }}" ]]; then
+            echo "Nenhum subdiretório foi detectado. Pulando etapa."
+          fi
+      
       - name: Checkout do repositório
         uses: actions/checkout@v4
 
