@@ -18,7 +18,7 @@ bibliography: references.bib
 
 format:
   html:
-    include-in-header: "./../include/include-in-head"
+    include-in-header: "./../../../ac/components/1/pt_BR/books/head.html"
     toc: false
     sidebar: 
     theme:
