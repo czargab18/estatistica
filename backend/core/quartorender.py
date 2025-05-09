@@ -3,6 +3,7 @@ import os
 import re
 import json
 from bs4 import BeautifulSoup
+from bs4.element import Tag
 import backend
 from core.variaveis import CAMINHO_BASE, CAMINHOS, CORRECOESLINK
 
@@ -131,12 +132,17 @@ def corrigirlinksinhead(
                     if old in tag["src"]:
                         tag["src"] = tag["src"].replace(old, new)
 
-    def cordefer(tags):
-        """Corrige scripts com: 'defer=""' => 'defer'."""
-        for tag in tags:
-            if tag.has_attr("defer"):
-                # Remove o valor do atributo, deixando apenas 'defer'
-                tag["defer"] = None
+    # def cordefer(tags):
+    # CORRIGIR NA FORÇA
+    # DETECTAR AS TAGS SCRIPTS E APENAS SUBSTITUIR O ATRIBUTO POR 'DEFER'
+    
+    #     """Corrige scripts com: 'defer=""' => 'defer'."""
+    #     for tag in tags:
+    #         # Ensure tag is not None and is a valid Tag
+    #         if tag and isinstance(tag, Tag):
+    #             if tag.has_attr("defer"):
+    #                 # Remove o valor do atributo, deixando apenas 'defer'
+    #                 tag["defer"] = None
 
     def corlinkrel(soup: BeautifulSoup, nome_livro: str):
         """
@@ -193,7 +199,7 @@ def corrigirlinksinhead(
                         corrigirlinks(tags, corlink)  # Corrigir os links
                         # Remover links desnecessários
                         removerhead(tags, rmhead)
-                        cordefer(tags)  # Ajustar scripts com defer
+                        # cordefer(tags)  # Ajustar scripts com defer
 
                     # Salvar o HTML final com todas as alterações
                     salvar_arquivo(filepath, soup)
@@ -318,7 +324,5 @@ if __name__ == "__main__":
         corlink=CORRECOESLINK,
         rmhead="delete/site_libs",
         patternfolders=CAMINHOS["pattern_book"],
-        tipoarquivo=".html",
-        cordefer=True,
-    )
+        tipoarquivo=".html")
     print("FIM da execução de: corrigirlinksinhead()")
