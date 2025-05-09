@@ -109,6 +109,8 @@ jobs:
       #     echo "subfolders=$MATCHED_SUBFOLDERS" >> $GITHUB_ENV
 
       - name: Identificar subdiretórios correspondentes
+        env:
+          arquivos_modificados: ${{ env.arquivos_modificados }}
         id: detect-subfolders
         run: |
           echo "Arquivos modificados: ${{ env.arquivos_modificados }}"
@@ -221,7 +223,7 @@ jobs:
 
   renderizar-books:
     runs-on: ubuntu-latest
-    needs: [config-python, config-quarto] # config-r,
+    needs: [detect-modificacao, config-python, config-quarto] # config-r,
     if: ${{ needs.detect-modificacao.outputs.subfolders != '' }}
     steps:
       - name: Verificar subdiretórios
@@ -230,7 +232,6 @@ jobs:
           if [[ -z "${{ needs.detect-modificacao.outputs.subfolders }}" ]]; then
             echo "Nenhum subdiretório foi detectado. Pulando etapa."
           fi
-
 
       # - name: Checkout do repositório
       #   uses: actions/checkout@v4
