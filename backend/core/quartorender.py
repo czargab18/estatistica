@@ -202,26 +202,31 @@ def corrigirlinksinhead(
 def includeinbody(
     pathbooks: str = "./books/",
     tipoarquivo: str = ".html",
-    include_file: str = "./books/build/include/include-in-body",
+    substituirtag: bool = True,
+    globalheader:bool=True,
+    include_file: dict = {
+        "globalnavbar": "./ac/components/1/pt_BR/navbar.html",
+        "globalfooter": "./ac/components/1/pt_BR/footer.html",
+    },
 ):
     """
-    Adiciona o conteúdo do globalheader e globalfooter nos arquivos HTML dos books.
+    Adiciona ou substitui o conteúdo de componentes nos arquivos HTML dos books.
 
     :param pathbooks: Caminho base onde os arquivos HTML estão localizados.
     :param tipoarquivo: Tipo de arquivo a ser processado (por padrão, ".html").
-    :param include_file: Caminho do arquivo contendo os conteúdos de globalheader e globalfooter.
+    :param include_file: Dicionário com caminhos dos arquivos contendo o conteúdo de cada componente.
+    :param substituirtag: Define se as tags existentes devem ser substituídas ou apenas alteradas.
     :return: Dicionário com os arquivos processados e seu status.
     """
     arquivos_processados = {}
-
-    # Ler o conteúdo do arquivo include-in-body
-    try:
-        with open(include_file, "r", encoding="utf-8") as f:
-            include_content = f.read()
-        globalheader = include_content.split('globalheader = """')[1].split('"""')[0]
-        globalfooter = include_content.split('globalfooter = """')[1].split('"""')[0]
-    except Exception as e:
-        return {"Erro": f"Não foi possível ler o arquivo include-in-body: {e}"}
+    # Ler o conteúdo dos arquivos de componentes
+    componentes = {}
+    for tag_id, file_path in include_file.items():
+        try:
+            with open(file_path, "r", encoding="utf-8") as f:
+                componentes[tag_id] = f.read()
+        except Exception as e:
+            return {"Erro": f"Não foi possível ler o arquivo {file_path}: {e}"}
 
     for root, _, files in os.walk(pathbooks):
         for file in files:
@@ -231,17 +236,24 @@ def includeinbody(
                     with open(filepath, "r", encoding="utf-8") as f:
                         soup = BeautifulSoup(f, "html.parser")
 
-                    # Verificar se já existe o globalheader
-                    if not soup.find("div", id="globalheader"):
-                        body = soup.find("body")
-                        if body:
-                            body.insert(0, BeautifulSoup(globalheader, "html.parser"))
-
-                    # Verificar se já existe o globalfooter
-                    if not soup.find("footer", id="globalfooter"):
-                        body = soup.find("body")
-                        if body:
-                            body.append(BeautifulSoup(globalfooter, "html.parser"))
+                    body = soup.find("body")
+                    if body:
+                        for tag_id, content in componentes.items():
+                            existing_tag = soup.find(id=tag_id)
+                            if existing_tag:
+                                if substituirtag:
+                                    # Substituir a tag inteira
+                                    existing_tag.replace_with(BeautifulSoup(content, "html.parser"))
+                                else:
+                                    # Alterar apenas o conteúdo interno da tag
+                                    existing_tag.clear()
+                                    existing_tag.append(BeautifulSoup(content, "html.parser"))
+                            else:
+                                # Adicionar a tag no início ou no final do body
+                                if tag_id == "globalnavbar":
+                                    body.insert(0, BeautifulSoup(content, "html.parser"))
+                                elif tag_id == "globalfooter":
+                                    body.append(BeautifulSoup(content, "html.parser"))
 
                     # Salvar as alterações no arquivo
                     with open(filepath, "w", encoding="utf-8") as f:
@@ -260,19 +272,20 @@ if __name__ == "__main__":
         pathbooks=path,
         tipoarquivo=".html",
     )
-    # Parâmetros de teste
-    # Exemplo de padrões para corrigir links
-    corlink = CORRECOESLINK
-    rmhead = "delete/site_libs"
-    patternfolders = CAMINHOS["pattern_book"]
-    tipoarquivo = ".html"
+    print("FIM da execução de: includeinbody()")
+    # # Parâmetros de teste
+    # # Exemplo de padrões para corrigir links
+    # corlink = CORRECOESLINK
+    # rmhead = "delete/site_libs"
+    # patternfolders = CAMINHOS["pattern_book"]
+    # tipoarquivo = ".html"
 
-    # Chama a função para corrigir os arquivos HTML na pasta ./books
-    corrigirlinksinhead(
-        path=path,
-        corlink=corlink,
-        rmhead=rmhead,
-        patternfolders=patternfolders,
-        tipoarquivo=tipoarquivo,
-        cordefer=True,  # Ativa a correção do atributo defer
-    )
+    # # Chama a função para corrigir os arquivos HTML na pasta ./books
+    # corrigirlinksinhead(
+    #     path=path,
+    #     corlink=corlink,
+    #     rmhead=rmhead,
+    #     patternfolders=patternfolders,
+    #     tipoarquivo=tipoarquivo,
+    #     cordefer=True,  # Ativa a correção do atributo defer
+    # )
