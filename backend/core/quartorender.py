@@ -3,7 +3,7 @@ import os
 import re
 import json
 from bs4 import BeautifulSoup
-from backend import core
+import backend
 from core.variaveis import CAMINHO_BASE, CAMINHOS, CORRECOESLINK
 
 """
@@ -204,7 +204,8 @@ def includeinbody(
     tipoarquivo: str = ".html",
     substituirtag: bool = True,
     globalheader: bool = True,
-    globalheadertagsid: list = ["globalnavbar", "globalaside", "section-ribbon"],
+    globalheadertagsid: list = [
+        "globalnavbar", "globalaside", "section-ribbon"],
     include_file: dict = {
         "globalnavbar": "./ac/components/1/pt_BR/navbar.html",
         "globalfooter": "./ac/components/1/pt_BR/footer.html",
@@ -244,9 +245,11 @@ def includeinbody(
                         globalheader_div = None
                         if globalheader:
                             # Criar ou localizar a tag <div id="globalheader">
-                            globalheader_div = soup.find("div", id="globalheader")
+                            globalheader_div = soup.find(
+                                "div", id="globalheader")
                             if not globalheader_div:
-                                globalheader_div = soup.new_tag("div", id="globalheader")
+                                globalheader_div = soup.new_tag(
+                                    "div", id="globalheader")
                                 body.insert(0, globalheader_div)
 
                         for tag_id, content in componentes.items():
@@ -255,26 +258,33 @@ def includeinbody(
                                 existing_tag = globalheader_div.find(id=tag_id)
                                 if existing_tag:
                                     if substituirtag:
-                                        existing_tag.replace_with(BeautifulSoup(content, "html.parser"))
+                                        existing_tag.replace_with(
+                                            BeautifulSoup(content, "html.parser"))
                                     else:
                                         existing_tag.clear()
-                                        existing_tag.append(BeautifulSoup(content, "html.parser"))
+                                        existing_tag.append(
+                                            BeautifulSoup(content, "html.parser"))
                                 else:
-                                    globalheader_div.append(BeautifulSoup(content, "html.parser"))
+                                    globalheader_div.append(
+                                        BeautifulSoup(content, "html.parser"))
                             else:
                                 # Adicionar diretamente ao body
                                 existing_tag = soup.find(id=tag_id)
                                 if existing_tag:
                                     if substituirtag:
-                                        existing_tag.replace_with(BeautifulSoup(content, "html.parser"))
+                                        existing_tag.replace_with(
+                                            BeautifulSoup(content, "html.parser"))
                                     else:
                                         existing_tag.clear()
-                                        existing_tag.append(BeautifulSoup(content, "html.parser"))
+                                        existing_tag.append(
+                                            BeautifulSoup(content, "html.parser"))
                                 else:
                                     if tag_id == "globalnavbar":
-                                        body.insert(0, BeautifulSoup(content, "html.parser"))
+                                        body.insert(0, BeautifulSoup(
+                                            content, "html.parser"))
                                     elif tag_id == "globalfooter":
-                                        body.append(BeautifulSoup(content, "html.parser"))
+                                        body.append(BeautifulSoup(
+                                            content, "html.parser"))
 
                     # Salvar as alterações no arquivo
                     with open(filepath, "w", encoding="utf-8") as f:
@@ -288,25 +298,27 @@ def includeinbody(
 
 
 if __name__ == "__main__":
-    path = "./books"
     includeinbody(
-        pathbooks=path,
+        pathbooks="./books",
         tipoarquivo=".html",
+        substituirtag=True,
+        globalheader=True,
+        globalheadertagsid=["globalnavbar", "globalaside", "section-ribbon"],
+        include_file={
+            "head": "./ac/components/1/pt_BR/books/head.html",
+            "globalnavbar": "./ac/components/1/pt_BR/navbar.html",
+            "globalfooter": "./ac/components/1/pt_BR/footer.html",
+        },
     )
     print("FIM da execução de: includeinbody()")
-    # # Parâmetros de teste
-    # # Exemplo de padrões para corrigir links
-    # corlink = CORRECOESLINK
-    # rmhead = "delete/site_libs"
-    # patternfolders = CAMINHOS["pattern_book"]
-    # tipoarquivo = ".html"
 
-    # # Chama a função para corrigir os arquivos HTML na pasta ./books
-    # corrigirlinksinhead(
-    #     path=path,
-    #     corlink=corlink,
-    #     rmhead=rmhead,
-    #     patternfolders=patternfolders,
-    #     tipoarquivo=tipoarquivo,
-    #     cordefer=True,  # Ativa a correção do atributo defer
-    # )
+    # Chama a função para corrigir os arquivos HTML na pasta ./books
+    corrigirlinksinhead(
+        path="./books",
+        corlink=CORRECOESLINK,
+        rmhead="delete/site_libs",
+        patternfolders=CAMINHOS["pattern_book"],
+        tipoarquivo=".html",
+        cordefer=True,
+    )
+    print("FIM da execução de: corrigirlinksinhead()")
