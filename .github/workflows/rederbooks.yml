@@ -126,45 +126,10 @@ jobs:
         run: |
            echo "Valor de subfolders configurado: ${{ steps.detect-subfolders.outputs.subfolders }}"
 
-  # config-r:
-  #   needs: [detect-modificacao]
-  #   if: ${{ needs.detect-modificacao.outputs.subfolders != '' }}
-  #   runs-on: ubuntu-latest
-  #   steps:
-  #     - name: Verificar subdiretórios
-  #       run: |
-  #         echo "Subdiretórios detectados: ${{ needs.detect-modificacao.outputs.subfolders }}"
-  #         if [[ -z "${{ needs.detect-modificacao.outputs.subfolders }}" ]]; then
-  #           echo "Nenhum subdiretório foi detectado. Pulando etapa."
-  #         fi
-      
-  #     - name: Checkout do repositório
-  #       uses: actions/checkout@v4
-
-  #     - name: Cache de Pacotes R
-  #       uses: actions/cache@v3
-  #       with:
-  #         path: ~/.R/library
-  #         key: ${{ runner.os }}-R-library-${{ hashFiles('**/DESCRIPTION') }}
-  #         restore-keys: |
-  #           ${{ runner.os }}-R-library-
-
-  #     - name: Configura a Linguagem R
-  #       uses: r-lib/actions/setup-r@v2
-
-  #     - name: Instalar Pacotes R (em paralelo)
-  #       run: |
-  #         Rscript -e '
-  #         if (!requireNamespace("pak", quietly = TRUE)) {
-  #           install.packages("pak")
-  #         }
-  #         pak::pkg_install(c("knitr", "rmarkdown", "downlit", "xml2"))'
-
-
-  config-python:
-    needs: [detect-modificacao]
-    if: ${{ needs.detect-modificacao.outputs.subfolders != '' }}
+  renderizar-books:
     runs-on: ubuntu-latest
+    if: ${{ needs.detect-modificacao.outputs.subfolders != '' }}
+    needs: [detect-modificacao]
     steps:
       - name: Verificar subdiretórios
         run: |
@@ -176,6 +141,7 @@ jobs:
       - name: Checkout do repositório
         uses: actions/checkout@v4
 
+      # Configura Python
       - name: Cache de Dependências Python
         uses: actions/cache@v3
         with:
@@ -195,20 +161,27 @@ jobs:
       - name: Instalar Pacote backend
         run: pip install -e backend
 
-  config-quarto:
-    needs: [detect-modificacao]
-    if: ${{ needs.detect-modificacao.outputs.subfolders != '' }}
-    runs-on: ubuntu-latest
-    steps:
-      - name: Verificar subdiretórios
-        run: |
-          echo "Subdiretórios detectados: ${{ needs.detect-modificacao.outputs.subfolders }}"
-          if [[ -z "${{ needs.detect-modificacao.outputs.subfolders }}" ]]; then
-            echo "Nenhum subdiretório foi detectado. Pulando etapa."
-          fi
+# Configura R
+#     - name: Cache de Pacotes R
+#       uses: actions/cache@v3
+#       with:
+#         path: ~/.R/library
+#         key: ${{ runner.os }}-R-library-${{ hashFiles('**/DESCRIPTION') }}
+#         restore-keys: |
+#           ${{ runner.os }}-R-library-
 
-      - name: Checkout do repositório
-        uses: actions/checkout@v4
+#     - name: Configura a Linguagem R
+#       uses: r-lib/actions/setup-r@v2
+
+#     - name: Instalar Pacotes R (em paralelo)
+#       run: |
+#         Rscript -e '
+#         if (!requireNamespace("pak", quietly = TRUE)) {
+#           install.packages("pak")
+#         }
+#         pak::pkg_install(c("knitr", "rmarkdown", "downlit", "xml2"))'
+
+      # Configura Quarto
 
       - name: Cache de Configurações do Quarto
         uses: actions/cache@v3
@@ -221,21 +194,7 @@ jobs:
       - name: Configura o Quarto
         uses: quarto-dev/quarto-actions/setup@v2
 
-  renderizar-books:
-    runs-on: ubuntu-latest
-    needs: [detect-modificacao, config-python, config-quarto] # config-r,
-    if: ${{ needs.detect-modificacao.outputs.subfolders != '' }}
-    steps:
-      - name: Verificar subdiretórios
-        run: |
-          echo "Subdiretórios detectados: ${{ needs.detect-modificacao.outputs.subfolders }}"
-          if [[ -z "${{ needs.detect-modificacao.outputs.subfolders }}" ]]; then
-            echo "Nenhum subdiretório foi detectado. Pulando etapa."
-          fi
-
-      - name: Checkout do repositório
-        uses: actions/checkout@v4
-
+        # renderizar books e correções
       - name: Renderizar cada book modificado
         run: |
           for folder in ${{ needs.detect-modificacao.outputs.subfolders }}; do
@@ -250,8 +209,8 @@ jobs:
             PYTHONPATH=./ python -m backend.core.quartorender
           done
 
-      # - name: Nenhuma Modificação Detectada
-      #   if: ${{ needs.detect-modificacao.outputs.subfolders == '' }}
-      #   run: echo "Nenhuma modificação detectada nos subdiretórios de books/build."
-      # - name: Renderiza books
-      #   run: echo "Passo não desenvolvido."
+      - name: Nenhuma Modificação Detectada
+        if: ${{ needs.detect-modificacao.outputs.subfolders == '' }}
+        run: echo "Nenhuma modificação detectada nos subdiretórios de books/build."
+      - name: Renderiza books
+        run: echo "Passo não desenvolvido."
