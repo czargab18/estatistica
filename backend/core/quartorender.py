@@ -3,9 +3,8 @@ import os
 import re
 import json
 from bs4 import BeautifulSoup
-from core import *
+from backend import core
 from core.variaveis import CAMINHO_BASE, CAMINHOS, CORRECOESLINK
-from core import *
 
 """
  * Este script é destinado a auxiliar na automatização de books quarto.
@@ -260,7 +259,6 @@ if __name__ == "__main__":
     includeinbody(
         pathbooks=path,
         tipoarquivo=".html",
-        include_file="./books/build/include/include-in-body",
     )
     # Parâmetros de teste
     # Exemplo de padrões para corrigir links
