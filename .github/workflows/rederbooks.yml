@@ -233,26 +233,25 @@ jobs:
             echo "Nenhum subdiretório foi detectado. Pulando etapa."
           fi
 
-      # - name: Checkout do repositório
-      #   uses: actions/checkout@v4
+      - name: Checkout do repositório
+        uses: actions/checkout@v4
 
-      # - name: Renderizar cada book modificado
-      #   run: |
-      #     for folder in ${{ needs.detect-modificacao.outputs.subfolders }}; do
-      #       echo "Rendering book in books/build/$folder"
-      #       quarto render books/build/$folder --to html
-      #     done
+      - name: Renderizar cada book modificado
+        run: |
+          for folder in ${{ needs.detect-modificacao.outputs.subfolders }}; do
+            echo "Rendering book in books/build/$folder"
+            quarto render books/build/$folder --to html
+          done
 
-      # - name: Correções com Python
-      #   run: |
-      #     for folder in ${{ needs.detect-modificacao.outputs.subfolders }}; do
-      #       echo "Corrigindo book in books/build/$folder"
-      #       python -m corrigir_script books/build/$folder
-      #     done
+      - name: Correções com Python
+        run: |
+          for folder in ${{ needs.detect-modificacao.outputs.subfolders }}; do
+            echo "Corrigindo book in books/build/$folder"
+            python -m ./backend/core/quartorender.py
+          done
 
       # - name: Nenhuma Modificação Detectada
       #   if: ${{ needs.detect-modificacao.outputs.subfolders == '' }}
       #   run: echo "Nenhuma modificação detectada nos subdiretórios de books/build."
-
-      - name: Renderiza books
-        run: echo "Passo não desenvolvido."
+      # - name: Renderiza books
+      #   run: echo "Passo não desenvolvido."
