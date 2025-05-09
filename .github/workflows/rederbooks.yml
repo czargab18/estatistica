@@ -86,41 +86,7 @@ jobs:
           echo "Valor de arquivos_modificados: ${{ env.arquivos_modificados }}"
           echo "Valor de subfolders: ${{ env.subfolders }}"
 
-      - name: v1 Processar arquivos modificados
-        id: process-changed-files
-        run: |
-          echo "Debugging API response:"
-          cat api_response.json | jq .
-
-          #Processar a resposta da API para identificar arquivos modificados
-          CHANGED_FILES=$(jq -r '.[].filename' api_response.json | grep '^books/build/' || echo "")
-          if [[ -z "$CHANGED_FILES" ]]; then
-            echo "Nenhum arquivo modificado encontrado no diretório 'books/build/'."
-          else
-            echo "Arquivos modificados: $CHANGED_FILES"
-          fi
-
-          #Exportar os arquivos modificados como variável de ambiente
-          echo "arquivos_modificados=$CHANGED_FILES" >> $GITHUB_ENV
-
-      - name: v2 Processar arquivos modificados
-        id: process-changed-files
-        run: |
-          echo "Debugging API response:"
-          cat api_response.json | jq .
-
-          # Processar a resposta da API para identificar arquivos modificados
-          CHANGED_FILES=$(jq -r '.[].filename' api_response.json | grep '^books/build/' || echo "")
-          if [[ -z "$CHANGED_FILES" ]]; then
-            echo "Nenhum arquivo modificado encontrado no diretório 'books/build/'."
-          else
-            echo "Arquivos modificados: $CHANGED_FILES"
-          fi
-
-          # Exportar os arquivos modificados como variável de ambiente
-          echo "arquivos_modificados=$CHANGED_FILES" >> $GITHUB_ENV
-
-      - name: v3 Processar arquivos modificados
+      - name: Processar arquivos modificados
         id: process-changed-files
         run: |
           echo "Debugging API response:"
@@ -128,22 +94,6 @@ jobs:
 
           # Processar a resposta da API para identificar arquivos modificados
           CHANGED_FILES=$(jq -r '.files[].filename' api_response.json | grep '^books/build/' || echo "")
-          if [[ -z "$CHANGED_FILES" ]]; then
-            echo "Nenhum arquivo modificado encontrado no diretório 'books/build/'."
-            echo "arquivos_modificados=" >> $GITHUB_ENV
-          else
-            echo "Arquivos modificados: $CHANGED_FILES"
-            echo "arquivos_modificados=$CHANGED_FILES" >> $GITHUB_ENV
-          fi
-
-      - name: v4 Processar arquivos modificados
-        id: process-changed-files
-        run: |
-          echo "Debugging API response:"
-          cat api_response.json | jq .
-
-          # Processar a resposta da API para identificar arquivos modificados no diretório correto
-          CHANGED_FILES=$(jq -r '.[].filename' api_response.json | grep '^books/build/' || echo "")
           if [[ -z "$CHANGED_FILES" ]]; then
             echo "Nenhum arquivo modificado encontrado no diretório 'books/build/'."
             echo "arquivos_modificados=" >> $GITHUB_ENV
