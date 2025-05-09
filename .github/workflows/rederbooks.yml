@@ -81,10 +81,13 @@ jobs:
             exit 1
           }
 
-      # - name: Depurar variáveis de ambiente
-      #   run: |
-      #     echo "Valor de arquivos_modificados: ${{ env.arquivos_modificados }}"
-      #     echo "Valor de subfolders: ${{ env.subfolders }}"
+      - name: Depurar variáveis de ambiente
+        env:
+          arquivos_modificados: ${{ env.arquivos_modificados }}
+          subfolders: ${{ env.subfolders }}"
+        run: |
+          echo "Valor de arquivos_modificados: ${{ env.arquivos_modificados }}"
+          echo "Valor de subfolders: ${{ env.subfolders }}"
 
       - name: Processar arquivos modificados
         id: process-changed-files
@@ -101,12 +104,6 @@ jobs:
             echo "Arquivos modificados: $CHANGED_FILES"
             echo "arquivos_modificados=$CHANGED_FILES" >> $GITHUB_ENV
           fi
-
-      # - name: v1 Identificar subdiretórios correspondentes
-      #   id: detect-subfolders
-      #   run: |
-      #     MATCHED_SUBFOLDERS=$(echo "${{ steps.process-changed-files.outputs.arquivos_modificados }}" | grep -E '^books/build/[A-Z]{3}[0-9]{4}/' | cut -d'/' -f2 | uniq || echo "")
-      #     echo "subfolders=$MATCHED_SUBFOLDERS" >> $GITHUB_ENV
 
       - name: Identificar subdiretórios correspondentes
         env:
