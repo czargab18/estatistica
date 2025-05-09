@@ -247,7 +247,7 @@ jobs:
         run: |
           for folder in ${{ needs.detect-modificacao.outputs.subfolders }}; do
             echo "Corrigindo book in books/build/$folder"
-            python -m ./backend/core/quartorender.py
+            PYTHONPATH=./ python -m backend.core.quartorender
           done
 
       # - name: Nenhuma Modificação Detectada
