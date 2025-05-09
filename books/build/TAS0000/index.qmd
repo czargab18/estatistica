@@ -1,7 +1,5 @@
 # A Arte da Estatística {#title .headline-title}
 
-################### TESTE ###################
-
 O nome desta série é inspirado na famosa coleção de Donald Knuth chamada "The Art of Computer Programming", veja (tarara, xxx). Esta série ou coleção será construída com base em minhas notas e exercícios de aulas.
 
 ## Algumas perguntas que acredito serem úteis.
