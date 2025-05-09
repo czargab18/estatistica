@@ -81,6 +81,22 @@ jobs:
             exit 1
           }
 
+      # - name: Processar arquivos modificados
+      #   id: process-changed-files
+      #   run: |
+      #     echo "Debugging API response:"
+      #     cat api_response.json | jq .
+
+      #     # Processar a resposta da API para identificar arquivos modificados
+      #     CHANGED_FILES=$(jq -r '.[].filename' api_response.json | grep '^build/' || echo "")
+      #     if [[ -z "$CHANGED_FILES" ]]; then
+      #       echo "Nenhum arquivo modificado encontrado no diretório 'build/'."
+      #     else
+      #       echo "Arquivos modificados: $CHANGED_FILES"
+      #     fi
+
+      #     # Exportar os arquivos modificados como variável de ambiente
+      #     echo "arquivos_modificados=$CHANGED_FILES" >> $GITHUB_ENV
       - name: Processar arquivos modificados
         id: process-changed-files
         run: |
