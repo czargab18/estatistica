@@ -73,6 +73,14 @@ jobs:
             exit 1
           }
 
+      - name: Debug API response with jq
+        run: |
+          echo "Debugging API response:"
+          cat api_response.json | jq . || {
+            echo "Error processing JSON."
+            exit 1
+          }
+
       - name: Processar arquivos modificados
         id: process-changed-files
         run: |
