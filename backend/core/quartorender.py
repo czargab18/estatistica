@@ -204,6 +204,7 @@ def includeinbody(
     tipoarquivo: str = ".html",
     substituirtag: bool = True,
     globalheader:bool=True,
+    globalheadertagsid: list = ["globalnavbar", "globalaside", "section-ribbon"],
     include_file: dict = {
         "globalnavbar": "./ac/components/1/pt_BR/navbar.html",
         "globalfooter": "./ac/components/1/pt_BR/footer.html",
