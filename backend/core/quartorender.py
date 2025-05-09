@@ -203,7 +203,7 @@ def includeinbody(
     pathbooks: str = "./books/",
     tipoarquivo: str = ".html",
     substituirtag: bool = True,
-    globalheader:bool=True,
+    globalheader: bool = True,
     globalheadertagsid: list = ["globalnavbar", "globalaside", "section-ribbon"],
     include_file: dict = {
         "globalnavbar": "./ac/components/1/pt_BR/navbar.html",
@@ -217,6 +217,8 @@ def includeinbody(
     :param tipoarquivo: Tipo de arquivo a ser processado (por padrão, ".html").
     :param include_file: Dicionário com caminhos dos arquivos contendo o conteúdo de cada componente.
     :param substituirtag: Define se as tags existentes devem ser substituídas ou apenas alteradas.
+    :param globalheader: Define se as tags permitidas devem ser agrupadas em uma <div id="globalheader"></div>.
+    :param globalheadertagsid: Lista de IDs de tags permitidas para inclusão no globalheader.
     :return: Dicionário com os arquivos processados e seu status.
     """
     arquivos_processados = {}
@@ -239,22 +241,40 @@ def includeinbody(
 
                     body = soup.find("body")
                     if body:
+                        globalheader_div = None
+                        if globalheader:
+                            # Criar ou localizar a tag <div id="globalheader">
+                            globalheader_div = soup.find("div", id="globalheader")
+                            if not globalheader_div:
+                                globalheader_div = soup.new_tag("div", id="globalheader")
+                                body.insert(0, globalheader_div)
+
                         for tag_id, content in componentes.items():
-                            existing_tag = soup.find(id=tag_id)
-                            if existing_tag:
-                                if substituirtag:
-                                    # Substituir a tag inteira
-                                    existing_tag.replace_with(BeautifulSoup(content, "html.parser"))
+                            if globalheader and tag_id in globalheadertagsid:
+                                # Adicionar ao globalheader se permitido
+                                existing_tag = globalheader_div.find(id=tag_id)
+                                if existing_tag:
+                                    if substituirtag:
+                                        existing_tag.replace_with(BeautifulSoup(content, "html.parser"))
+                                    else:
+                                        existing_tag.clear()
+                                        existing_tag.append(BeautifulSoup(content, "html.parser"))
                                 else:
-                                    # Alterar apenas o conteúdo interno da tag
-                                    existing_tag.clear()
-                                    existing_tag.append(BeautifulSoup(content, "html.parser"))
+                                    globalheader_div.append(BeautifulSoup(content, "html.parser"))
                             else:
-                                # Adicionar a tag no início ou no final do body
-                                if tag_id == "globalnavbar":
-                                    body.insert(0, BeautifulSoup(content, "html.parser"))
-                                elif tag_id == "globalfooter":
-                                    body.append(BeautifulSoup(content, "html.parser"))
+                                # Adicionar diretamente ao body
+                                existing_tag = soup.find(id=tag_id)
+                                if existing_tag:
+                                    if substituirtag:
+                                        existing_tag.replace_with(BeautifulSoup(content, "html.parser"))
+                                    else:
+                                        existing_tag.clear()
+                                        existing_tag.append(BeautifulSoup(content, "html.parser"))
+                                else:
+                                    if tag_id == "globalnavbar":
+                                        body.insert(0, BeautifulSoup(content, "html.parser"))
+                                    elif tag_id == "globalfooter":
+                                        body.append(BeautifulSoup(content, "html.parser"))
 
                     # Salvar as alterações no arquivo
                     with open(filepath, "w", encoding="utf-8") as f:
