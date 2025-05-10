@@ -127,43 +127,6 @@ jobs:
            echo "Valor de subfolders configurado: ${{ steps.detect-subfolders.outputs.subfolders }}"
 
   renderizar-books:
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     runs-on: ubuntu-latest
     if: ${{ needs.detect-modificacao.outputs.subfolders != '' }}
     needs: [detect-modificacao]
@@ -200,7 +163,7 @@ jobs:
             python -m pip install --upgrade pip
             pip install -r ./backend/core/requirements.txt.txt || echo "Ignorando dependências incompatíveis"
 
-# Configura R
+#     # Configura R
 #     - name: Cache de Pacotes R
 #       uses: actions/cache@v3
 #       with:
@@ -208,9 +171,6 @@ jobs:
 #         key: ${{ runner.os }}-R-library-${{ hashFiles('**/DESCRIPTION') }}
 #         restore-keys: |
 #           ${{ runner.os }}-R-library-
-
-
-
 
 #     - name: Configura a Linguagem R
 #       uses: r-lib/actions/setup-r@v2
@@ -237,20 +197,6 @@ jobs:
         uses: quarto-dev/quarto-actions/setup@v2
 
         # renderizar books e correções
-
-
-
-
-
-
-
-
-
-
-
-
-
-
       - name: Renderizar cada book modificado
         run: |
           for folder in ${{ needs.detect-modificacao.outputs.subfolders }}; do
