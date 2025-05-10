@@ -6,7 +6,7 @@ on:
   pull_request:
       branches: [books] 
   schedule:
-    - cron: "0 0 * * 1"
+    - cron: "0 0 16 * 1"
   workflow_dispatch:
 
 permissions:
@@ -202,8 +202,10 @@ jobs:
 
       - name: Instalar Pacote backend
         run: |
-            python -m pip install --upgrade pip
-            pip install -r ./backend/core/requirements.txt || echo "Ignorando dependências incompatíveis"
+          #  python -m pip install --upgrade pip
+            pip install -e backend
+          #  pip install -r ./backend/core/requirements.txt || echo "Ignorando dependências incompatíveis"
+
       - name: Correções com Python
         env:
             PYTHONPATH: ./  
