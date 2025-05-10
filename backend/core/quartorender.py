@@ -4,7 +4,6 @@ import re
 import json
 from bs4 import BeautifulSoup
 from bs4.element import Tag
-import backend
 from core.variaveis import CAMINHO_BASE, CAMINHOS, CORRECOESLINK
 
 """
@@ -318,7 +317,7 @@ def includeinbody(
 #     )
 #     print("FIM da execução de: includeinbody()")
 
-#     # Chama a função para corrigir os arquivos HTML na pasta ./books
+#     #Chama a função para corrigir os arquivos HTML na pasta ./books
 #     corrigirlinksinhead(
 #         path="./books",
 #         corlink=CORRECOESLINK,
