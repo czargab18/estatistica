@@ -2,9 +2,9 @@ name: Renderizar Books Quarto
 
 on:
   push:
-    branches-ignore: [main] 
+    branches: [books] 
   pull_request:
-      branches-ignore: [main] 
+      branches: [books] 
   schedule:
     - cron: "0 0 * * 1"
   workflow_dispatch:
