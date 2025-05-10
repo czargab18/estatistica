@@ -22,7 +22,7 @@ $$
 f(x) = \frac{1}{\sigma \sqrt{2\pi}} e^{-\frac{(x - \mu)^2}{2\sigma^2}}
 $$
 
-# reescrever tudo 9999999999999999999999999999999999999999999999999999999999999999
+# reescrever tudo 
 
 -   [Por que estatistica?]{.headline-question} Primeiro, a essência da estatística consiste sempre em tirar conclusões a cerca de um resultado. Muitos estudos são inviáveis para obter o resultado preciso. Para contornar esse problema, buscou-se muita mais tirar conclusões sobre resultados com certo grau de certeza que não ter resultado algum. Está alternativa é a habilidade que o estatístico deve desenvolver. Isso é para poucos. Talvez
 
