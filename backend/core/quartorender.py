@@ -4,7 +4,6 @@ import re
 import json
 from bs4 import BeautifulSoup
 from bs4.element import Tag
-import backend
 from core.variaveis import CAMINHO_BASE, CAMINHOS, CORRECOESLINK
 
 """
@@ -303,26 +302,26 @@ def includeinbody(
     return arquivos_processados
 
 
-if __name__ == "__main__":
-    includeinbody(
-        pathbooks="./books",
-        tipoarquivo=".html",
-        substituirtag=True,
-        globalheader=True,
-        globalheadertagsid=["globalnavbar", "globalaside", "section-ribbon"],
-        include_file={
-            "head": "./ac/components/1/pt_BR/books/head.html",
-            "globalnavbar": "./ac/components/1/pt_BR/navbar.html",
-            "globalfooter": "./ac/components/1/pt_BR/footer.html",
-        },
-    )
-    print("FIM da execução de: includeinbody()")
+# if __name__ == "__main__":
+#     includeinbody(
+#         pathbooks="./books",
+#         tipoarquivo=".html",
+#         substituirtag=True,
+#         globalheader=True,
+#         globalheadertagsid=["globalnavbar", "globalaside", "section-ribbon"],
+#         include_file={
+#             "head": "./ac/components/1/pt_BR/books/head.html",
+#             "globalnavbar": "./ac/components/1/pt_BR/navbar.html",
+#             "globalfooter": "./ac/components/1/pt_BR/footer.html",
+#         },
+#     )
+#     print("FIM da execução de: includeinbody()")
 
-    # Chama a função para corrigir os arquivos HTML na pasta ./books
-    corrigirlinksinhead(
-        path="./books",
-        corlink=CORRECOESLINK,
-        rmhead="delete/site_libs",
-        patternfolders=CAMINHOS["pattern_book"],
-        tipoarquivo=".html")
-    print("FIM da execução de: corrigirlinksinhead()")
+#     #Chama a função para corrigir os arquivos HTML na pasta ./books
+#     corrigirlinksinhead(
+#         path="./books",
+#         corlink=CORRECOESLINK,
+#         rmhead="delete/site_libs",
+#         patternfolders=CAMINHOS["pattern_book"],
+#         tipoarquivo=".html")
+#     print("FIM da execução de: corrigirlinksinhead()")

@@ -196,7 +196,9 @@ jobs:
       #   run: pip install -r requirements.txt || echo "Ignorando dependências incompatíveis"
 
       - name: Instalar Pacote backend
-        run: pip install -e backend
+        run: |
+            python -m pip install --upgrade pip
+            pip install -r ./backend/core/requirements.txt.txt || echo "Ignorando dependências incompatíveis"
 
 # Configura R
 #     - name: Cache de Pacotes R
@@ -257,10 +259,12 @@ jobs:
           done
 
       - name: Correções com Python
+        env:
+            PYTHONPATH: ./  
         run: |
           for folder in ${{ needs.detect-modificacao.outputs.subfolders }}; do
             echo "Corrigindo book in books/build/$folder"
-            PYTHONPATH=./ python -m backend.core.quartorender
+           python -m backend.tasks.books.renderbook
           done
 
       - name: Nenhuma Modificação Detectada
