@@ -46,4 +46,3 @@ Por não haver prazos rígidos ou metas finais inflexíveis, o projeto avança d
     -   **Problemas de lógica:** Manipular conceitos e aprimorar pensamento lógico para resolver os desafios.
 
 
-## Apenas teste de detecção da action
