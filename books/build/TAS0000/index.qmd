@@ -16,7 +16,14 @@ O nome desta série é inspirado na famosa coleção de Donald Knuth chamada "Th
 
     Defenderei a definição com seguinte exemplo: Um Estatístico é contratado para trabalhar em uma empresas especializada na venda de 2 produtos químicos. Após uma analise minucioso, ele conclui que produto A é 30% melhor que o B mas é 65% mais caro. A decisão de comercializar o produto será da empresa. Seus estudos ajudarão na decisão. Ele melhorou as opções de escolha. Em outras palavras, ele maximixou o poder de escolha da empresa com base em seus estudos.
 
-# reescrever
+# Formulas
+Formula da Distribuição Normal não Padrão
+$$
+f(x) = \frac{1}{\sigma \sqrt{2\pi}} e^{-\frac{(x - \mu)^2}{2\sigma^2}}
+$$
+
+
+# reescrever tudo 9999999999999999999999999999999999999999999999999999999999999999
 
 -   [Por que estatistica?]{.headline-question} Primeiro, a essência da estatística consiste sempre em tirar conclusões a cerca de um resultado. Muitos estudos são inviáveis para obter o resultado preciso. Para contornar esse problema, buscou-se muita mais tirar conclusões sobre resultados com certo grau de certeza que não ter resultado algum. Está alternativa é a habilidade que o estatístico deve desenvolver. Isso é para poucos. Talvez
 
@@ -61,3 +68,5 @@ Por não haver prazos rígidos ou metas finais inflexíveis, o projeto avança d
     -   **Cálculo prático:** Aplicar diretamente a fórmula ou definição (item 4).
     -   **Problemas teóricos:** Desenvolver demonstrações ou justificar conceitos.
     -   **Problemas de lógica:** Manipular conceitos e aprimorar pensamento lógico para resolver os desafios.
+
+
