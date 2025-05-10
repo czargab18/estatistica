@@ -81,13 +81,10 @@ jobs:
             exit 1
           }
 
-      - name: Depurar variáveis de ambiente
-        env:
-          arquivos_modificados: ${{ env.arquivos_modificados }}
-          subfolders: ${{ env.subfolders }}
-        run: |
-          echo "Valor de arquivos_modificados: ${{ env.arquivos_modificados }}"
-          echo "Valor de subfolders: ${{ env.subfolders }}"
+      # - name: Depurar variáveis de ambiente
+      #   run: |
+      #     echo "Valor de arquivos_modificados: ${{ env.arquivos_modificados }}"
+      #     echo "Valor de subfolders: ${{ env.subfolders }}"
 
       - name: Processar arquivos modificados
         id: process-changed-files
@@ -104,6 +101,12 @@ jobs:
             echo "Arquivos modificados: $CHANGED_FILES"
             echo "arquivos_modificados=$CHANGED_FILES" >> $GITHUB_ENV
           fi
+
+      # - name: v1 Identificar subdiretórios correspondentes
+      #   id: detect-subfolders
+      #   run: |
+      #     MATCHED_SUBFOLDERS=$(echo "${{ steps.process-changed-files.outputs.arquivos_modificados }}" | grep -E '^books/build/[A-Z]{3}[0-9]{4}/' | cut -d'/' -f2 | uniq || echo "")
+      #     echo "subfolders=$MATCHED_SUBFOLDERS" >> $GITHUB_ENV
 
       - name: Identificar subdiretórios correspondentes
         env:
@@ -124,6 +127,43 @@ jobs:
            echo "Valor de subfolders configurado: ${{ steps.detect-subfolders.outputs.subfolders }}"
 
   renderizar-books:
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     runs-on: ubuntu-latest
     if: ${{ needs.detect-modificacao.outputs.subfolders != '' }}
     needs: [detect-modificacao]
@@ -158,25 +198,28 @@ jobs:
       - name: Instalar Pacote backend
         run: pip install -e backend
 
-    # Configura R
-    #     - name: Cache de Pacotes R
-    #       uses: actions/cache@v3
-    #       with:
-    #         path: ~/.R/library
-    #         key: ${{ runner.os }}-R-library-${{ hashFiles('**/DESCRIPTION') }}
-    #         restore-keys: |
-    #           ${{ runner.os }}-R-library-
+# Configura R
+#     - name: Cache de Pacotes R
+#       uses: actions/cache@v3
+#       with:
+#         path: ~/.R/library
+#         key: ${{ runner.os }}-R-library-${{ hashFiles('**/DESCRIPTION') }}
+#         restore-keys: |
+#           ${{ runner.os }}-R-library-
 
-    #     - name: Configura a Linguagem R
-    #       uses: r-lib/actions/setup-r@v2
 
-    #     - name: Instalar Pacotes R (em paralelo)
-    #       run: |
-    #         Rscript -e '
-    #         if (!requireNamespace("pak", quietly = TRUE)) {
-    #           install.packages("pak")
-    #         }
-    #         pak::pkg_install(c("knitr", "rmarkdown", "downlit", "xml2"))'
+
+
+#     - name: Configura a Linguagem R
+#       uses: r-lib/actions/setup-r@v2
+
+#     - name: Instalar Pacotes R (em paralelo)
+#       run: |
+#         Rscript -e '
+#         if (!requireNamespace("pak", quietly = TRUE)) {
+#           install.packages("pak")
+#         }
+#         pak::pkg_install(c("knitr", "rmarkdown", "downlit", "xml2"))'
 
       # Configura Quarto
 
@@ -192,6 +235,20 @@ jobs:
         uses: quarto-dev/quarto-actions/setup@v2
 
         # renderizar books e correções
+
+
+
+
+
+
+
+
+
+
+
+
+
+
       - name: Renderizar cada book modificado
         run: |
           for folder in ${{ needs.detect-modificacao.outputs.subfolders }}; do
