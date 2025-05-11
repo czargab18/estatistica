@@ -1,0 +1,50 @@
+project:
+  type: book
+  output-dir: "./../../EST0033"
+  lib-dir: "./../delete/site_libs"
+  preview:
+    navigate: true
+    browser: false
+    host: "localhost"
+    port: 4200
+  
+book:
+  chapters:
+    - index.qmd
+    - pretextuais/sumario.qmd
+    - pretextuais/introducao.qmd
+  
+    - part: "Titulo do Capitulo 1"
+      chapters:
+        - textuais/cap1/introd.qmd
+        - textuais/cap1/secao1.qmd
+        - textuais/cap1/secao1exercicios.qmd
+        - textuais/cap1/cap1exercicios.qmd
+
+    - part: "Titulo do Capitulo 2"
+      chapters:
+        - textuais/cap2/introd.qmd
+        - textuais/cap2/secao1.qmd
+        - textuais/cap2/secao2exercicios.qmd
+        - textuais/cap2/cap2exercicios.qmd
+
+    - part: "Anexos"
+      chapters:
+        - postextuais/apendice/formulas/cap1.qmd
+
+    - postextuais/bibliografia/references.qmd
+
+bibliography: postextuais/bibliografia/references.bib
+
+format:
+  html:
+    include-in-header: "./../../../ac/components/1/pt_BR/books/head.html"
+    toc: false
+    sidebar: true
+    theme:
+      - cosmo
+      - brand
+    code-link: true
+    search: true
+
+number-sections: false
