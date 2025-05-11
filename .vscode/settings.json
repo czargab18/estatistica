@@ -15,7 +15,7 @@
     "**/docs/ac/": false,
     "**/docs/ac/books_libs": false
   },
-   
+
   // Configurações: Editor
   "editor.rulers": [80, 120],
   "editor.wordWrap": "on",
@@ -24,7 +24,8 @@
   // Configurações: terminal
   "terminal.integrated.cwd": "${workspaceFolder}",
   "terminal.integrated.env.windows": {
-    "PYTHONIOENCODING": "utf-8"
+    "PYTHONIOENCODING": "utf-8",
+    "PATH": "${env:PATH};${workspaceFolder}\\backend\\bin\\"
   },
 
   // Configurações:Python
@@ -33,6 +34,5 @@
   "python.terminal.activateEnvInCurrentTerminal": true,
   "python-envs.pythonProjects": [],
   "python.testing.unittestEnabled": false,
-  "python.testing.pytestEnabled": true,
- 
+  "python.testing.pytestEnabled": true
 }
