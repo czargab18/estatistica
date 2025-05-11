@@ -1,0 +1,23 @@
+------- ods  -------
+
+-Censo_Demografico_2010
+--Resultados_do_Universo
+---ods
+----Unidades_da_Federaao
+-----goias.zip
+------Tabela 3.26.1.2.ods
+
+
+------- xls  -------
+
+
+-Censo_Demografico_2010
+--Resultados_do_Universo
+---xls
+----Unidades_da_Federaao
+-----goias.zip
+------Tabela 3.26.1.2.xls
+
+
+terá umm problema que apaga algumas linhas
+------Tabela 3.26.1.2.xls
