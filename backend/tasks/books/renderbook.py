@@ -7,7 +7,7 @@ if __name__ == "__main__":
         tipoarquivo=".html",
         substituirtag=True,
         globalheader=True,
-        globalheadertagsid=["globalnavbar", "globalaside", "section-ribbon"],
+        globalheadertagsid=["globalnavbar", "globalaside", "globalribbon"],
         include_file={
             "head": "./ac/components/1/pt_BR/books/head.html",
             "globalnavbar": "./ac/components/1/pt_BR/navbar.html",
