@@ -1,12 +1,14 @@
 name: deploy(static)
 on:
-  push:
-    branches: ["main"]
-  pull_request:
-    branches: ["main"]
-  workflow_dispatch:
   schedule:
     - cron: "0 0 16 * 1"
+  workflow_dispatch:
+  push:
+    branches: ["main"]
+    paths: ["**/*.html", "**/*.css", "**/*.js", "**/*.png", "**/*.jpeg", "**/*.jpg", "**/*.svg", "**/*.gif", "**/*.webp", "**/*.bmp", "**/*.ico", "**/*.woff", "**/*.woff2", "**/*.ttf", "**/*.eot", "**/*.otf", "**/*.json", "**/*.xml", "**/*.yml", "**/*.yaml", "**/*.md"]
+  pull_request:
+    branches: ["main"]
+    paths: ["**/*.html", "**/*.css", "**/*.js", "**/*.png", "**/*.jpeg", "**/*.jpg", "**/*.svg", "**/*.gif", "**/*.webp", "**/*.bmp", "**/*.ico", "**/*.woff", "**/*.woff2", "**/*.ttf", "**/*.eot", "**/*.otf", "**/*.json", "**/*.xml", "**/*.yml", "**/*.yaml", "**/*.md"]
 permissions:
   contents: read
   pages: write
