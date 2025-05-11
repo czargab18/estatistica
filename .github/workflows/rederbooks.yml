@@ -220,10 +220,10 @@ jobs:
           git config --global user.name "github-actions[bot]"
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
 
-      - name: Criar a branch temporária
-        run: |
-          git checkout -b temp || git checkout temp
-          git status # Apenas para depuração
+      # - name: Criar a branch temporária
+      #   run: |
+      #     git checkout -b temp || git checkout temp
+      #     git status # Apenas para depuração
 
       - name: Adicionar mudanças no Git
         run: |
