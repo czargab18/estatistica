@@ -215,30 +215,27 @@ jobs:
            python -m backend.tasks.books.renderbook
           done
 
-
-  salvar-modificacoes:
-    needs: renderizar-books
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout do repositório
-        uses: actions/checkout@v4
-
       - name: Configurar Git
         run: |
           git config --global user.name "github-actions[bot]"
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
 
+      - name: Criar a branch temporária
+        run: |
+          git checkout -b temp || git checkout temp
+          git status # Apenas para depuração
+
       - name: Adicionar mudanças no Git
         run: |
           git add .
-          git status
+          git status # Apenas para depuração, opcional
 
       - name: Commitar mudanças
         run: |
-          git commit -m "books(up-actions): Correções nos books renderizados" || echo "Nenhuma mudança para commitar."
+          git commit -m "Atualizações automáticas: Ambiente de teste" || echo "Nenhuma mudança para commitar."
 
-      - name: Fazer Push para o repositório
+      - name: Fazer Push para a branch temp
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
-          git push origin ${{ github.ref }}
+          git push -u origin temp
