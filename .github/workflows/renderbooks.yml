@@ -4,23 +4,23 @@ on:
   workflow_dispatch:
   schedule:
     - cron: "0 0 16 * 1"
-  push:
-    branches: [main,stag]
-    paths:
-      [
-        "**/ac/components/**",
-        "**/books/**/**",
-        "**/.github/workflows/renderbooks.yml",
-        "**/books/**/*.qmd",
-        "**/books/**/*quarto*.yml",
-        "**/books/**/*quarto*.yaml",
-        "**/books/**/*.html",
-        "**/books/**/*.css",
-        "**/books/**/*.js",
-        "**/books/**/*.json",
-      ]
+  # push:
+  #   branches: [main]
+  #   paths:
+  #     [
+  #       "**/ac/components/**",
+  #       "**/books/**/**",
+  #       "**/.github/workflows/renderbooks.yml",
+  #       "**/books/**/*.qmd",
+  #       "**/books/**/*quarto*.yml",
+  #       "**/books/**/*quarto*.yaml",
+  #       "**/books/**/*.html",
+  #       "**/books/**/*.css",
+  #       "**/books/**/*.js",
+  #       "**/books/**/*.json",
+  #     ]
   pull_request:
-    branches: [main,stag]
+    branches: [main]
     paths:
       [
         "**/ac/components/**",
