@@ -10,8 +10,8 @@ on:
       [
         "/books/",
         "**/books/*.qmd",
-        "**/books/*.yml",
-        "**/books/*.yaml",
+        "**/books/*quarto*.yml",
+        "**/books/*quarto*.yaml",
         "**/books/*.html",
         "**/books/*.css",
         "**/books/*.js",
@@ -23,8 +23,8 @@ on:
       [
         "/books/",
         "**/books/*.qmd",
-        "**/books/*.yml",
-        "**/books/*.yaml",
+        "**/books/*quarto*.yml",
+        "**/books/*quarto*.yaml",
         "**/books/*.html",
         "**/books/*.css",
         "**/books/*.js",
