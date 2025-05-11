@@ -5,10 +5,79 @@ on:
   workflow_dispatch:
   push:
     branches: ["main"]
-    paths: ["**/*.html", "**/*.css", "**/*.js", "**/*.png", "**/*.jpeg", "**/*.jpg", "**/*.svg", "**/*.gif", "**/*.webp", "**/*.bmp", "**/*.ico", "**/*.woff", "**/*.woff2", "**/*.ttf", "**/*.eot", "**/*.otf", "**/*.json", "**/*.xml", "**/*.yml", "**/*.yaml", "**/*.md"]
+    paths: [
+      # Arquivos que disparam o workflow
+        "**/*.html",
+        "**/*.css",
+        "**/*.js",
+        "**/*.png",
+        "**/*.jpeg",
+        "**/*.jpg",
+        "**/*.svg",
+        "**/*.gif",
+        "**/*.webp",
+        "**/*.bmp",
+        "**/*.ico",
+        "**/*.woff",
+        "**/*.woff2",
+        "**/*.ttf",
+        "**/*.eot",
+        "**/*.otf",
+        "**/*.json",
+        "**/*.xml",
+        "**/*.yml",
+        "**/*.yaml",
+        "**/*.md",
+        # Ignorar alterações em pastas
+        "!/**/backend/tools/**",
+        "!/**/backend/tests/**",
+        "!/**/backend/**/tests/**",
+        "!/**/backend/**/*.egg*/**",
+        "!/**/CNAME",
+        "!/**/.gitignore",
+        "!/**/.gitattributes",
+        "!/**/.DS_Store",
+        "!/**/.github/**",
+        "!/**/README.md",
+        "!/**/.env*",
+      ]
   pull_request:
     branches: ["main"]
-    paths: ["**/*.html", "**/*.css", "**/*.js", "**/*.png", "**/*.jpeg", "**/*.jpg", "**/*.svg", "**/*.gif", "**/*.webp", "**/*.bmp", "**/*.ico", "**/*.woff", "**/*.woff2", "**/*.ttf", "**/*.eot", "**/*.otf", "**/*.json", "**/*.xml", "**/*.yml", "**/*.yaml", "**/*.md"]
+    paths: [
+      # Arquivos que disparam o workflow
+        "**/*.html",
+        "**/*.css",
+        "**/*.js",
+        "**/*.png",
+        "**/*.jpeg",
+        "**/*.jpg",
+        "**/*.svg",
+        "**/*.gif",
+        "**/*.webp",
+        "**/*.bmp",
+        "**/*.ico",
+        "**/*.woff",
+        "**/*.woff2",
+        "**/*.ttf",
+        "**/*.eot",
+        "**/*.otf",
+        "**/*.json",
+        "**/*.xml",
+        "**/*.yml",
+        "**/*.yaml",
+        "**/*.md",
+        # Ignorar alterações em pastas
+        "!/**/backend/tools/**",
+        "!/**/backend/tests/**",
+        "!/**/backend/**/tests/**",
+        "!/**/backend/**/*.egg*/**",
+        "!/**/CNAME",
+        "!/**/.gitignore",
+        "!/**/.gitattributes",
+        "!/**/.github/**",
+        "!/**/README.md",
+        "!/**/.env*",
+      ]
 permissions:
   contents: read
   pages: write
@@ -30,7 +99,7 @@ jobs:
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: '.'
+          path: "."
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
