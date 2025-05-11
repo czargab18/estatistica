@@ -8,6 +8,7 @@ on:
     branches: [books]
     paths:
       [
+        "**/ac/components/**",
         "**/books/**/**",
         "**/.github/workflows/renderbooks.yml",
         "**/books/**/*.qmd",
@@ -22,6 +23,7 @@ on:
     branches: [books]
     paths:
       [
+        "**/ac/components/**",
         "**/books/**/**",
         "**/.github/workflows/renderbooks.yml",
         "**/books/**/*.qmd",
