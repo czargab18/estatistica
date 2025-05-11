@@ -7,16 +7,6 @@
 
     De forma bem descarada, darei um motivo para doutrina-lo a ter esta mentalidade. Suponha um carro qualquer recém lançado e dito o mais seguro possível. Este carro possui um grande numéro de erros embutinos nele por uma escolha do fabricante, para lucrar sem tomar processos. Na Estatística há uma área chamada "Controle Estatístico de Qualidade". Muito usado na industria automotiva para a produção de peças que têm margens de erros mas são tão pequenas que podemos usa-las. Como dito anteriormente, é uma escolha do fabricante. É muito difícil e custoso produzir algo com muita perfeição. Escolhe-se vender o produto com essa chance de falha pequena por acreditar-se que será muito provável o acidente. Essa é a essência jovem padawan! O problema talvez seja o acumulo de pequenos erros em cada peça do carro. Não se preocupe! Isso concerteza talbém é controlado. Mas por precaução, use o cinto e respeite as Leis de Transito para ter mais segurança!
 
-## Processo de Desenvolvimento
-
-O processo de desenvolvimento seguirá os seguintes passos:
-
-1.  **Disponibilização inicial:** Publicar o conteúdo atual, mesmo que ainda não esteja completamente claro ou refinado.
-2.  **Aprimoramento contínuo:** Melhorar o material, ajustando ou até reformulando sua essência quando necessário.
-3.  **Adição de exemplos e exercícios:** Enriquecer o conteúdo com exemplos práticos e exercícios em diferentes níveis de dificuldade.
-4.  **Iteração:** Repetir os passos anteriores até alcançar um nível aceitável para consumo, sem a pretensão de criar uma obra-prima, mas algo funcional e útil.
-5.  **Entrega final:** Concluir e disponibilizar o material assim que possível.
-
 ## Dinâmica do Projeto
 
 A falta de dedicação exclusiva é o principal fator que define o ritmo do projeto. Por não oferecer retorno financeiro, mas sim intelectual, ele é desenvolvido nos momentos livres, como férias ou finais de semana. Além disso, o projeto não possui um ponto final definido, permitindo uma abordagem flexível e sem pressa para sua conclusão.
