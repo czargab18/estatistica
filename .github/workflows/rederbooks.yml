@@ -6,10 +6,30 @@ on:
     - cron: "0 0 16 * 1"
   push:
     branches: [books]
-    paths: ["**/books/*.qmd", "**/books/*.yml", "**/books/*.yaml", "**/books/*.html", "**/books/*.css", "**/books/*.js", "**/books/*.json"]
+    paths:
+      [
+        "/books/",
+        "**/books/*.qmd",
+        "**/books/*.yml",
+        "**/books/*.yaml",
+        "**/books/*.html",
+        "**/books/*.css",
+        "**/books/*.js",
+        "**/books/*.json",
+      ]
   pull_request:
-    branches: [books] 
-    paths: ["**/books/*.qmd", "**/books/*.yml", "**/books/*.yaml", "**/books/*.html", "**/books/*.css", "**/books/*.js", "**/books/*.json"]
+    branches: [books]
+    paths:
+      [
+        "/books/",
+        "**/books/*.qmd",
+        "**/books/*.yml",
+        "**/books/*.yaml",
+        "**/books/*.html",
+        "**/books/*.css",
+        "**/books/*.js",
+        "**/books/*.json",
+      ]
 
 permissions:
   contents: write
@@ -116,7 +136,7 @@ jobs:
         id: detect-subfolders
         run: |
           echo "Arquivos modificados: ${{ env.arquivos_modificados }}"
-          
+
           # Identificar subdiretórios dentro de books/build/
           MATCHED_SUBFOLDERS=$(echo "${{ env.arquivos_modificados }}" | grep -oE '^books/build/[A-Z]{3}[0-9]{4}/' | cut -d'/' -f3 | uniq || echo "")
           echo "Subdiretórios detectados: $MATCHED_SUBFOLDERS"
@@ -126,7 +146,7 @@ jobs:
 
       - name: Depurar variável subfolders
         run: |
-           echo "Valor de subfolders configurado: ${{ steps.detect-subfolders.outputs.subfolders }}"
+          echo "Valor de subfolders configurado: ${{ steps.detect-subfolders.outputs.subfolders }}"
 
   renderizar-books:
     runs-on: ubuntu-latest
@@ -143,26 +163,25 @@ jobs:
       - name: Checkout do repositório
         uses: actions/checkout@v4
 
+      #     # Configura R
+      #     - name: Cache de Pacotes R
+      #       uses: actions/cache@v3
+      #       with:
+      #         path: ~/.R/library
+      #         key: ${{ runner.os }}-R-library-${{ hashFiles('**/DESCRIPTION') }}
+      #         restore-keys: |
+      #           ${{ runner.os }}-R-library-
 
-#     # Configura R
-#     - name: Cache de Pacotes R
-#       uses: actions/cache@v3
-#       with:
-#         path: ~/.R/library
-#         key: ${{ runner.os }}-R-library-${{ hashFiles('**/DESCRIPTION') }}
-#         restore-keys: |
-#           ${{ runner.os }}-R-library-
+      #     - name: Configura a Linguagem R
+      #       uses: r-lib/actions/setup-r@v2
 
-#     - name: Configura a Linguagem R
-#       uses: r-lib/actions/setup-r@v2
-
-#     - name: Instalar Pacotes R (em paralelo)
-#       run: |
-#         Rscript -e '
-#         if (!requireNamespace("pak", quietly = TRUE)) {
-#           install.packages("pak")
-#         }
-#         pak::pkg_install(c("knitr", "rmarkdown", "downlit", "xml2"))'
+      #     - name: Instalar Pacotes R (em paralelo)
+      #       run: |
+      #         Rscript -e '
+      #         if (!requireNamespace("pak", quietly = TRUE)) {
+      #           install.packages("pak")
+      #         }
+      #         pak::pkg_install(c("knitr", "rmarkdown", "downlit", "xml2"))'
 
       # Configura Quarto
 
@@ -197,7 +216,7 @@ jobs:
       - name: Configura o Python
         uses: actions/setup-python@v4
         with:
-          python-version: '3.x'
+          python-version: "3.x"
 
       # - name: Instalar Dependências Python
       #   run: pip install -r requirements.txt || echo "Ignorando dependências incompatíveis"
@@ -210,7 +229,7 @@ jobs:
 
       - name: Correções com Python
         env:
-            PYTHONPATH: ./  
+          PYTHONPATH: ./
         run: |
           for folder in ${{ needs.detect-modificacao.outputs.subfolders }}; do
             echo "Corrigindo book in books/build/$folder"
