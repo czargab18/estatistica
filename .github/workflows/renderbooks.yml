@@ -5,7 +5,7 @@ on:
   schedule:
     - cron: "0 0 16 * 1"
   push:
-    branches: [books]
+    branches: [main,stag]
     paths:
       [
         "**/ac/components/**",
@@ -20,7 +20,7 @@ on:
         "**/books/**/*.json",
       ]
   pull_request:
-    branches: [books]
+    branches: [main,stag]
     paths:
       [
         "**/ac/components/**",
