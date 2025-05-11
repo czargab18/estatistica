@@ -218,5 +218,3 @@ jobs:
       - name: Nenhuma Modificação Detectada
         if: ${{ needs.detect-modificacao.outputs.subfolders == '' }}
         run: echo "Nenhuma modificação detectada nos subdiretórios de books/build."
-      - name: Renderiza books
-        run: echo "Passo não desenvolvido."
