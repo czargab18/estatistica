@@ -2,8 +2,10 @@ name: Deployment Estatística
 on:
   push:
     branches: ["main"]
+    paths: ["**/*.html", "**/*.css", "**/*.js", "**/*.png", "**/*.jpeg", "**/*.jpg", "**/*.svg", "**/*.gif", "**/*.webp", "**/*.bmp", "**/*.ico", "**/*.woff", "**/*.woff2", "**/*.ttf", "**/*.eot", "**/*.otf", "**/*.json", "**/*.xml", "**/*.yml", "**/*.yaml", "**/*.md"]
   pull_request:
-    branches: ["main","dev1"]
+    # branches: ["main"]
+    paths: ["**/*.html", "**/*.css", "**/*.js", "**/*.png", "**/*.jpeg", "**/*.jpg", "**/*.svg", "**/*.gif", "**/*.webp", "**/*.bmp", "**/*.ico", "**/*.woff", "**/*.woff2", "**/*.ttf", "**/*.eot", "**/*.otf", "**/*.json", "**/*.xml", "**/*.yml", "**/*.yaml", "**/*.md"]
   workflow_dispatch:
 jobs:
   build:
