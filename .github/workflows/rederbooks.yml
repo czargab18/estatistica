@@ -215,9 +215,6 @@ jobs:
            python -m backend.tasks.books.renderbook
           done
 
-      - name: Nenhuma Modificação Detectada
-        if: ${{ needs.detect-modificacao.outputs.subfolders == '' }}
-        run: echo "Nenhuma modificação detectada nos subdiretórios de books/build."
 
   salvar-modificacoes:
     needs: renderizar-books
