@@ -20,6 +20,31 @@
   "editor.rulers": [80, 120],
   "editor.wordWrap": "on",
   "editor.wordWrapColumn": 80,
+  "editor.wrappingIndent": "same",
+  "editor.fontSize": 15,
+  "editor.lineHeight": 1.8,
+  "editor.stickyScroll.enabled": false,
+  "editor.parameterHints.enabled": false,
+  "editor.renderLineHighlight": "gutter",
+  "editor.suggestSelection": "first",
+  "editor.fontLigatures": true,
+  "editor.acceptSuggestionOnCommitCharacter": false,
+  "editor.accessibilitySupport": "off",
+  "editor.tabSize": 2,
+  "editor.hideCursorInOverviewRuler": true,
+  "editor.scrollbar.vertical": "hidden",
+  "editor.tokenColorCustomizations": {
+    "textMateRules": [
+      {
+        "scope": "keyword.other.dotenv",
+        "settings": {
+          "foreground": "#FF000000"
+        }
+      }
+    ]
+  },
+  "editor.formatOnPaste": true,
+  "editor.formatOnType": true,
 
   // Configurações: terminal
   "terminal.integrated.cwd": "${workspaceFolder}",
@@ -27,6 +52,13 @@
     "PYTHONIOENCODING": "utf-8",
     "PATH": "${env:PATH};${workspaceFolder}\\backend\\bin\\"
   },
+  "terminal.integrated.env.osx": {
+    "FIG_NEW_SESSION": "1"
+  },
+  "terminal.integrated.fontSize": 14,
+  "terminal.integrated.fontFamily": "monospace",
+  "terminal.integrated.gpuAcceleration": "on",
+  "terminal.integrated.defaultProfile.osx": "fish",
 
   // Configurações:Python
   "python-envs.defaultEnvManager": "ms-python.python:system",
@@ -34,5 +66,140 @@
   "python.terminal.activateEnvInCurrentTerminal": true,
   "python-envs.pythonProjects": [],
   "python.testing.unittestEnabled": false,
-  "python.testing.pytestEnabled": true
+  "python.testing.pytestEnabled": true,
+  "python.testing.unittestArgs": ["-v", "-s", "./test", "-p", "test_*.py"],
+
+  // Configurações: JavaScript
+  "javascript.suggest.autoImports": true,
+  "javascript.updateImportsOnFileMove.enabled": "always",
+
+  // Configurações: TypeScript
+  "typescript.tsserver.log": "off",
+  "typescript.updateImportsOnFileMove.enabled": "always",
+  "typescript.suggest.autoImports": true,
+  "typescript.preferences.preferTypeOnlyAutoImports": true,
+
+  // Configurações: Extensões
+  "extensions.ignoreRecommendations": true,
+
+  // Configurações: Explorador de Arquivos
+  "explorer.confirmDelete": false,
+  "explorer.compactFolders": false,
+  "explorer.confirmDragAndDrop": false,
+  "explorer.fileNesting.patterns": {
+    "*.ts": "${capture}.js",
+    "*.js": "${capture}.js.map, ${capture}.min.js, ${capture}.d.ts",
+    "*.jsx": "${capture}.js",
+    "*.tsx": "${capture}.ts",
+    "tsconfig.json": "tsconfig.*.json",
+    "package.json": "package-lock.json, yarn.lock, pnpm-lock.yaml, bun.lockb, bun.lock"
+  },
+  "explorer.fileNesting.enabled": true,
+
+  // Configurações: Workbench
+  "workbench.tree.enableStickyScroll": false,
+  "workbench.editor.labelFormat": "short",
+  "workbench.statusBar.visible": false,
+  "workbench.layoutControl.enabled": false,
+  "workbench.preferredDarkColorTheme": "poimandres-noitalics",
+  "workbench.productIconTheme": "fluent-icons",
+  "workbench.iconTheme": "symbols",
+  "workbench.editor.empty.hint": "hidden",
+
+  // Configurações: Git
+  "gitlens.codeLens.recentChange.enabled": false,
+  "gitlens.codeLens.authors.enabled": false,
+  "git.enableSmartCommit": true,
+  "git.openRepositoryInParentFolders": "always",
+  "gitlens.advanced.messages": {
+    "suppressIntegrationRequestTimedOutWarning": true
+  },
+
+  // Configurações: Segurança
+  "security.workspace.trust.untrustedFiles": "newWindow",
+  "security.promptForLocalFileProtocolHandling": false,
+
+  // Configurações: Atualizações
+  "update.mode": "manual",
+  "update.showReleaseNotes": false,
+
+  // Configurações: Janela
+  "window.commandCenter": false,
+  "window.titleBarStyle": "native",
+  "window.autoDetectColorScheme": true,
+
+  // Configurações: Emmet
+  "emmet.includeLanguages": {
+    "javascript": "javascriptreact",
+    "mdx": "javascriptreact"
+  },
+  "emmet.syntaxProfiles": {
+    "javascript": "jsx",
+    "mdx": "jsx"
+  },
+
+  // Configurações: Formatação
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": "explicit"
+  },
+  "eslint.validate": ["javascript", "javascriptreact", "graphql"],
+  "[prisma]": {
+    "editor.formatOnSave": true
+  },
+  "[jsonc]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[json]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[javascript]": {
+    "editor.defaultFormatter": "vscode.typescript-language-features"
+  },
+
+  // Configurações: Live Server
+  "liveServer.settings.donotShowInfoMsg": true,
+
+  // Configurações: Grunt
+  "grunt.autoDetect": "on",
+
+  // Configurações: Jake
+  "jake.autoDetect": "on",
+
+  // Configurações: Gulp
+  "gulp.autoDetect": "on",
+
+  // Configurações: Associações de Arquivos
+  "files.associations": {
+    ".env.*": "dotenv",
+    ".prettierrc": "json",
+    "*.css": "css",
+    ".dev.vars": "dotenv",
+    "*.rmd": "rmd",
+    "*.r": "r",
+    "*.qmd": "quarto",
+    "*.mdx": "markdown",
+    "*.graphql": "graphql",
+    "*.gql": "graphql",
+    "*.ts": "typescript",
+    "*.tsx": "typescriptreact",
+    "*.vue": "vue",
+    "*.svelte": "svelte"
+  },
+  "symbols.files.associations": {
+    "*.module.ts": "nest",
+    "*.guard.ts": "typescript",
+    "*.spec.ts": "ts-test",
+    "*.e2e-spec.ts": "ts-test",
+    "*.mock.ts": "ts-test",
+    "vitest.config.e2e.ts": "vite",
+    ".env.development.local": "gear",
+    ".env.test.local": "gear",
+    ".env.local": "gear",
+    ".env.example": "gear",
+    "*.resolver.ts": "typescript",
+    "*.dto.ts": "typescript",
+    "*.entity.ts": "typescript",
+    "*.service.ts": "typescript",
+    "*.controller.ts": "typescript"
+  }
 }
