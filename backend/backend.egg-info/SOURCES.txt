@@ -7,7 +7,7 @@ backend.egg-info/dependency_links.txt
 backend.egg-info/requires.txt
 backend.egg-info/top_level.txt
 core/__init__.py
-core/dir.py
+core/diretorio.py
 core/quartorender.py
 core/requirements.txt
 core/variaveis.py

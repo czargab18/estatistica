@@ -215,8 +215,27 @@ jobs:
            python -m backend.tasks.books.renderbook
           done
 
-      - name: Nenhuma Modificação Detectada
-        if: ${{ needs.detect-modificacao.outputs.subfolders == '' }}
-        run: echo "Nenhuma modificação detectada nos subdiretórios de books/build."
-      - name: Renderiza books
-        run: echo "Passo não desenvolvido."
+      - name: Configurar Git
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+
+      - name: Criar a branch temporária
+        run: |
+          git checkout -b temp || git checkout temp
+          git status # Apenas para depuração
+
+      - name: Adicionar mudanças no Git
+        run: |
+          git add .
+          git status # Apenas para depuração, opcional
+
+      - name: Commitar mudanças
+        run: |
+          git commit -m "Atualizações automáticas: Ambiente de teste" || echo "Nenhuma mudança para commitar."
+
+      - name: Fazer Push para a branch temp
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          git push -u origin temp
