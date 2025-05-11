@@ -219,6 +219,13 @@ jobs:
         if: ${{ needs.detect-modificacao.outputs.subfolders == '' }}
         run: echo "Nenhuma modificação detectada nos subdiretórios de books/build."
 
+  salvar-modificacoes:
+    needs: renderizar-books
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout do repositório
+        uses: actions/checkout@v4
+
       - name: Configurar Git
         run: |
           git config --global user.name "github-actions[bot]"
@@ -227,11 +234,11 @@ jobs:
       - name: Adicionar mudanças no Git
         run: |
           git add .
-          git status # Apenas para depuração, opcional
+          git status
 
       - name: Commitar mudanças
         run: |
-          git commit -m "Atualizações automáticas: Correções nos books renderizados" || echo "Nenhuma mudança para commitar."
+          git commit -m "books(up-actions): Correções nos books renderizados" || echo "Nenhuma mudança para commitar."
 
       - name: Fazer Push para o repositório
         env:
