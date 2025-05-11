@@ -15,3 +15,7 @@ O nome desta série é inspirado na famosa coleção de Donald Knuth chamada "Th
     Usarei a definição de Noether para apresentar a que eu acredito que seja a melhor para este projeto. O ponto central é que a estatistica é usada para tirar conclusões mais acertivas com base em um conjunto de informações. A defnição é a seguinte: ["De forma geral, a Estatística é uma ciência que busca maximizar o poder de escolha sobre um determinado assuntode em estudo"]{.citation-short} .
 
     Defenderei a definição com seguinte exemplo: Um Estatístico é contratado para trabalhar em uma empresas especializada na venda de 2 produtos químicos. Após uma analise minucioso, ele conclui que produto A é 30% melhor que o B mas é 65% mais caro. A decisão de comercializar o produto será da empresa. Seus estudos ajudarão na decisão. Ele melhorou as opções de escolha. Em outras palavras, ele maximixou o poder de escolha da empresa com base em seus estudos.
+
+
+
+### testando detecção da action do GT-Actions para salvar mudanças e enviar para o github
