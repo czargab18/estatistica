@@ -8,7 +8,6 @@
       "command": "cmd",
       "args": [
         "/c",
-        "echo 'Executando Quarto...' && quarto render ./book/TAS0000/index.qmd"
       ],
       "options": {
         "cwd": "c:/Users/cesargabrielphd/Documents/github/books/"

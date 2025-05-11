@@ -1,8 +1,4 @@
 {
-  "python-envs.defaultEnvManager": "ms-python.python:venv",
-  "python.terminal.activateEnvironment": true,
-  "python.terminal.activateEnvInCurrentTerminal": true,
-  "python-envs.pythonProjects": [],
   "files.exclude": {
     "**/.svn": true,
     "**/.hg": true,
@@ -19,13 +15,24 @@
     "**/docs/ac/": false,
     "**/docs/ac/books_libs": false
   },
-  "python.testing.unittestEnabled": false,
-  "python.testing.pytestEnabled": true,
+   
+  // Configurações: Editor
   "editor.rulers": [80, 120],
   "editor.wordWrap": "on",
   "editor.wordWrapColumn": 80,
+
+  // Configurações: terminal
+  "terminal.integrated.cwd": "${workspaceFolder}",
   "terminal.integrated.env.windows": {
     "PYTHONIOENCODING": "utf-8"
   },
-  "terminal.integrated.cwd": "${workspaceFolder}",
+
+  // Configurações:Python
+  "python-envs.defaultEnvManager": "ms-python.python:system",
+  "python.terminal.activateEnvironment": true,
+  "python.terminal.activateEnvInCurrentTerminal": true,
+  "python-envs.pythonProjects": [],
+  "python.testing.unittestEnabled": false,
+  "python.testing.pytestEnabled": true,
+ 
 }
