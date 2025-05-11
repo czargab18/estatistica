@@ -1,13 +1,15 @@
 name: Renderizar Books Quarto
 
 on:
-  push:
-    branches: [books] 
-  pull_request:
-      branches: [books] 
+  workflow_dispatch:
   schedule:
     - cron: "0 0 16 * 1"
-  workflow_dispatch:
+  push:
+    branches: [books]
+    paths: ["**/books/*.qmd", "**/books/*.yml", "**/books/*.yaml", "**/books/*.html", "**/books/*.css", "**/books/*.js", "**/books/*.json"]
+  pull_request:
+    branches: [books] 
+    paths: ["**/books/*.qmd", "**/books/*.yml", "**/books/*.yaml", "**/books/*.html", "**/books/*.css", "**/books/*.js", "**/books/*.json"]
 
 permissions:
   contents: write
