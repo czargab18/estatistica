@@ -1,4 +1,3 @@
-// filepath: c:\Users\cesargabrielphd\Documents\github\books\.vscode\tasks.json
 {
   "version": "2.0.0",
   "tasks": [
@@ -6,9 +5,7 @@
       "label": "Run Quarto Book",
       "type": "shell",
       "command": "cmd",
-      "args": [
-        "/c",
-      ],
+      "args": ["/c"],
       "options": {
         "cwd": "c:/Users/cesargabrielphd/Documents/github/books/"
       },
@@ -16,6 +13,13 @@
         "kind": "build",
         "isDefault": true
       }
+    },
+    {
+      "label": "Run All Scripts in bin",
+      "type": "shell",
+      "command": "bash",
+      "args": ["-c", "for script in \"${workspaceFolder}/bin/*\"; do bash \"$script\"; done"],
+      "problemMatcher": []
     }
   ]
 }
