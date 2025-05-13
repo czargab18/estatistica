@@ -1,0 +1,381 @@
+
+# Gráfico de Barras ou Colunas Agrupadas:
+
+Variáveis: Qualitativas (categóricas) e Quantitativas.
+Uso: Compara valores quantitativos para diferentes categorias qualitativas.
+```{r}
+# Instale o pacote ggplot2 se ainda não estiver instalado
+#  install.packages("tidyverse")
+
+# Carregue o pacote ggplot2
+library(ggplot2)
+
+# Crie um conjunto de dados fictício
+dados <- data.frame(
+  Categoria = rep(c("A", "B", "C"), each = 4),
+  Valor = c(10, 15, 8, 12, 14, 18, 9, 13, 11, 16, 7, 10)
+)
+
+# Crie o gráfico de barras agrupadas
+ggplot(dados, aes(x = Categoria, y = Valor, fill = Categoria)) +
+  geom_bar(stat = "identity", position = "dodge") +
+  labs(title = "Gráfico de Barras Agrupadas",
+       x = "Categoria",
+       y = "Valor") +
+  theme_minimal()
+```
+
+## Colunas Agrupadas
+```{r}
+# Instale o pacote ggplot2 se ainda não estiver instalado
+# install.packages("ggplot2")
+
+# Carregue o pacote ggplot2
+library(ggplot2)
+
+# Crie um conjunto de dados fictício com duas séries
+dados <- data.frame(
+  Categoria = c("A", "B", "C", "D"),
+  Serie1 = c(15, 20, 12, 18),
+  Serie2 = c(10, 14, 8, 15)
+)
+
+# Converta os dados para o formato longo
+dados_long <- tidyr::gather(dados, key = "Serie", value = "Valor", -Categoria)
+
+# Crie o gráfico de colunas agrupadas
+ggplot(dados_long, aes(x = Categoria, y = Valor, fill = Serie)) +
+  geom_col(position = "dodge", width = 0.7) +
+  labs(title = "Gráfico de Colunas Agrupadas",
+       x = "Categoria",
+       y = "Valor",
+       fill = "Série") +
+  theme_minimal()
+
+```
+
+
+# Gráfico de Barras Empilhadas:
+
+Variáveis: Qualitativas (categóricas) e Quantitativas.
+Uso: Mostra a contribuição relativa de diferentes categorias para o total.
+```{r}
+# Instale o pacote ggplot2 se ainda não estiver instalado
+# install.packages("ggplot2")
+
+# Carregue o pacote ggplot2
+library(ggplot2)
+
+# Crie um conjunto de dados fictício
+dados <- data.frame(
+  Categoria = rep(c("A", "B", "C"), each = 4),
+  Valor = c(10, 15, 8, 12, 14, 18, 9, 13, 11, 16, 7, 10)
+)
+
+# Crie o gráfico de barras empilhadas
+ggplot(dados, aes(x = Categoria, y = Valor, fill = Categoria)) +
+  geom_bar(stat = "identity") +
+  labs(title = "Gráfico de Barras Empilhadas",
+       x = "Categoria",
+       y = "Valor") +
+  theme_minimal()
+
+```
+
+# Gráfico de barras empilhadas:
+
+Variáveis: Qualitativas (categóricas) e Quantitativas (percentuais).
+Uso: Representa proporções ou percentuais em relação ao todo.
+```{r}
+# Instale o pacote ggplot2 se ainda não estiver instalado
+# install.packages("ggplot2")
+
+# Carregue o pacote ggplot2
+library(ggplot2)
+
+# Crie um conjunto de dados fictício
+dados <- data.frame(
+  Categoria = c("A", "B", "C"),
+  Valor1 = c(20, 30, 40),
+  Valor2 = c(30, 25, 45)
+)
+
+# Transforme os dados para o formato longo
+dados_long <- tidyr::gather(dados, key = "Variavel", value = "Percentual", -Categoria)
+
+# Crie o gráfico de barras empilhadas
+ggplot(dados_long, aes(x = Categoria, y = Percentual, fill = Variavel)) +
+  geom_bar(stat = "identity") +
+  labs(title = "Gráfico de Barras Empilhadas",
+       x = "Categoria",
+       y = "Percentual",
+       fill = "Variável") +
+  theme_minimal()
+
+```
+
+
+# Diagrama de Dispersão:
+
+Variáveis: Duas variáveis quantitativas.
+Uso: Mostra a relação ou correlação entre duas variáveis quantitativas.
+```{r}
+# Instale o pacote ggplot2 se ainda não estiver instalado
+# install.packages("ggplot2")
+
+# Carregue o pacote ggplot2
+library(ggplot2)
+
+# Crie um conjunto de dados fictício
+dados <- data.frame(
+  Variavel1 = c(5, 8, 10, 12, 15),
+  Variavel2 = c(10, 15, 12, 18, 20)
+)
+
+# Crie o diagrama de dispersão
+ggplot(dados, aes(x = Variavel1, y = Variavel2)) +
+  geom_point() +
+  labs(title = "Diagrama de Dispersão",
+       x = "Variável 1",
+       y = "Variável 2") +
+  theme_minimal()
+
+```
+
+
+Gráfico de Linhas:
+
+Variáveis: Qualitativas (tempo) e Quantitativas.
+Uso: Exibe tendências ao longo do tempo ou de outra variável qualitativa.
+```{r}
+# Instale o pacote ggplot2 se ainda não estiver instalado
+# install.packages("ggplot2")
+
+# Carregue o pacote ggplot2
+library(ggplot2)
+
+# Crie um conjunto de dados fictício
+dados <- data.frame(
+  Tempo = seq(1, 10),
+  Valor = c(10, 12, 15, 20, 18, 25, 22, 28, 30, 32)
+)
+
+# Crie o gráfico de linhas
+ggplot(dados, aes(x = Tempo, y = Valor)) +
+  geom_line() +
+  labs(title = "Gráfico de Linhas",
+       x = "Tempo",
+       y = "Valor") +
+  theme_minimal()
+
+```
+
+Box Plot (Diagrama de Caixa):
+
+Variáveis: Qualitativas (categóricas) e Quantitativas.
+Uso: Representa a distribuição estatística dos dados, destacando a mediana, quartis e outliers.
+```{r}
+# Instale o pacote ggplot2 se ainda não estiver instalado
+# install.packages("ggplot2")
+
+# Carregue o pacote ggplot2
+library(ggplot2)
+
+# Crie um conjunto de dados fictício
+dados <- data.frame(
+  Categoria = rep(c("A", "B", "C"), each = 50),
+  Valor = c(rnorm(50, mean = 10, sd = 2),
+            rnorm(50, mean = 15, sd = 2),
+            rnorm(50, mean = 12, sd = 3))
+)
+
+# Crie o box plot
+ggplot(dados, aes(x = Categoria, y = Valor, fill = Categoria)) +
+  geom_boxplot() +
+  labs(title = "Box Plot (Diagrama de Caixa)",
+       x = "Categoria",
+       y = "Valor") +
+  theme_minimal()
+
+```
+
+Gráfico de Bolhas:
+
+Variáveis: Duas variáveis quantitativas e uma qualitativa (tamanho das bolhas).
+Uso: Mostra relações entre três variáveis, incluindo o tamanho das bolhas para representar uma terceira dimensão.
+```{r}
+# Instale o pacote ggplot2 se ainda não estiver instalado
+# install.packages("ggplot2")
+
+# Carregue o pacote ggplot2
+library(ggplot2)
+
+# Crie um conjunto de dados fictício
+dados <- data.frame(
+  VariavelX = c(10, 15, 20, 25),
+  VariavelY = c(5, 10, 15, 20),
+  TamanhoBolha = c(30, 60, 90, 120),
+  Categoria = c("A", "B", "C", "D")
+)
+
+# Crie o gráfico de bolhas
+ggplot(dados, aes(x = VariavelX, y = VariavelY, size = TamanhoBolha, color = Categoria)) +
+  geom_point(alpha = 0.7) +
+  scale_size_continuous(range = c(3, 15)) +
+  labs(title = "Gráfico de Bolhas",
+       x = "Variável X",
+       y = "Variável Y",
+       size = "Tamanho da Bolha",
+       color = "Categoria") +
+  theme_minimal()
+
+```
+
+
+Gráfico de Radar ou Teia (Spider Plot):
+
+Variáveis: Qualitativas (categorias) e Quantitativas.
+Uso: Comparação de várias categorias em termos de múltiplas variáveis quantitativas.
+```{r}
+# Instale o pacote ggplot2 se ainda não estiver instalado
+# install.packages("ggplot2")
+
+# Carregue o pacote ggplot2
+library(ggplot2)
+
+# Crie um conjunto de dados fictício
+dados <- data.frame(
+  Categoria = c("A", "B", "C", "D"),
+  Variavel1 = c(5, 8, 12, 15),
+  Variavel2 = c(10, 15, 18, 22),
+  Variavel3 = c(7, 12, 14, 20)
+)
+
+# Crie o gráfico de radar
+ggplot(dados, aes(x = Categoria)) +
+  geom_polygon(aes(y = Variavel1, group = 1), fill = "lightblue", alpha = 0.5) +
+  geom_polygon(aes(y = Variavel2, group = 2), fill = "lightgreen", alpha = 0.5) +
+  geom_polygon(aes(y = Variavel3, group = 3), fill = "lightcoral", alpha = 0.5) +
+  labs(title = "Gráfico de Radar",
+       y = "Valor",
+       x = "Categoria") +
+  theme_minimal()
+
+```
+
+
+Gráfico de Áreas Empilhadas:
+
+Variáveis: Qualitativas (tempo) e Quantitativas.
+Uso: Mostra a evolução das partes em relação ao todo ao longo do tempo.
+```{r}
+# Instale o pacote ggplot2 se ainda não estiver instalado
+# install.packages("ggplot2")
+
+# Carregue o pacote ggplot2
+library(ggplot2)
+
+# Crie um conjunto de dados fictício
+dados <- data.frame(
+  Tempo = seq(1, 5),
+  Categoria1 = c(10, 15, 20, 25, 18),
+  Categoria2 = c(5, 10, 12, 15, 20),
+  Categoria3 = c(8, 12, 18, 22, 25)
+)
+
+# Mude o formato dos dados para usar o ggplot2
+dados_long <- tidyr::gather(dados, key = "Categoria", value = "Valor", -Tempo)
+
+# Crie o gráfico de áreas empilhadas
+ggplot(dados_long, aes(x = Tempo, y = Valor, fill = Categoria)) +
+  geom_area() +
+  labs(title = "Gráfico de Áreas Empilhadas",
+       x = "Tempo",
+       y = "Valor",
+       fill = "Categoria") +
+  theme_minimal()
+
+```
+
+
+Gráfico de Barras Horizontais:
+
+Variáveis: Qualitativas (categóricas) e Quantitativas.
+Uso: Semelhante ao gráfico de barras, mas com a orientação horizontal.
+```{r}
+# Instale o pacote ggplot2 se ainda não estiver instalado
+# install.packages("ggplot2")
+
+# Carregue o pacote ggplot2
+library(ggplot2)
+
+# Crie um conjunto de dados fictício
+dados <- data.frame(
+  Categoria = c("A", "B", "C", "D"),
+  Valor = c(15, 20, 12, 18)
+)
+
+# Crie o gráfico de barras horizontais
+ggplot(dados, aes(x = Categoria, y = Valor)) +
+  geom_bar(stat = "identity", fill = "skyblue") +
+  labs(title = "Gráfico de Barras Horizontais",
+       x = "Categoria",
+       y = "Valor") +
+  theme_minimal() +
+  coord_flip()  # Inverte a orientação para barras horizontais
+
+```
+# Gráfico de colunas
+
+
++=====================================================+
+
+Variáveis Unidimensionais Quantitativas (Univariadas):
+
+Exemplos: Idade, Peso, Altura, Tempo.
+Gráfico Recomendado: Histograma, Gráfico de Barras ou Gráfico de Linhas.
+Variáveis Qualitativas (Categóricas):
+
+Exemplos: Cores, Categorias, Grupos.
+Gráfico Recomendado: Gráfico de Barras, Gráfico de Pizza (ou Gráfico de Setores), Gráfico de Pareto.
+Variáveis Bidimensionais (Bivariadas) - Quantitativa x Quantitativa:
+
+Exemplos: Correlação entre duas variáveis quantitativas.
+Gráfico Recomendado: Diagrama de Dispersão.
+Variáveis Qualitativas Cruzadas (Crosstab):
+
+Exemplos: Tabela de contingência.
+Gráfico Recomendado: Gráfico de Barras Empilhadas, Gráfico de Mosaico.
+Séries Temporais:
+
+Exemplos: Dados ao longo do tempo.
+Gráfico Recomendado: Gráfico de Linhas, Gráfico de Área.
+Distribuição de Frequência:
+
+Exemplos: Frequência de ocorrência de valores.
+Gráfico Recomendado: Histograma.
+Comparação de Percentuais ou Proporções:
+
+Exemplos: Partes de um todo.
+Gráfico Recomendado: Gráfico de Pizza (ou Gráfico de Setores), Gráfico de Barras Empilhadas.
+Comparação entre Grupos:
+
+Exemplos: Comparação entre diferentes categorias.
+Gráfico Recomendado: Gráfico de Barras, Gráfico de Linhas.
+Distribuição Normal ou Simétrica:
+
+Exemplos: Dados distribuídos normalmente.
+Gráfico Recomendado: Histograma, Gráfico de Probabilidade Normal.
+Variação ao Longo de Categorias:
+
+Exemplos: Variação de uma variável ao longo de diferentes categorias.
+Gráfico Recomendado: Gráfico de Linhas, Gráfico de Barras.
+
+
+
+
+
+
+
+
+

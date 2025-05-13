@@ -1,0 +1,51 @@
+---
+# title: "TITULO"
+# subtitle: "SUBTITULO"
+# author: "Yihui Xie"
+# institute: "UnB"
+# date: "data"
+output:
+  xaringan::moon_reader:
+    lib_dir: libs
+    css: ["assets/style.css", "default-fonts"]
+    # 'seal: false' desabilitar primeiro slide
+    seal: false
+    nature:
+      highlightStyle: github
+      highlightLines: true
+      countIncrementalSlides: true
+      ratio: '16:9'
+      progress: true
+      controlsLayout: 'bottom-right'
+      slideNumberFormat: '%current% /%total%'
+encoding: UTF-8
+---
+
+<!-- titulo -->
+<h1 class="maintitulo">Avaliação Estatística da Influência de Recursos Complementares no Desempenho Acadêmico no Ensino Superior.</h1>
+
+<!-- natureza -->
+<span class="natureza">Defesa do Trabalho de <br> Conclusão de curso</span>
+
+<!-- linha -->
+<hr class="linha"> 
+
+
+
+<!-- rodapé -->
+
+<div class="footer">
+ <div class="footer-content">
+  <!-- logo UnB -->
+   <img src="../img/unb-logo.png" class="footer-content-img"></img>
+  <!-- Linha vertical -->
+   <div class="footer-vertical-line"></div>
+  <!-- Texto-UnB -->
+   <span class="footer-texto-unb-dep">Universidade de Brasilia<br>
+      Departamento de Estatística
+   </span>
+</div>
+
+---
+
+#teste
