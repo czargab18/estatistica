@@ -1,0 +1,34 @@
+{
+  "z0j826l6lt": {
+    "meta_info": {
+      "date-title-article": "Título do Artigo",
+      "date-subtitle-article": "Subtítulo do Artigo",
+      "date-author-article": "Autor do Artigo",
+      "date-data-article": "05-03-2025",
+      "date-description-article": "Descrição do Artigo",
+      "date-keywords-article": "Palavras-chave do Artigo",
+      "date-category-article": "Categoria do Artigo",
+      "date-disciplina-article": "Disciplina do Artigo",
+      "date-image-article": "imagem"
+    },
+    "content-article": {
+      "resumo": ["paragrafo 1 do resumo", "paragrafo 2 do resumo", "link"],
+      "introducao": [
+        "paragrafo 1 da introdução",
+        "paragrafo 2 da introdução",
+        "paragrafo 3 da introdução",
+        "link",
+        "paragrafo 4 da introdução"
+      ],
+      "desenvolvimento": [
+        "paragrafo 1 do desenvolvimento",
+        "link",
+        "paragrafo 2 do desenvolvimento",
+        "paragrafo 3 do desenvolvimento"
+      ],
+      "conclusao": ["paragrafo 1 da conclusão", "link", "paragrafo 2 da conclusão"],
+      "referencias": ["referencia 1", "link", "referencia 2", "referencia 3"],
+      "anexos": ["link-download-anexo 1", "link-download-anexo 2"]
+    }
+  }
+}

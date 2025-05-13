@@ -1,0 +1,92 @@
+---
+title: "resultados"
+output: html_document
+date: "`r Sys.Date()`"
+---
+
+---
+title: "Análise de Proporção de CNPJs Novos"
+output: html_document
+---
+
+## Introdução
+
+Neste documento, vamos analisar a proporção de CNPJs novos entre os anos de um projeto. Consideramos o seguinte cenário: temos um data frame contendo informações de empresas, com os CNPJs que participaram de um projeto de 2006 a 2011. O objetivo é calcular, para cada ano, a quantidade de novos CNPJs e a proporção de novos CNPJs em relação ao total acumulado até aquele ano.
+
+## Passos
+
+Primeiro, carregamos as bibliotecas necessárias e criamos a função que irá calcular os novos CNPJs e a proporção de novos CNPJs por ano.
+
+### Código da Função
+
+```{r}
+library(dplyr)
+
+# Função para calcular novos CNPJs e proporção acumulada
+calcular_proporcao_novos_cnpjs <- function(df, coluna_ano, coluna_cnpj) {
+  # Cria uma cópia do data frame para não modificar o original
+  df <- df %>% 
+    select({{coluna_ano}}, {{coluna_cnpj}}) %>%
+    distinct() %>% # Remove duplicatas dentro de cada ano
+    rename(Ano_Base = {{coluna_ano}}, cnpj = {{coluna_cnpj}})
+  
+  # Inicializa a coluna de novos CNPJs e o vetor de acumulados
+  df$CNPJ_novo <- FALSE
+  acumulados <- c()
+  
+  # Loop para marcar novos CNPJs em cada ano
+  for (ano in unique(df$Ano_Base)) {
+    cnpj_atual <- df$cnpj[df$Ano_Base == ano]
+    
+    # Identifica os CNPJs novos (não presentes nos acumulados)
+    novos_cnpj <- setdiff(cnpj_atual, acumulados)
+    
+    # Marca como TRUE os CNPJs novos
+    df$CNPJ_novo[df$Ano_Base == ano & df$cnpj %in% novos_cnpj] <- TRUE
+    
+    # Atualiza o vetor acumulado com os novos CNPJs
+    acumulados <- unique(c(acumulados, cnpj_atual))
+  }
+  
+  # Resumo final com contagem de novos CNPJs e proporção acumulada
+  resultado <- df %>%
+    group_by(Ano_Base) %>%
+    summarize(
+      CNPJs_novos = sum(CNPJ_novo, na.rm = TRUE),
+      CNPJ_acumulados = n_distinct(cnpj),
+      Proporcao_novos = CNPJs_novos / lag(CNPJ_acumulados, default = CNPJs_novos[1]),
+      .groups = 'drop'
+    )
+  
+  return(resultado)
+}
+
+```
+
+```{r}
+# Data frame de exemplo (ou substitua com seu próprio data frame)
+df_exemplo <- data.frame(
+  Indice_AnoBase = 1:10,
+  Razão_Social = rep("Empresa", 10),
+  cnpj = c("12345678000195", "12345678000195", "23456789000112", "34567890000123",
+           "12345678000195", "23456789000112", "45678901000134", "56789012000145",
+           "67890123000156", "78901234000167"),
+  UF = rep("SP", 10),
+  Ano_Base = c(2006, 2006, 2007, 2007, 2008, 2008, 2009, 2010, 2011, 2011)
+)
+
+# Exibindo o data frame
+print(df_exemplo)
+
+```
+
+
+```{r}
+# Chamando a função
+resultado <- calcular_proporcao_novos_cnpjs(df_exemplo, coluna_ano = Ano_Base, coluna_cnpj = cnpj)
+
+# Exibindo o resultado
+print(resultado)
+
+```
+
