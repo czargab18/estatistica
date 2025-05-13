@@ -1,0 +1,688 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <title>Estatística</title>
+  <meta charset="utf-8" />
+  <meta content="Estatística" name="topic" />
+  <meta content="index,follow" name="robots" />
+  <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+
+  <meta
+    content="img-src 'self' https://www.estatistica.pro/; script-src 'self' https://www.estatistica.pro/ac/ https://www.estatistica.pro/sd/"
+    http-equiv="Content-Security-Policy" />
+  <link href="/sd/images/favicons/estatistica.svg" rel="shortcut icon" type="image/x-icon" />
+  <link href="https://www.estatistica.pro/" hreflang="pt-br" rel="alternate" />
+  <link href="/ac/globalpattern/1/pt_BR/styles/globalpattern.css" rel="stylesheet" />
+  <link href="/ac/globalaside/1/pt_BR/styles/globalaside.css" rel="stylesheet" />
+  <link href="/ac/globalnavbar/1/pt_BR/styles/globalnavbar.css" rel="stylesheet" />
+  <link href="/ac/globalribbon/1/pt_BR/styles/globalribbon.css" rel="stylesheet" />
+  <link href="/ac/globaltipografia/1/pt_BR/style/globaltipografia.css" rel="stylesheet" />
+  <link href="/ac/globalmain/1/pt_BR/styles/globalmain.css" rel="stylesheet" />
+  <link href="/ac/globalnoticias/1/pt_BR/style/globalnoticias.css" rel="stylesheet" />
+  <link href="/ac/globalfooter/1/pt_BR/styles/globalfooter.css" rel="stylesheet" />
+  <link href="/wss/fonts.css?families=SF+Pro,v3|SF+Pro+Icons,v3" media="all" rel="stylesheet" type="text/css" />
+  <script defer="" src="/ac/globalnoticias/1/pt_BR/scripts/globalnoticias.js"></script>
+  <script defer="" src="/ac/globalpattern/1/pt_BR/scripts/globalpattern.js"></script>
+  <script defer="" src="/ac/globalfooter/1/pt_BR/scripts/globalfooter.js"></script>
+</head>
+
+<body>
+  <div id="globalheader">
+    <aside id="globalaside">
+      <div class="globalaside-content">
+        <div class="globalaside-list globalaside-list-unbt-gov">
+          <li class="globalaside-item globalaside-item-govbr">
+            <a class="globalaside-link globalaside-link-govbr" href="https://www.gov.br/pt-br" rel="noopener"
+              target="_blank">
+              <span class="globalaside-image-regular globalnav-link-image"> </span>
+              <span class="globalaside-link-text" style="display: none">gov.br</span>
+              <span class="globalaside-link-text">
+                <svg width="3.5em" height="100%" viewBox="0 0 108 41" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path
+                    d="M15.3721 9.81055H21.6475V31.1387C21.6475 33.1895 21.1758 34.9258 20.2324 36.3477C19.2891 37.7832 17.9697 38.8701 16.2744 39.6084C14.5928 40.3604 12.624 40.7363 10.3682 40.7363C9.37012 40.7363 8.35156 40.6064 7.3125 40.3467C6.27344 40.1006 5.30273 39.7314 4.40039 39.2393C3.49805 38.7471 2.73926 38.1387 2.12402 37.4141L5.01562 33.3535C5.57617 33.9824 6.28027 34.5156 7.12793 34.9531C7.97559 35.4043 8.97363 35.6299 10.1221 35.6299C11.1201 35.6299 11.9541 35.4521 12.624 35.0967C13.3076 34.7412 13.8271 34.2217 14.1826 33.5381C14.5381 32.8682 14.7158 32.0547 14.7158 31.0977V15.0605L15.3721 9.81055ZM0.626953 21.1719V20.7412C0.626953 19.0596 0.832031 17.5283 1.24219 16.1475C1.66602 14.7529 2.26758 13.5566 3.04688 12.5586C3.83984 11.5469 4.79688 10.7676 5.91797 10.2207C7.03906 9.67383 8.30371 9.40039 9.71191 9.40039C11.2295 9.40039 12.4736 9.69434 13.4443 10.2822C14.4287 10.8564 15.2148 11.6631 15.8027 12.7021C16.4043 13.7412 16.8691 14.958 17.1973 16.3525C17.5391 17.7334 17.8262 19.2236 18.0586 20.8232V21.3359C17.8262 22.8398 17.5049 24.2617 17.0947 25.6016C16.6982 26.9277 16.1787 28.1035 15.5361 29.1289C14.8936 30.1543 14.0869 30.9609 13.1162 31.5488C12.1592 32.123 11.0107 32.4102 9.6709 32.4102C8.27637 32.4102 7.01855 32.1299 5.89746 31.5693C4.79004 31.0088 3.83984 30.2227 3.04688 29.2109C2.26758 28.1992 1.66602 27.0098 1.24219 25.6426C0.832031 24.2754 0.626953 22.7852 0.626953 21.1719ZM7.53809 20.7412V21.1719C7.53809 22.0059 7.61328 22.7783 7.76367 23.4893C7.92773 24.2002 8.17383 24.8291 8.50195 25.376C8.83008 25.9092 9.2334 26.3262 9.71191 26.627C10.2041 26.9277 10.7783 27.0781 11.4346 27.0781C12.4326 27.0781 13.2393 26.8662 13.8545 26.4424C14.4697 26.0186 14.9141 25.417 15.1875 24.6377C15.4609 23.8584 15.5771 22.9424 15.5361 21.8896V20.2695C15.5635 19.3672 15.502 18.5742 15.3516 17.8906C15.2012 17.1934 14.9619 16.6123 14.6338 16.1475C14.3193 15.6826 13.8955 15.334 13.3623 15.1016C12.8428 14.8555 12.2139 14.7324 11.4756 14.7324C10.833 14.7324 10.2656 14.8828 9.77344 15.1836C9.28125 15.4844 8.87109 15.9082 8.54297 16.4551C8.21484 16.9883 7.96191 17.624 7.78418 18.3623C7.62012 19.0869 7.53809 19.8799 7.53809 20.7412ZM61.626 28.7598C61.626 27.7754 61.9814 26.9551 62.6924 26.2988C63.4033 25.6289 64.3193 25.2939 65.4404 25.2939C66.5752 25.2939 67.4912 25.6289 68.1885 26.2988C68.8994 26.9551 69.2549 27.7754 69.2549 28.7598C69.2549 29.7441 68.8994 30.5713 68.1885 31.2412C67.4912 31.8975 66.5752 32.2256 65.4404 32.2256C64.3193 32.2256 63.4033 31.8975 62.6924 31.2412C61.9814 30.5713 61.626 29.7441 61.626 28.7598ZM71.9512 0.5H78.8623V26.5449L78.1445 32H71.9512V0.5ZM92.4795 20.6592V21.0898C92.4795 22.7715 92.3086 24.3027 91.9668 25.6836C91.625 27.0645 91.0986 28.2607 90.3877 29.2725C89.6768 30.2705 88.7812 31.043 87.7012 31.5898C86.6211 32.1367 85.3428 32.4102 83.8662 32.4102C82.5264 32.4102 81.3779 32.123 80.4209 31.5488C79.4639 30.9609 78.6641 30.1543 78.0215 29.1289C77.3789 28.0898 76.8594 26.8936 76.4629 25.54C76.0664 24.1729 75.752 22.71 75.5195 21.1514V20.6387C75.752 19.0938 76.0664 17.6445 76.4629 16.291C76.8594 14.9238 77.3789 13.7275 78.0215 12.7021C78.6641 11.6631 79.457 10.8564 80.4004 10.2822C81.3574 9.69434 82.499 9.40039 83.8252 9.40039C85.3154 9.40039 86.6006 9.68066 87.6807 10.2412C88.7744 10.8018 89.6768 11.5879 90.3877 12.5996C91.0986 13.6113 91.625 14.8008 91.9668 16.168C92.3086 17.5352 92.4795 19.0322 92.4795 20.6592ZM85.5684 21.0898V20.6592C85.5684 19.8525 85.5205 19.0938 85.4248 18.3828C85.3291 17.6719 85.1582 17.043 84.9121 16.4961C84.666 15.9492 84.3174 15.5186 83.8662 15.2041C83.415 14.8896 82.8271 14.7324 82.1025 14.7324C81.3643 14.7324 80.7422 14.8555 80.2363 15.1016C79.7441 15.3477 79.3477 15.7031 79.0469 16.168C78.7598 16.6191 78.5547 17.1797 78.4316 17.8496C78.3086 18.5059 78.2539 19.251 78.2676 20.085V21.7051C78.2402 22.8398 78.3428 23.8105 78.5752 24.6172C78.8076 25.4238 79.2109 26.0391 79.7852 26.4629C80.3594 26.8867 81.1455 27.0986 82.1436 27.0986C82.8818 27.0986 83.4766 26.9551 83.9277 26.668C84.3926 26.3809 84.7412 25.9707 84.9736 25.4375C85.2061 24.9043 85.3633 24.2686 85.4453 23.5303C85.5273 22.792 85.5684 21.9785 85.5684 21.0898Z"
+                    fill="#2864AE" />
+                  <path
+                    d="M22.7646 21.1309V20.7002C22.7646 19.0732 22.9971 17.5762 23.4619 16.209C23.9268 14.8281 24.6104 13.6318 25.5127 12.6201C26.415 11.6084 27.5293 10.8223 28.8555 10.2617C30.1816 9.6875 31.7129 9.40039 33.4492 9.40039C35.1992 9.40039 36.7373 9.6875 38.0635 10.2617C39.4033 10.8223 40.5244 11.6084 41.4268 12.6201C42.3291 13.6318 43.0127 14.8281 43.4775 16.209C43.9424 17.5762 44.1748 19.0732 44.1748 20.7002V21.1309C44.1748 22.7441 43.9424 24.2412 43.4775 25.6221C43.0127 26.9893 42.3291 28.1855 41.4268 29.2109C40.5244 30.2227 39.4102 31.0088 38.084 31.5693C36.7578 32.1299 35.2266 32.4102 33.4902 32.4102C31.7539 32.4102 30.2158 32.1299 28.876 31.5693C27.5361 31.0088 26.415 30.2227 25.5127 29.2109C24.6104 28.1855 23.9268 26.9893 23.4619 25.6221C22.9971 24.2412 22.7646 22.7441 22.7646 21.1309ZM29.6758 20.7002V21.1309C29.6758 21.9648 29.7373 22.7441 29.8604 23.4688C29.9834 24.1934 30.1885 24.8291 30.4756 25.376C30.7627 25.9092 31.1523 26.3262 31.6445 26.627C32.1367 26.9277 32.752 27.0781 33.4902 27.0781C34.2148 27.0781 34.8164 26.9277 35.2949 26.627C35.7871 26.3262 36.1768 25.9092 36.4639 25.376C36.751 24.8291 36.9561 24.1934 37.0791 23.4688C37.2021 22.7441 37.2637 21.9648 37.2637 21.1309V20.7002C37.2637 19.8936 37.2021 19.1348 37.0791 18.4238C36.9561 17.6992 36.751 17.0635 36.4639 16.5166C36.1768 15.9561 35.7871 15.5186 35.2949 15.2041C34.8027 14.8896 34.1875 14.7324 33.4492 14.7324C32.7246 14.7324 32.1162 14.8896 31.624 15.2041C31.1455 15.5186 30.7627 15.9561 30.4756 16.5166C30.1885 17.0635 29.9834 17.6992 29.8604 18.4238C29.7373 19.1348 29.6758 19.8936 29.6758 20.7002ZM100.528 15.3066V32H93.6172V9.81055H100.077L100.528 15.3066ZM107.091 9.64648L106.968 16.0654C106.694 16.0381 106.325 16.0039 105.86 15.9629C105.396 15.9219 105.006 15.9014 104.691 15.9014C103.885 15.9014 103.188 15.9971 102.6 16.1885C102.025 16.3662 101.547 16.6396 101.164 17.0088C100.795 17.3643 100.521 17.8154 100.344 18.3623C100.18 18.9092 100.104 19.5449 100.118 20.2695L98.8672 19.4492C98.8672 17.959 99.0107 16.6055 99.2979 15.3887C99.5986 14.1582 100.022 13.0986 100.569 12.21C101.116 11.3076 101.779 10.6172 102.559 10.1387C103.338 9.64648 104.213 9.40039 105.184 9.40039C105.525 9.40039 105.86 9.4209 106.188 9.46191C106.53 9.50293 106.831 9.56445 107.091 9.64648Z"
+                    fill="#FABD10" />
+                  <path
+                    d="M52.9209 27.2627L57.2891 9.81055H64.5693L57.3096 32H53.0029L52.9209 27.2627ZM50.3369 9.81055L54.6436 27.2627L54.6025 32H50.2754L43.0361 9.81055H50.3369Z"
+                    fill="#46AD44" />
+                </svg>
+              </span>
+            </a>
+          </li>
+          <li class="globalaside-item globalaside-item-unbtv">
+            <a class="globalaside-link globalaside-link-unbtv" href="https://unbtv.unb.br" rel="noopener"
+              target="_blank">
+              <span class="globalaside-image-regular globalnav-link-image"> </span>
+              <span class="globalaside-link-text">eduplayUnBTV</span>
+            </a>
+          </li>
+        </div>
+        <ul class="globalaside-list" id="globalaside-list-gov">
+          <li class="globalaside-item globalaside-item-coronavarius">
+            <a class="globalaside-link globalaside-link-coronavarius" href="https://www.gov.br/saude/pt-br/vacinacao"
+              rel="noopener" target="_blank">
+              <span class="globalaside-image-regular globalaside-link-image"> </span>
+              <span class="globalaside-link-text globalaside-link-text-vacinacao">VACINAÇÃO</span>
+              <span class="globalaside-link-text-alternativo">VACINAS</span>
+            </a>
+          </li>
+          <span class="globalaside-espacador"></span>
+          <li class="globalaside-item globalaside-item-moreinfo">
+            <a class="globalaside-link globalaside-link-moreinfo" href="https://www.gov.br/acessoainformacao/pt-br"
+              rel="noopener" target="_blank">
+              <span class="globalaside-image-regular globalaside-link-image"> </span>
+              <span class="globalaside-link-text">Acesso à informação</span>
+            </a>
+          </li>
+          <span class="globalaside-espacador"></span>
+          <li class="globalaside-item globalaside-item-participe">
+            <a class="globalaside-link globalaside-link-participe" href="http:/gov.br/pt-br/participacao-social/"
+              rel="noopener" target="_blank">
+              <span class="globalaside-image-regular globalaside-link-image"> </span>
+              <span class="globalaside-link-text">Participe</span>
+            </a>
+          </li>
+          <span class="globalaside-espacador"></span>
+          <li class="globalaside-item globalaside-item-legislacao">
+            <a class="globalaside-link globalaside-link-legislacao" href="http:/planalto.gov.br/legislacao"
+              rel="noopener" target="_blank">
+              <span class="globalaside-image-regular globalaside-link-image"> </span>
+              <span class="globalaside-link-text">Legislação</span>
+            </a>
+          </li>
+          <span class="globalaside-espacador"></span>
+          <li class="globalaside-item globalaside-item-orggovbr">
+            <a class="globalaside-link globalaside-link-orggovbr" href="https://www.gov.br/pt-br/orgaos-do-governo"
+              rel="noopener" target="_blank">
+              <span class="globalaside-image-regular globalaside-link-image"> </span>
+              <span class="globalaside-link-text">Orgão do Governo</span>
+            </a>
+          </li>
+          <span class="globalaside-espacador"></span>
+          <li class="globalaside-item globalaside-item-acessibilidade">
+            <a class="globalaside-link globalaside-link-acessibilidade"
+              href="https://www.gov.br/governodigital/pt-br/acessibilidade-e-usuario/acessibilidade-digital"
+              rel="noopener" target="_blank">
+              <span class="globalaside-image-regular globalaside-link-image"> </span>
+              <span class="globalaside-link-text">Acessibilidade</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </aside>
+    <nav class="globalnavbar" id="globalnavbar">
+      <div class="globalnavbar-content">
+        <ul class="globalnavbar-list">
+          <li class="globalnavbar-item globalnavbar-item-estatistica">
+            <a class="globalnavbar-link globalnavbar-link-estatistica" href="/">
+              <span class="globalnavbar-link-estatistica-container">
+                <span class="globalnavbar-link-text globalnavbar-link-text-estatistica">Estatística</span>
+                <span class="globalnavbar-estatistica-regular globalnavbar-link-estatistica">
+                  <svg fill="none" height="44" viewbox="0 0 15 14" width="15" xmlns="http:/www.w3.org/2000/svg">
+                    <path clip-rule="evenodd"
+                      d="M5.55554 0.14135C2.8274 0.724643 0.706755 2.86846 0.142622 5.61333C-0.631706 9.38086 1.82483 13.0771 5.62171 13.8574C9.38923 14.6317 13.0854 12.1752 13.8658 8.37829C14.6401 4.61077 12.1835 0.914557 8.38667 0.134247C7.50365 -0.0472552 6.42473 -0.0445449 5.55554 0.14135ZM8.68229 0.840815C9.79943 1.13485 10.5888 1.6029 11.493 2.50705C12.8059 3.8199 13.3659 5.16201 13.3659 6.99581C13.3659 8.82962 12.8059 10.1717 11.493 11.4846C10.1984 12.7792 8.7893 13.3715 7.00419 13.3715C5.21907 13.3715 3.80996 12.7792 2.51542 11.4846C1.22079 10.19 0.628528 8.78093 0.628528 6.99581C0.628528 5.2107 1.22079 3.80158 2.51542 2.50705C4.21782 0.804552 6.35304 0.227708 8.68229 0.840815ZM7.96282 1.89628C7.69365 2.12273 7.44159 2.60425 7.33672 3.09193L7.28196 3.34708L5.32992 3.37231L3.37788 3.39755L4.62812 4.78853C5.31571 5.55361 5.86415 6.2055 5.84676 6.23719C5.82938 6.26887 5.2416 7.2933 4.54045 8.51363C3.8394 9.73395 3.26573 10.7539 3.26573 10.7801C3.26573 10.8063 3.89659 10.8277 4.66765 10.8277C5.43871 10.8277 6.06957 10.8516 6.06957 10.8806C6.06957 10.9097 6.02256 11.0253 5.96518 11.1376C5.78068 11.4984 5.48684 11.6646 5.02953 11.6668C4.56998 11.669 4.34399 11.8214 4.47821 12.0386C4.58634 12.2136 5.41254 12.1908 5.77592 12.0028C6.09658 11.837 6.40267 11.4433 6.49408 11.079L6.55716 10.8277H8.65163H10.7462L10.6934 10.6174C10.6643 10.5018 10.5662 10.1128 10.4753 9.75292C10.2819 8.98691 10.0891 8.88897 9.96907 9.49591L9.89046 9.89312H8.30713C6.78801 9.89312 6.7238 9.88555 6.7238 9.70685C6.7238 9.52965 7.50224 4.7089 7.61814 4.1686C7.67262 3.91448 7.6816 3.91158 8.41349 3.91158C9.11857 3.91158 9.15389 3.92158 9.15511 4.12187C9.15941 4.83424 9.47559 4.97761 9.56727 4.3088C9.60083 4.06467 9.65092 3.74924 9.67877 3.60783L9.72943 3.35082H8.78734H7.84534V3.10819C7.84534 2.78472 8.10414 2.36255 8.37938 2.23722C8.60219 2.13563 8.79799 2.20059 9.26801 2.53209C9.39484 2.62154 9.454 2.6207 9.54634 2.52836C9.69859 2.37611 9.56886 2.16086 9.15455 1.8788C8.74715 1.6014 8.30564 1.60785 7.96282 1.89628ZM7.15055 4.1686C7.12008 4.31001 7.03344 4.77872 6.95821 5.21032C6.88288 5.64184 6.80633 6.00979 6.7882 6.02793C6.74932 6.06681 4.85457 4.04654 4.85457 3.96626C4.85457 3.93616 5.38366 3.91158 6.03023 3.91158H7.20597L7.15055 4.1686ZM6.41678 8.58466L6.20397 9.84639L5.58114 9.87386L4.95832 9.90143L5.77096 8.50241C6.2179 7.73294 6.59399 7.15283 6.6066 7.21311C6.61922 7.27349 6.5338 7.89071 6.41678 8.58466Z"
+                      fill-rule="evenodd"></path>
+                  </svg>
+                </span>
+              </span>
+            </a>
+          </li>
+          <li class="globalnavbar-item globalnavbar-item-graduacao">
+            <a class="globalnavbar-link globalnavbar-link-graduacao" href="/graduacao/">
+              <span class="globalnavbar-link-graduacao-container">
+                <span class="globalnavbar-link-text">Graduação</span>
+                <span class="globalnavbar-graduacao-regular globalnavbar-link-graduacao">
+                  <svg height="44" viewbox="0 0 15 44" width="15"></svg>
+                </span>
+              </span>
+            </a>
+          </li>
+          <li class="globalnavbar-item globalnavbar-item-posgraduacao">
+            <a class="globalnavbar-link globalnavbar-link-posgraduacao" href="/posgraduacao/">
+              <span class="globalnavbar-link-posgraduacao-container">
+                <span class="globalnavbar-link-text">Pós-Graduação</span>
+                <span class="globalnavbar-posgraduacao-regular globalnavbar-link-posgraduacao">
+                  <svg height="44" viewbox="0 0 15 44">
+                    <!-- <path d="COLOQUE-CÓDIGO site-https://qnn.github.io/svg-path-editor/ " /> -->
+                  </svg>
+                </span>
+              </span>
+            </a>
+          </li>
+          <li class="globalnavbar-item globalnavbar-item-extensao">
+            <a class="globalnavbar-link globalnavbar-link-extensao" href="/extensao/">
+              <span class="globalnavbar-link-extensao-container">
+                <span class="globalnavbar-link-text">Extensão</span>
+                <span class="globalnavbar-extensao-regular globalnavbar-link-extensao">
+                  <svg height="44" viewbox="0 0 15 44">
+                    <!-- <path d="COLOQUE-CÓDIGO site-https://qnn.github.io/svg-path-editor/ " /> -->
+                  </svg>
+                </span>
+              </span>
+            </a>
+          </li>
+          <li class="globalnavbar-item globalnavbar-item-docentes">
+            <a class="globalnavbar-link globalnavbar-link-docentes" href="/docente/">
+              <span class="globalnavbar-link-docentes-container">
+                <span class="globalnavbar-link-text">Docentes</span>
+                <span class="globalnavbar-docentes-regular globalnavbar-link-docentes">
+                  <svg height="44" viewbox="0 0 15 44">
+                    <!-- <path d="COLOQUE-CÓDIGO site-https://qnn.github.io/svg-path-editor/ " /> -->
+                  </svg>
+                </span>
+              </span>
+            </a>
+          </li>
+          <li class="globalnavbar-item globalnavbar-item-pesquisa">
+            <a class="globalnavbar-link globalnavbar-link-pesquisa" href="/pesquisa/">
+              <span class="globalnavbar-link-pesquisa-container">
+                <span class="globalnavbar-link-text">Pesquisa</span>
+                <span class="globalnavbar-pesquisa-regular globalnavbar-link-pesquisa">
+                  <svg height="44" viewbox="0 0 15 44">
+                    <!-- <path d="COLOQUE-CÓDIGO site-https://qnn.github.io/svg-path-editor/ " /> -->
+                  </svg>
+                </span>
+              </span>
+            </a>
+          </li>
+          <li class="globalnavbar-item globalnavbar-item-eventos">
+            <a class="globalnavbar-link globalnavbar-link-eventos" href="/eventos/">
+              <span class="globalnavbar-link-eventos-container">
+                <span class="globalnavbar-link-text">Eventos</span>
+                <span class="globalnavbar-eventos-regular globalnavbar-link-eventos">
+                  <svg height="44" viewbox="0 0 15 44">
+                    <!-- <path d="COLOQUE-CÓDIGO site-https://qnn.github.io/svg-path-editor/ " /> -->
+                  </svg>
+                </span>
+              </span>
+            </a>
+          </li>
+          <li class="globalnavbar-item globalnavbar-item-noticias">
+            <a class="globalnavbar-link globalnavbar-link-noticias" href="/noticias/">
+              <span class="globalnavbar-link-noticias-container">
+                <span class="globalnavbar-link-text">Notícias</span>
+                <span class="globalnavbar-noticias-regular globalnavbar-link-noticias">
+                  <svg height="44" viewbox="0 0 15 44">
+                    <!-- <path d="COLOQUE-CÓDIGO site-https://qnn.github.io/svg-path-editor/ " /> -->
+                  </svg>
+                </span>
+              </span>
+            </a>
+          </li>
+          <li class="globalnavbar-item globalnavbar-item-ouvidoria">
+            <a class="globalnavbar-link globalnavbar-link-ouvidoria" href="https://www.ouvidoria.unb.br" rel="noopener"
+              target="_blank">
+              <span class="globalnavbar-link-ouvidoria-container">
+                <span class="globalnavbar-link-text">Ouvidoria</span>
+                <span class="globalnavbar-ouvidoria-regular globalnavbar-link-ouvidoria">
+                  <svg height="44" viewbox="0 0 15 44">
+                    <!-- <path d="COLOQUE-CÓDIGO site-https://qnn.github.io/svg-path-editor/ " /> -->
+                  </svg>
+                </span>
+              </span>
+            </a>
+          </li>
+          <li class="globalnavbar-item globalnavbar-item-instalacoes">
+            <a class="globalnavbar-link globalnavbar-link-instalacoes" href="/instalacoes/">
+              <span class="globalnavbar-link-instalacoes-container">
+                <span class="globalnavbar-link-text">Instalações</span>
+                <span class="globalnavbar-instalacoes-regular globalnavbar-link-instalacoes">
+                  <svg height="44" viewbox="0 0 15 44">
+                    <!-- <path d="COLOQUE-CÓDIGO site-https://qnn.github.io/svg-path-editor/ " /> -->
+                  </svg>
+                </span>
+              </span>
+            </a>
+          </li>
+          <li class="globalnavbar-item globalnavbar-item-contato">
+            <a class="globalnavbar-link globalnavbar-link-contato" href="/contato/">
+              <span class="globalnavbar-link-contato-container">
+                <span class="globalnavbar-link-text">Contato</span>
+                <span class="globalnavbar-contato-regular globalnavbar-link-contato">
+                  <svg height="44" viewbox="0 0 15 44">
+                    <!-- <path d="COLOQUE-CÓDIGO site-https://qnn.github.io/svg-path-editor/ " /> -->
+                  </svg>
+                </span>
+              </span>
+            </a>
+          </li>
+          <li class="globalnavbar-item globalnavbar-search" style="display: none">
+            <a aria-label="Search estatistica.pro" class="globalnavbar-link globalnavbar-link-search" href=""
+              role="button">
+              <span class="globalnavbar-image-regular">
+                <svg height="44px" viewbox="0 0 15 44" width="15px" xmlns="http:/www.w3.org/2000/svg">
+                  <path
+                    d="M14.298,27.202l-3.87-3.87c0.701-0.929,1.122-2.081,1.122-3.332c0-3.06-2.489-5.55-5.55-5.55c-3.06,0-5.55,2.49-5.55,5.55 c0,3.061,2.49,5.55,5.55,5.55c1.251,0,2.403-0.421,3.332-1.122l3.87,3.87c0.151,0.151,0.35,0.228,0.548,0.228 s0.396-0.076,0.548-0.228C14.601,27.995,14.601,27.505,14.298,27.202z M1.55,20c0-2.454,1.997-4.45,4.45-4.45 c2.454,0,4.45,1.997,4.45,4.45S8.454,24.45,6,24.45C3.546,24.45,1.55,22.454,1.55,20z">
+                  </path>
+                </svg>
+              </span>
+              <span class="globalnavbar-image-compact">
+                <svg height="48" viewbox="0 0 17 48" width="17" xmlns="http:/www.w3.org/2000/svg">
+                  <path
+                    d="m16.2294 29.9556-4.1755-4.0821a6.4711 6.4711 0 1 0 -1.2839 1.2625l4.2005 4.1066a.9.9 0 1 0 1.2588-1.287zm-14.5294-8.0017a5.2455 5.2455 0 1 1 5.2455 5.2527 5.2549 5.2549 0 0 1 -5.2455-5.2527z">
+                  </path>
+                </svg>
+              </span>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+    <section id="globalribbon">
+      <div id="globalribbon-content">
+        <div class="globalribbon-item">
+          <div class="ribbon-tipo-de-noticia" id="news-ribbon">
+            <div class="news-ribbon-content">
+              <span class="saa-calendario cepe-aprova-calendario-academico" id="news-content">Cepe aprova calendário
+                acadêmico para 2025.</span>
+              <a href="https://www.saa.unb.br/graduacao/calendario-academico#periodos-letivos-de-2025" rel="noopener"
+                target="_blank">Saiba mais
+                <span class="icon-chevronright"> </span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+  <main id="main-newsroom" class="main-newsroom" role="main">
+    <article id="article-content">
+      <div class="article-header">
+        <h1 id="date-title-article"> </h1>
+        <h2 id="date-subtitle-article"></h2>
+        <span id="date-author-article"></span>
+        <img id="date-image-article"></img>
+      </div>
+      <div data-section-article="Resumo" id="section-resumo" class="pagebody-copy"></div>
+      <div data-section-article="Introdução" id="section-introducao" class="pagebody-copy"></div>
+      <div data-section-article="Desenvolvimento" id="section-desenvolvimento" class="pagebody-copy"></div>
+      <div data-section-article="Conclusão" id="section-conclusao" class="pagebody-copy"></div>
+      <div data-section-article="Referencias" id="section-referencias" class="pagebody-copy"></div>
+      <div data-section-article="Anexos" id="section-anexos" class="pagebody-copy"></div>
+    </article>
+  </main>
+
+  <footer class="" id="globalfooter">
+    <div id="globalfooter-content">
+      <h2 class="globalfooter-content-label" id="globalfooter-content-label" style="display: none">
+        Estatistica
+      </h2>
+      <section aria-label="Footnotes" id="globalfooter-note">
+        <ul>
+          <li>
+            <span id="footnote-1">1.</span>
+            <p class="globalfooter-footnote-paragraph">
+              Este site foi criado com o objetivo de oferecer aos estudantes de estatística e áreas afins um espaço de
+              aprendizagem, troca e atualização sobre os principais conceitos, métodos e aplicações da ciência dos
+              dados. Aqui você encontrará materiais didáticos, exercícios, vídeos, links úteis e outras informações
+              relevantes para o seu desenvolvimento acadêmico e profissional na área de estatística.
+            </p>
+          </li>
+          <li>
+            Para mais informações sobre o departamento de estatística, visite o site
+            <a href="https://est.unb.br" rel="noopener" target="_blank">clicando aqui</a>.
+          </li>
+          <li>
+            <span id="footnote-2">2. </span>
+            <p class="globalfooter-footnote-paragraph">
+              O Departamento de Estatística da UnB é um órgão do Instituto de Ciências Exatas que se dedica ao ensino,
+              pesquisa e extensão em Estatística e Ciência de Dados, formando profissionais qualificados e
+              contribuindo para o desenvolvimento científico e tecnológico em diversas áreas do conhecimento. O
+              departamento oferece cursos de graduação e pós-graduação em Estatística, além de disciplinas que atendem
+              a diversos departamentos da universidade. O departamento também possui um site que oferece aos
+              estudantes de estatística e áreas afins um espaço de aprendizagem, troca e atualização sobre os
+              principais conceitos, métodos e aplicações da ciência dos dados, com materiais didáticos, exercícios,
+              vídeos, links úteis e outras informações relevantes.
+            </p>
+          </li>
+          <li>
+            <span id="footnote-3">3. </span>
+            <p class="globalfooter-footnote-paragraph">
+              A Universidade de Brasília (UnB) é uma universidade pública brasileira situada na capital federal,
+              Brasília. Ela é uma das maiores e mais prestigiadas instituições de ensino superior da região
+              Centro-Oeste e do Brasil.
+            </p>
+          </li>
+          <li>
+            Para mais informações sobre a Universidade de Brasília, visite o site
+            <a href="https://www.unb.br" rel="noopener" target="_blank">unb.br</a>.
+          </li>
+        </ul>
+      </section>
+      <nav class="ac-gf-directory with-5-columns" id="globalfooter-navgation">
+        <div class="gf-directory-column">
+          <div class="gf-directory-column-section">
+            <h3 class="gf-directory-column-section-title">
+              <span class="gf-directory-column-section-title-text"> Departamento </span>
+              <button aria-controls="footer-directory-column-section-products"
+                class="gf-directory-column-section-title-button">
+                <span class="gf-directory-column-section-title-text">Departamento</span>
+                <span aria-hidden="true" class="gf-directory-column-section-title-icon">+</span>
+              </button>
+            </h3>
+            <ul class="gf-directory-column-section-list" id="footer-directory-column-section-products" role="list">
+              <li class="gf-directory-column-section-item" role="listitem">
+                <a class="gf-directory-column-section-link" href="#">
+                  Graduação
+                </a>
+              </li>
+              <li class="gf-directory-column-section-item" role="listitem">
+                <a class="gf-directory-column-section-link" href="#">
+                  Pós-Graduação
+                </a>
+              </li>
+              <li class="gf-directory-column-section-item" role="listitem">
+                <a class="gf-directory-column-section-link" href="#">
+                  Extensão
+                </a>
+              </li>
+              <li class="gf-directory-column-section-item" role="listitem">
+                <a class="gf-directory-column-section-link" href="#">
+                  Docentes
+                </a>
+              </li>
+              <li class="gf-directory-column-section-item" role="listitem">
+                <a class="gf-directory-column-section-link" href="#">
+                  Pesquisa
+                </a>
+              </li>
+              <li class="gf-directory-column-section-item" role="listitem">
+                <a class="gf-directory-column-section-link" href="#">
+                  Eventos
+                </a>
+              </li>
+              <li class="gf-directory-column-section-item" role="listitem">
+                <a class="gf-directory-column-section-link" href="#">
+                  Instalações
+                </a>
+              </li>
+              <li class="gf-directory-column-section-item" role="listitem">
+                <a class="gf-directory-column-section-link" href="#">
+                  Notícias
+                </a>
+              </li>
+              <li class="gf-directory-column-section-item" role="listitem">
+                <a class="gf-directory-column-section-link" href="#">
+                  Contato
+                </a>
+              </li>
+              <li class="gf-directory-column-section-item" role="listitem">
+                <a class="gf-directory-column-section-link" href="#">
+                  Ouvidoria
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="gf-directory-column">
+          <div class="gf-directory-column-section">
+            <h3 class="gf-directory-column-section-title">
+              <span class="gf-directory-column-section-title-text"> Links Importante </span>
+              <button aria-controls="footer-directory-column-section-products" aria-expanded="false"
+                class="gf-directory-column-section-title-button">
+                <span class="gf-directory-column-section-title-text">Links Importante</span>
+                <span aria-hidden="true" class="gf-directory-column-section-title-icon">+</span>
+              </button>
+            </h3>
+            <ul class="gf-directory-column-section-list" id="footer-directory-column-section-products" role="list">
+              <li class="gf-directory-column-section-item" role="listitem">
+                <a class="gf-directory-column-section-link" href="#">
+                  Boas Viandas a Unb
+                </a>
+              </li>
+              <li class="gf-directory-column-section-item" role="listitem">
+                <a class="gf-directory-column-section-link" href="#">
+                  Calendário acadêmico
+                </a>
+              </li>
+              <li class="gf-directory-column-section-item" role="listitem">
+                <a class="gf-directory-column-section-link" href="#">
+                  Perguntas Frequentes
+                </a>
+              </li>
+              <li class="gf-directory-column-section-item" role="listitem">
+                <a class="gf-directory-column-section-link" href="#">
+                  Assistência Estudantil
+                </a>
+              </li>
+              <li class="gf-directory-column-section-item" role="listitem">
+                <a class="gf-directory-column-section-link" href="#">
+                  Canais oficiais - Unb
+                </a>
+              </li>
+              <li class="gf-directory-column-section-item" role="listitem">
+                <a class="gf-directory-column-section-link" href="#">
+                  Marca UnB
+                </a>
+              </li>
+              <li class="gf-directory-column-section-item" role="listitem">
+                <a class="gf-directory-column-section-link" href="#">
+                  Campanha Institucional 2023
+                </a>
+              </li>
+              <li class="gf-directory-column-section-item" role="listitem">
+                <a class="gf-directory-column-section-link" href="#">
+                  UnBTV
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="gf-directory-column">
+          <div class="gf-directory-column-section">
+            <h3 class="gf-directory-column-section-title">
+              <span class="gf-directory-column-section-title-text"> Secretaria de Administração Academica </span>
+              <button aria-controls="footer-directory-column-section-products" aria-expanded="false"
+                class="gf-directory-column-section-title-button">
+                <span class="gf-directory-column-section-title-text">Secretaria de Administração Academica</span>
+                <span aria-hidden="true" class="gf-directory-column-section-title-icon">+</span>
+              </button>
+            </h3>
+            <ul class="gf-directory-column-section-list" id="footer-directory-column-section-products" role="list">
+              <li class="gf-directory-column-section-item" role="listitem">
+                <a class="gf-directory-column-section-link" href="#">
+                  Identidade estudantil
+                </a>
+              </li>
+              <li class="gf-directory-column-section-item" role="listitem">
+                <a class="gf-directory-column-section-link" href="#">
+                  Passe estudantil
+                </a>
+              </li>
+              <li class="gf-directory-column-section-item" role="listitem">
+                <a class="gf-directory-column-section-link" href="#">
+                  Diploma Digital
+                </a>
+              </li>
+              <li class="gf-directory-column-section-item" role="listitem">
+                <a class="gf-directory-column-section-link" href="#">
+                  Emissão de Documentos Acadêmicos
+                </a>
+              </li>
+              <li class="gf-directory-column-section-item" role="listitem">
+                <a class="gf-directory-column-section-link" href="#">
+                  Registro Acadêmico
+                </a>
+              </li>
+              <li class="gf-directory-column-section-item" role="listitem">
+                <a class="gf-directory-column-section-link" href="#">
+                  SIGAA - Graduação e Pós-Graduação
+                </a>
+              </li>
+              <li class="gf-directory-column-section-item" role="listitem">
+                <a class="gf-directory-column-section-link" href="#">
+                  Emissão do Diploma
+                </a>
+              </li>
+              <li class="gf-directory-column-section-item" role="listitem">
+                <a class="gf-directory-column-section-link" href="#">
+                  Transporte
+                </a>
+              </li>
+              <li class="gf-directory-column-section-item" role="listitem">
+                <a class="gf-directory-column-section-link" href="#">
+                  Unb Idiomas
+                </a>
+              </li>
+              <li class="gf-directory-column-section-item" role="listitem">
+                <a class="gf-directory-column-section-link" href="#">
+                  Diretório Central dos Estudantes - DCE
+                </a>
+              </li>
+              <li class="gf-directory-column-section-item" role="listitem">
+                <a class="gf-directory-column-section-link" href="#">
+                  Legislação Graduação e Pós-Graduação
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="gf-directory-column">
+          <div class="gf-directory-column-section">
+            <h3 class="gf-directory-column-section-title">
+              <span class="gf-directory-column-section-title-text"> Administrativo - UnB </span>
+              <button aria-controls="footer-directory-column-section-products" aria-expanded="false"
+                class="gf-directory-column-section-title-button">
+                <span class="gf-directory-column-section-title-text"> Administrativo - UnB </span>
+                <span aria-hidden="true" class="gf-directory-column-section-title-icon">+</span>
+              </button>
+            </h3>
+            <ul class="gf-directory-column-section-list" id="footer-directory-column-section-products" role="list">
+              <li class="gf-directory-column-section-item" role="listitem">
+                <a class="gf-directory-column-section-link" href="#">
+                  Reitoria
+                </a>
+              </li>
+              <li class="gf-directory-column-section-item" role="listitem">
+                <a class="gf-directory-column-section-link" href="#">
+                  Vice-Reitoria
+                </a>
+              </li>
+              <li class="gf-directory-column-section-item" role="listitem">
+                <a class="gf-directory-column-section-link" href="#">
+                  Conselhos e câmaras
+                </a>
+              </li>
+              <li class="gf-directory-column-section-item" role="listitem">
+                <a class="gf-directory-column-section-link" href="#">
+                  Resoluções dos Conselhos Superiores
+                </a>
+              </li>
+              <li class="gf-directory-column-section-item" role="listitem">
+                <a class="gf-directory-column-section-link" href="#">
+                  Decanatos
+                </a>
+              </li>
+              <li class="gf-directory-column-section-item" role="listitem">
+                <a class="gf-directory-column-section-link" href="#">
+                  Secretarias
+                </a>
+              </li>
+              <li class="gf-directory-column-section-item" role="listitem">
+                <a class="gf-directory-column-section-link" href="#">
+                  Prefeitura da UnB
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="gf-directory-column">
+          <div class="gf-directory-column-section">
+            <h3 class="gf-directory-column-section-title">
+              <span class="gf-directory-column-section-title-text"> Serviçoes da Universidade </span>
+              <button aria-controls="footer-directory-column-section-products" aria-expanded="false"
+                class="gf-directory-column-section-title-button">
+                <span class="gf-directory-column-section-title-text"> Serviçoes da Universidade </span>
+                <span aria-hidden="true" class="gf-directory-column-section-title-icon">+</span>
+              </button>
+            </h3>
+            <ul class="gf-directory-column-section-list" id="footer-directory-column-section-products" role="list">
+              <li class="gf-directory-column-section-item" role="listitem">
+                <a class="gf-directory-column-section-link" href="#">
+                  Arquivo Central
+                </a>
+              </li>
+              <li class="gf-directory-column-section-item" role="listitem">
+                <a class="gf-directory-column-section-link" href="#">
+                  Biblioteca Central
+                </a>
+              </li>
+              <li class="gf-directory-column-section-item" role="listitem">
+                <a class="gf-directory-column-section-link" href="#">
+                  Editora UnB
+                </a>
+              </li>
+              <li class="gf-directory-column-section-item" role="listitem">
+                <a class="gf-directory-column-section-link" href="#">
+                  Equipe de Tratamento e Resposta a Incidentes Cibernéticos
+                </a>
+              </li>
+              <li class="gf-directory-column-section-item" role="listitem">
+                <a class="gf-directory-column-section-link" href="#">
+                  Fazenda Água Limpo
+                </a>
+              </li>
+              <li class="gf-directory-column-section-item" role="listitem">
+                <a class="gf-directory-column-section-link" href="#">
+                  Hospital Universitário
+                </a>
+              </li>
+              <li class="gf-directory-column-section-item" role="listitem">
+                <a class="gf-directory-column-section-link" href="#">
+                  Hospitais Veterinários
+                </a>
+              </li>
+              <li class="gf-directory-column-section-item" role="listitem">
+                <a class="gf-directory-column-section-link" href="#">
+                  Restaurante Universitário
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+      <section id="globalfooter-copyright">
+        <div class="gf-copyright-secretaria">
+          <span class="gf-copyright-secretaria-text">
+            Para mais informações, o email da Secretária do Departamento de Estatistica é
+            <a href="mailto:est@unb.br">est@unb.br</a>. Ou ligue para o numero
+            <a href="tel:+553131073697">3107-3697</a> ou <a href="tel:+553131073696">3107-3696</a>.
+          </span>
+          <span class="gf-copyright-secretaria-locale">
+            Localização por google mapas:
+            <a class="locale-dep-unb gf-copyright-locale-link" href="https://maps.app.goo.gl/S6zJwSsEXmhADdct8"
+              rel="noopener" target="_blank">
+              UNIVERSIDADE DE BRASÍLIA - PRÉDIO CIC/EST CAMPUS DARCY RIBEIRO - Asa Norte, Brasília - DF, 70910-900
+            </a>
+          </span>
+        </div>
+        <div id="gf-copyright-legal">
+          <div class="gf-copyright-legal-text">Copyright © 2023 Todos os direitos reservados.</div>
+          <ul class="gf-copyright-legal-links" role="list">
+            <li class="gf-copy-legal-links-item" role="listitem">
+              <a class="gf-copy-legal-link" href="/legal/">Politica de Privacidade</a>
+            </li>
+            <span class="footer-espacador"> </span>
+            <li class="gf-copy-legal-links-item" role="listitem">
+              <a class="gf-copy-legal-link" href="/legal/">Termos de uso</a>
+            </li>
+            <span class="footer-espacador"> </span>
+            <li class="gf-copy-legal-links-item" role="listitem">
+              <a class="gf-copy-legal-link" href="/sitemap/">
+                Site Map</a>
+            </li>
+          </ul>
+          <div class="gf-copyright-locale">
+            <a class="gf-copyright-locale-link locale-BR" href="#" rel="noopener" target="_blank">Brasil
+            </a>
+          </div>
+        </div>
+      </section>
+    </div>
+  </footer>
+</body>
+
+</html>
