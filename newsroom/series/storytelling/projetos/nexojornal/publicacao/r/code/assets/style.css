@@ -1,0 +1,129 @@
+
+html.remark-container, body.remark-container {
+    height: 100%;
+    width: 100%;
+    -webkit-print-color-adjust: exact;
+}
+
+html.remark-container, body.remark-container {
+    height: 100%;
+    width: 100%;
+    -webkit-print-color-adjust: exact;
+}
+
+/* classe do body*/
+.remark-container {
+    background: #d7d8d2;
+    margin: 0;
+    overflow: hidden;
+}
+
+.remark-slide-content {
+    background-color: #F8F8F8;
+    background-position: center;
+    background-repeat: no-repeat;
+    display: table-cell;
+    font-size: 20px;
+    padding: 20px 80px 20px 80px;
+}
+
+
+/* body*/
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", Roboto, Helvetica Neue, sans-serif;
+    display: block;
+    /*    font-family: 'Droid Serif', 'Palatino Linotype', 'Book Antiqua', Palatino, 'Microsoft YaHei', 'Songti SC', serif;*/
+}
+
+/* Pagina contendo a area do slide 01*/
+.remark-slide-scaler {
+    background-color: transparent;
+    overflow: hidden;
+    position: absolute;
+    -webkit-transform-origin: top left;
+    -moz-transform-origin: top left;
+    transform-origin: top-left;
+    -moz-box-shadow: 0 0 30px #888;
+    
+    /*-webkit e box-shadow são o que importa*/
+    /*Sombras da DIV CIMA-BAIXO*/
+    
+    -webkit-box-shadow: 0 0 30px #888;
+    box-shadow: 0 0 30px #888;
+}
+
+/*Comportamendo do conteudo desta DIV dentro da "remark-slide-scaler"
+Herdado da classe "html.remark-container, body.remark-container "*/
+.remark-slide {
+    height: 100%;
+    width: 100%;
+    display: table;
+    table-layout: fixed;
+}
+
+/* Configurcoes-conteudo*/
+.remark-slide-content {
+  /*cor-fundo-conteudo*/
+    background-color: #F8F8F8;
+    background-position: center;
+    background-repeat: no-repeat;
+    display: table-cell;
+    font-size: 20px;
+    padding: 20px 80px 20px 80px;
+}
+
+/*Titulo slide 01*/
+h1.maintitulo {
+    color: #3E488F;
+    margin-left: 20px;
+    margin-top: 90px;
+    margin-bottom: 44px;
+    font-size: 54px;
+    font-family: 'SF Pro Text';
+    font-weight: 800;
+}
+
+
+span.natureza{
+    display: block;
+    color: #3E488F;
+    margin-top: 0px;
+    margin-left: 20px;
+    margin-bottom: 40px;
+    font-size: 30px;
+    font-family: 'SF Pro Text';
+    font-weight: 400;
+}
+
+
+hr.linha {
+  width: 950px;
+    margin-bottom: 0px;
+      margin-left: 20px;
+    border: none;
+    height: 1px;
+    /* Set the hr color */
+    background-color: #333; /* Modern Browsers */
+    border-left-width: 0px;
+    border-right-width: 0px;
+}
+
+.footer-content {
+    margin-left: 20px;
+    display: flex;
+    gap: 15px;
+    margin-top: 30px;
+    align-items: center;
+    flex-wrap: nowrap;
+    flex-direction: row;
+}
+
+.footer-vertical-line{
+    height: 30px;
+    border-right: 1px solid #000;
+}
+
+.footer-texto-unb-dep{
+  font-size: 12px;
+  line-height: -0.5px;
+}

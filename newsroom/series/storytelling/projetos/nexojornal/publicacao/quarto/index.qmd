@@ -1,0 +1,41 @@
+---
+format: 
+  revealjs:
+    width: 1920
+    height: 1080
+    menu: false
+    navigation-mode: linear
+    transition: none
+    transition-speed: slow
+    background-transition: none
+    slide-number: true
+    show-slide-number: print
+    css: "style.css"   
+---
+
+# {.slide}
+
+
+[Avaliação Estatística da Influência de Recursos Complementares no Desempenho Acadêmico do Ensino Superior]{.titulo-capa #title}
+
+::: {.subtitulo-capa}
+[Defesa do Trabalho de Conclusão de curso]{.natureza #natureza-projeto}
+:::
+
+<!-- Rodapé customizado para CAPA -->
+:::{.footer-custom}
+:::{.footer-content}
+  ![](img/unb-logo.png)
+  [&nbsp;]{.line-vertical}
+  [Universidade de Brasilia]{.footer-texto-unb}
+  [Departamento de Estatística]{.footer-texto-dep}
+
+:::
+:::
+
+# {.slide}
+
+conteudo
+ti
+
+# {.slide-tcc}

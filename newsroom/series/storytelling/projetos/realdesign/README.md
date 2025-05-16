@@ -1,0 +1,1 @@
+Analise do trafego pago de um cliente da agencia de marketing digital Real Design, com o objetivo de entender o desempenho das campanhas e identificar oportunidades de otimização. O projeto utiliza dados reais de campanhas publicitárias para demonstrar como aplicar técnicas de storytelling com dados, utilizando a linguagem R e pacotes como `ggplot2` e `dplyr`.

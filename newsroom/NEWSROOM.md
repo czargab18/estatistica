@@ -1,3 +1,28 @@
+explicação:
+Newsroom e NewsHub são termos relacionados ao jornalismo, mas têm significados diferentes:
+
+Newsroom
+É o espaço físico ou virtual onde uma equipe de jornalistas, editores e produtores trabalha para produzir notícias. Pode ser de um jornal, revista, TV, rádio ou site de notícias.
+
+Função: Reuniões de pauta, apuração, redação, edição e produção de conteúdo.
+
+Exemplo: A sala onde repórteres e editores do The New York Times ou da GloboNews trabalham.
+
+NewsHub
+Geralmente se refere a um centro de distribuição ou agregação de notícias, que pode ser uma plataforma digital, um serviço de conteúdo compartilhado ou um sistema de integração de notícias de várias fontes.
+
+Função: Agregar, distribuir ou gerenciar notícias de diferentes veículos ou regiões.
+
+Exemplo: O Reuters News Hub é um sistema que fornece notícias para outros meios de comunicação.
+
+Diferença Principal
+Newsroom → Local de produção das notícias.
+
+NewsHub → Sistema de distribuição ou agregação de notícias.
+
+Algumas empresas usam "NewsHub" como marca (ex.: NewsHub na Nova Zelândia, um site de notícias), mas o conceito geral é de centralização de conteúdo.
+
+
 # Argo: Quarto - escrever artigos com Quarto
 
 Este projeto implementa um sistema de escrita e publicação de artigos utilizando **Quarto**. O objetivo é integrar o Quarto para a escrita de artigos no ``/newsroom/``, usar Python para extrair o conteúdo diretamente de arquivos `.qmd` do artigo e adicionar o conteúdo ao `modelo.html`. Além disso, os arquivos foram reorganizados para uma estrutura mais adequada.
