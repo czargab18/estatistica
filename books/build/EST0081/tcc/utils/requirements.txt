@@ -1,0 +1,3 @@
+Pillow
+pix2text
+
