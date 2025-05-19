@@ -1,0 +1,187 @@
+\documentclass[12pt,twoside,a4paper,brazilian]{article}
+% Arquivo contendo os pacotes
+\input{ac/dependecias/pacotes.tex}
+\input{ac/dependecias/config.tex}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%% INÍCIO DO DOCUMENTO %%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{document}
+
+%%%%%%%%%% CAPA %%%%%%%%%%
+\phantomsection
+\pdfbookmark[1]{Capa}{sec:capa}
+\include{pre-textuais/00-capa.tex}
+\newpage
+
+%%%%%%%%%% ROSTO %%%%%%%%%%
+\phantomsection
+\pdfbookmark[1]{Rosto}{sec:rosto}
+\include{pre-textuais/01-rosto.tex}
+\newpage
+
+%%%%%%%%%% ERRATA %%%%%%%%%%
+% \phantomsection
+% \section*{Errata}
+% \addcontentsline{toc}{section}{Errata}
+% \input{pre-textuais/02-errata.tex}
+% \markboth{Errata}{Errata}
+% \newpage
+
+%%%%%%%%%% FOLHA DE APROVAÇÃO %%%%%%%%%%
+% \input{pre-textuais/03-aprovacao.tex}
+% \addcontentsline{toc}{section}{\textbf{Aprovacao}}
+% \markboth{Folha de Aprovação}{Folha de Aprovação}
+% \newpage
+
+%%%%%%%%%% DEDICATÓRIAS %%%%%%%%%%
+\phantomsection
+\section*{Dedicatórias}
+\addcontentsline{toc}{section}{Dedicatórias}
+\input{pre-textuais/04-dedicatorias.tex}
+\markboth{Dedicatórias}{Dedicatórias}
+\newpage
+
+%%%%%%%%%% AGRADECIMENTOS %%%%%%%%%%
+\phantomsection
+\section*{Agradecimentos}
+\addcontentsline{toc}{section}{Agradecimentos}
+\input{pre-textuais/05-agradecimentos.tex}
+\markboth{Agradecimentos}{Agradecimentos}
+\newpage
+
+%%%%%%%%%% EPÍGRAFE %%%%%%%%%%
+\phantomsection
+\section*{Epígrafe}
+\addcontentsline{toc}{section}{Epígrafe}
+\input{pre-textuais/06-epigrafe.tex}
+ \markboth{Epígrafe}{Epígrafe}
+\newpage
+
+%%%%%%%%%% RESUMO %%%%%%%%%%
+\phantomsection
+\section*{Resumo}
+\addcontentsline{toc}{section}{Resumo}
+\input{pre-textuais/07-resumo.tex}
+\markboth{Resumo}{Resumo}
+\newpage
+
+%%%%%%%%%% ABSTRACT %%%%%%%%%%%
+\phantomsection
+\section*{Abstract}
+\addcontentsline{toc}{section}{Abstract}
+\input{pre-textuais/08-abstract.tex}
+\markboth{Abstract}{Abstract}
+\newpage
+
+
+%%%%%%%%%% GRÁFICOS - IMAGENS %%%%%%%%%%
+\phantomsection
+\graphicspath{ {ac/img/} }
+\newpage
+
+%%% LISTA DE TABELAS 
+\phantomsection
+\listoftables
+\newpage
+
+%%% LISTA DE ILUSTRAÇÕES
+\phantomsection
+\listoffigures
+\newpage
+
+%%% LISTA DE ABREVIATURAS E SIGLAS
+\phantomsection
+
+%%% LISTA DE SÍMBOLOS
+\phantomsection
+
+%%%%%%%%%% SUMÁRIO %%%%%%%%%%
+\phantomsection
+\tableofcontents
+
+%%%%%%%%%% PÁGINA EM BRANCO %%%%%%%%%%
+\blankpage
+\newpage
+
+%%%%%%%%%% INTRODUÇÃO %%%%%%%%%%
+\section{Introdução}
+\input{textuais/00-introducao.tex}
+\newpage
+
+%%%%%%%%%% PÁGINA EM BRANCO %%%%%%%%%%
+\blankpage
+\newpage
+
+%%%%%%%%%% Referencial Teórico %%%%%%%%%%
+\section{Referencial Teorico}
+\input{textuais/03-revisão-literaria}
+\newpage
+
+%%%%%%%%%% PÁGINA EM BRANCO %%%%%%%%%%
+\blankpage
+\newpage
+
+%%%%%%%%%% OBJETIVOS %%%%%%%%%%
+\section{Objetivos}
+\input{textuais/02-objetivos}
+\newpage
+
+%%%%%%%%%% PÁGINA EM BRANCO %%%%%%%%%%
+\blankpage
+\newpage
+
+%%%%%%%%%% METODOLOGIA %%%%%%%%%%
+\section{Metodologia}
+\input{textuais/04-metodologia}
+\newpage  
+
+%%%%%%%%%% PÁGINA EM BRANCO %%%%%%%%%%
+\blankpage
+\newpage
+
+%%%%%%%%%% ANALISE DOS RESULTADOS %%%%%%%%%%
+\section{Analise e Resultados}
+\input{textuais/05-analise-resultado}
+\newpage
+
+%%%%%%%%%% CONCLUSÕES %%%%%%%%%%
+\section{Conclusão}
+\input{textuais/06-conclusao}
+\newpage
+
+%%%%%%%%%% PÁGINA EM BRANCO %%%%%%%%%%
+\blankpage
+\newpage
+
+%%%%%%%%%% REFERÊNCIAS %%%%%%%%%%
+\phantomsection
+\bibliography{pos-textuais/referencias.bib}
+\newpage
+
+%%%%%%%%%% GLOSSÁRIO %%%%%%%%%%
+\section*{\normalfont{Glossário}}
+\addcontentsline{toc}{section}{\normalfont{Glossário}}
+\input{pos-textuais/01-glosario}
+\newpage
+
+%%%%%%%%%% APÊNDICE %%%%%%%%%%
+\section*{\normalfont{Apêndice}}
+\addcontentsline{toc}{section}{\normalfont{Apêndice}}
+\input{pos-textuais/02-apendice}
+
+%%%%%%%%%% ANEXO %%%%%%%%%%
+\section*{\normalfont{Anexo}}
+\addcontentsline{toc}{section}{\normalfont{Anexo}}
+\input{pos-textuais/03-anexo}
+\newpage
+
+%%%%%%%%%% ÍNDICE %%%%%%%%%%
+\section*{\normalfont{Índice}}
+\addcontentsline{toc}{section}{\normalfont{Índice}}
+\input{pos-textuais/04-indice.tex}
+\newpage
+
+%%%%%%%%%% FIM DO DOCUMENTO %%%%%%%%%%
+\end{document}

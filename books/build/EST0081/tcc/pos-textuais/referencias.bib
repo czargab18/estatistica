@@ -1,0 +1,101 @@
+% Estrutura das chamadas das citações:
+%  - <tipo>:<chamada>:<autor><ano><title>
+%  - <tipo>: se é um artigo, Tese de PhD, livro, etc..
+%  - <chamada>: valor para citar o <tipo>
+%  - <autor>: nome do autor que está sendo citado
+%  - <ano>: ano do lançamento do <tipo>
+%  - <title>: titulo do <tipo>
+
+% Exemplos de tipos de Citação: 
+
+% Artigo de Revista
+@article{sobrenome2023titulo,
+  author  = {Sobrenome, Nome},
+  title   = {Titulo do Artigo},
+  journal = {Nome do Jornal},
+  year    = {2023},
+  volume  = {10},
+  number  = {2},
+  pages   = {123-456},
+  month   = {January},
+  note    = {Some note},
+  doi     = {10.1234/example.doi}
+}
+
+% Livro
+@book{enome2023titulo,
+  author    = {Sobrenome, Nome},
+  title     = {Titulo do Livro},
+  publisher = {Nome da Editora},
+  year      = {2023},
+  address   = {Cidade},
+  edition   = {2},
+  volume    = {1},
+  series    = {Nome da Série},
+  note      = {Some note},
+  isbn      = {123-456-789}
+}
+
+% Capítulo de Livro
+@inbook{sobrenome2023capitulo,
+  author    = {Sobrenome, Nome},
+  title     = {Titulo do Capítulo},
+  booktitle = {Titulo do Livro},
+  publisher = {Nome da Editora},
+  year      = {2023},
+  chapter   = {1},
+  pages     = {123-456},
+  address   = {Cidade},
+  edition   = {2},
+  volume    = {1},
+  series    = {Nome da Série},
+  note      = {Some note},
+  isbn      = {123-456-789}
+}
+
+% Dissertação de Mestrado
+@mastersthesis{sobrenome2023dissertacao,
+  author  = {Sobrenome, Nome},
+  title   = {Titulo da Dissertação},
+  school  = {Nome da Instituição},
+  year    = {2023},
+  address = {Cidade},
+  note    = {Some note}
+}
+
+% Tese de Doutorado
+@phdthesis{sobrenome2023tese,
+  author  = {Sobrenome, Nome},
+  title   = {Titulo da Tese},
+  school  = {Nome da Instituição},
+  year    = {2023},
+  address = {Cidade},
+  note    = {Some note}
+}
+% Site
+@misc{sobrenome2023site,
+  author       = {Sobrenome, Nome},
+  title        = {Titulo da Página},
+  howpublished = {\url{http://www.exemplo.com}},
+  year         = {2023},
+  note         = {Acessado em: 01/01/2023}
+}
+
+% Vídeo
+@misc{sobrenome2023video,
+  author       = {Sobrenome, Nome},
+  title        = {Titulo do Vídeo},
+  howpublished = {YouTube},
+  year         = {2023},
+  note         = {Disponível em: \url{http://www.youtube.com/exemplo}, Acessado em: 01/01/2023}
+}
+
+% Trabalho de Conclusão de Curso (TCC)
+@misc{sobrenome2023tcc,
+  author       = {Sobrenome, Nome},
+  title        = {Titulo do TCC},
+  howpublished = {Trabalho de Conclusão de Curso, Nome da Instituição},
+  year         = {2023},
+  address      = {Cidade},
+  note         = {Some note}
+}
