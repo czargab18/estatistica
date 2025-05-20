@@ -18,3 +18,16 @@ A principal razão é falta de dedicação exclusiva ao projeto. O projeto é al
 A segunda razão é a constante reestruturação do projeto ou de partes dele. O que pode levar tempo, mas é necessário para o bom funcionamento. Além disso, a reestruturação é algo que pode ser feito em paralelo com o desenvolvimento.
 
 Como não há um fim, não haverá pressa para concluir o projeto.
+
+## Pastas em desenvolvimento
+
+- **books**: livros em desenvolvimento. O objetivo é criar livros sobre estatística com base em minhas notas de aulas e exercícios resolvidos, da maneira que eu desejar. Sujeito a escrever e reescrever quantas vezes eu desejar até ficar do meu agrado. Conterá livros sobre estatística, probabilidade, inferência, estatística descritiva, estatística inferencial, estatística bayesiana, estatística não paramétrica, estatística multivariada, estatística espacial, estatística temporal, estatística computacional e estatística aplicada. Além de livros sobre programação em R e Python. Além de exercícios resolvidos.
+
+- **apps**: aplicativos em desenvolvimento. O objetivo é criar aplicativos para facilitar a vida acadêmica e profissional. Recursos como calculadoras, simuladores, geradores de gráficos e tabelas, entre outros. 
+    - **ira**: aplicativo para calcular o índice de rendimento acadêmico (IRA) da Universidade de Brasília. O aplicativo é simples e fácil de usar. O usuário deve informar as notas e os créditos das disciplinas cursadas. O aplicativo calcula o IRA e exibe o resultado na tela. Além disso, o aplicativo permite que o usuário salve os dados em um arquivo CSV para futuras consultas.
+    - **notas para mestrado**: ...
+
+- **docentes**: 
+- **newsroom**:
+- **boasvindas**:
+- **appsShiny**:
