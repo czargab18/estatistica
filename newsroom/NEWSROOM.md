@@ -1,3 +1,5 @@
+# Relacionado a página de noticias newsroom que é diferente de ac/globalnoticias em slide-infinito em /index.html
+
 explicação:
 Newsroom e NewsHub são termos relacionados ao jornalismo, mas têm significados diferentes:
 
