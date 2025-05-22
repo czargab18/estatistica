@@ -1,0 +1,60 @@
+🔝 Top 10 frases mais repetidas na coluna 'AperfeicoamentoSistema':
+
+281x - Prezados(as),
+Gostaríamos de propor as seguintes sugestões e/ou melhorias para sistema formPD, a saber:
+Implementar um assistente virtual para ajudar os usuários com dúvidas frequentes e orientá-los no preenchimento do formulário e; implementar uma sessão FAQ integrada na plataforma para disponibilizar procedimentos e esclarecer dúvidas frequentes sobre o preenchimento de projetos, permitindo que os usuários acessem facilmente informações relevantes durante o processo;
+Implementar alertas em tempo real para identificar pontos que necessitam de ajustes antes do envio do formulário. Isso pode abranger alertas relativos à quantidade de horas totais dos colaboradores e área do projeto;
+Empregar técnicas avançadas de processamento de linguagem natural para a identificação automática de palavras-chave durante o preenchimento dos relatórios, a fim de detectar termos que não estejam alinhados com conceitos de inovação tecnológica e possibilitar sua correção;
+Inclusão de um novo campo para registro de pesquisadores remanejados para funções exclusivas;
+Disponibilização de API para submissão dos dados;
+Disponibilização de upload massivo via arquivo cvs nos formulários de colaboradores exclusivos, serviços de terceiros e material de consumo (função que já existe para o RH).
+264x - Não se aplica
+140x - Prezado (as),
+Gostaríamos de propor as seguintes sugestões e/ou melhorias para sistema FORMPD, a saber:
+•	Implementar um assistente virtual para ajudar os usuários com dúvidas frequentes e orientá-los no preenchimento do formulário e; implementar uma sessão FAQ integrada na plataforma para disponibilizar procedimentos e esclarecer dúvidas frequentes sobre o preenchimento de projetos, permitindo que os usuários acessem facilmente informações relevantes durante o processo;
+•	Implementar alertas em tempo real para identificar pontos que necessitam de ajustes antes do envio do formulário. Isso pode abranger alertas relativos à quantidade de horas totais dos colaboradores e área do projeto;
+•	Empregar técnicas avançadas de processamento de linguagem natural para a identificação automática de palavras-chave durante o preenchimento dos relatórios, a fim de detectar termos que não estejam alinhados com conceitos de inovação tecnológica e possibilitar sua correção;
+•	Inclusão de um novo campo para registro de pesquisadores remanejados para funções exclusivas;
+•	Disponibilização de API para submissão dos dados;
+•	Disponibilização de upload massivo via arquivo com extensão .csv nos formulários de colaboradores exclusivos, serviços de terceiros e material de consumo (função que já existe para o RH).
+134x - Prezados(as),
+Gostaríamos de propor as seguintes sugestões e/ou melhorias para sistema formPD, a saber:
+•	Implementar um assistente virtual para ajudar os usuários com dúvidas frequentes e orientá-los no preenchimento do formulário e; implementar uma sessão FAQ integrada na plataforma para disponibilizar procedimentos e esclarecer dúvidas frequentes sobre o preenchimento de projetos, permitindo que os usuários acessem facilmente informações relevantes durante o processo;
+•	Implementar alertas em tempo real para identificar pontos que necessitam de ajustes antes do envio do formulário. Isso pode abranger alertas relativos à quantidade de horas totais dos colaboradores e área do projeto;
+•	Empregar técnicas avançadas de processamento de linguagem natural para a identificação automática de palavras-chave durante o preenchimento dos relatórios, a fim de detectar termos que não estejam alinhados com conceitos de inovação tecnológica e possibilitar sua correção;
+•	Inclusão de um novo campo para registro de pesquisadores remanejados para funções exclusivas;
+•	Disponibilização de API para submissão dos dados;
+•	Disponibilização de upload massivo via arquivo cvs nos formulários de colaboradores exclusivos, serviços de terceiros e material de consumo (função que já existe para o RH).
+80x - Permitir a importação de informações | Permitir a troca do e-mail de acesso ao sistema | Permitir a visualização dos dados do representante legal ao acessar o login e senha, para confirmação dos dados.
+60x - Permitir a importação de informações; Permitir a troca do e-mail de acesso ao sistema; Permitir a visualização dos dados do representante legal ao acessar o login e senha, para confirmação dos dados.
+28x - Gostaríamos de propor as seguintes sugestões e/ou melhorias para sistema formPD, a saber: implementar um assistente virtual para auxiliar os usuários com dúvidas frequentes e orientá-los no preenchimento do formulário e; implementar uma sessão FAQ integrada na plataforma para disponibilizar procedimentos e esclarecer dúvidas frequentes sobre o preenchimento de projetos, permitindo que os usuários acessem facilmente informações relevantes durante o processo; implementar alerta em tempo real para identificar pontos que necessitam de ajustes antes do envio do formulário. Isso pode abranger alertas relativos à quantidade de horas totais dos colaboradores e área do projeto; empregar técnicas avançadas de processamento de linguagem natural para a identificação automática de palavras-chave durante o preenchimento dos relatórios, a fim de detectar termos que não estejam alinhados com conceitos de inovação tecnológica e possibilitar sua correção; inclusão de um novo campo para registro de pesquisadores remanejados para funções exclusivas; disponibilização de API para submissão dos dados; disponibilização de upload massivo via. Arquivo CSV nos formulários de colaboradores exclusivos, serviços de terceiros e material de consumo (função que já existe para o RH).
+24x - Gostaríamos de propor as seguintes sugestões e/ou melhorias para sistema formPD, a saber:
+•	Implementar um assistente virtual para ajudar os usuários com dúvidas frequentes e orientá-los no preenchimento do formulário e; 
+•	implementar uma sessão FAQ integrada na plataforma para disponibilizar procedimentos e esclarecer dúvidas frequentes sobre o preenchimento de projetos, permitindo que os usuários acessem facilmente informações relevantes durante o processo;
+•	Implementar alertas em tempo real para identificar pontos que necessitam de ajustes antes do envio do formulário. Isso pode abranger alertas relativos à quantidade de horas totais dos colaboradores e área do projeto;
+•	Empregar técnicas avançadas de processamento de linguagem natural para a identificação automática de palavras-chave durante o preenchimento dos relatórios, a fim de detectar termos que não estejam alinhados com conceitos de inovação tecnológica e possibilitar sua correção;
+•	Inclusão de um novo campo para registro de pesquisadores remanejados para funções exclusivas;
+•	Disponibilização de API para submissão dos dados;
+•	Disponibilização de upload massivo via arquivo cvs nos formulários de colaboradores exclusivos, serviços de terceiros e material de consumo (função que já existe para o RH)
+19x - Prezados(as), 
+
+Gostaríamos de propor as seguintes sugestões e/ou melhorias para sistema formPD, a saber: 
+
+Implementar um assistente virtual para ajudar os usuários com dúvidas frequentes e orientá-los no preenchimento do formulário e; implementar uma sessão FAQ integrada na plataforma para disponibilizar procedimentos e esclarecer dúvidas frequentes sobre o preenchimento de projetos, permitindo que os usuários acessem facilmente informações relevantes durante o processo; 
+
+Implementar alertas em tempo real para identificar pontos que necessitam de ajustes antes do envio do formulário. Isso pode abranger alertas relativos à quantidade de horas totais dos colaboradores e área do projeto; 
+
+Empregar técnicas avançadas de processamento de linguagem natural para a identificação automática de palavras-chave durante o preenchimento dos relatórios, a fim de detectar termos que não estejam alinhados com conceitos de inovação tecnológica e possibilitar sua correção; 
+
+Inclusão de um novo campo para registro de pesquisadores remanejados para funções exclusivas; 
+
+Disponibilização de API para submissão dos dados; 
+
+Disponibilização de upload massivo via arquivo cvs nos formulários de colaboradores exclusivos, serviços de terceiros e material de consumo (função que já existe para o RH).
+18x - Gostaríamos de propor as seguintes sugestões e/ou melhorias para sistema formPD, a saber:
+-Implementar um assistente virtual para ajudar os usuários com dúvidas frequentes e orientá-los no preenchimento do formulário e; implementar uma sessão FAQ integrada na plataforma para disponibilizar procedimentos e esclarecer dúvidas frequentes sobre o preenchimento de projetos, permitindo que os usuários acessem facilmente informações relevantes durante o processo;
+-Implementar alertas em tempo real para identificar pontos que necessitam de ajustes antes do envio do formulário. Isso pode abranger alertas relativos à quantidade de horas totais dos colaboradores e área do projeto;
+-Empregar técnicas avançadas de processamento de linguagem natural para a identificação automática de palavras-chave durante o preenchimento dos relatórios, a fim de detectar termos que não estejam alinhados com conceitos de inovação tecnológica e possibilitar sua correção;
+-Inclusão de um novo campo para registro de pesquisadores remanejados para funções exclusivas;
+-Disponibilização de API para submissão dos dados;
+-Disponibilização de upload massivo via arquivo cvs nos formulários de colaboradores exclusivos, serviços de terceiros e material de consumo (função que já existe para o RH
