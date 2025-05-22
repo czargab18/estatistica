@@ -1,11 +1,11 @@
 {
   "files.exclude": {
+    "**/*/.gitignore/": true,
     "**/.svn": true,
     "**/.hg": true,
     "**/.DS_Store": true,
     "**/Thumbs.db": true,
     "**/.quarto/": true,
-    "**/*/.gitignore/": false,
     "**/**/delete": true,
     "**/*/index_files/": true,
     "**/site_libs": true,
