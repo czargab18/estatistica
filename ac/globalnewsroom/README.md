@@ -34,6 +34,7 @@ structure = [
     "ac/globalnewsroom/1/pt_BR/home/scripts/newsroom.js",
     "ac/globalnewsroom/1/pt_BR/home/styles/newsroom.css",
 ]
+
 # Função para criar a estrutura da pasta
 createdir(structure=structure)
 ```
