@@ -4,38 +4,22 @@ Este diretório é responsavel por funcionalidades de automação do repositóri
 ## Estrutura do Diretório
 
 ```{plaintext}
-backend/              # Diretório principal do backend
-├── .vscode/          # Configurações do Visual Studio Code
-│   └── settings.json # Configurações do ambiente de desenvolvimento
-├── backend.egg-info/ # Metadados do pacote Python
-│   ├── PKG-INFO      # Informações sobre o pacote
-│   ├── requires.txt  # Dependências do projeto
-│   ├── SOURCES.txt   # Lista de arquivos incluídos no pacote
-│   └── top_level.txt # Diretórios principais do pacote
-├── build/            # Scripts e ferramentas de construção
-│   ├── booksguide.py # Script para automação de books quarto
-│   ├── ger_sitemap.py # Gera o arquivo `sitemap.xml`
-│   ├── rename_links.py # Renomeia links em arquivos
-│   └── ...           # Outros scripts de suporte
-├── core/             # Scripts principais e utilitários
-│   ├── books/        # Scripts relacionados a livros e materiais acadêmicos
-│   │   └── functions.py # Funções para manipulação de livros
-│   ├── dir/          # Scripts para manipulação de diretórios e arquivos
-│   │   └── list_paths_folders.py # Lista caminhos e pastas
-│   └── utils/        # Scripts utilitários gerais
-│       └── ger_sitemap.py # Gera o arquivo `sitemap.xml`
-├── data/             # Dados utilizados pelo backend
-│   ├── avisos/       # Dados relacionados a avisos e eventos
-│   │   └── avisos.json # Lista de avisos
-│   ├── books/        # Dados sobre disciplinas e livros
-│   │   └── disciplinas.json # Informações detalhadas sobre disciplinas acadêmicas
-│   └── newsroom/     # Dados para o sistema de publicação
-├── teste/            # Scripts de teste e experimentação
-│   ├── t2.py         # Script de teste
-│   └── __teste__.py  # Arquivo de experimentação
-├── requirements.txt  # Dependências do projeto
-├── setup.py          # Script de configuração do pacote
-└── MANIFEST.in       # Arquivos incluídos no pacote
+backend/
+├── build/               # Scripts e utilitários de build
+├── src/
+│   └── backend/
+│       ├── core/
+│       ├── data/
+│       └── __init__.py
+├── tests/               # Testes automatizados
+├── tools/               # Scripts de automação
+├── vendor/              # Binários e softwares de terceiros (não versionados)
+├── README.md
+├── requirements.txt
+├── setup.py
+├── pyproject.toml
+├── MANIFEST.in
+├── .gitignore
 ```
 
 ## Descrição dos Subdiretórios
