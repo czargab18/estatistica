@@ -1,66 +1,96 @@
 # Backend
-Este diretório é responsavel por funcionalidades de automação do repositório. Ele inclui scripts, dados estruturados e ferramentas utilitárias.
+
+Este diretório reúne as principais funcionalidades de automação, processamento de dados e suporte à publicação acadêmica do repositório.
+
+---
 
 ## Estrutura do Diretório
 
-```{plaintext}
+```plaintext
 backend/
-├── build/               # Scripts e utilitários de build
+├── build/               # Scripts e utilitários de build, pós-processamento e experimentação
 ├── src/
 │   └── backend/
-│       ├── core/
-│       ├── data/
+│       ├── core/        # Código-fonte principal e módulos centrais do backend
+│       ├── data/        # Dados estáticos ou exemplos distribuídos com o pacote
 │       └── __init__.py
-├── tests/               # Testes automatizados
-├── tools/               # Scripts de automação
-├── vendor/              # Binários e softwares de terceiros (não versionados)
-├── README.md
-├── requirements.txt
-├── setup.py
-├── pyproject.toml
-├── MANIFEST.in
-├── .gitignore
+├── tests/               # Testes automatizados (pytest/unittest)
+├── tools/               # Scripts de automação e utilitários para tarefas recorrentes
+├── vendor/              # Binários, softwares e dependências de terceiros (não versionados)
+├── README.md            # Documentação principal deste diretório
+├── requirements.txt     # Lista de dependências do projeto backend
+├── setup.py             # Script de configuração para empacotamento via setuptools
+├── pyproject.toml       # Configuração para build moderno do Python (PEP 517/518)
+├── MANIFEST.in          # Instruções para inclusão de arquivos extras no pacote
+├── .gitignore           # Arquivos e pastas ignorados pelo Git
 ```
+
+---
 
 ## Descrição dos Subdiretórios
 
-- **.vscode/**: Contém configurações específicas do Visual Studio Code para facilitar o desenvolvimento.
-- **backend.egg-info/**: Metadados do pacote Python, incluindo informações sobre dependências e arquivos incluídos.
-- **build/**: Scripts e ferramentas para automação de tarefas, como geração de sitemaps e manipulação de links.
-- **core/**: Scripts principais e utilitários que implementam a lógica do backend. Inclui funções para manipulação de livros e diretórios.
-- **data/**: Contém dados estruturados utilizados pelo backend, como avisos, informações sobre disciplinas e dados para o sistema de publicação.
-- **teste/**: Scripts de teste e experimentação, úteis para validar funcionalidades e testar novas implementações.
+- **build/**: Scripts de construção, pós-processamento, integração ou experimentação relacionados ao projeto.
+- **src/backend/**: Código-fonte principal do pacote Python, contendo módulos, funções e recursos essenciais.
+- **src/backend/data/**: Dados estáticos, exemplos ou recursos acessíveis pelos módulos do pacote.
+- **tests/**: Testes automatizados para garantir a integridade do código.
+- **tools/**: Scripts utilitários e de automação para facilitar operações recorrentes.
+- **vendor/**: Binários e softwares de terceiros utilizados pontualmente ou por automações (ignore no Git).
+
+---
 
 ## Funcionalidades
 
-- **Geração de Sitemap**: Criação de um arquivo `sitemap.xml` para organizar links do projeto.
-- **Manipulação de Dados Acadêmicos**: Scripts para processar e organizar informações sobre disciplinas.
-- **Publicação de Artigos**: Sistema integrado para criar e gerenciar artigos.
-- **Automação de Tarefas**: Scripts para atualização de dados e manutenção do sistema.
-- **Gerenciamento de Recursos**: Organização de imagens, scripts e estilos para publicações.
+- **Geração de Sitemap**: Automatiza a criação de um arquivo `sitemap.xml` para organizar e indexar links do projeto.
+- **Manipulação de Dados Acadêmicos**: Processamento e organização de informações sobre disciplinas, livros e materiais didáticos.
+- **Publicação de Artigos**: Suporte à criação, processamento e gestão de artigos acadêmicos.
+- **Automação de Tarefas**: Scripts para atualização de dados, manutenção rotineira e integração de sistemas.
+- **Gerenciamento de Recursos**: Organização de imagens, scripts e estilos para publicações ou relatórios.
 
+---
 
 ## Instalação e Configuração
-Para utilizar o backend, é necessário ter o Python 3.8 ou superior instalado em seu sistema. Além disso, recomenda-se criar um ambiente virtual para evitar conflitos de dependências.
 
-Para utilizar o backend, siga os passos abaixo:
-1. Clone o repositório:
-   ```{bash}
-    git clone https://github.com/cesargabrielphd/estatistica.git
-   ```
+> **Pré-requisitos:**  
+> - Python 3.8 ou superior  
+> - Recomenda-se o uso de um ambiente virtual para isolar dependências.
 
-2. Navegue até o diretório do backend:
-   ```{bash}
-    cd backend
-    ```
-3. Instale o pacote `backend`:
-   ```{bash}
-   pip install -e backend
-   ```
-     - *observação*: ou instale as dependencias do diretorio `backend` diretamente com o comando:
-         ```{bash}
-         pip install -r backend/requirements.txt
-         ```
+### 1. Clone o repositório
 
+```bash
+git clone https://github.com/cesargabrielphd/estatistica.git
+```
 
-- **Observações**: o diretório `backend` é projetado para ser modular e extensível. Novos serviços, scripts e dados podem ser adicionados conforme as necessidades do projeto evoluem.
+### 2. Navegue até o diretório do backend
+
+```bash
+cd estatistica/backend
+```
+
+### 3. Instale o pacote `backend` no modo desenvolvimento
+
+```bash
+pip install -e .
+```
+
+### 4. (Alternativa) Instale apenas as dependências
+
+```bash
+pip install -r requirements.txt
+```
+
+---
+
+## Observações
+
+- Scripts de automação adicionais podem ser executados diretamente a partir do diretório `tools/`.
+- Binários e softwares em `vendor/` **não são versionados**; recompile ou baixe-os conforme instruções internas.
+- Para empacotar o backend para distribuição, utilize:
+  ```bash
+  python -m build
+  ```
+
+---
+
+## Contato
+
+Dúvidas, sugestões ou contribuições? Abra uma issue ou entre em contato pelo [perfil do mantenedor](https://github.com/cesargabrielphd).
