@@ -1,5 +1,16 @@
-# ############################## PASTA NODE_MODULES ############################
+# ############################## PASTA GRANDES #################################
 node_modules/
+vendor/
+
+# ############################## BASES DE DADOS ############################
+*.csv
+*.DBF
+*.xlsx
+*.xls
+*.db
+*.sqlite
+*.sqlite3
+*.pdf
 
 # ############################## PASTA BUILD/OUTPUT ############################
 .next/
@@ -8,14 +19,19 @@ coverage/
 .eggs/
 *.egg-info/
 *.tsbuildinfo
+*.war
+*.jar
 
 # ############################## PASTA CACHE ##############################
 **/*cache*/
 **/__pycache__/
+**/.pytest_cache/
+**/.mypy_cache/
 **/.ipynb_checkpoints/
 **/.dmypy.json
 **/.pyre/
 **/.pytype/
+**/.gradle/
 
 # ############################## PASTA LOGS ##############################
 *.log
@@ -25,6 +41,7 @@ yarn-error.log*
 .pnpm-debug.log*
 *.coverage
 .coverage.*
+*.log.*
 
 # ############################## ARQUIVOS SENSÍVEIS ############################
 *.env
@@ -38,6 +55,8 @@ yarn-error.log*
 *.pem
 *.key
 *.crt
+*.p12
+*.pfx
 
 # ############################## OUTROS ##############################
 *.tmp
@@ -55,7 +74,6 @@ yarn-error.log*
 *.swo
 *.orig
 *.rej
-*.log.*
 *.gz
 *.zip
 *.tar
@@ -73,8 +91,11 @@ yarn-error.log*
 *.bin
 *.img
 *.iso
+*.bak
+*.old
 
 # ############################## QUARTO ##############################
 _book/
 _main.rds
 _files/
+libs/
