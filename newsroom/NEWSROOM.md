@@ -1,69 +1,67 @@
-# Relacionado a página de noticias newsroom que é diferente de ac/globalnoticias em slide-infinito em /index.html
+# Diferença entre Newsroom e NewsHub (e relação com `/newsroom/`)
 
-explicação:
-Newsroom e NewsHub são termos relacionados ao jornalismo, mas têm significados diferentes:
+Este documento explica como a página de notícias em `/newsroom/` é diferente de `ac/globalnoticias` (que utiliza um slide infinito em `/index.html`) e esclarece os conceitos de **Newsroom** e **NewsHub**.
 
-Newsroom
-É o espaço físico ou virtual onde uma equipe de jornalistas, editores e produtores trabalha para produzir notícias. Pode ser de um jornal, revista, TV, rádio ou site de notícias.
+## Conceitos
 
-Função: Reuniões de pauta, apuração, redação, edição e produção de conteúdo.
+### Newsroom
+**Newsroom** é o espaço — físico ou virtual — onde jornalistas, editores e produtores trabalham na produção de notícias. Pode ser parte de jornais, revistas, emissoras de TV/rádio ou portais de notícias online.
 
-Exemplo: A sala onde repórteres e editores do The New York Times ou da GloboNews trabalham.
+- **Funções:** Reuniões de pauta, investigação, redação, edição e produção de conteúdo.
+- **Exemplo:** A redação do The New York Times ou da GloboNews, onde repórteres e editores atuam diariamente.
 
-NewsHub
-Geralmente se refere a um centro de distribuição ou agregação de notícias, que pode ser uma plataforma digital, um serviço de conteúdo compartilhado ou um sistema de integração de notícias de várias fontes.
+### NewsHub
+**NewsHub** refere-se, em geral, a um centro de distribuição ou agregação de notícias: uma plataforma digital, serviço de conteúdo compartilhado ou sistema que integra notícias de várias fontes.
 
-Função: Agregar, distribuir ou gerenciar notícias de diferentes veículos ou regiões.
+- **Funções:** Agregar, distribuir e gerenciar notícias vindas de diferentes veículos ou regiões.
+- **Exemplo:** O Reuters News Hub, que fornece conteúdo noticioso para outros meios de comunicação.
 
-Exemplo: O Reuters News Hub é um sistema que fornece notícias para outros meios de comunicação.
+**Diferença principal:**
 
-Diferença Principal
-Newsroom → Local de produção das notícias.
+- **Newsroom:** Foco na produção da notícia (origem do conteúdo).
+- **NewsHub:** Foco na distribuição e centralização de notícias (agregação de conteúdo).
 
-NewsHub → Sistema de distribuição ou agregação de notícias.
+> **Nota:** Algumas empresas usam "NewsHub" como nome próprio (ex.: NewsHub.nz na Nova Zelândia), mas o conceito geral é o de centralizador ou integrador de conteúdo.
 
-Algumas empresas usam "NewsHub" como marca (ex.: NewsHub na Nova Zelândia, um site de notícias), mas o conceito geral é de centralização de conteúdo.
+---
 
+# Argo: Sistema para Escrita de Artigos com Quarto
 
-# Argo: Quarto - escrever artigos com Quarto
-
-Este projeto implementa um sistema de escrita e publicação de artigos utilizando **Quarto**. O objetivo é integrar o Quarto para a escrita de artigos no ``/newsroom/``, usar Python para extrair o conteúdo diretamente de arquivos `.qmd` do artigo e adicionar o conteúdo ao `modelo.html`. Além disso, os arquivos foram reorganizados para uma estrutura mais adequada.
+Este projeto implementa um sistema de produção e publicação de artigos usando **Quarto**. O objetivo é usar o Quarto para criar artigos no diretório `/newsroom/`, extrair o conteúdo dos arquivos `.qmd` via Python e incorporar esse conteúdo ao `modelo.html`. Além disso, os arquivos do projeto foram reorganizados para uma estrutura mais intuitiva.
 
 ## Estrutura do Diretório `/newsroom/`
 
-```{bash}
+```bash
 newsroom/
-# Repositório dos artigos
 ├── articles/
-│   ├── index.html # Página inicial do repositório
-│   ├── pt_BR/
-│   │   ├── 2025/
-│   │   │   ├── 03/
-│   │   │   │   ├── xxxxxxxx/       # Diretório do artigo xxxxx
-│   │   │   │   │   ├── index.html  # Página do artigo
-│   │   │   │   │   ├── src/        # arquivos do artigo
-│   │   │   │   │   │   ├── img.png
-│   │   │   │   │   │   └── formulas.tex
-# Arquivos Gerais  
-├── assets/ 
-│   ├── pt_BR/
-│   │   ├── arquive/ 
-│   │   ├── articles/
-│   │   ├── newsroom/
-│   │   ├── newsroom/
-├── imagens/ # Imagens Gerais: logos, marcas, backgrounds-img, etc.
-# Criação dos artigos 
-├── newshub/ 
-│   ├── build/
-│   │   ├── conteudo/  # conteudo dos artigos
-│   │   ├── modelo.html/  # modelo do artigo
-# Página principal da newsroom
-├── index.html/
-├── NEWSROOM.md/ # documentação
+│   ├── index.html                # Página inicial dos artigos
+│   └── pt_BR/
+│       └── 2025/
+│           └── 03/
+│               └── xxxxxxxx/     # Diretório do artigo
+│                   ├── index.html
+│                   └── src/
+│                       ├── img.png
+│                       └── formulas.tex
+├── assets/
+│   └── pt_BR/
+│       ├── archive/
+│       ├── articles/
+│       └── newsroom/
+├── imagens/                      # Imagens gerais: logos, marcas, backgrounds etc.
+├── newshub/
+│   └── build/
+│       ├── conteudo/             # Conteúdo dos artigos
+│       └── modelo.html/          # Modelo-base dos artigos
+├── index.html                    # Página principal da newsroom
+└── NEWSROOM.md                   # Documentação
 ```
 
-  - obs: ``~/pt_BR/2025/03/*`` refere-se a lingua, ano e mês respectivamente.
+- **Observação:** O caminho `pt_BR/2025/03/*` indica a língua, ano e mês, respectivamente.
 
-## ``/newsroom/`` exclusivo aos arquivos do artigo.html
+## Organização
 
-**LER** discussão [#43](https://github.com/cesargabrielphd/estatistica/discussions/43) de estatistica
+- O diretório `/newsroom/` é **exclusivo para arquivos de artigos em HTML**.
+- Para mais informações e discussões, consulte a [Discussão #43](https://github.com/cesargabrielphd/estatistica/discussions/43) do repositório **estatistica**.
+
+---
