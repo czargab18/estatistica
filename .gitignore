@@ -48,9 +48,9 @@
 
 # ############################## PASTA BUILD/OUTPUT ############################
 .next/
-out/
+*out*/
 coverage/
-.eggs/
+*.eggs/
 *.egg-info/
 *.tsbuildinfo
 *.war
@@ -79,7 +79,9 @@ yarn-error.log*
 
 # ############################## ARQUIVOS SENSÍVEIS ############################
 *.env
+*.env/
 *.env.*
+*.env.*/
 *.DS_Store
 *.httr-oauth
 *.Rhistory
@@ -129,6 +131,8 @@ yarn-error.log*
 *.old
 
 # ############################ SOFTWARES E LINGUAGENS ##########################
+# ########### C ###########
+*.so
 # ########### QUARTO ###########
 _book/
 _main.rds
@@ -147,6 +151,14 @@ celerybeat.pid
 .spyproject
 .ropeproject
 __pypackages__/
+*.manifest
+*.spec
+.Python
+share/python-wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
 .pdm.toml
 instance/
 .webassets-cache
