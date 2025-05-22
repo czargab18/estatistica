@@ -135,3 +135,25 @@ libs/
 node_modules/
 # ########### PYTHON ###########
 vendor/
+
+# ##############################################################################
+# ##############################  PASTA BACKEND   ##############################
+# ##############################################################################
+# ########### IGNORAR
+backend/**/*cache*/
+backend/**/*.py[cod]
+backend/**/*.egg-info/
+backend/**/dist/
+backend/**/*.env
+backend/**/*.sqlite3
+backend/**/*.log
+backend/**/.idea/
+backend/**/.DS_Store
+backend/**/Thumbs.db
+backend/**/vendor/
+
+# ########### NÃO IGNORAR
+!backend/
+!backend/build/
+!backend/vendor/README.md
+!backend/restos_funcoes/*
