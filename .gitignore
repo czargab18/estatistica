@@ -417,6 +417,8 @@ backend/.DS_Store
 backend/Thumbs.db
 backend/vendor/
 # Não ignorar enquanto não arrumar
+
+!backend/restos_funcoes/
 !backend/vendor/
 !backend/vendor/README.md
 !backend/build/
