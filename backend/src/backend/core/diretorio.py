@@ -28,7 +28,6 @@ def createdir(structure: list = None):
         except Exception as erro:
             print(f"Erro ao tentar criar '{path}': {erro}")
 
-
 def listdir(folder: str = None, save: str = None, ignore: list = None, ignoretype: list = None):
     """
     Lista todos os diretórios e arquivos na pasta especificada, retornando caminhos completos.
@@ -100,7 +99,6 @@ def ler(path: str = None):
     with open(path, "r", encoding="utf-8") as file:
         return file.read()
 
-
 def escrever(path, conteudo):
     """
     Escreve conteúdo em um arquivo.
@@ -119,3 +117,145 @@ def escrever(path, conteudo):
     with open(path, "w", encoding="utf-8") as file:
         file.write(conteudo)
         return True
+
+def append(path, conteudo):
+    """
+    Adiciona conteúdo a um arquivo existente.
+
+    Parâmetros:
+    ----------
+    path : str
+        O caminho completo para o arquivo onde o conteúdo será adicionado.
+    conteudo : str
+        O conteúdo que será adicionado ao arquivo.
+
+    Retorna:
+    -------
+    None
+    """
+    with open(path, "a", encoding="utf-8") as file:
+        file.write(conteudo)
+        return True
+
+def delete(path):
+    """
+    Deleta um arquivo ou diretório.
+
+    Parâmetros:
+    ----------
+    path : str
+        O caminho completo para o arquivo ou diretório a ser deletado.
+
+    Retorna:
+    -------
+    None
+
+    Exceções:
+    --------
+    FileNotFoundError
+        Se o arquivo ou diretório especificado no caminho não for encontrado.
+    PermissionError
+        Se não houver permissão para deletar o arquivo ou diretório.
+    """
+    if os.path.isfile(path):
+        os.remove(path)
+    elif os.path.isdir(path):
+        os.rmdir(path)
+
+    else:
+        raise FileNotFoundError(f"O caminho '{path}' não existe ou não é um arquivo ou diretório válido.")
+
+def rename(path, newname):
+    """
+    Renomeia um arquivo ou diretório.
+
+    Parâmetros:
+    ----------
+    path : str
+        O caminho completo para o arquivo ou diretório a ser renomeado.
+    newname : str
+        O novo nome para o arquivo ou diretório.
+
+    Retorna:
+    -------
+    None
+
+    Exceções:
+    --------
+    FileNotFoundError
+        Se o arquivo ou diretório especificado no caminho não for encontrado.
+    PermissionError
+        Se não houver permissão para renomear o arquivo ou diretório.
+    """
+    os.rename(path, newname)
+
+def copy(path, newpath):
+    """
+    Copia um arquivo ou diretório para um novo local.
+
+    Parâmetros:
+    ----------
+    path : str
+        O caminho completo para o arquivo ou diretório a ser copiado.
+    newpath : str
+        O novo caminho onde o arquivo ou diretório será copiado.
+
+    Retorna:
+    -------
+    None
+
+    Exceções:
+    --------
+    FileNotFoundError
+        Se o arquivo ou diretório especificado no caminho não for encontrado.
+    PermissionError
+        Se não houver permissão para copiar o arquivo ou diretório.
+    """
+    if os.path.isfile(path):
+        shutil.copy2(path, newpath)
+    elif os.path.isdir(path):
+        shutil.copytree(path, newpath)
+    else:
+        raise FileNotFoundError(f"O caminho '{path}' não existe ou não é um arquivo ou diretório válido.")
+    return True
+
+def move(path, newpath):
+    """
+    Move um arquivo ou diretório para um novo local.
+
+    Parâmetros:
+    ----------
+    path : str
+        O caminho completo para o arquivo ou diretório a ser movido.
+    newpath : str
+        O novo caminho onde o arquivo ou diretório será movido.
+
+    Retorna:
+    -------
+    None
+
+    Exceções:
+    --------
+    FileNotFoundError
+        Se o arquivo ou diretório especificado no caminho não for encontrado.
+    PermissionError
+        Se não houver permissão para mover o arquivo ou diretório.
+    """
+    shutil.move(path, newpath)
+
+def exists(path):
+    """
+    Verifica se um arquivo ou diretório existe.
+
+    Parâmetros:
+    ----------
+    path : str
+        O caminho completo para o arquivo ou diretório a ser verificado.
+
+    Retorna:
+    -------
+    bool
+        True se o arquivo ou diretório existir, False caso contrário.
+    """
+    return os.path.exists(path)
+
