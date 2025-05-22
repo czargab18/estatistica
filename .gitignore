@@ -41,7 +41,7 @@
 *.DBF
 *.xlsx
 *.xls
-*.db
+*.db*
 *.sqlite
 *.sqlite3
 *.pdf
@@ -133,11 +133,13 @@ yarn-error.log*
 _book/
 _main.rds
 _files/
-libs/
 # ########### NODEJS ###########
-node_modules/
+node_modules
 # ########### PYTHON ###########
 vendor/
+local_settings.py
+*.manifest
+*.spec
 # ############# R ##############
 *.Rproj
 *.Rproj.*
@@ -175,6 +177,10 @@ backend/**/vendor/
 # ########### IGNORAR
 books/**/delete
 books/**/src
+books/**/libs
+books/**/_main.rds
+books/**/_files
+books/**/delete
 books/**/*_main.rds
 
 # ########### NÃO IGNORAR
