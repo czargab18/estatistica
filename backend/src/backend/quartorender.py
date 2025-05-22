@@ -4,7 +4,7 @@ import re
 import json
 from bs4 import BeautifulSoup
 from bs4.element import Tag
-from core.variaveis import CAMINHO_BASE, CAMINHOS, CORRECOESLINK
+from backend.variaveis import CAMINHO_BASE, CAMINHOS, CORRECOESLINK
 
 """
  * Este script é destinado a auxiliar na automatização de books quarto.
