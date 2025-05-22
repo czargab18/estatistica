@@ -99,6 +99,19 @@ venv.bak/
 *.pfx
 
 # ############################## OUTROS ##############################
+# -------------
+*Atividades Acadêmicas.pdf
+creden*/
+*secret.json
+*secret*.json
+*.mp4
+*.xlsx
+utils/pdf/*/*/*.jpg
+utils/pdf/*/*.pdf
+# -------------
+
+
+
 *.tmp
 *.temp
 *.manifest
