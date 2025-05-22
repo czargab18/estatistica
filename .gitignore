@@ -79,7 +79,6 @@ yarn-error.log*
 *.log.*
 
 # ############################## ARQUIVOS SENSÍVEIS ############################
-# Ignorar arquivos e diretórios relacionados a ambientes
 *.env*
 .venv/
 env/
@@ -134,30 +133,9 @@ venv.bak/
 *.iso
 *.bak
 *.old
-# # misc
-# .DS_Store
-# *.pem
-# # debug
-# npm-debug.log*
-# yarn-debug.log*
-# yarn-error.log*
-# .pnpm-debug.log*
-# # local env files
-# .env*.local
-# # vercel
-# .vercel
-# # typescript
-# *.tsbuildinfo
-# next-env.d.ts
-# # End of https://www.toptal.com/developers/gitignore/api/django,nextjs
+.vercel
+next-env.d.ts
 
-# # Byte-compiled / optimized / DLL files
-
-# *$py.class
-
-# # Translations
-# *.mo
-# *.pot
 # ############################ SOFTWARES E LINGUAGENS ##########################
 # ########### C ###########
 *.so
@@ -226,44 +204,7 @@ media
 Pipfile.lock
 poetry.lock
 .pdm.toml
-# # Django stuff:
-# *.log
-# local_settings.py
-# db.sqlite3
-# db.sqlite3-journal
 
-# # Flask stuff:
-# instance/
-# .webassets-cache
-
-# # Scrapy stuff:
-# .scrapy
-
-# # Sphinx documentation
-# docs/_build/
-
-# # PyBuilder
-# target/
-
-# # IPython
-# profile_default/
-# ipython_config.py
-
-# # pyenv
-# .python-version
-
-# # pipenv
-# #   According to pypa/pipenv#598, it is recommended to include Pipfile.lock in version control.
-# #   However, in case of collaboration, if having platform-specific dependencies or dependencies
-# #   having no cross-platform support, pipenv may install dependencies that don't work, or not
-# #   install all needed dependencies.
-# #Pipfile.lock
-
-# # PEP 582; used by e.g. github.com/David-OConnor/pyflow
-# __pypackages__/
-
-# # SageMath parsed files
-# *.sage.py
 ############## R ##############
 *.Rproj
 *.Rproj.*
