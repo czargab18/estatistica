@@ -1,5 +1,2 @@
 include README.md
-include requirements.txt
-recursive-include data *
-recursive-include core *
-recursive-include newsroom *
+recursive-include src/backend/data *
