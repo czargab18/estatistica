@@ -12,5 +12,5 @@ setup(
         # Liste aqui as dependências do seu pacote (ou use requirements.txt)
     ],
     include_package_data=True,
-    python_requires=">=3.7",
+    python_requires=">=3.13",
 )
