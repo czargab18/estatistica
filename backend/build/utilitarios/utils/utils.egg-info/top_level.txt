@@ -1,6 +1,0 @@
-_backend_
-analise-texto
-ira
-organizar
-youtube
-zlibrary

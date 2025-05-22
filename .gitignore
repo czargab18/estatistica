@@ -402,22 +402,25 @@ node_modules
 # ###################  PASTA BACKEND   ####################################
 # #########################################################################
 # Python
-*cache*/
-*.py[cod]
-*.egg-info/
-build/
-dist/
-vendor/
-.env
-*.sqlite3
-*.log
+backend/*cache*/
+backend/*.py[cod]
+backend/*.egg-info/
+backend/build/
+backend/dist/
+backend/.env
+backend/*.sqlite3
+backend/*.log
 # IDEs
-.idea/
+backend/.idea/
 # Sistema
-.DS_Store
-Thumbs.db
+backend/.DS_Store
+backend/Thumbs.db
+backend/vendor/
 # Não ignorar enquanto não arrumar
-!build/
+!backend/vendor/
+!backend/vendor/README.md
+!backend/build/
+!backend
 
 ################################################################################
 ################################## NÃO IGNORAR #################################
