@@ -1,3 +1,3 @@
-from backend.core.quartorender import *
-from backend.core.diretorio import *
-from backend.core.variaveis import *
+from .quartorender import *
+from .diretorio import *
+from .variaveis import *
