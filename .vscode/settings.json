@@ -1,20 +1,16 @@
 {
   "files.exclude": {
+    // OCULTAR ARQUIVOS GIT
     "**/.git": true,
     "**/*/.gitignore/": true,
+    // OCULTAR OUTROS ARQUIVOS
     "**/.svn": true,
     "**/.hg": true,
     "**/.DS_Store": true,
     "**/Thumbs.db": true,
-    "**/.quarto/": true,
-    "**/**/delete": true,
-    "**/*/index_files/": true,
-    "**/site_libs": true,
-    "**/*/*/ac/": true,
-    "**/*/**/.gitignore": true,
-    "**/*.quarto_ipynb": true,
-    "**/docs/ac/": false,
-    "**/docs/ac/books_libs": false
+    "**/node_modules": true,
+    // OCULTAR ARQUIVOS PYTHON
+    "**/*.egg-info": true
   },
 
   // Configurações: Editor
