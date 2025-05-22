@@ -1,5 +1,0 @@
-Metadata-Version: 2.4
-Name: backend
-Version: 0.1
-Requires-Dist: beautifulsoup4>=4.13.4
-Dynamic: requires-dist
