@@ -140,6 +140,27 @@ vendor/
 local_settings.py
 *.manifest
 *.spec
+celerybeat-schedule
+celerybeat.pid
+*.sage.py
+.spyderproject
+.spyproject
+.ropeproject
+__pypackages__/
+.pdm.toml
+instance/
+.webassets-cache
+.scrapy
+docs/_build/
+.ipynb_checkpoints
+profile_default/
+ipython_config.py
+.python-version
+.pybuilder/
+target/
+.dmypy.json
+dmypy.json
+.pyre/
 # ############# R ##############
 *.Rproj
 *.Rproj.*
