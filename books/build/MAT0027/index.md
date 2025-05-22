@@ -1,3 +1,8 @@
+resumindo limite pela definição:
+caso queira comer tua mãe com força sem quebrar o quadril dela, basta saber a força para botar de tal modo que eu consiga não quebrar o quadril dela.
+
+De forma mais delicada: dado uma margem de erro epsilon na imagen, devo saber qual o valor de um delta no domínio que me permita sempre estar dentro da margem epsilon.
+
 # Cálculo do Limite $\lim_{(x,y) \to (0,0)} \frac{xy}{\sqrt{x^2 + y^2}}$
 
 ## Solução via Definição $\epsilon$-$\delta$
