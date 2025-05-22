@@ -161,6 +161,17 @@ target/
 .dmypy.json
 dmypy.json
 .pyre/
+pip-log.txt
+pip-delete-this-directory.txt
+htmlcov/
+.tox/
+.nox/
+nosetests.xml
+coverage.xml
+*.cover
+*.py,cover
+.hypothesis/
+cover/
 # ############# R ##############
 *.Rproj
 *.Rproj.*
