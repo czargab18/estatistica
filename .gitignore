@@ -59,6 +59,7 @@ coverage/
 # ############################## PASTA CACHE ##############################
 **/*cache*/
 **/__pycache__/
+*pycache*/
 **/.pytest_cache/
 **/.mypy_cache/
 **/.ipynb_checkpoints/
@@ -169,8 +170,6 @@ node_modules
 # ########### PYTHON ###########
 vendor/
 local_settings.py
-*.manifest
-*.spec
 celerybeat-schedule
 celerybeat.pid
 *.sage.py
@@ -178,8 +177,6 @@ celerybeat.pid
 .spyproject
 .ropeproject
 __pypackages__/
-*.manifest
-*.spec
 .Python
 share/python-wheels/
 *.egg-info/
@@ -222,8 +219,6 @@ ipython_config.py
 .python-version
 *.log
 *.pot
-*.pyc
-*pycache*/
 local_settings.py
 db.sqlite3
 db.sqlite3-journal
@@ -266,10 +261,6 @@ poetry.lock
 
 # # PEP 582; used by e.g. github.com/David-OConnor/pyflow
 # __pypackages__/
-
-# # Celery stuff
-# celerybeat-schedule
-# celerybeat.pid
 
 # # SageMath parsed files
 # *.sage.py
