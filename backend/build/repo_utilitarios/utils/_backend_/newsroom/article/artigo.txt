@@ -1,0 +1,51 @@
+date-title-article: Título do Artigo
+date-subtitle-article: Subtítulo do Artigo
+date-author-article: Autor do Artigo
+date-data-article: 05-03-2025
+date-description-article: Descrição do Artigo
+date-keywords-article: Palavras-chave do Artigo
+date-category-article: Categoria do Artigo
+date-disciplina-article: Disciplina do Artigo
+date-codigo-disciplina-article: Curso do Artigo
+
+content-article: 
+
+--- inicio_resumo ---
+p: paragrafo 1 do resumo
+p: paragrafo 2 do resumo
+img: link
+--- fim_resumo ---
+
+--- inicio_introducao ---
+p: paragrafo 1 da introdução
+p: paragrafo 2 da introdução
+p: paragrafo 3 da introdução
+img: link
+p: paragrafo 4 da introdução
+--- fim_introducao ---
+
+--- inicio_desenvolvimento ---
+p: paragrafo 1 do desenvolvimento
+a: link
+paragrafo 2 do desenvolvimento
+paragrafo 3 do desenvolvimento
+--- fim_desenvolvimento ---
+
+--- inicio_conclusao ---
+p: paragrafo 1 da conclusão
+img: link
+p: paragrafo 2 da conclusão
+--- fim_conclusao ---
+
+--- inicio_referencias ---
+p: referencia 1
+a: link
+p: referencia 2
+p: referencia 3 
+--- fim_referencias ---
+
+--- inicio_anexos ---
+dwn: link-download-anexo 1
+dwn: link-download-anexo 2
+--- fim_anexos ---
+

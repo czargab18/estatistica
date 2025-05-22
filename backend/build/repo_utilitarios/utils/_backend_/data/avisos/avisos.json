@@ -1,0 +1,46 @@
+{
+  "avisos": [
+    {
+      "id": 1,
+      "titulo": "Calendário Acadêmico",
+      "conteudo": "Cepe aprova calendário acadêmico para 2025.",
+      "link": "https://www.saa.unb.br/graduacao/calendario-academico#periodos-letivos-de-2025",
+      "classes": [
+        "saa-calendario",
+        "cepe-aprova-calendario-academico"
+      ]
+    },
+    {
+      "id": 2,
+      "titulo": "Novo Aviso",
+      "conteudo": "Este é um novo aviso.",
+      "link": "https://www.exemplo.com/novo-aviso",
+      "classes": [
+        "nova-classe1",
+        "nova-classe2"
+      ]
+    }
+  ],
+  "eventos": [
+    {
+      "id": 1,
+      "titulo": "EVENTO QUALQUER",
+      "conteudo": "Nada de importante",
+      "link": "fuck.com",
+      "classes": [
+        "algo1",
+        "algo2"
+      ]
+    },
+    {
+      "id": 2,
+      "titulo": "",
+      "conteudo": "",
+      "link": "",
+      "classes": [
+        "",
+        ""
+      ]
+    }
+  ]
+}
