@@ -1,6 +1,37 @@
-# ############################## PASTA GRANDES #################################
-node_modules/
-vendor/
+# Este arquivo .gitignore foi organizado em seções para facilitar a manutenção e compreensão.
+# Cada seção agrupa tipos de arquivos ou diretórios que devem ser ignorados com base em sua
+# funcionalidade ou origem. Abaixo está uma explicação detalhada:
+
+# 1. BASES DE DADOS:
+#    Arquivos relacionados a bancos de dados e planilhas, como .csv, .xlsx, .db e .sqlite.
+#    Esses arquivos geralmente contêm dados sensíveis ou grandes volumes de informações
+#    que não devem ser versionados.
+
+# 2. PASTA BUILD/OUTPUT:
+#    Diretórios e arquivos gerados automaticamente durante o processo de build ou compilação,
+#    como dist/, .next/ e arquivos .egg-info. Esses arquivos são recriados pelo sistema e
+#    não precisam ser armazenados no repositório.
+
+# 3. PASTA CACHE:
+#    Caches gerados por linguagens e ferramentas, como __pycache__, .pytest_cache e .mypy_cache.
+#    Esses arquivos são temporários e não devem ser versionados.
+
+# 4. PASTA LOGS:
+#    Arquivos de log gerados por aplicações ou ferramentas, como *.log e npm-debug.log*.
+#    Esses arquivos são úteis para depuração, mas não devem ser incluídos no controle de versão.
+
+# 5. ARQUIVOS SENSÍVEIS:
+#    Arquivos que podem conter informações confidenciais, como .env, .pem e .key.
+#    Esses arquivos devem ser mantidos fora do repositório para evitar vazamento de dados.
+
+# 6. OUTROS:
+#    Arquivos temporários, backups e outros formatos que não são necessários para o repositório,
+#    como *.tmp, *.bak e *.zip.
+
+# 7. SOFTWARES E LINGUAGENS:
+#    - QUARTO: Ignora arquivos e diretórios gerados pelo Quarto, como _book/, _main.rds e _files/.
+#    - NODEJS: Ignora a pasta node_modules/, que contém dependências do Node.js.
+#    - PYTHON: Ignora a pasta vendor/ e outros arquivos relacionados ao ambiente Python.
 
 # ############################## BASES DE DADOS ############################
 *.csv
@@ -94,8 +125,13 @@ yarn-error.log*
 *.bak
 *.old
 
-# ############################## QUARTO ##############################
+# ############################ SOFTWARES E LINGUAGENS ##########################
+# ########### QUARTO ###########
 _book/
 _main.rds
 _files/
 libs/
+# ########### NODEJS ###########
+node_modules/
+# ########### PYTHON ###########
+vendor/
