@@ -41,6 +41,5 @@ if __name__ == "__main__":
     remove_sensitive_info_from_pdf(
       input_pdf_path = "name.pdf",
       output_pdf_path = "output_name.pdf",,
-       sensitive_text
-        "name.pdf" = "texto com informções importantes"
+      sensitive_text = "texto com informções importantes"
     )
