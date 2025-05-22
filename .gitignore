@@ -82,6 +82,14 @@ yarn-error.log*
 *.env/
 *.env.*
 *.env.*/
+# # Environments
+# .env
+# .venv
+# env/
+# venv/
+# ENV/
+# env.bak/
+# venv.bak/
 *.DS_Store
 *.httr-oauth
 *.Rhistory
@@ -129,7 +137,30 @@ yarn-error.log*
 *.iso
 *.bak
 *.old
+# # misc
+# .DS_Store
+# *.pem
+# # debug
+# npm-debug.log*
+# yarn-debug.log*
+# yarn-error.log*
+# .pnpm-debug.log*
+# # local env files
+# .env*.local
+# # vercel
+# .vercel
+# # typescript
+# *.tsbuildinfo
+# next-env.d.ts
+# # End of https://www.toptal.com/developers/gitignore/api/django,nextjs
 
+# # Byte-compiled / optimized / DLL files
+
+# *$py.class
+
+# # Translations
+# *.mo
+# *.pot
 # ############################ SOFTWARES E LINGUAGENS ##########################
 # ########### C ###########
 *.so
@@ -161,6 +192,11 @@ share/python-wheels/
 MANIFEST
 .pdm.toml
 instance/
+cython_debug/
+.idea/
+/coverage
+.next/
+/out/
 .webassets-cache
 .scrapy
 docs/_build/
@@ -184,7 +220,69 @@ coverage.xml
 *.py,cover
 .hypothesis/
 cover/
-# ############# R ##############
+*.py[cod]
+*$py.class
+.ipynb_checkpoints
+profile_default/
+ipython_config.py
+.python-version
+*.log
+*.pot
+*.pyc
+*pycache*/
+local_settings.py
+db.sqlite3
+db.sqlite3-journal
+media
+Pipfile.lock
+poetry.lock
+.pdm.toml
+# # Django stuff:
+# *.log
+# local_settings.py
+# db.sqlite3
+# db.sqlite3-journal
+
+# # Flask stuff:
+# instance/
+# .webassets-cache
+
+# # Scrapy stuff:
+# .scrapy
+
+# # Sphinx documentation
+# docs/_build/
+
+# # PyBuilder
+# target/
+
+# # Jupyter Notebook
+# .ipynb_checkpoints
+
+# # IPython
+# profile_default/
+# ipython_config.py
+
+# # pyenv
+# .python-version
+
+# # pipenv
+# #   According to pypa/pipenv#598, it is recommended to include Pipfile.lock in version control.
+# #   However, in case of collaboration, if having platform-specific dependencies or dependencies
+# #   having no cross-platform support, pipenv may install dependencies that don't work, or not
+# #   install all needed dependencies.
+# #Pipfile.lock
+
+# # PEP 582; used by e.g. github.com/David-OConnor/pyflow
+# __pypackages__/
+
+# # Celery stuff
+# celerybeat-schedule
+# celerybeat.pid
+
+# # SageMath parsed files
+# *.sage.py
+############## R ##############
 *.Rproj
 *.Rproj.*
 *.Rhistory
@@ -226,6 +324,11 @@ books/**/_main.rds
 books/**/_files
 books/**/delete
 books/**/*_main.rds
+books/**/Trabalho 1/dataProject
+books/**/Trabalho 1/data.Need.Project/
+books/**/Trabalho 2/dataProject/
+books/**/Atividaes/PadronTaxas/dataProject/
+books/**/SINGAGE.XLS
 
 # ########### NÃO IGNORAR
 
