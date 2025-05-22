@@ -78,18 +78,14 @@ yarn-error.log*
 *.log.*
 
 # ############################## ARQUIVOS SENSÍVEIS ############################
-*.env
-*.env/
-*.env.*
-*.env.*/
-# # Environments
-# .env
-# .venv
-# env/
-# venv/
-# ENV/
-# env.bak/
-# venv.bak/
+# Ignorar arquivos e diretórios relacionados a ambientes
+*.env*
+.venv/
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
 *.DS_Store
 *.httr-oauth
 *.Rhistory
@@ -200,7 +196,6 @@ cython_debug/
 .webassets-cache
 .scrapy
 docs/_build/
-.ipynb_checkpoints
 profile_default/
 ipython_config.py
 .python-version
@@ -222,7 +217,6 @@ coverage.xml
 cover/
 *.py[cod]
 *$py.class
-.ipynb_checkpoints
 profile_default/
 ipython_config.py
 .python-version
@@ -255,9 +249,6 @@ poetry.lock
 
 # # PyBuilder
 # target/
-
-# # Jupyter Notebook
-# .ipynb_checkpoints
 
 # # IPython
 # profile_default/
