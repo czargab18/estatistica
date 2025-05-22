@@ -1,42 +1,48 @@
 # Components
 
-Esta pasta contém os componentes reutilizáveis do projeto. Cada arquivo aqui representa uma parte independente e modular que pode ser incluída em diferentes páginas ou seções da aplicação.
+Esta pasta reúne os componentes reutilizáveis do projeto. Cada arquivo representa uma parte modular e independente, podendo ser incluído em diferentes páginas ou seções do site para garantir consistência visual e facilitar a manutenção.
 
 ## Estrutura dos Componentes
 
 - **`globalheader.html`**  
-  Contém o código relacionado ao cabeçalho global do site. Inclui elementos como logotipo, barra de navegação principal e links importantes.
+  Cabeçalho global do site, incluindo logotipo, barra superior e links principais.
 
 - **`globalnavbar.html`**  
-  Contém o código da barra de navegação global, com menus e links que facilitam a navegação entre diferentes seções do site.
+  Barra de navegação global, com menus e links para as principais seções do site.
 
 - **`globalsection_ribbon.html`**  
-  Contém o código para a faixa (ribbon) global usada em seções específicas do site para destacar informações importantes.
+  Faixa (ribbon) de destaque, utilizada para chamar atenção para informações importantes em determinadas seções do site.
 
 - **`globalfooter.html`**  
-  Contém o código relacionado ao rodapé global do site. Inclui informações de copyright, links úteis, e redes sociais.
+  Rodapé global do site, com informações institucionais, copyright, links úteis e redes sociais.
 
-## Como Usar
+## Como Utilizar
 
-1. **Incluir Componentes em Outras Páginas:**  
-   Utilize a tecnologia ou framework do projeto (como PHP, React, Vue, ou mesmo JavaScript puro) para incluir esses componentes nas páginas onde forem necessários. Por exemplo:
-   - Em PHP: `<?php include 'components/globalheader.html'; ?>`
-   - Em JavaScript: Carregue o conteúdo dinamicamente via AJAX ou Fetch.
+1. **Inclusão dos Componentes em HTML Puro**
 
-2. **Manutenção Centralizada:**  
-   Atualize qualquer componente diretamente nesta pasta para que as mudanças sejam refletidas em todas as páginas que utilizam esse componente.
+   Para reutilizar componentes em várias páginas HTML, automatize a inclusão usando scripts Python. Por exemplo, você pode criar um script para inserir o conteúdo dos componentes nas páginas desejadas antes do deploy.
 
-## Boas Práticas
+   Exemplo básico em Python:
+   ```python
+   # Exemplo: inserir globalnavbar.html em várias páginas
+   with open('components/globalnavbar.html', 'r') as nav:
+       navbar = nav.read()
 
-- **Componentes Modulares:**  
-  Certifique-se de que cada componente seja independente e focado em uma funcionalidade específica. Evite adicionar código que dependa de outro componente diretamente.
+   with open('pagina.html', 'r') as f:
+       conteudo = f.read()
 
-- **Nomes Significativos:**  
-  Nomeie os arquivos de forma clara e descritiva, como já demonstrado neste projeto.
+   conteudo = conteudo.replace('<!-- #GLOBALNAVBAR# -->', navbar)
 
-- **Testar Alterações:**  
-  Sempre teste as alterações feitas em um componente para garantir que ele funcione corretamente em todas as páginas onde está incluído.
+   with open('pagina.html', 'w') as f:
+       f.write(conteudo)
+   ```
+   Basta definir marcadores HTML como `<!-- #GLOBALNAVBAR# -->` onde quiser inserir os componentes.
+
+2. **Automação e Atualização**
+
+   Atualize os componentes nesta pasta. Em seguida, rode seu script Python para atualizar todas as páginas HTML automaticamente, garantindo que as mudanças estejam presentes em todo o site.
 
 ## Sobre
 
-Essa pasta foi criada para facilitar a manutenção e reutilização de blocos de código usados em diferentes partes do site. Caso tenha dúvidas ou sugestões, entre em contato com o responsável pelo projeto.
+Esta pasta foi criada para facilitar a manutenção e a reutilização de blocos de código em diferentes partes do site.  
+Em caso de dúvidas ou sugestões, entre em contato com o responsável pelo projeto.
