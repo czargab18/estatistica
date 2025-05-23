@@ -109,9 +109,6 @@ creden*/
 utils/pdf/*/*/*.jpg
 utils/pdf/*/*.pdf
 # -------------
-
-
-
 *.tmp
 *.temp
 *.manifest
@@ -231,11 +228,13 @@ poetry.lock
 # ##############################  PASTA BACKEND   ##############################
 # ##############################################################################
 # ########### IGNORAR
+# usando o `uv` package and project manager
+backend/**/venv
+
 backend/**/*cache*/
 backend/**/*.py[cod]
 backend/**/*.egg-info/
 backend/**/dist/
-backend/**/*.env
 backend/**/*.sqlite3
 backend/**/*.log
 backend/**/.idea/
@@ -244,6 +243,10 @@ backend/**/Thumbs.db
 backend/**/vendor/
 
 # ########### NÃO IGNORAR
+# usando o `uv` package and project manager
+!backend/uv.lock
+!backend/pyproject.toml
+
 !backend/
 !backend/build/
 !backend/vendor/README.md
