@@ -99,6 +99,16 @@ venv.bak/
 *.pfx
 
 # ############################## OUTROS ##############################
+# -------------
+*Atividades Acadêmicas.pdf
+creden*/
+*secret.json
+*secret*.json
+*.mp4
+*.xlsx
+utils/pdf/*/*/*.jpg
+utils/pdf/*/*.pdf
+# -------------
 *.tmp
 *.temp
 *.manifest
@@ -218,11 +228,13 @@ poetry.lock
 # ##############################  PASTA BACKEND   ##############################
 # ##############################################################################
 # ########### IGNORAR
+# usando o `uv` package and project manager
+backend/**/venv
+
 backend/**/*cache*/
 backend/**/*.py[cod]
 backend/**/*.egg-info/
 backend/**/dist/
-backend/**/*.env
 backend/**/*.sqlite3
 backend/**/*.log
 backend/**/.idea/
@@ -231,10 +243,17 @@ backend/**/Thumbs.db
 backend/**/vendor/
 
 # ########### NÃO IGNORAR
+# usando o `uv` package and project manager
+!backend/uv.lock
+!backend/pyproject.toml
+
 !backend/
 !backend/build/
 !backend/vendor/README.md
 !backend/restos_funcoes/*
+
+########## PASTA EM MANUTENÇÃO
+!backend/build/scripts_resto/python/youtube/
 
 # ##############################################################################
 # ###############################  PASTA BOOKS   ###############################

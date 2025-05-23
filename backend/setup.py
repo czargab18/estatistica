@@ -8,7 +8,7 @@ setup(
     package_dir={"": "src"},
     packages=find_packages(where="src"),
     install_requires=[
-        "beautifulsoup4 >= 4.13.4"
+        "beautifulsoup4 >= 4.13.4",
         # Liste aqui as dependências do seu pacote (ou use requirements.txt)
     ],
     include_package_data=True,
