@@ -52,3 +52,6 @@
 #     patternfolders=bk.CAMINHOS["pattern_book"],
 #     tipoarquivo=".html")
 # print("FIM da execução de: corrigirlinksinhead()")
+
+
+print("FIM da execução de: renderbook.py")
