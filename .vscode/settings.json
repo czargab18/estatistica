@@ -15,7 +15,7 @@
     "**/backend/**/.venv": true,
     "**/backend/**/.python-version": true,
     "**/backend/**/MANIFEST.in": true,
-    "**/backend/**/pyproject.toml": false
+    "**/backend/**/pyproject.toml": true
   },
 
   // Configurações: Editor
