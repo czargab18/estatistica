@@ -14,8 +14,8 @@
     // OCULTAR ARQUIVOS de UV PACKAGE MANAGER
     "**/backend/**/.venv": true,
     "**/backend/**/.python-version": true,
-    "**/backend/**/MANIFEST.in": true,  
-    "**/backend/**/pyproject.toml": true,  
+    "**/backend/**/MANIFEST.in": true,
+    "**/backend/**/pyproject.toml": false
   },
 
   // Configurações: Editor
