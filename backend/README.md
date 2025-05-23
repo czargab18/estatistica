@@ -2,24 +2,59 @@
 
 Este diretório reúne as principais funcionalidades de automação, processamento de dados e suporte à publicação acadêmica do repositório.
 
-## Gerenciador de pacotes e projetos Python: `uv`
+---
+
+## Visão Geral
+
+O backend deste projeto foi desenvolvido para automatizar tarefas, processar dados acadêmicos e facilitar a publicação de materiais didáticos. Ele utiliza Python moderno, scripts utilitários e integrações para garantir produtividade e reprodutibilidade.
+
+---
+
+## Pré-requisitos
+
+- **Python 3.8 ou superior**
+- **Git** para clonar o repositório
+- **Recomendado:** uso de ambiente virtual ou do gerenciador de pacotes [`uv`](https://docs.astral.sh/uv/getting-started/)
+
+---
+
+## Instalação e Configuração
+
+### 1. Clone o repositório
+
+```sh
+git clone https://github.com/cesargabrielphd/estatistica.git
+cd estatistica/backend
+```
+
+### 2. Instale as dependências
+
+#### Opção A: Usando pip (tradicional)
+
+- Instale o pacote no modo desenvolvimento:
+  ```sh
+  pip install -e .
+  ```
+- Ou apenas as dependências:
+  ```sh
+  pip install -r requirements.txt
+  ```
+
+#### Opção B: Usando o gerenciador de pacotes `uv` (recomendado)
 
 O [`uv`](https://docs.astral.sh/uv/getting-started/) é um gerenciador de pacotes e ambientes Python extremamente rápido, escrito em Rust.
 
-### Instalação do `uv`
-
-**Linux/macOS:**
-```sh
-wget -qO- https://astral.sh/uv/install.sh | sh
-```
-
-**Windows (PowerShell):**
-```powershell
-powershell -c "irm https://astral.sh/uv/install.ps1 | iex"
-```
+**Instalação do `uv`:**
+- **Linux/macOS:**
+  ```sh
+  wget -qO- https://astral.sh/uv/install.sh | sh
+  ```
+- **Windows (PowerShell):**
+  ```powershell
+  powershell -c "irm https://astral.sh/uv/install.ps1 | iex"
+  ```
 
 Após instalar, adicione o diretório ao PATH, se necessário:
-
 - **cmd:**
   ```cmd
   set Path=%USERPROFILE%\.local\bin;%Path%
@@ -34,34 +69,36 @@ Verifique a instalação:
 uv --version
 ```
 
-### Inicializando o projeto com `uv`
+**Inicializando o projeto com `uv`:**
 
 1. Acesse o diretório do backend:
    ```sh
    cd backend
    ```
-2. Inicialize o projeto (opcionalmente defina a versão do Python):
+2. Inicialize o pacote da pasta `backend` (opcionalmente defina a versão do Python):
    ```sh
-   uv init --python 3.13
+   uv init --package --python 3.13
    ```
-   > O comando acima cria o arquivo `uv.toml` e prepara o ambiente.
-
-3. Adicione dependências:
+   > O comando acima cria o arquivo `uv.lock` e prepara o ambiente.
+3. Adicione [dependências](https://docs.astral.sh/uv/concepts/projects/dependencies/#platform-specific-dependencies):
    ```sh
    uv add numpy
    uv add requests
    # ...adicione outros pacotes conforme necessário
    ```
-
+   ```sh
+   uv add -r requirements.txt
+   ```
+   ou para remover as dependencias:
+    ```sh
+    uv remove requirements.txt
+    ```
 4. Para rodar um script Python com o ambiente do projeto:
    ```sh
    uv run src/test/renderbook.py
-   # ou
-   uv run main.py
    ```
 
-### Gerenciando versões do Python com `uv`
-
+**Gerenciando versões do Python com `uv`:**
 - Instalar uma versão específica do Python:
   ```sh
   uv python install 3.13
@@ -76,89 +113,6 @@ uv --version
   ```
 
 Mais informações: [Documentação oficial do uv](https://docs.astral.sh/uv/concepts/projects/)
-
-## Sobre
-Um gerenciador de pacotes e projetos Python extremamente rápido, escrito em Rust.
-
-
-## Documentação para tornar `backend` como projeto `uv`
-
-[link da documentação](https://docs.astral.sh/uv/concepts/projects/)
-
-Os aplicativos são o destino padrão para , mas também podem ser especificados com o sinalizador.uv init--app
-```
-cd backend
-uv init
-```
-Os arquivos Python podem ser executados com:uv run
-```
-uv run arquivo_a_ser_rodado.py
-
-```
-
-## como instalar?
-```{cmd}
-wget -qO- https://astral.sh/uv/install.sh | sh
-```
-ou via Powershell
-
-```{Powershell}
-powershell -c "irm https://astral.sh/uv/install.ps1 | more"
-```
-verifique se foi bem instalado
-```{cmd}
-PS:> uv
-```
-
-[Versões do Python](https://docs.astral.sh/uv/getting-started/features/#python-versions)
-Instalando e gerenciando o próprio Python.
-
-- uv python install: Instale as versões do Python.
-- uv python list: Exibir as versões disponíveis do Python.
-- uv python find: Encontre uma versão do Python instalada.
-- uv python pin: Fixe o projeto atual para usar uma versão específica do Python.
-- uv python uninstall: Desinstale uma versão do Python.
-
-
-Consulte o [guia sobre como instalar o Python](https://docs.astral.sh/uv/guides/install-python/) para começar.
-
-
-## tutorial Augusto Galego
-```{}
-PS C:\Users\cesargabriel> powershell -ExecutionPolicy ByPass -c "irm https://astral.sh/uv/install.ps1 | iex"            Downloading uv 0.7.7 (x86_64-pc-windows-msvc)                                                                           Installing to C:\Users\cesargabriel\.local\bin
-  uv.exe
-  uvx.exe
-everything's installed!
-
-To add C:\Users\cesargabriel\.local\bin to your PATH, either restart your shell or run:
-
-    set Path=C:\Users\cesargabriel\.local\bin;%Path%   (cmd)
-    $env:Path = "C:\Users\cesargabriel\.local\bin;$env:Path"   (powershell)
-PS C:\Users\cesargabriel>
-
-```
-
-```{}
-cd ~/.github/estatistica
-
-# iniciar com python versão 3.13
-uv init --pythpn 3.13
-
-# pacote numpy
-uv add numpy
-```
-
-```{}
-# rodar arquivo main.py
-uv run main.py
-```
-
-```{}
-
-```
-
-
-
 
 ---
 
@@ -183,9 +137,7 @@ backend/
 ├── .gitignore           # Arquivos e pastas ignorados pelo Git
 ```
 
----
-
-## Descrição dos Subdiretórios
+### Descrição dos Subdiretórios
 
 - **build/**: Scripts de construção, pós-processamento, integração ou experimentação relacionados ao projeto.
 - **src/backend/**: Código-fonte principal do pacote Python, contendo módulos, funções e recursos essenciais.
@@ -196,7 +148,7 @@ backend/
 
 ---
 
-## Funcionalidades
+## Funcionalidades Principais
 
 - **Geração de Sitemap**: Automatiza a criação de um arquivo `sitemap.xml` para organizar e indexar links do projeto.
 - **Manipulação de Dados Acadêmicos**: Processamento e organização de informações sobre disciplinas, livros e materiais didáticos.
@@ -206,46 +158,16 @@ backend/
 
 ---
 
-## Instalação e Configuração
-
-> **Pré-requisitos:**  
-> - Python 3.8 ou superior  
-> - Recomenda-se o uso de um ambiente virtual para isolar dependências.
-
-### 1. Clone o repositório
-
-```bash
-git clone https://github.com/cesargabrielphd/estatistica.git
-```
-
-### 2. Navegue até o diretório do backend
-
-```bash
-cd estatistica/backend
-```
-
-### 3. Instale o pacote `backend` no modo desenvolvimento
-
-```bash
-pip install -e .
-```
-
-### 4. (Alternativa) Instale apenas as dependências
-
-```bash
-pip install -r requirements.txt
-```
-
----
-
-## Observações
+## Dicas e Boas Práticas
 
 - Scripts de automação adicionais podem ser executados diretamente a partir do diretório `tools/`.
 - Binários e softwares em `vendor/` **não são versionados**; recompile ou baixe-os conforme instruções internas.
 - Para empacotar o backend para distribuição, utilize:
-  ```bash
+  ```sh
   python -m build
   ```
+- Sempre utilize ambientes isolados (virtualenv, uv, etc) para evitar conflitos de dependências.
+- Consulte a documentação dos scripts e módulos para entender parâmetros e exemplos de uso.
 
 ---
 
@@ -253,6 +175,7 @@ pip install -r requirements.txt
 
 Dúvidas, sugestões ou contribuições? Abra uma issue ou entre em contato pelo [perfil do mantenedor](https://github.com/cesargabrielphd).
 
+---
 
 # backend/tools/README.md
 Destinado a adicionar scripts, executáveis, software e ferramentas de linha de comando úteis para o projeto.
