@@ -10,7 +10,12 @@
     "**/Thumbs.db": true,
     "**/node_modules": true,
     // OCULTAR ARQUIVOS PYTHON
-    "**/*.egg-info": true
+    "**/*.egg-info": true,
+    // OCULTAR ARQUIVOS de UV PACKAGE MANAGER
+    "**/backend/**/.venv": true,
+    "**/backend/**/.python-version": true,
+    "**/backend/**/MANIFEST.in": true,  
+    "**/backend/**/pyproject.toml": true,  
   },
 
   // Configurações: Editor
