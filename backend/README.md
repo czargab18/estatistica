@@ -18,11 +18,6 @@ No terminal PowerShell, dentro da pasta do projeto:
     ```powershell
     uv venv .venv
     ```
-- Ou usando Python padrão:
-    ```powershell
-    python -m venv .venv
-    ```
-
 ### 3. Ative o ambiente virtual
 
 ```powershell
@@ -55,10 +50,6 @@ Se aparecer erro de permissão (PSSecurityException), siga os passos abaixo para
     ```powershell
     uv pip install <pacote>
     ```
-- Usando pip padrão:
-    ```powershell
-    pip install -r requirements.txt
-    ```
 
 ### 5. Desative o ambiente virtual ao terminar
 
@@ -75,6 +66,3 @@ deactivate
     ```
 - Para mais detalhes, consulte: [about_Execution_Policies](https://go.microsoft.com/fwlink/?LinkID=135170)
 
-# Estatística
-
-...existing code...
