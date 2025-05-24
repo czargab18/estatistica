@@ -216,3 +216,71 @@ Destinado a adicionar scripts, executáveis, software e ferramentas de linha de 
 
 ## Exemplo
 - Posso instalar o tinyTeX na pasta `tools` e adicionar o executável `tlmgr` ao meu task, para que eu possa usar o comando `tlmgr` em qualquer lugar do sistema.
+
+---
+
+## Como iniciar o projeto com `uv` após criar o ambiente
+
+Após ativar o ambiente virtual, siga estes passos para iniciar o gerenciamento do projeto com o `uv`:
+
+1. **Inicialize o projeto com `uv`**
+   No diretório do backend, execute:
+   ```powershell
+   uv init --package . --python 3.13.3
+   ```
+   Isso criará o arquivo `pyproject.toml` e configurará o ambiente para o Python 3.13.3.
+
+2. **Se já existir um `pyproject.toml`**
+   Caso o projeto já tenha sido inicializado anteriormente, você verá um erro informando que o arquivo existe.
+   Para reinicializar, remova o arquivo:
+   ```powershell
+   del pyproject.toml
+   ```
+   Em seguida, repita o comando de inicialização.
+
+3. **Sobre o parâmetro `--package`**
+   - Use `--package .` para inicializar no diretório atual.
+   - Use `--package backend` para criar a estrutura dentro de uma subpasta `backend/backend`.
+
+4. **Exemplo de sequência de comandos:**
+   ```powershell
+   uv init
+   uv init --package --python 3.13.3
+   del py*.toml
+   uv init --package --python 3.13.3
+   del py*.toml
+   uv init --package backend --python 3.13.3
+   uv init --package . --python 3.13.3
+   ```
+
+> **Dica:** Sempre verifique se está no diretório correto antes de inicializar o projeto com `uv`.
+
+---
+
+## Observações sobre o uso do `uv init`
+
+Durante a inicialização do projeto com o `uv`, podem ocorrer situações como:
+
+```powershell
+(.venv) PS C:\Users\cesargabriel\github\estatistica\backend> uv init
+Initialized project `backend`
+(.venv) PS C:\Users\cesargabriel\github\estatistica\backend> uv init --package --python 3.13.3
+error: Project is already initialized in `C:\Users\cesargabriel\github\estatistica\backend` (`pyproject.toml` file exists)
+(.venv) PS C:\Users\cesargabriel\github\estatistica\backend> del py*.toml
+(.venv) PS C:\Users\cesargabriel\github\estatistica\backend> uv init --package --python 3.13.3
+Initialized project `backend`
+(.venv) PS C:\Users\cesargabriel\github\estatistica\backend> del py*.toml
+(.venv) PS C:\Users\cesargabriel\github\estatistica\backend> uv init --package backend --python 3.13.3
+Initialized project `backend` at `C:\Users\cesargabriel\github\estatistica\backend\backend`
+(.venv) PS C:\Users\cesargabriel\github\estatistica\backend> uv init --package . --python 3.13.3
+Initialized project `backend` at `C:\Users\cesargabriel\github\estatistica\backend`
+```
+
+**Notas importantes:**
+- O comando `uv init` só pode ser executado em um diretório que ainda não possua o arquivo `pyproject.toml`. Caso contrário, será exibido um erro informando que o projeto já está inicializado.
+- Para reinicializar, é possível remover o arquivo `pyproject.toml` e executar novamente o comando.
+- O parâmetro `--package` pode receber o nome do pacote, um caminho (`.` para o diretório atual) ou um subdiretório.
+- Se você passar `--package backend`, o projeto será inicializado dentro da pasta `backend/backend`.
+- Para inicializar no diretório atual, utilize `--package .`.
+
+Esses comandos são úteis para configurar corretamente o ambiente do projeto e evitar duplicidade de arquivos de configuração.
