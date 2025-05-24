@@ -1,15 +1,20 @@
 # Commit Message Instructions
 
-- Use conventional commit message format.
-- The commit message should ter uma descrição curta (até 50 caracteres) seguida por uma linha em branco e, em seguida, uma descrição mais longa e detalhada.
-- A descrição curta deve ser clara, objetiva e resumir a mudança feita. Evite frases longas ou genéricas.
+- Use o formato convencional de mensagens de commit.
+- A primeira linha (descrição curta) deve ter até 50 caracteres. Se ultrapassar esse limite, resuma a mensagem para que fique clara e objetiva, e transfira detalhes para a descrição longa.
 - O formato da descrição curta é: `<type>(<scope>): <short description>`
   - `type`: O tipo de mudança (ex: feat, fix, docs, style, refactor, test, chore, etc). Veja a lista abaixo.
   - `scope`: O escopo da mudança (ex: nome do componente, arquivo, módulo, etc). Inclua se a mudança for específica de uma parte do código.
-  - `short description`: Um resumo claro da mudança, com até 50 caracteres.
-- Após a linha em branco, adicione uma descrição longa e detalhada, explicando o motivo da mudança, o que foi alterado e qualquer contexto relevante. Seja claro, mas evite ser excessivamente prolixo.
+  - `short description`: Um resumo claro da mudança, com até 50 caracteres. Se necessário, resuma e transfira detalhes para o corpo do commit.
+- Após a linha em branco, adicione uma descrição longa e detalhada, explicando o motivo da mudança, o que foi alterado e qualquer contexto relevante. Use este espaço para esclarecer pontos que não couberam na descrição curta.
 - Se o commit corrige um problema, inclua `Fixes #<issue-number>` ou `Closes #<issue-number>` ao final da descrição longa.
 - Se o commit introduz uma breaking change, inclua `BREAKING CHANGE: <descrição da breaking change>` ao final da descrição longa.
+
+## Dicas para descrição curta
+- Seja direto e específico.
+- Use verbos no presente.
+- Evite frases genéricas ou muito amplas.
+- Se a mensagem exceder 50 caracteres, resuma para o essencial e explique o restante na descrição longa.
 
 ## Tipos comuns de commit
 - feat: Nova funcionalidade
