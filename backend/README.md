@@ -1,7 +1,5 @@
 # Pacote `backend`
 
----
-
 ## Tutorial: Usando o `uv` package manager com venv Python
 
 ### 1. Instale o `uv`
@@ -46,13 +44,9 @@ uv pip install <pacote>
 deactivate
 ```
 
----
-
 # Estatística
 
 ...existing code...
-
----
 
 ## Tutorial: Usando venv no Windows com restrição de scripts
 
@@ -109,8 +103,6 @@ Por segurança, volte a restringir a execução de scripts:
 Set-ExecutionPolicy -Scope CurrentUser -ExecutionPolicy Restricted
 ```
 
----
-
 ### Observações
 
 - Se não puder alterar a política de execução, use o script `.venv\Scripts\activate.bat` no CMD (Prompt de Comando), ou ajuste as variáveis de ambiente manualmente no PowerShell:
@@ -119,5 +111,3 @@ Set-ExecutionPolicy -Scope CurrentUser -ExecutionPolicy Restricted
     $env:PATH="$env:VIRTUAL_ENV\Scripts;$env:PATH"
     ```
 - Para mais detalhes, consulte: [about_Execution_Policies](https://go.microsoft.com/fwlink/?LinkID=135170)
-
----
