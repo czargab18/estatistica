@@ -9,7 +9,7 @@
 No terminal, execute:
 
 ```powershell
-pip install uv
+powershell -ExecutionPolicy ByPass -c "irm https://astral.sh/uv/install.ps1 | iex"
 ```
 
 ### 2. Crie o ambiente virtual com o Python mais recente
@@ -20,13 +20,13 @@ No terminal PowerShell, dentro da pasta do projeto:
 uv venv .venv
 ```
 
+> **Se aparecer erro de permissão (PSSecurityException) ao ativar o ambiente virtual, siga o tutorial abaixo para liberar scripts temporariamente (veja a seção "Tutorial: Usando venv no Windows com restrição de scripts" logo após este bloco).**
+
 ### 3. Ative o ambiente virtual
 
 ```powershell
 .venv\Scripts\Activate
 ```
-
-Se aparecer erro de permissão (PSSecurityException), siga o tutorial abaixo para liberar scripts temporariamente.
 
 ### 4. Instale dependências usando o `uv`
 
