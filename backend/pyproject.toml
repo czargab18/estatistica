@@ -1,0 +1,17 @@
+[project]
+name = "backend"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+authors = [
+    { name = "cesargabrielphd", email = "87340795+cesargabrielphd@users.noreply.github.com" }
+]
+requires-python = ">=3.13.3"
+dependencies = []
+
+[project.scripts]
+backend = "backend:main"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
