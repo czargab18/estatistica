@@ -1,4 +1,5 @@
-name: Deployment Estatística
+name: deploy to hostinger
+description: Deploy to Hostinger using SSH
 on:
   push:
     branches: ["main"]
