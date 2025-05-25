@@ -2,6 +2,9 @@
 
 - Use o formato convencional de mensagens de commit.
 - A primeira linha (descrição curta) deve ter no máximo 50 caracteres.
+  > exemplo:
+    de `chore: atualiza instruções de commit para melhor clareza` para
+    para `chore: atualiza instruções de mensagens de commits`
 - O formato da descrição curta é: `<type>(<scope>): <short description>`
   - `type`: O tipo de mudança (ex: feat, fix, docs, style, refactor, test, chore, etc). Veja a lista abaixo.
   - `scope`: O escopo da mudança (ex: nome do componente, arquivo, módulo, etc). Inclua se a mudança for específica de uma parte do código.
