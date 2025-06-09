@@ -1,3 +1,10 @@
+// Nova estrutura de código para o cálculo do IRA
+// 1. Ao invés injetar html com JaVascript, os elemtos HTML
+//    estarão na página mas ocultos par ao usuário.
+// 2. O javascrit apenas ira desocultar os elementos e adicionar
+//    os eventos necessários para o funcionamento do IRA.
+
+
 let periodoCount = 0;
 let disciplinaCount = {};
 const maxDisciplinas = 8;
