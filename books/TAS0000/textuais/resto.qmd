@@ -1,0 +1,38 @@
+
+# reescrever tudo 
+
+-   [Por que estatistica?]{.headline-question} Primeiro, a essência da estatística consiste sempre em tirar conclusões a cerca de um resultado. Muitos estudos são inviáveis para obter o resultado preciso. Para contornar esse problema, buscou-se muita mais tirar conclusões sobre resultados com certo grau de certeza que não ter resultado algum. Está alternativa é a habilidade que o estatístico deve desenvolver. Isso é para poucos. Talvez
+
+    Primeiro, devemos pensar na essência da estatística. Uma ciência que prefere ter uma informação, com certo grau de certeza de sucesso ou fracasso, para tomar uma decisão. Por uma leve reflexão, podemos perceber que essa mentalidade está bastante difundida em muitas áreas do conhecimento humano. Talvez seja por isso que o homem não consiga atingir a perfeição, apenas ter a um vislumbre. Bom, para muitos a Matemática é considerada a essencia da vida. Se isso é verdadeiro, me arrisco a dizer que a Estatística seria uma transformação (função) que pega essa "essência da vida" e a transforma em "outra mais evoluida". Uma transformação que produz bastantes erros.
+
+    De forma bem descarada, darei um motivo para doutrina-lo a ter esta mentalidade. Suponha um carro qualquer recém lançado e dito o mais seguro possível. Este carro possui um grande numéro de erros embutinos nele por uma escolha do fabricante, para lucrar sem tomar processos. Na Estatística há uma área chamada "Controle Estatístico de Qualidade". Muito usado na industria automotiva para a produção de peças que têm margens de erros mas são tão pequenas que podemos usa-las. Como dito anteriormente, é uma escolha do fabricante. É muito difícil e custoso produzir algo com muita perfeição. Escolhe-se vender o produto com essa chance de falha pequena por acreditar-se que será muito provável o acidente. Essa é a essência jovem padawan! O problema talvez seja o acumulo de pequenos erros em cada peça do carro. Não se preocupe! Isso concerteza talbém é controlado. Mas por precaução, use o cinto e respeite as Leis de Transito para ter mais segurança!
+
+## Dinâmica do Projeto
+
+A falta de dedicação exclusiva é o principal fator que define o ritmo do projeto. Por não oferecer retorno financeiro, mas sim intelectual, ele é desenvolvido nos momentos livres, como férias ou finais de semana. Além disso, o projeto não possui um ponto final definido, permitindo uma abordagem flexível e sem pressa para sua conclusão.
+
+Outro ponto relevante é a necessidade constante de reestruturação de partes do material. Embora esse processo demande tempo, ele é essencial para assegurar o bom funcionamento e a consistência do projeto. A reestruturação, por sua vez, pode ser realizada em paralelo ao desenvolvimento ativo, tornando o progresso mais dinâmico e adaptável.
+
+Por não haver prazos rígidos ou metas finais inflexíveis, o projeto avança de forma natural, sem pressões externas.
+
+## Estrutura das Notas
+
+**Nota:** Sempre que possível, todos os conceitos e ideias serão demonstrados de forma prática.
+
+-   **"Storytelling with data":** A ideia é oferecer a maior quantidade de informações possível, permitindo que o leitor escolha o que consumir com base em suas necessidades.
+
+1.  **Texto introdutório:** Apresentação geral do conteúdo e explicações iniciais.
+2.  **Exemplos e raciocínios para resolução:**
+    -   Exemplos simples.
+    -   Exemplos de dificuldade intermediária.
+    -   Exemplos avançados.
+3.  **Construção da demonstração:** Estruturação lógica do conceito (lemas, definições, etc.).
+4.  **Desenvolvimento da demonstração:** Apresentação da definição ou conclusão final.
+5.  **Aplicação prática:** Utilização da demonstração (item 4) para resolver os problemas dos exemplos (item 2).
+6.  **Mais exemplos:** Casos adicionais baseados na definição apresentada.
+7.  **Exercícios:**
+    -   **Cálculo prático:** Aplicar diretamente a fórmula ou definição (item 4).
+    -   **Problemas teóricos:** Desenvolver demonstrações ou justificar conceitos.
+    -   **Problemas de lógica:** Manipular conceitos e aprimorar pensamento lógico para resolver os desafios.
+
+

@@ -1,0 +1,30 @@
+% formulas_condicionais.tex
+\usepackage{ifthen} % Pacote necessário para condições
+\usepackage{xparse} % Pacote para comandos avançados
+
+% Exemplo 1: Fórmula com parâmetros simples
+\newcommand{\formulaComParametro}[1]{
+    \text{Resultado: } #1^2
+}
+
+% Exemplo 2: Fórmula com condições (ifthen)
+\newcommand{\formulaCondicional}[1]{
+    \ifthenelse{\equal{#1}{A}}{
+        \text{Você escolheu a fórmula A: } E = mc^2
+    }{
+        \ifthenelse{\equal{#1}{B}}{
+            \text{Você escolheu a fórmula B: } a^2 + b^2 = c^2
+        }{
+            \text{Escolha inválida. Use A ou B.}
+        }
+    }
+}
+
+% Exemplo 3: Usando xparse para mais flexibilidade
+\NewDocumentCommand{\formulaAvancada}{ O{} m }{%
+    \IfValueTF{#1}{
+        \text{Parâmetro opcional: #1, Parâmetro obrigatório: #2}
+    }{
+        \text{Sem parâmetro opcional, Parâmetro obrigatório: #2}
+    }
+}

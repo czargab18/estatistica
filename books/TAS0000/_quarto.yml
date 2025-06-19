@@ -1,0 +1,26 @@
+project:
+  type: book
+#  output-dir: "../../docs/TAS0000"
+  lib-dir:  "./../delete/site_libs"
+  preview:
+    port: 4200
+    browser: false
+
+number-sections: false
+
+book:
+  chapters:
+    - index.qmd
+    - postextuais/references.qmd
+
+bibliography: postextuais/references.bib
+
+format:
+  html:
+    toc: false
+    sidebar:
+    theme:
+      - cosmo
+      - brand
+    code-link: true
+    search: true
