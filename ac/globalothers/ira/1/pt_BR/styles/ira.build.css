@@ -128,7 +128,7 @@ main[id="globalmain-ira"] #chapternav {
   align-items: center;
   justify-content: space-around;
   width: 100%;
-  background-color: var(--bg-color-gray);
+  /* background-color: var(--bg-color-gray); */
   /* margin-top: calc(var(--r-globalheader-height) + var(--r-globalnavbar-height) + 32px); */
 }
 @media screen and (max-width: 744px) {

@@ -11,6 +11,9 @@ const maxDisciplinas = 8;
 const maxPeriodos = 20;
 
 document.addEventListener("DOMContentLoaded", () => {
+  // Mostrar modal de disclaimer primeiro
+  mostrarModalDisclaimer();
+
   // Adicionar evento ao botão "Novo Período"
   const botaoNovoPeriodo = document.getElementById("novoPeriodo");
   if (botaoNovoPeriodo) {
@@ -59,7 +62,7 @@ function criarBotoesAdicionais() {
   const templateBtnImportar = document.getElementById("template-btn-importar");
   const btnImportar = templateBtnImportar.cloneNode(true);
   btnImportar.id = "importarCSV";
-  btnImportar.style.display = "none"; // Inicialmente oculto
+  btnImportar.style.display = "inline-block"; // Sempre visível
   btnImportar.classList.remove("template-btn");
   btnImportar.addEventListener("click", () => inputImportar.click());
 
@@ -86,11 +89,11 @@ function criarBotoesAdicionais() {
     );
   });
 
-  // Clonar e configurar botão para estatísticas
+  // Clonar e configurar botão para estatísticas (temporariamente oculto)
   const templateBtnEstatisticas = document.getElementById("template-btn-estatisticas");
   const btnEstatisticas = templateBtnEstatisticas.cloneNode(true);
   btnEstatisticas.id = "toggleEstatisticas";
-  btnEstatisticas.style.display = "none"; // Inicialmente oculto
+  btnEstatisticas.style.display = "none"; // Temporariamente sempre oculto
   btnEstatisticas.classList.remove("template-btn");
   btnEstatisticas.addEventListener("click", () => {
     const area = document.getElementById('estatisticas-rapidas');
@@ -115,7 +118,7 @@ function criarBotoesAdicionais() {
 // Função para atualizar visibilidade dos botões baseado na presença de períodos
 function atualizarVisibilidadeBotoes() {
   const temPeriodos = periodoCount > 0;
-  const botoes = ['baixarCSV', 'importarCSV', 'toggleEstatisticas', 'limparDados'];
+  const botoes = ['baixarCSV', 'limparDados']; // Removido 'importarCSV' e 'toggleEstatisticas'
 
   botoes.forEach(id => {
     const botao = document.getElementById(id);
@@ -549,7 +552,7 @@ function baixarDadosCSV() {
   link.click();
   document.body.removeChild(link);
   
-  mostrarNotificacao('Arquivo CSV baixado com sucesso!', 'success');
+  //  mostrarNotificacao('Arquivo CSV baixado com sucesso!', 'success');
 }
 
 // Função para importar dados de arquivo CSV
@@ -756,6 +759,34 @@ function mostrarModal(titulo, mensagem, callback) {
   });
 
   document.getElementById('modal-cancelar').addEventListener('click', () => {
+    modal.style.display = 'none';
+  });
+
+  // Fechar com ESC ou clique fora
+  const fecharModal = (e) => {
+    if (e.key === 'Escape' || e.target === modal) {
+      modal.style.display = 'none';
+      document.removeEventListener('keydown', fecharModal);
+      modal.removeEventListener('click', fecharModal);
+    }
+  };
+
+  document.addEventListener('keydown', fecharModal);
+  modal.addEventListener('click', fecharModal);
+}
+
+// Modal de disclaimer
+function mostrarModalDisclaimer() {
+  const modal = document.getElementById('modal-disclaimer');
+  const botaoOk = document.getElementById('modal-disclaimer-ok');
+
+  modal.style.display = 'block';
+
+  // Remover listeners anteriores
+  botaoOk.replaceWith(botaoOk.cloneNode(true));
+
+  // Adicionar novo listener
+  document.getElementById('modal-disclaimer-ok').addEventListener('click', () => {
     modal.style.display = 'none';
   });
 

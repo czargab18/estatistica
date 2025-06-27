@@ -143,6 +143,19 @@
         </div>
       </div>
       
+      <!-- Modal de disclaimer -->
+      <div id="modal-disclaimer"
+        style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0,0,0,0.5); z-index: 1001;">
+        <div
+          style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); background: white; padding: 2em; border-radius: 0.5em; max-width: 500px; width: 90%;">
+          <h3>⚠️ Aviso Importante</h3>
+          <p style="margin: 1.5em 0; line-height: 1.6; color: #333;">Este não é um site oficial da Universidade de Brasília. O
+            IRA calculado aqui não pode ser utilizado para fins de comprovação de rendimento acadêmico.</p>
+          <div style="display: flex; justify-content: center; margin-top: 1.5em;">
+            <button id="modal-disclaimer-ok" class="btn btn-primary">Entendi</button>
+          </div>
+        </div>
+      </div>
       <!-- Área de estatísticas rápidas -->
       <div id="estatisticas-rapidas" style="display: none; margin: 1em; padding: 1em; background-color: var(--bg-color-gray); border-radius: 0.5em;">
         <h4>Estatísticas</h4>
@@ -242,6 +255,7 @@
       <input id="template-input-importar" type="file" accept=".csv" class="template-input" style="display: none;">
     </div>
     
+    <!--
     <div id="aviso-site-nao-oficial">
       <div class="avisos">
         <p>
@@ -250,6 +264,6 @@
           <strong class="aviso">comprovação de rendimento acadêmico</strong>.
         </p>
       </div>
-    </div>
+    </div> -->
   </body>
 </html>
