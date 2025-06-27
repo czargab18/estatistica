@@ -1,5 +1,15 @@
 # Calculadora de IRA - Funcionalidades
 
+## Utilidades do app/ira
+
+- **Calculadora de IRA**: Ferramenta para calcular o Índice de Rendimento Acadêmico (IRA) de forma simples e eficiente.
+    > A pessoa pode informar o período, disciplina, créditos e menção dos semestres para calcular o IRA.
+- **Previsão de IRA (semestres)**: Permite prever o IRA para semestres futuros com base nas disciplinas planejadas.  
+    > A pessoa pode informar o IRA e o semestre atual, e preencher disciplinas do proxímo semestre para calcular o IRA esperado, com base nas menções.
+
+- **Exportação e Importação de Dados**: Facilita o backup e a restauração dos dados do IRA.
+
+
 ## 📋 Funcionalidades Implementadas (Issue #19)
 
 ### ✅ 1. Exportação e Importação de Dados
