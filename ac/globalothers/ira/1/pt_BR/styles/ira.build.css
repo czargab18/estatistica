@@ -313,3 +313,294 @@ div[id="container-periodos"] div[id^="periodo"] div[id$="-disciplinas"] div[id$=
     padding-left: 1em;
   }
 }
+
+/* =====================================
+   NOVOS ESTILOS - ISSUE #19
+   ===================================== */
+
+/* Estilos para os novos botões de funcionalidades */
+.btn-info {
+  color: #fff;
+  background-color: #0dcaf0;
+  border-color: #0dcaf0;
+}
+
+.btn-info:hover {
+  color: #000;
+  background-color: #31d2f2;
+  border-color: #25cff2;
+}
+
+.btn-warning {
+  color: #000;
+  background-color: #ffc107;
+  border-color: #ffc107;
+}
+
+.btn-warning:hover {
+  color: #000;
+  background-color: #ffca2c;
+  border-color: #ffc720;
+}
+
+/* Estilo para botão secundário */
+.btn-secondary {
+  color: #fff;
+  background-color: #6c757d;
+  border-color: #6c757d;
+}
+
+.btn-secondary:hover {
+  color: #fff;
+  background-color: #545b62;
+  border-color: #4e555b;
+}
+
+/* Melhorias na linha superior de botões */
+#linhaSuperior {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5em;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+@media screen and (max-width: 768px) {
+  #linhaSuperior {
+    justify-content: center;
+  }
+  
+  #linhaSuperior button {
+    font-size: 12px;
+    padding: 0.4em 0.8em !important;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  #linhaSuperior {
+    flex-direction: column;
+    width: 100%;
+  }
+  
+  #linhaSuperior button {
+    width: 100%;
+    margin: 0.25em 0;
+  }
+}
+
+/* Melhorias na responsividade para tablets */
+@media screen and (max-width: 1024px) and (min-width: 769px) {
+  div[id="container-periodos"] div[id^="periodo"] div[id$="-disciplinas"] div[class="preencher-linha"] {
+    flex-wrap: wrap;
+  }
+  
+  div[id="container-periodos"] div[id^="periodo"] div[id$="-disciplinas"] div[id$="-preencher"] div[class="left"] {
+    flex: 2;
+    min-width: 300px;
+  }
+  
+  div[id="container-periodos"] div[id^="periodo"] div[id$="-disciplinas"] div[id$="-preencher"] div[class="rigth"] {
+    flex: 1;
+    min-width: 200px;
+  }
+}
+
+/* Melhorias para dispositivos móveis menores */
+@media screen and (max-width: 320px) {
+  button,
+  input,
+  select {
+    font-size: 12px;
+    padding: 0.3em 0.6em !important;
+  }
+  
+  #chapternav .chapternav-content {
+    flex-direction: column;
+    gap: 0.5em;
+  }
+  
+  #ira-mp {
+    font-size: 20px;
+  }
+  
+  div[class="periodo-title"] {
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5em;
+  }
+}
+
+/* Indicador visual para dados não salvos */
+.dados-modificados::before {
+  content: "● ";
+  color: #ff6b6b;
+  font-weight: bold;
+}
+
+/* Animação para feedback visual */
+.salvo-sucesso {
+  background-color: #d4edda !important;
+  border-color: #c3e6cb !important;
+  transition: all 0.3s ease;
+}
+
+/* Tooltip para botões */
+.btn-tooltip {
+  position: relative;
+}
+
+.btn-tooltip:hover::after {
+  content: attr(data-tooltip);
+  position: absolute;
+  bottom: 125%;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #333;
+  color: white;
+  padding: 0.5em;
+  border-radius: 0.25em;
+  white-space: nowrap;
+  font-size: 12px;
+  z-index: 1000;
+}
+
+/* Melhorias na acessibilidade */
+button:focus,
+input:focus,
+select:focus {
+  outline: 2px solid #0dcaf0;
+  outline-offset: 2px;
+}
+
+/* Estilo para mensagem de status */
+.status-message {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  padding: 1em;
+  border-radius: 0.5em;
+  color: white;
+  font-weight: bold;
+  z-index: 1000;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.status-message.show {
+  opacity: 1;
+}
+
+.status-message.success {
+  background-color: #28a745;
+}
+
+.status-message.error {
+  background-color: #dc3545;
+}
+
+.status-message.info {
+  background-color: #17a2b8;
+}
+
+/* Melhorias no layout do container principal */
+#container-periodos {
+  padding: 1em;
+  margin: 0 auto;
+}
+
+/* Estilos para campos obrigatórios */
+input:required:invalid {
+  border-color: #dc3545;
+}
+
+input:required:valid {
+  border-color: #28a745;
+}
+
+/* Melhorias nos estilos do modal */
+#modal-confirmacao {
+  backdrop-filter: blur(2px);
+}
+
+#modal-confirmacao > div {
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  animation: modalFadeIn 0.3s ease;
+}
+
+@keyframes modalFadeIn {
+  from {
+    opacity: 0;
+    transform: translate(-50%, -60%);
+  }
+  to {
+    opacity: 1;
+    transform: translate(-50%, -50%);
+  }
+}
+
+/* Melhorias na área de estatísticas */
+#estatisticas-rapidas {
+  border-left: 4px solid var(--bg-color-blue);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+#estatisticas-rapidas h4 {
+  color: var(--bg-color-blue-black);
+  margin-bottom: 1em;
+}
+
+#estatisticas-rapidas > div > div {
+  padding: 0.5em;
+  background: white;
+  border-radius: 0.25em;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+#estatisticas-rapidas strong {
+  display: block;
+  font-size: 0.9em;
+  color: #666;
+  margin-bottom: 0.25em;
+}
+
+#estatisticas-rapidas span {
+  font-size: 1.2em;
+  font-weight: bold;
+  color: var(--bg-color-blue-black);
+}
+
+/* Animação para feedback visual ao salvar */
+.saving-feedback {
+  animation: pulse 0.6s ease-in-out;
+}
+
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+  100% { transform: scale(1); }
+}
+
+/* Melhorias na responsividade para dispositivos menores */
+@media screen and (max-width: 576px) {
+  #estatisticas-rapidas > div {
+    grid-template-columns: 1fr;
+  }
+  
+  #modal-confirmacao > div {
+    width: 95%;
+    margin: 1em;
+  }
+  
+  #modal-confirmacao h3 {
+    font-size: 1.2em;
+  }
+  
+  #modal-confirmacao > div > div {
+    flex-direction: column;
+  }
+  
+  #modal-confirmacao button {
+    width: 100%;
+    margin: 0.25em 0;
+  }
+}

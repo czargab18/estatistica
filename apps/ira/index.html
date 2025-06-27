@@ -1267,10 +1267,7 @@
                       >
                         Links rápidas
                       </h2>
-                      <ul
-                        class="globalnavbar-submenu-list"
-                        aria-labelledby="b80e39ed"
-                      >
+                      <ul class="globalnavbar-submenu-list">
                         <li class="globalnavbar-submenu-list-item">
                           <a
                             href="/retail/"
@@ -1309,49 +1306,34 @@
                       </ul>
                     </div>
                     <div class="globalnavbar-submenu-group">
-                      <h2
-                        class="globalnavbar-submenu-header"
-                        id="68805228"
-                      >
-                        Ajuda
-                      </h2>
-                      <ul
-                        class="globalnavbar-submenu-list"
-                        aria-labelledby="68805228"
-                      >
+                      <h2 class="globalnavbar-submenu-header">Ajuda</h2>
+                      <ul class="globalnavbar-submenu-list">
                         <li class="globalnavbar-submenu-list-item">
                           <a
-                            href="special_deals"
+                            href="#"
                             class="globalnavbar-submenu-link"
-                            >Certified Refurbished</a
+                            >Secretária</a
                           >
                         </li>
                         <li class="globalnavbar-submenu-list-item">
                           <a
-                            href="educationrouting"
+                            href="#"
                             class="globalnavbar-submenu-link"
-                            >Education</a
+                            >Comunicados</a
                           >
                         </li>
                         <li class="globalnavbar-submenu-list-item">
                           <a
-                            href="/retail/business/"
+                            href="#"
                             class="globalnavbar-submenu-link"
-                            >Business</a
+                            >Eventos</a
                           >
                         </li>
                         <li class="globalnavbar-submenu-list-item">
                           <a
-                            href="eppstore/veteransandmilitary"
+                            href="#"
                             class="globalnavbar-submenu-link"
-                            >Veterans and Military</a
-                          >
-                        </li>
-                        <li class="globalnavbar-submenu-list-item">
-                          <a
-                            href="/r/store/government/"
-                            class="globalnavbar-submenu-link"
-                            >Government</a
+                            >Oportunidades</a
                           >
                         </li>
                       </ul>
@@ -1891,49 +1873,34 @@
                       </ul>
                     </div>
                     <div class="globalnavbar-submenu-group">
-                      <h2
-                        class="globalnavbar-submenu-header"
-                        id="68805228"
-                      >
-                        Ajuda
-                      </h2>
-                      <ul
-                        class="globalnavbar-submenu-list"
-                        aria-labelledby="68805228"
-                      >
+                      <h2 class="globalnavbar-submenu-header">Ajuda</h2>
+                      <ul class="globalnavbar-submenu-list">
                         <li class="globalnavbar-submenu-list-item">
                           <a
-                            href="special_deals"
+                            href="#"
                             class="globalnavbar-submenu-link"
-                            >Certified Refurbished</a
+                            >Secretária</a
                           >
                         </li>
                         <li class="globalnavbar-submenu-list-item">
                           <a
-                            href="educationrouting"
+                            href="#"
                             class="globalnavbar-submenu-link"
-                            >Education</a
+                            >Comunicados</a
                           >
                         </li>
                         <li class="globalnavbar-submenu-list-item">
                           <a
-                            href="/retail/business/"
+                            href="#"
                             class="globalnavbar-submenu-link"
-                            >Business</a
+                            >Eventos</a
                           >
                         </li>
                         <li class="globalnavbar-submenu-list-item">
                           <a
-                            href="eppstore/veteransandmilitary"
+                            href="#"
                             class="globalnavbar-submenu-link"
-                            >Veterans and Military</a
-                          >
-                        </li>
-                        <li class="globalnavbar-submenu-list-item">
-                          <a
-                            href="/r/store/government/"
-                            class="globalnavbar-submenu-link"
-                            >Government</a
+                            >Oportunidades</a
                           >
                         </li>
                       </ul>
@@ -2020,6 +1987,49 @@
         </div>
       </div>
       <div id="container-periodos"></div>
+      
+      <!-- Modal para confirmações -->
+      <div id="modal-confirmacao" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0,0,0,0.5); z-index: 1000;">
+        <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); background: white; padding: 2em; border-radius: 0.5em; max-width: 400px; width: 90%;">
+          <h3 id="modal-titulo">Confirmação</h3>
+          <p id="modal-mensagem">Tem certeza?</p>
+          <div style="display: flex; gap: 1em; justify-content: flex-end; margin-top: 1em;">
+            <button id="modal-cancelar" class="btn btn-secondary">Cancelar</button>
+            <button id="modal-confirmar" class="btn btn-danger">Confirmar</button>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Área de estatísticas rápidas -->
+      <div id="estatisticas-rapidas" style="display: none; margin: 1em; padding: 1em; background-color: var(--bg-color-gray); border-radius: 0.5em;">
+        <h4>Estatísticas</h4>
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1em;">
+          <div>
+            <strong>Total de Períodos:</strong>
+            <span id="stat-periodos">0</span>
+          </div>
+          <div>
+            <strong>Total de Disciplinas:</strong>
+            <span id="stat-disciplinas">0</span>
+          </div>
+          <div>
+            <strong>Disciplinas Aprovadas:</strong>
+            <span id="stat-aprovadas">0</span>
+          </div>
+          <div>
+            <strong>Disciplinas Reprovadas:</strong>
+            <span id="stat-reprovadas">0</span>
+          </div>
+          <div>
+            <strong>Créditos Totais:</strong>
+            <span id="stat-creditos-totais">0</span>
+          </div>
+          <div>
+            <strong>Créditos Aprovados:</strong>
+            <span id="stat-creditos-aprovados">0</span>
+          </div>
+        </div>
+      </div>
     </main>
     <div id="aviso-site-nao-oficial">
       <div class="avisos">
