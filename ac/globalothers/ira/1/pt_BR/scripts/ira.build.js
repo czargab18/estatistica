@@ -108,13 +108,6 @@ function criarBotoesAdicionais() {
     }
   });
 
-  // Botão para relatório completo
-  const btnRelatorio = document.createElement("button");
-  btnRelatorio.id = "relatorioCompleto";
-  btnRelatorio.className = "btn btn-success";
-  btnRelatorio.textContent = "Relatório";
-  btnRelatorio.addEventListener("click", exportarRelatorioCompleto);
-
   // Adicionar botões à linha superior
   linhaSuperior.appendChild(btnBaixarCSV);
   linhaSuperior.appendChild(btnImportar);
@@ -588,31 +581,6 @@ function baixarDadosCSV() {
   mostrarNotificacao('Arquivo CSV baixado com sucesso!', 'success');
 }
 
-// Função melhorada para baixar JSON
-function baixarDadosJSON() {
-  const dados = coletarTodosDados();
-  
-  // Adicionar metadados
-  dados.metadata = {
-    versao: '1.0',
-    geradoEm: new Date().toISOString(),
-    totalPeriodos: dados.periodos.length,
-    totalDisciplinas: dados.periodos.reduce((total, periodo) => total + periodo.disciplinas.length, 0)
-  };
-
-  const blob = new Blob([JSON.stringify(dados, null, 2)], { type: 'application/json' });
-  const link = document.createElement('a');
-  const url = URL.createObjectURL(blob);
-  link.setAttribute('href', url);
-  link.setAttribute('download', `ira_dados_${new Date().toISOString().split('T')[0]}.json`);
-  link.style.visibility = 'hidden';
-  document.body.appendChild(link);
-  link.click();
-  document.body.removeChild(link);
-  
-  mostrarNotificacao('Arquivo JSON baixado com sucesso!', 'success');
-}
-
 // Função para importar dados de arquivo CSV
 function importarDadosCSV(event) {
   const file = event.target.files[0];
@@ -949,56 +917,3 @@ function restaurarBackup() {
   return false;
 }
 
-// Função para exportar relatório completo
-function exportarRelatorioCompleto() {
-  const dados = coletarTodosDados();
-  atualizarEstatisticas();
-  
-  // Calcular IRA atual
-  let totalPontos = 0;
-  let totalCreditos = 0;
-  
-  dados.periodos.forEach(periodo => {
-    periodo.disciplinas.forEach(disciplina => {
-      if (disciplina.creditos && disciplina.mencao) {
-        const creditos = parseInt(disciplina.creditos);
-        const pontos = obterPontosMencao(disciplina.mencao);
-        if (pontos !== null) {
-          totalPontos += creditos * pontos;
-          totalCreditos += creditos;
-        }
-      }
-    });
-  });
-  
-  const ira = totalCreditos > 0 ? (totalPontos / totalCreditos) : 0;
-  
-  const relatorio = {
-    ...dados,
-    relatorio: {
-      geradoEm: new Date().toISOString(),
-      ira: parseFloat(ira.toFixed(2)),
-      totalCreditos: totalCreditos,
-      totalPontos: totalPontos,
-      estatisticas: {
-        periodos: dados.periodos.length,
-        disciplinas: document.getElementById('stat-disciplinas')?.textContent || '0',
-        aprovadas: document.getElementById('stat-aprovadas')?.textContent || '0',
-        reprovadas: document.getElementById('stat-reprovadas')?.textContent || '0',
-        creditosAprovados: document.getElementById('stat-creditos-aprovados')?.textContent || '0'
-      }
-    }
-  };
-  
-  const blob = new Blob([JSON.stringify(relatorio, null, 2)], { type: 'application/json' });
-  const link = document.createElement('a');
-  const url = URL.createObjectURL(blob);
-  link.setAttribute('href', url);
-  link.setAttribute('download', `ira_relatorio_completo_${new Date().toISOString().split('T')[0]}.json`);
-  link.style.visibility = 'hidden';
-  document.body.appendChild(link);
-  link.click();
-  document.body.removeChild(link);
-  
-  mostrarNotificacao('Relatório completo exportado!', 'success');
-}

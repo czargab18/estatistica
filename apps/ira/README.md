@@ -2,37 +2,38 @@
 
 ## 📋 Funcionalidades Implementadas (Issue #19)
 
-### ✅ 1. Botão para baixar os dados preenchidos
-- **Botão "Baixar CSV"**: Exporta os dados em formato CSV para análise em planilhas
-- **Botão "Baixar JSON"**: Exporta os dados em formato JSON para backup completo
-- **Botão "Relatório"**: Gera relatório completo com estatísticas e metadados
+### ✅ 1. Exportação e Importação de Dados
+- **Botão "Baixar CSV"**: Exporta os dados em formato CSV estruturado (periodo;disciplina;creditos;mencao;status)
+- **Botão "Importar CSV"**: Permite carregar dados de arquivo CSV com validação completa
+- **Formato padrão**: Foco exclusivo em CSV para máxima compatibilidade com planilhas
 
 ### ✅ 2. Sistema de Cookies/LocalStorage
 - **Auto-save**: Dados são salvos automaticamente a cada 30 segundos
 - **Carregamento automático**: Dados anteriores são carregados ao abrir a página
-- **Backup automático**: Sistema cria backup a cada cálculo do IRA
+- **Backup automático**: Sistema cria backup em CSV no localStorage
 - **Indicador visual**: Mostra quando há dados não salvos
 
-### ✅ 3. Importação de dados
-- **Botão "Importar Dados"**: Permite carregar dados de arquivo JSON
-- **Validação**: Verifica se o arquivo é válido antes de importar
-- **Feedback visual**: Notificações de sucesso/erro
+### ✅ 3. Importação de dados CSV
+- **Validação robusta**: Verifica formato, campos obrigatórios e valores válidos
+- **Feedback detalhado**: Notificações específicas sobre erros de importação
+- **Exemplo incluído**: Arquivo exemplo_ira_dados.csv para referência
 
 ### ✅ 4. Aviso ao sair da página
 - **Detecção de saída**: Monitora quando o usuário tenta sair da página
 - **Salvamento automático**: Salva dados antes de sair
 - **Aviso personalizado**: Informa sobre dados não salvos
 
-### ✅ 5. Opção de formato de exportação
-- **CSV**: Ideal para análise em Excel/Google Sheets
-- **JSON**: Backup completo com todos os dados
-- **Relatório**: Formato completo com estatísticas
+### ✅ 5. Formato CSV estruturado
+- **Padrão único**: periodo;disciplina;creditos;mencao;status
+- **Compatibilidade**: Funciona com Excel, Google Sheets e outros editores
+- **Validação**: Menções válidas (SS, MS, MM, MI, II, SR, TR, SF)
 
 ### ✅ 6. Reescrita da lógica JavaScript
 - **Código modular**: Funções organizadas e reutilizáveis
 - **Melhor performance**: Otimizações na manipulação do DOM
 - **Sistema de notificações**: Feedback visual para o usuário
-- **Validação de dados**: Verificação de consistência
+- **Validação de dados**: Verificação de consistência e formato CSV
+- **Foco em CSV**: Lógica simplificada para trabalhar exclusivamente com CSV
 
 ### ✅ 7. Responsividade aprimorada
 - **Mobile-first**: Design otimizado para dispositivos móveis
@@ -95,16 +96,17 @@
 1. **Adicionar Período**: Clique em "Novo Período" ou use Ctrl+N
 2. **Preencher Dados**: Complete código, créditos e menção das disciplinas
 3. **Salvar**: Os dados são salvos automaticamente (ou use Ctrl+S)
-4. **Exportar**: Use os botões de download para exportar seus dados
-5. **Estatísticas**: Clique em "Estatísticas" para ver métricas detalhadas
-6. **Importar**: Use "Importar Dados" para carregar dados anteriores
+4. **Exportar CSV**: Use "Baixar CSV" para exportar seus dados (Ctrl+E)
+5. **Importar CSV**: Use "Importar CSV" para carregar dados anteriores (Ctrl+I)
+6. **Estatísticas**: Clique em "Estatísticas" para ver métricas detalhadas
 
 ## 🔧 Funcionalidades Técnicas
 
 ### Validação de Dados
-- Verificação de campos obrigatórios
+- Verificação de campos obrigatórios CSV
 - Validação de formato de código de disciplina
 - Consistência entre créditos e menções
+- Validação de estrutura e separadores CSV
 
 ### Performance
 - Debounce em eventos de entrada
@@ -112,9 +114,10 @@
 - Otimização de re-renderização
 
 ### Segurança
-- Validação de arquivos importados
-- Sanitização de dados
+- Validação de arquivos CSV importados
+- Sanitização de dados CSV
 - Tratamento de erros robusto
+- Verificação de formato e estrutura
 
 ## 📄 Formato CSV Estruturado
 
