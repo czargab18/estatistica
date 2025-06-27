@@ -444,26 +444,6 @@ div[id="container-periodos"] div[id^="periodo"] div[id$="-disciplinas"] div[id$=
   transition: all 0.3s ease;
 }
 
-/* Tooltip para botões */
-.btn-tooltip {
-  position: relative;
-}
-
-.btn-tooltip:hover::after {
-  content: attr(data-tooltip);
-  position: absolute;
-  bottom: 125%;
-  left: 50%;
-  transform: translateX(-50%);
-  background-color: #333;
-  color: white;
-  padding: 0.5em;
-  border-radius: 0.25em;
-  white-space: nowrap;
-  font-size: 12px;
-  z-index: 1000;
-}
-
 /* Melhorias na acessibilidade */
 button:focus,
 input:focus,

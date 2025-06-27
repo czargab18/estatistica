@@ -22,10 +22,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // Criar botões de funcionalidades adicionais
   criarBotoesAdicionais();
-  
-  // Adicionar tooltips aos botões
-  setTimeout(adicionarTooltips, 100);
-  
+
   // Iniciar sistema de auto-save
   iniciarAutoSave();
   
@@ -35,11 +32,6 @@ document.addEventListener("DOMContentLoaded", () => {
   // Resetar flag de modificação inicial
   dadosModificados = false;
   atualizarIndicadorModificacao();
-  
-  // Mostrar dicas de uso
-  setTimeout(() => {
-    mostrarNotificacao('Dica: Use Ctrl+S para salvar, Ctrl+N para novo período, Ctrl+E para exportar CSV, Ctrl+I para importar CSV', 'info', 5000);
-  }, 2000);
 });
 
 // Função para criar botões adicionais
@@ -51,7 +43,7 @@ function criarBotoesAdicionais() {
   const templateBtnCSV = document.getElementById("template-btn-csv");
   const btnBaixarCSV = templateBtnCSV.cloneNode(true);
   btnBaixarCSV.id = "baixarCSV";
-  btnBaixarCSV.style.display = "inline-block";
+  btnBaixarCSV.style.display = "none"; // Inicialmente oculto
   btnBaixarCSV.classList.remove("template-btn");
   btnBaixarCSV.addEventListener("click", baixarDadosCSV);
 
@@ -67,7 +59,7 @@ function criarBotoesAdicionais() {
   const templateBtnImportar = document.getElementById("template-btn-importar");
   const btnImportar = templateBtnImportar.cloneNode(true);
   btnImportar.id = "importarCSV";
-  btnImportar.style.display = "inline-block";
+  btnImportar.style.display = "none"; // Inicialmente oculto
   btnImportar.classList.remove("template-btn");
   btnImportar.addEventListener("click", () => inputImportar.click());
 
@@ -75,7 +67,7 @@ function criarBotoesAdicionais() {
   const templateBtnLimpar = document.getElementById("template-btn-limpar");
   const btnLimpar = templateBtnLimpar.cloneNode(true);
   btnLimpar.id = "limparDados";
-  btnLimpar.style.display = "inline-block";
+  btnLimpar.style.display = "none"; // Inicialmente oculto
   btnLimpar.classList.remove("template-btn");
   btnLimpar.addEventListener("click", () => {
     mostrarModal(
@@ -89,7 +81,7 @@ function criarBotoesAdicionais() {
         atualizarIndicadorModificacao();
         atualizarIRA();
         atualizarEstatisticas();
-        mostrarNotificacao('Todos os dados foram limpos!', 'info');
+        atualizarVisibilidadeBotoes(); // Atualizar visibilidade após limpar
       }
     );
   });
@@ -98,7 +90,7 @@ function criarBotoesAdicionais() {
   const templateBtnEstatisticas = document.getElementById("template-btn-estatisticas");
   const btnEstatisticas = templateBtnEstatisticas.cloneNode(true);
   btnEstatisticas.id = "toggleEstatisticas";
-  btnEstatisticas.style.display = "inline-block";
+  btnEstatisticas.style.display = "none"; // Inicialmente oculto
   btnEstatisticas.classList.remove("template-btn");
   btnEstatisticas.addEventListener("click", () => {
     const area = document.getElementById('estatisticas-rapidas');
@@ -118,6 +110,19 @@ function criarBotoesAdicionais() {
   linhaSuperior.appendChild(inputImportar);
   linhaSuperior.appendChild(btnEstatisticas);
   linhaSuperior.appendChild(btnLimpar);
+}
+
+// Função para atualizar visibilidade dos botões baseado na presença de períodos
+function atualizarVisibilidadeBotoes() {
+  const temPeriodos = periodoCount > 0;
+  const botoes = ['baixarCSV', 'importarCSV', 'toggleEstatisticas', 'limparDados'];
+
+  botoes.forEach(id => {
+    const botao = document.getElementById(id);
+    if (botao) {
+      botao.style.display = temPeriodos ? 'inline-block' : 'none';
+    }
+  });
 }
 
 function criaPeriodo() {
@@ -155,6 +160,9 @@ function criaPeriodo() {
   botaoAdicionarDisciplina.addEventListener("click", () => adicionarDisciplina(periodoCount));
 
   adicionarDisciplina(periodoCount);
+
+  // Atualizar visibilidade dos botões após adicionar período
+  atualizarVisibilidadeBotoes();
 }
 
 function removerPeriodo(periodoId) {
@@ -163,6 +171,9 @@ function removerPeriodo(periodoId) {
     periodoDiv.remove();
     delete disciplinaCount[periodoId];
     periodoCount--;
+
+    // Atualizar visibilidade dos botões após remover período
+    atualizarVisibilidadeBotoes();
   }
 }
 
@@ -408,6 +419,9 @@ function preencherFormularioComDados(dados) {
 
   // Recalcular IRA após carregar dados
   atualizarIRA();
+
+  // Atualizar visibilidade dos botões após carregar dados
+  atualizarVisibilidadeBotoes();
 }
 
 // Função para limpar formulário
@@ -416,6 +430,9 @@ function limparFormulario() {
   container.innerHTML = '';
   periodoCount = 0;
   disciplinaCount = {};
+
+  // Atualizar visibilidade dos botões após limpar
+  atualizarVisibilidadeBotoes();
 }
 
 // Função para mostrar notificações
@@ -476,25 +493,6 @@ function iniciarAutoSave() {
       salvarDados();
     }
   }, 30000);
-}
-
-// Função para adicionar tooltips aos botões
-function adicionarTooltips() {
-  const botoes = [
-    { id: 'novoPeriodo', tooltip: 'Adicionar um novo período acadêmico (Ctrl+N)' },
-    { id: 'baixarCSV', tooltip: 'Baixar dados em formato CSV estruturado (Ctrl+E)' },
-    { id: 'importarCSV', tooltip: 'Importar dados de arquivo CSV (Ctrl+I)' },
-    { id: 'toggleEstatisticas', tooltip: 'Mostrar/ocultar estatísticas detalhadas' },
-    { id: 'limparDados', tooltip: 'Limpar todos os dados do formulário' }
-  ];
-
-  botoes.forEach(({ id, tooltip }) => {
-    const botao = document.getElementById(id);
-    if (botao) {
-      botao.classList.add('btn-tooltip');
-      botao.setAttribute('data-tooltip', tooltip);
-    }
-  });
 }
 
 // Função para validar dados antes de salvar
