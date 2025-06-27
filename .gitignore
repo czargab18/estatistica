@@ -34,8 +34,9 @@
 #    - PYTHON: Ignora a pasta vendor/ e outros arquivos relacionados ao ambiente Python.
 
 # ############################## NÃO IGNORAR NADA ############################
-!*/
-!**/*
+# COMENTADO - essas regras estavam anulando os ignores posteriores
+# !*/
+# !**/*
 # ############################## BASES DE DADOS ############################
 *.csv
 *.DBF
@@ -261,11 +262,10 @@ backend/**/vendor/
 # ########### IGNORAR
 books/**/delete
 books/**/site_libs
-books/**/src
-books/**/libs
+books/**/_files/
+books/**/libs/
+books/**/src/
 books/**/_main.rds
-books/**/_files
-books/**/delete
 books/**/*_main.rds
 books/**/Trabalho 1/dataProject
 books/**/Trabalho 1/data.Need.Project/
