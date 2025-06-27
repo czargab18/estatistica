@@ -15,7 +15,7 @@
     "**/backend/**/.venv": false,
     "**/backend/**/pyproject.toml": false,
     "**/backend/**/.python-version": true,
-    "**/backend/**/MANIFEST.in": true,
+    "**/backend/**/MANIFEST.in": true
   },
 
   // Configurações: Editor
@@ -203,5 +203,22 @@
     "*.entity.ts": "typescript",
     "*.service.ts": "typescript",
     "*.controller.ts": "typescript"
-  }
+  },
+
+  // Configurações: Quarto
+  "quarto.render.previewType": "external",
+  "quarto.preview.navigate": true,
+
+  // Configurações: Markdown
+  "markdown.preview.scrollPreviewWithEditor": true,
+  "markdown.preview.scrollEditorWithPreview": true,
+  "markdown.extension.toc.updateOnSave": true,
+
+  // Configurações: HTML/CSS
+  "html.format.wrapLineLength": 120,
+  "css.lint.unknownAtRules": "ignore",
+
+  // Configurações: Spell Check (se extensão instalada)
+  "cSpell.words": ["estatistica", "quarto", "cesargabriel", "newsroom", "ira"],
+  "cSpell.language": "pt-BR,en"
 }

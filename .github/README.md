@@ -11,23 +11,100 @@ Inicialmente, encantei-me pelo design e programação web. Tentei desenvolver es
 Muitas coisas foram incorporadas a este repositório. **books** é o meu desejo de construir livros sobre estatistica com base em minhas notas de aulas e exercícios resolvidos, da maneira que eu desejar. Sujeito a escrever e reescrever quantas vezes eu desejar até ficar do meu agrado.
 
 ## Bom, para quem é este projeto?
-Eu o desenvolverei principalmentee exclusivamente para mim. Assim como no vídeo intitulado "O Diário de Henry Jones", veja (AKITA, 2025), buscarei o mesmo mas para a  área de Estatística. A ideia de possuir algo que contenha tudo o que estudei ou estudarei me parece essencial para meu progresso na área, além de um bom ponto de partida para referências bibliográficas.
+Eu o desenvolverei principalmente e exclusivamente para mim. Assim como no vídeo intitulado "O Diário de Henry Jones", veja (AKITA, 2025), buscarei o mesmo mas para a área de Estatística. A ideia de possuir algo que contenha tudo o que estudei ou estudarei me parece essencial para meu progresso na área, além de um bom ponto de partida para referências bibliográficas.
 
 ## Por que a demora??
 A principal razão é falta de dedicação exclusiva ao projeto. O projeto é algo que não me trará retorno financeiro, mas sim um retorno intelectual. O que me faz dedicar-me a ele em momentos livres, como férias ou finais de semana. Além disso, o projeto é algo que não tem um fim.
+
 A segunda razão é a constante reestruturação do projeto ou de partes dele. O que pode levar tempo, mas é necessário para o bom funcionamento. Além disso, a reestruturação é algo que pode ser feito em paralelo com o desenvolvimento.
 
 Como não há um fim, não haverá pressa para concluir o projeto.
 
+## 📁 Estrutura do Projeto
+
+```
+estatistica/
+├── books/           # Livros digitais em Quarto
+│   ├── EST0033/     # Estatística Básica
+│   ├── CIC0007/     # Fundamentos de Programação
+│   ├── MAT0075/     # Matemática para Estatística
+│   └── TAS0000/     # Tópicos Avançados
+├── pages/           # Páginas do site
+│   ├── apps/        # Aplicações (IRA, etc)
+│   ├── docente/     # Páginas docentes
+│   ├── newsroom/    # Sistema de artigos
+│   └── boasvindas/  # Página de boas-vindas
+├── ac/              # Componentes globais (navbar, footer, etc)
+└── sd/              # Assets e recursos (imagens, ícones, etc)
+```
+
 ## Pastas em desenvolvimento
 
-- **books**: livros em desenvolvimento. O objetivo é criar livros sobre estatística com base em minhas notas de aulas e exercícios resolvidos, da maneira que eu desejar. Sujeito a escrever e reescrever quantas vezes eu desejar até ficar do meu agrado. Conterá livros sobre estatística, probabilidade, inferência, estatística descritiva, estatística inferencial, estatística bayesiana, estatística não paramétrica, estatística multivariada, estatística espacial, estatística temporal, estatística computacional e estatística aplicada. Além de livros sobre programação em R e Python. Além de exercícios resolvidos.
+### 📚 **books**
+Livros em desenvolvimento. O objetivo é criar livros sobre estatística com base em minhas notas de aulas e exercícios resolvidos, da maneira que eu desejar. Sujeito a escrever e reescrever quantas vezes eu desejar até ficar do meu agrado. 
 
-- **apps**: aplicativos em desenvolvimento. O objetivo é criar aplicativos para facilitar a vida acadêmica e profissional. Recursos como calculadoras, simuladores, geradores de gráficos e tabelas, entre outros. 
-    - **ira**: aplicativo para calcular o índice de rendimento acadêmico (IRA) da Universidade de Brasília. O aplicativo é simples e fácil de usar. O usuário deve informar as notas e os créditos das disciplinas cursadas. O aplicativo calcula o IRA e exibe o resultado na tela. Além disso, o aplicativo permite que o usuário salve os dados em um arquivo CSV para futuras consultas.
-    - **notas para mestrado**: ...
+Conterá livros sobre:
+- Estatística descritiva e inferencial
+- Probabilidade e distribuições
+- Estatística bayesiana e não paramétrica
+- Estatística multivariada, espacial e temporal
+- Estatística computacional e aplicada
+- Programação em R e Python para estatística
+- Exercícios resolvidos e estudos de caso
 
-- **docentes**: 
-- **newsroom**:
-- **boasvindas**:
-- **appsShiny**:
+### 🛠️ **apps** 
+Aplicativos em desenvolvimento para facilitar a vida acadêmica e profissional. Recursos como calculadoras, simuladores, geradores de gráficos e tabelas.
+
+- **ira**: Aplicativo para calcular o Índice de Rendimento Acadêmico (IRA) da Universidade de Brasília. Interface simples e intuitiva onde o usuário informa notas e créditos das disciplinas cursadas. Calcula o IRA automaticamente e permite salvar os dados em CSV para consultas futuras.
+- **notas para mestrado**: Calculadora para análise de notas necessárias para ingresso em programas de pós-graduação.
+- **simuladores estatísticos**: Ferramentas interativas para demonstração de conceitos estatísticos.
+
+### 👨‍🏫 **docentes**
+Seção dedicada a informações sobre docentes do Departamento de Estatística, incluindo:
+- Perfis acadêmicos e profissionais
+- Áreas de pesquisa e especialização
+- Publicações e contribuições
+- Informações de contato
+
+### 📰 **newsroom**
+Sistema para escrita e publicação de artigos acadêmicos usando Quarto. Organizado por idioma, ano e mês para facilitar a navegação e arquivo histórico.
+
+### 🎉 **boasvindas**
+Página de apresentação e boas-vindas ao projeto, explicando:
+- Objetivos e missão do projeto
+- Como navegar pelos recursos
+- Guias para novos usuários
+- Links para seções principais
+
+### 📊 **appsShiny**
+Aplicações interativas desenvolvidas em R Shiny para:
+- Visualização de dados em tempo real
+- Análises estatísticas interativas
+- Dashboards educacionais
+- Ferramentas de demonstração para aulas
+
+
+### Renderizar Livros
+```bash
+# Navegar para um livro específico
+cd books/EST0033
+
+# Renderizar o livro
+quarto render
+
+# Visualizar localmente
+quarto preview
+```
+
+## 🤝 Contribuindo
+
+Consulte [.github/copilot/.copilot-instructions.md](.github/copilot/.copilot-instructions.md) para padrões de commit e desenvolvimento.
+
+## 👨‍🏫 Autor
+
+**César Gabriel**  
+Departamento de Estatística - UnB
+
+---
+
+> 💡 **Nota**: Este é um projeto pessoal desenvolvido para fins educacionais e de aprendizado contínuo. Como não há um fim definido, não há pressa para sua conclusão - o foco está no processo de aprendizado e desenvolvimento de habilidades.
