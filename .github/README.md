@@ -43,15 +43,6 @@ estatistica/
 ### 📚 **books**
 Livros em desenvolvimento. O objetivo é criar livros sobre estatística com base em minhas notas de aulas e exercícios resolvidos, da maneira que eu desejar. Sujeito a escrever e reescrever quantas vezes eu desejar até ficar do meu agrado. 
 
-Conterá livros sobre:
-- Estatística descritiva e inferencial
-- Probabilidade e distribuições
-- Estatística bayesiana e não paramétrica
-- Estatística multivariada, espacial e temporal
-- Estatística computacional e aplicada
-- Programação em R e Python para estatística
-- Exercícios resolvidos e estudos de caso
-
 ### 🛠️ **apps** 
 Aplicativos em desenvolvimento para facilitar a vida acadêmica e profissional. Recursos como calculadoras, simuladores, geradores de gráficos e tabelas.
 
