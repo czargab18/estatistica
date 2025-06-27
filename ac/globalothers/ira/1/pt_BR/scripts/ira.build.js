@@ -38,7 +38,7 @@ document.addEventListener("DOMContentLoaded", () => {
   
   // Mostrar dicas de uso
   setTimeout(() => {
-    mostrarNotificacao('Dica: Use Ctrl+S para salvar, Ctrl+N para novo período, Ctrl+E para exportar CSV', 'info', 5000);
+    mostrarNotificacao('Dica: Use Ctrl+S para salvar, Ctrl+N para novo período, Ctrl+E para exportar CSV, Ctrl+I para importar CSV', 'info', 5000);
   }, 2000);
 });
 
@@ -54,26 +54,19 @@ function criarBotoesAdicionais() {
   btnBaixarCSV.textContent = "Baixar CSV";
   btnBaixarCSV.addEventListener("click", baixarDadosCSV);
 
-  // Botão para baixar JSON
-  const btnBaixarJSON = document.createElement("button");
-  btnBaixarJSON.id = "baixarJSON";
-  btnBaixarJSON.className = "btn btn-info";
-  btnBaixarJSON.textContent = "Baixar JSON";
-  btnBaixarJSON.addEventListener("click", baixarDadosJSON);
-
-  // Input para importar dados
+  // Input para importar dados CSV
   const inputImportar = document.createElement("input");
   inputImportar.type = "file";
-  inputImportar.accept = ".json";
+  inputImportar.accept = ".csv";
   inputImportar.id = "importarDados";
   inputImportar.style.display = "none";
-  inputImportar.addEventListener("change", importarDadosJSON);
+  inputImportar.addEventListener("change", importarDadosCSV);
 
   // Botão para importar dados
   const btnImportar = document.createElement("button");
-  btnImportar.id = "importarDados";
+  btnImportar.id = "importarCSV";
   btnImportar.className = "btn btn-warning";
-  btnImportar.textContent = "Importar Dados";
+  btnImportar.textContent = "Importar CSV";
   btnImportar.addEventListener("click", () => inputImportar.click());
 
   // Botão para limpar dados
@@ -124,11 +117,9 @@ function criarBotoesAdicionais() {
 
   // Adicionar botões à linha superior
   linhaSuperior.appendChild(btnBaixarCSV);
-  linhaSuperior.appendChild(btnBaixarJSON);
   linhaSuperior.appendChild(btnImportar);
   linhaSuperior.appendChild(inputImportar);
   linhaSuperior.appendChild(btnEstatisticas);
-  linhaSuperior.appendChild(btnRelatorio);
   linhaSuperior.appendChild(btnLimpar);
 }
 
@@ -326,7 +317,13 @@ const STORAGE_KEY = 'ira_dados_salvos';
 function salvarDados() {
   const dados = coletarTodosDados();
   try {
+    // Salvar em formato JSON para funcionamento interno
     localStorage.setItem(STORAGE_KEY, JSON.stringify(dados));
+
+    // Salvar também em formato CSV estruturado como backup
+    const csvData = gerarCSVEstruturado(dados);
+    localStorage.setItem(STORAGE_KEY + '_csv', csvData);
+
     console.log('Dados salvos com sucesso!');
     mostrarNotificacao('Dados salvos automaticamente!', 'success');
     dadosModificados = false;
@@ -336,6 +333,22 @@ function salvarDados() {
     mostrarNotificacao('Erro ao salvar dados!', 'error');
     return false;
   }
+}
+
+// Função auxiliar para gerar CSV estruturado
+function gerarCSVEstruturado(dados) {
+  let csv = 'periodo;disciplina;creditos;mencao;status\n';
+
+  dados.periodos.forEach(periodo => {
+    periodo.disciplinas.forEach(disciplina => {
+      if (disciplina.codigo && disciplina.creditos && disciplina.mencao) {
+        const status = determinarStatus(disciplina.mencao);
+        csv += `${periodo.id};${disciplina.codigo};${disciplina.creditos};${disciplina.mencao};${status}\n`;
+      }
+    });
+  });
+
+  return csv;
 }
 
 // Função para carregar dados dos cookies/localStorage
@@ -503,11 +516,9 @@ function iniciarAutoSave() {
 function adicionarTooltips() {
   const botoes = [
     { id: 'novoPeriodo', tooltip: 'Adicionar um novo período acadêmico (Ctrl+N)' },
-    { id: 'baixarCSV', tooltip: 'Baixar dados em formato CSV (Ctrl+E)' },
-    { id: 'baixarJSON', tooltip: 'Baixar dados em formato JSON' },
-    { id: 'importarDados', tooltip: 'Importar dados de arquivo JSON (Ctrl+I)' },
+    { id: 'baixarCSV', tooltip: 'Baixar dados em formato CSV estruturado (Ctrl+E)' },
+    { id: 'importarCSV', tooltip: 'Importar dados de arquivo CSV (Ctrl+I)' },
     { id: 'toggleEstatisticas', tooltip: 'Mostrar/ocultar estatísticas detalhadas' },
-    { id: 'relatorioCompleto', tooltip: 'Exportar relatório completo com todas as informações' },
     { id: 'limparDados', tooltip: 'Limpar todos os dados do formulário' }
   ];
 
@@ -552,14 +563,14 @@ function baixarDadosCSV() {
     }
   }
 
-  let csv = 'Periodo,Codigo,Creditos,Mencao,Status,Pontos\n';
+  // Formato estruturado: periodo;disciplina;creditos;mencao;status
+  let csv = 'periodo;disciplina;creditos;mencao;status\n';
 
   dados.periodos.forEach(periodo => {
     periodo.disciplinas.forEach(disciplina => {
       if (disciplina.codigo && disciplina.creditos && disciplina.mencao) {
         const status = determinarStatus(disciplina.mencao);
-        const pontos = obterPontosMencao(disciplina.mencao) * parseInt(disciplina.creditos);
-        csv += `${periodo.id},"${disciplina.codigo}",${disciplina.creditos},"${disciplina.mencao}","${status}",${pontos}\n`;
+        csv += `${periodo.id};${disciplina.codigo};${disciplina.creditos};${disciplina.mencao};${status}\n`;
       }
     });
   });
@@ -602,20 +613,95 @@ function baixarDadosJSON() {
   mostrarNotificacao('Arquivo JSON baixado com sucesso!', 'success');
 }
 
-// Função para importar dados de arquivo JSON
-function importarDadosJSON(event) {
+// Função para importar dados de arquivo CSV
+function importarDadosCSV(event) {
   const file = event.target.files[0];
   if (!file) return;
 
   const reader = new FileReader();
   reader.onload = function(e) {
     try {
-      const dados = JSON.parse(e.target.result);
-      preencherFormularioComDados(dados);
-      alert('Dados importados com sucesso!');
+      const csvText = e.target.result;
+      const linhas = csvText.split('\n');
+
+      // Verificar se tem cabeçalho correto
+      const cabecalho = linhas[0].trim().toLowerCase();
+      if (cabecalho !== 'periodo;disciplina;creditos;mencao;status') {
+        alert('Formato de arquivo inválido. O cabeçalho deve ser: periodo;disciplina;creditos;mencao;status');
+        return;
+      }
+
+      // Processar dados
+      const dadosImportados = { periodos: [] };
+      const periodosMap = new Map();
+
+      // Pular o cabeçalho e processar cada linha
+      for (let i = 1; i < linhas.length; i++) {
+        const linha = linhas[i].trim();
+        if (!linha) continue; // Pular linhas vazias
+
+        const campos = linha.split(';');
+        if (campos.length !== 5) {
+          console.warn(`Linha ${i + 1} ignorada - formato inválido: ${linha}`);
+          continue;
+        }
+
+        const [periodo, disciplina, creditos, mencao, status] = campos.map(campo => campo.trim());
+
+        // Validar dados
+        if (!periodo || !disciplina || !creditos || !mencao) {
+          console.warn(`Linha ${i + 1} ignorada - dados incompletos: ${linha}`);
+          continue;
+        }
+
+        const periodoNum = parseInt(periodo);
+        if (isNaN(periodoNum)) {
+          console.warn(`Linha ${i + 1} ignorada - período inválido: ${periodo}`);
+          continue;
+        }
+
+        // Verificar se menção é válida
+        const mencoesValidas = ['SR', 'II', 'MI', 'MM', 'MS', 'SS'];
+        if (!mencoesValidas.includes(mencao.toUpperCase())) {
+          console.warn(`Linha ${i + 1} ignorada - menção inválida: ${mencao}`);
+          continue;
+        }
+
+        // Criar período se não existir
+        if (!periodosMap.has(periodoNum)) {
+          periodosMap.set(periodoNum, {
+            id: periodoNum,
+            disciplinas: []
+          });
+        }
+
+        // Adicionar disciplina ao período
+        periodosMap.get(periodoNum).disciplinas.push({
+          id: periodosMap.get(periodoNum).disciplinas.length + 1,
+          codigo: disciplina.toUpperCase(),
+          creditos: creditos,
+          mencao: mencao.toUpperCase()
+        });
+      }
+
+      // Converter Map para array e ordenar por período
+      dadosImportados.periodos = Array.from(periodosMap.values()).sort((a, b) => a.id - b.id);
+
+      if (dadosImportados.periodos.length === 0) {
+        alert('Nenhum dado válido encontrado no arquivo CSV.');
+        return;
+      }
+
+      // Limpar formulário atual e preencher com dados importados
+      limparFormulario();
+      preencherFormularioComDados(dadosImportados);
+
+      const totalDisciplinas = dadosImportados.periodos.reduce((total, periodo) => total + periodo.disciplinas.length, 0);
+      mostrarNotificacao(`Dados importados: ${dadosImportados.periodos.length} períodos, ${totalDisciplinas} disciplinas!`, 'success');
+
     } catch (error) {
-      alert('Erro ao importar dados. Verifique se o arquivo é um JSON válido.');
-      console.error('Erro ao importar:', error);
+      alert('Erro ao importar dados CSV. Verifique se o arquivo está no formato correto.');
+      console.error('Erro ao importar CSV:', error);
     }
   };
   reader.readAsText(file);
@@ -821,7 +907,7 @@ function adicionarAtalhosTeclado() {
       baixarDadosCSV();
     }
     
-    // Ctrl+I para importar
+    // Ctrl+I para importar CSV
     if (e.ctrlKey && e.key === 'i') {
       e.preventDefault();
       document.getElementById('importarDados')?.click();

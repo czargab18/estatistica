@@ -54,7 +54,7 @@
 - **Ctrl+S**: Salvar dados manualmente
 - **Ctrl+N**: Adicionar novo período
 - **Ctrl+E**: Exportar CSV
-- **Ctrl+I**: Importar dados
+- **Ctrl+I**: Importar CSV
 - **ESC**: Fechar modal
 
 ### 🔄 Sistema de Backup
@@ -116,26 +116,32 @@
 - Sanitização de dados
 - Tratamento de erros robusto
 
-## 📄 Formatos de Exportação
+## 📄 Formato CSV Estruturado
 
-### CSV
+O sistema trabalha exclusivamente com arquivos CSV no formato estruturado:
+
+### Estrutura do Arquivo
 ```
-Periodo,Codigo,Creditos,Mencao,Status,Pontos
-1,"EST0033",4,"SS","Aprovado",20
+periodo;disciplina;creditos;mencao;status
+1;MAT0025;4;MS;Aprovado
+1;EST0033;4;SS;Aprovado
+2;MAT0026;4;SS;Aprovado
+2;EST0171;4;MS;Aprovado
 ```
 
-### JSON
-```json
-{
-  "periodos": [...],
-  "dataUltimaModificacao": "2025-06-27T...",
-  "metadata": {
-    "versao": "1.0",
-    "totalPeriodos": 2,
-    "totalDisciplinas": 8
-  }
-}
-```
+### Campos Obrigatórios
+- **periodo**: Número do período (1, 2, 3, ...)
+- **disciplina**: Código da disciplina (ex: MAT0025, EST0033)
+- **creditos**: Número de créditos (2, 3, 4, 6, 8, 10, 12, 16, 22, 40, 52, 64)
+- **mencao**: Menção obtida (SR, II, MI, MM, MS, SS)
+- **status**: Calculado automaticamente (Aprovado/Reprovado)
+
+### Regras de Validação
+- **Separador**: Ponto e vírgula (;)
+- **Cabeçalho**: Obrigatório na primeira linha
+- **Menções válidas**: SR, II, MI, MM, MS, SS
+- **Períodos**: Números inteiros positivos
+- **Créditos**: Valores numéricos válidos
 
 ## 🐛 Resolução de Problemas
 
