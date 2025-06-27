@@ -132,11 +132,11 @@
       <div id="container-periodos"></div>
       
       <!-- Modal para confirmações -->
-      <div id="modal-confirmacao" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0,0,0,0.5); z-index: 1000;">
-        <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); background: white; padding: 2em; border-radius: 0.5em; max-width: 400px; width: 90%;">
+      <div id="modal-confirmacao">
+        <div>
           <h3 id="modal-titulo">Confirmação</h3>
           <p id="modal-mensagem">Tem certeza?</p>
-          <div style="display: flex; gap: 1em; justify-content: flex-end; margin-top: 1em;">
+          <div>
             <button id="modal-cancelar" class="btn btn-secondary">Cancelar</button>
             <button id="modal-confirmar" class="btn btn-danger">Confirmar</button>
           </div>
@@ -144,22 +144,20 @@
       </div>
       
       <!-- Modal de disclaimer -->
-      <div id="modal-disclaimer"
-        style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0,0,0,0.5); z-index: 1001;">
-        <div
-          style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); background: white; padding: 2em; border-radius: 0.5em; max-width: 500px; width: 90%;">
+      <div id="modal-disclaimer">
+        <div>
           <h3>⚠️ Aviso Importante</h3>
-          <p style="margin: 1.5em 0; line-height: 1.6; color: #333;">Este não é um site oficial da Universidade de Brasília. O
+          <p>Este não é um site oficial da Universidade de Brasília. O
             IRA calculado aqui não pode ser utilizado para fins de comprovação de rendimento acadêmico.</p>
-          <div style="display: flex; justify-content: center; margin-top: 1.5em;">
+          <div>
             <button id="modal-disclaimer-ok" class="btn btn-primary">Entendi</button>
           </div>
         </div>
       </div>
       <!-- Área de estatísticas rápidas -->
-      <div id="estatisticas-rapidas" style="display: none; margin: 1em; padding: 1em; background-color: var(--bg-color-gray); border-radius: 0.5em;">
+      <div id="estatisticas-rapidas">
         <h4>Estatísticas</h4>
-        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1em;">
+        <div>
           <div>
             <strong>Total de Períodos:</strong>
             <span id="stat-periodos">0</span>
@@ -187,9 +185,9 @@
         </div>
       </div>
     </main>
-    
+
     <!-- Templates HTML ocultos para clonagem -->
-    <div id="templates" style="display: none;">
+    <div id="templates">
       <!-- Template de Período -->
       <div id="template-periodo" class="periodo-template">
         <div class="periodo-title">
@@ -252,7 +250,7 @@
       <button id="template-btn-importar" class="btn btn-warning template-btn">Importar CSV</button>
       <button id="template-btn-estatisticas" class="btn btn-secondary template-btn">Estatísticas</button>
       <button id="template-btn-limpar" class="btn btn-danger template-btn">Limpar Tudo</button>
-      <input id="template-input-importar" type="file" accept=".csv" class="template-input" style="display: none;">
+      <input id="template-input-importar" type="file" accept=".csv" class="template-input">
     </div>
     
     <!--

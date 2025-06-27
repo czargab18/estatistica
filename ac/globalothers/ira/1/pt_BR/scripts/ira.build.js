@@ -115,17 +115,47 @@ function criarBotoesAdicionais() {
   linhaSuperior.appendChild(btnLimpar);
 }
 
-// Função para atualizar visibilidade dos botões baseado na presença de períodos
+// Função para atualizar visibilidade dos botões baseado na presença de períodos e disciplinas completas
 function atualizarVisibilidadeBotoes() {
   const temPeriodos = periodoCount > 0;
-  const botoes = ['baixarCSV', 'limparDados']; // Removido 'importarCSV' e 'toggleEstatisticas'
+  const temDisciplinasCompletas = verificarDisciplinasCompletas();
+  const botoes = ['limparDados']; // Botões que dependem apenas de ter períodos
 
+  // Botões que dependem apenas de ter períodos
   botoes.forEach(id => {
     const botao = document.getElementById(id);
     if (botao) {
       botao.style.display = temPeriodos ? 'inline-block' : 'none';
     }
   });
+
+  // Botão CSV que depende de ter disciplinas completas
+  const botaoCSV = document.getElementById('baixarCSV');
+  if (botaoCSV) {
+    botaoCSV.style.display = temDisciplinasCompletas ? 'inline-block' : 'none';
+  }
+}
+
+// Função para verificar se há pelo menos uma disciplina com todos os campos preenchidos
+function verificarDisciplinasCompletas() {
+  for (let periodoId = 1; periodoId <= periodoCount; periodoId++) {
+    if (!disciplinaCount[periodoId]) continue;
+    
+    for (let disciplinaId = 1; disciplinaId <= disciplinaCount[periodoId]; disciplinaId++) {
+      const codigo = document.getElementById(`periodo${periodoId}-disciplina${disciplinaId}-codigo`);
+      const creditos = document.getElementById(`periodo${periodoId}-disciplina${disciplinaId}-creditos`);
+      const mencao = document.getElementById(`periodo${periodoId}-disciplina${disciplinaId}-mencao`);
+      
+      // Verificar se todos os campos estão preenchidos
+      if (codigo && creditos && mencao && 
+          codigo.value.trim() && 
+          creditos.value && 
+          mencao.value) {
+        return true; // Encontrou pelo menos uma disciplina completa
+      }
+    }
+  }
+  return false; // Nenhuma disciplina completa encontrada
 }
 
 function criaPeriodo() {
@@ -232,6 +262,7 @@ function removerDisciplina(periodoId, disciplinaId) {
   if (disciplinaDiv) {
     disciplinaDiv.remove();
     disciplinaCount[periodoId]--;
+    atualizarVisibilidadeBotoes(); // Atualizar visibilidade após remover disciplina
   }
 }
 
@@ -263,16 +294,19 @@ function adicionarEventosParaMonitoramento(periodo, disciplina) {
     coletaDados();
     calcularIRA();
     marcarDadosComoModificados();
+    atualizarVisibilidadeBotoes(); // Atualizar visibilidade do botão CSV
   });
   creditos.addEventListener("change", () => {
     coletaDados();
     calcularIRA();
     marcarDadosComoModificados();
+    atualizarVisibilidadeBotoes(); // Atualizar visibilidade do botão CSV
   });
   mencao.addEventListener("change", () => {
     coletaDados();
     calcularIRA();
     marcarDadosComoModificados();
+    atualizarVisibilidadeBotoes(); // Atualizar visibilidade do botão CSV
   });
 }
 
@@ -862,7 +896,7 @@ function adicionarAtalhosTeclado() {
     if (e.ctrlKey && e.key === 's') {
       e.preventDefault();
       salvarDados();
-      mostrarNotificacao('Dados salvos manualmente!', 'success');
+//      mostrarNotificacao('Dados salvos manualmente!', 'success');
     }
     
     // Ctrl+N para novo período
