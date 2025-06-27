@@ -30,7 +30,9 @@
 
 ### ✅ 6. Reescrita da lógica JavaScript
 - **Código modular**: Funções organizadas e reutilizáveis
-- **Melhor performance**: Otimizações na manipulação do DOM
+- **Templates HTML**: Uso de templates no HTML ao invés de innerHTML dinâmico
+- **Melhor performance**: Clonagem de elementos é mais rápida que criação dinâmica
+- **Manutenibilidade**: Estrutura HTML centralizada no index.html
 - **Sistema de notificações**: Feedback visual para o usuário
 - **Validação de dados**: Verificação de consistência e formato CSV
 - **Foco em CSV**: Lógica simplificada para trabalhar exclusivamente com CSV
@@ -101,6 +103,13 @@
 6. **Estatísticas**: Clique em "Estatísticas" para ver métricas detalhadas
 
 ## 🔧 Funcionalidades Técnicas
+
+### Arquitetura de Templates
+- **Templates HTML**: Estruturas pré-definidas no index.html dentro da div `#templates`
+- **Clonagem**: JavaScript clona templates ao invés de criar HTML dinamicamente
+- **Performance**: Clonagem é mais rápida que `innerHTML` para elementos complexos
+- **Manutenibilidade**: HTML centralizado facilita modificações de estrutura
+- **SEO-friendly**: Estrutura HTML estática é melhor para indexação
 
 ### Validação de Dados
 - Verificação de campos obrigatórios CSV

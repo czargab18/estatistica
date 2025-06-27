@@ -1,8 +1,8 @@
 // Nova estrutura de código para o cálculo do IRA
-// 1. Ao invés injetar html com JaVascript, os elemtos HTML
-//    estarão na página mas ocultos par ao usuário.
-// 2. O javascrit apenas ira desocultar os elementos e adicionar
-//    os eventos necessários para o funcionamento do IRA.
+// 1. Templates HTML estão no index.html dentro da div #templates (oculta)
+// 2. O JavaScript clona os templates e os configura ao invés de criar HTML dinamicamente
+// 3. Esta abordagem melhora a performance e facilita a manutenção
+// 4. Os elementos são mostrados/ocultados conforme necessário
 
 
 let periodoCount = 0;
@@ -47,33 +47,36 @@ function criarBotoesAdicionais() {
   const linhaSuperior = document.getElementById("linhaSuperior");
   if (!linhaSuperior) return;
 
-  // Botão para baixar CSV
-  const btnBaixarCSV = document.createElement("button");
+  // Clonar e configurar botão para baixar CSV
+  const templateBtnCSV = document.getElementById("template-btn-csv");
+  const btnBaixarCSV = templateBtnCSV.cloneNode(true);
   btnBaixarCSV.id = "baixarCSV";
-  btnBaixarCSV.className = "btn btn-info";
-  btnBaixarCSV.textContent = "Baixar CSV";
+  btnBaixarCSV.style.display = "inline-block";
+  btnBaixarCSV.classList.remove("template-btn");
   btnBaixarCSV.addEventListener("click", baixarDadosCSV);
 
-  // Input para importar dados CSV
-  const inputImportar = document.createElement("input");
-  inputImportar.type = "file";
-  inputImportar.accept = ".csv";
+  // Clonar e configurar input para importar dados CSV
+  const templateInputImportar = document.getElementById("template-input-importar");
+  const inputImportar = templateInputImportar.cloneNode(true);
   inputImportar.id = "importarDados";
   inputImportar.style.display = "none";
+  inputImportar.classList.remove("template-input");
   inputImportar.addEventListener("change", importarDadosCSV);
 
-  // Botão para importar dados
-  const btnImportar = document.createElement("button");
+  // Clonar e configurar botão para importar dados
+  const templateBtnImportar = document.getElementById("template-btn-importar");
+  const btnImportar = templateBtnImportar.cloneNode(true);
   btnImportar.id = "importarCSV";
-  btnImportar.className = "btn btn-warning";
-  btnImportar.textContent = "Importar CSV";
+  btnImportar.style.display = "inline-block";
+  btnImportar.classList.remove("template-btn");
   btnImportar.addEventListener("click", () => inputImportar.click());
 
-  // Botão para limpar dados
-  const btnLimpar = document.createElement("button");
+  // Clonar e configurar botão para limpar dados
+  const templateBtnLimpar = document.getElementById("template-btn-limpar");
+  const btnLimpar = templateBtnLimpar.cloneNode(true);
   btnLimpar.id = "limparDados";
-  btnLimpar.className = "btn btn-danger";
-  btnLimpar.textContent = "Limpar Tudo";
+  btnLimpar.style.display = "inline-block";
+  btnLimpar.classList.remove("template-btn");
   btnLimpar.addEventListener("click", () => {
     mostrarModal(
       "Confirmar Limpeza", 
@@ -91,11 +94,12 @@ function criarBotoesAdicionais() {
     );
   });
 
-  // Botão para estatísticas
-  const btnEstatisticas = document.createElement("button");
+  // Clonar e configurar botão para estatísticas
+  const templateBtnEstatisticas = document.getElementById("template-btn-estatisticas");
+  const btnEstatisticas = templateBtnEstatisticas.cloneNode(true);
   btnEstatisticas.id = "toggleEstatisticas";
-  btnEstatisticas.className = "btn btn-secondary";
-  btnEstatisticas.textContent = "Estatísticas";
+  btnEstatisticas.style.display = "inline-block";
+  btnEstatisticas.classList.remove("template-btn");
   btnEstatisticas.addEventListener("click", () => {
     const area = document.getElementById('estatisticas-rapidas');
     if (area) {
@@ -126,23 +130,24 @@ function criaPeriodo() {
   disciplinaCount[periodoCount] = 0;
 
   const container = document.getElementById("container-periodos");
+  const template = document.getElementById("template-periodo");
 
-  const periodoDiv = document.createElement("div");
+  // Clonar template
+  const periodoDiv = template.cloneNode(true);
   periodoDiv.id = `periodo${periodoCount}`;
-  periodoDiv.innerHTML = `
-    <div class="periodo-title">
-      <h3>${periodoCount}º Período</h3>
-      <div class="periodo-title-btns">
-        <button class="btn btn-danger remove-periodo">Remover Período</button>
-        <button class="btn btn-primary adicionar-disciplina">Adicionar Disciplina</button>
-      </div>
-    </div>
-    <div id="periodo${periodoCount}-disciplinas"></div>
-  `;
+  periodoDiv.style.display = 'block'; // Mostrar o elemento clonado
+  periodoDiv.classList.remove('periodo-template');
+
+  // Configurar elementos específicos
+  const numeroElement = periodoDiv.querySelector('.periodo-numero');
+  numeroElement.textContent = `${periodoCount}º Período`;
+
+  const disciplinasContainer = periodoDiv.querySelector('.periodo-disciplinas');
+  disciplinasContainer.id = `periodo${periodoCount}-disciplinas`;
 
   container.appendChild(periodoDiv);
 
-  // Adicionar eventos aos botões recém-criados
+  // Adicionar eventos aos botões
   const botaoRemoverPeriodo = periodoDiv.querySelector(".remove-periodo");
   const botaoAdicionarDisciplina = periodoDiv.querySelector(".adicionar-disciplina");
 
@@ -169,68 +174,36 @@ function adicionarDisciplina(periodoId) {
   disciplinaCount[periodoId]++;
   const disciplinaId = disciplinaCount[periodoId];
   const disciplinasDiv = document.getElementById(`periodo${periodoId}-disciplinas`);
+  const template = document.getElementById("template-disciplina");
 
-  const disciplinaDiv = document.createElement("div");
+  // Clonar template
+  const disciplinaDiv = template.cloneNode(true);
   disciplinaDiv.id = `periodo${periodoId}-disciplina${disciplinaId}-preencher`;
-  disciplinaDiv.className = `preencher-linha`;
-  disciplinaDiv.innerHTML = `
-    <div id="periodo${periodoId}-disciplina${disciplinaId}-lista" class="left">
-      <div class="col-items">
-        <input
-          type="text"
-          id="periodo${periodoId}-disciplina${disciplinaId}-codigo"
-          class="form-control"
-          placeholder="Código da Disciplina"
-          pattern="[A-Z]{3}[0-9]{4}"
-          title="O código será automaticamente formatado para 3 letras maiúsculas e 4 números (ex.: ABC1234)."
-          maxlength="7"
-        />
-      </div>
-      <div class="col-items">
-        <select id="periodo${periodoId}-disciplina${disciplinaId}-creditos" class="form-control">
-          <option value="" selected disabled>Selecione os Créditos</option>
-          <option value="2">2 Créditos</option>
-          <option value="3">3 Créditos</option>
-          <option value="4">4 Créditos</option>
-          <option value="6">6 Créditos</option>
-          <option value="8">8 Créditos</option>
-          <option value="10">10 Créditos</option>
-          <option value="12">12 Créditos</option>
-          <option value="16">16 Créditos</option>
-          <option value="22">22 Créditos</option>
-          <option value="40">40 Créditos</option>
-          <option value="52">52 Créditos</option>
-          <option value="64">64 Créditos</option>
-        </select>
-      </div>
-      <div class="col-items">
-        <select id="periodo${periodoId}-disciplina${disciplinaId}-mencao" class="form-control">
-          <option value="" selected disabled>Menção</option>
-          <option value="SR">SR</option>
-          <option value="II">II</option>
-          <option value="MI">MI</option>
-          <option value="MM">MM</option>
-          <option value="MS">MS</option>
-          <option value="SS">SS</option>
-        </select>
-      </div>
-    </div>
-    <div id="periodo${periodoId}-disciplina${disciplinaId}-status-removeDiscp" class="rigth">
-      <div class="col-items">
-        <span id="status-${periodoId}-${disciplinaId}">Status</span>
-      </div>
-      <div class="col-items">
-        <button class="btn btn-danger remover-disciplina">Remover Disciplina</button>
-      </div>
-    </div>
-  `;
+  disciplinaDiv.style.display = 'block'; // Mostrar o elemento clonado
+  disciplinaDiv.classList.remove('disciplina-template');
+
+  // Configurar IDs únicos e classes específicas
+  const lista = disciplinaDiv.querySelector('.disciplina-lista');
+  lista.id = `periodo${periodoId}-disciplina${disciplinaId}-lista`;
+
+  const statusRemove = disciplinaDiv.querySelector('.disciplina-status-remove');
+  statusRemove.id = `periodo${periodoId}-disciplina${disciplinaId}-status-removeDiscp`;
+
+  const inputCodigo = disciplinaDiv.querySelector('.disciplina-codigo');
+  inputCodigo.id = `periodo${periodoId}-disciplina${disciplinaId}-codigo`;
+
+  const selectCreditos = disciplinaDiv.querySelector('.disciplina-creditos');
+  selectCreditos.id = `periodo${periodoId}-disciplina${disciplinaId}-creditos`;
+
+  const selectMencao = disciplinaDiv.querySelector('.disciplina-mencao');
+  selectMencao.id = `periodo${periodoId}-disciplina${disciplinaId}-mencao`;
+
+  const statusSpan = disciplinaDiv.querySelector('.disciplina-status');
+  statusSpan.id = `status-${periodoId}-${disciplinaId}`;
 
   disciplinasDiv.appendChild(disciplinaDiv);
 
-  // Adicionar eventos aos elementos recém-criados
-  const inputCodigo = disciplinaDiv.querySelector(`#periodo${periodoId}-disciplina${disciplinaId}-codigo`);
-  const selectCreditos = disciplinaDiv.querySelector(`#periodo${periodoId}-disciplina${disciplinaId}-creditos`);
-  const selectMencao = disciplinaDiv.querySelector(`#periodo${periodoId}-disciplina${disciplinaId}-mencao`);
+  // Adicionar eventos aos elementos
   const botaoRemoverDisciplina = disciplinaDiv.querySelector(".remover-disciplina");
 
   inputCodigo.addEventListener("input", () => formatarCodigo(inputCodigo));

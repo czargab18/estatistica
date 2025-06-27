@@ -2027,6 +2027,74 @@
         </div>
       </div>
     </main>
+    
+    <!-- Templates HTML ocultos para clonagem -->
+    <div id="templates" style="display: none;">
+      <!-- Template de Período -->
+      <div id="template-periodo" class="periodo-template">
+        <div class="periodo-title">
+          <h3 class="periodo-numero"></h3>
+          <div class="periodo-title-btns">
+            <button class="btn btn-danger remove-periodo">Remover Período</button>
+            <button class="btn btn-primary adicionar-disciplina">Adicionar Disciplina</button>
+          </div>
+        </div>
+        <div class="periodo-disciplinas"></div>
+      </div>
+      
+      <!-- Template de Disciplina -->
+      <div id="template-disciplina" class="disciplina-template preencher-linha">
+        <div class="disciplina-lista left">
+          <div class="col-items">
+            <input
+              type="text"
+              class="form-control disciplina-codigo"
+              placeholder="Código da Disciplina"
+              pattern="[A-Z]{3}[0-9]{4}"
+              title="O código será automaticamente formatado para 3 letras maiúsculas e 4 números (ex.: ABC1234)."
+              maxlength="7"
+            />
+          </div>
+          <div class="col-items">
+            <select class="form-control disciplina-creditos">
+              <option value="" selected disabled>Selecione os Créditos</option>
+              <option value="2">2 Créditos</option>
+              <option value="3">3 Créditos</option>
+              <option value="4">4 Créditos</option>
+              <option value="6">6 Créditos</option>
+
+            </select>
+          </div>
+          <div class="col-items">
+            <select class="form-control disciplina-mencao">
+              <option value="" selected disabled>Menção</option>
+              <option value="SR">SR</option>
+              <option value="II">II</option>
+              <option value="MI">MI</option>
+              <option value="MM">MM</option>
+              <option value="MS">MS</option>
+              <option value="SS">SS</option>
+            </select>
+          </div>
+        </div>
+        <div class="disciplina-status-remove rigth">
+          <div class="col-items">
+            <span class="disciplina-status">Status</span>
+          </div>
+          <div class="col-items">
+            <button class="btn btn-danger remover-disciplina">Remover Disciplina</button>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Templates para botões adicionais -->
+      <button id="template-btn-csv" class="btn btn-info template-btn">Baixar CSV</button>
+      <button id="template-btn-importar" class="btn btn-warning template-btn">Importar CSV</button>
+      <button id="template-btn-estatisticas" class="btn btn-secondary template-btn">Estatísticas</button>
+      <button id="template-btn-limpar" class="btn btn-danger template-btn">Limpar Tudo</button>
+      <input id="template-input-importar" type="file" accept=".csv" class="template-input" style="display: none;">
+    </div>
+    
     <div id="aviso-site-nao-oficial">
       <div class="avisos">
         <p>
