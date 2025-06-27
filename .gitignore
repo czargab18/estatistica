@@ -260,6 +260,7 @@ backend/**/vendor/
 # ##############################################################################
 # ########### IGNORAR
 books/**/delete
+books/**/site_libs
 books/**/src
 books/**/libs
 books/**/_main.rds
