@@ -35,10 +35,10 @@
 </head>
 
 <body>
-  <main id="globalmain-ira">
-    <div id="chapternav">
-      <div class="chapternav-content">
-        <h3 id="ira-mp">IRA: 0.00 MP: 0.00</h3>
+  <main id="aplicacao-principal-ira">
+    <div id="navegacao-superior">
+      <div class="conteudo-navegacao">
+        <h3 id="indicador-ira-mp">IRA: 0.00 MP: 0.00</h3>
         <div id="barra-acoes-superior actions-toolbar">
           <button id="novoPeriodo" class="btn btn-success">
             Novo Período
@@ -46,23 +46,23 @@
         </div>
       </div>
     </div>
-    <div id="container-periodos periodos-container"></div>
+    <div id="container-periodos-academicos periodos-container"></div>
 
     <!-- Modal para confirmações -->
-    <div id="modal-confirmacao">
+    <div id="modal-confirmacao-acao">
       <div>
         <h3 id="modal-titulo">Confirmação</h3>
         <p id="modal-mensagem">Tem certeza?</p>
         <div>
-          <button id="modal-cancelar" class="btn btn-secondary">Cancelar</button>
-          <button id="modal-confirmar" class="btn btn-danger">Confirmar</button>
+          <button id="modal-cancelar" class="botao-secundario">Cancelar</button>
+          <button id="modal-confirmar" class="botao-perigo">Confirmar</button>
         </div>
       </div>
     </div>
 
     <!-- Modal de disclaimer -->
-    <div id="aviso-disclaimer-modal" class="disclaimer-overlay apple-modal-overlay BaseModal_modalOverlay__dZHSK OverlayModal_modalOverlay__0XMAu" style="--modal-close-timeout: 400ms;" aria-hidden="true">
-      <div class="disclaimer-modal apple-modal BaseModal_modal__rdINw OverlayModal_modal__Ygc05" tabindex="-1" role="dialog" aria-labelledby="aviso-titulo disclaimer-titulo" aria-modal="true">
+    <div id="modal-aviso-legal" class="sobreposicao-aviso-legal modal-oculto apple-modal-overlay BaseModal_modalOverlay__dZHSK OverlayModal_modalOverlay__0XMAu" style="--modal-close-timeout: 400ms;" aria-hidden="true">
+      <div class="modal-aviso-legal apple-modal BaseModal_modal__rdINw OverlayModal_modal__Ygc05" tabindex="-1" role="dialog" aria-labelledby="aviso-titulo disclaimer-titulo" aria-modal="true">
         <div class="disclaimer-conteudo apple-modal-content BaseModal_modalContentContainer__tqFwq">
           <header class="disclaimer-cabecalho apple-modal-header BaseModal_header__sMTZy">
             <span id="aviso-titulo" class="disclaimer-topico apple-topic typography-callout">
@@ -101,9 +101,6 @@
               </a>
             </div>
           </nav>
-          <!-- <div class="disclaimer-acoes">
-            <button id="disclaimer-botao-ok" class="btn btn-primary">Entendi</button>
-          </div> -->
         </div>
         <div class="botao-fechar-container apple-close-container BaseModal_closeButtonContainer__K6_E3">
           <button 
@@ -152,19 +149,19 @@
   <!-- Templates HTML ocultos para clonagem -->
   <div id="templates">
     <!-- Template de Período -->
-    <div id="template-periodo" class="periodo-template">
-      <div class="periodo-title">
-        <h3 class="periodo-numero"></h3>
-        <div class="periodo-title-btns">
-          <button class="btn btn-danger remove-periodo">Remover Período</button>
-          <button class="btn btn-primary adicionar-disciplina">Adicionar Disciplina</button>
+    <div id="template-periodo" class="modelo-periodo">
+      <div class="titulo-periodo">
+        <h3 class="numero-periodo"></h3>
+        <div class="botoes-titulo-periodo">
+          <button class="botao-perigo botao-remover-periodo">Remover Período</button>
+          <button class="botao-primario adicionar-disciplina">Adicionar Disciplina</button>
         </div>
       </div>
-      <div class="periodo-disciplinas"></div>
+      <div class="lista-disciplinas-periodo"></div>
     </div>
 
     <!-- Template de Disciplina -->
-    <div id="template-disciplina" class="disciplina-template disciplina-linha-completa disciplina-row">
+    <div id="template-disciplina" class="modelo-disciplina disciplina-linha-completa disciplina-row">
       <div class="disciplina-campos-esquerda disciplina-input-fields">
         <div class="disciplina-codigo-container input-field-container">
           <input type="text" class="form-control disciplina-codigo" placeholder="Código da Disciplina"
@@ -199,16 +196,16 @@
           <span class="disciplina-status">Status</span>
         </div>
         <div class="disciplina-botao-container">
-          <button class="btn btn-danger remover-disciplina">Remover Disciplina</button>
+          <button class="botao-perigo remover-disciplina">Remover Disciplina</button>
         </div>
       </div>
     </div>
 
     <!-- Templates para botões adicionais -->
-    <button id="template-btn-csv" class="btn btn-info template-btn">Baixar CSV</button>
-    <button id="template-btn-importar" class="btn btn-warning template-btn">Importar CSV</button>
-    <button id="template-btn-estatisticas" class="btn btn-secondary template-btn">Estatísticas</button>
-    <button id="template-btn-limpar" class="btn btn-danger template-btn">Limpar Tudo</button>
+    <button id="template-btn-csv" class="botao-informacao template-btn">Baixar CSV</button>
+    <button id="template-btn-importar" class="botao-aviso template-btn">Importar CSV</button>
+    <button id="template-btn-estatisticas" class="botao-secundario template-btn">Estatísticas</button>
+    <button id="template-btn-limpar" class="botao-perigo template-btn">Limpar Tudo</button>
     <input id="template-input-importar" type="file" accept=".csv" class="template-input">
   </div>
   <div id="aviso-site-nao-oficial">

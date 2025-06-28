@@ -140,17 +140,17 @@
   }
 }
 
-main[id="globalmain-ira"] {
+main[id="aplicacao-principal-ira"] {
   all: unset;
 }
 button,
 input,
 select,
 span[id^="status-"],
-.btn-success,
-.btn-primary,
-.btn-danger,
-.remove-periodo {
+.botao-sucesso,
+.botao-primario,
+.botao-perigo,
+.botao-remover-periodo {
   font-size: 16px;
   margin-top: 0.25em;
   color: #ffffff;
@@ -166,14 +166,14 @@ span[id^="status-"],
   input,
   select,
   span[id^="status-"],
-  .btn-success,
-  .btn-success:hover,
-  .btn-primary,
-  .btn-primary:hover,
-  .btn-danger,
-  .btn-danger:hover,
-  .remove-periodo,
-  .remove-periodo:hover {
+  .botao-sucesso,
+  .botao-sucesso:hover,
+  .botao-primario,
+  .botao-primario:hover,
+  .botao-perigo,
+  .botao-perigo:hover,
+  .botao-remover-periodo,
+  .botao-remover-periodo:hover {
     font-size: 14px;
     color: #ffffff;
     padding: 0.5em 1em;
@@ -187,31 +187,31 @@ span[id^="status-"],
 div > span[id^="status-"] {
   display: flex;
 }
-.btn-success,
-.btn-success:hover,
-.btn-primary {
+.botao-sucesso,
+.botao-sucesso:hover,
+.botao-primario {
   color: #fff;
   background-color: #157347;
   border-color: #146c43;
 }
-.btn-success,
-.btn-success:hover,
-.btn-primary {
+.botao-sucesso,
+.botao-sucesso:hover,
+.botao-primario {
   color: #fff;
   background-color: #157347;
   border-color: #146c43;
 }
 
-.btn-danger,
-.remove-periodo {
+.botao-perigo,
+.botao-remover-periodo {
   background-color: transparent;
   color: #d0192b;
   border-color: #d0192b;
   font-family: var(--r-globalfont-family);
   white-space: nowrap;
 }
-.btn-danger:hover,
-.remove-periodo:hover {
+.botao-perigo:hover,
+.botao-remover-periodo:hover {
   color: #fff;
   background-color: #bb2d3b;
   border-color: #b02a37;
@@ -239,13 +239,13 @@ section#globalsection-ira-avisos #noticia-avisos {
   display: flex;
   justify-content: center;
 }
-main[id="globalmain-ira"],
-div[id="chapternav"] {
+main[id="aplicacao-principal-ira"],
+div[id="navegacao-superior"] {
   max-width: 2560px;
   width: 100%;
   justify-items: center;
 }
-main[id="globalmain-ira"] {
+main[id="aplicacao-principal-ira"] {
   --chapternav-hight: calc(4em + 1.5em);
   --bg-color-white: rgba(255, 255, 257, 1);
   --bg-color-gray: rgb(245, 245, 247, 1);
@@ -260,7 +260,7 @@ main[id="globalmain-ira"] {
   margin: 0;
   padding: 0;
 }
-main[id="globalmain-ira"] #chapternav {
+main[id="aplicacao-principal-ira"] #navegacao-superior {
   /* position: sticky; */
   top: 0;
   display: flex;
@@ -273,12 +273,12 @@ main[id="globalmain-ira"] #chapternav {
   /* margin-top: calc(var(--r-globalheader-height) + var(--r-globalnavbar-height) + 32px); */
 }
 @media screen and (max-width: 744px) {
-  main[id="globalmain-ira"] #chapternav {
+  main[id="aplicacao-principal-ira"] #navegacao-superior {
     margin-top: calc(var(--r-globalnavbar-height) + 32px);
   }
 }
 
-#chapternav .chapternav-content {
+#navegacao-superior .conteudo-navegacao {
   width: 100%;
   max-width: 980px;
   padding-top: 0.5em;
@@ -289,19 +289,19 @@ main[id="globalmain-ira"] #chapternav {
   align-items: center;
   justify-content: space-between;
 }
-#chapternav .chapternav-content > * {
+#navegacao-superior .conteudo-navegacao > * {
   margin: 0;
 }
 
 @media screen and (max-width: 600px) {
-  #chapternav .chapternav-content {
+  #navegacao-superior .conteudo-navegacao {
     margin-left: 1em;
     margin-right: 1em;
   }
 }
 
-#titulo,
-#ira-mp {
+#titulo-aplicacao,
+#indicador-ira-mp {
   text-align: center;
   margin: 0;
   font-size: 28px;
@@ -311,7 +311,7 @@ main[id="globalmain-ira"] #chapternav {
   margin-top: 6px;
 }
 
-main[id="globalmain-ira"] div[id="container-periodos"] {
+main[id="aplicacao-principal-ira"] div[id="container-periodos-academicos"] {
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
@@ -320,7 +320,7 @@ main[id="globalmain-ira"] div[id="container-periodos"] {
   width: 100%;
   gap: 0.5em;
 }
-div[id="container-periodos"] > div[id^="periodo"] {
+div[id="container-periodos-academicos"] > div[id^="periodo"] {
   width: 100%;
   max-width: 1024px;
   margin-left: 1em;
@@ -332,8 +332,8 @@ div[id="container-periodos"] > div[id^="periodo"] {
   gap: 0.5em;
 }
 
-div[id="container-periodos"] div[id^="periodo"] div[class="periodo-title"],
-div[id="container-periodos"] div[id^="periodo"] div[id$="-disciplinas"] {
+div[id="container-periodos-academicos"] div[id^="periodo"] div[class="titulo-periodo"],
+div[id="container-periodos-academicos"] div[id^="periodo"] div[id$="-disciplinas"] {
   width: 100%;
   max-width: 980px;
   display: flex;
@@ -341,20 +341,20 @@ div[id="container-periodos"] div[id^="periodo"] div[id$="-disciplinas"] {
   align-items: baseline;
   flex-wrap: wrap;
 }
-div[id="container-periodos"] div[id^="periodo"] div[id$="-disciplinas"] {
+div[id="container-periodos-academicos"] div[id^="periodo"] div[id$="-disciplinas"] {
   flex-direction: column;
 }
 @media screen and (max-width: 1080px) {
-  div[id="container-periodos"] div[id^="periodo"] div[id$="-disciplinas"] {
+  div[id="container-periodos-academicos"] div[id^="periodo"] div[id$="-disciplinas"] {
     flex-direction: column;
     row-gap: 2em;
   }
 }
-div[id^="periodo"] > div[class="periodo-title"] div {
+div[id^="periodo"] > div[class="titulo-periodo"] div {
   margin-top: 0;
 }
 
-div[id^="periodo"] div[class="periodo-title-btns"] button:nth-child(1) {
+div[id^="periodo"] div[class="botoes-titulo-periodo"] button:nth-child(1) {
   margin-right: 0.5em;
 }
 
@@ -496,38 +496,38 @@ div[id="periodos-container"] div[id^="periodo"] div[id$="-disciplinas"] div[id$=
    ===================================== */
 
 /* Estilos para os novos botões de funcionalidades */
-.btn-info {
+.botao-informacao {
   color: #fff;
   background-color: #0dcaf0;
   border-color: #0dcaf0;
 }
 
-.btn-info:hover {
+.botao-informacao:hover {
   color: #000;
   background-color: #31d2f2;
   border-color: #25cff2;
 }
 
-.btn-warning {
+.botao-aviso {
   color: #000;
   background-color: #ffc107;
   border-color: #ffc107;
 }
 
-.btn-warning:hover {
+.botao-aviso:hover {
   color: #000;
   background-color: #ffca2c;
   border-color: #ffc720;
 }
 
 /* Estilo para botão secundário */
-.btn-secondary {
+.botao-secundario {
   color: #fff;
   background-color: #6c757d;
   border-color: #6c757d;
 }
 
-.btn-secondary:hover {
+.botao-secundario:hover {
   color: #fff;
   background-color: #545b62;
   border-color: #4e555b;
@@ -660,7 +660,7 @@ select:focus {
 }
 
 /* Melhorias no layout do container principal */
-#container-periodos {
+#container-periodos-academicos {
   padding: 1em;
   margin: 0 auto;
 }
@@ -679,7 +679,7 @@ input:required:valid {
    ===================================== */
 
 /* Modal de confirmação */
-#modal-confirmacao {
+#modal-confirmacao-acao {
   display: none;
   position: fixed;
   top: 0;
@@ -690,7 +690,7 @@ input:required:valid {
   z-index: 1000;
 }
 
-#modal-confirmacao > div {
+#modal-confirmacao-acao > div {
   position: absolute;
   top: 50%;
   left: 50%;
@@ -702,7 +702,7 @@ input:required:valid {
   width: 90%;
 }
 
-#modal-confirmacao > div > div {
+#modal-confirmacao-acao > div > div {
   display: flex;
   gap: 1em;
   justify-content: flex-end;
@@ -714,7 +714,7 @@ input:required:valid {
    ===================================== */
 
 /* Container principal do disclaimer */
-.disclaimer-overlay {
+.sobreposicao-aviso-legal {
   display: none;
   position: fixed;
   top: 0;
@@ -730,7 +730,17 @@ input:required:valid {
   visibility: hidden;
 }
 
-.disclaimer-overlay.modal-aberto {
+.sobreposicao-aviso-legal.modal-oculto {
+  display: none;
+  opacity: 0;
+  visibility: hidden;
+}
+
+.sobreposicao-aviso-legal.modal-visivel {
+  display: flex;
+}
+
+.sobreposicao-aviso-legal.modal-aberto {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -739,21 +749,22 @@ input:required:valid {
 }
 
 /* Modal do disclaimer */
-.disclaimer-modal {
+.modal-aviso-legal {
   position: relative;
   background: var(--modal-background-color);
   border-radius: var(--modal-border-radius);
   max-width: 600px;
   width: 90%;
   max-height: 90vh;
-  overflow: hidden;
+  overflow-y: auto;
+  overflow-x: hidden;
   box-shadow: var(--modal-shadow);
   transform: scale(var(--modal-transform-scale-closed));
   transition: transform var(--modal-close-timeout) var(--modal-transition-ease);
   will-change: transform;
 }
 
-.disclaimer-overlay.modal-aberto .disclaimer-modal {
+.sobreposicao-aviso-legal.modal-aberto .modal-aviso-legal {
   transform: scale(var(--modal-transform-scale-open));
 }
 
@@ -907,7 +918,7 @@ input:required:valid {
    ===================================== */
 
 @media screen and (max-width: 768px) {
-  .disclaimer-modal {
+  .modal-aviso-legal {
     margin: 20px;
     width: calc(100% - 40px);
     border-radius: var(--modal-border-radius-mobile);
@@ -939,7 +950,7 @@ input:required:valid {
 }
 
 @media screen and (max-width: 480px) {
-  .disclaimer-modal {
+  .modal-aviso-legal {
     margin: 16px;
     width: calc(100% - 32px);
     max-height: calc(100vh - 32px);
@@ -971,8 +982,8 @@ input:required:valid {
 
 /* Redução de movimento para usuários com preferências de acessibilidade */
 @media (prefers-reduced-motion: reduce) {
-  .disclaimer-overlay,
-  .disclaimer-modal,
+  .sobreposicao-aviso-legal,
+  .modal-aviso-legal,
   .botao-fechar-disclaimer,
   .disclaimer-link,
   .link-seta::after,
@@ -1864,3 +1875,357 @@ html.text-zoom .BaseModal_headline__3BNi4 {
     image-rendering: crisp-edges;
   }
 }
+
+/* =====================================
+   CLASSES DE UTILIDADE E ESTADOS MODAIS
+   ===================================== */
+
+/* Estados do modal Apple */
+.modal-hidden {
+  display: none !important;
+  opacity: 0;
+  visibility: hidden;
+}
+
+.modal-visible {
+  display: flex !important;
+  opacity: 1;
+  visibility: visible;
+}
+
+.modal-closing {
+  opacity: 0;
+  visibility: hidden;
+}
+
+/* Estados de tema Apple */
+.BaseModal_lightAltTheme__fJ9Vq .modal-overlay {
+  --modal-background: #f5f5f7;
+}
+
+.BaseModal_darkTheme__Slu2Q .modal-overlay,
+.BaseModal_darkAltTheme__8Zx_U .modal-overlay {
+  --modal-background: #1d1d1f;
+  --modal-content-background: #1d1d1f;
+  --modal-headline-color: #f5f5f7;
+  --modal-headline-copy-color: #86868b;
+  --modal-copy-color: #f5f5f7;
+  --modal-link-color: #2997ff;
+  --modal-caption-color: #86868b;
+  --modal-control-scrim-background: #f5f5f7;
+  --modal-control-icon-color: #000;
+}
+
+/* Overrides específicos para compatibilidade */
+.modal-overlay.BaseModal_modalOverlay__dZHSK {
+  color: var(--modal-copy-color);
+}
+
+.modal.BaseModal_modal__rdINw {
+  background: var(--modal-background-color);
+}
+
+.modal-close-button.BaseModal_closeButton__r8K_e.IconControl_control__vxiHY {
+  background: var(--scrim-background-color);
+  color: var(--icon-color);
+}
+
+.modal-close-button.BaseModal_closeButton__r8K_e.IconControl_control__vxiHY:hover {
+  background: var(--scrim-hover-background-color);
+  color: var(--icon-interaction-color);
+}
+
+.modal-close-button.BaseModal_closeButton__r8K_e.IconControl_control__vxiHY:active {
+  background: var(--scrim-active-background-color);
+  color: var(--icon-interaction-color);
+}
+
+/* Typography Apple específica */
+.typography-callout {
+  font-size: var(--modal-topic-font-size);
+  line-height: var(--modal-topic-line-height);
+  font-weight: var(--modal-topic-font-weight);
+  letter-spacing: var(--modal-topic-letter-spacing);
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+
+.typography-headline {
+  font-size: var(--modal-headline-font-size);
+  line-height: var(--modal-headline-line-height);
+  font-weight: var(--modal-headline-font-weight);
+  letter-spacing: var(--modal-headline-letter-spacing);
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+
+.typography-body {
+  font-size: var(--modal-body-font-size);
+  line-height: var(--modal-body-line-height);
+  font-weight: var(--modal-body-font-weight);
+  letter-spacing: var(--modal-body-letter-spacing);
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+
+/* Melhorias de acessibilidade Apple */
+.modal[aria-modal="true"] {
+  isolation: isolate;
+}
+
+/* Support para text-zoom Apple */
+html.text-zoom .modal-headline,
+html.text-zoom .BaseModal_headline__3BNi4 {
+  -webkit-nbsp-mode: space;
+}
+
+/* Safe area para dispositivos Apple */
+@supports (padding: max(0px)) {
+  @media (max-width: 480px) {
+    .modal-close-button-container.BaseModal_closeButtonContainer__K6_E3 {
+      top: max(8px, env(safe-area-inset-top));
+      inset-inline-end: max(8px, env(safe-area-inset-left));
+    }
+  }
+}
+
+/* Performance optimizations Apple */
+.modal-overlay,
+.modal,
+.modal-close-button {
+  transform: translateZ(0);
+  backface-visibility: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Retina display optimizations */
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+  .close-icon,
+  .IconControl_centeredIcon___gj73 {
+    image-rendering: -webkit-optimize-contrast;
+    image-rendering: crisp-edges;
+  }
+}
+
+/* =====================================
+   CLASSES DE UTILIDADE E ESTADOS MODAIS
+   ===================================== */
+
+/* Estados do modal Apple */
+.modal-hidden {
+  display: none !important;
+  opacity: 0;
+  visibility: hidden;
+}
+
+.modal-visible {
+  display: flex !important;
+  opacity: 1;
+  visibility: visible;
+}
+
+.modal-closing {
+  opacity: 0;
+  visibility: hidden;
+}
+
+/* Estados de tema Apple */
+.BaseModal_lightAltTheme__fJ9Vq .modal-overlay {
+  --modal-background: #f5f5f7;
+}
+
+.BaseModal_darkTheme__Slu2Q .modal-overlay,
+.BaseModal_darkAltTheme__8Zx_U .modal-overlay {
+  --modal-background: #1d1d1f;
+  --modal-content-background: #1d1d1f;
+  --modal-headline-color: #f5f5f7;
+  --modal-headline-copy-color: #86868b;
+  --modal-copy-color: #f5f5f7;
+  --modal-link-color: #2997ff;
+  --modal-caption-color: #86868b;
+  --modal-control-scrim-background: #f5f5f7;
+  --modal-control-icon-color: #000;
+}
+
+/* Overrides específicos para compatibilidade */
+.modal-overlay.BaseModal_modalOverlay__dZHSK {
+  color: var(--modal-copy-color);
+}
+
+.modal.BaseModal_modal__rdINw {
+  background: var(--modal-background-color);
+}
+
+.modal-close-button.BaseModal_closeButton__r8K_e.IconControl_control__vxiHY {
+  background: var(--scrim-background-color);
+  color: var(--icon-color);
+}
+
+.modal-close-button.BaseModal_closeButton__r8K_e.IconControl_control__vxiHY:hover {
+  background: var(--scrim-hover-background-color);
+  color: var(--icon-interaction-color);
+}
+
+.modal-close-button.BaseModal_closeButton__r8K_e.IconControl_control__vxiHY:active {
+  background: var(--scrim-active-background-color);
+  color: var(--icon-interaction-color);
+}
+
+/* Typography Apple específica */
+.typography-callout {
+  font-size: var(--modal-topic-font-size);
+  line-height: var(--modal-topic-line-height);
+  font-weight: var(--modal-topic-font-weight);
+  letter-spacing: var(--modal-topic-letter-spacing);
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+
+.typography-headline {
+  font-size: var(--modal-headline-font-size);
+  line-height: var(--modal-headline-line-height);
+  font-weight: var(--modal-headline-font-weight);
+  letter-spacing: var(--modal-headline-letter-spacing);
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+
+.typography-body {
+  font-size: var(--modal-body-font-size);
+  line-height: var(--modal-body-line-height);
+  font-weight: var(--modal-body-font-weight);
+  letter-spacing: var(--modal-body-letter-spacing);
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+
+/* Melhorias de acessibilidade Apple */
+.modal[aria-modal="true"] {
+  isolation: isolate;
+}
+
+/* Support para text-zoom Apple */
+html.text-zoom .modal-headline,
+html.text-zoom .BaseModal_headline__3BNi4 {
+  -webkit-nbsp-mode: space;
+}
+
+/* Safe area para dispositivos Apple */
+@supports (padding: max(0px)) {
+  @media (max-width: 480px) {
+    .modal-close-button-container.BaseModal_closeButtonContainer__K6_E3 {
+      top: max(8px, env(safe-area-inset-top));
+      inset-inline-end: max(8px, env(safe-area-inset-left));
+    }
+  }
+}
+
+/* Performance optimizations Apple */
+.modal-overlay,
+.modal,
+.modal-close-button {
+  transform: translateZ(0);
+  backface-visibility: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Retina display optimizations */
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+  .close-icon,
+  .IconControl_centeredIcon___gj73 {
+    image-rendering: -webkit-optimize-contrast;
+    image-rendering: crisp-edges;
+  }
+}
+
+/* Animações customizadas inspiradas na Apple */
+@keyframes disclaimer-fade-in {
+  from {
+    opacity: 0;
+    backdrop-filter: blur(0px);
+    -webkit-backdrop-filter: blur(0px);
+  }
+  to {
+    opacity: 1;
+    backdrop-filter: blur(var(--modal-backdrop-blur));
+    -webkit-backdrop-filter: blur(var(--modal-backdrop-blur));
+  }
+}
+
+@keyframes disclaimer-scale-in {
+  from {
+    transform: scale(var(--modal-transform-scale-closed)) translateZ(0);
+    opacity: 0;
+  }
+  to {
+    transform: scale(var(--modal-transform-scale-open)) translateZ(0);
+    opacity: 1;
+  }
+}
+
+@keyframes disclaimer-fade-out {
+  from {
+    opacity: 1;
+    backdrop-filter: blur(var(--modal-backdrop-blur));
+    -webkit-backdrop-filter: blur(var(--modal-backdrop-blur));
+  }
+  to {
+    opacity: 0;
+    backdrop-filter: blur(0px);
+    -webkit-backdrop-filter: blur(0px);
+  }
+}
+
+@keyframes disclaimer-scale-out {
+  from {
+    transform: scale(var(--modal-transform-scale-open)) translateZ(0);
+    opacity: 1;
+  }
+  to {
+    transform: scale(var(--modal-transform-scale-closed)) translateZ(0);
+    opacity: 0;
+  }
+}
+
+/* Aplicar animações com timing da Apple */
+.disclaimer-overlay.modal-aberto {
+  animation: disclaimer-fade-in var(--modal-close-timeout) var(--modal-transition-ease) forwards;
+}
+
+.disclaimer-overlay.modal-aberto .disclaimer-modal {
+  animation: disclaimer-scale-in var(--modal-close-timeout) var(--modal-transition-ease) forwards;
+}
+
+.disclaimer-overlay.modal-fechando {
+  animation: disclaimer-fade-out var(--modal-close-timeout) var(--modal-transition-ease) forwards;
+}
+
+.disclaimer-overlay.modal-fechando .disclaimer-modal {
+  animation: disclaimer-scale-out var(--modal-close-timeout) var(--modal-transition-ease) forwards;
+}
+
+/* Suporte para redução de movimento */
+@media (prefers-reduced-motion: reduce) {
+  .disclaimer-overlay.modal-aberto,
+  .disclaimer-overlay.modal-aberto .disclaimer-modal,
+  .disclaimer-overlay.modal-fechando,
+  .disclaimer-overlay.modal-fechando .disclaimer-modal {
+    animation: none;
+  }
+}
+
+/* Melhorias para VoiceOver e leitores de tela */
+.disclaimer-modal[aria-modal="true"] {
+  isolation: isolate;
+}
+
+.disclaimer-link:focus-visible {
+  outline: 1px solid var(--modal-focus-color);
+  outline-offset: 1px;
+  border-radius: 4px;
+}
+
+.botao-fechar-disclaimer:focus-visible {
+  outline: 1px solid var(--modal-focus-color);
+  outline-offset: 1px;
+}
+
+/* =====================================
+   CLASSES AUXILIARES DA APPLE
+   =================================

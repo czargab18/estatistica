@@ -167,8 +167,8 @@ function criaPeriodo() {
   periodoCount++;
   disciplinaCount[periodoCount] = 0;
 
-  const container = document.getElementById("container-periodos");
-  const template = document.getElementById("template-periodo");
+  const container = document.getElementById("container-periodos-academicos");
+  const template = document.getElementById("modelo-periodo");
 
   // Clonar template
   const periodoDiv = template.cloneNode(true);
@@ -177,16 +177,16 @@ function criaPeriodo() {
   periodoDiv.classList.remove('periodo-template');
 
   // Configurar elementos específicos
-  const numeroElement = periodoDiv.querySelector('.periodo-numero');
+  const numeroElement = periodoDiv.querySelector('.numero-periodo');
   numeroElement.textContent = `${periodoCount}º Período`;
 
-  const disciplinasContainer = periodoDiv.querySelector('.periodo-disciplinas');
+  const disciplinasContainer = periodoDiv.querySelector('.lista-disciplinas-periodo');
   disciplinasContainer.id = `periodo${periodoCount}-disciplinas`;
 
   container.appendChild(periodoDiv);
 
   // Adicionar eventos aos botões
-  const botaoRemoverPeriodo = periodoDiv.querySelector(".remove-periodo");
+  const botaoRemoverPeriodo = periodoDiv.querySelector(".botao-remover-periodo");
   const botaoAdicionarDisciplina = periodoDiv.querySelector(".adicionar-disciplina");
 
   botaoRemoverPeriodo.addEventListener("click", () => removerPeriodo(periodoCount));
@@ -218,7 +218,7 @@ function adicionarDisciplina(periodoId) {
   disciplinaCount[periodoId]++;
   const disciplinaId = disciplinaCount[periodoId];
   const disciplinasDiv = document.getElementById(`periodo${periodoId}-disciplinas`);
-  const template = document.getElementById("template-disciplina");
+  const template = document.getElementById("modelo-disciplina");
 
   // Clonar template
   const disciplinaDiv = template.cloneNode(true);
@@ -463,7 +463,7 @@ function preencherFormularioComDados(dados) {
 
 // Função para limpar formulário
 function limparFormulario() {
-  const container = document.getElementById("container-periodos");
+  const container = document.getElementById("container-periodos-academicos");
   container.innerHTML = '';
   periodoCount = 0;
   disciplinaCount = {};
@@ -772,7 +772,7 @@ function obterPontosMencao(mencao) {
 
 // Sistema de Modal para confirmações
 function mostrarModal(titulo, mensagem, callback) {
-  const modal = document.getElementById('modal-confirmacao');
+  const modal = document.getElementById('modal-confirmacao-acao');
   const modalTitulo = document.getElementById('modal-titulo');
   const modalMensagem = document.getElementById('modal-mensagem');
   const modalConfirmar = document.getElementById('modal-confirmar');
@@ -811,10 +811,10 @@ function mostrarModal(titulo, mensagem, callback) {
 
 // Modal de disclaimer - Apple Design System
 function mostrarModalDisclaimer() {
-  const modal = document.getElementById('aviso-disclaimer-modal');
+  const modal = document.getElementById('modal-aviso-legal');
   const botaoOk = document.getElementById('disclaimer-botao-ok');
   const botaoFechar = document.getElementById('disclaimer-botao-fechar');
-  const modalContent = modal.querySelector('.disclaimer-modal');
+  const modalContent = modal.querySelector('.modal-aviso-legal');
 
   // Adicionar classe ao HTML para controle de scroll (padrão Apple)
   document.documentElement.classList.add('BaseModal_hasModal__HlpjY', 'modal-open');
