@@ -742,10 +742,13 @@ input:required:valid {
 
 .sobreposicao-aviso-legal.modal-aberto {
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   justify-content: center;
   opacity: 1;
   visibility: visible;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+  padding: 20px 0;
 }
 
 /* Modal do disclaimer */
@@ -755,13 +758,15 @@ input:required:valid {
   border-radius: var(--modal-border-radius);
   max-width: 600px;
   width: 90%;
-  max-height: 90vh;
-  overflow-y: auto;
-  overflow-x: hidden;
+  max-height: none;
+  min-height: auto;
+  overflow: visible;
   box-shadow: var(--modal-shadow);
   transform: scale(var(--modal-transform-scale-closed));
   transition: transform var(--modal-close-timeout) var(--modal-transition-ease);
   will-change: transform;
+  margin: 20px auto;
+  display: block;
 }
 
 .sobreposicao-aviso-legal.modal-aberto .modal-aviso-legal {
@@ -921,7 +926,13 @@ input:required:valid {
   .modal-aviso-legal {
     margin: 20px;
     width: calc(100% - 40px);
+    max-width: none;
     border-radius: var(--modal-border-radius-mobile);
+  }
+  
+  .sobreposicao-aviso-legal.modal-aberto {
+    align-items: flex-start;
+    padding: 20px 0;
   }
   
   .disclaimer-conteudo {
@@ -953,7 +964,13 @@ input:required:valid {
   .modal-aviso-legal {
     margin: 16px;
     width: calc(100% - 32px);
-    max-height: calc(100vh - 32px);
+    max-width: none;
+    max-height: none;
+  }
+  
+  .sobreposicao-aviso-legal.modal-aberto {
+    align-items: flex-start;
+    padding: 16px 0;
   }
   
   .disclaimer-conteudo {
