@@ -4,6 +4,12 @@
   padding: 30px 0;
   margin-bottom: 30px;
   background-color: #f5f5f7;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  transform: translateY(0);
+  opacity: 1;
+  display: block; /* Garantir que está visível por padrão */
+  position: relative;
+  z-index: 10; /* Garantir que aparece acima de outros elementos */
 }
 
 .container-aviso {
@@ -89,10 +95,44 @@
   background-color: #333;
 }
 
+.botao-fechar-aviso:focus {
+  outline: 2px solid #0071e3;
+  outline-offset: 2px;
+}
+
+.botao-fechar-aviso:focus:not(:focus-visible) {
+  outline: none;
+}
+
+.botao-fechar-aviso:active {
+  transform: scale(0.95);
+  background-color: #666;
+}
+
 .icone-fechar {
   width: 16px;
   height: 16px;
   fill: white;
+}
+
+/* Animações para fechamento do aviso */
+.secao-aviso {
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.aviso-fechando {
+  opacity: 0;
+  transform: translateY(-20px);
+}
+
+/* Estado oculto (aplicado via JavaScript) */
+.secao-aviso[hidden] {
+  display: none !important;
+}
+
+/* Garantir que o aviso seja sempre visível inicialmente */
+.secao-aviso:not([hidden]):not([style*="display: none"]) {
+  display: block !important;
 }
 
 /* Responsividade */
@@ -128,5 +168,20 @@
   .aviso-links {
     flex-direction: column;
     gap: 15px;
+  }
+  
+  .aviso-botao-fechar {
+    top: 15px;
+    right: 15px;
+  }
+  
+  .botao-fechar-aviso {
+    width: 32px;
+    height: 32px;
+  }
+  
+  .icone-fechar {
+    width: 14px;
+    height: 14px;
   }
 }
