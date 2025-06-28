@@ -813,28 +813,59 @@ function mostrarModal(titulo, mensagem, callback) {
 function mostrarModalDisclaimer() {
   const modal = document.getElementById('modal-disclaimer');
   const botaoOk = document.getElementById('modal-disclaimer-ok');
+  const botaoFechar = document.getElementById('modal-disclaimer-close');
 
-  modal.style.display = 'block';
+  // Mostrar o modal com animação
+  modal.classList.add('modal-open');
 
-  // Remover listeners anteriores
-  botaoOk.replaceWith(botaoOk.cloneNode(true));
-
-  // Adicionar novo listener
-  document.getElementById('modal-disclaimer-ok').addEventListener('click', () => {
-    modal.style.display = 'none';
-  });
-
-  // Fechar com ESC ou clique fora
-  const fecharModal = (e) => {
-    if (e.key === 'Escape' || e.target === modal) {
+  // Função para fechar o modal
+  const fecharModal = () => {
+    modal.classList.remove('modal-open');
+    setTimeout(() => {
       modal.style.display = 'none';
-      document.removeEventListener('keydown', fecharModal);
-      modal.removeEventListener('click', fecharModal);
+    }, 400); // Esperar a animação terminar
+  };
+
+  // Event listeners para fechar o modal
+  if (botaoOk) {
+    botaoOk.addEventListener('click', fecharModal);
+  }
+
+  if (botaoFechar) {
+    botaoFechar.addEventListener('click', fecharModal);
+  }
+
+  // Fechar com ESC
+  const handleKeydown = (e) => {
+    if (e.key === 'Escape') {
+      fecharModal();
+      document.removeEventListener('keydown', handleKeydown);
     }
   };
 
-  document.addEventListener('keydown', fecharModal);
-  modal.addEventListener('click', fecharModal);
+  // Fechar clicando fora do modal
+  const handleClickOutside = (e) => {
+    if (e.target === modal) {
+      fecharModal();
+      modal.removeEventListener('click', handleClickOutside);
+    }
+  };
+
+  document.addEventListener('keydown', handleKeydown);
+  modal.addEventListener('click', handleClickOutside);
+
+  // Limpar event listeners quando o modal for fechado
+  const observer = new MutationObserver((mutations) => {
+    mutations.forEach((mutation) => {
+      if (mutation.attributeName === 'class' && !modal.classList.contains('modal-open')) {
+        document.removeEventListener('keydown', handleKeydown);
+        modal.removeEventListener('click', handleClickOutside);
+        observer.disconnect();
+      }
+    });
+  });
+
+  observer.observe(modal, { attributes: true });
 }
 
 // Função para calcular e exibir estatísticas
