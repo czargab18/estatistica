@@ -1,0 +1,865 @@
+/**
+ * IRA - Estilos Consolidados
+ * 
+ * Este arquivo consolida todos os estilos CSS do projeto IRA:
+ * - ira.build.css (estilos principais e variáveis Apple)
+ * - main.css (cabeçalho simples e estilos gerais)
+ * - modal.css (modal de disclaimer)
+ * - aviso.css (seção de aviso fixa)
+ * 
+ * Estrutura:
+ * 1. Variáveis CSS
+ * 2. Estilos da aplicação principal
+ * 3. Cabeçalho simples
+ * 4. Seção de aviso
+ * 5. Modal de disclaimer
+ * 6. Responsividade
+ */
+
+@charset "UTF-8";
+
+/* =====================================
+   1. VARIÁVEIS CSS DA APPLE
+   ===================================== */
+
+:root {
+  /* Apple Design System Variables */
+  --modal-z-index: 9997;
+  --modal-close-timeout: 400ms;
+  --modal-backdrop-color: rgba(0, 0, 0, 0.48);
+  --modal-backdrop-blur: 20px;
+  --modal-background-color: #fff;
+  --modal-border-radius: 28px;
+  --modal-border-radius-mobile: 20px;
+  --modal-shadow: 0 25px 50px rgba(0, 0, 0, 0.25);
+  --modal-padding: 48px;
+  --modal-padding-mobile: 24px;
+  --modal-close-button-size: 36px;
+  --modal-close-button-size-mobile: 32px;
+  --modal-close-button-background: rgba(0, 0, 0, 0.08);
+  --modal-close-button-background-hover: rgba(0, 0, 0, 0.12);
+  --modal-close-button-background-active: rgba(0, 0, 0, 0.16);
+  
+  /* Typography Variables */
+  --modal-headline-font-size: 32px;
+  --modal-headline-font-size-mobile: 28px;
+  --modal-headline-line-height: 1.125;
+  --modal-headline-line-height-mobile: 1.1428571429;
+  --modal-headline-font-weight: 600;
+  --modal-headline-letter-spacing: -0.003em;
+  
+  --modal-topic-font-size: 19px;
+  --modal-topic-line-height: 1.4211026316;
+  --modal-topic-font-weight: 600;
+  --modal-topic-letter-spacing: 0.012em;
+  
+  --modal-body-font-size: 17px;
+  --modal-body-line-height: 1.4705882353;
+  --modal-body-font-weight: 400;
+  --modal-body-letter-spacing: -0.022em;
+  
+  /* Color Variables */
+  --modal-text-color: #1d1d1f;
+  --modal-link-color: #0066cc;
+  --modal-link-color-hover: #0056b3;
+  --modal-focus-color: rgba(0, 102, 204, 0.3);
+  
+  /* Transition Variables */
+  --modal-transition-ease: cubic-bezier(0.4, 0, 0.6, 1);
+  --modal-transition-duration: 0.3s;
+  --modal-transform-scale-closed: 0.95;
+  --modal-transform-scale-open: 1;
+  
+  /* Variáveis do projeto IRA */
+  --cor-primaria: #0071e3;
+  --cor-primaria-hover: #0077ed;
+  --cor-secundaria: #1d1d1f;
+  --cor-texto-claro: #f5f5f7;
+  --cor-texto-escuro: #1d1d1f;
+  --cor-fundo: #ffffff;
+  --cor-fundo-modal: rgba(0, 0, 0, 0.5);
+  --cor-fundo-card: #f5f5f7;
+  --cor-borda: #d2d2d7;
+  --cor-sucesso: #00a850;
+  --cor-erro: #ff3b30;
+  --cor-aviso: #ff9500;
+  --fonte-principal: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", sans-serif;
+  --sombra-padrao: 0 4px 6px rgba(0, 0, 0, 0.1);
+  --sombra-card: 0 4px 20px rgba(0, 0, 0, 0.08);
+  --transicao-padrao: all 0.3s ease;
+  --espacamento-secao: 3rem;
+  --raio-borda: 12px;
+  
+  /* Variáveis da aplicação principal */
+  --bg-color-white: rgba(255, 255, 257, 1);
+  --bg-color-gray: rgb(245, 245, 247, 1);
+  --bg-color-blue: #2997ff;
+  --bg-color-blue-black: #004080;
+  --bg-color-green: #007a33;
+}
+
+/* Dark mode para variáveis Apple */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --modal-background: #1d1d1f;
+    --modal-content-background: #1d1d1f;
+    --modal-headline-color: #f5f5f7;
+    --modal-headline-copy-color: #86868b;
+    --modal-copy-color: #f5f5f7;
+    --modal-link-color: #2997ff;
+    --modal-caption-color: #86868b;
+    --modal-control-scrim-background: #f5f5f7;
+    --modal-control-icon-color: #000;
+  }
+}
+
+/* =====================================
+   2. RESET E ESTILOS GLOBAIS
+   ===================================== */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--fonte-principal);
+  color: var(--cor-texto-escuro);
+  background-color: var(--cor-fundo);
+  line-height: 1.5;
+}
+
+/* =====================================
+   3. CABEÇALHO SIMPLES
+   ===================================== */
+
+.cabecalho-simples {
+  width: 100%;
+  height: 110px;
+  background: #ffffff;
+  position: relative;
+  overflow: hidden;
+  margin-bottom: 20px;
+}
+
+.conteudo-cabecalho-simples {
+  width: 980px;
+  height: 110px;
+  margin: 0 auto;
+  position: relative;
+  max-width: 90%;
+}
+
+.titulo-ira-simples {
+  color: #000000;
+  position: absolute;
+  top: 37px;
+  left: 0;
+  font-weight: bold;
+  font-size: 38px;
+  text-align: left;
+}
+
+.opcoes-ira {
+  position: absolute;
+  top: 40px;
+  right: 0;
+}
+
+.opcao-ira {
+  color: #000000;
+  font-weight: 600;
+  font-size: 14px;
+  text-align: left;
+  margin-bottom: 3px;
+  display: block;
+  cursor: pointer;
+  transition: color 0.2s, transform 0.2s;
+  padding: 3px 0;
+}
+
+.opcao-ira:hover {
+  color: #0071e3;
+  transform: translateX(2px);
+}
+
+.separador-ira {
+  width: 100%;
+  height: 1px;
+  background: #e6e6e6;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+
+/* =====================================
+   4. SEÇÃO DE AVISO
+   ===================================== */
+
+.secao-aviso {
+  width: 100%;
+  padding: 30px 0;
+  margin-bottom: 30px;
+  background-color: #f5f5f7;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  transform: translateY(0);
+  opacity: 1;
+  display: block;
+  position: relative;
+  z-index: 10;
+}
+
+.container-aviso {
+  max-width: 980px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.conteudo-aviso {
+  background-color: #ffffff;
+  border-radius: 28px;
+  padding: 40px 50px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+  position: relative;
+}
+
+.aviso-cabecalho {
+  margin-bottom: 30px;
+}
+
+.aviso-topico {
+  display: block;
+  font-size: 18px;
+  font-weight: 500;
+  margin-bottom: 10px;
+  color: #000000;
+}
+
+.aviso-titulo {
+  font-size: 42px;
+  font-weight: 700;
+  line-height: 1.2;
+  color: #000000;
+  margin: 0;
+  max-width: 80%;
+}
+
+.aviso-descricao {
+  font-size: 24px;
+  line-height: 1.4;
+  color: #000000;
+  margin-bottom: 30px;
+  max-width: 90%;
+}
+
+.aviso-links {
+  display: flex;
+  gap: 30px;
+  margin-top: 20px;
+}
+
+.aviso-link {
+  color: #0071e3;
+  font-size: 16px;
+  text-decoration: none;
+  transition: opacity 0.2s ease;
+}
+
+.aviso-link:hover {
+  opacity: 0.8;
+}
+
+.aviso-botao-fechar {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+}
+
+.botao-fechar-aviso {
+  background-color: #000;
+  border: none;
+  border-radius: 50%;
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.botao-fechar-aviso:hover {
+  background-color: #333;
+}
+
+.botao-fechar-aviso:focus {
+  outline: 2px solid #0071e3;
+  outline-offset: 2px;
+}
+
+.botao-fechar-aviso:focus:not(:focus-visible) {
+  outline: none;
+}
+
+.botao-fechar-aviso:active {
+  transform: scale(0.95);
+  background-color: #666;
+}
+
+.icone-fechar {
+  width: 16px;
+  height: 16px;
+  fill: white;
+}
+
+/* Animações para fechamento do aviso */
+.aviso-fechando {
+  opacity: 0;
+  transform: translateY(-20px);
+}
+
+/* Estado oculto (aplicado via JavaScript) */
+.secao-aviso[hidden] {
+  display: none !important;
+}
+
+/* Garantir que o aviso seja sempre visível inicialmente */
+.secao-aviso:not([hidden]):not([style*="display: none"]) {
+  display: block !important;
+}
+
+/* =====================================
+   5. ESTILOS DA APLICAÇÃO PRINCIPAL (IRA.BUILD.CSS)
+   ===================================== */
+
+main[id="aplicacao-principal-ira"] {
+  all: unset;
+  --chapternav-hight: calc(4em + 1.5em);
+  font-family: "Roboto", sans-serif;
+  font-size: 16px;
+  line-height: 1.5;
+  color: #000000;
+  background-color: var(--bg-color-white);
+  margin: 0;
+  padding: 0;
+  max-width: 2560px;
+  width: 100%;
+  justify-items: center;
+}
+
+/* Estilos dos botões e inputs */
+button,
+input,
+select,
+span[id^="status-"],
+.botao-sucesso,
+.botao-primario,
+.botao-perigo,
+.botao-remover-periodo {
+  font-size: 16px;
+  margin-top: 0.25em;
+  color: #ffffff;
+  padding: 0.5em 1em;
+  border: 0.15em;
+  border-radius: 0.75em;
+  border-style: solid;
+  border-color: var(--bg-color-blue-black);
+  background-color: var(--bg-color-blue-black);
+}
+
+.botao-sucesso,
+.botao-sucesso:hover,
+.botao-primario {
+  color: #fff;
+  background-color: #157347;
+  border-color: #146c43;
+}
+
+.botao-perigo,
+.botao-remover-periodo {
+  background-color: transparent;
+  color: #d0192b;
+  border-color: #d0192b;
+  font-family: var(--r-globalfont-family);
+  white-space: nowrap;
+}
+
+.botao-perigo:hover,
+.botao-remover-periodo:hover {
+  color: #fff;
+  background-color: #bb2d3b;
+  border-color: #b02a37;
+}
+
+/* Layouts de container */
+main[id="aplicacao-principal-ira"] div[id="container-periodos-academicos"] {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-content: space-around;
+  width: 100%;
+  gap: 0.5em;
+}
+
+div[id="container-periodos-academicos"] > div[id^="periodo"] {
+  width: 100%;
+  max-width: 1024px;
+  margin-left: 1em;
+  margin-right: 1em;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5em;
+}
+
+/* Indicador visual para dados não salvos */
+.dados-modificados::before {
+  content: "● ";
+  color: #ff6b6b;
+  font-weight: bold;
+}
+
+/* Mensagens de status */
+.status-message {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  padding: 1em;
+  border-radius: 0.5em;
+  color: white;
+  font-weight: bold;
+  z-index: 1000;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.status-message.show {
+  opacity: 1;
+}
+
+.status-message.success {
+  background-color: #28a745;
+}
+
+.status-message.error {
+  background-color: #dc3545;
+}
+
+.status-message.info {
+  background-color: #17a2b8;
+}
+
+/* =====================================
+   6. MODAL DE DISCLAIMER
+   ===================================== */
+
+/* Modal overlay */
+.modal-overlay {
+  width: 100%;
+  height: 100vh;
+  background: rgba(230,230,230,0.48);
+  opacity: 1;
+  position: fixed;
+  top: 0;
+  left: 0;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.modal-container {
+  width: 816px;
+  height: 477px;
+  background: rgba(255,255,255,1);
+  opacity: 1;
+  position: relative;
+  border-radius: 28px;
+  overflow: hidden;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  max-width: 90%;
+  max-height: 90vh;
+}
+
+.modal-topico {
+  width: auto;
+  color: rgba(0,0,0,1);
+  position: absolute;
+  top: 80px;
+  left: 80px;
+  font-family: var(--fonte-principal);
+  font-weight: 500;
+  font-size: 18px;
+  opacity: 1;
+  text-align: left;
+}
+
+.modal-titulo {
+  width: 649px;
+  color: rgba(0,0,0,1);
+  position: absolute;
+  top: 114px;
+  left: 77px;
+  font-family: var(--fonte-principal);
+  font-weight: 700;
+  font-size: 48px;
+  opacity: 1;
+  text-align: left;
+  line-height: 1.2;
+  max-width: calc(100% - 154px);
+}
+
+.modal-descricao {
+  width: 639px;
+  color: rgba(0,0,0,1);
+  position: absolute;
+  top: 262px;
+  left: 80px;
+  font-family: var(--fonte-principal);
+  font-weight: 400;
+  font-size: 24px;
+  opacity: 1;
+  text-align: left;
+  line-height: 1.4;
+  max-width: calc(100% - 160px);
+}
+
+.modal-link {
+  width: auto;
+  color: rgba(0,113,227,1);
+  position: absolute;
+  font-family: var(--fonte-principal);
+  font-weight: 400;
+  font-size: 16px;
+  opacity: 1;
+  text-align: left;
+  text-decoration: none;
+  transition: opacity 0.2s ease;
+}
+
+.modal-link:hover {
+  opacity: 0.8;
+}
+
+.modal-link-regulamento {
+  top: 379px;
+  left: 80px;
+}
+
+.modal-link-site {
+  top: 379px;
+  left: 207px;
+}
+
+/* Botão de fechar do modal */
+.modal-fechar-circulo {
+  width: 36px;
+  height: 36px;
+  background: rgba(0,0,0,1);
+  opacity: 1;
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.modal-fechar-wrapper {
+  width: 14px;
+  height: 14px;
+  opacity: 1;
+  position: absolute;
+  top: 31px;
+  right: 31px;
+  overflow: hidden;
+  z-index: 2;
+}
+
+.modal-fechar-linha {
+  width: 14px;
+  height: 2px;
+  background: #FFFFFF;
+  opacity: 1;
+  position: absolute;
+  top: 6px;
+  left: 0;
+}
+
+.modal-fechar-linha1 {
+  transform: rotate(45deg);
+}
+
+.modal-fechar-linha2 {
+  transform: rotate(-45deg);
+}
+
+/* Classe para ocultar o modal */
+.modal-oculto {
+  display: none !important;
+  opacity: 0;
+  pointer-events: none;
+}
+
+/* =====================================
+   7. ESTILOS APPLE DESIGN SYSTEM AVANÇADOS
+   ===================================== */
+
+/* Modal de disclaimer Apple Style */
+.sobreposicao-aviso-legal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: var(--modal-z-index);
+  background-color: var(--modal-backdrop-color);
+  backdrop-filter: blur(var(--modal-backdrop-blur));
+  -webkit-backdrop-filter: blur(var(--modal-backdrop-blur));
+  transition: all var(--modal-close-timeout) var(--modal-transition-ease);
+  opacity: 0;
+  visibility: hidden;
+}
+
+.sobreposicao-aviso-legal.modal-oculto {
+  display: none;
+  opacity: 0;
+  visibility: hidden;
+}
+
+.sobreposicao-aviso-legal.modal-visivel {
+  display: flex;
+}
+
+.sobreposicao-aviso-legal.modal-aberto {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  opacity: 1;
+  visibility: visible;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+  padding: 20px 0;
+  transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
+}
+
+.modal-aviso-legal {
+  position: relative;
+  background: var(--modal-background-color);
+  border-radius: var(--modal-border-radius);
+  max-width: 600px;
+  width: 90%;
+  max-height: none;
+  min-height: auto;
+  overflow: visible;
+  box-shadow: var(--modal-shadow);
+  transform: scale(var(--modal-transform-scale-closed));
+  transition: transform var(--modal-close-timeout) var(--modal-transition-ease);
+  will-change: transform;
+  margin: 20px auto;
+  display: block;
+}
+
+.sobreposicao-aviso-legal.modal-aberto .modal-aviso-legal {
+  transform: scale(var(--modal-transform-scale-open));
+}
+
+/* =====================================
+   8. RESPONSIVIDADE
+   ===================================== */
+
+/* Tablets */
+@media (max-width: 768px) {
+  .cabecalho-simples {
+    height: 120px;
+  }
+  
+  .conteudo-cabecalho-simples {
+    width: 100%;
+    padding: 0 1.5rem;
+  }
+  
+  .titulo-ira-simples {
+    font-size: 32px;
+  }
+  
+  .opcoes-ira {
+    top: 40px;
+    right: 1.5rem;
+  }
+
+  /* Seção de aviso */
+  .conteudo-aviso {
+    padding: 30px;
+  }
+  
+  .aviso-titulo {
+    font-size: 32px;
+    max-width: 100%;
+  }
+  
+  .aviso-descricao {
+    font-size: 18px;
+    max-width: 100%;
+  }
+
+  /* Modal */
+  .modal-topico {
+    top: 40px;
+    left: 40px;
+  }
+  
+  .modal-titulo {
+    top: 74px;
+    left: 40px;
+    font-size: 36px;
+    max-width: calc(100% - 80px);
+  }
+  
+  .modal-descricao {
+    top: 190px;
+    left: 40px;
+    font-size: 20px;
+    max-width: calc(100% - 80px);
+  }
+  
+  .modal-link-regulamento {
+    top: 320px;
+    left: 40px;
+  }
+  
+  .modal-link-site {
+    top: 320px;
+    left: 167px;
+  }
+
+  /* Botões da aplicação */
+  button,
+  input,
+  select {
+    font-size: 14px;
+    padding: 0.5em 1em;
+  }
+}
+
+/* Dispositivos móveis */
+@media (max-width: 480px) {
+  /* Seção de aviso */
+  .conteudo-aviso {
+    padding: 25px 20px;
+  }
+  
+  .aviso-titulo {
+    font-size: 28px;
+  }
+  
+  .aviso-descricao {
+    font-size: 16px;
+  }
+  
+  .aviso-links {
+    flex-direction: column;
+    gap: 15px;
+  }
+  
+  .aviso-botao-fechar {
+    top: 15px;
+    right: 15px;
+  }
+  
+  .botao-fechar-aviso {
+    width: 32px;
+    height: 32px;
+  }
+  
+  .icone-fechar {
+    width: 14px;
+    height: 14px;
+  }
+
+  /* Modal */
+  .modal-container {
+    height: auto;
+    padding-bottom: 100px;
+  }
+  
+  .modal-titulo {
+    font-size: 28px;
+    max-width: calc(100% - 80px);
+  }
+  
+  .modal-descricao {
+    font-size: 16px;
+  }
+  
+  .modal-link-regulamento {
+    top: auto;
+    bottom: 40px;
+    left: 40px;
+  }
+  
+  .modal-link-site {
+    top: auto;
+    bottom: 40px;
+    left: 150px;
+  }
+}
+
+/* Dispositivos muito pequenos */
+@media (max-width: 320px) {
+  button,
+  input,
+  select {
+    font-size: 12px;
+    padding: 0.3em 0.6em !important;
+  }
+  
+  .titulo-ira-simples {
+    font-size: 28px;
+  }
+}
+
+/* =====================================
+   9. ACESSIBILIDADE E ANIMAÇÕES
+   ===================================== */
+
+/* Focus states */
+button:focus,
+input:focus,
+select:focus {
+  outline: 1px solid #0dcaf0;
+  outline-offset: 1px;
+}
+
+/* Redução de movimento para usuários com preferências de acessibilidade */
+@media (prefers-reduced-motion: reduce) {
+  .secao-aviso,
+  .modal-aviso-legal,
+  .botao-fechar-aviso,
+  .modal-link,
+  .opcao-ira {
+    transition: none;
+  }
+  
+  .botao-fechar-aviso:hover,
+  .botao-fechar-aviso:active {
+    transform: none;
+  }
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+  .modal-container,
+  .conteudo-aviso {
+    border: 2px solid var(--modal-text-color);
+  }
+  
+  .botao-fechar-aviso,
+  .modal-fechar-circulo {
+    border: 1px solid var(--modal-text-color);
+  }
+}
