@@ -61,45 +61,45 @@
     </div>
 
     <!-- Modal de disclaimer -->
-    <div id="modal-disclaimer" class="modal-overlay" style="--modal-close-timeout: 400ms;">
-      <div class="modal" tabindex="-1" role="dialog" aria-label="Aviso Importante" aria-modal="true">
+    <div id="modal-disclaimer" class="modal-overlay" style="--modal-close-timeout: 400ms;" aria-hidden="true">
+      <div class="modal" tabindex="-1" role="dialog" aria-labelledby="topicLabel headline" aria-modal="true">
         <div class="modal-content-container">
-          <h3 class="modal-header">
-            <span id="topicLabel" class="modal-topic">
+          <header class="modal-header">
+            <span id="topicLabel" class="modal-topic typography-callout">
               <span>Aviso Importante</span>
             </span>
-            <span id="headline" class="modal-headline">
+            <h1 id="headline" class="modal-headline typography-headline">
               <span>Este site não está vinculado à Universidade.</span>
-            </span>
-          </h3>
-          <h4 class="modal-inline-header">
-            <span>Este site não é oficial nem possui vínculo institucional com a Universidade de Brasília. O IRA calculado é meramente informativo e não tem validade oficial. Para informações oficiais, consulte sempre os canais oficiais da universidade.</span>
-          </h4>
-          <p class="modal-links">
+            </h1>
+          </header>
+          <div class="modal-inline-header typography-body">
+            <p>Este site não é oficial nem possui vínculo institucional com a Universidade de Brasília. O IRA calculado é meramente informativo e não tem validade oficial. Para informações oficiais, consulte sempre os canais oficiais da universidade.</p>
+          </div>
+          <nav class="modal-links" aria-label="Links relacionados">
             <a class="link-regulamento" 
                href="https://www.deg.unb.br/images/legislacao/resolucao_ceg_0001_2020.pdf" 
                target="_blank" 
                rel="noopener noreferrer"
-               aria-label="Saiba mais sobre o regulamento oficial">
+               aria-label="Saiba mais sobre o regulamento oficial (abre em nova aba)">
               <span class="link-copy">
                 <span>Ver Regulamento Oficial</span>
               </span>
-              <span class="link-icon"></span>
+              <span class="link-icon" aria-hidden="true"></span>
             </a>
             <a class="link-universidade" 
                href="https://www.unb.br" 
                target="_blank" 
                rel="noopener noreferrer"
-               aria-label="Acessar site oficial da Universidade de Brasília">
+               aria-label="Acessar site oficial da Universidade de Brasília (abre em nova aba)">
               <span class="link-copy">
                 <span>Site da Universidade</span>
               </span>
-              <span class="link-icon"></span>
+              <span class="link-icon" aria-hidden="true"></span>
             </a>
-          </p>
-          <div class="modal-actions">
+          </nav>
+          <!-- <div class="modal-actions">
             <button id="modal-disclaimer-ok" class="btn btn-primary">Entendi</button>
-          </div>
+          </div> -->
         </div>
         <div class="modal-close-button-container">
           <button aria-label="Fechar" class="modal-close-button" id="modal-disclaimer-close">

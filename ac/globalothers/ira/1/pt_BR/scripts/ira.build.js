@@ -809,55 +809,88 @@ function mostrarModal(titulo, mensagem, callback) {
   modal.addEventListener('click', fecharModal);
 }
 
-// Modal de disclaimer
+// Modal de disclaimer - Apple Design System
 function mostrarModalDisclaimer() {
   const modal = document.getElementById('modal-disclaimer');
   const botaoOk = document.getElementById('modal-disclaimer-ok');
   const botaoFechar = document.getElementById('modal-disclaimer-close');
+  const modalContent = modal.querySelector('.modal');
+
+  // Configurar acessibilidade
+  modal.setAttribute('aria-hidden', 'false');
+  modalContent.focus();
 
   // Mostrar o modal com animação
-  modal.classList.add('modal-open');
+  modal.classList.remove('modal-hidden');
+  modal.classList.add('modal-visible', 'modal-open');
 
-  // Função para fechar o modal
+  // Função para fechar o modal com animação
   const fecharModal = () => {
+    // Adicionar classe de fechamento para animação
+    modal.classList.add('modal-closing');
     modal.classList.remove('modal-open');
+    
+    // Configurar acessibilidade
+    modal.setAttribute('aria-hidden', 'true');
+    
+    // Aguardar animação antes de ocultar completamente
     setTimeout(() => {
-      modal.style.display = 'none';
-    }, 400); // Esperar a animação terminar
+      modal.classList.remove('modal-visible', 'modal-closing');
+      modal.classList.add('modal-hidden');
+    }, parseInt(getComputedStyle(modal).getPropertyValue('--modal-close-timeout')) || 400);
   };
 
   // Event listeners para fechar o modal
   if (botaoOk) {
-    botaoOk.addEventListener('click', fecharModal);
+    botaoOk.addEventListener('click', fecharModal, { once: true });
   }
 
   if (botaoFechar) {
-    botaoFechar.addEventListener('click', fecharModal);
+    botaoFechar.addEventListener('click', fecharModal, { once: true });
   }
 
-  // Fechar com ESC
+  // Fechar com ESC (acessibilidade)
   const handleKeydown = (e) => {
     if (e.key === 'Escape') {
       fecharModal();
       document.removeEventListener('keydown', handleKeydown);
     }
+    
+    // Trap focus dentro do modal
+    if (e.key === 'Tab') {
+      const focusableElements = modal.querySelectorAll(
+        'button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])'
+      );
+      const firstElement = focusableElements[0];
+      const lastElement = focusableElements[focusableElements.length - 1];
+
+      if (e.shiftKey && document.activeElement === firstElement) {
+        e.preventDefault();
+        lastElement.focus();
+      } else if (!e.shiftKey && document.activeElement === lastElement) {
+        e.preventDefault();
+        firstElement.focus();
+      }
+    }
   };
 
-  // Fechar clicando fora do modal
+  // Fechar clicando fora do modal (backdrop)
   const handleClickOutside = (e) => {
     if (e.target === modal) {
       fecharModal();
       modal.removeEventListener('click', handleClickOutside);
+      document.removeEventListener('keydown', handleKeydown);
     }
   };
 
+  // Adicionar event listeners
   document.addEventListener('keydown', handleKeydown);
   modal.addEventListener('click', handleClickOutside);
 
-  // Limpar event listeners quando o modal for fechado
+  // Limpar event listeners quando o modal for fechado usando MutationObserver
   const observer = new MutationObserver((mutations) => {
     mutations.forEach((mutation) => {
-      if (mutation.attributeName === 'class' && !modal.classList.contains('modal-open')) {
+      if (mutation.attributeName === 'class' && modal.classList.contains('modal-hidden')) {
         document.removeEventListener('keydown', handleKeydown);
         modal.removeEventListener('click', handleClickOutside);
         observer.disconnect();
@@ -865,7 +898,40 @@ function mostrarModalDisclaimer() {
     });
   });
 
-  observer.observe(modal, { attributes: true });
+  observer.observe(modal, { attributes: true, attributeFilter: ['class'] });
+
+  // Salvar o elemento que tinha foco antes do modal para restaurar depois
+  const previousFocus = document.activeElement;
+  
+  // Restaurar foco quando modal fechar
+  const restoreFocus = () => {
+    if (previousFocus && typeof previousFocus.focus === 'function') {
+      previousFocus.focus();
+    }
+  };
+
+  // Aguardar a próxima frame para garantir que o modal esteja visível antes de focar
+  requestAnimationFrame(() => {
+    modalContent.focus();
+  });
+
+  // Adicionar callback para restaurar foco
+  const originalFecharModal = fecharModal;
+  const fecharModalComRestore = () => {
+    originalFecharModal();
+    setTimeout(restoreFocus, parseInt(getComputedStyle(modal).getPropertyValue('--modal-close-timeout')) || 400);
+  };
+
+  // Substituir a função fecharModal pelos event listeners
+  if (botaoOk) {
+    botaoOk.removeEventListener('click', fecharModal);
+    botaoOk.addEventListener('click', fecharModalComRestore, { once: true });
+  }
+
+  if (botaoFechar) {
+    botaoFechar.removeEventListener('click', fecharModal);
+    botaoFechar.addEventListener('click', fecharModalComRestore, { once: true });
+  }
 }
 
 // Função para calcular e exibir estatísticas

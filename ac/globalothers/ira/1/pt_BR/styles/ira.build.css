@@ -1,4 +1,58 @@
 @charset "UTF-8";
+
+/* =====================================
+   VARIÁVEIS CSS DA APPLE
+   ===================================== */
+
+:root {
+  /* Apple Design System Variables */
+  --modal-z-index: 9997;
+  --modal-close-timeout: 400ms;
+  --modal-backdrop-color: rgba(0, 0, 0, 0.48);
+  --modal-backdrop-blur: 20px;
+  --modal-background-color: #fff;
+  --modal-border-radius: 28px;
+  --modal-border-radius-mobile: 20px;
+  --modal-shadow: 0 25px 50px rgba(0, 0, 0, 0.25);
+  --modal-padding: 48px;
+  --modal-padding-mobile: 24px;
+  --modal-close-button-size: 36px;
+  --modal-close-button-size-mobile: 32px;
+  --modal-close-button-background: rgba(0, 0, 0, 0.08);
+  --modal-close-button-background-hover: rgba(0, 0, 0, 0.12);
+  --modal-close-button-background-active: rgba(0, 0, 0, 0.16);
+  
+  /* Typography Variables */
+  --modal-headline-font-size: 32px;
+  --modal-headline-font-size-mobile: 28px;
+  --modal-headline-line-height: 1.125;
+  --modal-headline-line-height-mobile: 1.1428571429;
+  --modal-headline-font-weight: 600;
+  --modal-headline-letter-spacing: -0.003em;
+  
+  --modal-topic-font-size: 19px;
+  --modal-topic-line-height: 1.4211026316;
+  --modal-topic-font-weight: 600;
+  --modal-topic-letter-spacing: 0.012em;
+  
+  --modal-body-font-size: 17px;
+  --modal-body-line-height: 1.4705882353;
+  --modal-body-font-weight: 400;
+  --modal-body-letter-spacing: -0.022em;
+  
+  /* Color Variables */
+  --modal-text-color: #1d1d1f;
+  --modal-link-color: #0066cc;
+  --modal-link-color-hover: #0056b3;
+  --modal-focus-color: rgba(0, 102, 204, 0.5);
+  
+  /* Transition Variables */
+  --modal-transition-ease: cubic-bezier(0.4, 0, 0.6, 1);
+  --modal-transition-duration: 0.3s;
+  --modal-transform-scale-closed: 0.95;
+  --modal-transform-scale-open: 1;
+}
+
 main[id="globalmain-ira"] {
   all: unset;
 }
@@ -532,7 +586,10 @@ input:required:valid {
   margin-top: 1em;
 }
 
-/* Modal de disclaimer - Estilo moderno */
+/* =====================================
+   MODAL DE DISCLAIMER - APPLE DESIGN SYSTEM
+   ===================================== */
+
 .modal-overlay {
   display: none;
   position: fixed;
@@ -540,39 +597,44 @@ input:required:valid {
   left: 0;
   width: 100%;
   height: 100%;
-  z-index: 1001;
-  background-color: rgba(0, 0, 0, 0.48);
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
-  transition: all var(--modal-close-timeout, 400ms) ease;
+  z-index: var(--modal-z-index);
+  background-color: var(--modal-backdrop-color);
+  backdrop-filter: blur(var(--modal-backdrop-blur));
+  -webkit-backdrop-filter: blur(var(--modal-backdrop-blur));
+  transition: all var(--modal-close-timeout) var(--modal-transition-ease);
+  opacity: 0;
+  visibility: hidden;
 }
 
 .modal-overlay.modal-open {
   display: flex;
   align-items: center;
   justify-content: center;
+  opacity: 1;
+  visibility: visible;
 }
 
 .modal {
   position: relative;
-  background: #fff;
-  border-radius: 28px;
+  background: var(--modal-background-color);
+  border-radius: var(--modal-border-radius);
   max-width: 600px;
   width: 90%;
   max-height: 90vh;
   overflow: hidden;
-  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.25);
-  transform: scale(0.95);
-  transition: transform var(--modal-close-timeout, 400ms) ease;
+  box-shadow: var(--modal-shadow);
+  transform: scale(var(--modal-transform-scale-closed));
+  transition: transform var(--modal-close-timeout) var(--modal-transition-ease);
+  will-change: transform;
 }
 
 .modal-overlay.modal-open .modal {
-  transform: scale(1);
+  transform: scale(var(--modal-transform-scale-open));
 }
 
 .modal-content-container {
-  padding: 48px;
-  padding-bottom: 32px;
+  padding: var(--modal-padding);
+  padding-bottom: calc(var(--modal-padding) - 16px);
 }
 
 .modal-header {
@@ -581,30 +643,33 @@ input:required:valid {
 
 .modal-topic {
   display: block;
-  font-size: 19px;
-  line-height: 1.4211026316;
-  font-weight: 600;
-  letter-spacing: 0.012em;
-  color: #1d1d1f;
+  font-size: var(--modal-topic-font-size);
+  line-height: var(--modal-topic-line-height);
+  font-weight: var(--modal-topic-font-weight);
+  letter-spacing: var(--modal-topic-letter-spacing);
+  color: var(--modal-text-color);
   margin-bottom: 8px;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
 }
 
 .modal-headline {
   display: block;
-  font-size: 32px;
-  line-height: 1.125;
-  font-weight: 600;
-  letter-spacing: -0.003em;
-  color: #1d1d1f;
+  font-size: var(--modal-headline-font-size);
+  line-height: var(--modal-headline-line-height);
+  font-weight: var(--modal-headline-font-weight);
+  letter-spacing: var(--modal-headline-letter-spacing);
+  color: var(--modal-text-color);
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
 }
 
 .modal-inline-header {
-  font-size: 17px;
-  line-height: 1.4705882353;
-  font-weight: 400;
-  letter-spacing: -0.022em;
-  color: #1d1d1f;
+  font-size: var(--modal-body-font-size);
+  line-height: var(--modal-body-line-height);
+  font-weight: var(--modal-body-font-weight);
+  letter-spacing: var(--modal-body-letter-spacing);
+  color: var(--modal-text-color);
   margin-bottom: 24px;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
 }
 
 .modal-links {
@@ -617,18 +682,26 @@ input:required:valid {
 .modal-links a {
   display: inline-flex;
   align-items: center;
-  color: #0066cc;
+  color: var(--modal-link-color);
   text-decoration: none;
-  font-size: 17px;
-  line-height: 1.4705882353;
-  font-weight: 400;
-  letter-spacing: -0.022em;
-  transition: color 0.2s ease;
+  font-size: var(--modal-body-font-size);
+  line-height: var(--modal-body-line-height);
+  font-weight: var(--modal-body-font-weight);
+  letter-spacing: var(--modal-body-letter-spacing);
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  transition: color var(--modal-transition-duration) var(--modal-transition-ease);
+  position: relative;
 }
 
 .modal-links a:hover {
-  color: #0056b3;
+  color: var(--modal-link-color-hover);
   text-decoration: underline;
+}
+
+.modal-links a:focus {
+  outline: 2px solid var(--modal-focus-color);
+  outline-offset: 2px;
+  border-radius: 4px;
 }
 
 .link-copy {
@@ -639,6 +712,11 @@ input:required:valid {
   content: "→";
   font-size: 16px;
   margin-left: 4px;
+  transition: transform var(--modal-transition-duration) var(--modal-transition-ease);
+}
+
+.modal-links a:hover .link-icon::after {
+  transform: translateX(2px);
 }
 
 .modal-actions {
@@ -650,80 +728,264 @@ input:required:valid {
   position: absolute;
   top: 24px;
   right: 24px;
+  z-index: 10;
 }
 
 .modal-close-button {
-  width: 36px;
-  height: 36px;
+  width: var(--modal-close-button-size);
+  height: var(--modal-close-button-size);
   border-radius: 50%;
   border: none;
-  background: rgba(0, 0, 0, 0.08);
+  background: var(--modal-close-button-background);
   cursor: pointer;
   display: flex;
   align-items: center;
   justify-content: center;
-  transition: background-color 0.2s ease;
+  transition: all var(--modal-transition-duration) var(--modal-transition-ease);
+  padding: 0;
+  outline: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  will-change: transform, background-color;
 }
 
 .modal-close-button:hover {
-  background: rgba(0, 0, 0, 0.12);
+  background: var(--modal-close-button-background-hover);
+  transform: scale(1.05);
+}
+
+.modal-close-button:active {
+  background: var(--modal-close-button-background-active);
+  transform: scale(0.95);
+}
+
+.modal-close-button:focus {
+  background: var(--modal-close-button-background-hover);
+  box-shadow: 0 0 0 2px var(--modal-focus-color);
 }
 
 .close-icon {
   width: 20px;
   height: 20px;
-  fill: #1d1d1f;
+  fill: var(--modal-text-color);
+  pointer-events: none;
+  transition: fill var(--modal-transition-duration) var(--modal-transition-ease);
 }
 
-/* Responsividade para dispositivos móveis */
+/* =====================================
+   RESPONSIVIDADE PARA DISPOSITIVOS MÓVEIS
+   ===================================== */
+
 @media screen and (max-width: 768px) {
   .modal {
     margin: 20px;
     width: calc(100% - 40px);
-    border-radius: 20px;
+    border-radius: var(--modal-border-radius-mobile);
   }
   
   .modal-content-container {
-    padding: 32px 24px;
+    padding: var(--modal-padding-mobile);
   }
   
   .modal-headline {
-    font-size: 28px;
-    line-height: 1.1428571429;
+    font-size: var(--modal-headline-font-size-mobile);
+    line-height: var(--modal-headline-line-height-mobile);
   }
   
   .modal-close-button-container {
     top: 16px;
     right: 16px;
   }
+
+  .modal-close-button {
+    width: var(--modal-close-button-size-mobile);
+    height: var(--modal-close-button-size-mobile);
+  }
+
+  .close-icon {
+    width: 18px;
+    height: 18px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .modal {
+    margin: 16px;
+    width: calc(100% - 32px);
+    max-height: calc(100vh - 32px);
+  }
+  
+  .modal-content-container {
+    padding: 20px;
+  }
+  
+  .modal-headline {
+    font-size: 24px;
+    line-height: 1.1666666667;
+  }
+  
+  .modal-topic {
+    font-size: 17px;
+  }
+  
+  .modal-inline-header {
+    font-size: 15px;
+    line-height: 1.4666666667;
+  }
+  
+  .modal-links a {
+    font-size: 15px;
+    line-height: 1.4666666667;
+  }
+}
+
+/* Redução de movimento para usuários com preferências de acessibilidade */
+@media (prefers-reduced-motion: reduce) {
+  .modal-overlay,
+  .modal,
+  .modal-close-button,
+  .modal-links a,
+  .link-icon::after,
+  .close-icon {
+    transition: none;
+  }
+  
+  .modal-close-button:hover {
+    transform: none;
+  }
+  
+  .modal-close-button:active {
+    transform: none;
+  }
+  
+  .modal-links a:hover .link-icon::after {
+    transform: none;
+  }
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+  .modal {
+    border: 2px solid var(--modal-text-color);
+  }
+  
+  .modal-close-button {
+    border: 1px solid var(--modal-text-color);
+  }
 }
 
 /* =====================================
-   ESTILOS DA ÁREA DE ESTATÍSTICAS
+   MELHORIAS AVANÇADAS DE PERFORMANCE
    ===================================== */
 
-#estatisticas-rapidas {
-  display: none;
-  margin: 1em;
-  padding: 1em;
-  background-color: var(--bg-color-gray);
-  border-radius: 0.5em;
+/* GPU Acceleration para animações suaves */
+.modal-overlay,
+.modal,
+.modal-close-button {
+  will-change: transform, opacity;
+  transform: translateZ(0);
+  backface-visibility: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
-#estatisticas-rapidas > div {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 1em;
+/* Otimizações para diferentes densidades de pixel */
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+  .close-icon {
+    image-rendering: -webkit-optimize-contrast;
+    image-rendering: crisp-edges;
+  }
 }
 
-/* =====================================
-   ESTILOS DOS TEMPLATES
-   ===================================== */
-
-#templates {
-  display: none;
+/* Animações customizadas inspiradas na Apple */
+@keyframes modal-fade-in {
+  from {
+    opacity: 0;
+    backdrop-filter: blur(0px);
+    -webkit-backdrop-filter: blur(0px);
+  }
+  to {
+    opacity: 1;
+    backdrop-filter: blur(var(--modal-backdrop-blur));
+    -webkit-backdrop-filter: blur(var(--modal-backdrop-blur));
+  }
 }
 
-.template-input {
-  display: none;
+@keyframes modal-scale-in {
+  from {
+    transform: scale(var(--modal-transform-scale-closed)) translateZ(0);
+    opacity: 0;
+  }
+  to {
+    transform: scale(var(--modal-transform-scale-open)) translateZ(0);
+    opacity: 1;
+  }
+}
+
+@keyframes modal-fade-out {
+  from {
+    opacity: 1;
+    backdrop-filter: blur(var(--modal-backdrop-blur));
+    -webkit-backdrop-filter: blur(var(--modal-backdrop-blur));
+  }
+  to {
+    opacity: 0;
+    backdrop-filter: blur(0px);
+    -webkit-backdrop-filter: blur(0px);
+  }
+}
+
+@keyframes modal-scale-out {
+  from {
+    transform: scale(var(--modal-transform-scale-open)) translateZ(0);
+    opacity: 1;
+  }
+  to {
+    transform: scale(var(--modal-transform-scale-closed)) translateZ(0);
+    opacity: 0;
+  }
+}
+
+/* Aplicar animações com timing da Apple */
+.modal-overlay.modal-open {
+  animation: modal-fade-in var(--modal-close-timeout) var(--modal-transition-ease) forwards;
+}
+
+.modal-overlay.modal-open .modal {
+  animation: modal-scale-in var(--modal-close-timeout) var(--modal-transition-ease) forwards;
+}
+
+.modal-overlay.modal-closing {
+  animation: modal-fade-out var(--modal-close-timeout) var(--modal-transition-ease) forwards;
+}
+
+.modal-overlay.modal-closing .modal {
+  animation: modal-scale-out var(--modal-close-timeout) var(--modal-transition-ease) forwards;
+}
+
+/* Suporte para redução de movimento */
+@media (prefers-reduced-motion: reduce) {
+  .modal-overlay.modal-open,
+  .modal-overlay.modal-open .modal,
+  .modal-overlay.modal-closing,
+  .modal-overlay.modal-closing .modal {
+    animation: none;
+  }
+}
+
+/* Melhorias para VoiceOver e leitores de tela */
+.modal[aria-modal="true"] {
+  isolation: isolate;
+}
+
+.modal-links a:focus-visible {
+  outline: 2px solid var(--modal-focus-color);
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+.modal-close-button:focus-visible {
+  outline: 2px solid var(--modal-focus-color);
+  outline-offset: 2px;
 }
