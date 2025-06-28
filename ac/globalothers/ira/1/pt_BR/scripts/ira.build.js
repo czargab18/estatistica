@@ -816,26 +816,37 @@ function mostrarModalDisclaimer() {
   const botaoFechar = document.getElementById('modal-disclaimer-close');
   const modalContent = modal.querySelector('.modal');
 
+  // Adicionar classe ao HTML para controle de scroll (padrão Apple)
+  document.documentElement.classList.add('BaseModal_hasModal__HlpjY', 'modal-open');
+  
+  // Calcular buffer do scrollbar para evitar jump de layout
+  const scrollbarWidth = window.innerWidth - document.documentElement.clientWidth;
+  document.documentElement.style.setProperty('--modal-scrollbar-buffer', `${scrollbarWidth}px`);
+
   // Configurar acessibilidade
   modal.setAttribute('aria-hidden', 'false');
   modalContent.focus();
 
-  // Mostrar o modal com animação
+  // Mostrar o modal com animação Apple-style
   modal.classList.remove('modal-hidden');
-  modal.classList.add('modal-visible', 'modal-open');
+  modal.classList.add('modal-visible', 'modal-open', 'BaseModal_modalOpen___hGpW');
 
   // Função para fechar o modal com animação
   const fecharModal = () => {
     // Adicionar classe de fechamento para animação
-    modal.classList.add('modal-closing');
-    modal.classList.remove('modal-open');
+    modal.classList.add('modal-closing', 'BaseModal_modalClose__1KZaa');
+    modal.classList.remove('modal-open', 'BaseModal_modalOpen___hGpW');
     
     // Configurar acessibilidade
     modal.setAttribute('aria-hidden', 'true');
     
+    // Remover controle de scroll do HTML
+    document.documentElement.classList.remove('BaseModal_hasModal__HlpjY', 'modal-open');
+    document.documentElement.style.removeProperty('--modal-scrollbar-buffer');
+    
     // Aguardar animação antes de ocultar completamente
     setTimeout(() => {
-      modal.classList.remove('modal-visible', 'modal-closing');
+      modal.classList.remove('modal-visible', 'modal-closing', 'BaseModal_modalClose__1KZaa');
       modal.classList.add('modal-hidden');
     }, parseInt(getComputedStyle(modal).getPropertyValue('--modal-close-timeout')) || 400);
   };
@@ -856,7 +867,7 @@ function mostrarModalDisclaimer() {
       document.removeEventListener('keydown', handleKeydown);
     }
     
-    // Trap focus dentro do modal
+    // Trap focus dentro do modal (padrão Apple)
     if (e.key === 'Tab') {
       const focusableElements = modal.querySelectorAll(
         'button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])'
@@ -900,7 +911,7 @@ function mostrarModalDisclaimer() {
 
   observer.observe(modal, { attributes: true, attributeFilter: ['class'] });
 
-  // Salvar o elemento que tinha foco antes do modal para restaurar depois
+  // Salvar o elemento que tinha foco antes do modal para restaurar depois (padrão Apple)
   const previousFocus = document.activeElement;
   
   // Restaurar foco quando modal fechar
