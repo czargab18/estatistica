@@ -1,0 +1,208 @@
+/* Estilos do Modal Redesenhado */
+
+/* Modal de Aviso Legal - Estilos com classes descritivas */
+.modal-overlay {
+  width: 100%;
+  height: 100vh;
+  background: rgba(230,230,230,0.48);
+  opacity: 1;
+  position: fixed;
+  top: 0;
+  left: 0;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.modal-container {
+  width: 816px;
+  height: 477px;
+  background: rgba(255,255,255,1);
+  opacity: 1;
+  position: relative;
+  border-radius: 28px;
+  overflow: hidden;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  max-width: 90%;
+  max-height: 90vh;
+}
+
+.modal-topico {
+  width: auto;
+  color: rgba(0,0,0,1);
+  position: absolute;
+  top: 80px;
+  left: 80px;
+  font-family: var(--fonte-principal);
+  font-weight: 500;
+  font-size: 18px;
+  opacity: 1;
+  text-align: left;
+}
+
+.modal-titulo {
+  width: 649px;
+  color: rgba(0,0,0,1);
+  position: absolute;
+  top: 114px;
+  left: 77px;
+  font-family: var(--fonte-principal);
+  font-weight: 700;
+  font-size: 48px;
+  opacity: 1;
+  text-align: left;
+  line-height: 1.2;
+  max-width: calc(100% - 154px);
+}
+
+.modal-descricao {
+  width: 639px;
+  color: rgba(0,0,0,1);
+  position: absolute;
+  top: 262px;
+  left: 80px;
+  font-family: var(--fonte-principal);
+  font-weight: 400;
+  font-size: 24px;
+  opacity: 1;
+  text-align: left;
+  line-height: 1.4;
+  max-width: calc(100% - 160px);
+}
+
+.modal-link {
+  width: auto;
+  color: rgba(0,113,227,1);
+  position: absolute;
+  font-family: var(--fonte-principal);
+  font-weight: 400;
+  font-size: 16px;
+  opacity: 1;
+  text-align: left;
+  text-decoration: none;
+  transition: opacity 0.2s ease;
+}
+
+.modal-link:hover {
+  opacity: 0.8;
+}
+
+.modal-link-regulamento {
+  top: 379px;
+  left: 80px;
+}
+
+.modal-link-site {
+  top: 379px;
+  left: 207px;
+}
+
+.modal-fechar-circulo {
+  width: 36px;
+  height: 36px;
+  background: rgba(0,0,0,1);
+  opacity: 1;
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.modal-fechar-wrapper {
+  width: 14px;
+  height: 14px;
+  opacity: 1;
+  position: absolute;
+  top: 31px;
+  right: 31px;
+  overflow: hidden;
+  z-index: 2;
+}
+
+.modal-fechar-linha {
+  width: 14px;
+  height: 2px;
+  background: #FFFFFF;
+  opacity: 1;
+  position: absolute;
+  top: 6px;
+  left: 0;
+}
+
+.modal-fechar-linha1 {
+  transform: rotate(45deg);
+}
+
+.modal-fechar-linha2 {
+  transform: rotate(-45deg);
+}
+
+/* Classe para ocultar o modal */
+.modal-oculto {
+  display: none !important;
+  opacity: 0;
+  pointer-events: none;
+}
+
+/* Media queries para o modal redesenhado */
+@media (max-width: 768px) {
+  .modal-topico {
+    top: 40px;
+    left: 40px;
+  }
+  
+  .modal-titulo {
+    top: 74px;
+    left: 40px;
+    font-size: 36px;
+    max-width: calc(100% - 80px);
+  }
+  
+  .modal-descricao {
+    top: 190px;
+    left: 40px;
+    font-size: 20px;
+    max-width: calc(100% - 80px);
+  }
+  
+  .modal-link-regulamento {
+    top: 320px;
+    left: 40px;
+  }
+  
+  .modal-link-site {
+    top: 320px;
+    left: 167px;
+  }
+}
+
+@media (max-width: 480px) {
+  .modal-container {
+    height: auto;
+    padding-bottom: 100px;
+  }
+  
+  .modal-titulo {
+    font-size: 28px;
+    max-width: calc(100% - 80px);
+  }
+  
+  .modal-descricao {
+    font-size: 16px;
+  }
+  
+  .modal-link-regulamento {
+    top: auto;
+    bottom: 40px;
+    left: 40px;
+  }
+  
+  .modal-link-site {
+    top: auto;
+    bottom: 40px;
+    left: 150px;
+  }
+}

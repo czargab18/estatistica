@@ -20,7 +20,13 @@
       content="Simulador e calculadora do Índice de Rendimento Acadêmico (IRA)"
     />
     <!-- CSS Principal -->
-    <link rel="stylesheet" href="styles/main.css"
+    <link
+      rel="stylesheet"
+      href="styles/main.css"
+    />
+    <link
+      rel="stylesheet"
+      href="styles/modal.css"
     />
     <meta
       content="img-src 'self' https://www.estatistica.pro/; script-src 'self' https://www.estatistica.pro/ac/ https://www.estatistica.pro/sd/; font-src 'self' https://cesargabrielphd.github.io"
@@ -2014,179 +2020,117 @@
         <div class="conteudo-cabecalho-simples">
           <span class="titulo-ira-simples">IRA</span>
           <div class="opcoes-ira">
-            <span class="opcao-ira" id="simular-ira-semestre">simular ira semestre.</span>
-            <span class="opcao-ira" id="prever-ira-curso">prever ira final do curso.</span>
+            <span
+              class="opcao-ira"
+              id="simular-ira-semestre"
+              >simular ira semestre.</span
+            >
+            <span
+              class="opcao-ira"
+              id="prever-ira-curso"
+              >prever ira final do curso.</span
+            >
           </div>
           <div class="separador-ira"></div>
         </div>
       </div>
-      
+
       <section
         class="secao-destaque secao-principal secao-sem-padding-inferior"
         data-analytics-section-engagement="name:hero"
       >
-        <div class="conteudo-secao">
-          <!-- Modal de Aviso Legal -->
+        <!-- Modal de disclaimer -->
+        <div
+          id="modal-aviso-legal"
+          class="sobreposicao-aviso-legal modal-oculto sobreposicao-modal-principal"
+          style="--modal-close-timeout: 400ms"
+          aria-hidden="true"
+        >
           <div
-            id="modal-aviso-legal"
-            class="sobreposicao-aviso-legal modal-oculto sobreposicao-modal-principal"
-            style="--modal-close-timeout: 400ms"
-            aria-hidden="true"
+            class="modal-aviso-legal modal-principal conteudo-modal-disclaimer"
+            tabindex="-1"
+            role="dialog"
+            aria-labelledby="aviso-titulo disclaimer-titulo"
+            aria-modal="true"
           >
-            <div
-              class="modal-aviso-legal modal-principal conteudo-modal-disclaimer"
-              tabindex="-1"
-              role="dialog"
-              aria-labelledby="aviso-titulo disclaimer-titulo"
-              aria-modal="true"
-            >
-              <div class="disclaimer-conteudo conteudo-modal-principal container-conteudo-disclaimer">
-                <header class="disclaimer-cabecalho cabecalho-modal-principal header-disclaimer">
-                  <span
-                    id="aviso-titulo"
-                    class="disclaimer-topico topico-aviso topico-callout"
+            <div class="disclaimer-conteudo conteudo-modal-principal container-conteudo-disclaimer">
+              <header class="disclaimer-cabecalho cabecalho-modal-principal header-disclaimer">
+                <span
+                  id="aviso-titulo"
+                  class="disclaimer-topico topico-aviso topico-callout"
+                >
+                  <span>Aviso Importante</span>
+                </span>
+                <h1
+                  id="disclaimer-titulo"
+                  class="disclaimer-titulo-principal titulo-principal-modal headline-disclaimer"
+                >
+                  <span>Este site não está vinculado à Universidade.</span>
+                </h1>
+              </header>
+              <div class="disclaimer-descricao texto-corpo-modal texto-inline-disclaimer">
+                <p>
+                  Este site não é oficial nem possui vínculo institucional com a Universidade de Brasília. O IRA
+                  calculado é meramente informativo e não tem validade oficial. Para informações oficiais, consulte
+                  sempre os canais oficiais da universidade.
+                </p>
+              </div>
+              <nav
+                class="disclaimer-links links-relacionados navegacao-links"
+                aria-label="Links relacionados"
+              >
+                <div class="link-container container-link-wrapper container-link-disclaimer">
+                  <a
+                    class="link-regulamento-oficial disclaimer-link"
+                    href="https://www.deg.unb.br/images/legislacao/resolucao_ceg_0001_2020.pdf"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="Saiba mais sobre o regulamento oficial (abre em nova aba)"
                   >
-                    <span>Aviso Importante</span>
-                  </span>
-                  <h1
-                    id="disclaimer-titulo"
-                    class="disclaimer-titulo-principal titulo-principal-modal headline-disclaimer"
-                  >
-                    <span>Este site não está vinculado à Universidade.</span>
-                  </h1>
-                </header>
-                <div class="disclaimer-descricao texto-corpo-modal texto-inline-disclaimer">
-                  <p>
-                    Este site não é oficial nem possui vínculo institucional com a Universidade de Brasília. O IRA
-                    calculado é meramente informativo e não tem validade oficial. Para informações oficiais, consulte
-                    sempre os canais oficiais da universidade.
-                  </p>
+                    <span class="link-texto">
+                      <span>Ver Regulamento Oficial</span>
+                    </span>
+                    <span
+                      class="link-seta"
+                      aria-hidden="true"
+                    ></span>
+                  </a>
                 </div>
-                <nav
-                  class="disclaimer-links links-relacionados navegacao-links"
-                  aria-label="Links relacionados"
-                >
-                  <div class="link-container container-link-wrapper container-link-disclaimer">
-                    <a
-                      class="link-regulamento-oficial disclaimer-link"
-                      href="https://www.deg.unb.br/images/legislacao/resolucao_ceg_0001_2020.pdf"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      aria-label="Saiba mais sobre o regulamento oficial (abre em nova aba)"
-                    >
-                      <span class="link-texto">
-                        <span>Ver Regulamento Oficial</span>
-                      </span>
-                      <span
-                        class="link-seta"
-                        aria-hidden="true"
-                      ></span>
-                    </a>
-                  </div>
-                  <div class="link-container container-link-wrapper container-link-disclaimer">
-                    <a
-                      class="link-site-universidade disclaimer-link"
-                      href="https://www.unb.br"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      aria-label="Acessar site oficial da Universidade de Brasília (abre em nova aba)"
-                    >
-                      <span class="link-texto">
-                        <span>Site da Universidade</span>
-                      </span>
-                      <span
-                        class="link-seta"
-                        aria-hidden="true"
-                      ></span>
-                    </a>
-                  </div>
-                </nav>
-              </div>
-              <div class="botao-fechar-container container-botao-fechar container-fechar-disclaimer">
-                <button
-                  aria-label="Fechar aviso"
-                  class="botao-fechar-disclaimer botao-fechar-modal controle-icone-fechar"
-                  id="disclaimer-botao-fechar"
-                >
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    viewBox="0 0 20 20"
-                    class="icone-fechar icone-fechar-modal icone-centralizado"
+                <div class="link-container container-link-wrapper container-link-disclaimer">
+                  <a
+                    class="link-site-universidade disclaimer-link"
+                    href="https://www.unb.br"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="Acessar site oficial da Universidade de Brasília (abre em nova aba)"
                   >
-                    <path
-                      d="M12.121 10l3.44-3.44a1.5 1.5 0 1 0-2.121-2.12L10 7.878l-3.44-3.44A1.5 1.5 0 1 0 4.44 6.56L7.878 10l-3.44 3.44a1.5 1.5 0 1 0 2.121 2.12L10 12.122l3.44 3.44a1.495 1.495 0 0 0 2.12 0 1.5 1.5 0 0 0 0-2.122L12.12 10z"
-                    ></path>
-                  </svg>
-                </button>
-              </div>
+                    <span class="link-texto">
+                      <span>Site da Universidade</span>
+                    </span>
+                    <span
+                      class="link-seta"
+                      aria-hidden="true"
+                    ></span>
+                  </a>
+                </div>
+              </nav>
             </div>
-          </div>
-          
-          <!-- Modal de Informações sobre o IRA -->
-          <div
-            id="modal-info-ira"
-            class="sobreposicao-aviso-legal modal-oculto sobreposicao-modal-principal"
-            style="--modal-close-timeout: 400ms"
-            aria-hidden="true"
-          >
-            <div
-              class="modal-aviso-legal modal-principal conteudo-modal-disclaimer"
-              tabindex="-1"
-              role="dialog"
-              aria-labelledby="info-titulo"
-              aria-modal="true"
-            >
-              <div class="disclaimer-conteudo conteudo-modal-principal container-conteudo-disclaimer">
-                <header class="disclaimer-cabecalho cabecalho-modal-principal header-disclaimer">
-                  <span
-                    id="info-topico"
-                    class="disclaimer-topico topico-aviso topico-callout"
-                  >
-                    <span>Informação</span>
-                  </span>
-                  <h1
-                    id="info-titulo"
-                    class="disclaimer-titulo-principal titulo-principal-modal headline-disclaimer"
-                  >
-                    <span>Como o IRA é calculado</span>
-                  </h1>
-                </header>
-                <div class="disclaimer-descricao texto-corpo-modal texto-inline-disclaimer">
-                  <p>
-                    O Índice de Rendimento Acadêmico (IRA) é calculado através da média ponderada das menções obtidas nas disciplinas cursadas, multiplicadas pelos respectivos créditos.
-                  </p>
-                  <p>
-                    <strong>Fórmula:</strong> IRA = Σ (Pi × CRi) ÷ Σ CRi
-                  </p>
-                  <p>
-                    Onde:
-                    <ul class="lista-info">
-                      <li><strong>Pi</strong> = Peso da menção (SS=5, MS=4, MM=3, MI=2, II=1, SR=0)</li>
-                      <li><strong>CRi</strong> = Número de créditos da disciplina</li>
-                    </ul>
-                  </p>
-                  <p>
-                    O IRA é um importante indicador de desempenho acadêmico e é utilizado para diversos fins, como seleção para bolsas, estágios, monitoria e intercâmbio.
-                  </p>
-                </div>
-              </div>
-              <div class="botao-fechar-container container-botao-fechar container-fechar-disclaimer">
-                <button
-                  aria-label="Fechar informações"
-                  class="botao-fechar-disclaimer botao-fechar-modal controle-icone-fechar"
-                  id="info-botao-fechar"
+            <div class="botao-fechar-container container-botao-fechar container-fechar-disclaimer">
+              <button
+                aria-label="Fechar aviso"
+                class="botao-fechar-disclaimer botao-fechar-modal controle-icone-fechar"
+                id="disclaimer-botao-fechar"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 20 20"
+                  class="icone-fechar icone-fechar-modal icone-centralizado"
                 >
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    viewBox="0 0 20 20"
-                    class="icone-fechar icone-fechar-modal icone-centralizado"
-                  >
-                    <path
-                      d="M12.121 10l3.44-3.44a1.5 1.5 0 1 0-2.121-2.12L10 7.878l-3.44-3.44A1.5 1.5 0 1 0 4.44 6.56L7.878 10l-3.44 3.44a1.5 1.5 0 1 0 2.121 2.12L10 12.122l3.44 3.44a1.495 1.495 0 0 0 2.12 0 1.5 1.5 0 0 0 0-2.122L12.12 10z"
-                    ></path>
-                  </svg>
-                </button>
-              </div>
+                  <path
+                    d="M12.121 10l3.44-3.44a1.5 1.5 0 1 0-2.121-2.12L10 7.878l-3.44-3.44A1.5 1.5 0 1 0 4.44 6.56L7.878 10l-3.44 3.44a1.5 1.5 0 1 0 2.121 2.12L10 12.122l3.44 3.44a1.495 1.495 0 0 0 2.12 0 1.5 1.5 0 0 0 0-2.122L12.12 10z"
+                  ></path>
+                </svg>
+              </button>
             </div>
           </div>
         </div>
