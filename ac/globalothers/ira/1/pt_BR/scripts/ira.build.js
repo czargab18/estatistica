@@ -378,7 +378,8 @@ function carregarDados() {
     }
   } catch (error) {
     console.error('Erro ao carregar dados:', error);
-    mostrarNotificacao('Erro ao carregar dados salvos!', 'error');
+    // Removido: mostrarNotificacao('Erro ao carregar dados salvos!', 'error');
+    // Erro silencioso - usuário não precisa ver esta mensagem na primeira visita
   }
   return false;
 }
@@ -817,7 +818,7 @@ function mostrarModalDisclaimer() {
   const modalContent = modal.querySelector('.modal-aviso-legal');
 
   // Adicionar classe ao HTML para controle de scroll (padrão Apple)
-  document.documentElement.classList.add('BaseModal_hasModal__HlpjY', 'modal-open');
+  document.documentElement.classList.add('modal-open');
   
   // Calcular buffer do scrollbar para evitar jump de layout
   const scrollbarWidth = window.innerWidth - document.documentElement.clientWidth;
@@ -829,26 +830,26 @@ function mostrarModalDisclaimer() {
 
   // Mostrar o modal com animação Apple-style
   modal.classList.remove('modal-oculto');
-  modal.classList.add('modal-visivel', 'modal-aberto', 'BaseModal_modalOpen___hGpW');
+  modal.classList.add('modal-visivel', 'modal-aberto');
 
   // Função para fechar o modal com animação
   const fecharModal = () => {
-    // Adicionar classe de fechamento para animação
-    modal.classList.add('modal-fechando', 'BaseModal_modalClose__1KZaa');
-    modal.classList.remove('modal-aberto', 'BaseModal_modalOpen___hGpW');
-    
-    // Configurar acessibilidade
+    // Configurar acessibilidade imediatamente
     modal.setAttribute('aria-hidden', 'true');
     
+    // Adicionar classe de fechamento para animação suave
+    modal.classList.add('modal-fechando');
+    modal.classList.remove('modal-aberto');
+    
     // Remover controle de scroll do HTML
-    document.documentElement.classList.remove('BaseModal_hasModal__HlpjY', 'modal-open');
+    document.documentElement.classList.remove('modal-open');
     document.documentElement.style.removeProperty('--modal-scrollbar-buffer');
     
     // Aguardar animação antes de ocultar completamente
     setTimeout(() => {
-      modal.classList.remove('modal-visivel', 'modal-fechando', 'BaseModal_modalClose__1KZaa');
+      modal.classList.remove('modal-visivel', 'modal-fechando');
       modal.classList.add('modal-oculto');
-    }, parseInt(getComputedStyle(modal).getPropertyValue('--modal-close-timeout')) || 400);
+    }, 300); // Tempo reduzido para animação mais rápida
   };
 
   // Event listeners para fechar o modal
