@@ -111,11 +111,11 @@
       src="/ac/globalpattern/1/pt_BR/scripts/globalpattern.js"
       type="text/javascript"
     ></script>
-    <script
+    <!-- <script
       defer
       src="/ac/globalothers/ira/1/pt_BR/scripts/ira.scripts.js"
       type="text/javascript"
-    ></script>
+    ></script> -->
   </head>
 
   <body>
@@ -2005,72 +2005,82 @@
         </div>
       </nav>
     </div>
-    <main id="main-ira">
-      <!-- Cabeçalho simples -->
-      <div class="cabecalho-simples">
-        <div class="conteudo-cabecalho-simples">
-          <span class="titulo-ira-simples">IRA</span>
-          <div class="opcoes-ira">
-            <span
-              class="opcao-ira"
-              id="simular-ira-semestre"
-              >simular ira semestre.</span
-            >
-            <span
-              class="opcao-ira"
-              id="prever-ira-curso"
-              >prever ira final do curso.</span
-            >
+
+    <!-- Seção de Aviso -->
+    <section
+      id="secao-aviso"
+      class="secao-aviso"
+    >
+      <div class="container-aviso">
+                  <!-- Cabeçalho simples -->
+                  <div class="cabecalho-simples">
+                    <div class="conteudo-cabecalho-simples">
+                      <span class="titulo-ira-simples">IRA</span>
+                      <div class="opcoes-ira">
+                        <span class="opcao-ira" id="simular-ira-semestre">simular ira semestre.</span>
+                        <span class="opcao-ira" id="prever-ira-curso">prever ira final do curso.</span>
+                      </div>
+                      <div class="separador-ira"></div>
+                    </div>  </div>
+        <div class="conteudo-aviso">
+          <!-- vdf -->
+
+          <!-- vdf -->
+          <div class="aviso-cabecalho">
+            <span class="aviso-topico">Aviso importante</span>
+            <h2 class="aviso-titulo">Este site não está vinculado à Universidade.</h2>
           </div>
-          <div class="separador-ira"></div>
+          <div class="aviso-descricao">
+            <p>
+              Este site não é oficial nem possui vínculo institucional com a Universidade de Brasília. O IRA calculado é
+              meramente informativo e não tem validade oficial.
+            </p>
+          </div>
+          <div class="aviso-links">
+            <a
+              href="https://www.deg.unb.br/images/legislacao/resolucao_ceg_0001_2020.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="aviso-link"
+            >
+              Regulamento >
+            </a>
+            <a
+              href="https://www.unb.br"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="aviso-link"
+            >
+              Site da Universidade >
+            </a>
+          </div>
+          <div class="aviso-botao-fechar">
+            <button
+              aria-label="Fechar aviso"
+              class="botao-fechar-aviso"
+              id="aviso-botao-fechar"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 20 20"
+                class="icone-fechar"
+              >
+                <path
+                  d="M12.121 10l3.44-3.44a1.5 1.5 0 1 0-2.121-2.12L10 7.878l-3.44-3.44A1.5 1.5 0 1 0 4.44 6.56L7.878 10l-3.44 3.44a1.5 1.5 0 1 0 2.121 2.12L10 12.122l3.44 3.44a1.495 1.495 0 0 0 2.12 0 1.5 1.5 0 0 0 0-2.122L12.12 10z"
+                ></path>
+              </svg>
+            </button>
+          </div>
         </div>
       </div>
+    </section>
 
-      <!-- Seção de Aviso -->
-      <section id="secao-aviso" class="secao-aviso">
-        <div class="container-aviso">
-          <div class="conteudo-aviso">
-            <div class="aviso-cabecalho">
-              <span class="aviso-topico">Aviso importante</span>
-              <h2 class="aviso-titulo">Este site não está vinculado à Universidade.</h2>
-            </div>
-            <div class="aviso-descricao">
-              <p>Este site não é oficial nem possui vínculo institucional com a Universidade de Brasília. O IRA calculado é meramente informativo e não tem validade oficial.</p>
-            </div>
-            <div class="aviso-links">
-              <a href="https://www.deg.unb.br/images/legislacao/resolucao_ceg_0001_2020.pdf" target="_blank" rel="noopener noreferrer" class="aviso-link">
-                Regulamento >
-              </a>
-              <a href="https://www.unb.br" target="_blank" rel="noopener noreferrer" class="aviso-link">
-                Site da Universidade >
-              </a>
-            </div>
-            <div class="aviso-botao-fechar">
-              <button
-                aria-label="Fechar aviso"
-                class="botao-fechar-aviso"
-                id="aviso-botao-fechar"
-              >
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  viewBox="0 0 20 20"
-                  class="icone-fechar"
-                >
-                  <path
-                    d="M12.121 10l3.44-3.44a1.5 1.5 0 1 0-2.121-2.12L10 7.878l-3.44-3.44A1.5 1.5 0 1 0 4.44 6.56L7.878 10l-3.44 3.44a1.5 1.5 0 1 0 2.121 2.12L10 12.122l3.44 3.44a1.495 1.495 0 0 0 2.12 0 1.5 1.5 0 0 0 0-2.122L12.12 10z"
-                  ></path>
-                </svg>
-              </button>
-            </div>
-          </div>
-        </div>
-      </section>
-      
+    <main id="main-ira">
       <section
         class="secao-destaque secao-principal secao-sem-padding-inferior"
         data-analytics-section-engagement="name:hero"
       >
-      <h1 style="font-size: 56px; font-weight: 900;" >DESENVOLVIMENTO</h1>
+        <h1 style="font-size: 56px; font-weight: 900">DESENVOLVIMENTO</h1>
       </section>
     </main>
   </body>

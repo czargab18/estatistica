@@ -39,7 +39,7 @@
   --modal-close-button-background: rgba(0, 0, 0, 0.08);
   --modal-close-button-background-hover: rgba(0, 0, 0, 0.12);
   --modal-close-button-background-active: rgba(0, 0, 0, 0.16);
-  
+
   /* Typography Variables */
   --modal-headline-font-size: 32px;
   --modal-headline-font-size-mobile: 28px;
@@ -47,29 +47,29 @@
   --modal-headline-line-height-mobile: 1.1428571429;
   --modal-headline-font-weight: 600;
   --modal-headline-letter-spacing: -0.003em;
-  
+
   --modal-topic-font-size: 19px;
   --modal-topic-line-height: 1.4211026316;
   --modal-topic-font-weight: 600;
   --modal-topic-letter-spacing: 0.012em;
-  
+
   --modal-body-font-size: 17px;
   --modal-body-line-height: 1.4705882353;
   --modal-body-font-weight: 400;
   --modal-body-letter-spacing: -0.022em;
-  
+
   /* Color Variables */
   --modal-text-color: #1d1d1f;
   --modal-link-color: #0066cc;
   --modal-link-color-hover: #0056b3;
   --modal-focus-color: rgba(0, 102, 204, 0.3);
-  
+
   /* Transition Variables */
   --modal-transition-ease: cubic-bezier(0.4, 0, 0.6, 1);
   --modal-transition-duration: 0.3s;
   --modal-transform-scale-closed: 0.95;
   --modal-transform-scale-open: 1;
-  
+
   /* Variáveis do projeto IRA */
   --cor-primaria: #0071e3;
   --cor-primaria-hover: #0077ed;
@@ -89,7 +89,7 @@
   --transicao-padrao: all 0.3s ease;
   --espacamento-secao: 3rem;
   --raio-borda: 12px;
-  
+
   /* Variáveis da aplicação principal */
   --bg-color-white: rgba(255, 255, 257, 1);
   --bg-color-gray: rgb(245, 245, 247, 1);
@@ -199,7 +199,7 @@ body {
 
 .secao-aviso {
   width: 100%;
-  padding: 30px 0;
+  /* padding: 30px 0; */
   margin-bottom: 30px;
   background-color: #f5f5f7;
   transition: opacity 0.3s ease, transform 0.3s ease;
@@ -210,11 +210,11 @@ body {
   z-index: 10;
 }
 
-.container-aviso {
+/* .container-aviso {
   max-width: 980px;
   margin: 0 auto;
   padding: 0 20px;
-}
+} */
 
 .conteudo-aviso {
   background-color: #ffffff;
@@ -460,7 +460,7 @@ div[id="container-periodos-academicos"] > div[id^="periodo"] {
 .modal-overlay {
   width: 100%;
   height: 100vh;
-  background: rgba(230,230,230,0.48);
+  background: rgba(230, 230, 230, 0.48);
   opacity: 1;
   position: fixed;
   top: 0;
@@ -475,7 +475,7 @@ div[id="container-periodos-academicos"] > div[id^="periodo"] {
 .modal-container {
   width: 816px;
   height: 477px;
-  background: rgba(255,255,255,1);
+  background: rgba(255, 255, 255, 1);
   opacity: 1;
   position: relative;
   border-radius: 28px;
@@ -487,7 +487,7 @@ div[id="container-periodos-academicos"] > div[id^="periodo"] {
 
 .modal-topico {
   width: auto;
-  color: rgba(0,0,0,1);
+  color: rgba(0, 0, 0, 1);
   position: absolute;
   top: 80px;
   left: 80px;
@@ -500,7 +500,7 @@ div[id="container-periodos-academicos"] > div[id^="periodo"] {
 
 .modal-titulo {
   width: 649px;
-  color: rgba(0,0,0,1);
+  color: rgba(0, 0, 0, 1);
   position: absolute;
   top: 114px;
   left: 77px;
@@ -515,7 +515,7 @@ div[id="container-periodos-academicos"] > div[id^="periodo"] {
 
 .modal-descricao {
   width: 639px;
-  color: rgba(0,0,0,1);
+  color: rgba(0, 0, 0, 1);
   position: absolute;
   top: 262px;
   left: 80px;
@@ -530,7 +530,7 @@ div[id="container-periodos-academicos"] > div[id^="periodo"] {
 
 .modal-link {
   width: auto;
-  color: rgba(0,113,227,1);
+  color: rgba(0, 113, 227, 1);
   position: absolute;
   font-family: var(--fonte-principal);
   font-weight: 400;
@@ -559,7 +559,7 @@ div[id="container-periodos-academicos"] > div[id^="periodo"] {
 .modal-fechar-circulo {
   width: 36px;
   height: 36px;
-  background: rgba(0,0,0,1);
+  background: rgba(0, 0, 0, 1);
   opacity: 1;
   position: absolute;
   top: 20px;
@@ -582,7 +582,7 @@ div[id="container-periodos-academicos"] > div[id^="periodo"] {
 .modal-fechar-linha {
   width: 14px;
   height: 2px;
-  background: #FFFFFF;
+  background: #ffffff;
   opacity: 1;
   position: absolute;
   top: 6px;
@@ -677,16 +677,16 @@ div[id="container-periodos-academicos"] > div[id^="periodo"] {
   .cabecalho-simples {
     height: 120px;
   }
-  
+
   .conteudo-cabecalho-simples {
     width: 100%;
     padding: 0 1.5rem;
   }
-  
+
   .titulo-ira-simples {
     font-size: 32px;
   }
-  
+
   .opcoes-ira {
     top: 40px;
     right: 1.5rem;
@@ -696,12 +696,12 @@ div[id="container-periodos-academicos"] > div[id^="periodo"] {
   .conteudo-aviso {
     padding: 30px;
   }
-  
+
   .aviso-titulo {
     font-size: 32px;
     max-width: 100%;
   }
-  
+
   .aviso-descricao {
     font-size: 18px;
     max-width: 100%;
@@ -712,26 +712,26 @@ div[id="container-periodos-academicos"] > div[id^="periodo"] {
     top: 40px;
     left: 40px;
   }
-  
+
   .modal-titulo {
     top: 74px;
     left: 40px;
     font-size: 36px;
     max-width: calc(100% - 80px);
   }
-  
+
   .modal-descricao {
     top: 190px;
     left: 40px;
     font-size: 20px;
     max-width: calc(100% - 80px);
   }
-  
+
   .modal-link-regulamento {
     top: 320px;
     left: 40px;
   }
-  
+
   .modal-link-site {
     top: 320px;
     left: 167px;
@@ -752,30 +752,30 @@ div[id="container-periodos-academicos"] > div[id^="periodo"] {
   .conteudo-aviso {
     padding: 25px 20px;
   }
-  
+
   .aviso-titulo {
     font-size: 28px;
   }
-  
+
   .aviso-descricao {
     font-size: 16px;
   }
-  
+
   .aviso-links {
     flex-direction: column;
     gap: 15px;
   }
-  
+
   .aviso-botao-fechar {
     top: 15px;
     right: 15px;
   }
-  
+
   .botao-fechar-aviso {
     width: 32px;
     height: 32px;
   }
-  
+
   .icone-fechar {
     width: 14px;
     height: 14px;
@@ -786,22 +786,22 @@ div[id="container-periodos-academicos"] > div[id^="periodo"] {
     height: auto;
     padding-bottom: 100px;
   }
-  
+
   .modal-titulo {
     font-size: 28px;
     max-width: calc(100% - 80px);
   }
-  
+
   .modal-descricao {
     font-size: 16px;
   }
-  
+
   .modal-link-regulamento {
     top: auto;
     bottom: 40px;
     left: 40px;
   }
-  
+
   .modal-link-site {
     top: auto;
     bottom: 40px;
@@ -817,7 +817,7 @@ div[id="container-periodos-academicos"] > div[id^="periodo"] {
     font-size: 12px;
     padding: 0.3em 0.6em !important;
   }
-  
+
   .titulo-ira-simples {
     font-size: 28px;
   }
@@ -844,7 +844,7 @@ select:focus {
   .opcao-ira {
     transition: none;
   }
-  
+
   .botao-fechar-aviso:hover,
   .botao-fechar-aviso:active {
     transform: none;
@@ -857,7 +857,7 @@ select:focus {
   .conteudo-aviso {
     border: 2px solid var(--modal-text-color);
   }
-  
+
   .botao-fechar-aviso,
   .modal-fechar-circulo {
     border: 1px solid var(--modal-text-color);
