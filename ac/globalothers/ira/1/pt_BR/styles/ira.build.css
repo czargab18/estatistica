@@ -2151,6 +2151,264 @@ html.text-zoom .BaseModal_headline__3BNi4 {
   }
 }
 
+/* =====================================
+   CLASSES DE UTILIDADE E ESTADOS MODAIS
+   ===================================== */
+
+/* Estados do modal Apple */
+.modal-hidden {
+  display: none !important;
+  opacity: 0;
+  visibility: hidden;
+}
+
+.modal-visible {
+  display: flex !important;
+  opacity: 1;
+  visibility: visible;
+}
+
+.modal-closing {
+  opacity: 0;
+  visibility: hidden;
+}
+
+/* Estados de tema Apple */
+.BaseModal_lightAltTheme__fJ9Vq .modal-overlay {
+  --modal-background: #f5f5f7;
+}
+
+.BaseModal_darkTheme__Slu2Q .modal-overlay,
+.BaseModal_darkAltTheme__8Zx_U .modal-overlay {
+  --modal-background: #1d1d1f;
+  --modal-content-background: #1d1d1f;
+  --modal-headline-color: #f5f5f7;
+  --modal-headline-copy-color: #86868b;
+  --modal-copy-color: #f5f5f7;
+  --modal-link-color: #2997ff;
+  --modal-caption-color: #86868b;
+  --modal-control-scrim-background: #f5f5f7;
+  --modal-control-icon-color: #000;
+}
+
+/* Overrides específicos para compatibilidade */
+.modal-overlay.BaseModal_modalOverlay__dZHSK {
+  color: var(--modal-copy-color);
+}
+
+.modal.BaseModal_modal__rdINw {
+  background: var(--modal-background-color);
+}
+
+.modal-close-button.BaseModal_closeButton__r8K_e.IconControl_control__vxiHY {
+  background: var(--scrim-background-color);
+  color: var(--icon-color);
+}
+
+.modal-close-button.BaseModal_closeButton__r8K_e.IconControl_control__vxiHY:hover {
+  background: var(--scrim-hover-background-color);
+  color: var(--icon-interaction-color);
+}
+
+.modal-close-button.BaseModal_closeButton__r8K_e.IconControl_control__vxiHY:active {
+  background: var(--scrim-active-background-color);
+  color: var(--icon-interaction-color);
+}
+
+/* Typography Apple específica */
+.typography-callout {
+  font-size: var(--modal-topic-font-size);
+  line-height: var(--modal-topic-line-height);
+  font-weight: var(--modal-topic-font-weight);
+  letter-spacing: var(--modal-topic-letter-spacing);
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+
+.typography-headline {
+  font-size: var(--modal-headline-font-size);
+  line-height: var(--modal-headline-line-height);
+  font-weight: var(--modal-headline-font-weight);
+  letter-spacing: var(--modal-headline-letter-spacing);
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+
+.typography-body {
+  font-size: var(--modal-body-font-size);
+  line-height: var(--modal-body-line-height);
+  font-weight: var(--modal-body-font-weight);
+  letter-spacing: var(--modal-body-letter-spacing);
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+
+/* Melhorias de acessibilidade Apple */
+.modal[aria-modal="true"] {
+  isolation: isolate;
+}
+
+/* Support para text-zoom Apple */
+html.text-zoom .modal-headline,
+html.text-zoom .BaseModal_headline__3BNi4 {
+  -webkit-nbsp-mode: space;
+}
+
+/* Safe area para dispositivos Apple */
+@supports (padding: max(0px)) {
+  @media (max-width: 480px) {
+    .modal-close-button-container.BaseModal_closeButtonContainer__K6_E3 {
+      top: max(8px, env(safe-area-inset-top));
+      inset-inline-end: max(8px, env(safe-area-inset-left));
+    }
+  }
+}
+
+/* Performance optimizations Apple */
+.modal-overlay,
+.modal,
+.modal-close-button {
+  transform: translateZ(0);
+  backface-visibility: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Retina display optimizations */
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+  .close-icon,
+  .IconControl_centeredIcon___gj73 {
+    image-rendering: -webkit-optimize-contrast;
+    image-rendering: crisp-edges;
+  }
+}
+
+/* =====================================
+   CLASSES DE UTILIDADE E ESTADOS MODAIS
+   ===================================== */
+
+/* Estados do modal Apple */
+.modal-hidden {
+  display: none !important;
+  opacity: 0;
+  visibility: hidden;
+}
+
+.modal-visible {
+  display: flex !important;
+  opacity: 1;
+  visibility: visible;
+}
+
+.modal-closing {
+  opacity: 0;
+  visibility: hidden;
+}
+
+/* Estados de tema Apple */
+.BaseModal_lightAltTheme__fJ9Vq .modal-overlay {
+  --modal-background: #f5f5f7;
+}
+
+.BaseModal_darkTheme__Slu2Q .modal-overlay,
+.BaseModal_darkAltTheme__8Zx_U .modal-overlay {
+  --modal-background: #1d1d1f;
+  --modal-content-background: #1d1d1f;
+  --modal-headline-color: #f5f5f7;
+  --modal-headline-copy-color: #86868b;
+  --modal-copy-color: #f5f5f7;
+  --modal-link-color: #2997ff;
+  --modal-caption-color: #86868b;
+  --modal-control-scrim-background: #f5f5f7;
+  --modal-control-icon-color: #000;
+}
+
+/* Overrides específicos para compatibilidade */
+.modal-overlay.BaseModal_modalOverlay__dZHSK {
+  color: var(--modal-copy-color);
+}
+
+.modal.BaseModal_modal__rdINw {
+  background: var(--modal-background-color);
+}
+
+.modal-close-button.BaseModal_closeButton__r8K_e.IconControl_control__vxiHY {
+  background: var(--scrim-background-color);
+  color: var(--icon-color);
+}
+
+.modal-close-button.BaseModal_closeButton__r8K_e.IconControl_control__vxiHY:hover {
+  background: var(--scrim-hover-background-color);
+  color: var(--icon-interaction-color);
+}
+
+.modal-close-button.BaseModal_closeButton__r8K_e.IconControl_control__vxiHY:active {
+  background: var(--scrim-active-background-color);
+  color: var(--icon-interaction-color);
+}
+
+/* Typography Apple específica */
+.typography-callout {
+  font-size: var(--modal-topic-font-size);
+  line-height: var(--modal-topic-line-height);
+  font-weight: var(--modal-topic-font-weight);
+  letter-spacing: var(--modal-topic-letter-spacing);
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+
+.typography-headline {
+  font-size: var(--modal-headline-font-size);
+  line-height: var(--modal-headline-line-height);
+  font-weight: var(--modal-headline-font-weight);
+  letter-spacing: var(--modal-headline-letter-spacing);
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+
+.typography-body {
+  font-size: var(--modal-body-font-size);
+  line-height: var(--modal-body-line-height);
+  font-weight: var(--modal-body-font-weight);
+  letter-spacing: var(--modal-body-letter-spacing);
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+
+/* Melhorias de acessibilidade Apple */
+.modal[aria-modal="true"] {
+  isolation: isolate;
+}
+
+/* Support para text-zoom Apple */
+html.text-zoom .modal-headline,
+html.text-zoom .BaseModal_headline__3BNi4 {
+  -webkit-nbsp-mode: space;
+}
+
+/* Safe area para dispositivos Apple */
+@supports (padding: max(0px)) {
+  @media (max-width: 480px) {
+    .modal-close-button-container.BaseModal_closeButtonContainer__K6_E3 {
+      top: max(8px, env(safe-area-inset-top));
+      inset-inline-end: max(8px, env(safe-area-inset-left));
+    }
+  }
+}
+
+/* Performance optimizations Apple */
+.modal-overlay,
+.modal,
+.modal-close-button {
+  transform: translateZ(0);
+  backface-visibility: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Retina display optimizations */
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+  .close-icon,
+  .IconControl_centeredIcon___gj73 {
+    image-rendering: -webkit-optimize-contrast;
+    image-rendering: crisp-edges;
+  }
+}
+
 /* Animações customizadas inspiradas na Apple */
 @keyframes disclaimer-fade-in {
   from {
@@ -2245,4 +2503,976 @@ html.text-zoom .BaseModal_headline__3BNi4 {
 
 /* =====================================
    CLASSES AUXILIARES DA APPLE
-   =================================
+   ===================================== */
+
+/* Typography Scale */
+.typography-headline {
+  font-size: var(--modal-headline-font-size);
+  line-height: var(--modal-headline-line-height);
+  font-weight: var(--modal-headline-font-weight);
+  letter-spacing: var(--modal-headline-letter-spacing);
+  color: var(--modal-text-color);
+}
+
+.typography-callout {
+  font-size: var(--modal-topic-font-size);
+  line-height: var(--modal-topic-line-height);
+  font-weight: var(--modal-topic-font-weight);
+  letter-spacing: var(--modal-topic-letter-spacing);
+  color: var(--modal-text-color);
+}
+
+.typography-body {
+  font-size: var(--modal-body-font-size);
+  line-height: var(--modal-body-line-height);
+  font-weight: var(--modal-body-font-weight);
+  letter-spacing: var(--modal-body-letter-spacing);
+  color: var(--modal-text-color);
+}
+
+/* Modal Animations */
+.modal-overlay.modal-closing {
+  opacity: 0;
+  visibility: hidden;
+}
+
+.modal-overlay.modal-closing .modal {
+  transform: scale(var(--modal-transform-scale-closed));
+}
+
+/* Button Styles */
+.button-primary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px 24px;
+  background: var(--modal-link-color);
+  color: white;
+  border: none;
+  border-radius: 12px;
+  font-size: var(--modal-body-font-size);
+  font-weight: 500;
+  text-decoration: none;
+  cursor: pointer;
+  transition: all var(--modal-transition-duration) var(--modal-transition-ease);
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+
+.button-primary:hover {
+  background: var(--modal-link-color-hover);
+  transform: translateY(-1px);
+}
+
+.button-primary:active {
+  transform: translateY(0);
+}
+
+.button-secondary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px 24px;
+  background: transparent;
+  color: var(--modal-link-color);
+  border: 1px solid var(--modal-link-color);
+  border-radius: 12px;
+  font-size: var(--modal-body-font-size);
+  font-weight: 500;
+  text-decoration: none;
+  cursor: pointer;
+  transition: all var(--modal-transition-duration) var(--modal-transition-ease);
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+
+.button-secondary:hover {
+  background: var(--modal-link-color);
+  color: white;
+}
+
+/* Utility Classes */
+.modal-hidden {
+  display: none !important;
+}
+
+.modal-visible {
+  display: flex !important;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* Dark mode support (preparação para modo escuro) */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --modal-background-color: #1c1c1e;
+    --modal-text-color: #ffffff;
+    --modal-close-button-background: rgba(255, 255, 255, 0.08);
+    --modal-close-button-background-hover: rgba(255, 255, 255, 0.12);
+    --modal-close-button-background-active: rgba(255, 255, 255, 0.16);
+  }
+}
+
+/* =====================================
+   CLASSES DA APPLE - BASEMODAL
+   ===================================== */
+
+html.BaseModal_hasModal__HlpjY:not(:has(.is-picture-in-picture)) {
+  overflow: hidden;
+}
+
+html.BaseModal_hasModal__HlpjY:not(:has(.is-picture-in-picture)) body {
+  padding-inline-end: var(--modal-scrollbar-buffer) !important;
+}
+
+@layer base {
+  .BaseModal_modalOverlay__dZHSK {
+    --modal-close-timeout: 400ms;
+    --modal-background: #fff;
+    --modal-content-background: #f5f5f7;
+    --modal-headline-color: #1d1d1f;
+    --modal-headline-copy-color: #6e6e73;
+    --modal-copy-color: #1d1d1f;
+    --modal-link-color: #06c;
+    --modal-caption-color: #6e6e73;
+    --modal-control-scrim-background: #1d1d1f;
+    --modal-control-icon-color: #fff;
+    --modal-close-button-offset-top: 12px;
+    --modal-close-button-offset-inline-start: 12px;
+    background: var(--modal-scrim-background, var(--modal-background));
+    -webkit-backdrop-filter: blur(20px);
+    backdrop-filter: blur(20px);
+    bottom: 0;
+    left: 0;
+    opacity: 0;
+    overflow: auto;
+    position: fixed;
+    right: 0;
+    top: 0;
+    transition: opacity var(--modal-close-timeout) ease;
+    z-index: -1;
+    display: grid;
+    color: var(--modal-copy-color);
+  }
+
+  .BaseModal_modalOverlay__dZHSK.BaseModal_lightAltTheme__fJ9Vq {
+    --modal-background: #f5f5f7;
+  }
+
+  .BaseModal_modalOverlay__dZHSK.BaseModal_darkTheme__Slu2Q {
+    --modal-background: #000;
+  }
+
+  .BaseModal_modalOverlay__dZHSK.BaseModal_darkAltTheme__8Zx_U {
+    --modal-background: #1d1d1f;
+  }
+
+  .BaseModal_modalOverlay__dZHSK.BaseModal_darkAltTheme__8Zx_U,
+  .BaseModal_modalOverlay__dZHSK.BaseModal_darkTheme__Slu2Q {
+    --modal-content-background: #1d1d1f;
+    --modal-headline-color: #f5f5f7;
+    --modal-headline-copy-color: #86868b;
+    --modal-copy-color: #f5f5f7;
+    --modal-link-color: #2997ff;
+    --modal-caption-color: #86868b;
+    --modal-control-scrim-background: #f5f5f7;
+    --modal-control-icon-color: #000;
+  }
+
+  .BaseModal_modalOverlay__dZHSK:has(.is-picture-in-picture) {
+    display: none;
+  }
+
+  @media (prefers-reduced-motion) {
+    .BaseModal_modalOverlay__dZHSK {
+      transition: none;
+    }
+  }
+
+  .BaseModal_modalOpen___hGpW {
+    opacity: 1;
+    z-index: 11000;
+  }
+
+  .BaseModal_modalClose__1KZaa {
+    opacity: 0;
+  }
+
+  .BaseModal_modal__rdINw {
+    background: var(--modal-background);
+    border-radius: var(--modal-border-radius-top) var(--modal-border-radius-top) var(--modal-border-radius-bottom) var(--modal-border-radius-bottom);
+    margin-bottom: var(--modal-margin-bottom);
+    margin-top: var(--modal-margin-top);
+    position: relative;
+    width: var(--modal-width);
+    margin-left: auto;
+    margin-right: auto;
+    z-index: 1;
+  }
+
+  @media (max-width: 734px) {
+    .BaseModal_modal__rdINw {
+      max-width: var(--modal-width);
+      width: 100vw;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .BaseModal_modal__rdINw {
+      --modal-close-button-offset-top: max(8px, env(safe-area-inset-top));
+      --modal-close-button-offset-inline-start: max(8px, env(safe-area-inset-left));
+    }
+  }
+
+  .BaseModal_modal__rdINw:focus-visible {
+    outline: 1px solid var(--sk-focus-color, #0071e3);
+    outline-offset: var(--sk-focus-offset, 0.5px);
+  }
+
+  .BaseModal_header__sMTZy {
+    color: var(--modal-headline-color);
+  }
+
+  .BaseModal_modalContentContainer__tqFwq {
+    padding-inline-start: var(--modal-padding-inline);
+    -webkit-padding-start: var(--modal-padding-inline);
+    padding-inline-end: var(--modal-padding-inline);
+    -webkit-padding-end: var(--modal-padding-inline);
+    padding-bottom: var(--modal-padding-bottom);
+    padding-top: var(--modal-padding-top);
+    color: var(--modal-copy-color);
+  }
+
+  .BaseModal_closeButtonContainer__K6_E3 .BaseModal_closeButton__r8K_e {
+    --scrim-background-color: var(--modal-control-scrim-background);
+    --scrim-hover-background-color: var(--modal-control-scrim-background);
+    --scrim-active-background-color: var(--modal-control-scrim-background);
+    --icon-color: var(--modal-control-icon-color);
+    --icon-interaction-color: var(--modal-control-icon-color);
+  }
+
+  .BaseModal_closeButtonContainer__K6_E3 .BaseModal_closeButton__r8K_e:hover {
+    --modal-control-scrim-background: #272729;
+  }
+
+  .BaseModal_darkAltTheme__8Zx_U .BaseModal_closeButtonContainer__K6_E3 .BaseModal_closeButton__r8K_e:hover,
+  .BaseModal_darkTheme__Slu2Q .BaseModal_closeButtonContainer__K6_E3 .BaseModal_closeButton__r8K_e:hover {
+    --modal-control-scrim-background: #fff;
+  }
+
+  .BaseModal_closeButtonContainer__K6_E3 .BaseModal_closeButton__r8K_e:active {
+    --modal-control-scrim-background: #18181a;
+  }
+
+  .BaseModal_darkAltTheme__8Zx_U .BaseModal_closeButtonContainer__K6_E3 .BaseModal_closeButton__r8K_e:active,
+  .BaseModal_darkTheme__Slu2Q .BaseModal_closeButtonContainer__K6_E3 .BaseModal_closeButton__r8K_e:active {
+    --modal-control-scrim-background: #ededf2;
+  }
+
+  .BaseModal_closeButtonContainer__K6_E3 {
+    position: absolute;
+    z-index: 1;
+    width: 36px;
+    top: var(--modal-close-button-offset-top);
+    bottom: 0;
+    inset-inline-end: var(--modal-close-button-offset-inline-start);
+  }
+
+  .BaseModal_headline__3BNi4 {
+    margin-top: 12px;
+    color: var(--modal-headline-color);
+  }
+
+  @media (max-width: 734px) {
+    .BaseModal_headline__3BNi4 {
+      margin-top: 8px;
+    }
+  }
+
+  html.text-zoom .BaseModal_headline__3BNi4 {
+    -webkit-nbsp-mode: space;
+  }
+
+  .BaseModal_inlineHeader__4Yank {
+    margin-top: 20px;
+    color: var(--modal-headline-color);
+  }
+
+  @media (max-width: 734px) {
+    .BaseModal_inlineHeader__4Yank {
+      margin-top: 16px;
+    }
+  }
+
+  .BaseModal_link__WjBWo {
+    margin-top: 40px;
+  }
+
+  .BaseModal_link__WjBWo a {
+    color: var(--modal-link-color);
+  }
+
+  @media (max-width: 734px) {
+    .BaseModal_link__WjBWo {
+      margin-top: 32px;
+    }
+  }
+
+  .BaseModal_image__oHEXz {
+    margin-top: 64px;
+  }
+
+  @media (max-width: 734px) {
+    .BaseModal_image__oHEXz {
+      margin-top: 40px;
+    }
+  }
+}
+
+/* =====================================
+   CLASSES OFICIAIS DA APPLE - OVERLAYMODAL
+   ===================================== */
+
+@layer {
+  .OverlayModal_modalOverlay__0XMAu {
+    --modal-scrim-background: rgba(0, 0, 0, 0.48);
+    --modal-border-radius-top: var(--corner-radius);
+    --modal-margin-top: 40px;
+    --modal-margin-bottom: var(--modal-margin-top);
+    --modal-padding-bottom: 76px;
+    --modal-padding-inline: 76px;
+    --modal-padding-top: 76px;
+    --modal-border-radius-bottom: var(--modal-border-radius-top);
+    --modal-width: 816px;
+    align-items: center;
+    justify-content: center;
+  }
+
+  @media (max-width: 480px) {
+    .OverlayModal_modalOverlay__0XMAu {
+      align-items: stretch;
+    }
+  }
+
+  @media (max-width: 1068px) {
+    .OverlayModal_modal__Ygc05 {
+      --modal-width: 692px;
+    }
+  }
+
+  @media (max-width: 734px) {
+    .OverlayModal_modal__Ygc05 {
+      --modal-width: max(87.5vw, 480px);
+      --modal-padding-bottom: 60px;
+      --modal-padding-inline: 6.25%;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .OverlayModal_modal__Ygc05 {
+      --modal-border-radius-bottom: 0;
+      --modal-width: 100%;
+      --modal-margin-top: 20px;
+      --modal-margin-bottom: 0;
+    }
+  }
+
+  .OverlayModal_closeButton__enYRn {
+    position: sticky;
+  }
+}
+
+/* =====================================
+   CLASSES OFICIAIS DA APPLE - ICONCONTROL
+   ===================================== */
+
+@layer base {
+  .IconControl_control__vxiHY {
+    --icon-color: rgba(0, 0, 0, 0.56);
+    --icon-interaction-color: rgba(0, 0, 0, 0.64);
+    height: var(--size, 36px);
+    width: var(--size, 36px);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    outline: none;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    justify-content: center;
+    cursor: pointer;
+    transition: background-color 0.1s linear, color 0.1s linear, opacity 0.1s linear;
+    background: var(--scrim-background-color, transparent);
+    color: var(--icon-color);
+    will-change: opacity;
+  }
+
+  .IconControl_control__vxiHY.IconControl_disabled__28z4j,
+  .IconControl_control__vxiHY:disabled {
+    opacity: 0.42;
+    pointer-events: none;
+  }
+
+  .IconControl_control__vxiHY:focus,
+  .IconControl_control__vxiHY:hover {
+    background: var(--scrim-hover-background-color);
+    color: var(--icon-interaction-color);
+  }
+
+  .IconControl_control__vxiHY:active {
+    background: var(--scrim-active-background-color);
+    color: var(--icon-interaction-color);
+  }
+
+  .IconControl_control__vxiHY:focus-visible {
+    outline: 1px solid var(--sk-focus-color, #0071e3);
+    outline-offset: var(--sk-focus-offset-container);
+  }
+
+  .IconControl_control__vxiHY.IconControl_elevated__pQUwU {
+    --size: 56px;
+  }
+
+  .IconControl_control__vxiHY.IconControl_super__hnknl {
+    --size: 90px;
+  }
+
+  .IconControl_control__vxiHY svg {
+    fill: currentColor;
+    pointer-events: none;
+  }
+
+  .IconControl_control__vxiHY.IconControl_darkColor__QPzOE {
+    --icon-color: hsla(0, 0%, 100%, 0.8);
+    --icon-interaction-color: #fff;
+  }
+
+  .IconControl_control__vxiHY.IconControl_darkColor__QPzOE.IconControl_disabled__28z4j,
+  .IconControl_control__vxiHY.IconControl_darkColor__QPzOE:disabled {
+    opacity: 0.36;
+  }
+
+  .IconControl_alpha__AOWcZ {
+    --scrim-background-color: hsla(240, 6%, 83%, 0.64);
+    --scrim-hover-background-color: hsla(240, 6%, 83%, 0.48);
+    --scrim-active-background-color: hsla(240, 6%, 83%, 0.68);
+  }
+
+  .IconControl_alpha__AOWcZ.IconControl_darkColor__QPzOE {
+    --scrim-background-color: rgba(66, 66, 69, 0.72);
+    --scrim-hover-background-color: rgba(66, 66, 69, 0.7);
+    --scrim-active-background-color: rgba(66, 66, 69, 0.8);
+  }
+
+  .IconControl_solid__CE_as {
+    --scrim-background-color: #e8e8ed;
+    --scrim-hover-background-color: rgba(232, 232, 237, 0.84);
+    --scrim-active-background-color: #dfdfe4;
+  }
+
+  .IconControl_solid__CE_as.IconControl_darkColor__QPzOE {
+    --scrim-background-color: #333336;
+    --scrim-hover-background-color: #37373a;
+    --scrim-active-background-color: #2f2f32;
+  }
+
+  .IconControl_noScrim__cGJ_G,
+  .IconControl_noScrim__cGJ_G.IconControl_darkColor__QPzOE {
+    --scrim-background-color: transparent;
+    --scrim-hover-background-color: transparent;
+    --scrim-active-background-color: transparent;
+  }
+
+  .IconControl_centeredIcon___gj73 {
+    height: 55%;
+    width: 55%;
+  }
+
+  .IconControl_paddleNavIcons__ZzEXW {
+    height: 100%;
+    width: 100%;
+  }
+
+  [dir="rtl"] .IconControl_paddleNavIcons__ZzEXW {
+    transform: scaleX(-1);
+  }
+}
+
+/* =====================================
+   INTEGRAÇÃO DAS CLASSES APPLE COM NOSSAS CLASSES
+   ===================================== */
+
+/* Herdar estilos da Apple para nossos elementos */
+.modal-overlay {
+  /* ...existing code... */
+  /* Aplicar estilos do BaseModal_modalOverlay__dZHSK */
+  background: var(--modal-scrim-background, var(--modal-backdrop-color));
+  color: var(--modal-copy-color, var(--modal-text-color));
+}
+
+.modal-overlay.modal-open {
+  /* ...existing code... */
+  /* Aplicar comportamento do BaseModal_modalOpen___hGpW */
+  z-index: 11000;
+}
+
+.modal {
+  /* ...existing code... */
+  /* Aplicar estilos do BaseModal_modal__rdINw */
+  border-radius: var(--modal-border-radius-top, var(--modal-border-radius)) var(--modal-border-radius-top, var(--modal-border-radius)) var(--modal-border-radius-bottom, var(--modal-border-radius)) var(--modal-border-radius-bottom, var(--modal-border-radius));
+}
+
+.modal-content-container {
+  /* ...existing code... */
+  /* Aplicar estilos do BaseModal_modalContentContainer__tqFwq */
+  color: var(--modal-copy-color, var(--modal-text-color));
+}
+
+.modal-close-button-container {
+  /* ...existing code... */
+  /* Aplicar estilos do BaseModal_closeButtonContainer__K6_E3 */
+  width: 36px;
+  top: var(--modal-close-button-offset-top, 12px);
+  inset-inline-end: var(--modal-close-button-offset-inline-start, 12px);
+}
+
+.modal-close-button {
+  /* ...existing code... */
+  /* Aplicar estilos do IconControl_control__vxiHY + IconControl_solid__CE_as */
+  --scrim-background-color: var(--modal-close-button-background);
+  --scrim-hover-background-color: var(--modal-close-button-background-hover);
+  --scrim-active-background-color: var(--modal-close-button-background-active);
+  background: var(--scrim-background-color);
+  color: var(--icon-color, var(--modal-text-color));
+}
+
+.modal-close-button:hover {
+  /* ...existing code... */
+  background: var(--scrim-hover-background-color);
+}
+
+.modal-close-button:active {
+  /* ...existing code... */
+  background: var(--scrim-active-background-color);
+}
+
+.modal-headline {
+  /* ...existing code... */
+  /* Aplicar estilos do BaseModal_headline__3BNi4 */
+  margin-top: 12px;
+  color: var(--modal-headline-color, var(--modal-text-color));
+}
+
+.modal-links a {
+  /* ...existing code... */
+  /* Aplicar estilos do BaseModal_link__WjBWo */
+  color: var(--modal-link-color);
+}
+
+/* =====================================
+   COMPATIBILIDADE E ALIASES
+   ===================================== */
+
+/* Aliases para compatibilidade com código existente */
+.BaseModal_closeButton__r8K_e {
+  /* Herdar todos os estilos do .modal-close-button */
+  width: var(--modal-close-button-size);
+  height: var(--modal-close-button-size);
+  border-radius: 50%;
+  border: none;
+  /* background: var(--scrim-background-color, var(--modal-close-button-background)); */
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all var(--modal-transition-duration) var(--modal-transition-ease);
+  padding: 0;
+  outline: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  will-change: transform, background-color;
+  color: var(--icon-color, var(--modal-text-color));
+}
+
+.BaseModal_closeButton__r8K_e:hover {
+  background: var(--scrim-hover-background-color);
+  transform: scale(1.05);
+}
+
+.BaseModal_closeButton__r8K_e:active {
+  background: var(--scrim-active-background-color);
+  transform: scale(0.95);
+}
+
+.BaseModal_closeButton__r8K_e:focus-visible {
+  outline: 1px solid var(--modal-focus-color);
+  outline-offset: 1px;
+}
+
+/* =====================================
+   CLASSES DE UTILIDADE E ESTADOS MODAIS
+   ===================================== */
+
+/* Estados do modal Apple */
+.modal-hidden {
+  display: none !important;
+  opacity: 0;
+  visibility: hidden;
+}
+
+.modal-visible {
+  display: flex !important;
+  opacity: 1;
+  visibility: visible;
+}
+
+.modal-closing {
+  opacity: 0;
+  visibility: hidden;
+}
+
+/* Estados de tema Apple */
+.BaseModal_lightAltTheme__fJ9Vq .modal-overlay {
+  --modal-background: #f5f5f7;
+}
+
+.BaseModal_darkTheme__Slu2Q .modal-overlay,
+.BaseModal_darkAltTheme__8Zx_U .modal-overlay {
+  --modal-background: #1d1d1f;
+  --modal-content-background: #1d1d1f;
+  --modal-headline-color: #f5f5f7;
+  --modal-headline-copy-color: #86868b;
+  --modal-copy-color: #f5f5f7;
+  --modal-link-color: #2997ff;
+  --modal-caption-color: #86868b;
+  --modal-control-scrim-background: #f5f5f7;
+  --modal-control-icon-color: #000;
+}
+
+/* Overrides específicos para compatibilidade */
+.modal-overlay.BaseModal_modalOverlay__dZHSK {
+  color: var(--modal-copy-color);
+}
+
+.modal.BaseModal_modal__rdINw {
+  background: var(--modal-background-color);
+}
+
+.modal-close-button.BaseModal_closeButton__r8K_e.IconControl_control__vxiHY {
+  background: var(--scrim-background-color);
+  color: var(--icon-color);
+}
+
+.modal-close-button.BaseModal_closeButton__r8K_e.IconControl_control__vxiHY:hover {
+  background: var(--scrim-hover-background-color);
+  color: var(--icon-interaction-color);
+}
+
+.modal-close-button.BaseModal_closeButton__r8K_e.IconControl_control__vxiHY:active {
+  background: var(--scrim-active-background-color);
+  color: var(--icon-interaction-color);
+}
+
+/* Typography Apple específica */
+.typography-callout {
+  font-size: var(--modal-topic-font-size);
+  line-height: var(--modal-topic-line-height);
+  font-weight: var(--modal-topic-font-weight);
+  letter-spacing: var(--modal-topic-letter-spacing);
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+
+.typography-headline {
+  font-size: var(--modal-headline-font-size);
+  line-height: var(--modal-headline-line-height);
+  font-weight: var(--modal-headline-font-weight);
+  letter-spacing: var(--modal-headline-letter-spacing);
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+
+.typography-body {
+  font-size: var(--modal-body-font-size);
+  line-height: var(--modal-body-line-height);
+  font-weight: var(--modal-body-font-weight);
+  letter-spacing: var(--modal-body-letter-spacing);
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+
+/* Melhorias de acessibilidade Apple */
+.modal[aria-modal="true"] {
+  isolation: isolate;
+}
+
+/* Support para text-zoom Apple */
+html.text-zoom .modal-headline,
+html.text-zoom .BaseModal_headline__3BNi4 {
+  -webkit-nbsp-mode: space;
+}
+
+/* Safe area para dispositivos Apple */
+@supports (padding: max(0px)) {
+  @media (max-width: 480px) {
+    .modal-close-button-container.BaseModal_closeButtonContainer__K6_E3 {
+      top: max(8px, env(safe-area-inset-top));
+      inset-inline-end: max(8px, env(safe-area-inset-left));
+    }
+  }
+}
+
+/* Performance optimizations Apple */
+.modal-overlay,
+.modal,
+.modal-close-button {
+  transform: translateZ(0);
+  backface-visibility: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Retina display optimizations */
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+  .close-icon,
+  .IconControl_centeredIcon___gj73 {
+    image-rendering: -webkit-optimize-contrast;
+    image-rendering: crisp-edges;
+  }
+}
+
+/* =====================================
+   CLASSES DE UTILIDADE E ESTADOS MODAIS
+   ===================================== */
+
+/* Estados do modal Apple */
+.modal-hidden {
+  display: none !important;
+  opacity: 0;
+  visibility: hidden;
+}
+
+.modal-visible {
+  display: flex !important;
+  opacity: 1;
+  visibility: visible;
+}
+
+.modal-closing {
+  opacity: 0;
+  visibility: hidden;
+}
+
+/* Estados de tema Apple */
+.BaseModal_lightAltTheme__fJ9Vq .modal-overlay {
+  --modal-background: #f5f5f7;
+}
+
+.BaseModal_darkTheme__Slu2Q .modal-overlay,
+.BaseModal_darkAltTheme__8Zx_U .modal-overlay {
+  --modal-background: #1d1d1f;
+  --modal-content-background: #1d1d1f;
+  --modal-headline-color: #f5f5f7;
+  --modal-headline-copy-color: #86868b;
+  --modal-copy-color: #f5f5f7;
+  --modal-link-color: #2997ff;
+  --modal-caption-color: #86868b;
+  --modal-control-scrim-background: #f5f5f7;
+  --modal-control-icon-color: #000;
+}
+
+/* Overrides específicos para compatibilidade */
+.modal-overlay.BaseModal_modalOverlay__dZHSK {
+  color: var(--modal-copy-color);
+}
+
+.modal.BaseModal_modal__rdINw {
+  background: var(--modal-background-color);
+}
+
+.modal-close-button.BaseModal_closeButton__r8K_e.IconControl_control__vxiHY {
+  background: var(--scrim-background-color);
+  color: var(--icon-color);
+}
+
+.modal-close-button.BaseModal_closeButton__r8K_e.IconControl_control__vxiHY:hover {
+  background: var(--scrim-hover-background-color);
+  color: var(--icon-interaction-color);
+}
+
+.modal-close-button.BaseModal_closeButton__r8K_e.IconControl_control__vxiHY:active {
+  background: var(--scrim-active-background-color);
+  color: var(--icon-interaction-color);
+}
+
+/* Typography Apple específica */
+.typography-callout {
+  font-size: var(--modal-topic-font-size);
+  line-height: var(--modal-topic-line-height);
+  font-weight: var(--modal-topic-font-weight);
+  letter-spacing: var(--modal-topic-letter-spacing);
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+
+.typography-headline {
+  font-size: var(--modal-headline-font-size);
+  line-height: var(--modal-headline-line-height);
+  font-weight: var(--modal-headline-font-weight);
+  letter-spacing: var(--modal-headline-letter-spacing);
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+
+.typography-body {
+  font-size: var(--modal-body-font-size);
+  line-height: var(--modal-body-line-height);
+  font-weight: var(--modal-body-font-weight);
+  letter-spacing: var(--modal-body-letter-spacing);
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+
+/* Melhorias de acessibilidade Apple */
+.modal[aria-modal="true"] {
+  isolation: isolate;
+}
+
+/* Support para text-zoom Apple */
+html.text-zoom .modal-headline,
+html.text-zoom .BaseModal_headline__3BNi4 {
+  -webkit-nbsp-mode: space;
+}
+
+/* Safe area para dispositivos Apple */
+@supports (padding: max(0px)) {
+  @media (max-width: 480px) {
+    .modal-close-button-container.BaseModal_closeButtonContainer__K6_E3 {
+      top: max(8px, env(safe-area-inset-top));
+      inset-inline-end: max(8px, env(safe-area-inset-left));
+    }
+  }
+}
+
+/* Performance optimizations Apple */
+.modal-overlay,
+.modal,
+.modal-close-button {
+  transform: translateZ(0);
+  backface-visibility: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Retina display optimizations */
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+  .close-icon,
+  .IconControl_centeredIcon___gj73 {
+    image-rendering: -webkit-optimize-contrast;
+    image-rendering: crisp-edges;
+  }
+}
+
+/* Animações customizadas inspiradas na Apple */
+@keyframes disclaimer-fade-in {
+  from {
+    opacity: 0;
+    backdrop-filter: blur(0px);
+    -webkit-backdrop-filter: blur(0px);
+  }
+  to {
+    opacity: 1;
+    backdrop-filter: blur(var(--modal-backdrop-blur));
+    -webkit-backdrop-filter: blur(var(--modal-backdrop-blur));
+  }
+}
+
+@keyframes disclaimer-scale-in {
+  from {
+    transform: scale(var(--modal-transform-scale-closed)) translateZ(0);
+    opacity: 0;
+  }
+  to {
+    transform: scale(var(--modal-transform-scale-open)) translateZ(0);
+    opacity: 1;
+  }
+}
+
+@keyframes disclaimer-fade-out {
+  from {
+    opacity: 1;
+    backdrop-filter: blur(var(--modal-backdrop-blur));
+    -webkit-backdrop-filter: blur(var(--modal-backdrop-blur));
+  }
+  to {
+    opacity: 0;
+    backdrop-filter: blur(0px);
+    -webkit-backdrop-filter: blur(0px);
+  }
+}
+
+@keyframes disclaimer-scale-out {
+  from {
+    transform: scale(var(--modal-transform-scale-open)) translateZ(0);
+    opacity: 1;
+  }
+  to {
+    transform: scale(var(--modal-transform-scale-closed)) translateZ(0);
+    opacity: 0;
+  }
+}
+
+/* Aplicar animações com timing da Apple */
+.disclaimer-overlay.modal-aberto {
+  animation: disclaimer-fade-in var(--modal-close-timeout) var(--modal-transition-ease) forwards;
+}
+
+.disclaimer-overlay.modal-aberto .disclaimer-modal {
+  animation: disclaimer-scale-in var(--modal-close-timeout) var(--modal-transition-ease) forwards;
+}
+
+.disclaimer-overlay.modal-fechando {
+  animation: disclaimer-fade-out var(--modal-close-timeout) var(--modal-transition-ease) forwards;
+}
+
+.disclaimer-overlay.modal-fechando .disclaimer-modal {
+  animation: disclaimer-scale-out var(--modal-close-timeout) var(--modal-transition-ease) forwards;
+}
+
+/* Suporte para redução de movimento */
+@media (prefers-reduced-motion: reduce) {
+  .disclaimer-overlay.modal-aberto,
+  .disclaimer-overlay.modal-aberto .disclaimer-modal,
+  .disclaimer-overlay.modal-fechando,
+  .disclaimer-overlay.modal-fechando .disclaimer-modal {
+    animation: none;
+  }
+}
+
+/* Melhorias para VoiceOver e leitores de tela */
+.disclaimer-modal[aria-modal="true"] {
+  isolation: isolate;
+}
+
+.disclaimer-link:focus-visible {
+  outline: 1px solid var(--modal-focus-color);
+  outline-offset: 1px;
+  border-radius: 4px;
+}
+
+.botao-fechar-disclaimer:focus-visible {
+  outline: 1px solid var(--modal-focus-color);
+  outline-offset: 1px;
+}
+
+/* =====================================
+   CLASSES AUXILIARES DA APPLE
+   ===================================== */
+
+/* Classes com nomes legíveis substituíram as classes estranhas no HTML */
+/* As funcionalidades principais já estão definidas nas classes base como:
+   .sobreposicao-aviso-legal, .modal-aviso-legal, .disclaimer-conteudo, etc.
+   As novas classes servem apenas para melhor legibilidade do código HTML */

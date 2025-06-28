@@ -40,9 +40,19 @@
       <div class="conteudo-navegacao">
         <h3 id="indicador-ira-mp">IRA: 0.00 MP: 0.00</h3>
         <div id="barra-acoes-superior actions-toolbar">
+          <!-- melhorar estrutura dos código html dos botões -->
           <button id="novoPeriodo" class="btn btn-success">
             Novo Período
           </button>
+          <button id="template-btn-csv" class="botao-informacao template-btn">Baixar CSV</button>
+          <button id="template-btn-importar" class="botao-aviso template-btn">
+            <span class="btn-cta-import-files">
+              Importar CSV
+            </span>
+            <input id="template-input-importar" type="file" accept=".csv" class="template-input">
+          </button>
+          <button id="template-btn-estatisticas" class="botao-secundario template-btn">Estatísticas</button>
+          <button id="template-btn-limpar" class="botao-perigo template-btn">Limpar Tudo</button>
         </div>
       </div>
     </div>
@@ -61,39 +71,39 @@
     </div>
 
     <!-- Modal de disclaimer -->
-    <div id="modal-aviso-legal" class="sobreposicao-aviso-legal modal-oculto apple-modal-overlay BaseModal_modalOverlay__dZHSK OverlayModal_modalOverlay__0XMAu" style="--modal-close-timeout: 400ms;" aria-hidden="true">
-      <div class="modal-aviso-legal apple-modal BaseModal_modal__rdINw OverlayModal_modal__Ygc05" tabindex="-1" role="dialog" aria-labelledby="aviso-titulo disclaimer-titulo" aria-modal="true">
-        <div class="disclaimer-conteudo apple-modal-content BaseModal_modalContentContainer__tqFwq">
-          <header class="disclaimer-cabecalho apple-modal-header BaseModal_header__sMTZy">
-            <span id="aviso-titulo" class="disclaimer-topico apple-topic typography-callout">
+    <div id="modal-aviso-legal" class="sobreposicao-aviso-legal modal-oculto sobreposicao-modal-principal"
+      style="--modal-close-timeout: 400ms;" aria-hidden="true">
+      <div class="modal-aviso-legal modal-principal conteudo-modal-disclaimer" tabindex="-1" role="dialog"
+        aria-labelledby="aviso-titulo disclaimer-titulo" aria-modal="true">
+        <div class="disclaimer-conteudo conteudo-modal-principal container-conteudo-disclaimer">
+          <header class="disclaimer-cabecalho cabecalho-modal-principal header-disclaimer">
+            <span id="aviso-titulo" class="disclaimer-topico topico-aviso topico-callout">
               <span>Aviso Importante</span>
             </span>
-            <h1 id="disclaimer-titulo" class="disclaimer-titulo-principal apple-headline BaseModal_headline__3BNi4 typography-headline">
+            <h1 id="disclaimer-titulo" class="disclaimer-titulo-principal titulo-principal-modal headline-disclaimer">
               <span>Este site não está vinculado à Universidade.</span>
             </h1>
           </header>
-          <div class="disclaimer-descricao apple-inline-text BaseModal_inlineHeader__4Yank typography-body">
-            <p>Este site não é oficial nem possui vínculo institucional com a Universidade de Brasília. O IRA calculado é meramente informativo e não tem validade oficial. Para informações oficiais, consulte sempre os canais oficiais da universidade.</p>
+          <div class="disclaimer-descricao texto-corpo-modal texto-inline-disclaimer">
+            <p>Este site não é oficial nem possui vínculo institucional com a Universidade de Brasília. O IRA calculado
+              é meramente informativo e não tem validade oficial. Para informações oficiais, consulte sempre os canais
+              oficiais da universidade.</p>
           </div>
-          <nav class="disclaimer-links apple-links" aria-label="Links relacionados">
-            <div class="link-container apple-link-wrapper BaseModal_link__WjBWo">
-              <a class="link-regulamento-oficial disclaimer-link" 
-                 href="https://www.deg.unb.br/images/legislacao/resolucao_ceg_0001_2020.pdf" 
-                 target="_blank" 
-                 rel="noopener noreferrer"
-                 aria-label="Saiba mais sobre o regulamento oficial (abre em nova aba)">
+          <nav class="disclaimer-links links-relacionados navegacao-links" aria-label="Links relacionados">
+            <div class="link-container container-link-wrapper container-link-disclaimer">
+              <a class="link-regulamento-oficial disclaimer-link"
+                href="https://www.deg.unb.br/images/legislacao/resolucao_ceg_0001_2020.pdf" target="_blank"
+                rel="noopener noreferrer" aria-label="Saiba mais sobre o regulamento oficial (abre em nova aba)">
                 <span class="link-texto">
                   <span>Ver Regulamento Oficial</span>
                 </span>
                 <span class="link-seta" aria-hidden="true"></span>
               </a>
             </div>
-            <div class="link-container apple-link-wrapper BaseModal_link__WjBWo">
-              <a class="link-site-universidade disclaimer-link" 
-                 href="https://www.unb.br" 
-                 target="_blank" 
-                 rel="noopener noreferrer"
-                 aria-label="Acessar site oficial da Universidade de Brasília (abre em nova aba)">
+            <div class="link-container container-link-wrapper container-link-disclaimer">
+              <a class="link-site-universidade disclaimer-link" href="https://www.unb.br" target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Acessar site oficial da Universidade de Brasília (abre em nova aba)">
                 <span class="link-texto">
                   <span>Site da Universidade</span>
                 </span>
@@ -102,13 +112,14 @@
             </div>
           </nav>
         </div>
-        <div class="botao-fechar-container apple-close-container BaseModal_closeButtonContainer__K6_E3">
-          <button 
-            aria-label="Fechar aviso" 
-            class="botao-fechar-disclaimer apple-close-button BaseModal_closeButton__r8K_e IconControl_control__vxiHY IconControl_darkColor__QPzOE IconControl_solid__CE_as" 
+        <div class="botao-fechar-container container-botao-fechar container-fechar-disclaimer">
+          <button aria-label="Fechar aviso" class="botao-fechar-disclaimer botao-fechar-modal controle-icone-fechar"
             id="disclaimer-botao-fechar">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" class="icone-fechar apple-close-icon IconControl_centeredIcon___gj73">
-              <path d="M12.121 10l3.44-3.44a1.5 1.5 0 1 0-2.121-2.12L10 7.878l-3.44-3.44A1.5 1.5 0 1 0 4.44 6.56L7.878 10l-3.44 3.44a1.5 1.5 0 1 0 2.121 2.12L10 12.122l3.44 3.44a1.495 1.495 0 0 0 2.12 0 1.5 1.5 0 0 0 0-2.122L12.12 10z"></path>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"
+              class="icone-fechar icone-fechar-modal icone-centralizado">
+              <path
+                d="M12.121 10l3.44-3.44a1.5 1.5 0 1 0-2.121-2.12L10 7.878l-3.44-3.44A1.5 1.5 0 1 0 4.44 6.56L7.878 10l-3.44 3.44a1.5 1.5 0 1 0 2.121 2.12L10 12.122l3.44 3.44a1.495 1.495 0 0 0 2.12 0 1.5 1.5 0 0 0 0-2.122L12.12 10z">
+              </path>
             </svg>
           </button>
         </div>
@@ -201,12 +212,7 @@
       </div>
     </div>
 
-    <!-- Templates para botões adicionais -->
-    <button id="template-btn-csv" class="botao-informacao template-btn">Baixar CSV</button>
-    <button id="template-btn-importar" class="botao-aviso template-btn">Importar CSV</button>
-    <button id="template-btn-estatisticas" class="botao-secundario template-btn">Estatísticas</button>
-    <button id="template-btn-limpar" class="botao-perigo template-btn">Limpar Tudo</button>
-    <input id="template-input-importar" type="file" accept=".csv" class="template-input">
+
   </div>
   <div id="aviso-site-nao-oficial">
     <div class="avisos">
