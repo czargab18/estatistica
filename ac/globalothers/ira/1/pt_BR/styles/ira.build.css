@@ -44,7 +44,7 @@
   --modal-text-color: #1d1d1f;
   --modal-link-color: #0066cc;
   --modal-link-color-hover: #0056b3;
-  --modal-focus-color: rgba(0, 102, 204, 0.5);
+  --modal-focus-color: rgba(0, 102, 204, 0.3);
   
   /* Transition Variables */
   --modal-transition-ease: cubic-bezier(0.4, 0, 0.6, 1);
@@ -54,8 +54,8 @@
   
   /* Variáveis do sistema Apple adicional */
   --sk-focus-color: #0071e3;
-  --sk-focus-offset: 1px;
-  --sk-focus-offset-container: 2px;
+  --sk-focus-offset: 0.5px;
+  --sk-focus-offset-container: 1px;
   --corner-radius: 18px;
   
   /* Controles Apple específicos */
@@ -86,8 +86,8 @@
   --modal-caption-color: #6e6e73;
   --modal-control-scrim-background: #1d1d1f;
   --modal-control-icon-color: #fff;
-  --modal-close-button-offset-top: 20px;
-  --modal-close-button-offset-inline-start: 20px;
+  --modal-close-button-offset-top: 12px;
+  --modal-close-button-offset-inline-start: 12px;
 }
 
 /* Dark mode para variáveis Apple */
@@ -135,8 +135,8 @@
     --modal-width: 100%;
     --modal-margin-top: 20px;
     --modal-margin-bottom: 0;
-    --modal-close-button-offset-top: max(16px, env(safe-area-inset-top));
-    --modal-close-button-offset-inline-start: max(16px, env(safe-area-inset-left));
+    --modal-close-button-offset-top: max(8px, env(safe-area-inset-top));
+    --modal-close-button-offset-inline-start: max(8px, env(safe-area-inset-left));
   }
 }
 
@@ -154,7 +154,7 @@ span[id^="status-"],
   font-size: 16px;
   margin-top: 0.25em;
   color: #ffffff;
-  padding: 0.5em 1em !important;
+  padding: 0.5em 1em;
   border: 0.15em;
   border-radius: 0.75em;
   border-style: solid;
@@ -625,8 +625,8 @@ div[id="periodos-container"] div[id^="periodo"] div[id$="-disciplinas"] div[id$=
 button:focus,
 input:focus,
 select:focus {
-  outline: 2px solid #0dcaf0;
-  outline-offset: 2px;
+  outline: 1px solid #0dcaf0;
+  outline-offset: 1px;
 }
 
 /* Estilo para mensagem de status */
@@ -826,8 +826,8 @@ input:required:valid {
 }
 
 .disclaimer-link:focus {
-  outline: 2px solid var(--modal-focus-color);
-  outline-offset: 2px;
+  outline: 1px solid var(--modal-focus-color);
+  outline-offset: 1px;
   border-radius: 4px;
 }
 
@@ -855,8 +855,8 @@ input:required:valid {
 /* Botão de fechar */
 .botao-fechar-container {
   position: absolute;
-  top: 24px;
-  right: 24px;
+  top: 12px;
+  right: 12px;
   z-index: 10;
 }
 
@@ -891,7 +891,7 @@ input:required:valid {
 
 .botao-fechar-disclaimer:focus {
   background: var(--modal-close-button-background-hover);
-  box-shadow: 0 0 0 2px var(--modal-focus-color);
+  box-shadow: 0 0 0 1px var(--modal-focus-color);
 }
 
 .icone-fechar {
@@ -923,8 +923,8 @@ input:required:valid {
   }
   
   .botao-fechar-container {
-    top: 16px;
-    right: 16px;
+    top: 8px;
+    right: 8px;
   }
 
   .botao-fechar-disclaimer {
@@ -1109,14 +1109,14 @@ input:required:valid {
 }
 
 .disclaimer-link:focus-visible {
-  outline: 2px solid var(--modal-focus-color);
-  outline-offset: 2px;
+  outline: 1px solid var(--modal-focus-color);
+  outline-offset: 1px;
   border-radius: 4px;
 }
 
 .botao-fechar-disclaimer:focus-visible {
-  outline: 2px solid var(--modal-focus-color);
-  outline-offset: 2px;
+  outline: 1px solid var(--modal-focus-color);
+  outline-offset: 1px;
 }
 
 /* =====================================
@@ -1263,8 +1263,8 @@ html.BaseModal_hasModal__HlpjY:not(:has(.is-picture-in-picture)) body {
     --modal-caption-color: #6e6e73;
     --modal-control-scrim-background: #1d1d1f;
     --modal-control-icon-color: #fff;
-    --modal-close-button-offset-top: 20px;
-    --modal-close-button-offset-inline-start: 20px;
+    --modal-close-button-offset-top: 12px;
+    --modal-close-button-offset-inline-start: 12px;
     background: var(--modal-scrim-background, var(--modal-background));
     -webkit-backdrop-filter: blur(20px);
     backdrop-filter: blur(20px);
@@ -1345,14 +1345,14 @@ html.BaseModal_hasModal__HlpjY:not(:has(.is-picture-in-picture)) body {
 
   @media (max-width: 480px) {
     .BaseModal_modal__rdINw {
-      --modal-close-button-offset-top: max(16px, env(safe-area-inset-top));
-      --modal-close-button-offset-inline-start: max(16px, env(safe-area-inset-left));
+      --modal-close-button-offset-top: max(8px, env(safe-area-inset-top));
+      --modal-close-button-offset-inline-start: max(8px, env(safe-area-inset-left));
     }
   }
 
   .BaseModal_modal__rdINw:focus-visible {
-    outline: 2px solid var(--sk-focus-color, #0071e3);
-    outline-offset: var(--sk-focus-offset, 1px);
+    outline: 1px solid var(--sk-focus-color, #0071e3);
+    outline-offset: var(--sk-focus-offset, 0.5px);
   }
 
   .BaseModal_header__sMTZy {
@@ -1551,7 +1551,7 @@ html.BaseModal_hasModal__HlpjY:not(:has(.is-picture-in-picture)) body {
   }
 
   .IconControl_control__vxiHY:focus-visible {
-    outline: 2px solid var(--sk-focus-color, #0071e3);
+    outline: 1px solid var(--sk-focus-color, #0071e3);
     outline-offset: var(--sk-focus-offset-container);
   }
 
@@ -1658,8 +1658,8 @@ html.BaseModal_hasModal__HlpjY:not(:has(.is-picture-in-picture)) body {
   /* ...existing code... */
   /* Aplicar estilos do BaseModal_closeButtonContainer__K6_E3 */
   width: 36px;
-  top: var(--modal-close-button-offset-top, 24px);
-  inset-inline-end: var(--modal-close-button-offset-inline-start, 24px);
+  top: var(--modal-close-button-offset-top, 12px);
+  inset-inline-end: var(--modal-close-button-offset-inline-start, 12px);
 }
 
 .modal-close-button {
@@ -1706,7 +1706,7 @@ html.BaseModal_hasModal__HlpjY:not(:has(.is-picture-in-picture)) body {
   height: var(--modal-close-button-size);
   border-radius: 50%;
   border: none;
-  background: var(--scrim-background-color, var(--modal-close-button-background));
+  /* background: var(--scrim-background-color, var(--modal-close-button-background)); */
   cursor: pointer;
   display: flex;
   align-items: center;
@@ -1732,8 +1732,8 @@ html.BaseModal_hasModal__HlpjY:not(:has(.is-picture-in-picture)) body {
 }
 
 .BaseModal_closeButton__r8K_e:focus-visible {
-  outline: 2px solid var(--modal-focus-color);
-  outline-offset: 2px;
+  outline: 1px solid var(--modal-focus-color);
+  outline-offset: 1px;
 }
 
 /* =====================================
@@ -1840,8 +1840,8 @@ html.text-zoom .BaseModal_headline__3BNi4 {
 @supports (padding: max(0px)) {
   @media (max-width: 480px) {
     .modal-close-button-container.BaseModal_closeButtonContainer__K6_E3 {
-      top: max(16px, env(safe-area-inset-top));
-      inset-inline-end: max(16px, env(safe-area-inset-left));
+      top: max(8px, env(safe-area-inset-top));
+      inset-inline-end: max(8px, env(safe-area-inset-left));
     }
   }
 }
