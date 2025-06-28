@@ -811,10 +811,10 @@ function mostrarModal(titulo, mensagem, callback) {
 
 // Modal de disclaimer - Apple Design System
 function mostrarModalDisclaimer() {
-  const modal = document.getElementById('modal-disclaimer');
-  const botaoOk = document.getElementById('modal-disclaimer-ok');
-  const botaoFechar = document.getElementById('modal-disclaimer-close');
-  const modalContent = modal.querySelector('.modal');
+  const modal = document.getElementById('aviso-disclaimer-modal');
+  const botaoOk = document.getElementById('disclaimer-botao-ok');
+  const botaoFechar = document.getElementById('disclaimer-botao-fechar');
+  const modalContent = modal.querySelector('.disclaimer-modal');
 
   // Adicionar classe ao HTML para controle de scroll (padrão Apple)
   document.documentElement.classList.add('BaseModal_hasModal__HlpjY', 'modal-open');
@@ -828,14 +828,14 @@ function mostrarModalDisclaimer() {
   modalContent.focus();
 
   // Mostrar o modal com animação Apple-style
-  modal.classList.remove('modal-hidden');
-  modal.classList.add('modal-visible', 'modal-open', 'BaseModal_modalOpen___hGpW');
+  modal.classList.remove('modal-oculto');
+  modal.classList.add('modal-visivel', 'modal-aberto', 'BaseModal_modalOpen___hGpW');
 
   // Função para fechar o modal com animação
   const fecharModal = () => {
     // Adicionar classe de fechamento para animação
-    modal.classList.add('modal-closing', 'BaseModal_modalClose__1KZaa');
-    modal.classList.remove('modal-open', 'BaseModal_modalOpen___hGpW');
+    modal.classList.add('modal-fechando', 'BaseModal_modalClose__1KZaa');
+    modal.classList.remove('modal-aberto', 'BaseModal_modalOpen___hGpW');
     
     // Configurar acessibilidade
     modal.setAttribute('aria-hidden', 'true');
@@ -846,8 +846,8 @@ function mostrarModalDisclaimer() {
     
     // Aguardar animação antes de ocultar completamente
     setTimeout(() => {
-      modal.classList.remove('modal-visible', 'modal-closing', 'BaseModal_modalClose__1KZaa');
-      modal.classList.add('modal-hidden');
+      modal.classList.remove('modal-visivel', 'modal-fechando', 'BaseModal_modalClose__1KZaa');
+      modal.classList.add('modal-oculto');
     }, parseInt(getComputedStyle(modal).getPropertyValue('--modal-close-timeout')) || 400);
   };
 
@@ -901,7 +901,7 @@ function mostrarModalDisclaimer() {
   // Limpar event listeners quando o modal for fechado usando MutationObserver
   const observer = new MutationObserver((mutations) => {
     mutations.forEach((mutation) => {
-      if (mutation.attributeName === 'class' && modal.classList.contains('modal-hidden')) {
+      if (mutation.attributeName === 'class' && modal.classList.contains('modal-oculto')) {
         document.removeEventListener('keydown', handleKeydown);
         modal.removeEventListener('click', handleClickOutside);
         observer.disconnect();
