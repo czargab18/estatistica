@@ -76,10 +76,28 @@ section[id="cabecalho-ira"] div[class="container-ira-cabecalho"] span[class*="se
   margin-bottom: var(--marging-height);
 }
 
-/* BLURRRRRRR */
-main[id="main-ira"] section:nth-child(n + 3),
 main[id="main-ira"] section:nth-child(n + 2) {
-  display: none;
+  display: block;
+}
+
+/* 
+Estilos para o aviso de I.R.A. (Índice de Risco Ambiental)
+O fechamento estará ativo quando o js adicionar a class na seção
+quando o usuário clicar no botão de fechamento
+- section Aberto : aviso-ira-open 
+- section Fechada: aviso-ira-closed
+*/
+
+main[id="main-ira"] :is( section[id="aviso-ira"], section[class="aviso-ira-open"] ) {
+  display: block;
+  position: relative;
+  z-index: 10;
+  /* margin-top: calc(var(--r-globaltop-height) + var(--marging-height) + 100px) !important; */
+  margin-top: 240px !important;
+}
+
+main[id="main-ira"] section[class="aviso-ira-closed"] {
+  display: none; /* Oculta completamente quando fechado */
 }
 
 main[id="main-ira"] section[id="aviso-ira"] {
@@ -89,10 +107,14 @@ main[id="main-ira"] section[id="aviso-ira"] {
   margin: 0;
   padding: 0;
   width: 100%;
-  height: max-content;
+  height: 100vh;
   min-height: 638px;
   background: rgba(230, 230, 230, 0.48);
   backdrop-filter: blur(20px);
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 10;
 }
 
 section[id="aviso-ira"] div[class="conteudo-aviso"] {
@@ -205,4 +227,8 @@ section[id="aviso-ira"] svg[class="icone-fechar"] {
   width: 14px;
   height: 14px;
   fill: rgba(255, 255, 255, 1);
+}
+
+main[id="main-ira"] :is( section[id="aviso-ira"], section[class="aviso-ira-closed"] ) {
+  display: none;
 }
