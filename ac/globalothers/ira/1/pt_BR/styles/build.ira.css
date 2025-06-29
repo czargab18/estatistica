@@ -1,0 +1,86 @@
+body[class="body"] {
+  background-color: rgb(245, 245, 247);
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  font-family: SF Pro Display, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif,
+    "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  color: var(--sk-body-text-color, #1d1d1f);
+
+}
+
+main[id="main-ira"] {
+  user-select: none;
+  padding: 0;
+  margin: 0;
+  width: 100%;
+  height: 100%;
+  max-width: 2560px;
+  color: var(--sk-body-text-color, #1d1d1f);
+}
+
+main[id="main-ira"] section[id="cabecalho-ira"] {
+  --marging-height: 40px;
+  width: 100%;
+}
+section[id="cabecalho-ira"] div[class="container-ira-cabecalho"] {
+  justify-items: center;
+}
+
+section[id="cabecalho-ira"] div[class="container-ira-cabecalho"] div[class="conteudo-cabecalho-simples"] {
+  display: flex;
+  justify-content: space-between;
+  align-items: stretch;
+  width: 100%;
+  max-width: 980px;
+  margin-top: var(--marging-height);
+}
+
+section[id="cabecalho-ira"] div[class="conteudo-cabecalho-simples"] h1[class="titulo-ira-simples"] {
+  flex-grow: 1;
+  max-width: calc(100% - var(--col-gap));
+  font-size: 80px;
+  line-height: 1.05;
+  font-weight: 600;
+  letter-spacing: -0.015em;
+  font-family: SF Pro Display, SF Pro Icons, Helvetica Neue, Helvetica, Arial, sans-serif;
+}
+
+section[id="cabecalho-ira"] div[class="conteudo-cabecalho-simples"] div[class="opcoes-ira"] {
+  display: flex;
+  flex-direction: column;
+  font-size: 28px;
+  margin: 0;
+}
+
+section[id="cabecalho-ira"] div[class="conteudo-cabecalho-simples"] div[class="opcoes-ira"] span[class*="opcao-ira-"] {
+  font-size: 28px;
+  line-height: 1.1428571429;
+  font-weight: 600;
+  letter-spacing: 0.007em;
+  font-family: SF Pro Display, SF Pro Icons, Helvetica Neue, Helvetica, Arial, sans-serif;
+}
+
+section[id="cabecalho-ira"] div[class="container-ira-cabecalho"] span[class*="separador-ira"] {
+  display: block;
+  width: 100%;
+  max-width: 980px;
+  height: 1px;
+  background-color: #d2d2d7;
+  border: none;
+  margin-bottom: var(--marging-height);
+}
+
+div.PageHeader_description__pXv2d {
+  margin: 0;
+  align-self: flex-end;
+  justify-content: flex-end;
+  padding-block: 6px;
+  display: flex;
+  width: 320px;
+}
+
+main[id="main-ira"] section:nth-child(n + 2) {
+  display: none;
+}
