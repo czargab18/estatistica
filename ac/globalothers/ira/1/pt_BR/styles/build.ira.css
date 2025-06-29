@@ -7,11 +7,9 @@ body[class="body"] {
   font-family: SF Pro Display, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif,
     "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
   color: var(--sk-body-text-color, #1d1d1f);
-
 }
 
 main[id="main-ira"] {
-  user-select: none;
   padding: 0;
   margin: 0;
   width: 100%;
@@ -52,6 +50,12 @@ section[id="cabecalho-ira"] div[class="conteudo-cabecalho-simples"] div[class="o
   flex-direction: column;
   font-size: 28px;
   margin: 0;
+  margin: 0;
+  align-self: flex-end;
+  justify-content: flex-end;
+  padding-block: 6px;
+  display: flex;
+  width: 320px;
 }
 
 section[id="cabecalho-ira"] div[class="conteudo-cabecalho-simples"] div[class="opcoes-ira"] span[class*="opcao-ira-"] {
@@ -72,15 +76,133 @@ section[id="cabecalho-ira"] div[class="container-ira-cabecalho"] span[class*="se
   margin-bottom: var(--marging-height);
 }
 
-div.PageHeader_description__pXv2d {
-  margin: 0;
-  align-self: flex-end;
-  justify-content: flex-end;
-  padding-block: 6px;
-  display: flex;
-  width: 320px;
-}
-
+/* BLURRRRRRR */
+main[id="main-ira"] section:nth-child(n + 3),
 main[id="main-ira"] section:nth-child(n + 2) {
   display: none;
+}
+
+main[id="main-ira"] section[id="aviso-ira"] {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: max-content;
+  min-height: 638px;
+  background: rgba(230, 230, 230, 0.48);
+  backdrop-filter: blur(20px);
+}
+
+section[id="aviso-ira"] div[class="conteudo-aviso"] {
+  padding: 0;
+  width: 816px;
+  height: 477px;
+  background: #ffffffff;
+  opacity: 1;
+  position: absolute;
+  top: 0;
+  left: 0;
+  border-radius: 28px;
+  right: 0;
+  bottom: 0;
+  overflow: hidden;
+  margin: 40px auto;
+}
+
+section[id="aviso-ira"] span[class="aviso-topico"] {
+  display: block;
+  width: 145px;
+  color: rgba(0, 0, 0, 1);
+  position: absolute;
+  top: 80px;
+  left: 80px;
+  font-family: "SF Pro Display", "SF Pro Icons", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-weight: 500;
+  font-size: 18px;
+  margin: 0;
+}
+
+section[id="aviso-ira"] h2[class="aviso-titulo"] {
+  width: 649px;
+  color: rgba(0, 0, 0, 1);
+  position: absolute;
+  top: 114px;
+  left: 77px;
+  font-family: "SF Pro Display", "SF Pro Icons", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-weight: 700;
+  font-size: 48px;
+  line-height: 1.2;
+  margin: 0;
+}
+
+section[id="aviso-ira"] div[class="aviso-descricao"] p {
+  width: 639px;
+  color: rgba(0, 0, 0, 1);
+  position: absolute;
+  top: 262px;
+  left: 80px;
+  font-family: "SF Pro Display", "SF Pro Icons", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 1.4;
+  margin: 0;
+}
+
+section[id="aviso-ira"] a[class="aviso-link"]:first-child {
+  width: 111px;
+  color: rgba(0, 113, 227, 1);
+  position: absolute;
+  top: 379px;
+  left: 80px;
+  font-family: "SF Pro Display", "SF Pro Icons", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+section[id="aviso-ira"] a[class="aviso-link"]:last-child {
+  width: 165px;
+  color: rgba(0, 113, 227, 1);
+  position: absolute;
+  top: 379px;
+  left: 207px;
+  font-family: "SF Pro Display", "SF Pro Icons", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+section[id="aviso-ira"] a[class="aviso-link"]:hover {
+  color: rgba(0, 80, 160, 1);
+}
+
+section[id="aviso-ira"] button[class="botao-fechar-aviso"] {
+  width: 36px;
+  height: 36px;
+  background: rgba(0, 0, 0, 1);
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  position: absolute;
+  top: 20px;
+  left: 760px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+}
+
+section[id="aviso-ira"] button[class="botao-fechar-aviso"]:hover {
+  background: rgba(50, 50, 50, 1);
+  transform: scale(1.05);
+}
+
+section[id="aviso-ira"] svg[class="icone-fechar"] {
+  width: 14px;
+  height: 14px;
+  fill: rgba(255, 255, 255, 1);
 }
