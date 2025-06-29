@@ -55,7 +55,6 @@ section[id="cabecalho-ira"] div[class="conteudo-cabecalho-simples"] div[class="o
   justify-content: flex-end;
   padding-block: 6px;
   display: flex;
-  width: 320px;
 }
 
 section[id="cabecalho-ira"] div[class="conteudo-cabecalho-simples"] div[class="opcoes-ira"] span[class*="opcao-ira-"] {
