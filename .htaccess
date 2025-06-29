@@ -1,12 +1,16 @@
 RewriteEngine On
 
-# Força HTTPS e adiciona 'www' apenas para o domínio principal
+# Força HTTPS e 'www' para o domínio principal - OTIMIZADO
+# Redireciona qualquer variação para https://www.estatistica.pro
+RewriteCond %{HTTP_HOST} ^(www\.)?estatistica\.pro$ [NC]
+RewriteCond %{HTTPS} off [OR]
 RewriteCond %{HTTP_HOST} ^estatistica\.pro$ [NC]
 RewriteRule ^ https://www.estatistica.pro%{REQUEST_URI} [L,R=301]
 
-# Força HTTPS para subdomínios sem adicionar 'www'
+# Força HTTPS para subdomínios (exceto www) - SIMPLIFICADO
 RewriteCond %{HTTPS} off
-RewriteCond %{HTTP_HOST} ^([^.]+)\.estatistica\.pro$ [NC]
+RewriteCond %{HTTP_HOST} ^[^.]+\.estatistica\.pro$ [NC]
+RewriteCond %{HTTP_HOST} !^www\.estatistica\.pro$ [NC]
 RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
 
 # Redireciona tentativas de acesso a /dev/ e /stage/
