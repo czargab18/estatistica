@@ -1,5 +1,5 @@
 body[class="body"] {
-  background-color: rgb(245, 245, 247);
+  background-color: rgb(245, 245, 247, 0.48);
   margin: 0;
   padding: 0;
   width: 100%;
@@ -76,13 +76,6 @@ section[id="cabecalho-ira"] div[class="container-ira-cabecalho"] span[class*="se
   margin-bottom: var(--marging-height);
 }
 
-main[id="main-ira"] section:nth-child(n + 2) {
-  display: block;
-  width: 100%;
-  height: 200px;
-  margin: 0 auto;
-  background-color: rgb(176, 156, 156);
-}
 
 /* 
 Estilos para o aviso de I.R.A. (Índice de Risco Ambiental)
@@ -256,4 +249,21 @@ section[id="aviso-ira"] svg[class="icone-fechar"] {
   width: 14px;
   height: 14px;
   fill: rgba(255, 255, 255, 1);
+}
+
+main[id="main-ira"] section[class*="section-ira-simular"] {
+  display: block;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 400px;
+}
+
+section[class*="section-ira-simular"] div[class*="banner-ira"] {
+  width: 50%;
+  height: 400px;
+  padding: 20px;
+  background-color: #ffff;
+  margin: 0 auto;
+  border-radius: 20px;
 }
