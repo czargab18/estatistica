@@ -32,6 +32,28 @@
     "producao",
     "premios"
   ],
+  "boasvindas": [
+    "boas-vindas",
+    "boas-vindas-calouros",
+    "checklist",
+    "eventos-estatistica",
+    "formas-de-ingresso",
+    "ingressante",
+    "manual-para-estudantes",
+    "normativos-graduacao",
+    "identidade-estudantil",
+    "matricula",
+    "registro-academico",
+    "perguntas-frequentes-grad",
+    "contato",
+    "ouvidoria",
+    "egresso",
+    "iniciacao-cientifica",
+    "programas-institucionais",
+    "como-chegar",
+    "servicos",
+    "assistencia-estudantil"
+  ],
   "graduacao": [
     "descricao",
     "disciplinas",
