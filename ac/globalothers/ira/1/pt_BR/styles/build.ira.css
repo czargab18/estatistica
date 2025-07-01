@@ -17,11 +17,14 @@ main[id="main-ira"] {
   height: max-content;
   max-width: 2560px;
   color: var(--sk-body-text-color, #1d1d1f);
+  background-color: #f5f5f7;
 }
 
 main[id="main-ira"] section[id="cabecalho-ira"] {
   --marging-height: 40px;
   width: 100%;
+  height: max-content;
+  background: #ffffff;
 }
 section[id="cabecalho-ira"] div[class="container-ira-cabecalho"] {
   justify-items: center;
@@ -33,7 +36,7 @@ section[id="cabecalho-ira"] div[class="container-ira-cabecalho"] div[class="cont
   align-items: stretch;
   width: 100%;
   max-width: 980px;
-  margin-top: var(--marging-height);
+  padding-top: var(--marging-height);
 }
 
 section[id="cabecalho-ira"] div[class="conteudo-cabecalho-simples"] h1[class="titulo-ira-simples"] {
@@ -260,10 +263,12 @@ main[id="main-ira"] section[class*="section-ira-simular"] {
   background-color: #f5f5f7;
 }
 
+/* 
 main[id="main-ira"] section[id="section-ira-simular-curso"],
 main[id="main-ira"] section[class="section-ira-simular"] {
   margin-bottom: 32px;
 }
+*/
 
 section[class*="section-ira-simular"] div[class*="banner-ira"] {
   background-color: rgba(255, 255, 255, 1);
@@ -272,6 +277,7 @@ section[class*="section-ira-simular"] div[class*="banner-ira"] {
   height: calc(100% - 80px);
   box-sizing: border-box;
   min-height: 300px;
+  height: calc(680px / 2);
 }
 
 section[class*="section-ira-simular"] div[class*="banner-ira"] div[class="banner-card-copy-column"] {
@@ -281,6 +287,7 @@ section[class*="section-ira-simular"] div[class*="banner-ira"] div[class="banner
 /* Estilos tipográficos para a seção IRA Semestre */
 section[class*="section-ira-simular"] .banner-card-row {
   display: flex;
+  justify-content: space-between;
   align-items: center;
   gap: 40px;
   max-width: 1200px;
@@ -293,26 +300,26 @@ section[class="section-ira-simular"] .banner-card-copy-column {
   max-width: 500px;
 }
 
-section[class*="section-ira-simular"]  div[class*="banner-card-header"]  h2[class*="banner-card-headline-title"] {
-    color: #1d1d1f;
-    font-family: SF Pro Display, SF Pro Icons, Helvetica Neue, Helvetica, Arial, sans-serif;
-    font-size: 48px;
-    font-weight: 600;
-    letter-spacing: -.003em;
-    line-height: 1.0834933333;
-    margin-top: 50px;
-    text-align: left;
-    margin-bottom: 10px;
-}
-section[class*="section-ira-simular"]  div[class*="banner-card-header"]  span[class*="banner-card-headline-subtitle"] {
+section[class*="section-ira-simular"] div[class*="banner-card-header"] h2[class*="banner-card-headline-title"] {
   color: #1d1d1f;
-    font-family: SF Pro Text, SF Pro Icons, Helvetica Neue, Helvetica, Arial, sans-serif;
-    font-size: 17px;
-    font-weight: 400;
-    letter-spacing: -.022em;
-    line-height: 1.4705882353;
-    margin-top: 20px;
-    text-align: center;
+  font-family: SF Pro Display, SF Pro Icons, Helvetica Neue, Helvetica, Arial, sans-serif;
+  font-size: 48px;
+  font-weight: 600;
+  letter-spacing: -0.003em;
+  line-height: 1.0834933333;
+  margin-top: 50px;
+  text-align: left;
+  margin-bottom: 10px;
+}
+section[class*="section-ira-simular"] div[class*="banner-card-header"] span[class*="banner-card-headline-subtitle"] {
+  color: #1d1d1f;
+  font-family: SF Pro Text, SF Pro Icons, Helvetica Neue, Helvetica, Arial, sans-serif;
+  font-size: 17px;
+  font-weight: 400;
+  letter-spacing: -0.022em;
+  line-height: 1.4705882353;
+  margin-top: 20px;
+  text-align: center;
 }
 
 section[class="section-ira-simular"] .banner-card-asset-column {
