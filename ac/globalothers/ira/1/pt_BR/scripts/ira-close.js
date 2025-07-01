@@ -4,6 +4,7 @@
  */
 function fecharAvisoIRA() {
     const secaoAviso = document.getElementById('aviso-ira');
+  const cabecalhoIRA = document.getElementById('cabecalho-ira');
     
     if (secaoAviso) {
         // Remove a classe que mantém o aviso aberto
@@ -12,6 +13,11 @@ function fecharAvisoIRA() {
         // Adiciona a classe que oculta o aviso com transição CSS
         secaoAviso.classList.add('aviso-ira-closed');
         
+      // Altera o padding-bottom do cabeçalho IRA
+      if (cabecalhoIRA) {
+        cabecalhoIRA.style.paddingBottom = '20px';
+      }
+
         // Opcional: remover completamente do DOM após a animação
         setTimeout(() => {
             if (secaoAviso.classList.contains('aviso-ira-closed')) {
@@ -48,10 +54,16 @@ document.addEventListener('DOMContentLoaded', function() {
  */
 function abrirAvisoIRA() {
     const secaoAviso = document.getElementById('aviso-ira');
+  const cabecalhoIRA = document.getElementById('cabecalho-ira');
     
     if (secaoAviso) {
         secaoAviso.style.display = 'flex';
         secaoAviso.classList.remove('aviso-ira-closed');
         secaoAviso.classList.add('aviso-ira-open');
+
+      // Restaura o padding-bottom original do cabeçalho IRA
+      if (cabecalhoIRA) {
+        cabecalhoIRA.style.paddingBottom = '40px';
+      }
     }
 }
