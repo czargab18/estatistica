@@ -1,6 +1,6 @@
 /* Reset de estilos globais */
 #globalnavbar {
- all: initial;
+  all: initial;
 }
 
 #globalnavbar ul,
@@ -156,6 +156,12 @@
   color: var(--r-globalnavbar-color-secondary-black);
   background: no-repeat;
   transition: color 0.32s cubic-bezier(0.4, 0, 0.6, 1);
+}
+
+#globalnavbar .globalnavbar-link span[class*="globalnavbar-estatistica-regular"],
+#globalnavbar .globalnavbar-link span[class*="globalnavbar-estatistica-regular"] svg {
+  height: var(--r-globalnav-height);
+  width: max-content;
 }
 
 #globalnavbar .globalnavbar-link svg {
@@ -349,7 +355,6 @@
 **  CSS: submenu:houver
 */
 
-
 :root {
   --r-globalnavbar-flyout-elevated-group-count: 1;
   --r-globalnavbar-flyout-group-number: 0;
@@ -532,8 +537,6 @@ li.globalnavbar-item .globalnavbar-flyout-scroll-container:hover {
     opacity var(--globalnav-transition-rate) var(--easing-curve), visibility var(--globalnav-transition-rate) step-start;
 }
 
-
-
 /* NAVBAR INTERAÇÃO :HOUVER-OPEN */
 #globalnavbar {
   all: unset;
@@ -549,13 +552,13 @@ li.globalnavbar-item .globalnavbar-flyout-scroll-container:hover {
   --r-globalnavbar-scrollbar-width: 15px;
   --r-globalnavbar-submenu-header-color: rgb(255, 255, 255);
   --r-globalnavbar-background-opened: #fafafc;
-  
+
   --r-globalnavbar-background-opened-dark: #161617;
   --r-globalnavbar-submenu-header-color: rgb(110, 110, 115);
-  --r-globalnavbar-color: rgba(0, 0, 0, .8);
+  --r-globalnavbar-color: rgba(0, 0, 0, 0.8);
   --r-globalnavbar-color-secondary: #333336;
   --r-globalnavbar-color-hover: #000000;
-  --globalnavbar-background: rgba(255, 255, 255, .8);
+  --globalnavbar-background: rgba(255, 255, 255, 0.8);
 }
 
 #globalnavbar .globalnavbar-submenu {
@@ -687,7 +690,7 @@ li.globalnavbar-item .globalnavbar-flyout-scroll-container:hover {
   margin-inline-start: -11px;
 }
 
-nav{
+nav {
   width: 100% !important;
 }
 
