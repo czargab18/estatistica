@@ -1,14 +1,17 @@
 [submodule "backend"]
 	path = backend
 	url = https://github.com/czargab18/backend.git
+	branch = main
 
 [submodule "api"]
 	path = api
 	url = https://github.com/czargab18/api.git
+	branch = main
 
 [submodule "wss"]
 	path = wss
 	url = https://github.com/czargab18/wss.git
+	branch = main
 
 ; [submodule "books"]
 ; 	path = books
