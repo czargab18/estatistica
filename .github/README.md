@@ -30,10 +30,10 @@ estatistica/
 │   ├── MAT0075/     # Matemática para Estatística
 │   └── TAS0000/     # Tópicos Avançados
 ├── pages/           # Páginas do site
-│   ├── apps/        # Aplicações (IRA, etc)
 │   ├── docente/     # Páginas docentes
 │   ├── newsroom/    # Sistema de artigos
 │   └── boasvindas/  # Página de boas-vindas
+├── apps/        # Aplicações (IRA, etc)
 ├── ac/              # Componentes globais (navbar, footer, etc)
 └── sd/              # Assets e recursos (imagens, ícones, etc)
 ```
