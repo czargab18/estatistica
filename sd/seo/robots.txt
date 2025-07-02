@@ -1,11 +1,63 @@
 User-agent: *
+
+# === ARQUIVOS SISTEMA E CONFIGURAÇÃO ===
 Disallow: CNAME
 Disallow: .htaccess
 Disallow: .gitignore
+Disallow: /.env*
+Disallow: /config*.json
+Disallow: /secrets.json
+Disallow: /credentials.json
+
+# === DIRETÓRIOS DESENVOLVIMENTO ===
 Disallow: /.automacao/
 Disallow: /.github/
 Disallow: /.vscode/
+Disallow: /.git/
+Disallow: /node_modules/
+Disallow: /vendor/
+
+# === BACKEND E SEGURANÇA ===
 Disallow: /backend/
+Disallow: /admin/
+Disallow: /security-*.json
+Disallow: /security-*.js
+Disallow: /*.conf
+
+# === ARQUIVOS SENSÍVEIS ===
+Disallow: /*.key
+Disallow: /*.pem
+Disallow: /*.sql
+Disallow: /database/
+
+# === TESTES E DOCUMENTAÇÃO ===
+Disallow: /test/
+Disallow: /docs/
+Disallow: /README.md
+
+# === ARQUIVOS TEMPORÁRIOS ===
+Disallow: /cache/
+Disallow: /logs/
+Disallow: /*.bak
+
+# Bloquear bots maliciosos
+User-agent: BadBot
+Disallow: /
+
+User-agent: Scraper
+Disallow: /
+
+User-agent: MalwareBot
+Disallow: /
+
+User-agent: SemrushBot
+Disallow: /
+
+User-agent: AhrefsBot
+Disallow: /
+
+# Crawl delay para evitar sobrecarga
+Crawl-delay: 1
 
 # Caminho do sitemap em HTML
 Sitemap: https://www.estatistica.pro/sitemap/index.html
