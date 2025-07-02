@@ -32,10 +32,10 @@ main[id="globalmain"] [data-module-template="heroes"] div[data-unit-id]:nth-chil
   height: var(--main-section-destaque-height);
 }
 
-main[id="globalmain"] [id="boasvindas"] [id="modulo-content"],
-main[id="globalmain"] [id="graduacao"] [id="modulo-content"],
-main[id="globalmain"] [id="posgraduacao"] [id="modulo-content"],
-main[id="globalmain"] [id="docentes"] [id="modulo-content"] {
+main[id="globalmain"] [id="boasvindas"] [class="modulo-content"],
+main[id="globalmain"] [id="graduacao"] [class="modulo-content"],
+main[id="globalmain"] [id="posgraduacao"] [class="modulo-content"],
+main[id="globalmain"] [id="docentes"] [class="modulo-content"] {
   background-size: 3008px 624px;
   background-repeat: no-repeat;
   background-position: center;
@@ -56,6 +56,7 @@ main[id="globalmain"] [data-module-template] [data-unit-id] .unit-wrapper a.unit
   left: 0;
   width: 100%;
   height: 100%;
+  z-index: 3;
 }
 
 main[id="globalmain"] div[class="unit-copy-warpper"] {
@@ -65,13 +66,16 @@ main[id="globalmain"] div[class="unit-copy-warpper"] {
   justify-content: center;
   position: absolute;
   text-align: center;
-  z-index: 5;
+  z-index: 4;
   user-select: none;
+  width: 100%;
+  pointer-events: none;
 }
 
 main[id="globalmain"] .cta-links a {
   z-index: 6;
   font-size: 19px;
+  pointer-events: all;
 }
 
 main[id="globalmain"] section[data-module-template="heroes"] div.unit-image-warpper,
@@ -217,7 +221,7 @@ main[id="globalmain"] section[data-module-template="promos"] {
   gap: 1em;
 }
 
-main[id="globalmain"] section[data-module-template="promos"] [id="modulo-content"] {
+main[id="globalmain"] section[data-module-template="promos"] [class="modulo-content"] {
   height: 580px;
 }
 
