@@ -38,8 +38,47 @@ Header unset Last-Modified env=STATIC_FILES
 SetEnvIf Request_URI "\.(html|js|css|xml|txt|xsl)$" DYNAMIC_FILES
 Header set Cache-Control "max-age=15552000, must-revalidate" env=DYNAMIC_FILES
 
+# =======================
+# SECURITY HEADERS
+# =======================
+
+# Content Security Policy (CSP) - Previne ataques XSS
+Header always set Content-Security-Policy "default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://cdn.jsdelivr.net https://cdnjs.cloudflare.com https://code.jquery.com; style-src 'self' 'unsafe-inline' https://cdn.jsdelivr.net https://cdnjs.cloudflare.com https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com https://cdn.jsdelivr.net; img-src 'self' data: https:; media-src 'self'; object-src 'none'; frame-src 'self'; base-uri 'self'; form-action 'self'; upgrade-insecure-requests"
+
+# HTTP Strict Transport Security (HSTS) - Força HTTPS
+Header always set Strict-Transport-Security "max-age=31536000; includeSubDomains; preload"
+
+# X-Content-Type-Options - Previne MIME sniffing
+Header always set X-Content-Type-Options "nosniff"
+
+# X-Frame-Options - Previne clickjacking
+Header always set X-Frame-Options "DENY"
+
+# X-XSS-Protection - Proteção XSS (legacy, mas ainda útil)
+Header always set X-XSS-Protection "1; mode=block"
+
+# Referrer Policy - Controla informações do referrer
+Header always set Referrer-Policy "strict-origin-when-cross-origin"
+
+# Permissions Policy - Controla recursos do navegador
+Header always set Permissions-Policy "geolocation=(), microphone=(), camera=(), fullscreen=(self), payment=()"
+
+# Cross-Origin-Embedder-Policy - Isolamento de origem
+Header always set Cross-Origin-Embedder-Policy "require-corp"
+
+# Cross-Origin-Opener-Policy - Proteção contra window.opener
+Header always set Cross-Origin-Opener-Policy "same-origin"
+
+# Cross-Origin-Resource-Policy - Controla carregamento de recursos
+Header always set Cross-Origin-Resource-Policy "same-origin"
+
+# Remove headers que revelam informações do servidor
+Header always unset Server
+Header always unset X-Powered-By
+
 #   fonte:
 # - https://cwiki.apache.org/confluence/display/httpd/RewriteHTTPToHTTPS
 # - https://www.askapache.pro/htaccess/ssl-example-usage-in-htaccess/
 # - https://www.github.com/cesargabrielphd/
 # - chat copilot vscode
+# - ByteMonk HTTP Secure Headers Video: https://youtu.be/4bQeGUzHpOE
