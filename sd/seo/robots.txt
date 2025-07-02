@@ -59,11 +59,11 @@ Disallow: /
 # Crawl delay para evitar sobrecarga
 Crawl-delay: 1
 
-# Caminho do sitemap em HTML
+# SEO e indexação
+Allow: /favicon.ico
+Allow: /robots.txt
+
+# Sitemap principal (XML e HTML)
+Sitemap: https://www.estatistica.pro/sitemap/sitemap.xml
 Sitemap: https://www.estatistica.pro/sitemap/index.html
 
-# Caminho do sitemap.xml
-Sitemap: https://www.estatistica.pro/sd/seo/sitemap.xml
-
-# Caminho da página 404
-# 404: https://www.estatistica.pro/errors/404/index.html
