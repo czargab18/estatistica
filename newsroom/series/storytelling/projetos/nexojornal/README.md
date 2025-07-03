@@ -1,1 +1,0 @@
-Recriação de gráficos do Nexo Jornal utilizando o pacote `ggplot2` em R. O projeto tem como objetivo demonstrar a capacidade do `ggplot2` em reproduzir gráficos de alta qualidade, semelhantes aos encontrados no Nexo Jornal, e explorar as funcionalidades do pacote para criar visualizações informativas e atraentes.
