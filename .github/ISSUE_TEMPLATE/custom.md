@@ -1,6 +1,6 @@
 ---
-name: Custom issue template
-about: Describe this issue template's purpose here.
+name: Template de issue personalizado
+about: Descreva o propósito deste template de issue aqui.
 title: ''
 labels: ''
 assignees: ''
