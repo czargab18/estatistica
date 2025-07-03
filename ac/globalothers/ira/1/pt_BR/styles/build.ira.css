@@ -17,11 +17,13 @@ main[id="main-ira"] {
   height: max-content;
   max-width: 2560px;
   color: var(--sk-body-text-color, #1d1d1f);
-  background-color: #f5f5f7;
+  /* background-color: #f5f5f7; */
+  background-color: #ffffff;
 }
 
 main[id="main-ira"] section[id="cabecalho-ira"] {
   --marging-height: 40px;
+  padding-bottom: var(--marging-height);
   width: 100%;
   height: max-content;
   background: #ffffff;
@@ -260,7 +262,7 @@ main[id="main-ira"] section[class*="section-ira-simular"] {
   width: 100%;
   min-height: 400px;
   padding: 40px 0;
-  background-color: #f5f5f7;
+  background-color: #ffffff;
 }
 
 /* 
@@ -271,7 +273,7 @@ main[id="main-ira"] section[class="section-ira-simular"] {
 */
 
 section[class*="section-ira-simular"] div[class*="banner-ira"] {
-  background-color: rgba(255, 255, 255, 1);
+  background-color: #f5f5f7;
   border-radius: 20px;
   transition: all 0.3s ease;
   height: calc(100% - 80px);
