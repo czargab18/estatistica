@@ -6,8 +6,9 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="author" content="César Gabriel">
 
-<title>Introdução</title>
+<title>Conclusao – Introdução a Ciência da Computação</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -20,28 +21,49 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-</style>
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+  margin-bottom: 0em;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
 
 
-<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
-<script src="../../site_libs/clipboard/clipboard.min.js"></script>
-<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="../../site_libs/quarto-search/fuse.min.js"></script>
-<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<script src="../../../ac/site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../../ac/site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../../ac/site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../../ac/site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../../ac/site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../../ac/site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../../">
-<link href="../../textuais/cap1/secao1.html" rel="next">
-<link href="../../pretextuais/introducao.html" rel="prev">
-<script src="../../site_libs/quarto-html/quarto.js" type="module"></script>
-<script src="../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
-<script src="../../site_libs/quarto-html/popper.min.js"></script>
-<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="../../site_libs/quarto-html/anchor.min.js"></script>
-<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-37eea08aefeeee20ff55810ff984fec1.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../../site_libs/bootstrap/bootstrap-48fb113fea7c09ade55c8c495d57f66a.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="../../conteudo/02/metodologia.html" rel="next">
+<link href="../../conteudo/01/introducao.html" rel="prev">
+<link href="../../ac/image/logo/estatistica.svg" rel="icon" type="image/svg+xml">
+<script src="../../../ac/site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../../../ac/site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../../../ac/site_libs/quarto-html/popper.min.js"></script>
+<script src="../../../ac/site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../../ac/site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../../ac/site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../../ac/site_libs/quarto-html/quarto-syntax-highlighting-37eea08aefeeee20ff55810ff984fec1.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../../ac/site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../../ac/site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../../ac/site_libs/bootstrap/bootstrap-56f2012a13a73a61761a75c74babc063.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -71,6 +93,11 @@ ul.task-list li input[type="checkbox"] {
 }</script>
 
 
+<link rel="stylesheet" href="../../wss/fonts.css?families=SF+Pro,v3">
+<link rel="stylesheet" href="../../ac/site_libs/bootstrap/bootstrap-8da5b4427184b79ecddefad3d342027e.min.css">
+<link rel="stylesheet" href="../../ac/site_libs/quarto-html/quarto-syntax-highlighting-549806ee2085284f45b00abea8c6df48.css">
+<link rel="stylesheet" href="../../ac/site_libs/bootstrap/bootstrap-icons.css">
+<link rel="stylesheet" href="../../ac/site_libs/quarto-html/tippy.css">
 </head>
 
 <body class="nav-sidebar floating fullcontent quarto-light">
@@ -82,7 +109,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../textuais/cap1/introd.html">Titulo do Capitulo 1</a></li><li class="breadcrumb-item"><a href="../../textuais/cap1/introd.html"><span class="chapter-title">Introdução</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../conteudo/02/conclusao.html">Conclusao</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -95,6 +122,18 @@ ul.task-list li input[type="checkbox"] {
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
 <!-- sidebar -->
   <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+    <div class="sidebar-title mb-0 py-0">
+      <a href="../../">Introdução a Ciência da Computação</a> 
+        <div class="sidebar-tools-main">
+  <a href="" class="quarto-reader-toggle quarto-navigation-tool px-1" onclick="window.quartoToggleReader(); return false;" title="Toggle reader mode">
+  <div class="quarto-reader-toggle-btn">
+  <i class="bi"></i>
+  </div>
+</a>
+</div>
+    </div>
+      </div>
         <div class="mt-2 flex-shrink-0 align-items-center">
         <div class="sidebar-search">
         <div id="quarto-search" class="" title="Search"></div>
@@ -104,23 +143,19 @@ ul.task-list li input[type="checkbox"] {
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../index.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Programa de Estatística Básica</span></a>
+  <a href="../../index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Titulo Principal</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../pretextuais/sumario.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Sumário</span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../pretextuais/introducao.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">introducao.html</span></a>
+  <a href="../../conteudo/01/introducao.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Introduction</span></a>
   </div>
 </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true">
- <span class="menu-text">Titulo do Capitulo 1</span></a>
+            <a href="../../conteudo/02/conclusao.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">Conclusao</span></a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
@@ -128,77 +163,26 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../textuais/cap1/introd.html" class="sidebar-item-text sidebar-link active"><span class="chapter-title">Introdução</span></a>
+  <a href="../../conteudo/02/metodologia.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Metodologia</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../textuais/cap1/secao1.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">seção 1</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../textuais/cap1/secao1exercicios.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Introdução</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../textuais/cap1/cap1exercicios.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">cap1exercicios.html</span></a>
-  </div>
-</li>
-      </ul>
-  </li>
-        <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true">
- <span class="menu-text">Titulo do Capitulo 2</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true" aria-label="Toggle section">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../textuais/cap2/introd.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Introdução</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../textuais/cap2/secao1.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">seção 1</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../textuais/cap2/secao2exercicios.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">secao2exercicios.html</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../textuais/cap2/cap2exercicios.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">cap2exercicios.html</span></a>
-  </div>
-</li>
-      </ul>
-  </li>
-        <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true">
- <span class="menu-text">Anexos</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true" aria-label="Toggle section">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../postextuais/apendice/formulas/cap1.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Formulas do Capitulo 1</span></a>
+  <a href="../../conteudo/02/conclusao.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">Conclusao</span></a>
   </div>
 </li>
       </ul>
   </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../postextuais/bibliografia/references.html" class="sidebar-item-text sidebar-link">
+  <a href="../../conteudo/03/references.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">References</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../conteudo/03/apendice.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Apendice</span></a>
   </div>
 </li>
     </ul>
@@ -210,9 +194,9 @@ ul.task-list li input[type="checkbox"] {
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../textuais/cap1/introd.html">Titulo do Capitulo 1</a></li><li class="breadcrumb-item"><a href="../../textuais/cap1/introd.html"><span class="chapter-title">Introdução</span></a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-title">Introdução</span></h1>
+<h1 class="title">Conclusao</h1>
 </div>
 
 
@@ -229,8 +213,15 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
+<p>This is a book created from markdown and executable code.</p>
+<p>See <span class="citation" data-cites="knuth84">Knuth (<a href="../03/references.html#ref-knuth84" role="doc-biblioref">1984</a>)</span> for additional discussion of literate programming.</p>
 
 
+<div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list" style="display: none">
+<div id="ref-knuth84" class="csl-entry" role="listitem">
+Knuth, Donald E. 1984. <span>“Literate Programming.”</span> <em>Comput. J.</em> 27 (2): 97–111. <a href="https://doi.org/10.1093/comjnl/27.2.97">https://doi.org/10.1093/comjnl/27.2.97</a>.
+</div>
+</div>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -634,17 +625,30 @@ ul.task-list li input[type="checkbox"] {
   </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="../../pretextuais/introducao.html" class="pagination-link" aria-label="introducao.html">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-title">introducao.html</span></span>
+      <a href="../../conteudo/01/introducao.html" class="pagination-link" aria-label="Introduction">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-title">Introduction</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="../../textuais/cap1/secao1.html" class="pagination-link" aria-label="seção 1">
-        <span class="nav-page-text"><span class="chapter-title">seção 1</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="../../conteudo/02/metodologia.html" class="pagination-link" aria-label="Metodologia">
+        <span class="nav-page-text"><span class="chapter-title">Metodologia</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
 </div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">
+<p>Este livro foi desenvolvido por <a href="https://github.com/cesargabrielphd/">César Gabriel</a></p>
+</div>   
+    <div class="nav-footer-center">
+      &nbsp;
+    </div>
+    <div class="nav-footer-right">
+<p>Este book foi construido com <a href="https://quarto.org/">Quarto</a>.</p>
+</div>
+  </div>
+</footer>
 
 
 
