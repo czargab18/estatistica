@@ -13,6 +13,7 @@
 	url = https://github.com/czargab18/wss.git
 	branch = main
 
-; [submodule "books"]
-; 	path = books
-; 	url = https://github.com/czargab18/books.git
+[submodule "books"]
+	path = books
+	url = https://github.com/czargab18/books.git
+	branch = main
