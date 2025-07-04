@@ -23,10 +23,78 @@ env:
   USERNAME: ${{ github.repository_owner }}
 
 jobs:
-  alguma-coisa-em-desenvolvimento:
+  sync-components-to-submodules:
     runs-on: ubuntu-latest
     steps:
-      - name: checar o repositório
+      - name: Checkout repositório principal
         uses: actions/checkout@v4
         with:
           fetch-depth: 0
+          token: ${{ secrets.TOKEN_REPO_SYNC }}
+          
+      - name: Inicializar e atualizar submodules
+        run: |
+          git submodule update --init --recursive
+          
+      - name: Configurar Git
+        run: |
+          git config --global user.name "${{ env.USERNAME }}"
+          git config --global user.email "${{ env.USEREMAIL }}"
+          
+      - name: Sincronizar componentes para submodules
+        run: |
+          # Lista dos submodules que devem receber os componentes
+          SUBMODULES=("backend" "api" "wss" "books" "newshub")
+          
+          for submodule in "${SUBMODULES[@]}"; do
+            echo "🔄 Processando submodule: $submodule"
+            
+            # Verificar se o submodule existe
+            if [ -d "$submodule" ]; then
+              cd "$submodule"
+              
+              # Fazer pull das últimas mudanças
+              git pull origin main
+              
+              # Criar diretório de componentes se não existir
+              mkdir -p ac/components
+              
+              # Copiar componentes do repositório principal
+              cp -r ../ac/components/* ac/components/ 2>/dev/null || echo "⚠️  Nenhum arquivo para copiar em $submodule"
+              
+              # Verificar se há mudanças
+              if [ -n "$(git status --porcelain)" ]; then
+                echo "📝 Commitando mudanças em $submodule"
+                git add .
+                git commit -m "🔄 Atualizar componentes do repositório principal
+                
+                - Sincronização automática via GitHub Actions
+                - Componentes atualizados: $(date '+%Y-%m-%d %H:%M:%S')"
+                
+                # Push das mudanças
+                git push origin main
+                echo "✅ Componentes sincronizados com sucesso em $submodule"
+              else
+                echo "ℹ️  Nenhuma mudança detectada em $submodule"
+              fi
+              
+              cd ..
+            else
+              echo "⚠️  Submodule $submodule não encontrado"
+            fi
+          done
+          
+      - name: Atualizar referências dos submodules no repositório principal
+        run: |
+          # Atualizar as referências dos submodules no repositório principal
+          git add .
+          if [ -n "$(git status --porcelain)" ]; then
+            git commit -m "📦 Atualizar referências dos submodules
+            
+            - Componentes sincronizados em: $(date '+%Y-%m-%d %H:%M:%S')
+            - Trigger: ${{ github.event.head_commit.message }}"
+            git push origin main
+            echo "✅ Referências dos submodules atualizadas"
+          else
+            echo "ℹ️  Nenhuma mudança nas referências dos submodules"
+          fi

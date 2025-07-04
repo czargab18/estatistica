@@ -2,21 +2,20 @@
   "files.exclude": {
     // OCULTAR ARQUIVOS GIT
     "**/.git": true,
-    "**/*/.gitignore/": true,
     // OCULTAR SUBMODULOS GIT
     // submodulo API
     "api/.git": true,
-    "api/.github": true,
+    "api/.github": false,
     "api/.vscode": true,
     "api/.devcontainer": true,
     // submodulo API
     "books/.git": true,
-    "books/.github": true,
+    "books/.github": false,
     "books/.vscode": true,
     "books/.devcontainer": true,
     // submodulo API
     "backend/.git": true,
-    "backend/.github": true,
+    "backend/.github": false,
     "backend/.vscode": true,
     "backend/.devcontainer": true,
     // ocultar arquivos backend
