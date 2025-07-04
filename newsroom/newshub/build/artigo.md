@@ -1,4 +1,5 @@
 ---
+# Referência: https://medium.com/@sydasif78/book-creation-with-pandoc-and-markdown-893c7d72cb35
 title: "titulo exemplo"
 description: "descrição do arqtigo"
 canonical: "https://www.apple.com/newsroom/2025/06/titulo-do-artigo/"
@@ -19,18 +20,9 @@ html_config:
     - "js"
     - "no-touch" 
     - "svg"
-    - "no-ie8"
     - "progressive-image"
     - "windows"
     - "no-edge"
-    - "no-safari"
-    - "no-mobile-os"
-    - "no-kakaotalk-app"
-    - "no-reduced-motion"
-    - "no-ar"
-    - "no-vision"
-    - "progressive"
-    - "no-in-wechat"
 includes:
   header_global: 
     file: "components/globalheader.html"
