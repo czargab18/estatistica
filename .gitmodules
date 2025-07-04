@@ -19,4 +19,5 @@
 	branch = main
 [submodule "newshub"]
 	path = newshub
-	url = ./newshub
+	url = https://github.com/czargab18/newshub.git
+	branch = main
