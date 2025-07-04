@@ -1,0 +1,21 @@
+.image-artigo {
+  width: 100%;
+  padding-top: 56.224487%;
+  height: auto;
+}
+
+@media only screen and (max-width: 1068px) {
+  .image-artigo {
+    width: 100%;
+    padding-top: 56.213875%;
+    height: auto;
+  }
+}
+
+@media only screen and (max-width: 734px) {
+  .image-artigo {
+    width: 100%;
+    padding-top: 56.25%;
+    height: auto;
+  }
+}

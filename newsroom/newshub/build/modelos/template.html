@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html$if(html_config.xmlns)$ xmlns="$html_config.xmlns$" $endif$$if(html_config.xml_lang)$
+  xml:lang="$html_config.xml_lang$" $endif$$if(html_config.lang)$ lang="$html_config.lang$" $endif$$if(html_config.dir)$
+  dir="$html_config.dir$" $endif$$if(html_config.prefix)$ prefix="$html_config.prefix$" $endif$$if(html_config.classes)$
+  class="$for(html_config.classes)$$html_config.classes$$sep$ $endfor$" $endif$>
+
+  <head>
+    <meta charset="$if(meta.charset)$$meta.charset$$else$utf-8$endif$">
+    <meta name="viewport"
+      content="$if(meta.viewport)$$meta.viewport$$else$width=device-width, initial-scale=1, viewport-fit=cover$endif$">
+
+    <!-- Primary Meta Tags -->
+    <title>$if(title)$$title$$else$Apple Newsroom$endif$</title>
+    $if(description)$
+    <meta name="description" content="$description$">$endif$
+    $if(canonical)$
+    <link rel="canonical" href="$canonical$">$endif$
+
+    <!-- Open Graph / Facebook -->
+    $if(og)$
+    $if(og.type)$
+    <meta property="og:type" content="$og.type$">$endif$
+    $if(og.url)$
+    <meta property="og:url" content="$og.url$">$endif$
+    $if(og.title)$
+    <meta property="og:title" content="$og.title$">$endif$
+    $if(og.description)$
+    <meta property="og:description" content="$og.description$">$endif$
+    $if(og.image)$
+    <meta property="og:image" content="$og.image$">$endif$
+    $if(og.site_name)$
+    <meta property="og:site_name" content="$og.site_name$">$endif$
+    $if(og.locale)$
+    <meta property="og:locale" content="$og.locale$">$endif$
+    $endif$
+
+    <!-- Twitter -->
+    $if(twitter)$
+    $if(twitter.card)$
+    <meta name="twitter:card" content="$twitter.card$">$endif$
+    $if(twitter.url)$
+    <meta name="twitter:url" content="$twitter.url$">$endif$
+    $if(twitter.title)$
+    <meta name="twitter:title" content="$twitter.title$">$endif$
+    $if(twitter.description)$
+    <meta name="twitter:description" content="$twitter.description$">$endif$
+    $if(twitter.image)$
+    <meta name="twitter:image" content="$twitter.image$">$endif$
+    $if(twitter.site)$
+    <meta name="twitter:site" content="$twitter.site$">$endif$
+    $endif$
+
+    <!-- Additional Meta Tags -->
+    $if(author)$
+    <meta name="author" content="$author$">$endif$
+    $if(date)$
+    <meta name="article:published_time" content="$date$">$endif$
+    $if(lang)$
+    <meta name="language" content="$lang$">$endif$
+
+    <!-- Analytics -->
+    $if(analytics)$
+    $if(analytics.s_channel)$
+    <meta name="omni_page" data-s-channel="$analytics.s_channel$" $if(analytics.s_bucket_0)$
+      data-s-bucket-0="$analytics.s_bucket_0$" $endif$$if(analytics.s_bucket_1)$
+      data-s-bucket-1="$analytics.s_bucket_1$" $endif$$if(analytics.s_bucket_2)$
+      data-s-bucket-2="$analytics.s_bucket_2$" $endif$$if(analytics.track)$ data-s-omni-lid="$analytics.track$" $endif$>
+    $endif$
+    $endif$
+
+    <!-- Stylesheets -->
+    $if(stylesheets)$
+    $for(stylesheets)$
+    <link rel="stylesheet" href="$stylesheets$">
+    $endfor$
+    $endif$
+
+    <!-- Head Scripts -->
+    $if(scripts)$
+    $for(scripts)$
+    <script src="$scripts$"></script>
+    $endfor$
+    $endif$
+
+    $for(header-includes)$
+    $header-includes$
+    $endfor$
+  </head>
+
+  <body$if(body_classes)$ class="$for(body_classes)$$body_classes$$sep$ $endfor$" $else$ class="page-article"
+    $endif$$if(body_data_attributes)$
+    $for(body_data_attributes)$data-$body_data_attributes.name$="$body_data_attributes.value$" $sep$ $endfor$$else$
+    data-anim-scroll-group="body" $endif$>
+
+    <!-- Global Header Include -->
+    $if(includes.header_global)$
+    <div id="globalheader">
+      <!-- Global Header Component will be inserted here -->
+    </div>
+    $else$
+    <div id="globalheader"></div>
+    $endif$
+
+    <!-- Global Message Include -->
+    $if(components.globalmessage)$
+    $if(components.globalmessage.enabled)$
+    <div id="globalmessage" lang="$if(components.globalmessage.lang)$$components.globalmessage.lang$$else$en-US$endif$"
+      dir="$if(components.globalmessage.dir)$$components.globalmessage.dir$$else$ltr$endif$"></div>
+    $endif$
+    $endif$
+
+    <!-- Global Navigation Include -->
+    $if(components.globalnav)$
+    $if(components.globalnav.enabled)$
+    <nav id="globalnav" lang="$if(lang)$$lang$$else$en-US$endif$"
+      dir="$if(html_config.dir)$$html_config.dir$$else$ltr$endif$"
+      data-analytics-activitymap-region-id="$if(components.globalnav.analytics_region)$$components.globalnav.analytics_region$$else$global nav$endif$"
+      data-store-api="$if(components.globalnav.store_api)$$components.globalnav.store_api$$else$/[storefront]/shop/bag/status$endif$">
+    </nav>
+    $endif$
+    $endif$
+
+    <!-- Local Navigation Include -->
+    $if(includes.local_nav)$
+    <nav class="localnav" id="localnav" lang="$if(lang)$$lang$$else$pt-BR$endif$"
+      dir="$if(html_config.dir)$$html_config.dir$$else$ltr$endif$" data-analytics-activitymap-region-id="local nav">
+      <!-- Local Navigation Component will be inserted here -->
+    </nav>
+    $endif$
+
+    <!-- Main Content Area -->
+    <main id="main" class="main" role="main"
+      data-anim-scroll-group="$if(main_anim_group)$$main_anim_group$$else$bubble-gum-group$endif$">
+      <section>
+        <article class="article" $if(article_data_attributes)$
+          $for(article_data_attributes)$data-$article_data_attributes.name$="$article_data_attributes.value$" $sep$
+          $endfor$$endif$>
+
+          <!-- Article Header -->
+          <div class="article-header">
+
+            <!-- Category Component -->
+            <div class="category component">
+              <div class="component-content">
+                <div class="category-eyebrow">
+                  <span
+                    class="category-eyebrow__category $if(category_class)$$category_class$$else$category_release$endif$">$if(category)$$category$$else$COMUNICADO
+                    DE IMPRENSA$endif$</span>
+                  <span class="category-eyebrow__date">$if(date)$$date$$else$January 1, 2025$endif$</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Page Title Component -->
+            <div class="pagetitle component">
+              <div class="component-content">
+                <h1 class="hero-headline">
+                  $if(title)$$title$$else$Título do Artigo$endif$
+                </h1>
+              </div>
+            </div>
+
+            <!-- Article Subhead Component -->
+            $if(description)$
+            <div class="article-subhead component">
+              <div class="component-content">
+                $description$
+              </div>
+            </div>
+            $endif$
+
+            <!-- Share Sheet Component -->
+            <div class="sharesheet component" data-component-list="ShareSheet" data-clipboard-text="Copied to clipboard"
+              data-analytics-activitymap-region-id="sharesheet-footer">
+              <div class="component-content">
+                <div class="sharesheet-content tooltip-wrapper">
+                  <div class="sharesheet-options-open">
+                    <button type="button" class="icon-share icon" aria-label="Open share options"></button>
+                  </div>
+                  <ul class="sharesheet-options" data-analytics-content="$if(title)$$title$$endif$">
+                    <li class="social-option">
+                      <button class="icon icon-facebook social-icon" data-href="$if(canonical)$$canonical$$endif$"
+                        data-analytics-title="Share via Facebook"
+                        aria-label="Share this article via Facebook (opens in new window)"></button>
+                    </li>
+                    <li class="social-option">
+                      <button class="icon icon-x social-icon" data-href="$if(canonical)$$canonical$$endif$"
+                        data-analytics-title="Share via X" data-description="$if(description)$$description$$endif$"
+                        aria-label="Share this article via X (opens a new window)"></button>
+                    </li>
+                    <li class="social-option">
+                      <button class="icon icon-mail social-icon"
+                        data-href="mailto:?url=$if(canonical)$$canonical$$endif$&amp;subject=$if(title)$$title$$endif$&amp;body=%0D%0A%0D%0A$if(canonical)$$canonical$$endif$"
+                        data-analytics-title="Share via mail"
+                        aria-label="Share this article via Mail (opens in new window)"></button>
+                    </li>
+                    <li class="social-option">
+                      <button class="icon icon-link social-icon" data-href="$if(canonical)$$canonical$$endif$"
+                        data-analytics-title="Share via link" aria-label="Share via link"></button>
+                    </li>
+                  </ul>
+                  <div class="sharesheet-options-close">
+                    <button class="icon icon-close" title="close sharesheet" aria-label="close share"></button>
+                  </div>
+                  <div class="sharesheet-link-container" aria-hidden="true">
+                    <div class="sharesheet-link-content">
+                      <input class="link-text" value="$if(canonical)$$canonical$$endif$" tabindex="-1" readonly=""
+                        aria-hidden="true" disabled="disabled" />
+                      <button class="icon icon-close sharesheet-link-close" title="close" aria-label="close link"
+                        tabindex="-1" aria-hidden="true" role="button"></button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Article Header Include -->
+          $if(includes.article_header)$
+          <div class="article-header-extended">
+            <!-- Article Header Component will be inserted here -->
+          </div>
+          $endif$
+
+          <!-- Featured Image (if specified) -->
+          $if(featured_image)$
+          <figure
+            class="image component image-big $if(featured_image.fullbleed)$image-fullbleed$endif$ body-copy-wide nr-scroll-animation"
+            aria-label="Media, $if(featured_image.alt)$$featured_image.alt$$endif$"
+            style="--nr-animation-transform-y: 20%">
+            <div class="component-content">
+              <div class="image-sharesheet"
+                data-analytics-activitymap-region-id="$if(featured_image.analytics_id)$$featured_image.analytics_id$$endif$">
+                <div class="image-artigo image-asset">
+                  <picture class="picture">
+                    $if(featured_image.srcset_small)$
+                    <source media="(max-width: 734px)" srcset="$featured_image.srcset_small$" />
+                    $endif$
+                    $if(featured_image.srcset_medium)$
+                    <source media="(max-width: 1068px)" srcset="$featured_image.srcset_medium$" />
+                    $endif$
+                    <img class="picture-image" src="$featured_image.src$"
+                      $if(featured_image.srcset)$srcset="$featured_image.srcset$" $endif$
+                      alt="$if(featured_image.alt)$$featured_image.alt$$endif$" />
+                  </picture>
+                </div>
+              </div>
+              $if(featured_image.caption)$
+              <div class="image-description">
+                <div class="image-caption">
+                  $featured_image.caption$
+                </div>
+                $if(featured_image.download_url)$
+                <a href="$featured_image.download_url$" class="icon-arrowdown icon nr-cta-download" download=""
+                  data-analytics-title="download image - $if(featured_image.download_title)$$featured_image.download_title$$endif$"
+                  aria-label="Download media, $if(featured_image.alt)$$featured_image.alt$$endif$"></a>
+                $endif$
+              </div>
+              $endif$
+            </div>
+          </figure>
+          $endif$
+
+          <!-- Article Content -->
+          <div class="pagebody text component">
+            <div class="component-content">
+              <div class="pagebody-copy">
+                $if(location)$<strong><span class="pagebody-location">$location$</span> </strong>$endif$
+                $body$
+              </div>
+            </div>
+          </div>
+
+          <!-- Additional Components (Gallery, etc.) can be added here -->
+          $if(gallery)$
+          <div class="gallery component gallery-hero body-copy-wide nr-scroll-animation nr-scroll-animation--off"
+            role="group" aria-label="gallery" data-component-list="MixinGallery"
+            id="$if(gallery.id)$$gallery.id$$else$gallery-section$endif$" style="--nr-animation-transform-y: 20%">
+            <div class="component-content">
+              <!-- Gallery content would be processed here -->
+            </div>
+          </div>
+          $endif$
+
+        </article>
+      </section>
+    </main>
+
+    <!-- Global Footer Include -->
+    $if(includes.footer_global)$
+    <footer id="globalfooter" lang="$if(lang)$$lang$$else$pt-BR$endif$"
+      dir="$if(html_config.dir)$$html_config.dir$$else$ltr$endif$">
+      <!-- Global Footer Component will be inserted here -->
+    </footer>
+    $else$
+    <footer id="globalfooter" lang="$if(lang)$$lang$$else$pt-BR$endif$"
+      dir="$if(html_config.dir)$$html_config.dir$$else$ltr$endif$"></footer>
+    $endif$
+
+    $for(include-after)$
+    $include-after$
+    $endfor$
+
+    <!-- Body Scripts -->
+    $if(body_scripts)$
+    $for(body_scripts)$
+    <script src="$body_scripts$"></script>
+    $endfor$
+    $endif$
+
+    </body>
+
+    </html>
