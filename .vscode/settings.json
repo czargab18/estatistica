@@ -3,6 +3,28 @@
     // OCULTAR ARQUIVOS GIT
     "**/.git": true,
     "**/*/.gitignore/": true,
+    // OCULTAR SUBMODULOS GIT
+    // submodulo API
+    "api/.git": true,
+    "api/.github": true,
+    "api/.vscode": true,
+    "api/.devcontainer": true,
+    // submodulo API
+    "books/.git": true,
+    "books/.github": true,
+    "books/.vscode": true,
+    "books/.devcontainer": true,
+    // submodulo API
+    "backend/.git": true,
+    "backend/.github": true,
+    "backend/.vscode": true,
+    "backend/.devcontainer": true,
+    // ocultar arquivos backend
+    "backend/**/.venv": false,
+    "backend/**/pyproject.toml": false,
+    "backend/**/.python-version": true,
+    "backend/**/MANIFEST.in": true,
+
     // OCULTAR OUTROS ARQUIVOS
     "**/.svn": true,
     "**/.hg": true,
@@ -10,12 +32,7 @@
     "**/Thumbs.db": true,
     "**/node_modules": true,
     // OCULTAR ARQUIVOS PYTHON
-    "**/*.egg-info": true,
-    // OCULTAR ARQUIVOS de UV PACKAGE MANAGER
-    "**/backend/**/.venv": false,
-    "**/backend/**/pyproject.toml": false,
-    "**/backend/**/.python-version": true,
-    "**/backend/**/MANIFEST.in": true
+    "**/*.egg-info": true
   },
 
   // Configurações: Editor
