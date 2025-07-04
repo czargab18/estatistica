@@ -29,11 +29,13 @@ estatistica/
 │   ├── CIC0007/     # Fundamentos de Programação
 │   ├── MAT0075/     # Matemática para Estatística
 │   └── TAS0000/     # Tópicos Avançados
+├── newshub/         # 📰 Sistema de renderização Apple Newsroom (submódulo)
+│   └── build/       # Scripts de renderização e templates
 ├── pages/           # Páginas do site
 │   ├── docente/     # Páginas docentes
 │   ├── newsroom/    # Sistema de artigos
 │   └── boasvindas/  # Página de boas-vindas
-├── apps/        # Aplicações (IRA, etc)
+├── apps/            # Aplicações (IRA, etc)
 ├── ac/              # Componentes globais (navbar, footer, etc)
 └── sd/              # Assets e recursos (imagens, ícones, etc)
 ```
@@ -74,6 +76,25 @@ Aplicações interativas desenvolvidas em R Shiny para:
 - Dashboards educacionais
 - Ferramentas de demonstração para aulas
 
+### 📰 **newshub** (Submódulo)
+Sistema avançado de renderização de Markdown para HTML no estilo Apple Newsroom. Desenvolvido como submódulo independente para reutilização em outros projetos.
+
+**Características principais:**
+- 🎨 Templates Apple Newsroom autênticos
+- 🧩 Sistema de componentes dinâmicos  
+- 🖼️ Processamento automático de imagens
+- 📊 Suporte completo a frontmatter YAML
+- ⚡ Scripts Python, PowerShell e Batch
+- 🔄 Conversão inteligente: `artigo.md` → `index.html`
+
+**Como usar:**
+```bash
+# Renderizar um artigo
+python newshub/build/run/render.py newshub/build/article/artigo.md
+
+# Com opções avançadas
+python newshub/build/run/render.py artigo.md --verbose --open
+```
 
 ### Renderizar Livros
 ```bash
