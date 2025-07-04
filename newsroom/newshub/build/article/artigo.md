@@ -129,3 +129,11 @@ Projetado com artistas em mente, o novo espaço de estúdio da Apple Music em Lo
 - O **Corredor A-List** e **Corredor Archive**, exibindo imagens e obras de arte de momentos inesquecíveis do passado e presente da Apple Music.
 
 A instalação também apresenta tecnologia de ponta e design acústico personalizado para garantir que cada gravação, transmissão ou sessão criativa seja capturada com a mais alta fidelidade possível.
+
+## **Tecnologia de Ponta para Criação Musical**
+
+![Estúdio de Gravação Apple Music](img1.png "Estúdio de gravação com equipamento Spatial Audio"){#studio-recording .image-fullwidth .component-image data-analytics="studio-tech-image"}
+
+O coração do novo estúdio é sua capacidade de **Spatial Audio**, permitindo que os artistas explorem novas dimensões sonoras. O espaço está equipado com a mais recente tecnologia de gravação da Apple, incluindo interfaces de áudio personalizadas e monitores de referência que permitem aos artistas experimentar com som tridimensional.
+
+"Este estúdio representa o futuro da criação musical", disse Jimmy Iovine, mentor de longa data da Apple. "É um lugar onde a tecnologia encontra a criatividade, e onde os artistas podem empurrar os limites do que é possível no áudio."
