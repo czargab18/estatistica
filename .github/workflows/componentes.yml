@@ -1,0 +1,32 @@
+name: Atualizar Componentes nos Submodulos
+
+on:
+  push:
+    branches: [main]
+    paths: [
+      "/ac/components/**/*.html",
+    ]
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+concurrency:
+  group: "pages"
+  cancel-in-progress: false
+
+environment:
+  name: ENVIRONMENT
+env:
+  TOKEN_REPO_SYNC: ${{ secrets.TOKEN_REPO_SYNC }}
+  USEREMAIL: ${{ secrets.USEREMAIL }}
+  USERNAME: ${{ github.repository_owner }}
+
+jobs:
+  alguma-coisa-em-desenvolvimento:
+    runs-on: ubuntu-latest
+    steps:
+      - name: checar o repositório
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
