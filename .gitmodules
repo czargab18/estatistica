@@ -17,3 +17,6 @@
 	path = books
 	url = https://github.com/czargab18/books.git
 	branch = main
+[submodule "newshub"]
+	path = newshub
+	url = ./newshub
