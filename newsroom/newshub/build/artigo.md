@@ -8,6 +8,59 @@ author: ""
 site_name: "nome do site"
 type: "article"
 date: "2025-07-04"
+html_config:
+  xmlns: "http://www.w3.org/1999/xhtml"
+  xml_lang: "pt-BR"
+  lang: "pt-BR"
+  dir: "ltr"
+  prefix: "og: http://ogp.me/ns#"
+  classes: 
+    - "globalheader-dark"
+    - "js"
+    - "no-touch" 
+    - "svg"
+    - "no-ie8"
+    - "progressive-image"
+    - "windows"
+    - "no-edge"
+    - "no-safari"
+    - "no-mobile-os"
+    - "no-kakaotalk-app"
+    - "no-reduced-motion"
+    - "no-ar"
+    - "no-vision"
+    - "progressive"
+    - "no-in-wechat"
+includes:
+  header_global: 
+    file: "components/globalheader.html"
+    position: "after_body_open"
+    priority: 1
+  footer_global: 
+    file: "components/globalfooter.html"
+    position: "before_body_close"
+    priority: 1
+  local_nav:
+    file: "components/localnav.html" 
+    position: "after_globalheader"
+    priority: 2
+  article_header:
+    file: "components/article-header.html"
+    position: "before_content"
+    priority: 3
+components:
+  globalheader:
+    enabled: true
+    file: "components/globalheader.html"
+    position: "after_body_open"
+  globalmessage:
+    enabled: true
+    lang: "pt-BR"
+    dir: "ltr"
+  globalnav:
+    enabled: true
+    analytics_region: "global nav"
+    store_api: "/[storefront]/shop/bag/status"
 meta:
   viewport: "width=device-width, initial-scale=1, viewport-fit=cover"
   charset: "utf-8"
