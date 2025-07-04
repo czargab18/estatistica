@@ -23,36 +23,36 @@ html_config:
     - "progressive-image"
     - "windows"
     - "no-edge"
-includes:
-  header_global: 
-    file: "components/globalheader.html"
-    position: "after_body_open"
-    priority: 1
-  footer_global: 
-    file: "components/globalfooter.html"
-    position: "before_body_close"
-    priority: 1
-  local_nav:
-    file: "components/localnav.html" 
-    position: "after_globalheader"
-    priority: 2
-  article_header:
-    file: "components/article-header.html"
-    position: "before_content"
-    priority: 3
-components:
-  globalheader:
-    enabled: true
-    file: "components/globalheader.html"
-    position: "after_body_open"
-  globalmessage:
-    enabled: true
-    lang: "pt-BR"
-    dir: "ltr"
-  globalnav:
-    enabled: true
-    analytics_region: "global nav"
-    store_api: "/[storefront]/shop/bag/status"
+# includes:
+#   header_global: 
+#     file: "components/globalheader.html"
+#     position: "after_body_open"
+#     priority: 1
+#   footer_global: 
+#     file: "components/globalfooter.html"
+#     position: "before_body_close"
+#     priority: 1
+#   local_nav:
+#     file: "components/localnav.html" 
+#     position: "after_globalheader"
+#     priority: 2
+#   article_header:
+#     file: "components/article-header.html"
+#     position: "before_content"
+#     priority: 3
+# components:
+#   globalheader:
+#     enabled: true
+#     file: "components/globalheader.html"
+#     position: "after_body_open"
+#   globalmessage:
+#     enabled: true
+#     lang: "pt-BR"
+#     dir: "ltr"
+#   globalnav:
+#     enabled: true
+#     analytics_region: "global nav"
+#     store_api: "/[storefront]/shop/bag/status"
 meta:
   viewport: "width=device-width, initial-scale=1, viewport-fit=cover"
   charset: "utf-8"
