@@ -31,26 +31,26 @@ Este projeto implementa um sistema de produção e publicação de artigos usand
 
 ## Estrutura do Diretório `/newsroom/`
 
-```bash
+```
 newsroom/
 ├── archive/
 │   └── pt_BR/
 │   │   └── 2025/
 │   │   │   └── 03/
-│   │   │   │   ├── xxxxxxxx/     # (código) Diretório do artigo
+│   │   │   │   ├── xxxxxxxx/      # (código) Diretório do artigo
 │   │   │   │   │   ├── index.html
 │   │   │   │   │   └── src/
 │   │   │   │   │   │   ├── img.png
-├── assets/
+├── assets/                       # Recursos estáticos (CSS, JS)
 │   └── pt_BR/
 │   │   └── 1/
 │   │   │   ├── archive/
-│   │   │   └── newsroom/    # articles ( /newsroom/index.html )
-│   │   │   └── imagens/     # Imagens gerais: logos, marcas, backgrounds etc.
+│   │   │   └── newsroom/         # articles ( /newsroom/index.html )
+│   │   │   └── imagens/          # Imagens gerais: logos, marcas, backgrounds etc.
 ├── newshub/
-│   └── build/
-│       ├── conteudo/             # Conteúdo dos artigos
-│       └── modelo.html/          # Modelo-base dos artigos
+│   └── build/                    # Construir artigos
+│   │   ├── articles/             # Conteúdo dos artigos
+│   │   └── modelo.html/          # Modelo-base dos artigos
 ├── index.html                    # Página principal da newsroom
 └── README.md                     # Documentação
 ```
@@ -62,4 +62,3 @@ newsroom/
 - O diretório `/newsroom/` é **exclusivo para arquivos de artigos em HTML**.
 - Para mais informações e discussões, consulte a [Discussão #43](https://github.com/cesargabrielphd/estatistica/discussions/43) do repositório **estatistica**.
 
----
