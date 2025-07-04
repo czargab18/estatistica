@@ -33,28 +33,26 @@ Este projeto implementa um sistema de produção e publicação de artigos usand
 
 ```bash
 newsroom/
-├── articles/
-│   ├── index.html                # Página inicial dos artigos
+├── archive/
 │   └── pt_BR/
-│       └── 2025/
-│           └── 03/
-│               └── xxxxxxxx/     # Diretório do artigo
-│                   ├── index.html
-│                   └── src/
-│                       ├── img.png
-│                       └── formulas.tex
+│   │   └── 2025/
+│   │   │   └── 03/
+│   │   │   │   ├── xxxxxxxx/     # (código) Diretório do artigo
+│   │   │   │   │   ├── index.html
+│   │   │   │   │   └── src/
+│   │   │   │   │   │   ├── img.png
 ├── assets/
 │   └── pt_BR/
-│       ├── archive/
-│       ├── articles/
-│       └── newsroom/
-├── imagens/                      # Imagens gerais: logos, marcas, backgrounds etc.
+│   │   └── 1/
+│   │   │   ├── archive/
+│   │   │   └── newsroom/    # articles ( /newsroom/index.html )
+│   │   │   └── imagens/     # Imagens gerais: logos, marcas, backgrounds etc.
 ├── newshub/
 │   └── build/
 │       ├── conteudo/             # Conteúdo dos artigos
 │       └── modelo.html/          # Modelo-base dos artigos
 ├── index.html                    # Página principal da newsroom
-└── NEWSROOM.md                   # Documentação
+└── README.md                     # Documentação
 ```
 
 - **Observação:** O caminho `pt_BR/2025/03/*` indica a língua, ano e mês, respectivamente.
