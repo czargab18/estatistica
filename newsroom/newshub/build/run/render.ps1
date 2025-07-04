@@ -178,12 +178,19 @@ if ($OutputFile -eq "") {
     $inputDir = Split-Path $InputFile -Parent
     $localOutputDir = Join-Path $inputDir "output"
     
+    # Verificar se o arquivo de entrada é artigo.md e definir como index.html
+    if ($baseName -eq "artigo") {
+        $fileName = "index"
+    } else {
+        $fileName = $baseName
+    }
+    
     # Verificar se existe pasta output local junto com o arquivo de entrada
     if (Test-Path $localOutputDir) {
-        $OutputFile = Join-Path $localOutputDir "$baseName.html"
+        $OutputFile = Join-Path $localOutputDir "$fileName.html"
         Write-Log "Usando diretório de output local: $localOutputDir" "INFO"
     } else {
-        $OutputFile = Join-Path $OutputDir "$baseName.html"
+        $OutputFile = Join-Path $OutputDir "$fileName.html"
     }
 }
 

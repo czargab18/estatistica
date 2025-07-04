@@ -48,7 +48,12 @@ if not exist "%INPUT_FILE%" (
 :: Determinar arquivo de saída
 if "%OUTPUT_FILE%"=="" (
     for %%F in ("%INPUT_FILE%") do (
-        set OUTPUT_FILE=%OUTPUT_DIR%\%%~nF.html
+        :: Verificar se o arquivo de entrada é artigo.md e definir como index.html
+        if /i "%%~nF"=="artigo" (
+            set OUTPUT_FILE=%OUTPUT_DIR%\index.html
+        ) else (
+            set OUTPUT_FILE=%OUTPUT_DIR%\%%~nF.html
+        )
     )
 )
 

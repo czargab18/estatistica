@@ -1,5 +1,9 @@
 # 📁 ESTRUTURA FINAL DO PROJETO - newshub/build
 
+> rodar do diretório base
+> ` PS C:\Users\cesar.oliveira\github\estatistica> python newsroom\newshub\build\run\render.py newsroom\newshub\build\article\artigo.md
+> `
+
 ## 🗂️ Estrutura Atual
 ```
 newshub/build/
@@ -7,7 +11,7 @@ newshub/build/
 │   ├── artigo.md (com imagem incorporada)
 │   ├── img1.png 
 │   └── output/
-│       └── artigo.html ✅ (HTML gerado)
+│       └── index.html ✅ (HTML gerado de artigo.md)
 ├── components/
 │   ├── article-header.html
 │   ├── globalfooter.html

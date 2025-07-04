@@ -229,15 +229,20 @@ class NewsroomRenderer:
             
             # Determinar arquivo de saída
             if output_file is None:
+                # Verificar se o arquivo de entrada é artigo.md e definir como index.html
+                if input_path.stem == "artigo":
+                    filename = "index"
+                else:
+                    filename = input_path.stem
+
                 # Verificar se existe pasta output local junto com o arquivo de entrada
                 local_output_dir = input_path.parent / "output"
                 if local_output_dir.exists():
-                    output_file = local_output_dir / \
-                        (input_path.stem + ".html")
+                    output_file = local_output_dir / (filename + ".html")
                     self.log(
                         f"Usando diretório de output local: {local_output_dir}")
                 else:
-                    output_file = self.output_dir / (input_path.stem + ".html")
+                    output_file = self.output_dir / (filename + ".html")
             else:
                 output_file = Path(output_file)
             
