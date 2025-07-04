@@ -19,6 +19,7 @@ RewriteRule ^/stage/ https://www.estatistica.pro/errors/404/index.html [L,R=301]
 RewriteRule ^/newsroom/posts/ https://www.estatistica.pro/errors/404/index.html [L,R=301]
 RewriteRule ^/books/ https://www.estatistica.pro/errors/404/index.html [L,R=301]
 RewriteRule ^/backend/ https://www.estatistica.pro/errors/404/index.html [L,R=301]
+RewriteRule ^/build/ https://www.estatistica.pro/errors/404/index.html [L,R=301]
 
 # Página de ERRO STATUSCODE personalizada dominío principal
 ErrorDocument 404 /errors/404/index.html
