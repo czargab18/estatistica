@@ -175,7 +175,16 @@ if (-not (Test-Path $InputFile)) {
 # Determinar arquivo de saída
 if ($OutputFile -eq "") {
     $baseName = [System.IO.Path]::GetFileNameWithoutExtension($InputFile)
-    $OutputFile = Join-Path $OutputDir "$baseName.html"
+    $inputDir = Split-Path $InputFile -Parent
+    $localOutputDir = Join-Path $inputDir "output"
+    
+    # Verificar se existe pasta output local junto com o arquivo de entrada
+    if (Test-Path $localOutputDir) {
+        $OutputFile = Join-Path $localOutputDir "$baseName.html"
+        Write-Log "Usando diretório de output local: $localOutputDir" "INFO"
+    } else {
+        $OutputFile = Join-Path $OutputDir "$baseName.html"
+    }
 }
 
 # Verificar template
@@ -284,6 +293,6 @@ try {
     }
     
 } catch {
-    Write-Log "Erro durante conversão: $($_.Exception.Message)" "ERROR"
+    Write-Log "Erro durante conversao: $($_.Exception.Message)" "ERROR"
     exit 1
 }

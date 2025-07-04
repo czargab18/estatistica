@@ -1,5 +1,19 @@
 @echo off
-:: Script CMD para renderização de Markdown para HTML - Apple Newsroom
+:: Script CMD para ren::Determinar arquivo de saída
+if "%OUTPUT_FILE%"=="" (
+    for %%F in ("%INPUT_FILE%") do (
+        set INPUT_DIR=%%~dpF
+        set LOCAL_OUTPUT_DIR=!INPUT_DIR!output
+        
+        :: Verificar se existe pasta output local junto com o arquivo de entrada
+        if exist "!LOCAL_OUTPUT_DIR!" (
+            set OUTPUT_FILE=!LOCAL_OUTPUT_DIR!\%%~nF.html
+            echo Usando diretorio de output local: !LOCAL_OUTPUT_DIR!
+        ) else (
+            set OUTPUT_FILE=%OUTPUT_DIR%\%%~nF.html
+        )
+    )
+)ção de Markdown para HTML - Apple Newsroom
 :: Versão: 1.0
 :: Uso: render.cmd arquivo.md [arquivo_saida.html]
 
