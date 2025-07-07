@@ -1,6 +1,7 @@
 /* Reset de estilos globais */
 #globalnavbar {
-  all: initial;
+  all: unset;
+  position: sticky !important;
 }
 
 #globalnavbar ul,
@@ -86,7 +87,6 @@
   padding: 0;
 }
 
-/* Estilos de layout e estrutura */
 #globalnavbar {
   position: sticky;
   top: 0;
@@ -693,7 +693,11 @@ li.globalnavbar-item .globalnavbar-flyout-scroll-container:hover {
 }
 
 
-nav[id="globalnavbar"]  li[class*="globalnavbar-profile"],
-nav[id="globalnavbar"]  li[class*="globalnavbar-search"] {
-  display: none;
+#globalnavbar .globalnavbar-menuback {
+    display: none;
+}
+#globalnavbar .globalnavbar-menutrigger {
+    width: 48px;
+    border-bottom: none;
+    display: none;
 }
