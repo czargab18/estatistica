@@ -13,7 +13,7 @@
   <link rel="stylesheet" href="/ac/globalpattern/1/pt_BR/styles/reset.css" type="text/css" />
   <link href="/ac/globalpattern/1/pt_BR/styles/globalpattern.css" rel="stylesheet" />
   <link href="/ac/globalaside/1/pt_BR/styles/globalaside.css" rel="stylesheet" />
-  <link href="/ac/globalnavbar/1/pt_BR/styles/globalnavbar.css" rel="stylesheet" />
+  <link href="/ac/globalnavbar/1/pt_BR/styles/globalnav-unified.css" rel="stylesheet" />
   <link href="/ac/globalribbon/1/pt_BR/styles/globalribbon.css" rel="stylesheet" />
   <link href="/ac/globalpattern/1/pt_BR/styles/globaltipografia.css" rel="stylesheet" />
   <link href="/ac/globalmain/1/pt_BR/styles/globalmain.css" rel="stylesheet" />
@@ -29,7 +29,7 @@
 
 <body>
   <div id="globalheader">
-    <aside id="globalaside">
+    <aside id="globalaside" style="display: none;">
       <div class="globalaside-content">
         <div class="globalaside-list globalaside-list-unbt-gov">
           <li class="globalaside-item globalaside-item-govbr">
@@ -113,9 +113,9 @@
         </ul>
       </div>
     </aside>
-    <nav id="globalnavbar" lang="pt-BR" dir="ltr" aria-label="Navegação Global" data-analytics-element-engagement-start="globalnavbar:onFlyoutOpen" data-analytics-element-engagement-end="globalnavbar:onFlyoutClose" data-analytics-activitymap-region-id="global nav" data-analytics-region="global nav" class="globalnavbar js" style="--r-globalnavbar-text-zoom-scale: 1;">
-      <div class="globalnavbar-content" style="--r-globalnavbar-flyout-rate: 240ms;">
-        <div class="globalnavbar-item globalnavbar-menuback">
+    <nav id="globalnav" lang="pt-BR" dir="ltr" aria-label="Navegação Global" data-analytics-element-engagement-start="globalnavbar:onFlyoutOpen" data-analytics-element-engagement-end="globalnavbar:onFlyoutClose" data-analytics-activitymap-region-id="global nav" data-analytics-region="global nav" class="globalnavbar js" style="--r-globalnavbar-text-zoom-scale: 1;">
+      <div class="globalnav-content" style="--r-globalnavbar-flyout-rate: 240ms;">
+        <div class="globalnav-item globalnav-menuback">
           <button aria-label="Menu principal" class="globalnavbar-menuback-button">
             <span class="globalnavbar-chevron-icon">
               <svg height="48" viewBox="0 0 9 48" width="9" xmlns="http://www.w3.org/2000/svg">
@@ -124,8 +124,8 @@
             </span>
           </button>
         </div>
-        <ul id="globalnavbar-list" class="globalnavbar-list">
-          <li data-analytics-element-engagement="globalnavbar hover - estatistica" class="globalnavbar-item globalnavbar-item-estatistica">
+        <ul id="globalnavbar-list" class="globalnav-list">
+          <li data-analytics-element-engagement="globalnavbar hover - estatistica" class="globalnav-item globalnav-item-estatistica">
             <a href="/" data-globalnavbar-item-name="estatistica" data-analytics-title="estatística home" aria-label="Estatística" class="globalnavbar-link globalnavbar-link-estatistica">
               <span class="globalnavbar-image-regular globalnavbar-link-image">
                 <svg height="44" viewBox="0 0 15 44" width="15" xmlns="http://www.w3.org/2000/svg">
@@ -140,7 +140,7 @@
               <span class="globalnavbar-link-text">Estatística</span>
             </a>
           </li>
-          <li data-analytics-element-engagement="globalnavbar hover - bemvindos" class="globalnavbar-item globalnavbar-item-bemvindos globalnavbar-item-submenu">
+          <li data-analytics-element-engagement="globalnavbar hover - bemvindos" class="globalnav-item globalnav-item-bemvindos globalnav-item-submenu">
             <ul class="globalnavbar-submenu-trigger-group">
               <li class="globalnavbar-submenu-trigger-item">
                 <a href="/pages/boasvindas/" data-globalnavbar-item-name="bemvindos" data-topnav-flyout-trigger-compact="true" data-analytics-title="boas vindas" data-analytics-element-engagement="hover - boas vindas" aria-label="Boas Vindas" class="globalnavbar-link globalnavbar-submenu-trigger-link globalnavbar-link-bemvindos">
@@ -210,7 +210,7 @@
               </div>
             </div>
           </li>
-          <li data-analytics-element-engagement="globalnavbar hover - departamento" class="globalnavbar-item globalnavbar-item-departamento globalnavbar-item-submenu">
+          <li data-analytics-element-engagement="globalnavbar hover - departamento" class="globalnav-item globalnav-item-departamento globalnav-item-submenu">
             <ul class="globalnavbar-submenu-trigger-group">
               <li class="globalnavbar-submenu-trigger-item">
                 <a href="/pages/docente/" data-globalnavbar-item-name="departamento" data-topnav-flyout-trigger-compact="true" data-analytics-title="departamento" data-analytics-element-engagement="hover - departamento" aria-label="Departamento" class="globalnavbar-link globalnavbar-submenu-trigger-link globalnavbar-link-departamento">
@@ -273,7 +273,7 @@
               </div>
             </div>
           </li>
-          <li data-analytics-element-engagement="globalnavbar hover - graduacao" class="globalnavbar-item globalnavbar-item-graduacao globalnavbar-item-submenu">
+          <li data-analytics-element-engagement="globalnavbar hover - graduacao" class="globalnav-item globalnav-item-graduacao globalnav-item-submenu">
             <ul class="globalnavbar-submenu-trigger-group">
               <li class="globalnavbar-submenu-trigger-item">
                 <a href="/book/" data-globalnavbar-item-name="graduacao" data-topnav-flyout-trigger-compact="true" data-analytics-title="graduacao" data-analytics-element-engagement="hover - graduacao" aria-label="Graduação" class="globalnavbar-link globalnavbar-submenu-trigger-link globalnavbar-link-graduacao">
@@ -335,7 +335,7 @@
               </div>
             </div>
           </li>
-          <li data-analytics-element-engagement="globalnavbar hover - pesquisa" class="globalnavbar-item globalnavbar-item-pesquisa globalnavbar-item-submenu">
+          <li data-analytics-element-engagement="globalnavbar hover - pesquisa" class="globalnav-item globalnav-item-pesquisa globalnav-item-submenu">
             <ul class="globalnavbar-submenu-trigger-group">
               <li class="globalnavbar-submenu-trigger-item">
                 <a href="/newsroom/" data-globalnavbar-item-name="pesquisa" data-topnav-flyout-trigger-compact="true" data-analytics-title="pesquisa" data-analytics-element-engagement="hover - pesquisa" aria-label="Pesquisa" class="globalnavbar-link globalnavbar-submenu-trigger-link globalnavbar-link-pesquisa">
@@ -395,7 +395,7 @@
               </div>
             </div>
           </li>
-          <li data-analytics-element-engagement="globalnavbar hover - posgraduacao" class="globalnavbar-item globalnavbar-item-posgraduacao globalnavbar-item-submenu">
+          <li data-analytics-element-engagement="globalnavbar hover - posgraduacao" class="globalnav-item globalnav-item-posgraduacao globalnav-item-submenu">
             <ul class="globalnavbar-submenu-trigger-group">
               <li class="globalnavbar-submenu-trigger-item">
                 <a href="/book/" data-globalnavbar-item-name="posgraduacao" data-topnav-flyout-trigger-compact="true" data-analytics-title="pos graduacao" data-analytics-element-engagement="hover - pos graduacao" aria-label="Pós-graduação" class="globalnavbar-link globalnavbar-submenu-trigger-link globalnavbar-link-posgraduacao">
@@ -457,7 +457,7 @@
               </div>
             </div>
           </li>
-          <li class="globalnavbar-item globalnavbar-search">
+          <li class="globalnav-item globalnav-search">
             <a aria-label="Search estatistica.pro" class="globalnavbar-link globalnavbar-link-search" href="" role="button">
               <span class="globalnavbar-image-regular">
                 <svg height="44" viewBox="0 0 14 44" xmlns="http://www.w3.org/2000/svg" width="15">
@@ -475,7 +475,7 @@
               </span>
             </a>
           </li>
-          <li class="globalnavbar-item globalnavbar-profile">
+          <li class="globalnav-item globalnav-profile">
             <a aria-label="profile estatistica.pro" class="globalnavbar-link globalnavbar-link-profile" href="" role="button">
               <span class="globalnavbar-image-compact">
                 <svg xmlns="http://www.w3.org/2000/svg" width="15" height="44" viewBox="0 0 26 26" fill="none">
@@ -522,7 +522,7 @@
       <span style="visibility: hidden; position: absolute; top: 0px; z-index: -1;">&nbsp;</span>
     </nav>
   </div>
-  <main id="globalmain" role="main">
+  <main id="globalmain" role="main" style="display: none;">
     <section class="homepage-section collection-module" data-module-template="heroes">
       <div data-unit-id="boasvindas" id="boasvindas">
         <div class="modulo-content">
@@ -1090,7 +1090,7 @@
       </div>
     </section>
   </main>
-  <footer class="" id="globalfooter">
+  <footer class="" id="globalfooter" style="display: none;">
     <div id="globalfooter-content">
       <h2 class="globalfooter-content-label" id="globalfooter-content-label" style="display: none">
         Estatistica
