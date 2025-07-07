@@ -1,3 +1,4 @@
+@charset "UTF-8";
 /* =============================================================================
    GLOBAL NAVBAR MASTER STYLES
    Arquivo ÚNICO combinando build.globalnavbar.css + globalheader.css + globalnavbar-unified.css
@@ -6,12 +7,11 @@
 
 /* oultos */
 #globalnavbar li[class="globalnavbar-item globalnavbar-item-estatistica"] span[class="globalnavbar-link-text"],
+#globalnavbar li[class="globalnavbar-item globalnavbar-item-apple"] span[class="globalnavbar-link-text"]
 #globalnavbar button[class="globalnavbar-submenu-trigger-button"],
 #globalnavbar span[class="globalnavbar-link-chevron"]  {
   display: none
 }
-
-@charset "UTF-8";
 
 /* =============================================================================
    CSS CUSTOM PROPERTIES (VARIÁVEIS GLOBAIS)
