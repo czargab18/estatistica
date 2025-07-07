@@ -4,6 +4,9 @@
    Compatível com nomenclaturas: #globalnavbar e #globalnav
    ============================================================================= */
 
+/* oultos */
+
+
 @charset "UTF-8";
 
 /* =============================================================================
@@ -348,7 +351,7 @@ html, body {
   align-items: center;
   justify-content: center;
   position: relative;
-  z-index: 1;
+  z-index: 3;
   padding: 0 calc(9px / var(--r-globalnavbar-text-zoom-scale, 1));
   height: 44px;
   text-decoration: none;
@@ -822,6 +825,62 @@ li.globalnavbar-item .globalnavbar-flyout-scroll-container:hover {
     display: flex;
     align-items: center;
   }
+}
+
+/* =============================================================================
+   SUBMENU TRIGGER BUTTON POSITIONING (DUAL COMPATIBILITY)
+   ============================================================================= */
+#globalnav .globalnavbar-submenu-trigger-button,
+#globalnavbar .globalnavbar-submenu-trigger-button {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 44px;
+  padding: 0 calc(9px / var(--r-globalnavbar-text-zoom-scale, 1));
+  background: none;
+  border: 0;
+  color: inherit;
+  cursor: pointer;
+  font: inherit;
+  line-height: inherit;
+  overflow: visible;
+  vertical-align: inherit;
+  transition: color 0.32s cubic-bezier(0.4, 0, 0.6, 1);
+}
+
+#globalnav .globalnavbar-submenu-trigger-item,
+#globalnavbar .globalnavbar-submenu-trigger-item {
+  position: relative;
+}
+
+/* Garantir que o link sempre fique na frente do botão */
+#globalnav .globalnavbar-submenu-trigger-link,
+#globalnavbar .globalnavbar-submenu-trigger-link {
+  z-index: 3 !important;
+}
+
+/* Estados de hover e focus para o botão */
+#globalnav .globalnavbar-submenu-trigger-button:hover,
+#globalnav .globalnavbar-submenu-trigger-button:focus[data-focus-method="key"],
+#globalnav .globalnavbar-submenu-trigger-button:focus-visible,
+#globalnavbar .globalnavbar-submenu-trigger-button:hover,
+#globalnavbar .globalnavbar-submenu-trigger-button:focus[data-focus-method="key"],
+#globalnavbar .globalnavbar-submenu-trigger-button:focus-visible {
+  color: var(--r-globalnavbar-color-hover);
+}
+
+#globalnav .globalnavbar-submenu-trigger-button:focus,
+#globalnavbar .globalnavbar-submenu-trigger-button:focus {
+  outline: none;
+}
+
+#globalnav .globalnavbar-submenu-trigger-button[data-focus-method=touch],
+#globalnav .globalnavbar-submenu-trigger-button[data-focus-method=mouse],
+#globalnavbar .globalnavbar-submenu-trigger-button[data-focus-method=touch],
+#globalnavbar .globalnavbar-submenu-trigger-button[data-focus-method=mouse] {
+  outline: none;
 }
 
 /* =============================================================================
