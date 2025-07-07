@@ -6,10 +6,11 @@
    ============================================================================= */
 
 /* oultos */
-#globalnavbar li[class="globalnavbar-item globalnavbar-item-estatistica"] span[class="globalnavbar-link-text"],
-#globalnavbar li[class="globalnavbar-item globalnavbar-item-apple"] span[class="globalnavbar-link-text"]
-#globalnavbar button[class="globalnavbar-submenu-trigger-button"],
-#globalnavbar span[class="globalnavbar-link-chevron"]  {
+#globalnavbar ul li[class="globalnavbar-item globalnavbar-item-estatistica"] span[class="globalnavbar-link-text"],
+#globalnavbar ul li[class="globalnavbar-item globalnavbar-item-estatistica"] span[class="globalnavbar-link-text"]
+#globalnavbar ul button[class="globalnavbar-submenu-trigger-button"],
+#globalnavbar ul div[id="globalnavbar-submenu-search"],
+#globalnavbar ul span[class="globalnavbar-link-chevron"]  {
   display: none
 }
 
