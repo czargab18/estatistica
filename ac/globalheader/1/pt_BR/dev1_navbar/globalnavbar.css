@@ -1,0 +1,1023 @@
+@charset "UTF-8";
+/* =============================================================================
+   GLOBAL NAVBAR MASTER STYLES
+   Arquivo ÚNICO combinando build.globalnavbar.css + globalheader.css + globalnavbar-unified.css
+   Compatível com nomenclaturas: #globalnavbar e #globalnav
+   ============================================================================= */
+
+/* OCULTAÇÃO ESPECÍFICA DE ELEMENTOS NÃO UTILIZADOS */
+#globalnavbar button.globalnavbar-submenu-trigger-button[style*="display: none"],
+#globalnavbar div#globalnavbar-submenu-search,
+#globalnavbar span.globalnavbar-link-chevron[style*="display: none"] {
+  display: none !important;
+}
+
+/* Ocultação geral de elementos específicos mencionados no comentário original */
+#globalnavbar .globalnavbar-item-estatistica .globalnavbar-link-text,
+#globalnavbar button.globalnavbar-submenu-trigger-button,
+#globalnavbar div#globalnavbar-submenu-search,
+#globalnavbar span.globalnavbar-link-chevron {
+  display: none !important;
+}
+
+/* Garantir que elementos necessários ainda sejam visíveis */
+#globalnavbar .globalnavbar-submenu-trigger-link .globalnavbar-link-text,
+#globalnavbar .globalnavbar-link:not(.globalnavbar-submenu-trigger-button) .globalnavbar-link-text {
+  display: block !important;
+}
+
+/* =============================================================================
+   CSS CUSTOM PROPERTIES (VARIÁVEIS GLOBAIS)
+   ============================================================================= */
+:root {
+  /* Cores principais */
+  --globalnavbar-background: rgba(255, 255, 255, 0.8);
+  --r-globalnavbar-background-opened: #fafafc;
+  --r-globalnavbar-background-opened-dark: #161617;
+  
+  /* Cores de texto */
+  --r-globalnavbar-color: rgba(0, 0, 0, 0.8);
+  --r-globalnavbar-color-secondary: #333336;
+  --r-globalnavbar-color-secondary-black: rgba(0, 0, 0, 0.8);
+  --r-globalnavbar-color-hover: #000000;
+  --r-globalnavbar-submenu-header-color: rgb(110, 110, 115);
+  
+  /* Layout e dimensões */
+  --r-globalnavbar-height: 44px;
+  --r-globalnavbar-font-size: 17px;
+  --globalnavbar-backdrop-filter: saturate(180%) blur(20px);
+  
+  /* Transições e animações */
+  --globalnavbar-transition-rate: 0.3s;
+  --globalnavbar-transition-rate: 0.3s;
+  --easing-curve: cubic-bezier(0.4, 0, 0.6, 1);
+  --r-globalnavbar-flyout-rate: 240ms;
+  --r-globalnavbar-flyout-close-delay: 0.12s;
+  --r-globalnavbar-flyout-link-opacity-duration: 0.5s;
+  --r-globalnavbar-flyout-spacing: 88px;
+  --r-globalnavbar-next-flyout-height: 0px;
+  --r-globalnavbar-previous-flyout-height: 0px;
+  
+  /* Flyout específico */
+  --r-globalnavbar-flyout-elevated-group-count: 1;
+  --r-globalnavbar-flyout-group-number: 0;
+  --r-globalnavbar-flyout-group-total: 2;
+  --r-globalnavbar-flyout-height: 452px;
+  --r-globalnavbar-flyout-item-total: 0;
+  --r-globalnavbar-scrollbar-width: 15px;
+  
+  /* Fontes */
+  --r-globalfont-family: SF Pro Text, SF Pro Icons, Helvetica Neue, Helvetica, Arial, sans-serif;
+  --r-globalnavbar-text-zoom-scale: 1;
+  
+  /* Focus e acessibilidade */
+  --sk-focus-color: #0071e3;
+  --sk-focus-offset: 1px;
+}
+
+/* =============================================================================
+   RESET DE ESTILOS GLOBAIS (DUAL COMPATIBILITY)
+   ============================================================================= */
+#globalnav,
+#globalnavbar {
+  all: unset;
+  position: sticky !important;
+}
+
+#globalnavbar ul,
+#globalnavbar ol,
+#globalnavbar li,
+#globalnavbar dl,
+#globalnavbar dt,
+#globalnavbar dd,
+#globalnavbar h1,
+#globalnavbar h2,
+#globalnavbar h3,
+#globalnavbar h4,
+#globalnavbar h5,
+#globalnavbar h6,
+#globalnavbar hgroup,
+#globalnavbar p,
+#globalnavbar blockquote,
+#globalnavbar figure,
+#globalnavbar form,
+#globalnavbar fieldset,
+#globalnavbar input,
+#globalnavbar legend,
+#globalnavbar pre,
+#globalnavbar abbr,
+#globalnavbar button,
+#globalnavbar ul,
+#globalnavbar ol,
+#globalnavbar li,
+#globalnavbar dl,
+#globalnavbar dt,
+#globalnavbar dd,
+#globalnavbar h1,
+#globalnavbar h2,
+#globalnavbar h3,
+#globalnavbar h4,
+#globalnavbar h5,
+#globalnavbar h6,
+#globalnavbar hgroup,
+#globalnavbar p,
+#globalnavbar blockquote,
+#globalnavbar figure,
+#globalnavbar form,
+#globalnavbar fieldset,
+#globalnavbar input,
+#globalnavbar legend,
+#globalnavbar pre,
+#globalnavbar abbr,
+#globalnavbar button {
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+#globalnavbar pre,
+#globalnavbar code,
+#globalnavbar address,
+#globalnavbar caption,
+#globalnavbar th,
+#globalnavbar figcaption,
+#globalnavbar pre,
+#globalnavbar code,
+#globalnavbar address,
+#globalnavbar caption,
+#globalnavbar th,
+#globalnavbar figcaption {
+  font-size: 1em;
+  font-weight: 400;
+  font-style: normal;
+}
+
+#globalnavbar fieldset,
+#globalnavbar iframe,
+#globalnavbar fieldset,
+#globalnavbar iframe {
+  border: 0;
+}
+
+#globalnavbar caption,
+#globalnavbar th,
+#globalnavbar caption,
+#globalnavbar th {
+  text-align: left;
+}
+
+#globalnavbar table,
+#globalnavbar table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+#globalnavbar main,
+#globalnavbar summary,
+#globalnavbar details,
+#globalnavbar main,
+#globalnavbar summary,
+#globalnavbar details {
+  display: block;
+}
+
+#globalnavbar audio,
+#globalnavbar canvas,
+#globalnavbar video,
+#globalnavbar progress,
+#globalnavbar audio,
+#globalnavbar canvas,
+#globalnavbar video,
+#globalnavbar progress {
+  vertical-align: baseline;
+}
+
+#globalnavbar button,
+#globalnavbar button {
+  background: none;
+  border: 0;
+  box-sizing: content-box;
+  color: inherit;
+  cursor: pointer;
+  font: inherit;
+  line-height: inherit;
+  overflow: visible;
+  vertical-align: inherit;
+}
+
+#globalnavbar button:disabled,
+#globalnavbar button:disabled {
+  cursor: default;
+}
+
+#globalnavbar :focus-visible,
+#globalnavbar :focus-visible {
+  outline: 2px solid var(--sk-focus-color, #0071e3);
+  outline-offset: var(--sk-focus-offset, 1px);
+}
+
+#globalnavbar ::-moz-focus-inner,
+#globalnavbar ::-moz-focus-inner {
+  border: 0;
+  padding: 0;
+}
+
+/* Reset HTML e body global */
+html, body {
+  margin: 0;
+  padding: 0;
+}
+
+/* =============================================================================
+   LAYOUT PRINCIPAL DO NAVBAR (DUAL COMPATIBILITY)
+   ============================================================================= */
+#globalnav,
+#globalnavbar {
+  position: sticky;
+  top: 0;
+  right: 0;
+  left: 0;
+  z-index: 9999;
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  width: 100%;
+  max-width: 2560px;
+  height: var(--r-globalnavbar-height);
+  margin: 0;
+  padding: 0;
+  font-size: 17px;
+  -webkit-user-select: none;
+  user-select: none;
+  -webkit-backdrop-filter: var(--globalnavbar-backdrop-filter);
+  backdrop-filter: var(--globalnavbar-backdrop-filter);
+}
+
+/* Direções RTL/LTR */
+#globalnav:not([dir=rtl]),
+#globalnavbar:not([dir=rtl]) {
+  --r-globalnavbar-start: var(--r-sk-start, left);
+  --r-globalnavbar-end: var(--r-sk-end, right);
+  --r-globalnavbar-safe-area-inset-start: var(--sk-safe-area-inset-start, env(safe-area-inset-left));
+  --r-globalnavbar-safe-area-inset-end: var(--sk-safe-area-inset-end, env(safe-area-inset-right));
+  --r-globalnavbar-logical-factor: 1;
+}
+
+#globalnav[dir=rtl],
+#globalnavbar[dir=rtl] {
+  --r-globalnavbar-start: var(--r-sk-start, right);
+  --r-globalnavbar-end: var(--r-sk-end, left);
+  --r-globalnavbar-safe-area-inset-start: var(--sk-safe-area-inset-start, env(safe-area-inset-right));
+  --r-globalnavbar-safe-area-inset-end: var(--sk-safe-area-inset-end, env(safe-area-inset-left));
+  --r-globalnavbar-logical-factor: -1;
+}
+
+/* Temas dark/light */
+#globalnav.globalnavbar-dark,
+#globalnav.globalheader-dark,
+.globalheader-dark #globalnav,
+.theme-dark #globalnav,
+#globalnavbar.globalnavbar-dark,
+#globalnavbar.globalheader-dark,
+.globalheader-dark #globalnavbar,
+.theme-dark #globalnavbar {
+  --r-globalnavbar-color: rgba(255, 255, 255, 0.8);
+  --r-globalnavbar-color-secondary: #E8E8ED;
+  --r-globalnavbar-color-hover: #FFFFFF;
+}
+
+#globalnav.globalnavbar-light,
+#globalnav.globalheader-light,
+.globalheader-dark #globalnav.globalnavbar-light,
+.theme-dark #globalnav.globalnavbar-light,
+.globalheader-dark #globalnav.globalheader-light,
+.theme-dark #globalnav.globalheader-light,
+.globalheader-light #globalnav,
+.theme-light #globalnav,
+#globalnavbar.globalnavbar-light,
+#globalnavbar.globalheader-light,
+.globalheader-dark #globalnavbar.globalnavbar-light,
+.theme-dark #globalnavbar.globalnavbar-light,
+.globalheader-dark #globalnavbar.globalheader-light,
+.theme-dark #globalnavbar.globalheader-light,
+.globalheader-light #globalnavbar,
+.theme-light #globalnavbar {
+  --r-globalnavbar-color: rgba(0, 0, 0, 0.8);
+  --r-globalnavbar-color-secondary: #333336;
+  --r-globalnavbar-color-hover: #000000;
+}
+
+/* =============================================================================
+   CONTEÚDO E ESTRUTURA (DUAL COMPATIBILITY)
+   ============================================================================= */
+#globalnavbar .globalnavbar-content,
+#globalnav .globalnav-content {
+  margin: 0 auto;
+  box-sizing: border-box;
+  width: 100%;
+  max-width: 1024px;
+  padding: 0 22px;
+  z-index: 2;
+}
+
+#globalnavbar .globalnavbar-list,
+#globalnavbar .globalnavbar-list {
+  width: 100%;
+  height: 44px;
+  display: flex;
+  justify-content: space-between;
+  list-style: none;
+  cursor: default;
+  margin: 0 -8px;
+  -webkit-user-select: none;
+  user-select: none;
+}
+
+#globalnavbar .globalnavbar-item,
+#globalnavbar .globalnavbar-item {
+  box-sizing: border-box;
+  height: 44px;
+}
+
+#globalnavbar .globalnavbar-link,
+#globalnavbar .globalnavbar-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  z-index: 3;
+  padding: 0 calc(9px / var(--r-globalnavbar-text-zoom-scale, 1));
+  height: 44px;
+  text-decoration: none;
+  white-space: nowrap;
+  outline-offset: -7px;
+  font-size: 12px;
+  font-weight: 400;
+  letter-spacing: -0.01em;
+  font-family: var(--r-globalfont-family);
+  line-height: 1;
+  color: var(--r-globalnavbar-color-secondary-black);
+  background: no-repeat;
+  transition: color 0.32s cubic-bezier(0.4, 0, 0.6, 1);
+}
+
+/* =============================================================================
+   LOGO E MARCA ESTATÍSTICA (DUAL COMPATIBILITY)
+   ============================================================================= */
+#globalnavbar .globalnavbar-link span[class*="globalnavbar-estatistica-regular"],
+#globalnavbar .globalnavbar-link span[class*="globalnavbar-estatistica-regular"] svg,
+#globalnavbar .globalnavbar-link span[class*="globalnavbar-estatistica-regular"],
+#globalnavbar .globalnavbar-link span[class*="globalnavbar-estatistica-regular"] svg {
+  height: var(--r-globalnavbar-height);
+  width: max-content;
+}
+
+#globalnavbar .globalnavbar-link svg,
+#globalnavbar .globalnavbar-link svg {
+  fill: currentColor;
+}
+
+#globalnavbar .globalnavbar-link-estatistica,
+#globalnavbar .globalnavbar-link-estatistica {
+  font-size: 17px;
+  line-height: 1.2353641176;
+  font-weight: 600;
+  letter-spacing: -0.022em;
+  font-family: var(--r-globalfont-family);
+  display: flex;
+  align-items: center;
+  height: 100%;
+}
+
+#globalnavbar .globalnavbar-link-estatistica .globalnavbar-link-text,
+#globalnavbar .globalnavbar-link-estatistica .globalnavbar-link-text {
+  margin-inline-start: 4px;
+}
+
+#globalnavbar .globalnavbar-link-estatistica .globalnavbar-link-text-estatistica,
+#globalnavbar .globalnavbar-link-estatistica .globalnavbar-link-text-estatistica {
+  display: none;
+}
+
+#globalnavbar .globalnavbar-link-estatistica:lang(pt-br),
+#globalnavbar .globalnavbar-link-estatistica:lang(pt-br) {
+  letter-spacing: 0em;
+  font-family: var(--r-globalfont-family);
+}
+
+#globalnavbar span[class*="-regular"],
+#globalnavbar span[class*="-regular"] {
+  height: auto;
+  display: none;
+  align-items: center;
+}
+
+#globalnavbar span[class*="globalnavbar-estatistica-regular"],
+#globalnavbar span[class*="globalnavbar-estatistica-regular"] {
+  display: block;
+  height: auto;
+  align-items: center;
+}
+
+/* =============================================================================
+   ESTADOS DE INTERAÇÃO (DUAL COMPATIBILITY)
+   ============================================================================= */
+#globalnavbar .globalnavbar-link:hover,
+#globalnavbar .globalnavbar-link:focus[data-focus-method="key"],
+#globalnavbar .globalnavbar-link:focus-visible,
+#globalnavbar .globalnavbar-link:hover,
+#globalnavbar .globalnavbar-link:focus[data-focus-method="key"],
+#globalnavbar .globalnavbar-link:focus-visible {
+  color: var(--r-globalnavbar-color-hover) !important;
+  text-decoration: none;
+}
+
+#globalnavbar .globalnavbar-link:focus,
+#globalnavbar .globalnavbar-link:focus {
+  outline: none;
+}
+
+#globalnavbar .globalnavbar-link[data-focus-method=touch],
+#globalnavbar .globalnavbar-link[data-focus-method=mouse],
+#globalnavbar .globalnavbar-link[data-focus-method=touch],
+#globalnavbar .globalnavbar-link[data-focus-method=mouse] {
+  outline: none;
+}
+
+#globalnav:focus,
+#globalnavbar:focus {
+  outline: 4px solid rgba(0, 125, 250, 0.6);
+  outline-offset: 1px;
+}
+
+#globalnav:focus[data-focus-method="mouse"]:not(input):not(textarea):not(select),
+#globalnav:focus[data-focus-method="touch"]:not(input):not(textarea):not(select),
+#globalnavbar:focus[data-focus-method="mouse"]:not(input):not(textarea):not(select),
+#globalnavbar:focus[data-focus-method="touch"]:not(input):not(textarea):not(select) {
+  outline: none;
+}
+
+#globalnav.globalnavbar-hover-active,
+#globalnavbar.globalnavbar-hover-active {
+  background-color: var(--r-globalnavbar-background-opened);
+  transition: background-color 0s ease;
+}
+
+/* =============================================================================
+   CORREÇÕES ESPECÍFICAS PARA NOVA ESTRUTURA HTML
+   ============================================================================= */
+
+/* Garantir que o navbar tenha prioridade de z-index */
+#globalnav,
+#globalnavbar {
+  z-index: 9999 !important;
+  position: sticky !important;
+}
+
+/* Corrigir posicionamento dos submenus */
+#globalnavbar .globalnavbar-flyout.globalnavbar-submenu,
+#globalnavbar .globalnavbar-flyout.globalnavbar-submenu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  width: 100%;
+  transform: none;
+  z-index: 9998;
+}
+
+/* Garantir que links do submenu funcionem corretamente */
+#globalnavbar .globalnavbar-submenu-trigger-link,
+#globalnavbar .globalnavbar-submenu-trigger-link {
+  position: relative;
+  z-index: 10 !important;
+  pointer-events: auto;
+}
+
+/* Corrigir comportamento de hover em elementos com submenu */
+#globalnavbar .globalnavbar-item-submenu,
+#globalnav .globalnav-item-submenu {
+  position: relative;
+}
+
+/* =============================================================================
+   SUBMENU / FLYOUT (DUAL COMPATIBILITY + SPECIFIC HTML STRUCTURE)
+   ============================================================================= */
+#globalnavbar .globalnavbar-submenu,
+#globalnavbar .globalnavbar-submenu,
+#globalnavbar .globalnavbar-flyout.globalnavbar-submenu,
+#globalnavbar .globalnavbar-flyout.globalnavbar-submenu {
+  background: var(--r-globalnavbar-background-opened);
+  display: inherit;
+  left: 50%;
+  max-width: 2560px;
+  max-height: 0;
+  opacity: 0;
+  visibility: hidden;
+  overflow: hidden;
+  position: absolute;
+  text-align: start;
+  transform: translateX(-50%);
+  transform-origin: top;
+  width: 100%;
+  z-index: 100;
+  transition: max-height var(--globalnavbar-transition-rate) var(--easing-curve),
+    opacity var(--globalnavbar-transition-rate) var(--easing-curve), 
+    visibility var(--globalnavbar-transition-rate) step-end;
+}
+
+/* Ativação do submenu - melhorada para nova estrutura HTML */
+#globalnavbar .globalnavbar-item:hover .globalnavbar-submenu,
+#globalnavbar .globalnavbar-item:focus-within .globalnavbar-submenu,
+#globalnavbar .globalnavbar-item:hover .globalnavbar-submenu,
+#globalnavbar .globalnavbar-item:focus-within .globalnavbar-submenu,
+#globalnavbar .globalnavbar-item:hover .globalnavbar-flyout.globalnavbar-submenu,
+#globalnavbar .globalnavbar-item:focus-within .globalnavbar-flyout.globalnavbar-submenu,
+#globalnavbar .globalnavbar-item:hover .globalnavbar-flyout.globalnavbar-submenu,
+#globalnavbar .globalnavbar-item:focus-within .globalnavbar-flyout.globalnavbar-submenu,
+#globalnavbar .globalnavbar-item-submenu:hover .globalnavbar-submenu,
+#globalnavbar .globalnavbar-item-submenu:focus-within .globalnavbar-submenu,
+#globalnavbar .globalnavbar-item-submenu:hover .globalnavbar-submenu,
+#globalnavbar .globalnavbar-item-submenu:focus-within .globalnavbar-submenu,
+#globalnavbar .globalnavbar-item-submenu:hover .globalnavbar-flyout.globalnavbar-submenu,
+#globalnavbar .globalnavbar-item-submenu:focus-within .globalnavbar-flyout.globalnavbar-submenu,
+#globalnavbar .globalnavbar-item-submenu:hover .globalnavbar-flyout.globalnavbar-submenu,
+#globalnavbar .globalnavbar-item-submenu:focus-within .globalnavbar-flyout.globalnavbar-submenu {
+  max-height: 500px;
+  opacity: 1;
+  visibility: visible;
+  transition: max-height var(--globalnavbar-transition-rate) var(--easing-curve),
+    opacity var(--globalnavbar-transition-rate) var(--easing-curve), 
+    visibility var(--globalnavbar-transition-rate) step-start;
+}
+
+#globalnavbar .globalnavbar-submenu-content,
+#globalnavbar .globalnavbar-submenu-content {
+  box-sizing: border-box;
+  display: flex;
+  justify-content: space-between;
+  margin: 0 auto;
+  max-width: calc(1024px - var(--r-globalnavbar-scrollbar-width));
+  padding-bottom: 84px;
+  padding-inline-end: max(22px, var(--r-globalnavbar-safe-area-inset-end));
+  padding-inline-start: max(22px, var(--r-globalnavbar-safe-area-inset-start));
+  padding-top: 40px;
+  width: 100%;
+  z-index: 2;
+}
+
+#globalnavbar .globalnavbar-submenu-group,
+#globalnavbar .globalnavbar-submenu-group {
+  box-sizing: border-box;
+}
+
+#globalnavbar .globalnavbar-submenu-group,
+#globalnavbar .globalnavbar-submenu-group-elevated,
+#globalnavbar .globalnavbar-submenu-group,
+#globalnavbar .globalnavbar-submenu-group-elevated {
+  max-width: 50%;
+  padding-inline-end: 88px;
+}
+
+#globalnavbar .globalnavbar-submenu-header,
+#globalnavbar .globalnavbar-submenu-header {
+  color: var(--r-globalnavbar-submenu-header-color);
+  display: block;
+  font-family: SF Pro Text, SF Pro Icons, Helvetica Neue, Helvetica, Arial, sans-serif;
+  font-size: 12px;
+  font-weight: 400;
+  letter-spacing: -0.01em;
+  line-height: 1.3333733333;
+  opacity: 1;
+  transform: translateY(0);
+  transition-delay: calc(var(--r-globalnavbar-flyout-group-delay) + 80ms);
+  transition-duration: 0.32s;
+  transition-property: opacity, transform;
+}
+
+#globalnavbar .globalnavbar-submenu-list-item,
+#globalnavbar .globalnavbar-submenu-list-item {
+  font-family: SF Pro Text, SF Pro Icons, Helvetica Neue, Helvetica, Arial, sans-serif;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  line-height: 1.3333733333;
+  margin-inline-end: -11px;
+  margin-inline-start: -11px;
+}
+
+#globalnavbar .globalnavbar-submenu-list-item:first-child,
+#globalnavbar .globalnavbar-submenu-list-item:first-child {
+  margin-top: 10px;
+}
+
+#globalnavbar .globalnavbar-submenu-list-item-elevated,
+#globalnavbar .globalnavbar-submenu-list-item-elevated {
+  font-family: SF Pro Display, SF Pro Icons, Helvetica Neue, Helvetica, Arial, sans-serif;
+  font-size: 24px;
+  font-weight: 600;
+  letter-spacing: 0.009em;
+  line-height: 1.1666666667;
+  margin-inline-end: -11px;
+  margin-inline-start: -11px;
+}
+
+#globalnavbar .globalnavbar-submenu-list-item-elevated .globalnavbar-submenu-link,
+#globalnavbar .globalnavbar-submenu-list-item-elevated .globalnavbar-submenu-link {
+  padding-top: 9px;
+}
+
+#globalnavbar .globalnavbar-submenu-link,
+#globalnavbar .globalnavbar-submenu-link {
+  color: var(--r-globalnavbar-color-secondary);
+  display: inline-block;
+  margin-bottom: -6px;
+  padding: 7px 11px;
+  text-decoration: none;
+  transition: color 0.32s cubic-bezier(0.4, 0, 0.6, 1);
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+#globalnavbar .globalnavbar-submenu-link:hover,
+#globalnavbar .globalnavbar-submenu-link:focus-visible,
+#globalnavbar .globalnavbar-submenu-link:hover,
+#globalnavbar .globalnavbar-submenu-link:focus-visible {
+  color: var(--r-globalnavbar-color-hover);
+}
+
+/* Animações de entrada de itens */
+#globalnavbar .globalnavbar-item.globalnavbar-item-flyout-open .globalnavbar-submenu-list-item,
+#globalnavbar .globalnavbar-item.globalnavbar-item-flyout-open .globalnavbar-submenu-list-item-elevated,
+#globalnavbar .globalnavbar-item.globalnavbar-item-flyout-open .globalnavbar-submenu-list-item,
+#globalnavbar .globalnavbar-item.globalnavbar-item-flyout-open .globalnavbar-submenu-list-item-elevated {
+  --r-globalnavbar-flyout-item-number: 2;
+  opacity: 1;
+  transform: translateY(0);
+  transition-duration: 0.32s;
+  transition-delay: calc(
+    var(--r-globalnavbar-flyout-group-delay) + var(--r-globalnavbar-flyout-item-number) * 20ms + 80ms
+  );
+}
+
+.globalnavbar-submenu-list-item-elevated:nth-last-child(-n + 2) .globalnavbar-submenu-link,
+.globalnavbar-submenu-list-item-elevated:nth-last-child(-n + 2) .globalnavbar-submenu-link {
+  font-size: 12px;
+  line-height: 16px;
+}
+
+.globalnavbar-submenu-list-item-elevated:nth-last-child(2),
+.globalnavbar-submenu-list-item-elevated:nth-last-child(2) {
+  margin-top: 12px !important;
+}
+
+/* Flyout scroll container */
+li.globalnavbar-item .globalnavbar-flyout-scroll-container,
+li.globalnavbar-item .globalnavbar-flyout-scroll-container {
+  box-sizing: border-box;
+  display: none;
+  justify-items: center;
+  left: 0;
+  max-height: calc(100% - 44px);
+  max-height: 2560px;
+  overflow-y: hidden;
+  position: relative;
+  right: 0;
+  top: 0;
+  width: calc(100% - 44px);
+  z-index: 100;
+}
+
+li.globalnavbar-item:hover .globalnavbar-flyout-scroll-container,
+li.globalnavbar-item .globalnavbar-flyout-scroll-container:hover,
+li.globalnavbar-item:hover .globalnavbar-flyout-scroll-container,
+li.globalnavbar-item .globalnavbar-flyout-scroll-container:hover {
+  display: block;
+}
+
+.globalnavbar-flyout-content,
+.globalnavbar-flyout-content {
+  display: flex;
+}
+
+/* =============================================================================
+   MENU MOBILE E TRIGGERS (DUAL COMPATIBILITY)
+   ============================================================================= */
+#globalnavbar .globalnavbar-menuback,
+#globalnavbar .globalnavbar-menuback {
+  display: none;
+}
+
+#globalnavbar .globalnavbar-menutrigger,
+#globalnavbar .globalnavbar-menutrigger {
+  width: 48px;
+  border-bottom: none;
+  display: none;
+}
+
+/* =============================================================================
+   IMAGENS E ÍCONES (DUAL COMPATIBILITY)
+   ============================================================================= */
+#globalnavbar .globalnavbar-image-compact,
+#globalnavbar .globalnavbar-image-compact {
+  display: flex;
+}
+
+#globalnavbar .globalnavbar-image-regular,
+#globalnavbar .globalnavbar-image-regular {
+  display: none;
+}
+
+/* Compatibilidade com Apple item */
+#globalnavbar .globalnavbar-item-apple,
+#globalnavbar .globalnavbar-item-apple {
+  display: block;
+}
+
+#globalnavbar .globalnavbar-link-apple,
+#globalnavbar .globalnavbar-link-apple {
+  font-size: 17px;
+  line-height: 1.2353641176;
+  font-weight: 600;
+  letter-spacing: -0.022em;
+  font-family: var(--r-globalfont-family);
+  display: flex;
+  align-items: center;
+  height: 100%;
+}
+
+/* =============================================================================
+   MEDIA QUERIES (DUAL COMPATIBILITY)
+   ============================================================================= */
+@media only screen and (min-width: 834px) {
+  #globalnav,
+  #globalnavbar {
+    background: var(--globalnavbar-background);
+  }
+}
+
+/* Scrim e backdrop effects */
+#globalnav.globalnavbar-scrim,
+.globalnavbar-scrim #globalnav,
+#globalnavbar.globalnavbar-scrim,
+.globalnavbar-scrim #globalnavbar {
+  background: var(--globalnavbar-background);
+  --globalnavbar-background: rgba(250, 250, 252, 0.92);
+}
+
+@supports ((-webkit-backdrop-filter: initial) or (backdrop-filter: initial)) {
+  #globalnav.globalnavbar-scrim,
+  .globalnavbar-scrim #globalnav,
+  #globalnavbar.globalnavbar-scrim,
+  .globalnavbar-scrim #globalnavbar {
+    --globalnavbar-backdrop-filter: saturate(180%) blur(20px);
+    --globalnavbar-background: rgba(250, 250, 252, 0.8);
+  }
+}
+
+/* Versão mobile (oculta temporariamente) */
+@media only screen and (max-width: 833px) {
+  #globalnav,
+  #globalnavbar {
+    display: none;
+    /* 
+    Removido temporariamente em telas menores que 833px
+    até ajustar a responsividade adequadamente.
+    */
+  }
+  
+  #globalnav,
+  #globalnavbar {
+    --r-globalnavbar-height: 48px;
+    max-height: none;
+  }
+  
+  #globalnavbar .globalnavbar-content,
+  #globalnavbar .globalnavbar-content,
+  #globalnavbar .globalnavbar-content {
+    display: flex;
+    padding: 0;
+    position: relative;
+    top: 0;
+    width: 100%;
+    height: max-content;
+    background: var(--globalnavbar-background);
+    transition: background var(--r-globalnavbar-flyout-rate) cubic-bezier(0.4, 0, 0.6, 1) 80ms;
+  }
+  
+  #globalnavbar .globalnavbar-item,
+  #globalnavbar .globalnavbar-item,
+  #globalnavbar .globalnavbar-item {
+    width: auto;
+    height: auto;
+    transition: color 0.32s cubic-bezier(0.4, 0, 0.6, 1);
+  }
+  
+  #globalnavbar .globalnavbar-list > .globalnavbar-item,
+  #globalnavbar .globalnavbar-list > .globalnavbar-item,
+  #globalnavbar .globalnavbar-list > .globalnavbar-item {
+    height: 100%;
+  }
+
+  #globalnavbar .globalnavbar-list > .globalnavbar-item > .globalnavbar-link,
+  #globalnavbar .globalnavbar-list > .globalnavbar-item > .globalnavbar-link,
+  #globalnavbar .globalnavbar-list > .globalnavbar-item > .globalnavbar-link {
+    opacity: 1;
+    visibility: visible;
+    transition: opacity 0.24s cubic-bezier(0.4, 0, 0.6, 1) 80ms, 
+                visibility 0.24s step-start 80ms;
+  }
+  
+  #globalnavbar .globalnavbar-item,
+  #globalnavbar .globalnavbar-item,
+  #globalnavbar .globalnavbar-item {
+    width: 48px;
+  }
+  
+  #globalnavbar .globalnavbar-item .globalnavbar-link,
+  #globalnavbar .globalnavbar-item .globalnavbar-link,
+  #globalnavbar .globalnavbar-item .globalnavbar-link {
+    height: 48px;
+  }
+  
+  #globalnavbar .globalnavbar-link,
+  #globalnavbar .globalnavbar-link,
+  #globalnavbar .globalnavbar-link {
+    font-size: 28px;
+    line-height: 1.1428571429;
+    font-weight: 600;
+    letter-spacing: 0.007em;
+    font-family: var(--r-globalfont-family);
+  }
+  
+  #globalnavbar .globalnavbar-link:lang(pt-br),
+  #globalnavbar .globalnavbar-link:lang(pt-br),
+  #globalnavbar .globalnavbar-link:lang(pt-br) {
+    font-family: var(--r-globalfont-family);
+  }
+
+  /* Ocultar textos em mobile, manter apenas ícones */
+  #globalnavbar span[class*="-regular"],
+  #globalnavbar span[class="globalnavbar-link-text"],
+  #globalnavbar span[class*="-regular"],
+  #globalnavbar span[class="globalnavbar-link-text"] {
+    display: none;
+  }
+
+  /* Mostrar logo da Estatística em mobile */
+  #globalnavbar span[class*="-estatistica-regular"],
+  #globalnavbar span[class*="-estatistica-regular"] {
+    height: auto;
+    display: flex;
+    align-items: center;
+  }
+}
+
+/* =============================================================================
+   SUBMENU TRIGGER BUTTON POSITIONING (DUAL COMPATIBILITY)
+   ============================================================================= */
+#globalnavbar .globalnavbar-submenu-trigger-button,
+#globalnavbar .globalnavbar-submenu-trigger-button {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 44px;
+  padding: 0 calc(9px / var(--r-globalnavbar-text-zoom-scale, 1));
+  background: none;
+  border: 0;
+  color: inherit;
+  cursor: pointer;
+  font: inherit;
+  line-height: inherit;
+  overflow: visible;
+  vertical-align: inherit;
+  transition: color 0.32s cubic-bezier(0.4, 0, 0.6, 1);
+}
+
+#globalnavbar .globalnavbar-submenu-trigger-item,
+#globalnavbar .globalnavbar-submenu-trigger-item {
+  position: relative;
+}
+
+/* Garantir que o link sempre fique na frente do botão */
+#globalnavbar .globalnavbar-submenu-trigger-link,
+#globalnavbar .globalnavbar-submenu-trigger-link {
+  z-index: 3 !important;
+}
+
+/* Estados de hover e focus para o botão */
+#globalnavbar .globalnavbar-submenu-trigger-button:hover,
+#globalnavbar .globalnavbar-submenu-trigger-button:focus[data-focus-method="key"],
+#globalnavbar .globalnavbar-submenu-trigger-button:focus-visible,
+#globalnavbar .globalnavbar-submenu-trigger-button:hover,
+#globalnavbar .globalnavbar-submenu-trigger-button:focus[data-focus-method="key"],
+#globalnavbar .globalnavbar-submenu-trigger-button:focus-visible {
+  color: var(--r-globalnavbar-color-hover);
+}
+
+#globalnavbar .globalnavbar-submenu-trigger-button:focus,
+#globalnavbar .globalnavbar-submenu-trigger-button:focus {
+  outline: none;
+}
+
+#globalnavbar .globalnavbar-submenu-trigger-button[data-focus-method=touch],
+#globalnavbar .globalnavbar-submenu-trigger-button[data-focus-method=mouse],
+#globalnavbar .globalnavbar-submenu-trigger-button[data-focus-method=touch],
+#globalnavbar .globalnavbar-submenu-trigger-button[data-focus-method=mouse] {
+  outline: none;
+}
+
+/* =============================================================================
+   UTILIDADES E CLASSES AUXILIARES
+   ============================================================================= */
+.globalnavbar-hidden,
+.globalnavbar-svg-symbol,
+.globalnavbar-hidden,
+.globalnavbar-svg-symbol {
+  display: none;
+}
+
+.globalnavbar-placeholder,
+.globalnavbar-placeholder {
+  height: 44px;
+}
+
+@media only screen and (max-width: 833px) {
+  .globalnavbar-placeholder,
+  .globalnavbar-placeholder {
+    height: 48px;
+  }
+}
+
+/* Desabilitar transições quando necessário */
+#globalnav.globalnavbar-block-transitions,
+#globalnav.globalnavbar-block-transitions:before,
+#globalnav.globalnavbar-block-transitions:after,
+#globalnav.globalnavbar-block-transitions *,
+#globalnav.globalnavbar-block-transitions *:before,
+#globalnav.globalnavbar-block-transitions *:after,
+#globalnavbar.globalnavbar-block-transitions,
+#globalnavbar.globalnavbar-block-transitions:before,
+#globalnavbar.globalnavbar-block-transitions:after,
+#globalnavbar.globalnavbar-block-transitions *,
+#globalnavbar.globalnavbar-block-transitions *:before,
+#globalnavbar.globalnavbar-block-transitions *:after {
+  animation: none !important;
+  transition: none !important;
+}
+
+/* =============================================================================
+   FINAL: COMPATIBILIDADE ESPECÍFICA DE NOMENCLATURAS MISTAS + CORREÇÕES APPLE
+   ============================================================================= */
+
+/* Compatibilidade total entre nomenclaturas globalnavbar e globalnavbar */
+/* Este arquivo suporta ambas as nomenclaturas sem conflitos */
+
+/* Compatibilidade específica com estrutura Apple globalheader */
+#globalheader #globalnav,
+#globalheader #globalnavbar {
+  position: relative;
+  top: auto;
+  left: auto;
+  right: auto;
+}
+
+/* Herdar variáveis CSS do globalheader quando necessário */
+#globalheader {
+  --r-globalnavbar-height: var(--r-globalnav-height, 44px);
+  --r-globalnavbar-background-opened: var(--r-globalnav-background-opened, #fafafc);
+  --r-globalnavbar-background-opened-dark: var(--r-globalnav-background-opened-dark, #161617);
+}
+
+/* Permitir que globalnavbar funcione como globalnavbar */
+#globalnav.globalnavbar,
+#globalnavbar.globalnavbar {
+  /* Estilo híbrido quando ambas as classes estão presentes */
+  position: sticky !important;
+  z-index: 9999 !important;
+}
+
+/* Garantir que os dois sistemas de nomenclatura sejam intercambiáveis */
+.globalnav-content {
+  /* Alias para globalnavbar-content */
+  margin: 0 auto;
+  box-sizing: border-box;
+  width: 100%;
+  max-width: 1024px;
+  padding: 0 22px;
+  z-index: 2;
+}
+
+.globalnav-list {
+  /* Alias para globalnavbar-list */
+  width: 100%;
+  height: 44px;
+  display: flex;
+  justify-content: space-between;
+  list-style: none;
+  cursor: default;
+  margin: 0 -8px;
+  -webkit-user-select: none;
+  user-select: none;
+}
