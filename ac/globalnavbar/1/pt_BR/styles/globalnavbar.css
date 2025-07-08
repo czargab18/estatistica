@@ -5,13 +5,25 @@
    Compatível com nomenclaturas: #globalnavbar e #globalnav
    ============================================================================= */
 
-/* oultos */
-#globalnavbar li[class="globalnavbar-item globalnavbar-item-estatistica"] span[class="globalnavbar-link-text"],
-#globalnavbar li[class="globalnavbar-item globalnavbar-item-estatistica"] span[class="globalnavbar-link-text"],
-#globalnavbar button[class="globalnavbar-submenu-trigger-button"],
-#globalnavbar div[id="globalnavbar-submenu-search"],
-#globalnavbar span[class="globalnavbar-link-chevron"]  {
-  display: none !important
+/* OCULTAÇÃO ESPECÍFICA DE ELEMENTOS NÃO UTILIZADOS */
+#globalnavbar button.globalnavbar-submenu-trigger-button[style*="display: none"],
+#globalnavbar div#globalnavbar-submenu-search,
+#globalnavbar span.globalnavbar-link-chevron[style*="display: none"] {
+  display: none !important;
+}
+
+/* Ocultação geral de elementos específicos mencionados no comentário original */
+#globalnavbar .globalnavbar-item-estatistica .globalnavbar-link-text,
+#globalnavbar button.globalnavbar-submenu-trigger-button,
+#globalnavbar div#globalnavbar-submenu-search,
+#globalnavbar span.globalnavbar-link-chevron {
+  display: none !important;
+}
+
+/* Garantir que elementos necessários ainda sejam visíveis */
+#globalnavbar .globalnavbar-submenu-trigger-link .globalnavbar-link-text,
+#globalnavbar .globalnavbar-link:not(.globalnavbar-submenu-trigger-button) .globalnavbar-link-text {
+  display: block !important;
 }
 
 /* =============================================================================
@@ -20,37 +32,25 @@
 :root {
   /* Cores principais */
   --globalnavbar-background: rgba(255, 255, 255, 0.8);
-  --globalnavbar-background: rgba(255, 255, 255, 0.8);
   --r-globalnavbar-background-opened: #fafafc;
-  --r-globalnavbar-background-opened: #fafafc;
-  --r-globalnavbar-background-opened-dark: #161617;
   --r-globalnavbar-background-opened-dark: #161617;
   
   /* Cores de texto */
   --r-globalnavbar-color: rgba(0, 0, 0, 0.8);
-  --r-globalnavbar-color: rgba(0, 0, 0, 0.8);
-  --r-globalnavbar-color-secondary: #333336;
   --r-globalnavbar-color-secondary: #333336;
   --r-globalnavbar-color-secondary-black: rgba(0, 0, 0, 0.8);
-  --r-globalnavbar-color-secondary-black: rgba(0, 0, 0, 0.8);
   --r-globalnavbar-color-hover: #000000;
-  --r-globalnavbar-color-hover: #000000;
-  --r-globalnavbar-submenu-header-color: rgb(110, 110, 115);
   --r-globalnavbar-submenu-header-color: rgb(110, 110, 115);
   
   /* Layout e dimensões */
   --r-globalnavbar-height: 44px;
-  --r-globalnavbar-height: 44px;
   --r-globalnavbar-font-size: 17px;
-  --r-globalnavbar-font-size: 17px;
-  --globalnavbar-backdrop-filter: saturate(180%) blur(20px);
   --globalnavbar-backdrop-filter: saturate(180%) blur(20px);
   
   /* Transições e animações */
   --globalnavbar-transition-rate: 0.3s;
   --globalnavbar-transition-rate: 0.3s;
   --easing-curve: cubic-bezier(0.4, 0, 0.6, 1);
-  --r-globalnavbar-flyout-rate: 240ms;
   --r-globalnavbar-flyout-rate: 240ms;
   --r-globalnavbar-flyout-close-delay: 0.12s;
   --r-globalnavbar-flyout-link-opacity-duration: 0.5s;
@@ -60,21 +60,14 @@
   
   /* Flyout específico */
   --r-globalnavbar-flyout-elevated-group-count: 1;
-  --r-globalnavbar-flyout-elevated-group-count: 1;
-  --r-globalnavbar-flyout-group-number: 0;
   --r-globalnavbar-flyout-group-number: 0;
   --r-globalnavbar-flyout-group-total: 2;
-  --r-globalnavbar-flyout-group-total: 2;
-  --r-globalnavbar-flyout-height: 452px;
   --r-globalnavbar-flyout-height: 452px;
   --r-globalnavbar-flyout-item-total: 0;
-  --r-globalnavbar-flyout-item-total: 0;
-  --r-globalnavbar-scrollbar-width: 15px;
   --r-globalnavbar-scrollbar-width: 15px;
   
   /* Fontes */
   --r-globalfont-family: SF Pro Text, SF Pro Icons, Helvetica Neue, Helvetica, Arial, sans-serif;
-  --r-globalnavbar-text-zoom-scale: 1;
   --r-globalnavbar-text-zoom-scale: 1;
   
   /* Focus e acessibilidade */
@@ -91,29 +84,29 @@
   position: sticky !important;
 }
 
-#globalnav ul,
-#globalnav ol,
-#globalnav li,
-#globalnav dl,
-#globalnav dt,
-#globalnav dd,
-#globalnav h1,
-#globalnav h2,
-#globalnav h3,
-#globalnav h4,
-#globalnav h5,
-#globalnav h6,
-#globalnav hgroup,
-#globalnav p,
-#globalnav blockquote,
-#globalnav figure,
-#globalnav form,
-#globalnav fieldset,
-#globalnav input,
-#globalnav legend,
-#globalnav pre,
-#globalnav abbr,
-#globalnav button,
+#globalnavbar ul,
+#globalnavbar ol,
+#globalnavbar li,
+#globalnavbar dl,
+#globalnavbar dt,
+#globalnavbar dd,
+#globalnavbar h1,
+#globalnavbar h2,
+#globalnavbar h3,
+#globalnavbar h4,
+#globalnavbar h5,
+#globalnavbar h6,
+#globalnavbar hgroup,
+#globalnavbar p,
+#globalnavbar blockquote,
+#globalnavbar figure,
+#globalnavbar form,
+#globalnavbar fieldset,
+#globalnavbar input,
+#globalnavbar legend,
+#globalnavbar pre,
+#globalnavbar abbr,
+#globalnavbar button,
 #globalnavbar ul,
 #globalnavbar ol,
 #globalnavbar li,
@@ -142,12 +135,12 @@
   border: 0;
 }
 
-#globalnav pre,
-#globalnav code,
-#globalnav address,
-#globalnav caption,
-#globalnav th,
-#globalnav figcaption,
+#globalnavbar pre,
+#globalnavbar code,
+#globalnavbar address,
+#globalnavbar caption,
+#globalnavbar th,
+#globalnavbar figcaption,
 #globalnavbar pre,
 #globalnavbar code,
 #globalnavbar address,
@@ -159,39 +152,39 @@
   font-style: normal;
 }
 
-#globalnav fieldset,
-#globalnav iframe,
+#globalnavbar fieldset,
+#globalnavbar iframe,
 #globalnavbar fieldset,
 #globalnavbar iframe {
   border: 0;
 }
 
-#globalnav caption,
-#globalnav th,
+#globalnavbar caption,
+#globalnavbar th,
 #globalnavbar caption,
 #globalnavbar th {
   text-align: left;
 }
 
-#globalnav table,
+#globalnavbar table,
 #globalnavbar table {
   border-collapse: collapse;
   border-spacing: 0;
 }
 
-#globalnav main,
-#globalnav summary,
-#globalnav details,
+#globalnavbar main,
+#globalnavbar summary,
+#globalnavbar details,
 #globalnavbar main,
 #globalnavbar summary,
 #globalnavbar details {
   display: block;
 }
 
-#globalnav audio,
-#globalnav canvas,
-#globalnav video,
-#globalnav progress,
+#globalnavbar audio,
+#globalnavbar canvas,
+#globalnavbar video,
+#globalnavbar progress,
 #globalnavbar audio,
 #globalnavbar canvas,
 #globalnavbar video,
@@ -199,7 +192,7 @@
   vertical-align: baseline;
 }
 
-#globalnav button,
+#globalnavbar button,
 #globalnavbar button {
   background: none;
   border: 0;
@@ -212,18 +205,18 @@
   vertical-align: inherit;
 }
 
-#globalnav button:disabled,
+#globalnavbar button:disabled,
 #globalnavbar button:disabled {
   cursor: default;
 }
 
-#globalnav :focus-visible,
+#globalnavbar :focus-visible,
 #globalnavbar :focus-visible {
   outline: 2px solid var(--sk-focus-color, #0071e3);
   outline-offset: var(--sk-focus-offset, 1px);
 }
 
-#globalnav ::-moz-focus-inner,
+#globalnavbar ::-moz-focus-inner,
 #globalnavbar ::-moz-focus-inner {
   border: 0;
   padding: 0;
@@ -317,9 +310,8 @@ html, body {
 /* =============================================================================
    CONTEÚDO E ESTRUTURA (DUAL COMPATIBILITY)
    ============================================================================= */
-#globalnav .globalnavbar-content,
 #globalnavbar .globalnavbar-content,
-#globalnavbar .globalnavbar-content {
+#globalnav .globalnav-content {
   margin: 0 auto;
   box-sizing: border-box;
   width: 100%;
@@ -328,7 +320,6 @@ html, body {
   z-index: 2;
 }
 
-#globalnav .globalnavbar-list,
 #globalnavbar .globalnavbar-list,
 #globalnavbar .globalnavbar-list {
   width: 100%;
@@ -342,14 +333,12 @@ html, body {
   user-select: none;
 }
 
-#globalnav .globalnavbar-item,
 #globalnavbar .globalnavbar-item,
 #globalnavbar .globalnavbar-item {
   box-sizing: border-box;
   height: 44px;
 }
 
-#globalnav .globalnavbar-link,
 #globalnavbar .globalnavbar-link,
 #globalnavbar .globalnavbar-link {
   display: flex;
@@ -375,20 +364,20 @@ html, body {
 /* =============================================================================
    LOGO E MARCA ESTATÍSTICA (DUAL COMPATIBILITY)
    ============================================================================= */
-#globalnav .globalnavbar-link span[class*="globalnavbar-estatistica-regular"],
-#globalnav .globalnavbar-link span[class*="globalnavbar-estatistica-regular"] svg,
+#globalnavbar .globalnavbar-link span[class*="globalnavbar-estatistica-regular"],
+#globalnavbar .globalnavbar-link span[class*="globalnavbar-estatistica-regular"] svg,
 #globalnavbar .globalnavbar-link span[class*="globalnavbar-estatistica-regular"],
 #globalnavbar .globalnavbar-link span[class*="globalnavbar-estatistica-regular"] svg {
   height: var(--r-globalnavbar-height);
   width: max-content;
 }
 
-#globalnav .globalnavbar-link svg,
+#globalnavbar .globalnavbar-link svg,
 #globalnavbar .globalnavbar-link svg {
   fill: currentColor;
 }
 
-#globalnav .globalnavbar-link-estatistica,
+#globalnavbar .globalnavbar-link-estatistica,
 #globalnavbar .globalnavbar-link-estatistica {
   font-size: 17px;
   line-height: 1.2353641176;
@@ -400,30 +389,30 @@ html, body {
   height: 100%;
 }
 
-#globalnav .globalnavbar-link-estatistica .globalnavbar-link-text,
+#globalnavbar .globalnavbar-link-estatistica .globalnavbar-link-text,
 #globalnavbar .globalnavbar-link-estatistica .globalnavbar-link-text {
   margin-inline-start: 4px;
 }
 
-#globalnav .globalnavbar-link-estatistica .globalnavbar-link-text-estatistica,
+#globalnavbar .globalnavbar-link-estatistica .globalnavbar-link-text-estatistica,
 #globalnavbar .globalnavbar-link-estatistica .globalnavbar-link-text-estatistica {
   display: none;
 }
 
-#globalnav .globalnavbar-link-estatistica:lang(pt-br),
+#globalnavbar .globalnavbar-link-estatistica:lang(pt-br),
 #globalnavbar .globalnavbar-link-estatistica:lang(pt-br) {
   letter-spacing: 0em;
   font-family: var(--r-globalfont-family);
 }
 
-#globalnav span[class*="-regular"],
+#globalnavbar span[class*="-regular"],
 #globalnavbar span[class*="-regular"] {
   height: auto;
   display: none;
   align-items: center;
 }
 
-#globalnav span[class*="globalnavbar-estatistica-regular"],
+#globalnavbar span[class*="globalnavbar-estatistica-regular"],
 #globalnavbar span[class*="globalnavbar-estatistica-regular"] {
   display: block;
   height: auto;
@@ -433,9 +422,9 @@ html, body {
 /* =============================================================================
    ESTADOS DE INTERAÇÃO (DUAL COMPATIBILITY)
    ============================================================================= */
-#globalnav .globalnavbar-link:hover,
-#globalnav .globalnavbar-link:focus[data-focus-method="key"],
-#globalnav .globalnavbar-link:focus-visible,
+#globalnavbar .globalnavbar-link:hover,
+#globalnavbar .globalnavbar-link:focus[data-focus-method="key"],
+#globalnavbar .globalnavbar-link:focus-visible,
 #globalnavbar .globalnavbar-link:hover,
 #globalnavbar .globalnavbar-link:focus[data-focus-method="key"],
 #globalnavbar .globalnavbar-link:focus-visible {
@@ -443,13 +432,13 @@ html, body {
   text-decoration: none;
 }
 
-#globalnav .globalnavbar-link:focus,
+#globalnavbar .globalnavbar-link:focus,
 #globalnavbar .globalnavbar-link:focus {
   outline: none;
 }
 
-#globalnav .globalnavbar-link[data-focus-method=touch],
-#globalnav .globalnavbar-link[data-focus-method=mouse],
+#globalnavbar .globalnavbar-link[data-focus-method=touch],
+#globalnavbar .globalnavbar-link[data-focus-method=mouse],
 #globalnavbar .globalnavbar-link[data-focus-method=touch],
 #globalnavbar .globalnavbar-link[data-focus-method=mouse] {
   outline: none;
@@ -475,10 +464,49 @@ html, body {
 }
 
 /* =============================================================================
-   SUBMENU / FLYOUT (DUAL COMPATIBILITY)
+   CORREÇÕES ESPECÍFICAS PARA NOVA ESTRUTURA HTML
    ============================================================================= */
-#globalnav .globalnavbar-submenu,
-#globalnavbar .globalnavbar-submenu {
+
+/* Garantir que o navbar tenha prioridade de z-index */
+#globalnav,
+#globalnavbar {
+  z-index: 9999 !important;
+  position: sticky !important;
+}
+
+/* Corrigir posicionamento dos submenus */
+#globalnavbar .globalnavbar-flyout.globalnavbar-submenu,
+#globalnavbar .globalnavbar-flyout.globalnavbar-submenu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  width: 100%;
+  transform: none;
+  z-index: 9998;
+}
+
+/* Garantir que links do submenu funcionem corretamente */
+#globalnavbar .globalnavbar-submenu-trigger-link,
+#globalnavbar .globalnavbar-submenu-trigger-link {
+  position: relative;
+  z-index: 10 !important;
+  pointer-events: auto;
+}
+
+/* Corrigir comportamento de hover em elementos com submenu */
+#globalnavbar .globalnavbar-item-submenu,
+#globalnav .globalnav-item-submenu {
+  position: relative;
+}
+
+/* =============================================================================
+   SUBMENU / FLYOUT (DUAL COMPATIBILITY + SPECIFIC HTML STRUCTURE)
+   ============================================================================= */
+#globalnavbar .globalnavbar-submenu,
+#globalnavbar .globalnavbar-submenu,
+#globalnavbar .globalnavbar-flyout.globalnavbar-submenu,
+#globalnavbar .globalnavbar-flyout.globalnavbar-submenu {
   background: var(--r-globalnavbar-background-opened);
   display: inherit;
   left: 50%;
@@ -498,11 +526,23 @@ html, body {
     visibility var(--globalnavbar-transition-rate) step-end;
 }
 
-/* Ativação do submenu */
-#globalnav .globalnavbar-item:hover .globalnavbar-submenu,
-#globalnav .globalnavbar-item:focus-within .globalnavbar-submenu,
+/* Ativação do submenu - melhorada para nova estrutura HTML */
 #globalnavbar .globalnavbar-item:hover .globalnavbar-submenu,
-#globalnavbar .globalnavbar-item:focus-within .globalnavbar-submenu {
+#globalnavbar .globalnavbar-item:focus-within .globalnavbar-submenu,
+#globalnavbar .globalnavbar-item:hover .globalnavbar-submenu,
+#globalnavbar .globalnavbar-item:focus-within .globalnavbar-submenu,
+#globalnavbar .globalnavbar-item:hover .globalnavbar-flyout.globalnavbar-submenu,
+#globalnavbar .globalnavbar-item:focus-within .globalnavbar-flyout.globalnavbar-submenu,
+#globalnavbar .globalnavbar-item:hover .globalnavbar-flyout.globalnavbar-submenu,
+#globalnavbar .globalnavbar-item:focus-within .globalnavbar-flyout.globalnavbar-submenu,
+#globalnavbar .globalnavbar-item-submenu:hover .globalnavbar-submenu,
+#globalnavbar .globalnavbar-item-submenu:focus-within .globalnavbar-submenu,
+#globalnavbar .globalnavbar-item-submenu:hover .globalnavbar-submenu,
+#globalnavbar .globalnavbar-item-submenu:focus-within .globalnavbar-submenu,
+#globalnavbar .globalnavbar-item-submenu:hover .globalnavbar-flyout.globalnavbar-submenu,
+#globalnavbar .globalnavbar-item-submenu:focus-within .globalnavbar-flyout.globalnavbar-submenu,
+#globalnavbar .globalnavbar-item-submenu:hover .globalnavbar-flyout.globalnavbar-submenu,
+#globalnavbar .globalnavbar-item-submenu:focus-within .globalnavbar-flyout.globalnavbar-submenu {
   max-height: 500px;
   opacity: 1;
   visibility: visible;
@@ -511,7 +551,7 @@ html, body {
     visibility var(--globalnavbar-transition-rate) step-start;
 }
 
-#globalnav .globalnavbar-submenu-content,
+#globalnavbar .globalnavbar-submenu-content,
 #globalnavbar .globalnavbar-submenu-content {
   box-sizing: border-box;
   display: flex;
@@ -526,20 +566,20 @@ html, body {
   z-index: 2;
 }
 
-#globalnav .globalnavbar-submenu-group,
+#globalnavbar .globalnavbar-submenu-group,
 #globalnavbar .globalnavbar-submenu-group {
   box-sizing: border-box;
 }
 
-#globalnav .globalnavbar-submenu-group,
-#globalnav .globalnavbar-submenu-group-elevated,
+#globalnavbar .globalnavbar-submenu-group,
+#globalnavbar .globalnavbar-submenu-group-elevated,
 #globalnavbar .globalnavbar-submenu-group,
 #globalnavbar .globalnavbar-submenu-group-elevated {
   max-width: 50%;
   padding-inline-end: 88px;
 }
 
-#globalnav .globalnavbar-submenu-header,
+#globalnavbar .globalnavbar-submenu-header,
 #globalnavbar .globalnavbar-submenu-header {
   color: var(--r-globalnavbar-submenu-header-color);
   display: block;
@@ -555,7 +595,7 @@ html, body {
   transition-property: opacity, transform;
 }
 
-#globalnav .globalnavbar-submenu-list-item,
+#globalnavbar .globalnavbar-submenu-list-item,
 #globalnavbar .globalnavbar-submenu-list-item {
   font-family: SF Pro Text, SF Pro Icons, Helvetica Neue, Helvetica, Arial, sans-serif;
   font-size: 12px;
@@ -566,12 +606,12 @@ html, body {
   margin-inline-start: -11px;
 }
 
-#globalnav .globalnavbar-submenu-list-item:first-child,
+#globalnavbar .globalnavbar-submenu-list-item:first-child,
 #globalnavbar .globalnavbar-submenu-list-item:first-child {
   margin-top: 10px;
 }
 
-#globalnav .globalnavbar-submenu-list-item-elevated,
+#globalnavbar .globalnavbar-submenu-list-item-elevated,
 #globalnavbar .globalnavbar-submenu-list-item-elevated {
   font-family: SF Pro Display, SF Pro Icons, Helvetica Neue, Helvetica, Arial, sans-serif;
   font-size: 24px;
@@ -582,12 +622,12 @@ html, body {
   margin-inline-start: -11px;
 }
 
-#globalnav .globalnavbar-submenu-list-item-elevated .globalnavbar-submenu-link,
+#globalnavbar .globalnavbar-submenu-list-item-elevated .globalnavbar-submenu-link,
 #globalnavbar .globalnavbar-submenu-list-item-elevated .globalnavbar-submenu-link {
   padding-top: 9px;
 }
 
-#globalnav .globalnavbar-submenu-link,
+#globalnavbar .globalnavbar-submenu-link,
 #globalnavbar .globalnavbar-submenu-link {
   color: var(--r-globalnavbar-color-secondary);
   display: inline-block;
@@ -598,16 +638,16 @@ html, body {
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
 
-#globalnav .globalnavbar-submenu-link:hover,
-#globalnav .globalnavbar-submenu-link:focus-visible,
+#globalnavbar .globalnavbar-submenu-link:hover,
+#globalnavbar .globalnavbar-submenu-link:focus-visible,
 #globalnavbar .globalnavbar-submenu-link:hover,
 #globalnavbar .globalnavbar-submenu-link:focus-visible {
   color: var(--r-globalnavbar-color-hover);
 }
 
 /* Animações de entrada de itens */
-#globalnav .globalnavbar-item.globalnavbar-item-flyout-open .globalnavbar-submenu-list-item,
-#globalnav .globalnavbar-item.globalnavbar-item-flyout-open .globalnavbar-submenu-list-item-elevated,
+#globalnavbar .globalnavbar-item.globalnavbar-item-flyout-open .globalnavbar-submenu-list-item,
+#globalnavbar .globalnavbar-item.globalnavbar-item-flyout-open .globalnavbar-submenu-list-item-elevated,
 #globalnavbar .globalnavbar-item.globalnavbar-item-flyout-open .globalnavbar-submenu-list-item,
 #globalnavbar .globalnavbar-item.globalnavbar-item-flyout-open .globalnavbar-submenu-list-item-elevated {
   --r-globalnavbar-flyout-item-number: 2;
@@ -662,12 +702,12 @@ li.globalnavbar-item .globalnavbar-flyout-scroll-container:hover {
 /* =============================================================================
    MENU MOBILE E TRIGGERS (DUAL COMPATIBILITY)
    ============================================================================= */
-#globalnav .globalnavbar-menuback,
+#globalnavbar .globalnavbar-menuback,
 #globalnavbar .globalnavbar-menuback {
   display: none;
 }
 
-#globalnav .globalnavbar-menutrigger,
+#globalnavbar .globalnavbar-menutrigger,
 #globalnavbar .globalnavbar-menutrigger {
   width: 48px;
   border-bottom: none;
@@ -677,23 +717,23 @@ li.globalnavbar-item .globalnavbar-flyout-scroll-container:hover {
 /* =============================================================================
    IMAGENS E ÍCONES (DUAL COMPATIBILITY)
    ============================================================================= */
-#globalnav .globalnavbar-image-compact,
+#globalnavbar .globalnavbar-image-compact,
 #globalnavbar .globalnavbar-image-compact {
   display: flex;
 }
 
-#globalnav .globalnavbar-image-regular,
+#globalnavbar .globalnavbar-image-regular,
 #globalnavbar .globalnavbar-image-regular {
   display: none;
 }
 
 /* Compatibilidade com Apple item */
-#globalnav .globalnavbar-item-apple,
+#globalnavbar .globalnavbar-item-apple,
 #globalnavbar .globalnavbar-item-apple {
   display: block;
 }
 
-#globalnav .globalnavbar-link-apple,
+#globalnavbar .globalnavbar-link-apple,
 #globalnavbar .globalnavbar-link-apple {
   font-size: 17px;
   line-height: 1.2353641176;
@@ -751,7 +791,7 @@ li.globalnavbar-item .globalnavbar-flyout-scroll-container:hover {
     max-height: none;
   }
   
-  #globalnav .globalnavbar-content,
+  #globalnavbar .globalnavbar-content,
   #globalnavbar .globalnavbar-content,
   #globalnavbar .globalnavbar-content {
     display: flex;
@@ -764,7 +804,7 @@ li.globalnavbar-item .globalnavbar-flyout-scroll-container:hover {
     transition: background var(--r-globalnavbar-flyout-rate) cubic-bezier(0.4, 0, 0.6, 1) 80ms;
   }
   
-  #globalnav .globalnavbar-item,
+  #globalnavbar .globalnavbar-item,
   #globalnavbar .globalnavbar-item,
   #globalnavbar .globalnavbar-item {
     width: auto;
@@ -772,13 +812,13 @@ li.globalnavbar-item .globalnavbar-flyout-scroll-container:hover {
     transition: color 0.32s cubic-bezier(0.4, 0, 0.6, 1);
   }
   
-  #globalnav .globalnavbar-list > .globalnavbar-item,
+  #globalnavbar .globalnavbar-list > .globalnavbar-item,
   #globalnavbar .globalnavbar-list > .globalnavbar-item,
   #globalnavbar .globalnavbar-list > .globalnavbar-item {
     height: 100%;
   }
 
-  #globalnav .globalnavbar-list > .globalnavbar-item > .globalnavbar-link,
+  #globalnavbar .globalnavbar-list > .globalnavbar-item > .globalnavbar-link,
   #globalnavbar .globalnavbar-list > .globalnavbar-item > .globalnavbar-link,
   #globalnavbar .globalnavbar-list > .globalnavbar-item > .globalnavbar-link {
     opacity: 1;
@@ -787,19 +827,19 @@ li.globalnavbar-item .globalnavbar-flyout-scroll-container:hover {
                 visibility 0.24s step-start 80ms;
   }
   
-  #globalnav .globalnavbar-item,
+  #globalnavbar .globalnavbar-item,
   #globalnavbar .globalnavbar-item,
   #globalnavbar .globalnavbar-item {
     width: 48px;
   }
   
-  #globalnav .globalnavbar-item .globalnavbar-link,
+  #globalnavbar .globalnavbar-item .globalnavbar-link,
   #globalnavbar .globalnavbar-item .globalnavbar-link,
   #globalnavbar .globalnavbar-item .globalnavbar-link {
     height: 48px;
   }
   
-  #globalnav .globalnavbar-link,
+  #globalnavbar .globalnavbar-link,
   #globalnavbar .globalnavbar-link,
   #globalnavbar .globalnavbar-link {
     font-size: 28px;
@@ -809,22 +849,22 @@ li.globalnavbar-item .globalnavbar-flyout-scroll-container:hover {
     font-family: var(--r-globalfont-family);
   }
   
-  #globalnav .globalnavbar-link:lang(pt-br),
+  #globalnavbar .globalnavbar-link:lang(pt-br),
   #globalnavbar .globalnavbar-link:lang(pt-br),
   #globalnavbar .globalnavbar-link:lang(pt-br) {
     font-family: var(--r-globalfont-family);
   }
 
   /* Ocultar textos em mobile, manter apenas ícones */
-  #globalnav span[class*="-regular"],
-  #globalnav span[class="globalnavbar-link-text"],
+  #globalnavbar span[class*="-regular"],
+  #globalnavbar span[class="globalnavbar-link-text"],
   #globalnavbar span[class*="-regular"],
   #globalnavbar span[class="globalnavbar-link-text"] {
     display: none;
   }
 
   /* Mostrar logo da Estatística em mobile */
-  #globalnav span[class*="-estatistica-regular"],
+  #globalnavbar span[class*="-estatistica-regular"],
   #globalnavbar span[class*="-estatistica-regular"] {
     height: auto;
     display: flex;
@@ -835,7 +875,7 @@ li.globalnavbar-item .globalnavbar-flyout-scroll-container:hover {
 /* =============================================================================
    SUBMENU TRIGGER BUTTON POSITIONING (DUAL COMPATIBILITY)
    ============================================================================= */
-#globalnav .globalnavbar-submenu-trigger-button,
+#globalnavbar .globalnavbar-submenu-trigger-button,
 #globalnavbar .globalnavbar-submenu-trigger-button {
   position: relative;
   z-index: 1;
@@ -855,34 +895,34 @@ li.globalnavbar-item .globalnavbar-flyout-scroll-container:hover {
   transition: color 0.32s cubic-bezier(0.4, 0, 0.6, 1);
 }
 
-#globalnav .globalnavbar-submenu-trigger-item,
+#globalnavbar .globalnavbar-submenu-trigger-item,
 #globalnavbar .globalnavbar-submenu-trigger-item {
   position: relative;
 }
 
 /* Garantir que o link sempre fique na frente do botão */
-#globalnav .globalnavbar-submenu-trigger-link,
+#globalnavbar .globalnavbar-submenu-trigger-link,
 #globalnavbar .globalnavbar-submenu-trigger-link {
   z-index: 3 !important;
 }
 
 /* Estados de hover e focus para o botão */
-#globalnav .globalnavbar-submenu-trigger-button:hover,
-#globalnav .globalnavbar-submenu-trigger-button:focus[data-focus-method="key"],
-#globalnav .globalnavbar-submenu-trigger-button:focus-visible,
+#globalnavbar .globalnavbar-submenu-trigger-button:hover,
+#globalnavbar .globalnavbar-submenu-trigger-button:focus[data-focus-method="key"],
+#globalnavbar .globalnavbar-submenu-trigger-button:focus-visible,
 #globalnavbar .globalnavbar-submenu-trigger-button:hover,
 #globalnavbar .globalnavbar-submenu-trigger-button:focus[data-focus-method="key"],
 #globalnavbar .globalnavbar-submenu-trigger-button:focus-visible {
   color: var(--r-globalnavbar-color-hover);
 }
 
-#globalnav .globalnavbar-submenu-trigger-button:focus,
+#globalnavbar .globalnavbar-submenu-trigger-button:focus,
 #globalnavbar .globalnavbar-submenu-trigger-button:focus {
   outline: none;
 }
 
-#globalnav .globalnavbar-submenu-trigger-button[data-focus-method=touch],
-#globalnav .globalnavbar-submenu-trigger-button[data-focus-method=mouse],
+#globalnavbar .globalnavbar-submenu-trigger-button[data-focus-method=touch],
+#globalnavbar .globalnavbar-submenu-trigger-button[data-focus-method=mouse],
 #globalnavbar .globalnavbar-submenu-trigger-button[data-focus-method=touch],
 #globalnavbar .globalnavbar-submenu-trigger-button[data-focus-method=mouse] {
   outline: none;
@@ -928,8 +968,56 @@ li.globalnavbar-item .globalnavbar-flyout-scroll-container:hover {
 }
 
 /* =============================================================================
-   FINAL: COMPATIBILIDADE ESPECÍFICA DE NOMENCLATURAS MISTAS
+   FINAL: COMPATIBILIDADE ESPECÍFICA DE NOMENCLATURAS MISTAS + CORREÇÕES APPLE
    ============================================================================= */
 
-/* Compatibilidade total entre nomenclaturas globalnav e globalnavbar */
+/* Compatibilidade total entre nomenclaturas globalnavbar e globalnavbar */
 /* Este arquivo suporta ambas as nomenclaturas sem conflitos */
+
+/* Compatibilidade específica com estrutura Apple globalheader */
+#globalheader #globalnav,
+#globalheader #globalnavbar {
+  position: relative;
+  top: auto;
+  left: auto;
+  right: auto;
+}
+
+/* Herdar variáveis CSS do globalheader quando necessário */
+#globalheader {
+  --r-globalnavbar-height: var(--r-globalnav-height, 44px);
+  --r-globalnavbar-background-opened: var(--r-globalnav-background-opened, #fafafc);
+  --r-globalnavbar-background-opened-dark: var(--r-globalnav-background-opened-dark, #161617);
+}
+
+/* Permitir que globalnavbar funcione como globalnavbar */
+#globalnav.globalnavbar,
+#globalnavbar.globalnavbar {
+  /* Estilo híbrido quando ambas as classes estão presentes */
+  position: sticky !important;
+  z-index: 9999 !important;
+}
+
+/* Garantir que os dois sistemas de nomenclatura sejam intercambiáveis */
+.globalnav-content {
+  /* Alias para globalnavbar-content */
+  margin: 0 auto;
+  box-sizing: border-box;
+  width: 100%;
+  max-width: 1024px;
+  padding: 0 22px;
+  z-index: 2;
+}
+
+.globalnav-list {
+  /* Alias para globalnavbar-list */
+  width: 100%;
+  height: 44px;
+  display: flex;
+  justify-content: space-between;
+  list-style: none;
+  cursor: default;
+  margin: 0 -8px;
+  -webkit-user-select: none;
+  user-select: none;
+}

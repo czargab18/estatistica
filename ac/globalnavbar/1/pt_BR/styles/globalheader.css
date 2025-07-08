@@ -1,0 +1,436 @@
+@charset "UTF-8";
+#globalheader {
+  all: unset;
+}
+
+#globalheader html {
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+}
+
+#globalheader body {
+  margin: 0;
+  padding: 0;
+}
+
+#globalheader ul,
+#globalheader ol,
+#globalheader li,
+#globalheader dl,
+#globalheader dt,
+#globalheader dd,
+#globalheader h1,
+#globalheader h2,
+#globalheader h3,
+#globalheader h4,
+#globalheader h5,
+#globalheader h6,
+#globalheader hgroup,
+#globalheader p,
+#globalheader blockquote,
+#globalheader figure,
+#globalheader form,
+#globalheader fieldset,
+#globalheader input,
+#globalheader legend,
+#globalheader pre,
+#globalheader abbr,
+#globalheader button {
+  margin: 0;
+  padding: 0;
+}
+
+#globalheader pre,
+#globalheader code,
+#globalheader address,
+#globalheader caption,
+#globalheader th,
+#globalheader figcaption {
+  font-size: 1em;
+  font-weight: 400;
+  font-style: normal;
+}
+
+#globalheader fieldset,
+#globalheader iframe {
+  border: 0;
+}
+
+#globalheader caption,
+#globalheader th {
+  text-align: left;
+}
+
+#globalheader table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+#globalheader main,
+#globalheader summary,
+#globalheader details {
+  display: block;
+}
+
+#globalheader audio,
+#globalheader canvas,
+#globalheader video,
+#globalheader progress {
+  vertical-align: baseline;
+}
+
+#globalheader button {
+  background: none;
+  border: 0;
+  box-sizing: content-box;
+  color: inherit;
+  cursor: pointer;
+  font: inherit;
+  line-height: inherit;
+  overflow: visible;
+  vertical-align: inherit;
+}
+
+#globalheader button:disabled {
+  cursor: default;
+}
+
+#globalheader :focus-visible {
+  outline: 2px solid var(--sk-focus-color, #0071e3);
+  outline-offset: var(--sk-focus-offset, 1px);
+}
+
+#globalheader ::-moz-focus-inner {
+  border: 0;
+  padding: 0;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+/* =======================================================
+    Global Header CSS
+    This file contains the styles for the global header component.
+    It includes responsive design, flexbox utilities, and accessibility features.
+    The styles are designed to work across various screen sizes and devices.
+    The header is designed to be visually appealing and user-friendly.
+    It includes utility classes for alignment and spacing.
+    The header is optimized for performance and maintainability.
+    =======================================================
+ */
+
+.justify-content-start {
+  justify-content: flex-start;
+}
+
+.justify-content-end {
+  justify-content: flex-end;
+}
+
+.justify-content-center {
+  justify-content: center;
+}
+
+.justify-content-spacebetween {
+  justify-content: space-between;
+}
+
+.justify-content-spacearound {
+  justify-content: space-around;
+}
+
+.justify-content-spaceevenly {
+  justify-content: space-evenly;
+}
+
+.align-items-start {
+  align-items: flex-start;
+}
+
+.align-items-center {
+  align-items: center;
+}
+
+.align-items-end {
+  align-items: flex-end;
+}
+
+.align-self-start {
+  align-self: flex-start;
+}
+
+.align-self-center {
+  align-self: center;
+}
+
+.align-self-end {
+  align-self: flex-end;
+}
+
+.large-justify-content-start {
+  justify-content: flex-start;
+}
+
+.large-justify-content-end {
+  justify-content: flex-end;
+}
+
+.large-justify-content-center {
+  justify-content: center;
+}
+
+.large-justify-content-spacebetween {
+  justify-content: space-between;
+}
+
+.large-justify-content-spacearound {
+  justify-content: space-around;
+}
+
+.large-justify-content-spaceevenly {
+  justify-content: space-evenly;
+}
+
+.large-align-items-start {
+  align-items: flex-start;
+}
+
+.large-align-items-center {
+  align-items: center;
+}
+
+.large-align-items-end {
+  align-items: flex-end;
+}
+
+.large-align-self-start {
+  align-self: flex-start;
+}
+
+.large-align-self-center {
+  align-self: center;
+}
+
+.large-align-self-end {
+  align-self: flex-end;
+}
+
+@media only screen and (min-width: 1441px) {
+  .xlarge-justify-content-start {
+    justify-content: flex-start;
+  }
+
+  .xlarge-justify-content-end {
+    justify-content: flex-end;
+  }
+
+  .xlarge-justify-content-center {
+    justify-content: center;
+  }
+
+  .xlarge-justify-content-spacebetween {
+    justify-content: space-between;
+  }
+
+  .xlarge-justify-content-spacearound {
+    justify-content: space-around;
+  }
+
+  .xlarge-justify-content-spaceevenly {
+    justify-content: space-evenly;
+  }
+
+  .xlarge-align-items-start {
+    align-items: flex-start;
+  }
+
+  .xlarge-align-items-center {
+    align-items: center;
+  }
+
+  .xlarge-align-items-end {
+    align-items: flex-end;
+  }
+
+  .xlarge-align-self-start {
+    align-self: flex-start;
+  }
+
+  .xlarge-align-self-center {
+    align-self: center;
+  }
+
+  .xlarge-align-self-end {
+    align-self: flex-end;
+  }
+}
+
+@media only screen and (max-width: 1068px) {
+  .medium-justify-content-start {
+    justify-content: flex-start;
+  }
+
+  .medium-justify-content-end {
+    justify-content: flex-end;
+  }
+
+  .medium-justify-content-center {
+    justify-content: center;
+  }
+
+  .medium-justify-content-spacebetween {
+    justify-content: space-between;
+  }
+
+  .medium-justify-content-spacearound {
+    justify-content: space-around;
+  }
+
+  .medium-justify-content-spaceevenly {
+    justify-content: space-evenly;
+  }
+
+  .medium-align-items-start {
+    align-items: flex-start;
+  }
+
+  .medium-align-items-center {
+    align-items: center;
+  }
+
+  .medium-align-items-end {
+    align-items: flex-end;
+  }
+
+  .medium-align-self-start {
+    align-self: flex-start;
+  }
+
+  .medium-align-self-center {
+    align-self: center;
+  }
+
+  .medium-align-self-end {
+    align-self: flex-end;
+  }
+}
+
+@media only screen and (max-width: 734px) {
+  .small-justify-content-start {
+    justify-content: flex-start;
+  }
+
+  .small-justify-content-end {
+    justify-content: flex-end;
+  }
+
+  .small-justify-content-center {
+    justify-content: center;
+  }
+
+  .small-justify-content-spacebetween {
+    justify-content: space-between;
+  }
+
+  .small-justify-content-spacearound {
+    justify-content: space-around;
+  }
+
+  .small-justify-content-spaceevenly {
+    justify-content: space-evenly;
+  }
+
+  .small-align-items-start {
+    align-items: flex-start;
+  }
+
+  .small-align-items-center {
+    align-items: center;
+  }
+
+  .small-align-items-end {
+    align-items: flex-end;
+  }
+
+  .small-align-self-start {
+    align-self: flex-start;
+  }
+
+  .small-align-self-center {
+    align-self: center;
+  }
+
+  .small-align-self-end {
+    align-self: flex-end;
+  }
+}
+
+.selfclear:before,
+.selfclear:after {
+  content: " ";
+  display: table;
+}
+
+.selfclear:after {
+  clear: both;
+}
+
+.visuallyhidden {
+  position: absolute;
+  clip: rect(1px, 1px, 1px, 1px);
+  clip-path: inset(0 0 99.9% 99.9%);
+  overflow: hidden;
+  height: 1px;
+  width: 1px;
+  padding: 0;
+  border: 0;
+}
+
+@media only screen and (inverted-colors) {
+  .no-inversion {
+    filter: invert(1);
+  }
+}
+
+.nowrap {
+  display: inline-block;
+  text-decoration: inherit;
+  white-space: nowrap;
+}
+
+.clear {
+  clear: both;
+}
+
+.cursor-grab {
+  cursor: move;
+  cursor: grab;
+}
+
+.cursor-grabbing {
+  cursor: move;
+  cursor: grabbing;
+}
+
+@media print {
+  #globalheader {
+    display: none;
+  }
+}
+
+html:not([dir="rtl"]) #globalheader {
+  --r-globalheader-start: var(--r-sk-start, left);
+  --r-globalheader-end: var(--r-sk-end, right);
+  --r-globalheader-safe-area-inset-start: var(--r-sk-safe-area-inset-start, env(safe-area-inset-left));
+  --r-globalheader-safe-area-inset-end: var(--r-sk-safe-area-inset-end, env(safe-area-inset-right));
+}
+
+html[dir="rtl"] #globalheader {
+  --r-globalheader-start: var(--r-sk-start, right);
+  --r-globalheader-end: var(--r-sk-end, left);
+  --r-globalheader-safe-area-inset-start: var(--r-sk-safe-area-inset-start, env(safe-area-inset-right));
+  --r-globalheader-safe-area-inset-end: var(--r-sk-safe-area-inset-end, env(safe-area-inset-left));
+}
