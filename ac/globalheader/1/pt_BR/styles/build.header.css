@@ -1,5 +1,69 @@
 @charset "UTF-8";
 
+/* =============================================================================
+   GLOBAL HEADER & NAVBAR MASTER STYLES
+   Arquivo ÚNICO combinando todos os estilos de header e navbar
+   Compatível com nomenclaturas: #globalheader, #globalnavbar e #globalnav
+   ============================================================================= */
+
+/* =============================================================================
+   CSS CUSTOM PROPERTIES (VARIÁVEIS GLOBAIS)
+   ============================================================================= */
+:root {
+  /* Cores principais */
+  --globalnav-background: rgba(255, 255, 255, 0.8);
+  --globalnavbar-background: rgba(255, 255, 255, 0.8);
+  --r-globalnav-background-opened: #fafafc;
+  --r-globalnavbar-background-opened: #fafafc;
+  --r-globalnav-background-opened-dark: #161617;
+  --r-globalnavbar-background-opened-dark: #161617;
+  
+  /* Cores de texto */
+  --r-globalnav-color: rgba(0, 0, 0, 0.8);
+  --r-globalnavbar-color: rgba(0, 0, 0, 0.8);
+  --r-globalnav-color-secondary: #333336;
+  --r-globalnavbar-color-secondary: #333336;
+  --r-globalnav-color-secondary-black: rgba(0, 0, 0, 0.8);
+  --r-globalnavbar-color-secondary-black: rgba(0, 0, 0, 0.8);
+  --r-globalnav-color-hover: #000000;
+  --r-globalnavbar-color-hover: #000000;
+  --r-globalnav-submenu-header-color: rgb(110, 110, 115);
+  --r-globalnavbar-submenu-header-color: rgb(110, 110, 115);
+  
+  /* Layout e dimensões */
+  --r-globalnav-height: 44px;
+  --r-globalnavbar-height: 44px;
+  --r-globalnav-font-size: 17px;
+  --r-globalnavbar-font-size: 17px;
+  --globalnav-backdrop-filter: saturate(180%) blur(20px);
+  --globalnavbar-backdrop-filter: saturate(180%) blur(20px);
+  
+  /* Transições e animações */
+  --globalnav-transition-rate: 0.3s;
+  --globalnavbar-transition-rate: 0.3s;
+  --easing-curve: cubic-bezier(0.4, 0, 0.6, 1);
+  --r-globalnav-flyout-rate: 240ms;
+  --r-globalnavbar-flyout-rate: 240ms;
+  --r-globalnav-flyout-close-delay: 0.12s;
+  --r-globalnav-flyout-link-opacity-duration: 0.5s;
+  --r-globalnav-flyout-spacing: 88px;
+  --r-globalnav-next-flyout-height: 0px;
+  --r-globalnav-previous-flyout-height: 0px;
+  
+  /* Flyout específico */
+  --r-globalnav-flyout-elevated-group-count: 1;
+  --r-globalnavbar-flyout-elevated-group-count: 1;
+  --r-globalnav-flyout-group-number: 0;
+  --r-globalnavbar-flyout-group-number: 0;
+  
+  /* Focus e acessibilidade */
+  --sk-focus-color: #0071e3;
+  --sk-focus-offset: 1px;
+}
+
+/* =============================================================================
+   RESET DE ESTILOS GLOBAIS PARA GLOBALHEADER
+   ============================================================================= */
 nav[id="globalheader"] {
   all: unset;
 }
@@ -106,9 +170,156 @@ nav[id="globalheader"] ::-moz-focus-inner {
   padding: 0;
 }
 
+/* Reset HTML e body global */
 html,
 body {
   margin: 0;
+  padding: 0;
+}
+
+/* =============================================================================
+   RESET DE ESTILOS GLOBAIS PARA GLOBALNAVBAR E GLOBALNAV
+   ============================================================================= */
+#globalnav,
+#globalnavbar {
+  all: unset;
+  position: sticky !important;
+}
+
+#globalnav ul,
+#globalnav ol,
+#globalnav li,
+#globalnav dl,
+#globalnav dt,
+#globalnav dd,
+#globalnav h1,
+#globalnav h2,
+#globalnav h3,
+#globalnav h4,
+#globalnav h5,
+#globalnav h6,
+#globalnav hgroup,
+#globalnav p,
+#globalnav blockquote,
+#globalnav figure,
+#globalnav form,
+#globalnav fieldset,
+#globalnav input,
+#globalnav legend,
+#globalnav pre,
+#globalnav abbr,
+#globalnav button,
+#globalnavbar ul,
+#globalnavbar ol,
+#globalnavbar li,
+#globalnavbar dl,
+#globalnavbar dt,
+#globalnavbar dd,
+#globalnavbar h1,
+#globalnavbar h2,
+#globalnavbar h3,
+#globalnavbar h4,
+#globalnavbar h5,
+#globalnavbar h6,
+#globalnavbar hgroup,
+#globalnavbar p,
+#globalnavbar blockquote,
+#globalnavbar figure,
+#globalnavbar form,
+#globalnavbar fieldset,
+#globalnavbar input,
+#globalnavbar legend,
+#globalnavbar pre,
+#globalnavbar abbr,
+#globalnavbar button {
+  margin: 0;
+  padding: 0;
+}
+
+#globalnav pre,
+#globalnav code,
+#globalnav address,
+#globalnav caption,
+#globalnav th,
+#globalnav figcaption,
+#globalnavbar pre,
+#globalnavbar code,
+#globalnavbar address,
+#globalnavbar caption,
+#globalnavbar th,
+#globalnavbar figcaption {
+  font-size: 1em;
+  font-weight: 400;
+  font-style: normal;
+}
+
+#globalnav fieldset,
+#globalnav iframe,
+#globalnavbar fieldset,
+#globalnavbar iframe {
+  border: 0;
+}
+
+#globalnav caption,
+#globalnav th,
+#globalnavbar caption,
+#globalnavbar th {
+  text-align: left;
+}
+
+#globalnav table,
+#globalnavbar table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+#globalnav main,
+#globalnav summary,
+#globalnav details,
+#globalnavbar main,
+#globalnavbar summary,
+#globalnavbar details {
+  display: block;
+}
+
+#globalnav audio,
+#globalnav canvas,
+#globalnav video,
+#globalnav progress,
+#globalnavbar audio,
+#globalnavbar canvas,
+#globalnavbar video,
+#globalnavbar progress {
+  vertical-align: baseline;
+}
+
+#globalnav button,
+#globalnavbar button {
+  background: none;
+  border: 0;
+  box-sizing: content-box;
+  color: inherit;
+  cursor: pointer;
+  font: inherit;
+  line-height: inherit;
+  overflow: visible;
+  vertical-align: inherit;
+}
+
+#globalnav button:disabled,
+#globalnavbar button:disabled {
+  cursor: default;
+}
+
+#globalnav :focus-visible,
+#globalnavbar :focus-visible {
+  outline: 2px solid var(--sk-focus-color, #0071e3);
+  outline-offset: var(--sk-focus-offset, 1px);
+}
+
+#globalnav ::-moz-focus-inner,
+#globalnavbar ::-moz-focus-inner {
+  border: 0;
   padding: 0;
 }
 
@@ -117,6 +328,186 @@ body {
   --r-globalnavbar-background-opened: #fafafc;
   --r-globalnavbar-background-opened-dark: #161617;
 }
+
+/* Estilos adicionais do globalnavbar, incluindo layout e conteúdo */
+.globalnavbar-scrim.globalnavbar-light#globalnavbar,
+.globalnavbar-scrim.globalheader-dark .globalnavbar-light {
+  --globalnavbar-background: rgba(250, 250, 252, 0.92);
+}
+
+@supports ((-webkit-backdrop-filter: initial) or (backdrop-filter: initial)) {
+  .globalnavbar-scrim.globalnavbar-light#globalnavbar,
+  .globalnavbar-scrim.globalheader-dark .globalnavbar-light {
+    --globalnavbar-backdrop-filter: saturate(180%) blur(20px);
+    --globalnavbar-background: rgba(250, 250, 252, 0.8);
+  }
+}
+
+.globalnavbar-scrim-noblur#globalnavbar,
+.globalnavbar-scrim-noblur #globalnavbar {
+  --globalnavbar-backdrop-filter: initial;
+}
+
+/* Bloquear transições quando necessário */
+#globalnavbar.globalnavbar-block-transitions,
+#globalnavbar.globalnavbar-block-transitions:before,
+#globalnavbar.globalnavbar-block-transitions:after,
+#globalnavbar.globalnavbar-block-transitions *,
+#globalnavbar.globalnavbar-block-transitions *:before,
+#globalnavbar.globalnavbar-block-transitions *:after {
+  animation: none !important;
+  transition: none !important;
+}
+
+/* Elementos ocultos */
+.globalnavbar-hidden,
+.globalnavbar-svg-symbol {
+  display: none;
+}
+
+.globalnavbar-placeholder {
+  height: 44px;
+}
+
+@media only screen and (max-width: 833px) {
+  .globalnavbar-placeholder {
+    height: 48px;
+  }
+}
+
+.ac-nav-overlap .globalnavbar-placeholder {
+  display: none;
+}
+
+/* Cortina de fundo */
+.globalnavbar-curtain {
+  background: rgba(232, 232, 237, 0.4);
+  -webkit-backdrop-filter: blur(20px);
+  backdrop-filter: blur(20px);
+  visibility: hidden;
+  position: fixed;
+  opacity: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 9998;
+  transition: opacity 0.32s cubic-bezier(0.4, 0, 0.6, 1) 80ms, visibility 0.32s step-end 80ms;
+}
+
+#globalnavbar.globalnavbar-dark .globalnavbar-curtain,
+#globalnavbar.globalheader-dark .globalnavbar-curtain,
+.globalheader-dark .globalnavbar-curtain,
+.theme-dark .globalnavbar-curtain {
+  background: rgba(0, 0, 0, 0.4);
+}
+
+.globalnavbar-dark ~ .globalnavbar-curtain {
+  background: rgba(0, 0, 0, 0.4);
+}
+
+#globalnavbar.globalnavbar-light .globalnavbar-curtain,
+#globalnavbar.globalheader-light .globalnavbar-curtain,
+.globalheader-dark #globalnavbar.globalnavbar-light .globalnavbar-curtain,
+.theme-dark #globalnavbar.globalnavbar-light .globalnavbar-curtain,
+.globalheader-dark #globalnavbar.globalheader-light .globalnavbar-curtain,
+.theme-dark #globalnavbar.globalheader-light .globalnavbar-curtain,
+.globalheader-light .globalnavbar-curtain,
+.theme-light .globalnavbar-curtain {
+  background: rgba(232, 232, 237, 0.4);
+}
+
+.globalnavbar-light ~ .globalnavbar-curtain {
+  background: rgba(232, 232, 237, 0.4);
+}
+
+.globalnavbar-with-flyout-open ~ .globalnavbar-curtain {
+  opacity: 1;
+  visibility: visible;
+  transition: opacity 0.32s cubic-bezier(0.4, 0, 0.6, 1) 80ms, visibility 0.32s step-start 80ms;
+}
+
+.globalnavbar-block-transitions ~ .globalnavbar-curtain {
+  animation: none !important;
+  transition: none !important;
+}
+
+@media only screen and (max-width: 833px) {
+  .globalnavbar-with-flyout-open:not(.globalnavbar-animating) ~ .globalnavbar-curtain,
+  .globalnavbar-with-menu-open.globalnavbar-with-flyout-closing.globalnavbar-animating ~ .globalnavbar-curtain {
+    opacity: 0;
+    visibility: hidden;
+  }
+}
+
+.globalnavbar-curtain-noblur {
+  -webkit-backdrop-filter: none;
+  backdrop-filter: none;
+}
+
+/* =============================================================================
+   LAYOUT E CONTEÚDO DO GLOBALNAVBAR
+   ============================================================================= */
+#globalnavbar .globalnavbar-content {
+  margin: 0 auto;
+  box-sizing: border-box;
+  width: 100%;
+  max-width: 1024px;
+  padding-top: 0;
+  padding-bottom: 0;
+  padding-inline-start: max(22px, var(--r-globalnavbar-safe-area-inset-start));
+  padding-inline-end: max(22px, var(--r-globalnavbar-safe-area-inset-end));
+  --r-globalnavbar-flyout-rate: 0s;
+  --r-globalnavbar-duration-medium: 0.24s;
+  z-index: 2;
+}
+
+@media only screen and (max-width: 833px) {
+  #globalnavbar .globalnavbar-content {
+    height: 48px;
+    padding-inline-start: 16px;
+    padding-inline-end: 16px;
+  }
+  
+  #globalnavbar.globalnavbar-animating .globalnavbar-content {
+    transition: background-color var(--r-globalnavbar-duration-medium) cubic-bezier(0.4, 0, 0.6, 1);
+  }
+  
+  #globalnavbar.globalnavbar-with-flyout-open .globalnavbar-content {
+    background: var(--r-globalnavbar-background-opened);
+    height: 100vh;
+    height: 100dvh;
+    max-height: none;
+    padding-top: 44px;
+    padding-bottom: 22px;
+    overflow-y: auto;
+  }
+  
+  @supports (height: 100dvh) {
+    #globalnavbar.globalnavbar-with-flyout-open .globalnavbar-content {
+      height: 100dvh;
+    }
+  }
+}
+
+#globalnavbar .globalnavbar-list {
+  cursor: default;
+  margin: 0 -8px;
+  width: auto;
+  height: 44px;
+  display: flex;
+}
+
+@media only screen and (max-width: 833px) {
+  #globalnavbar .globalnavbar-list {
+    flex-direction: column;
+    margin: 0;
+    height: auto;
+  }
+}
+
 #globalnavbar {
   --r-globalnavbar-flyout-close-delay: 0.12s;
   --r-globalnavbar-flyout-link-opacity-duration: 0.5s;
