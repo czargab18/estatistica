@@ -29,13 +29,13 @@
 
 <body>
   <div id="globalheader">
-    <aside id="globalaside" style="display: none;">
+    <aside id="globalaside">
       <div class="globalaside-content">
         <div class="globalaside-list globalaside-list-unbt-gov">
           <li class="globalaside-item globalaside-item-govbr">
             <a class="globalaside-link globalaside-link-govbr" href="https://www.gov.br/pt-br" rel="noopener"
               target="_blank">
-              <span class="globalaside-image-regular globalnavbar-link-image"> </span>
+              <span class="globalaside-image-regular globalnav-link-image"> </span>
               <span class="globalaside-link-text" style="display: none">gov.br</span>
               <span class="globalaside-link-text">
                 <svg width="3.5em" height="100%" viewBox="0 0 108 41" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -55,7 +55,7 @@
           <li class="globalaside-item globalaside-item-unbtv">
             <a class="globalaside-link globalaside-link-unbtv" href="https://unbtv.unb.br" rel="noopener"
               target="_blank">
-              <span class="globalaside-image-regular globalnavbar-link-image"> </span>
+              <span class="globalaside-image-regular globalnav-link-image"> </span>
               <span class="globalaside-link-text">eduplayUnBTV</span>
             </a>
           </li>
@@ -113,796 +113,845 @@
         </ul>
       </div>
     </aside>
-    <nav id="globalnavbar" lang="pt-BR" dir="ltr" aria-label="Navegação Global" data-analytics-element-engagement-start="globalnavbar:onFlyoutOpen" data-analytics-element-engagement-end="globalnavbar:onFlyoutClose" data-analytics-activitymap-region-id="global nav" data-analytics-region="global nav" class="globalnavbar js" style="--r-globalnavbar-text-zoom-scale: 1;">
-      <div class="globalnavbar-content" style="--r-globalnavbar-flyout-rate: 240ms;">
-        <div class="globalnavbar-item globalnavbar-menuback">
-          <button aria-label="Menu principal" class="globalnavbar-menuback-button">
-            <span class="globalnavbar-chevron-icon">
-              <svg height="48" viewBox="0 0 9 48" width="9" xmlns="http://www.w3.org/2000/svg">
-                <path d="m1.5618 24.0621 6.5581-6.4238c.2368-.2319.2407-.6118.0088-.8486-.2324-.2373-.6123-.2407-.8486-.0088l-7 6.8569c-.1157.1138-.1807.2695-.1802.4316.001.1621.0674.3174.1846.4297l7 6.7241c.1162.1118.2661.1675.4155.1675.1577 0 .3149-.062.4326-.1846.2295-.2388.2222-.6187-.0171-.8481z"></path>
-              </svg>
-            </span>
-          </button>
-        </div>
-        <ul id="globalnavbar-list" class="globalnavbar-list">
-          <li data-analytics-element-engagement="globalnavbar hover - estatistica" class="globalnavbar-item globalnavbar-item-estatistica">
-            <a href="/" data-globalnavbar-item-name="estatistica" data-analytics-title="estatística home" aria-label="Estatística" class="globalnavbar-link globalnavbar-link-estatistica">
-              <span class="globalnavbar-image-regular globalnavbar-link-image">
-                <svg height="44" viewBox="0 0 15 44" width="15" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M5.55554 0.14135C2.8274 0.724643 0.706755 2.86846 0.142622 5.61333C-0.631706 9.38086 1.82483 13.0771 5.62171 13.8574C9.38923 14.6317 13.0854 12.1752 13.8658 8.37829C14.6401 4.61077 12.1835 0.914557 8.38667 0.134247C7.50365 -0.0472552 6.42473 -0.0445449 5.55554 0.14135ZM8.68229 0.840815C9.79943 1.13485 10.5888 1.6029 11.493 2.50705C12.8059 3.8199 13.3659 5.16201 13.3659 6.99581C13.3659 8.82962 12.8059 10.1717 11.493 11.4846C10.1984 12.7792 8.7893 13.3715 7.00419 13.3715C5.21907 13.3715 3.80996 12.7792 2.51542 11.4846C1.22079 10.19 0.628528 8.78093 0.628528 6.99581C0.628528 5.2107 1.22079 3.80158 2.51542 2.50705C4.21782 0.804552 6.35304 0.227708 8.68229 0.840815ZM7.96282 1.89628C7.69365 2.12273 7.44159 2.60425 7.33672 3.09193L7.28196 3.34708L5.32992 3.37231L3.37788 3.39755L4.62812 4.78853C5.31571 5.55361 5.86415 6.2055 5.84676 6.23719C5.82938 6.26887 5.2416 7.2933 4.54045 8.51363C3.8394 9.73395 3.26573 10.7539 3.26573 10.7801C3.26573 10.8063 3.89659 10.8277 4.66765 10.8277C5.43871 10.8277 6.06957 10.8516 6.06957 10.8806C6.06957 10.9097 6.02256 11.0253 5.96518 11.1376C5.78068 11.4984 5.48684 11.6646 5.02953 11.6668C4.56998 11.669 4.34399 11.8214 4.47821 12.0386C4.58634 12.2136 5.41254 12.1908 5.77592 12.0028C6.09658 11.837 6.40267 11.4433 6.49408 11.079L6.55716 10.8277H8.65163H10.7462L10.6934 10.6174C10.6643 10.5018 10.5662 10.1128 10.4753 9.75292C10.2819 8.98691 10.0891 8.88897 9.96907 9.49591L9.89046 9.89312H8.30713C6.78801 9.89312 6.7238 9.88555 6.7238 9.70685C6.7238 9.52965 7.50224 4.7089 7.61814 4.1686C7.67262 3.91448 7.6816 3.91158 8.41349 3.91158C9.11857 3.91158 9.15389 3.92158 9.15511 4.12187C9.15941 4.83424 9.47559 4.97761 9.56727 4.3088C9.60083 4.06467 9.65092 3.74924 9.67877 3.60783L9.72943 3.35082H8.78734H7.84534V3.10819C7.84534 2.78472 8.10414 2.36255 8.37938 2.23722C8.60219 2.13563 8.79799 2.20059 9.26801 2.53209C9.39484 2.62154 9.454 2.6207 9.54634 2.52836C9.69859 2.37611 9.56886 2.16086 9.15455 1.8788C8.74715 1.6014 8.30564 1.60785 7.96282 1.89628ZM7.15055 4.1686C7.12008 4.31001 7.03344 4.77872 6.95821 5.21032C6.88288 5.64184 6.80633 6.00979 6.7882 6.02793C6.74932 6.06681 4.85457 4.04654 4.85457 3.96626C4.85457 3.93616 5.38366 3.91158 6.03023 3.91158H7.20597L7.15055 4.1686ZM6.41678 8.58466L6.20397 9.84639L5.58114 9.87386L4.95832 9.90143L5.77096 8.50241C6.2179 7.73294 6.59399 7.15283 6.6066 7.21311C6.61922 7.27349 6.5338 7.89071 6.41678 8.58466Z"></path>
-                </svg>
+    <nav class="globalnavbar" id="globalnavbar">
+      <div class="globalnavbar-content">
+        <ul class="globalnavbar-list">
+          <li class="globalnavbar-item globalnavbar-item-estatistica">
+            <a class="globalnavbar-link globalnavbar-link-estatistica" href="/">
+              <span class="globalnavbar-link-estatistica-container">
+                <span class="globalnavbar-link-text globalnavbar-link-text-estatistica">Estatística</span>
+                <span class="globalnavbar-estatistica-regular globalnavbar-link-estatistica">
+                  <svg fill="none" height="44" viewbox="0 0 15 14" width="15" xmlns="http:/www.w3.org/2000/svg">
+                    <path clip-rule="evenodd"
+                      d="M5.55554 0.14135C2.8274 0.724643 0.706755 2.86846 0.142622 5.61333C-0.631706 9.38086 1.82483 13.0771 5.62171 13.8574C9.38923 14.6317 13.0854 12.1752 13.8658 8.37829C14.6401 4.61077 12.1835 0.914557 8.38667 0.134247C7.50365 -0.0472552 6.42473 -0.0445449 5.55554 0.14135ZM8.68229 0.840815C9.79943 1.13485 10.5888 1.6029 11.493 2.50705C12.8059 3.8199 13.3659 5.16201 13.3659 6.99581C13.3659 8.82962 12.8059 10.1717 11.493 11.4846C10.1984 12.7792 8.7893 13.3715 7.00419 13.3715C5.21907 13.3715 3.80996 12.7792 2.51542 11.4846C1.22079 10.19 0.628528 8.78093 0.628528 6.99581C0.628528 5.2107 1.22079 3.80158 2.51542 2.50705C4.21782 0.804552 6.35304 0.227708 8.68229 0.840815ZM7.96282 1.89628C7.69365 2.12273 7.44159 2.60425 7.33672 3.09193L7.28196 3.34708L5.32992 3.37231L3.37788 3.39755L4.62812 4.78853C5.31571 5.55361 5.86415 6.2055 5.84676 6.23719C5.82938 6.26887 5.2416 7.2933 4.54045 8.51363C3.8394 9.73395 3.26573 10.7539 3.26573 10.7801C3.26573 10.8063 3.89659 10.8277 4.66765 10.8277C5.43871 10.8277 6.06957 10.8516 6.06957 10.8806C6.06957 10.9097 6.02256 11.0253 5.96518 11.1376C5.78068 11.4984 5.48684 11.6646 5.02953 11.6668C4.56998 11.669 4.34399 11.8214 4.47821 12.0386C4.58634 12.2136 5.41254 12.1908 5.77592 12.0028C6.09658 11.837 6.40267 11.4433 6.49408 11.079L6.55716 10.8277H8.65163H10.7462L10.6934 10.6174C10.6643 10.5018 10.5662 10.1128 10.4753 9.75292C10.2819 8.98691 10.0891 8.88897 9.96907 9.49591L9.89046 9.89312H8.30713C6.78801 9.89312 6.7238 9.88555 6.7238 9.70685C6.7238 9.52965 7.50224 4.7089 7.61814 4.1686C7.67262 3.91448 7.6816 3.91158 8.41349 3.91158C9.11857 3.91158 9.15389 3.92158 9.15511 4.12187C9.15941 4.83424 9.47559 4.97761 9.56727 4.3088C9.60083 4.06467 9.65092 3.74924 9.67877 3.60783L9.72943 3.35082H8.78734H7.84534V3.10819C7.84534 2.78472 8.10414 2.36255 8.37938 2.23722C8.60219 2.13563 8.79799 2.20059 9.26801 2.53209C9.39484 2.62154 9.454 2.6207 9.54634 2.52836C9.69859 2.37611 9.56886 2.16086 9.15455 1.8788C8.74715 1.6014 8.30564 1.60785 7.96282 1.89628ZM7.15055 4.1686C7.12008 4.31001 7.03344 4.77872 6.95821 5.21032C6.88288 5.64184 6.80633 6.00979 6.7882 6.02793C6.74932 6.06681 4.85457 4.04654 4.85457 3.96626C4.85457 3.93616 5.38366 3.91158 6.03023 3.91158H7.20597L7.15055 4.1686ZM6.41678 8.58466L6.20397 9.84639L5.58114 9.87386L4.95832 9.90143L5.77096 8.50241C6.2179 7.73294 6.59399 7.15283 6.6066 7.21311C6.61922 7.27349 6.5338 7.89071 6.41678 8.58466Z"
+                      fill-rule="evenodd"></path>
+                  </svg>
+                </span>
               </span>
-              <span class="globalnavbar-image-compact globalnavbar-link-image">
-                <svg height="48" viewBox="0 0 17 48" width="17" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M7.55554 2.14135C4.8274 2.724643 2.706755 4.86846 2.142622 7.61333C1.368294 11.3809 3.82483 15.0771 7.62171 15.8574C11.3892 16.6317 15.0854 14.1752 15.8658 10.3783C16.6401 6.61077 14.1835 2.91456 10.3867 2.13425C9.50365 1.95274 8.42473 1.95545 7.55554 2.14135ZM10.6823 2.84082C11.7994 3.13485 12.5888 3.6029 13.493 4.50705C14.8059 5.8199 15.3659 7.16201 15.3659 8.99581C15.3659 10.8296 14.8059 12.1717 13.493 13.4846C12.1984 14.7792 10.7893 15.3715 9.00419 15.3715C7.21907 15.3715 5.80996 14.7792 4.51542 13.4846C3.22079 12.19 2.62853 10.7809 2.62853 8.99581C2.62853 7.2107 3.22079 5.80158 4.51542 4.50705C6.21782 2.80455 8.35304 2.22771 10.6823 2.84082Z"></path>
-                </svg>
-              </span>
-              <span class="globalnavbar-link-text">Estatística</span>
             </a>
           </li>
-          <li data-analytics-element-engagement="globalnavbar hover - bemvindos" class="globalnavbar-item globalnavbar-item-bemvindos globalnavbar-item-submenu">
-            <ul class="globalnavbar-submenu-trigger-group">
-              <li class="globalnavbar-submenu-trigger-item">
-                <a href="/pages/boasvindas/" data-globalnavbar-item-name="bemvindos" data-topnav-flyout-trigger-compact="true" data-analytics-title="boas vindas" data-analytics-element-engagement="hover - boas vindas" aria-label="Boas Vindas" class="globalnavbar-link globalnavbar-submenu-trigger-link globalnavbar-link-bemvindos">
-                  <span class="globalnavbar-link-text-container">
-                    <span class="globalnavbar-image-regular globalnavbar-link-image">
-                      <svg height="44" viewBox="0 0 35 44" width="35" xmlns="http://www.w3.org/2000/svg">
-                        <path d="m8.1558 25.9987v-6.457h-.0703l-2.666 6.457h-.8907l-2.666-6.457h-.0703v6.457h-.9844v-8.4551h1.2246l2.8945 7.0547h.0938l2.8945-7.0547h1.2246v8.4551z"></path>
-                      </svg>
-                    </span>
-                    <span class="globalnavbar-link-text">Boas Vindas</span>
-                  </span>
-                  <span class="globalnavbar-link-chevron">
-                    <svg height="48" viewBox="0 0 9 48" width="9" xmlns="http://www.w3.org/2000/svg">
-                      <path d="m8.1155 30.358a.6.6 0 1 1 -.831.8653l-7-6.7242a.6.6 0 0 1 -.0045-.8613l7-6.8569a.6.6 0 1 1 .84.8574l-6.5582 6.4238z"></path>
-                    </svg>
-                  </span>
-                </a>
-              </li>
-              <li class="globalnavbar-submenu-trigger-item">
-                <button id="globalnavbar-menubutton-link-bemvindos" class="globalnavbar-submenu-trigger-button" aria-expanded="false" aria-controls="globalnavbar-submenu-link-bemvindos" aria-label="Menu Boas Vindas" data-topnav-flyout-trigger-regular="true">
-                  <span class="globalnavbar-image-regular globalnavbar-submenu-button-icon">
-                    <svg height="10" viewBox="0 0 10 10" width="10" xmlns="http://www.w3.org/2000/svg">
-                      <path d="m4.6725 6.635-2.655-2.667a.445.445 0 0 1 -.123-.304.4331.4331 0 0 1 .427-.439h.006a.447.447 0 0 1 .316.135l2.357 2.365 2.356-2.365a.458.458 0 0 1 .316-.135.433.433 0 0 1 .433.433v.006a.4189.4189 0 0 1 -.123.3l-2.655 2.671a.4451.4451 0 0 1 -.327.14.464.464 0 0 1 -.328-.14z"></path>
-                    </svg>
-                  </span>
-                  <span class="globalnavbar-image-compact globalnavbar-submenu-button-icon">
-                    <svg height="48" viewBox="0 0 9 48" width="9" xmlns="http://www.w3.org/2000/svg">
-                      <path d="m7.4382 24.0621-6.5581-6.4238c-.2368-.2319-.2407-.6118-.0088-.8486.2324-.2373.6123-.2407.8486-.0088l7 6.8569c.1157.1138.1807.2695.1802.4316-.001.1621-.0674.3174-.1846.4297l-7 6.7242c-.1162.1118-.2661.1675-.4155.1675-.1577 0-.3149-.062-.4326-.1846-.2295-.2388-.2222-.6187.0171-.8481l6.5537-6.2959z"></path>
-                    </svg>
-                  </span>
-                </button>
-              </li>
-            </ul>
-            <div id="globalnavbar-submenu-link-bemvindos" class="globalnavbar-flyout globalnavbar-submenu" aria-labelledby="globalnavbar-menubutton-link-bemvindos" style="--r-globalnavbar-flyout-item-total: 0; --r-globalnavbar-flyout-group-number: 0; --r-globalnavbar-flyout-height: 452px; --r-globalnavbar-flyout-rate: 240ms;">
+          <li class="globalnavbar-item globalnavbar-item-bemvindos">
+            <a class="globalnavbar-link globalnavbar-link-bemvindos" href="#" rel="noopener" target="_blank">
+              <span class="globalnavbar-link-bemvindos-container">
+                <span class="globalnavbar-link-text">Boas Vindas</span>
+                <span class="globalnavbar-bemvindos-regular globalnavbar-link-bemvindos">
+                  <svg height="44" viewbox="0 0 15 44">
+                    <!-- <path d="COLOQUE-CÓDIGO site-https://qnn.github.io/svg-path-editor/ " /> -->
+                  </svg>
+                </span>
+              </span>
+            </a>
+            <!-- SUBMENU DOS LINKS -->
+            <div id="globalnavbar-submenu-link-" class="globalnavbar-flyout globalnavbar-submenu">
               <div class="globalnavbar-flyout-scroll-container">
-                <div class="globalnavbar-flyout-content globalnavbar-submenu-content" style="--r-globalnavbar-flyout-elevated-group-count: 1; --r-globalnavbar-flyout-group-total: 3; --r-globalnavbar-flyout-item-total: 8;">
-                  <div class="globalnavbar-submenu-group globalnavbar-submenu-group-elevated" data-analytics-region="boas vindas" style="--r-globalnavbar-flyout-group-number: 0;">
-                    <h2 class="globalnavbar-submenu-header" id="bemvindos1" style="--r-globalnavbar-flyout-item-number: 1;">Boas Vindas</h2>
-                    <ul class="globalnavbar-submenu-list" aria-labelledby="bemvindos1">
-                      <li class="globalnavbar-submenu-list-item-elevated" style="--r-globalnavbar-flyout-item-number: 2;"><a href="/pages/boasvindas/" class="globalnavbar-submenu-link" data-analytics-title="estatuto e regimento">Estatuto e Regimento</a></li>
-                      <li class="globalnavbar-submenu-list-item-elevated" style="--r-globalnavbar-flyout-item-number: 3;"><a href="/pages/boasvindas/" class="globalnavbar-submenu-link" data-analytics-title="mapa">Mapa</a></li>
-                      <li class="globalnavbar-submenu-list-item-elevated" style="--r-globalnavbar-flyout-item-number: 4;"><a href="/pages/boasvindas/" class="globalnavbar-submenu-link" data-analytics-title="registro academico">Registro Acadêmico</a></li>
-                      <li class="globalnavbar-submenu-list-item-elevated" style="--r-globalnavbar-flyout-item-number: 5;"><a href="/pages/boasvindas/" class="globalnavbar-submenu-link" data-analytics-title="programas e orientacoes">Programas e Orientações</a></li>
-                      <li class="globalnavbar-submenu-list-item-elevated" style="--r-globalnavbar-flyout-item-number: 6;"><a href="/pages/boasvindas/" class="globalnavbar-submenu-link" data-analytics-title="biblioteca central">Biblioteca Central</a></li>
-                      <li class="globalnavbar-submenu-list-item-elevated" style="--r-globalnavbar-flyout-item-number: 7;"><a href="/pages/boasvindas/" class="globalnavbar-submenu-link" data-analytics-title="servicos">Serviços</a></li>
-                      <li class="globalnavbar-submenu-list-item-elevated" style="--r-globalnavbar-flyout-item-number: 8;"><a href="/pages/boasvindas/" class="globalnavbar-submenu-link" data-analytics-title="passos apos aprovacao">Passos após a Aprovação</a></li>
-                    </ul>
-                  </div>
-                  <div class="globalnavbar-submenu-group" data-analytics-region="links rapidos - boas vindas" style="--r-globalnavbar-flyout-group-number: 1;">
-                    <h2 class="globalnavbar-submenu-header" id="bemvindos2" style="--r-globalnavbar-flyout-item-number: 1;">Links Rápidos</h2>
-                    <ul class="globalnavbar-submenu-list" aria-labelledby="bemvindos2">
-                      <li class="globalnavbar-submenu-list-item" style="--r-globalnavbar-flyout-item-number: 2;"><a href="/pages/boasvindas/" class="globalnavbar-submenu-link" data-analytics-title="calendario academico">Calendário Acadêmico</a></li>
-                      <li class="globalnavbar-submenu-list-item" style="--r-globalnavbar-flyout-item-number: 3;"><a href="/pages/boasvindas/" class="globalnavbar-submenu-link" data-analytics-title="manual calouros">Manual para Calouros</a></li>
-                      <li class="globalnavbar-submenu-list-item" style="--r-globalnavbar-flyout-item-number: 4;"><a href="https://noticias.unb.br/images/Telefones_unb/mprazer.pdf" target="_blank" class="globalnavbar-submenu-link" data-analytics-title="contatos institucionais">Contatos Institucionais</a></li>
-                      <li class="globalnavbar-submenu-list-item" style="--r-globalnavbar-flyout-item-number: 5;"><a href="/pages/boasvindas/" class="globalnavbar-submenu-link" data-analytics-title="checklist">Checklist</a></li>
-                      <li class="globalnavbar-submenu-list-item" style="--r-globalnavbar-flyout-item-number: 6;"><a href="/pages/boasvindas/" class="globalnavbar-submenu-link" data-analytics-title="plataformas">Plataformas</a></li>
-                    </ul>
-                  </div>
-                  <div class="globalnavbar-submenu-group" data-analytics-region="explorar - boas vindas" style="--r-globalnavbar-flyout-group-number: 2;">
-                    <h2 class="globalnavbar-submenu-header" id="bemvindos3" style="--r-globalnavbar-flyout-item-number: 1;">Explorar</h2>
-                    <ul class="globalnavbar-submenu-list" aria-labelledby="bemvindos3">
-                      <li class="globalnavbar-submenu-list-item" style="--r-globalnavbar-flyout-item-number: 2;"><a href="/pages/boasvindas/" class="globalnavbar-submenu-link" data-analytics-title="perguntas frequentes">Perguntas Frequentes</a></li>
-                      <li class="globalnavbar-submenu-list-item" style="--r-globalnavbar-flyout-item-number: 3;"><a href="/pages/boasvindas/" class="globalnavbar-submenu-link" data-analytics-title="ouvidoria">Ouvidoria</a></li>
-                    </ul>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </li>
-          <li data-analytics-element-engagement="globalnavbar hover - departamento" class="globalnavbar-item globalnavbar-item-departamento globalnavbar-item-submenu">
-            <ul class="globalnavbar-submenu-trigger-group">
-              <li class="globalnavbar-submenu-trigger-item">
-                <a href="/pages/docente/" data-globalnavbar-item-name="departamento" data-topnav-flyout-trigger-compact="true" data-analytics-title="departamento" data-analytics-element-engagement="hover - departamento" aria-label="Departamento" class="globalnavbar-link globalnavbar-submenu-trigger-link globalnavbar-link-departamento">
-                  <span class="globalnavbar-link-text-container">
-                    <span class="globalnavbar-image-regular globalnavbar-link-image">
-                      <svg height="44" viewBox="0 0 30 44" width="30" xmlns="http://www.w3.org/2000/svg">
-                        <path d="m26.5679 20.4629c1.002 0 1.67.738 1.693 1.857h-3.48c.076-1.119.779-1.857 1.787-1.857z"></path>
-                      </svg>
-                    </span>
-                    <span class="globalnavbar-link-text">Departamento</span>
-                  </span>
-                  <span class="globalnavbar-link-chevron">
-                    <svg height="48" viewBox="0 0 9 48" width="9" xmlns="http://www.w3.org/2000/svg">
-                      <path d="m8.1155 30.358a.6.6 0 1 1 -.831.8653l-7-6.7242a.6.6 0 0 1 -.0045-.8613l7-6.8569a.6.6 0 1 1 .84.8574l-6.5582 6.4238z"></path>
-                    </svg>
-                  </span>
-                </a>
-              </li>
-              <li class="globalnavbar-submenu-trigger-item">
-                <button id="globalnavbar-menubutton-link-departamento" class="globalnavbar-submenu-trigger-button" aria-expanded="false" aria-controls="globalnavbar-submenu-link-departamento" aria-label="Menu Departamento" data-topnav-flyout-trigger-regular="true">
-                  <span class="globalnavbar-image-regular globalnavbar-submenu-button-icon">
-                    <svg height="10" viewBox="0 0 10 10" width="10" xmlns="http://www.w3.org/2000/svg">
-                      <path d="m4.6725 6.635-2.655-2.667a.445.445 0 0 1 -.123-.304.4331.4331 0 0 1 .427-.439h.006a.447.447 0 0 1 .316.135l2.357 2.365 2.356-2.365a.458.458 0 0 1 .316-.135.433.433 0 0 1 .433.433v.006a.4189.4189 0 0 1 -.123.3l-2.655 2.671a.4451.4451 0 0 1 -.327.14.464.464 0 0 1 -.328-.14z"></path>
-                    </svg>
-                  </span>
-                  <span class="globalnavbar-image-compact globalnavbar-submenu-button-icon">
-                    <svg height="48" viewBox="0 0 9 48" width="9" xmlns="http://www.w3.org/2000/svg">
-                      <path d="m7.4382 24.0621-6.5581-6.4238c-.2368-.2319-.2407-.6118-.0088-.8486.2324-.2373.6123-.2407.8486-.0088l7 6.8569c.1157.1138.1807.2695.1802.4316-.001.1621-.0674.3174-.1846.4297l-7 6.7242c-.1162.1118-.2661.1675-.4155.1675-.1577 0-.3149-.062-.4326-.1846-.2295-.2388-.2222-.6187.0171-.8481l6.5537-6.2959z"></path>
-                    </svg>
-                  </span>
-                </button>
-              </li>
-            </ul>
-            <div id="globalnavbar-submenu-link-departamento" class="globalnavbar-flyout globalnavbar-submenu" aria-labelledby="globalnavbar-menubutton-link-departamento" style="--r-globalnavbar-flyout-item-total: 0; --r-globalnavbar-flyout-group-number: 0; --r-globalnavbar-flyout-height: 552px; --r-globalnavbar-flyout-rate: 254ms;">
-              <div class="globalnavbar-flyout-scroll-container">
-                <div class="globalnavbar-flyout-content globalnavbar-submenu-content" style="--r-globalnavbar-flyout-elevated-group-count: 1; --r-globalnavbar-flyout-group-total: 3; --r-globalnavbar-flyout-item-total: 9;">
-                  <div class="globalnavbar-submenu-group globalnavbar-submenu-group-elevated" data-analytics-region="explorar departamento" style="--r-globalnavbar-flyout-group-number: 0;">
-                    <h2 class="globalnavbar-submenu-header" id="departamento1" style="--r-globalnavbar-flyout-item-number: 1;">Explorar Departamento</h2>
-                    <ul class="globalnavbar-submenu-list" aria-labelledby="departamento1">
-                      <li class="globalnavbar-submenu-list-item-elevated" style="--r-globalnavbar-flyout-item-number: 2;"><a href="/pages/docente/" class="globalnavbar-submenu-link" data-analytics-title="historia">História</a></li>
-                      <li class="globalnavbar-submenu-list-item-elevated" style="--r-globalnavbar-flyout-item-number: 3;"><a href="/pages/docente/" class="globalnavbar-submenu-link" data-analytics-title="instalacoes">Instalações</a></li>
-                      <li class="globalnavbar-submenu-list-item-elevated" style="--r-globalnavbar-flyout-item-number: 4;"><a href="/pages/docente/" class="globalnavbar-submenu-link" data-analytics-title="administracao">Administração</a></li>
-                      <li class="globalnavbar-submenu-list-item-elevated" style="--r-globalnavbar-flyout-item-number: 5;"><a href="/pages/docente/" class="globalnavbar-submenu-link" data-analytics-title="docentes">Docentes</a></li>
-                      <li class="globalnavbar-submenu-list-item-elevated" style="--r-globalnavbar-flyout-item-number: 6;"><a href="/pages/docente/" class="globalnavbar-submenu-link" data-analytics-title="documentos">Documentos</a></li>
-                      <li class="globalnavbar-submenu-list-item-elevated" style="--r-globalnavbar-flyout-item-number: 7;"><a href="/pages/docente/" class="globalnavbar-submenu-link" data-analytics-title="producao academica">Produção Acadêmica</a></li>
-                      <li class="globalnavbar-submenu-list-item-elevated" style="--r-globalnavbar-flyout-item-number: 8;"><a href="/pages/docente/" class="globalnavbar-submenu-link" data-analytics-title="comissoes">Comissões e Coordenações</a></li>
-                      <li class="globalnavbar-submenu-list-item-elevated" style="--r-globalnavbar-flyout-item-number: 9;"><a href="/pages/docente/" class="globalnavbar-submenu-link" data-analytics-title="grupos pesquisa">Grupos de Pesquisa</a></li>
-                    </ul>
-                  </div>
-                  <div class="globalnavbar-submenu-group" data-analytics-region="links rapidos - departamento" style="--r-globalnavbar-flyout-group-number: 1;">
-                    <h2 class="globalnavbar-submenu-header" id="departamento2" style="--r-globalnavbar-flyout-item-number: 1;">Links Rápidos</h2>
-                    <ul class="globalnavbar-submenu-list" aria-labelledby="departamento2">
-                      <li class="globalnavbar-submenu-list-item" style="--r-globalnavbar-flyout-item-number: 2;"><a href="/pages/docente/" class="globalnavbar-submenu-link" data-analytics-title="calendario academico">Calendário Acadêmico</a></li>
-                      <li class="globalnavbar-submenu-list-item" style="--r-globalnavbar-flyout-item-number: 3;"><a href="https://aprender3.unb.br" class="globalnavbar-submenu-link" data-analytics-title="aprender3">Aprender3</a></li>
-                      <li class="globalnavbar-submenu-list-item" style="--r-globalnavbar-flyout-item-number: 4;"><a href="https://moodle.mat.unb.br" class="globalnavbar-submenu-link" data-analytics-title="moodle mat">Moodle MAT</a></li>
-                      <li class="globalnavbar-submenu-list-item" style="--r-globalnavbar-flyout-item-number: 5;"><a href="https://sigaa.unb.br" class="globalnavbar-submenu-link" data-analytics-title="sigaa">SIGAA</a></li>
-                    </ul>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </li>
-          <li data-analytics-element-engagement="globalnavbar hover - graduacao" class="globalnavbar-item globalnavbar-item-graduacao globalnavbar-item-submenu">
-            <ul class="globalnavbar-submenu-trigger-group">
-              <li class="globalnavbar-submenu-trigger-item">
-                <a href="/book/" data-globalnavbar-item-name="graduacao" data-topnav-flyout-trigger-compact="true" data-analytics-title="graduacao" data-analytics-element-engagement="hover - graduacao" aria-label="Graduação" class="globalnavbar-link globalnavbar-submenu-trigger-link globalnavbar-link-graduacao">
-                  <span class="globalnavbar-link-text-container">
-                    <span class="globalnavbar-image-regular globalnavbar-link-image">
-                      <svg height="44" viewBox="0 0 24 44" width="24" xmlns="http://www.w3.org/2000/svg">
-                        <path d="m14.9575 23.7002c0 .902-.768 1.582-1.805 1.582-.732 0-1.277-.375-1.277-1.02 0-.632.422-.966 1.383-1.031l1.699-.111z"></path>
-                      </svg>
-                    </span>
-                    <span class="globalnavbar-link-text">Graduação</span>
-                  </span>
-                  <span class="globalnavbar-link-chevron">
-                    <svg height="48" viewBox="0 0 9 48" width="9" xmlns="http://www.w3.org/2000/svg">
-                      <path d="m8.1155 30.358a.6.6 0 1 1 -.831.8653l-7-6.7242a.6.6 0 0 1 -.0045-.8613l7-6.8569a.6.6 0 1 1 .84.8574l-6.5582 6.4238z"></path>
-                    </svg>
-                  </span>
-                </a>
-              </li>
-              <li class="globalnavbar-submenu-trigger-item">
-                <button id="globalnavbar-menubutton-link-graduacao" class="globalnavbar-submenu-trigger-button" aria-expanded="false" aria-controls="globalnavbar-submenu-link-graduacao" aria-label="Menu Graduação" data-topnav-flyout-trigger-regular="true">
-                  <span class="globalnavbar-image-regular globalnavbar-submenu-button-icon">
-                    <svg height="10" viewBox="0 0 10 10" width="10" xmlns="http://www.w3.org/2000/svg">
-                      <path d="m4.6725 6.635-2.655-2.667a.445.445 0 0 1 -.123-.304.4331.4331 0 0 1 .427-.439h.006a.447.447 0 0 1 .316.135l2.357 2.365 2.356-2.365a.458.458 0 0 1 .316-.135.433.433 0 0 1 .433.433v.006a.4189.4189 0 0 1 -.123.3l-2.655 2.671a.4451.4451 0 0 1 -.327.14.464.464 0 0 1 -.328-.14z"></path>
-                    </svg>
-                  </span>
-                  <span class="globalnavbar-image-compact globalnavbar-submenu-button-icon">
-                    <svg height="48" viewBox="0 0 9 48" width="9" xmlns="http://www.w3.org/2000/svg">
-                      <path d="m7.4382 24.0621-6.5581-6.4238c-.2368-.2319-.2407-.6118-.0088-.8486.2324-.2373.6123-.2407.8486-.0088l7 6.8569c.1157.1138.1807.2695.1802.4316-.001.1621-.0674.3174-.1846.4297l-7 6.7242c-.1162.1118-.2661.1675-.4155.1675-.1577 0-.3149-.062-.4326-.1846-.2295-.2388-.2222-.6187.0171-.8481l6.5537-6.2959z"></path>
-                    </svg>
-                  </span>
-                </button>
-              </li>
-            </ul>
-            <div id="globalnavbar-submenu-link-graduacao" class="globalnavbar-flyout globalnavbar-submenu" aria-labelledby="globalnavbar-menubutton-link-graduacao" style="--r-globalnavbar-flyout-item-total: 0; --r-globalnavbar-flyout-group-number: 0; --r-globalnavbar-flyout-height: 514px; --r-globalnavbar-flyout-rate: 240ms;">
-              <div class="globalnavbar-flyout-scroll-container">
-                <div class="globalnavbar-flyout-content globalnavbar-submenu-content" style="--r-globalnavbar-flyout-elevated-group-count: 1; --r-globalnavbar-flyout-group-total: 3; --r-globalnavbar-flyout-item-total: 7;">
-                  <div class="globalnavbar-submenu-group globalnavbar-submenu-group-elevated" data-analytics-region="explorar graduacao" style="--r-globalnavbar-flyout-group-number: 0;">
-                    <h2 class="globalnavbar-submenu-header" id="graduacao1" style="--r-globalnavbar-flyout-item-number: 1;">Explorar Graduação</h2>
-                    <ul class="globalnavbar-submenu-list" aria-labelledby="graduacao1">
-                      <li class="globalnavbar-submenu-list-item-elevated" style="--r-globalnavbar-flyout-item-number: 2;"><a href="/book/" class="globalnavbar-submenu-link" data-analytics-title="disciplinas">Disciplinas</a></li>
-                      <li class="globalnavbar-submenu-list-item-elevated" style="--r-globalnavbar-flyout-item-number: 3;"><a href="/book/" class="globalnavbar-submenu-link" data-analytics-title="documentos">Documentos</a></li>
-                      <li class="globalnavbar-submenu-list-item-elevated" style="--r-globalnavbar-flyout-item-number: 4;"><a href="/book/" class="globalnavbar-submenu-link" data-analytics-title="aluno especial">Aluno Especial</a></li>
-                      <li class="globalnavbar-submenu-list-item-elevated" style="--r-globalnavbar-flyout-item-number: 5;"><a href="/book/" class="globalnavbar-submenu-link" data-analytics-title="auxilios">Auxílios</a></li>
-                      <li class="globalnavbar-submenu-list-item-elevated" style="--r-globalnavbar-flyout-item-number: 6;"><a href="/book/" class="globalnavbar-submenu-link" data-analytics-title="projeto pedagogico">Projeto Pedagógico</a></li>
-                      <li class="globalnavbar-submenu-list-item-elevated" style="--r-globalnavbar-flyout-item-number: 7;"><a href="/book/" class="globalnavbar-submenu-link" data-analytics-title="comissao graduacao">Comissão de Graduação</a></li>
-                    </ul>
-                  </div>
-                  <div class="globalnavbar-submenu-group" data-analytics-region="links rapidos - graduacao" style="--r-globalnavbar-flyout-group-number: 1;">
-                    <h2 class="globalnavbar-submenu-header" id="graduacao2" style="--r-globalnavbar-flyout-item-number: 1;">Links Rápidos</h2>
-                    <ul class="globalnavbar-submenu-list" aria-labelledby="graduacao2">
-                      <li class="globalnavbar-submenu-list-item" style="--r-globalnavbar-flyout-item-number: 2;"><a href="/book/" class="globalnavbar-submenu-link" data-analytics-title="calendario academico">Calendário Acadêmico</a></li>
-                      <li class="globalnavbar-submenu-list-item" style="--r-globalnavbar-flyout-item-number: 3;"><a href="/book/" class="globalnavbar-submenu-link" data-analytics-title="normativos graduacao">Normativos da Graduação</a></li>
-                      <li class="globalnavbar-submenu-list-item" style="--r-globalnavbar-flyout-item-number: 4;"><a href="/book/" class="globalnavbar-submenu-link" data-analytics-title="formularios">Formulários</a></li>
-                      <li class="globalnavbar-submenu-list-item" style="--r-globalnavbar-flyout-item-number: 5;"><a href="/book/" class="globalnavbar-submenu-link" data-analytics-title="extensoes">Extensões</a></li>
-                      <li class="globalnavbar-submenu-list-item" style="--r-globalnavbar-flyout-item-number: 6;"><a href="/book/" class="globalnavbar-submenu-link" data-analytics-title="iniciacao cientifica">Iniciação Científica</a></li>
-                    </ul>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </li>
-          <li data-analytics-element-engagement="globalnavbar hover - pesquisa" class="globalnavbar-item globalnavbar-item-pesquisa globalnavbar-item-submenu">
-            <ul class="globalnavbar-submenu-trigger-group">
-              <li class="globalnavbar-submenu-trigger-item">
-                <a href="/newsroom/" data-globalnavbar-item-name="pesquisa" data-topnav-flyout-trigger-compact="true" data-analytics-title="pesquisa" data-analytics-element-engagement="hover - pesquisa" aria-label="Pesquisa" class="globalnavbar-link globalnavbar-submenu-trigger-link globalnavbar-link-pesquisa">
-                  <span class="globalnavbar-link-text-container">
-                    <span class="globalnavbar-image-regular globalnavbar-link-image">
-                      <svg height="44" viewBox="0 0 38 44" width="38" xmlns="http://www.w3.org/2000/svg">
-                        <path d="m32.7129 22.3203h3.48c-.023-1.119-.691-1.857-1.693-1.857-1.008 0-1.711.738-1.787 1.857z"></path>
-                      </svg>
-                    </span>
-                    <span class="globalnavbar-link-text">Pesquisa</span>
-                  </span>
-                  <span class="globalnavbar-link-chevron">
-                    <svg height="48" viewBox="0 0 9 48" width="9" xmlns="http://www.w3.org/2000/svg">
-                      <path d="m8.1155 30.358a.6.6 0 1 1 -.831.8653l-7-6.7242a.6.6 0 0 1 -.0045-.8613l7-6.8569a.6.6 0 1 1 .84.8574l-6.5582 6.4238z"></path>
-                    </svg>
-                  </span>
-                </a>
-              </li>
-              <li class="globalnavbar-submenu-trigger-item">
-                <button id="globalnavbar-menubutton-link-pesquisa" class="globalnavbar-submenu-trigger-button" aria-expanded="false" aria-controls="globalnavbar-submenu-link-pesquisa" aria-label="Menu Pesquisa" data-topnav-flyout-trigger-regular="true">
-                  <span class="globalnavbar-image-regular globalnavbar-submenu-button-icon">
-                    <svg height="10" viewBox="0 0 10 10" width="10" xmlns="http://www.w3.org/2000/svg">
-                      <path d="m4.6725 6.635-2.655-2.667a.445.445 0 0 1 -.123-.304.4331.4331 0 0 1 .427-.439h.006a.447.447 0 0 1 .316.135l2.357 2.365 2.356-2.365a.458.458 0 0 1 .316-.135.433.433 0 0 1 .433.433v.006a.4189.4189 0 0 1 -.123.3l-2.655 2.671a.4451.4451 0 0 1 -.327.14.464.464 0 0 1 -.328-.14z"></path>
-                    </svg>
-                  </span>
-                  <span class="globalnavbar-image-compact globalnavbar-submenu-button-icon">
-                    <svg height="48" viewBox="0 0 9 48" width="9" xmlns="http://www.w3.org/2000/svg">
-                      <path d="m7.4382 24.0621-6.5581-6.4238c-.2368-.2319-.2407-.6118-.0088-.8486.2324-.2373.6123-.2407.8486-.0088l7 6.8569c.1157.1138.1807.2695.1802.4316-.001.1621-.0674.3174-.1846.4297l-7 6.7242c-.1162.1118-.2661.1675-.4155.1675-.1577 0-.3149-.062-.4326-.1846-.2295-.2388-.2222-.6187.0171-.8481l6.5537-6.2959z"></path>
-                    </svg>
-                  </span>
-                </button>
-              </li>
-            </ul>
-            <div id="globalnavbar-submenu-link-pesquisa" class="globalnavbar-flyout globalnavbar-submenu" aria-labelledby="globalnavbar-menubutton-link-pesquisa" style="--r-globalnavbar-flyout-item-total: 0; --r-globalnavbar-flyout-group-number: 0; --r-globalnavbar-flyout-height: 438px; --r-globalnavbar-flyout-rate: 240ms;">
-              <div class="globalnavbar-flyout-scroll-container">
-                <div class="globalnavbar-flyout-content globalnavbar-submenu-content" style="--r-globalnavbar-flyout-elevated-group-count: 1; --r-globalnavbar-flyout-group-total: 2; --r-globalnavbar-flyout-item-total: 6;">
-                  <div class="globalnavbar-submenu-group globalnavbar-submenu-group-elevated" data-analytics-region="explorar pesquisa" style="--r-globalnavbar-flyout-group-number: 0;">
-                    <h2 class="globalnavbar-submenu-header" id="pesquisa1" style="--r-globalnavbar-flyout-item-number: 1;">Explorar Pesquisa</h2>
-                    <ul class="globalnavbar-submenu-list" aria-labelledby="pesquisa1">
-                      <li class="globalnavbar-submenu-list-item-elevated" style="--r-globalnavbar-flyout-item-number: 2;"><a href="/newsroom/" class="globalnavbar-submenu-link" data-analytics-title="grupos pesquisa">Grupos de Pesquisa</a></li>
-                      <li class="globalnavbar-submenu-list-item-elevated" style="--r-globalnavbar-flyout-item-number: 3;"><a href="/newsroom/" class="globalnavbar-submenu-link" data-analytics-title="linhas pesquisa">Linhas de Pesquisa</a></li>
-                      <li class="globalnavbar-submenu-list-item-elevated" style="--r-globalnavbar-flyout-item-number: 4;"><a href="/newsroom/" class="globalnavbar-submenu-link" data-analytics-title="projetos">Projetos</a></li>
-                      <li class="globalnavbar-submenu-list-item-elevated" style="--r-globalnavbar-flyout-item-number: 5;"><a href="/newsroom/" class="globalnavbar-submenu-link" data-analytics-title="publicacoes">Publicações</a></li>
-                      <li class="globalnavbar-submenu-list-item-elevated" style="--r-globalnavbar-flyout-item-number: 6;"><a href="/newsroom/" class="globalnavbar-submenu-link" data-analytics-title="laboratorios">Laboratórios</a></li>
-                    </ul>
-                  </div>
-                  <div class="globalnavbar-submenu-group" data-analytics-region="links rapidos - pesquisa" style="--r-globalnavbar-flyout-group-number: 1;">
-                    <h2 class="globalnavbar-submenu-header" id="pesquisa2" style="--r-globalnavbar-flyout-item-number: 1;">Links Rápidos</h2>
-                    <ul class="globalnavbar-submenu-list" aria-labelledby="pesquisa2">
-                      <li class="globalnavbar-submenu-list-item" style="--r-globalnavbar-flyout-item-number: 2;"><a href="/newsroom/" class="globalnavbar-submenu-link" data-analytics-title="repositorio">Repositório</a></li>
-                      <li class="globalnavbar-submenu-list-item" style="--r-globalnavbar-flyout-item-number: 3;"><a href="/newsroom/" class="globalnavbar-submenu-link" data-analytics-title="editais">Editais</a></li>
-                      <li class="globalnavbar-submenu-list-item" style="--r-globalnavbar-flyout-item-number: 4;"><a href="/newsroom/" class="globalnavbar-submenu-link" data-analytics-title="iniciacao cientifica">Iniciação Científica</a></li>
-                      <li class="globalnavbar-submenu-list-item" style="--r-globalnavbar-flyout-item-number: 5;"><a href="/newsroom/" class="globalnavbar-submenu-link" data-analytics-title="parcerias">Parcerias</a></li>
-                    </ul>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </li>
-          <li data-analytics-element-engagement="globalnavbar hover - posgraduacao" class="globalnavbar-item globalnavbar-item-posgraduacao globalnavbar-item-submenu">
-            <ul class="globalnavbar-submenu-trigger-group">
-              <li class="globalnavbar-submenu-trigger-item">
-                <a href="/book/" data-globalnavbar-item-name="posgraduacao" data-topnav-flyout-trigger-compact="true" data-analytics-title="pos graduacao" data-analytics-element-engagement="hover - pos graduacao" aria-label="Pós-graduação" class="globalnavbar-link globalnavbar-submenu-trigger-link globalnavbar-link-posgraduacao">
-                  <span class="globalnavbar-link-text-container">
-                    <span class="globalnavbar-image-regular globalnavbar-link-image">
-                      <svg height="44" viewBox="0 0 28 44" width="28" xmlns="http://www.w3.org/2000/svg">
-                        <path d="m13.9575 21.7002c0 .902-.768 1.582-1.805 1.582-.732 0-1.277-.375-1.277-1.02 0-.632.422-.966 1.383-1.031l1.699-.111z"></path>
-                      </svg>
-                    </span>
-                    <span class="globalnavbar-link-text">Pós-graduação</span>
-                  </span>
-                  <span class="globalnavbar-link-chevron">
-                    <svg height="48" viewBox="0 0 9 48" width="9" xmlns="http://www.w3.org/2000/svg">
-                      <path d="m8.1155 30.358a.6.6 0 1 1 -.831.8653l-7-6.7242a.6.6 0 0 1 -.0045-.8613l7-6.8569a.6.6 0 1 1 .84.8574l-6.5582 6.4238z"></path>
-                    </svg>
-                  </span>
-                </a>
-              </li>
-              <li class="globalnavbar-submenu-trigger-item">
-                <button id="globalnavbar-menubutton-link-posgraduacao" class="globalnavbar-submenu-trigger-button" aria-expanded="false" aria-controls="globalnavbar-submenu-link-posgraduacao" aria-label="Menu Pós-graduação" data-topnav-flyout-trigger-regular="true">
-                  <span class="globalnavbar-image-regular globalnavbar-submenu-button-icon">
-                    <svg height="10" viewBox="0 0 10 10" width="10" xmlns="http://www.w3.org/2000/svg">
-                      <path d="m4.6725 6.635-2.655-2.667a.445.445 0 0 1 -.123-.304.4331.4331 0 0 1 .427-.439h.006a.447.447 0 0 1 .316.135l2.357 2.365 2.356-2.365a.458.458 0 0 1 .316-.135.433.433 0 0 1 .433.433v.006a.4189.4189 0 0 1 -.123.3l-2.655 2.671a.4451.4451 0 0 1 -.327.14.464.464 0 0 1 -.328-.14z"></path>
-                    </svg>
-                  </span>
-                  <span class="globalnavbar-image-compact globalnavbar-submenu-button-icon">
-                    <svg height="48" viewBox="0 0 9 48" width="9" xmlns="http://www.w3.org/2000/svg">
-                      <path d="m7.4382 24.0621-6.5581-6.4238c-.2368-.2319-.2407-.6118-.0088-.8486.2324-.2373.6123-.2407.8486-.0088l7 6.8569c.1157.1138.1807.2695.1802.4316-.001.1621-.0674.3174-.1846.4297l-7 6.7242c-.1162.1118-.2661.1675-.4155.1675-.1577 0-.3149-.062-.4326-.1846-.2295-.2388-.2222-.6187.0171-.8481l6.5537-6.2959z"></path>
-                    </svg>
-                  </span>
-                </button>
-              </li>
-            </ul>
-            <div id="globalnavbar-submenu-link-posgraduacao" class="globalnavbar-flyout globalnavbar-submenu" aria-labelledby="globalnavbar-menubutton-link-posgraduacao" style="--r-globalnavbar-flyout-item-total: 0; --r-globalnavbar-flyout-group-number: 0; --r-globalnavbar-flyout-height: 514px; --r-globalnavbar-flyout-rate: 240ms;">
-              <div class="globalnavbar-flyout-scroll-container">
-                <div class="globalnavbar-flyout-content globalnavbar-submenu-content" style="--r-globalnavbar-flyout-elevated-group-count: 1; --r-globalnavbar-flyout-group-total: 3; --r-globalnavbar-flyout-item-total: 7;">
-                  <div class="globalnavbar-submenu-group globalnavbar-submenu-group-elevated" data-analytics-region="explorar pos graduacao" style="--r-globalnavbar-flyout-group-number: 0;">
-                    <h2 class="globalnavbar-submenu-header" id="posgraduacao1" style="--r-globalnavbar-flyout-item-number: 1;">Explorar Pós-graduação</h2>
-                    <ul class="globalnavbar-submenu-list" aria-labelledby="posgraduacao1">
-                      <li class="globalnavbar-submenu-list-item-elevated" style="--r-globalnavbar-flyout-item-number: 2;"><a href="/book/" class="globalnavbar-submenu-link" data-analytics-title="programa">Programa</a></li>
-                      <li class="globalnavbar-submenu-list-item-elevated" style="--r-globalnavbar-flyout-item-number: 3;"><a href="/book/" class="globalnavbar-submenu-link" data-analytics-title="mestrado">Mestrado</a></li>
-                      <li class="globalnavbar-submenu-list-item-elevated" style="--r-globalnavbar-flyout-item-number: 4;"><a href="/book/" class="globalnavbar-submenu-link" data-analytics-title="doutorado">Doutorado</a></li>
-                      <li class="globalnavbar-submenu-list-item-elevated" style="--r-globalnavbar-flyout-item-number: 5;"><a href="/book/" class="globalnavbar-submenu-link" data-analytics-title="disciplinas">Disciplinas</a></li>
-                      <li class="globalnavbar-submenu-list-item-elevated" style="--r-globalnavbar-flyout-item-number: 6;"><a href="/book/" class="globalnavbar-submenu-link" data-analytics-title="bolsas">Bolsas</a></li>
-                      <li class="globalnavbar-submenu-list-item-elevated" style="--r-globalnavbar-flyout-item-number: 7;"><a href="/book/" class="globalnavbar-submenu-link" data-analytics-title="teses dissertacoes">Teses e Dissertações</a></li>
-                    </ul>
-                  </div>
-                  <div class="globalnavbar-submenu-group" data-analytics-region="links rapidos - pos graduacao" style="--r-globalnavbar-flyout-group-number: 1;">
-                    <h2 class="globalnavbar-submenu-header" id="posgraduacao2" style="--r-globalnavbar-flyout-item-number: 1;">Links Rápidos</h2>
-                    <ul class="globalnavbar-submenu-list" aria-labelledby="posgraduacao2">
-                      <li class="globalnavbar-submenu-list-item" style="--r-globalnavbar-flyout-item-number: 2;"><a href="/book/" class="globalnavbar-submenu-link" data-analytics-title="calendario academico">Calendário Acadêmico</a></li>
-                      <li class="globalnavbar-submenu-list-item" style="--r-globalnavbar-flyout-item-number: 3;"><a href="/book/" class="globalnavbar-submenu-link" data-analytics-title="processos seletivos">Processos Seletivos</a></li>
-                      <li class="globalnavbar-submenu-list-item" style="--r-globalnavbar-flyout-item-number: 4;"><a href="/book/" class="globalnavbar-submenu-link" data-analytics-title="normativos">Normativos</a></li>
-                      <li class="globalnavbar-submenu-list-item" style="--r-globalnavbar-flyout-item-number: 5;"><a href="/book/" class="globalnavbar-submenu-link" data-analytics-title="formularios">Formulários</a></li>
-                      <li class="globalnavbar-submenu-list-item" style="--r-globalnavbar-flyout-item-number: 6;"><a href="/book/" class="globalnavbar-submenu-link" data-analytics-title="comissao pos graduacao">Comissão de Pós-graduação</a></li>
-                    </ul>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </li>
-          <li data-analytics-element-engagement="globalnavbar hover - extensao"
-            class="globalnavbar-item globalnavbar-item-extensao globalnavbar-item-submenu">
-            <ul class="globalnavbar-submenu-trigger-group">
-              <li class="globalnavbar-submenu-trigger-item">
-                <a href="/extensao/" data-globalnavbar-item-name="extensao" data-topnav-flyout-trigger-compact="true"
-                  data-analytics-title="extensao" data-analytics-element-engagement="hover - extensao" aria-label="Extensão"
-                  class="globalnavbar-link globalnavbar-submenu-trigger-link globalnavbar-link-extensao">
-                  <span class="globalnavbar-link-text-container">
-                    <span class="globalnavbar-image-regular globalnavbar-link-image">
-                      <svg height="44" viewBox="0 0 28 44" width="28" xmlns="http://www.w3.org/2000/svg">
-                        <path
-                          d="m15.9575 23.7002c0 .902-.768 1.582-1.805 1.582-.732 0-1.277-.375-1.277-1.02 0-.632.422-.966 1.383-1.031l1.699-.111z">
-                        </path>
-                      </svg>
-                    </span>
-                    <span class="globalnavbar-link-text">Extensão</span>
-                  </span>
-                  <span class="globalnavbar-link-chevron">
-                    <svg height="48" viewBox="0 0 9 48" width="9" xmlns="http://www.w3.org/2000/svg">
-                      <path
-                        d="m8.1155 30.358a.6.6 0 1 1 -.831.8653l-7-6.7242a.6.6 0 0 1 -.0045-.8613l7-6.8569a.6.6 0 1 1 .84.8574l-6.5582 6.4238z">
-                      </path>
-                    </svg>
-                  </span>
-                </a>
-              </li>
-              <li class="globalnavbar-submenu-trigger-item">
-                <button id="globalnavbar-menubutton-link-extensao" class="globalnavbar-submenu-trigger-button"
-                  aria-expanded="false" aria-controls="globalnavbar-submenu-link-extensao" aria-label="Menu Extensão"
-                  data-topnav-flyout-trigger-regular="true">
-                  <span class="globalnavbar-image-regular globalnavbar-submenu-button-icon">
-                    <svg height="10" viewBox="0 0 10 10" width="10" xmlns="http://www.w3.org/2000/svg">
-                      <path
-                        d="m4.6725 6.635-2.655-2.667a.445.445 0 0 1 -.123-.304.4331.4331 0 0 1 .427-.439h.006a.447.447 0 0 1 .316.135l2.357 2.365 2.356-2.365a.458.458 0 0 1 .316-.135.433.433 0 0 1 .433.433v.006a.4189.4189 0 0 1 -.123.3l-2.655 2.671a.4451.4451 0 0 1 -.327.14.464.464 0 0 1 -.328-.14z">
-                      </path>
-                    </svg>
-                  </span>
-                  <span class="globalnavbar-image-compact globalnavbar-submenu-button-icon">
-                    <svg height="48" viewBox="0 0 9 48" width="9" xmlns="http://www.w3.org/2000/svg">
-                      <path
-                        d="m7.4382 24.0621-6.5581-6.4238c-.2368-.2319-.2407-.6118-.0088-.8486.2324-.2373.6123-.2407.8486-.0088l7 6.8569c.1157.1138.1807.2695.1802.4316-.001.1621-.0674.3174-.1846.4297l-7 6.7242c-.1162.1118-.2661.1675-.4155.1675-.1577 0-.3149-.062-.4326-.1846-.2295-.2388-.2222-.6187.0171-.8481l6.5537-6.2959z">
-                      </path>
-                    </svg>
-                  </span>
-                </button>
-              </li>
-            </ul>
-            <div id="globalnavbar-submenu-link-extensao" class="globalnavbar-flyout globalnavbar-submenu"
-              aria-labelledby="globalnavbar-menubutton-link-extensao"
-              style="--r-globalnavbar-flyout-item-total: 0; --r-globalnavbar-flyout-group-number: 0; --r-globalnavbar-flyout-height: 452px; --r-globalnavbar-flyout-rate: 240ms;">
-              <div class="globalnavbar-flyout-scroll-container">
-                <div class="globalnavbar-flyout-content globalnavbar-submenu-content"
-                  style="--r-globalnavbar-flyout-elevated-group-count: 1; --r-globalnavbar-flyout-group-total: 2; --r-globalnavbar-flyout-item-total: 6;">
-                  <div class="globalnavbar-submenu-group globalnavbar-submenu-group-elevated"
-                    data-analytics-region="explorar extensao" style="--r-globalnavbar-flyout-group-number: 0;">
-                    <h2 class="globalnavbar-submenu-header" id="extensao1" style="--r-globalnavbar-flyout-item-number: 1;">
-                      Explorar Extensão</h2>
-                    <ul class="globalnavbar-submenu-list" aria-labelledby="extensao1">
-                      <li class="globalnavbar-submenu-list-item-elevated" style="--r-globalnavbar-flyout-item-number: 2;"><a
-                          href="/extensao/" class="globalnavbar-submenu-link" data-analytics-title="projetos extensao">Projetos de
-                          Extensão</a></li>
-                      <li class="globalnavbar-submenu-list-item-elevated" style="--r-globalnavbar-flyout-item-number: 3;"><a
-                          href="/extensao/" class="globalnavbar-submenu-link" data-analytics-title="eventos">Eventos</a></li>
-                      <li class="globalnavbar-submenu-list-item-elevated" style="--r-globalnavbar-flyout-item-number: 4;"><a
-                          href="/extensao/" class="globalnavbar-submenu-link" data-analytics-title="cursos">Cursos</a></li>
-                      <li class="globalnavbar-submenu-list-item-elevated" style="--r-globalnavbar-flyout-item-number: 5;"><a
-                          href="/extensao/" class="globalnavbar-submenu-link" data-analytics-title="workshops">Workshops</a></li>
-                      <li class="globalnavbar-submenu-list-item-elevated" style="--r-globalnavbar-flyout-item-number: 6;"><a
-                          href="/extensao/" class="globalnavbar-submenu-link" data-analytics-title="parcerias">Parcerias</a></li>
-                    </ul>
-                  </div>
-                  <div class="globalnavbar-submenu-group" data-analytics-region="links rapidos - extensao"
-                    style="--r-globalnavbar-flyout-group-number: 1;">
-                    <h2 class="globalnavbar-submenu-header" id="extensao2" style="--r-globalnavbar-flyout-item-number: 1;">Links
-                      Rápidos</h2>
-                    <ul class="globalnavbar-submenu-list" aria-labelledby="extensao2">
-                      <li class="globalnavbar-submenu-list-item" style="--r-globalnavbar-flyout-item-number: 2;"><a
-                          href="/extensao/" class="globalnavbar-submenu-link" data-analytics-title="como participar">Como
-                          Participar</a></li>
-                      <li class="globalnavbar-submenu-list-item" style="--r-globalnavbar-flyout-item-number: 3;"><a
-                          href="/extensao/" class="globalnavbar-submenu-link" data-analytics-title="certificados">Certificados</a>
+                <div class="globalnavbar-flyout-content globalnavbar-submenu-content">
+                  <div class="globalnavbar-submenu-group globalnavbar-submenu-group-elevated">
+                    <h2 class="globalnavbar-submenu-header" id="c64e0a00">Boas Vindas</h2>
+                    <ul class="globalnavbar-submenu-list" aria-labelledby="c64e0a00">
+                      <li class="globalnavbar-submenu-list-item-elevated"><a href="#"
+                          class="globalnavbar-submenu-link">Estatuto e
+                          Regimento</a></li>
+                      <li class="globalnavbar-submenu-list-item-elevated"><a href="#"
+                          class="globalnavbar-submenu-link">Mapa</a></li>
+                      <li class="globalnavbar-submenu-list-item-elevated"><a href="#"
+                          class="globalnavbar-submenu-link">Registro Acadêmico</a></li>
+                      <li class="globalnavbar-submenu-list-item-elevated"><a href="#"
+                          class="globalnavbar-submenu-link">Programas e Orientações</a>
                       </li>
-                      <li class="globalnavbar-submenu-list-item" style="--r-globalnavbar-flyout-item-number: 4;"><a
-                          href="/extensao/" class="globalnavbar-submenu-link" data-analytics-title="inscricoes">Inscrições</a>
+                      <li class="globalnavbar-submenu-list-item-elevated"><a href="#"
+                          class="globalnavbar-submenu-link">Biblioteca Central</a></li>
+                      <li class="globalnavbar-submenu-list-item-elevated"><a href="#"
+                          class="globalnavbar-submenu-link">Serviços</a></li>
+                      <li class="globalnavbar-submenu-list-item-elevated"><a href="#"
+                          class="globalnavbar-submenu-link">Passos
+                          após a Aprovação</a>
                       </li>
+                      <li class="globalnavbar-submenu-list-item-elevated"><a href="#"
+                          class="globalnavbar-submenu-link">Evento de
+                          Boas Vindas</a></li>
+                    </ul>
+                  </div>
+                  <div class="globalnavbar-submenu-group">
+                    <h2 class="globalnavbar-submenu-header" id="b80e39ed">Links rápidos</h2>
+                    <ul class="globalnavbar-submenu-list">
+                      <li class="globalnavbar-submenu-list-item"><a href="#"
+                          class="globalnavbar-submenu-link">Calendário Acadêmico</a></li>
+                      <li class="globalnavbar-submenu-list-item"><a href="#" class="globalnavbar-submenu-link">Manual
+                          para calouros</a></li>
+                      <li class="globalnavbar-submenu-list-item"><a
+                          href="https://noticias.unb.br/images/Telefones_unb/mprazer.pdf" target="_blank"
+                          class="globalnavbar-submenu-link">Contatos Institucionais</a></li>
+                      <li class="globalnavbar-submenu-list-item"><a href="#"
+                          class="globalnavbar-submenu-link">Checklist</a></li>
+                      <li class="globalnavbar-submenu-list-item"><a href="#"
+                          class="globalnavbar-submenu-link">Plataformas</a></li>
+                    </ul>
+                  </div>
+                  <div class="globalnavbar-submenu-group">
+                    <h2 class="globalnavbar-submenu-header">Explorar</h2>
+                    <ul class="globalnavbar-submenu-list">
+                      <li class="globalnavbar-submenu-list-item"><a href="#" class="globalnavbar-submenu-link">Wi-Fi
+                          UnB</a></li>
+                      <li class="globalnavbar-submenu-list-item"><a href="#" class="globalnavbar-submenu-link">Office
+                          365</a></li>
+                      <li class="globalnavbar-submenu-list-item"><a href="#" class="globalnavbar-submenu-link">UnB
+                          TV</a></li>
+                      <li class="globalnavbar-submenu-list-item"><a href="#"
+                          class="globalnavbar-submenu-link">Esportes</a></li>
+                      <li class="globalnavbar-submenu-list-item"><a href="#"
+                          class="globalnavbar-submenu-link">Benefícios</a></li>
+                    </ul>
+                  </div>
+                  <div class="globalnavbar-submenu-group">
+                    <h2 class="globalnavbar-submenu-header">Ajuda</h2>
+                    <ul class="globalnavbar-submenu-list">
+                      <li class="globalnavbar-submenu-list-item"><a href="#" class="globalnavbar-submenu-link">Auxílios
+                          e Bolsas</a></li>
+                      <li class="globalnavbar-submenu-list-item"><a href="#"
+                          class="globalnavbar-submenu-link">Identidade Estudantil</a>
+                      </li>
+                      <li class="globalnavbar-submenu-list-item"><a href="#" class="globalnavbar-submenu-link">Perguntas
+                          Frequentes</a></li>
+                      <li class="globalnavbar-submenu-list-item"><a href="#"
+                          class="globalnavbar-submenu-link">Ouvidoria</a></li>
                     </ul>
                   </div>
                 </div>
               </div>
             </div>
           </li>
-          <li data-analytics-element-engagement="globalnavbar hover - educacao"
-            class="globalnavbar-item globalnavbar-item-educacao globalnavbar-item-submenu">
-            <ul class="globalnavbar-submenu-trigger-group">
-              <li class="globalnavbar-submenu-trigger-item">
-                <a href="/educacao/" data-globalnavbar-item-name="educacao" data-topnav-flyout-trigger-compact="true"
-                  data-analytics-title="educacao" data-analytics-element-engagement="hover - educacao" aria-label="Educação"
-                  class="globalnavbar-link globalnavbar-submenu-trigger-link globalnavbar-link-educacao">
-                  <span class="globalnavbar-link-text-container">
-                    <span class="globalnavbar-image-regular globalnavbar-link-image">
-                      <svg height="44" viewBox="0 0 28 44" width="28" xmlns="http://www.w3.org/2000/svg">
-                        <path
-                          d="m17.9575 25.7002c0 .902-.768 1.582-1.805 1.582-.732 0-1.277-.375-1.277-1.02 0-.632.422-.966 1.383-1.031l1.699-.111z">
-                        </path>
-                      </svg>
-                    </span>
-                    <span class="globalnavbar-link-text">Educação</span>
-                  </span>
-                  <span class="globalnavbar-link-chevron">
-                    <svg height="48" viewBox="0 0 9 48" width="9" xmlns="http://www.w3.org/2000/svg">
-                      <path
-                        d="m8.1155 30.358a.6.6 0 1 1 -.831.8653l-7-6.7242a.6.6 0 0 1 -.0045-.8613l7-6.8569a.6.6 0 1 1 .84.8574l-6.5582 6.4238z">
-                      </path>
-                    </svg>
-                  </span>
-                </a>
-              </li>
-              <li class="globalnavbar-submenu-trigger-item">
-                <button id="globalnavbar-menubutton-link-educacao" class="globalnavbar-submenu-trigger-button"
-                  aria-expanded="false" aria-controls="globalnavbar-submenu-link-educacao" aria-label="Menu Educação"
-                  data-topnav-flyout-trigger-regular="true">
-                  <span class="globalnavbar-image-regular globalnavbar-submenu-button-icon">
-                    <svg height="10" viewBox="0 0 10 10" width="10" xmlns="http://www.w3.org/2000/svg">
-                      <path
-                        d="m4.6725 6.635-2.655-2.667a.445.445 0 0 1 -.123-.304.4331.4331 0 0 1 .427-.439h.006a.447.447 0 0 1 .316.135l2.357 2.365 2.356-2.365a.458.458 0 0 1 .316-.135.433.433 0 0 1 .433.433v.006a.4189.4189 0 0 1 -.123.3l-2.655 2.671a.4451.4451 0 0 1 -.327.14.464.464 0 0 1 -.328-.14z">
-                      </path>
-                    </svg>
-                  </span>
-                  <span class="globalnavbar-image-compact globalnavbar-submenu-button-icon">
-                    <svg height="48" viewBox="0 0 9 48" width="9" xmlns="http://www.w3.org/2000/svg">
-                      <path
-                        d="m7.4382 24.0621-6.5581-6.4238c-.2368-.2319-.2407-.6118-.0088-.8486.2324-.2373.6123-.2407.8486-.0088l7 6.8569c.1157.1138.1807.2695.1802.4316-.001.1621-.0674.3174-.1846.4297l-7 6.7242c-.1162.1118-.2661.1675-.4155.1675-.1577 0-.3149-.062-.4326-.1846-.2295-.2388-.2222-.6187.0171-.8481l6.5537-6.2959z">
-                      </path>
-                    </svg>
-                  </span>
-                </button>
-              </li>
-            </ul>
-            <div id="globalnavbar-submenu-link-educacao" class="globalnavbar-flyout globalnavbar-submenu"
-              aria-labelledby="globalnavbar-menubutton-link-educacao"
-              style="--r-globalnavbar-flyout-item-total: 0; --r-globalnavbar-flyout-group-number: 0; --r-globalnavbar-flyout-height: 414px; --r-globalnavbar-flyout-rate: 240ms;">
+          <li class="globalnavbar-item globalnavbar-item-departamento">
+            <a class="globalnavbar-link globalnavbar-link-departamento" href="/departamento/">
+              <span class="globalnavbar-link-departamento-container">
+                <span class="globalnavbar-link-text">Departamento</span>
+                <span class="globalnavbar-departamento-regular globalnavbar-link-departamento">
+                  <svg height="44" viewbox="0 0 15 44" width="15"></svg>
+                </span>
+              </span>
+            </a>
+            <!-- SUBMENU DOS LINKS -->
+            <div id="globalnavbar-submenu-link-departamento" class="globalnavbar-flyout globalnavbar-submenu">
               <div class="globalnavbar-flyout-scroll-container">
-                <div class="globalnavbar-flyout-content globalnavbar-submenu-content"
-                  style="--r-globalnavbar-flyout-elevated-group-count: 1; --r-globalnavbar-flyout-group-total: 2; --r-globalnavbar-flyout-item-total: 5;">
-                  <div class="globalnavbar-submenu-group globalnavbar-submenu-group-elevated"
-                    data-analytics-region="explorar educacao" style="--r-globalnavbar-flyout-group-number: 0;">
-                    <h2 class="globalnavbar-submenu-header" id="educacao1" style="--r-globalnavbar-flyout-item-number: 1;">
-                      Explorar Educação</h2>
-                    <ul class="globalnavbar-submenu-list" aria-labelledby="educacao1">
-                      <li class="globalnavbar-submenu-list-item-elevated" style="--r-globalnavbar-flyout-item-number: 2;"><a
-                          href="/educacao/" class="globalnavbar-submenu-link" data-analytics-title="metodologias">Metodologias</a>
-                      </li>
-                      <li class="globalnavbar-submenu-list-item-elevated" style="--r-globalnavbar-flyout-item-number: 3;"><a
-                          href="/educacao/" class="globalnavbar-submenu-link" data-analytics-title="recursos">Recursos
-                          Educacionais</a></li>
-                      <li class="globalnavbar-submenu-list-item-elevated" style="--r-globalnavbar-flyout-item-number: 4;"><a
-                          href="/educacao/" class="globalnavbar-submenu-link" data-analytics-title="tecnologias">Tecnologias
-                          Educacionais</a></li>
-                      <li class="globalnavbar-submenu-list-item-elevated" style="--r-globalnavbar-flyout-item-number: 5;"><a
-                          href="/educacao/" class="globalnavbar-submenu-link" data-analytics-title="capacitacao">Capacitação
-                          Docente</a></li>
-                    </ul>
-                  </div>
-                  <div class="globalnavbar-submenu-group" data-analytics-region="links rapidos - educacao"
-                    style="--r-globalnavbar-flyout-group-number: 1;">
-                    <h2 class="globalnavbar-submenu-header" id="educacao2" style="--r-globalnavbar-flyout-item-number: 1;">Links
-                      Rápidos</h2>
-                    <ul class="globalnavbar-submenu-list" aria-labelledby="educacao2">
-                      <li class="globalnavbar-submenu-list-item" style="--r-globalnavbar-flyout-item-number: 2;"><a
-                          href="/educacao/" class="globalnavbar-submenu-link" data-analytics-title="ead">Educação a Distância</a>
-                      </li>
-                      <li class="globalnavbar-submenu-list-item" style="--r-globalnavbar-flyout-item-number: 3;"><a
-                          href="/educacao/" class="globalnavbar-submenu-link" data-analytics-title="tutoriais">Tutoriais</a></li>
-                      <li class="globalnavbar-submenu-list-item" style="--r-globalnavbar-flyout-item-number: 4;"><a
-                          href="/educacao/" class="globalnavbar-submenu-link" data-analytics-title="suporte">Suporte Acadêmico</a>
-                      </li>
-                    </ul>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </li>
-          <li data-analytics-element-engagement="globalnavbar hover - unb"
-            class="globalnavbar-item globalnavbar-item-unb globalnavbar-item-submenu">
-            <ul class="globalnavbar-submenu-trigger-group">
-              <li class="globalnavbar-submenu-trigger-item">
-                <a href="https://unb.br" data-globalnavbar-item-name="unb" data-topnav-flyout-trigger-compact="true"
-                  data-analytics-title="unb" data-analytics-element-engagement="hover - unb" aria-label="UnB"
-                  class="globalnavbar-link globalnavbar-submenu-trigger-link globalnavbar-link-unb">
-                  <span class="globalnavbar-link-text-container">
-                    <span class="globalnavbar-image-regular globalnavbar-link-image">
-                      <svg height="44" viewBox="0 0 28 44" width="28" xmlns="http://www.w3.org/2000/svg">
-                        <path
-                          d="m19.9575 27.7002c0 .902-.768 1.582-1.805 1.582-.732 0-1.277-.375-1.277-1.02 0-.632.422-.966 1.383-1.031l1.699-.111z">
-                        </path>
-                      </svg>
-                    </span>
-                    <span class="globalnavbar-link-text">UnB</span>
-                  </span>
-                  <span class="globalnavbar-link-chevron">
-                    <svg height="48" viewBox="0 0 9 48" width="9" xmlns="http://www.w3.org/2000/svg">
-                      <path
-                        d="m8.1155 30.358a.6.6 0 1 1 -.831.8653l-7-6.7242a.6.6 0 0 1 -.0045-.8613l7-6.8569a.6.6 0 1 1 .84.8574l-6.5582 6.4238z">
-                      </path>
-                    </svg>
-                  </span>
-                </a>
-              </li>
-              <li class="globalnavbar-submenu-trigger-item">
-                <button id="globalnavbar-menubutton-link-unb" class="globalnavbar-submenu-trigger-button" aria-expanded="false"
-                  aria-controls="globalnavbar-submenu-link-unb" aria-label="Menu UnB" data-topnav-flyout-trigger-regular="true">
-                  <span class="globalnavbar-image-regular globalnavbar-submenu-button-icon">
-                    <svg height="10" viewBox="0 0 10 10" width="10" xmlns="http://www.w3.org/2000/svg">
-                      <path
-                        d="m4.6725 6.635-2.655-2.667a.445.445 0 0 1 -.123-.304.4331.4331 0 0 1 .427-.439h.006a.447.447 0 0 1 .316.135l2.357 2.365 2.356-2.365a.458.458 0 0 1 .316-.135.433.433 0 0 1 .433.433v.006a.4189.4189 0 0 1 -.123.3l-2.655 2.671a.4451.4451 0 0 1 -.327.14.464.464 0 0 1 -.328-.14z">
-                      </path>
-                    </svg>
-                  </span>
-                  <span class="globalnavbar-image-compact globalnavbar-submenu-button-icon">
-                    <svg height="48" viewBox="0 0 9 48" width="9" xmlns="http://www.w3.org/2000/svg">
-                      <path
-                        d="m7.4382 24.0621-6.5581-6.4238c-.2368-.2319-.2407-.6118-.0088-.8486.2324-.2373.6123-.2407.8486-.0088l7 6.8569c.1157.1138.1807.2695.1802.4316-.001.1621-.0674.3174-.1846.4297l-7 6.7242c-.1162.1118-.2661.1675-.4155.1675-.1577 0-.3149-.062-.4326-.1846-.2295-.2388-.2222-.6187.0171-.8481l6.5537-6.2959z">
-                      </path>
-                    </svg>
-                  </span>
-                </button>
-              </li>
-            </ul>
-            <div id="globalnavbar-submenu-link-unb" class="globalnavbar-flyout globalnavbar-submenu"
-              aria-labelledby="globalnavbar-menubutton-link-unb"
-              style="--r-globalnavbar-flyout-item-total: 0; --r-globalnavbar-flyout-group-number: 0; --r-globalnavbar-flyout-height: 414px; --r-globalnavbar-flyout-rate: 240ms;">
-              <div class="globalnavbar-flyout-scroll-container">
-                <div class="globalnavbar-flyout-content globalnavbar-submenu-content"
-                  style="--r-globalnavbar-flyout-elevated-group-count: 1; --r-globalnavbar-flyout-group-total: 2; --r-globalnavbar-flyout-item-total: 5;">
-                  <div class="globalnavbar-submenu-group globalnavbar-submenu-group-elevated" data-analytics-region="explorar unb"
-                    style="--r-globalnavbar-flyout-group-number: 0;">
-                    <h2 class="globalnavbar-submenu-header" id="unb1" style="--r-globalnavbar-flyout-item-number: 1;">Explorar UnB
+                <div class="globalnavbar-flyout-content globalnavbar-submenu-content">
+                  <div class="globalnavbar-submenu-group globalnavbar-submenu-group-elevated">
+                    <h2 class="globalnavbar-submenu-header" id="c64e0a00">
+                      Departamento
                     </h2>
-                    <ul class="globalnavbar-submenu-list" aria-labelledby="unb1">
-                      <li class="globalnavbar-submenu-list-item-elevated" style="--r-globalnavbar-flyout-item-number: 2;"><a
-                          href="https://unb.br" class="globalnavbar-submenu-link" data-analytics-title="sobre unb">Sobre a UnB</a>
-                      </li>
-                      <li class="globalnavbar-submenu-list-item-elevated" style="--r-globalnavbar-flyout-item-number: 3;"><a
-                          href="https://unb.br" class="globalnavbar-submenu-link" data-analytics-title="faculdades">Faculdades</a>
-                      </li>
-                      <li class="globalnavbar-submenu-list-item-elevated" style="--r-globalnavbar-flyout-item-number: 4;"><a
-                          href="https://unb.br" class="globalnavbar-submenu-link" data-analytics-title="institutos">Institutos</a>
-                      </li>
-                      <li class="globalnavbar-submenu-list-item-elevated" style="--r-globalnavbar-flyout-item-number: 5;"><a
-                          href="https://unb.br" class="globalnavbar-submenu-link" data-analytics-title="campus">Campus</a></li>
+                    <ul class="globalnavbar-submenu-list">
+                      <li class="globalnavbar-submenu-list-item-elevated"><a href="/departamento/historia"
+                          class="globalnavbar-submenu-link">História</a></li>
+                      <li class="globalnavbar-submenu-list-item-elevated"><a href="/departamento/instalacoes"
+                          class="globalnavbar-submenu-link">Instalações</a></li>
+                      <li class="globalnavbar-submenu-list-item-elevated"><a href="/departamento/administracao"
+                          class="globalnavbar-submenu-link">Administração</a></li>
+                      <li class="globalnavbar-submenu-list-item-elevated"><a href="/departamento/secretaria"
+                          class="globalnavbar-submenu-link">Secretária</a></li>
+                      <li class="globalnavbar-submenu-list-item-elevated"><a href="/departamento/docentes"
+                          class="globalnavbar-submenu-link">Docentes</a></li>
+                      <li class="globalnavbar-submenu-list-item-elevated"><a href="/departamento/documentos"
+                          class="globalnavbar-submenu-link">Documentos</a></li>
+                      <li class="globalnavbar-submenu-list-item-elevated"><a href="/departamento/producao"
+                          class="globalnavbar-submenu-link">Produção Acadêmica</a></li>
+                      <li class="globalnavbar-submenu-list-item-elevated"><a href="/departamento/comissoes"
+                          class="globalnavbar-submenu-link">Comissões e Coordenações</a></li>
+                      <li class="globalnavbar-submenu-list-item-elevated"><a href="/departamento/grupos"
+                          class="globalnavbar-submenu-link">Grupos de Pesquisa</a></li>
                     </ul>
                   </div>
-                  <div class="globalnavbar-submenu-group" data-analytics-region="links rapidos - unb"
-                    style="--r-globalnavbar-flyout-group-number: 1;">
-                    <h2 class="globalnavbar-submenu-header" id="unb2" style="--r-globalnavbar-flyout-item-number: 1;">Links
-                      Rápidos</h2>
-                    <ul class="globalnavbar-submenu-list" aria-labelledby="unb2">
-                      <li class="globalnavbar-submenu-list-item" style="--r-globalnavbar-flyout-item-number: 2;"><a
-                          href="https://sigaa.unb.br" class="globalnavbar-submenu-link" data-analytics-title="sigaa">SIGAA</a>
-                      </li>
-                      <li class="globalnavbar-submenu-list-item" style="--r-globalnavbar-flyout-item-number: 3;"><a
-                          href="https://aprender3.unb.br" class="globalnavbar-submenu-link"
-                          data-analytics-title="aprender3">Aprender3</a></li>
-                      <li class="globalnavbar-submenu-list-item" style="--r-globalnavbar-flyout-item-number: 4;"><a
-                          href="https://matriculaweb.unb.br" class="globalnavbar-submenu-link"
-                          data-analytics-title="matricula web">Matrícula Web</a></li>
+                  <div class="globalnavbar-submenu-group">
+                    <h2 class="globalnavbar-submenu-header">Explorar</h2>
+                    <ul class="globalnavbar-submenu-list">
+                      <li class="globalnavbar-submenu-list-item"><a href="/departamento/mapa-campus"
+                          class="globalnavbar-submenu-link">Mapa do Campus</a></li>
+                      <li class="globalnavbar-submenu-list-item"><a href="/departamento/biblioteca"
+                          class="globalnavbar-submenu-link">Biblioteca Central</a></li>
+                      <li class="globalnavbar-submenu-list-item"><a href="/departamento/noticias"
+                          class="globalnavbar-submenu-link">Notícias</a></li>
+                      <li class="globalnavbar-submenu-list-item"><a href="/departamento/eventos"
+                          class="globalnavbar-submenu-link">Eventos</a></li>
+                      <li class="globalnavbar-submenu-list-item"><a href="/departamento/parceiros"
+                          class="globalnavbar-submenu-link">Parceiros</a></li>
                     </ul>
                   </div>
-                </div>
-              </div>
-            </div>
-          </li>
-          <li data-analytics-element-engagement="globalnavbar hover - documentos"
-            class="globalnavbar-item globalnavbar-item-documentos globalnavbar-item-submenu">
-            <ul class="globalnavbar-submenu-trigger-group">
-              <li class="globalnavbar-submenu-trigger-item">
-                <a href="/documentos/" data-globalnavbar-item-name="documentos" data-topnav-flyout-trigger-compact="true"
-                  data-analytics-title="documentos" data-analytics-element-engagement="hover - documentos" aria-label="Documentos"
-                  class="globalnavbar-link globalnavbar-submenu-trigger-link globalnavbar-link-documentos">
-                  <span class="globalnavbar-link-text-container">
-                    <span class="globalnavbar-image-regular globalnavbar-link-image">
-                      <svg height="44" viewBox="0 0 28 44" width="28" xmlns="http://www.w3.org/2000/svg">
-                        <path
-                          d="m21.9575 29.7002c0 .902-.768 1.582-1.805 1.582-.732 0-1.277-.375-1.277-1.02 0-.632.422-.966 1.383-1.031l1.699-.111z">
-                        </path>
-                      </svg>
-                    </span>
-                    <span class="globalnavbar-link-text">Documentos</span>
-                  </span>
-                  <span class="globalnavbar-link-chevron">
-                    <svg height="48" viewBox="0 0 9 48" width="9" xmlns="http://www.w3.org/2000/svg">
-                      <path
-                        d="m8.1155 30.358a.6.6 0 1 1 -.831.8653l-7-6.7242a.6.6 0 0 1 -.0045-.8613l7-6.8569a.6.6 0 1 1 .84.8574l-6.5582 6.4238z">
-                      </path>
-                    </svg>
-                  </span>
-                </a>
-              </li>
-              <li class="globalnavbar-submenu-trigger-item">
-                <button id="globalnavbar-menubutton-link-documentos" class="globalnavbar-submenu-trigger-button"
-                  aria-expanded="false" aria-controls="globalnavbar-submenu-link-documentos" aria-label="Menu Documentos"
-                  data-topnav-flyout-trigger-regular="true">
-                  <span class="globalnavbar-image-regular globalnavbar-submenu-button-icon">
-                    <svg height="10" viewBox="0 0 10 10" width="10" xmlns="http://www.w3.org/2000/svg">
-                      <path
-                        d="m4.6725 6.635-2.655-2.667a.445.445 0 0 1 -.123-.304.4331.4331 0 0 1 .427-.439h.006a.447.447 0 0 1 .316.135l2.357 2.365 2.356-2.365a.458.458 0 0 1 .316-.135.433.433 0 0 1 .433.433v.006a.4189.4189 0 0 1 -.123.3l-2.655 2.671a.4451.4451 0 0 1 -.327.14.464.464 0 0 1 -.328-.14z">
-                      </path>
-                    </svg>
-                  </span>
-                  <span class="globalnavbar-image-compact globalnavbar-submenu-button-icon">
-                    <svg height="48" viewBox="0 0 9 48" width="9" xmlns="http://www.w3.org/2000/svg">
-                      <path
-                        d="m7.4382 24.0621-6.5581-6.4238c-.2368-.2319-.2407-.6118-.0088-.8486.2324-.2373.6123-.2407.8486-.0088l7 6.8569c.1157.1138.1807.2695.1802.4316-.001.1621-.0674.3174-.1846.4297l-7 6.7242c-.1162.1118-.2661.1675-.4155.1675-.1577 0-.3149-.062-.4326-.1846-.2295-.2388-.2222-.6187.0171-.8481l6.5537-6.2959z">
-                      </path>
-                    </svg>
-                  </span>
-                </button>
-              </li>
-            </ul>
-            <div id="globalnavbar-submenu-link-documentos" class="globalnavbar-flyout globalnavbar-submenu"
-              aria-labelledby="globalnavbar-menubutton-link-documentos"
-              style="--r-globalnavbar-flyout-item-total: 0; --r-globalnavbar-flyout-group-number: 0; --r-globalnavbar-flyout-height: 452px; --r-globalnavbar-flyout-rate: 240ms;">
-              <div class="globalnavbar-flyout-scroll-container">
-                <div class="globalnavbar-flyout-content globalnavbar-submenu-content"
-                  style="--r-globalnavbar-flyout-elevated-group-count: 1; --r-globalnavbar-flyout-group-total: 2; --r-globalnavbar-flyout-item-total: 6;">
-                  <div class="globalnavbar-submenu-group globalnavbar-submenu-group-elevated"
-                    data-analytics-region="explorar documentos" style="--r-globalnavbar-flyout-group-number: 0;">
-                    <h2 class="globalnavbar-submenu-header" id="documentos1" style="--r-globalnavbar-flyout-item-number: 1;">
-                      Explorar Documentos</h2>
-                    <ul class="globalnavbar-submenu-list" aria-labelledby="documentos1">
-                      <li class="globalnavbar-submenu-list-item-elevated" style="--r-globalnavbar-flyout-item-number: 2;"><a
-                          href="/documentos/" class="globalnavbar-submenu-link" data-analytics-title="regimentos">Regimentos</a>
+                  <div class="globalnavbar-submenu-group">
+                    <h2 class="globalnavbar-submenu-header" id="b80e39ed">Links rápidas</h2>
+                    <ul class="globalnavbar-submenu-list">
+                      <li class="globalnavbar-submenu-list-item"><a href="/departamento/calendario"
+                          class="globalnavbar-submenu-link">Calendário Acadêmico</a></li>
+                      <li class="globalnavbar-submenu-list-item"><a href="https://aprender3.unb.br"
+                          class="globalnavbar-submenu-link">Aprender3</a></li>
+                      <li class="globalnavbar-submenu-list-item"><a href="https://moodle.mat.unb.br"
+                          class="globalnavbar-submenu-link">Moodle
+                          MAT</a></li>
+                      <li class="globalnavbar-submenu-list-item"><a href="https://sigaa.unb.br"
+                          class="globalnavbar-submenu-link">SIGAA</a>
                       </li>
-                      <li class="globalnavbar-submenu-list-item-elevated" style="--r-globalnavbar-flyout-item-number: 3;"><a
-                          href="/documentos/" class="globalnavbar-submenu-link" data-analytics-title="normativos">Normativos</a>
-                      </li>
-                      <li class="globalnavbar-submenu-list-item-elevated" style="--r-globalnavbar-flyout-item-number: 4;"><a
-                          href="/documentos/" class="globalnavbar-submenu-link" data-analytics-title="formularios">Formulários</a>
-                      </li>
-                      <li class="globalnavbar-submenu-list-item-elevated" style="--r-globalnavbar-flyout-item-number: 5;"><a
-                          href="/documentos/" class="globalnavbar-submenu-link" data-analytics-title="atas">Atas</a></li>
-                      <li class="globalnavbar-submenu-list-item-elevated" style="--r-globalnavbar-flyout-item-number: 6;"><a
-                          href="/documentos/" class="globalnavbar-submenu-link" data-analytics-title="relatorios">Relatórios</a>
-                      </li>
+                      <li class="globalnavbar-submenu-list-item"><a href="/departamento/ouvidoria"
+                          class="globalnavbar-submenu-link">Ouvidoria</a></li>
                     </ul>
                   </div>
-                  <div class="globalnavbar-submenu-group" data-analytics-region="links rapidos - documentos"
-                    style="--r-globalnavbar-flyout-group-number: 1;">
-                    <h2 class="globalnavbar-submenu-header" id="documentos2" style="--r-globalnavbar-flyout-item-number: 1;">Links
-                      Rápidos</h2>
-                    <ul class="globalnavbar-submenu-list" aria-labelledby="documentos2">
-                      <li class="globalnavbar-submenu-list-item" style="--r-globalnavbar-flyout-item-number: 2;"><a
-                          href="/documentos/" class="globalnavbar-submenu-link" data-analytics-title="download">Downloads</a></li>
-                      <li class="globalnavbar-submenu-list-item" style="--r-globalnavbar-flyout-item-number: 3;"><a
-                          href="/documentos/" class="globalnavbar-submenu-link" data-analytics-title="repositorio">Repositório</a>
-                      </li>
-                      <li class="globalnavbar-submenu-list-item" style="--r-globalnavbar-flyout-item-number: 4;"><a
-                          href="/documentos/" class="globalnavbar-submenu-link" data-analytics-title="arquivo">Arquivo</a></li>
+                  <div class="globalnavbar-submenu-group">
+                    <h2 class="globalnavbar-submenu-header">Ajuda</h2>
+                    <ul class="globalnavbar-submenu-list">
+                      <li class="globalnavbar-submenu-list-item"><a href="/departamento/auxilios"
+                          class="globalnavbar-submenu-link">Auxílios e
+                          Bolsas</a></li>
+                      <li class="globalnavbar-submenu-list-item"><a href="/departamento/identidade"
+                          class="globalnavbar-submenu-link">Identidade Estudantil</a></li>
+                      <li class="globalnavbar-submenu-list-item"><a href="/departamento/registro"
+                          class="globalnavbar-submenu-link">Registro
+                          Acadêmico</a></li>
+                      <li class="globalnavbar-submenu-list-item"><a href="/departamento/manual-calouros"
+                          class="globalnavbar-submenu-link">Manual para calouros</a></li>
                     </ul>
                   </div>
                 </div>
               </div>
             </div>
           </li>
-          <li data-analytics-element-engagement="globalnavbar hover - noticias"
-            class="globalnavbar-item globalnavbar-item-noticias globalnavbar-item-submenu">
-            <ul class="globalnavbar-submenu-trigger-group">
-              <li class="globalnavbar-submenu-trigger-item">
-                <a href="/newsroom/" data-globalnavbar-item-name="noticias" data-topnav-flyout-trigger-compact="true"
-                  data-analytics-title="noticias" data-analytics-element-engagement="hover - noticias" aria-label="Notícias"
-                  class="globalnavbar-link globalnavbar-submenu-trigger-link globalnavbar-link-noticias">
-                  <span class="globalnavbar-link-text-container">
-                    <span class="globalnavbar-image-regular globalnavbar-link-image">
-                      <svg height="44" viewBox="0 0 28 44" width="28" xmlns="http://www.w3.org/2000/svg">
-                        <path
-                          d="m23.9575 31.7002c0 .902-.768 1.582-1.805 1.582-.732 0-1.277-.375-1.277-1.02 0-.632.422-.966 1.383-1.031l1.699-.111z">
-                        </path>
-                      </svg>
-                    </span>
-                    <span class="globalnavbar-link-text">Notícias</span>
-                  </span>
-                  <span class="globalnavbar-link-chevron">
-                    <svg height="48" viewBox="0 0 9 48" width="9" xmlns="http://www.w3.org/2000/svg">
-                      <path
-                        d="m8.1155 30.358a.6.6 0 1 1 -.831.8653l-7-6.7242a.6.6 0 0 1 -.0045-.8613l7-6.8569a.6.6 0 1 1 .84.8574l-6.5582 6.4238z">
-                      </path>
-                    </svg>
-                  </span>
-                </a>
-              </li>
-              <li class="globalnavbar-submenu-trigger-item">
-                <button id="globalnavbar-menubutton-link-noticias" class="globalnavbar-submenu-trigger-button"
-                  aria-expanded="false" aria-controls="globalnavbar-submenu-link-noticias" aria-label="Menu Notícias"
-                  data-topnav-flyout-trigger-regular="true">
-                  <span class="globalnavbar-image-regular globalnavbar-submenu-button-icon">
-                    <svg height="10" viewBox="0 0 10 10" width="10" xmlns="http://www.w3.org/2000/svg">
-                      <path
-                        d="m4.6725 6.635-2.655-2.667a.445.445 0 0 1 -.123-.304.4331.4331 0 0 1 .427-.439h.006a.447.447 0 0 1 .316.135l2.357 2.365 2.356-2.365a.458.458 0 0 1 .316-.135.433.433 0 0 1 .433.433v.006a.4189.4189 0 0 1 -.123.3l-2.655 2.671a.4451.4451 0 0 1 -.327.14.464.464 0 0 1 -.328-.14z">
-                      </path>
-                    </svg>
-                  </span>
-                  <span class="globalnavbar-image-compact globalnavbar-submenu-button-icon">
-                    <svg height="48" viewBox="0 0 9 48" width="9" xmlns="http://www.w3.org/2000/svg">
-                      <path
-                        d="m7.4382 24.0621-6.5581-6.4238c-.2368-.2319-.2407-.6118-.0088-.8486.2324-.2373.6123-.2407.8486-.0088l7 6.8569c.1157.1138.1807.2695.1802.4316-.001.1621-.0674.3174-.1846.4297l-7 6.7242c-.1162.1118-.2661.1675-.4155.1675-.1577 0-.3149-.062-.4326-.1846-.2295-.2388-.2222-.6187.0171-.8481l6.5537-6.2959z">
-                      </path>
-                    </svg>
-                  </span>
-                </button>
-              </li>
-            </ul>
-            <div id="globalnavbar-submenu-link-noticias" class="globalnavbar-flyout globalnavbar-submenu"
-              aria-labelledby="globalnavbar-menubutton-link-noticias"
-              style="--r-globalnavbar-flyout-item-total: 0; --r-globalnavbar-flyout-group-number: 0; --r-globalnavbar-flyout-height: 414px; --r-globalnavbar-flyout-rate: 240ms;">
+          <li class="globalnavbar-item globalnavbar-item-graduacao">
+            <a class="globalnavbar-link globalnavbar-link-graduacao" href="/graduacao/">
+              <span class="globalnavbar-link-graduacao-container">
+                <span class="globalnavbar-link-text">Graduação</span>
+                <span class="globalnavbar-graduacao-regular globalnavbar-link-graduacao">
+                  <svg height="44" viewbox="0 0 15 44" width="15"></svg>
+                </span>
+              </span>
+            </a>
+            <!-- SUBMENU DOS LINKS -->
+            <div id="globalnavbar-submenu-link-graduacao" class="globalnavbar-flyout globalnavbar-submenu">
               <div class="globalnavbar-flyout-scroll-container">
-                <div class="globalnavbar-flyout-content globalnavbar-submenu-content"
-                  style="--r-globalnavbar-flyout-elevated-group-count: 1; --r-globalnavbar-flyout-group-total: 2; --r-globalnavbar-flyout-item-total: 5;">
-                  <div class="globalnavbar-submenu-group globalnavbar-submenu-group-elevated"
-                    data-analytics-region="explorar noticias" style="--r-globalnavbar-flyout-group-number: 0;">
-                    <h2 class="globalnavbar-submenu-header" id="noticias1" style="--r-globalnavbar-flyout-item-number: 1;">
-                      Explorar Notícias</h2>
-                    <ul class="globalnavbar-submenu-list" aria-labelledby="noticias1">
-                      <li class="globalnavbar-submenu-list-item-elevated" style="--r-globalnavbar-flyout-item-number: 2;"><a
-                          href="/newsroom/" class="globalnavbar-submenu-link" data-analytics-title="ultimas noticias">Últimas
-                          Notícias</a></li>
-                      <li class="globalnavbar-submenu-list-item-elevated" style="--r-globalnavbar-flyout-item-number: 3;"><a
-                          href="/newsroom/" class="globalnavbar-submenu-link" data-analytics-title="eventos">Eventos</a></li>
-                      <li class="globalnavbar-submenu-list-item-elevated" style="--r-globalnavbar-flyout-item-number: 4;"><a
-                          href="/newsroom/" class="globalnavbar-submenu-link" data-analytics-title="comunicados">Comunicados</a>
+                <div class="globalnavbar-flyout-content globalnavbar-submenu-content">
+                  <div class="globalnavbar-submenu-group globalnavbar-submenu-group-elevated">
+                    <h2 class="globalnavbar-submenu-header">Graduação</h2>
+                    <ul class="globalnavbar-submenu-list">
+                      <li class="globalnavbar-submenu-list-item-elevated">
+                        <a href="#" class="globalnavbar-submenu-link">Disciplinas</a>
                       </li>
-                      <li class="globalnavbar-submenu-list-item-elevated" style="--r-globalnavbar-flyout-item-number: 5;"><a
-                          href="/newsroom/" class="globalnavbar-submenu-link" data-analytics-title="editais">Editais</a></li>
+                      <li class="globalnavbar-submenu-list-item-elevated">
+                        <a href="#" class="globalnavbar-submenu-link"
+                          aria-label="Shop the latest Apple products">Documentos</a>
+                      </li>
+                      <li class="globalnavbar-submenu-list-item-elevated">
+                        <a href="#" class="globalnavbar-submenu-link">Aluno Expecial</a>
+                      </li>
+                      <li class="globalnavbar-submenu-list-item-elevated">
+                        <a href="#" class="globalnavbar-submenu-link">Auxilíos</a>
+                      </li>
+                      <li class="globalnavbar-submenu-list-item-elevated">
+                        <a href="#" class="globalnavbar-submenu-link">Projeto Pedagógico</a>
+                      </li>
+                      <li class="globalnavbar-submenu-list-item-elevated">
+                        <a href="#" class="globalnavbar-submenu-link">Comissão de Graduação Acadêmica</a>
+                      </li>
+                      <li class="globalnavbar-submenu-list-item-elevated">
+                        <a href="#" class="globalnavbar-submenu-link">Retomada das Atividades</a>
+                      </li>
                     </ul>
                   </div>
-                  <div class="globalnavbar-submenu-group" data-analytics-region="links rapidos - noticias"
-                    style="--r-globalnavbar-flyout-group-number: 1;">
-                    <h2 class="globalnavbar-submenu-header" id="noticias2" style="--r-globalnavbar-flyout-item-number: 1;">Links
-                      Rápidos</h2>
-                    <ul class="globalnavbar-submenu-list" aria-labelledby="noticias2">
-                      <li class="globalnavbar-submenu-list-item" style="--r-globalnavbar-flyout-item-number: 2;"><a
-                          href="/newsroom/" class="globalnavbar-submenu-link" data-analytics-title="arquivo">Arquivo</a></li>
-                      <li class="globalnavbar-submenu-list-item" style="--r-globalnavbar-flyout-item-number: 3;"><a
-                          href="/newsroom/" class="globalnavbar-submenu-link" data-analytics-title="newsletter">Newsletter</a>
+                  <div class="globalnavbar-submenu-group">
+                    <h2 class="globalnavbar-submenu-header" id="b80e39ed">
+                      Links rápidas
+                    </h2>
+                    <ul class="globalnavbar-submenu-list">
+                      <li class="globalnavbar-submenu-list-item">
+                        <a href="/retail/" class="globalnavbar-submenu-link">Calendário Acadêmico</a>
                       </li>
-                      <li class="globalnavbar-submenu-list-item" style="--r-globalnavbar-flyout-item-number: 4;"><a
-                          href="/newsroom/" class="globalnavbar-submenu-link" data-analytics-title="rss">RSS</a></li>
+                      <li class="globalnavbar-submenu-list-item">
+                        <a href="order/list" class="globalnavbar-submenu-link">Normativos da Graduacao</a>
+                      </li>
+                      <li class="globalnavbar-submenu-list-item">
+                        <a href="trade_in" class="globalnavbar-submenu-link">Formulários</a>
+                      </li>
+                      <li class="globalnavbar-submenu-list-item">
+                        <a href="payment_plan" class="globalnavbar-submenu-link">Extensões</a>
+                      </li>
+                      <li class="globalnavbar-submenu-list-item">
+                        <a href="personal_setup" class="globalnavbar-submenu-link">Iniciacao cientifica Setup</a>
+                      </li>
+                      <li class="globalnavbar-submenu-list-item">
+                        <a href="personal_setup" class="globalnavbar-submenu-link">Identidade Estudantil</a>
+                      </li>
+                    </ul>
+                  </div>
+                  <div class="globalnavbar-submenu-group">
+                    <h2 class="globalnavbar-submenu-header">Explorar</h2>
+                    <ul class="globalnavbar-submenu-list">
+                      <li class="globalnavbar-submenu-list-item">
+                        <a href="special_deals" class="globalnavbar-submenu-link">Comunidade</a>
+                      </li>
+                      <li class="globalnavbar-submenu-list-item">
+                        <a href="educationrouting" class="globalnavbar-submenu-link">Eventos</a>
+                      </li>
+                      <li class="globalnavbar-submenu-list-item">
+                        <a href="/retail/business/" class="globalnavbar-submenu-link">Oportunidades</a>
+                      </li>
+                      <li class="globalnavbar-submenu-list-item">
+                        <a href="" class="globalnavbar-submenu-link">Monitoria</a>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </li>
+          <li class="globalnavbar-item globalnavbar-item-posgraduacao">
+            <a class="globalnavbar-link globalnavbar-link-posgraduacao" href="/posgraduacao/">
+              <span class="globalnavbar-link-posgraduacao-container">
+                <span class="globalnavbar-link-text">Pós Graduação</span>
+                <span class="globalnavbar-posgraduacao-regular globalnavbar-link-posgraduacao">
+                  <svg height="44" viewbox="0 0 15 44">
+                    <!-- <path d="COLOQUE-CÓDIGO site-https://qnn.github.io/svg-path-editor/ " /> -->
+                  </svg>
+                </span>
+              </span>
+            </a>
+            <!-- SUBMENU DOS LINKS -->
+            <div id="globalnavbar-submenu-link-posgraduacao" class="globalnavbar-flyout globalnavbar-submenu">
+              <div class="globalnavbar-flyout-scroll-container">
+                <div class="globalnavbar-flyout-content globalnavbar-submenu-content">
+                  <div class="globalnavbar-submenu-group globalnavbar-submenu-group-elevated">
+                    <h2 class="globalnavbar-submenu-header">Pós Graduacao</h2>
+                    <ul class="globalnavbar-submenu-list">
+                      <li class="globalnavbar-submenu-list-item-elevated">
+                        <a href="#" class="globalnavbar-submenu-link">Programa</a>
+                      </li>
+                      <li class="globalnavbar-submenu-list-item-elevated">
+                        <a href="#" class="globalnavbar-submenu-link"
+                          aria-label="Shop the latest Apple products">Documentos</a>
+                      </li>
+                      <li class="globalnavbar-submenu-list-item-elevated">
+                        <a href="#" class="globalnavbar-submenu-link">Alunos</a>
+                      </li>
+                      <li class="globalnavbar-submenu-list-item-elevated">
+                        <a href="#" class="globalnavbar-submenu-link">Docentes</a>
+                      </li>
+                      <li class="globalnavbar-submenu-list-item-elevated">
+                        <a href="#" class="globalnavbar-submenu-link">Secretária</a>
+                      </li>
+                      <li class="globalnavbar-submenu-list-item-elevated">
+                        <a href="#" class="globalnavbar-submenu-link">Produção Acadêmica</a>
+                      </li>
+                      <li class="globalnavbar-submenu-list-item-elevated">
+                        <a href="#" class="globalnavbar-submenu-link">Bancas</a>
+                      </li>
+                      <li class="globalnavbar-submenu-list-item-elevated">
+                        <a href="#" class="globalnavbar-submenu-link">Seminários</a>
+                      </li>
+                    </ul>
+                  </div>
+                  <div class="globalnavbar-submenu-group">
+                    <h2 class="globalnavbar-submenu-header">Links rápidas</h2>
+                    <ul class="globalnavbar-submenu-list">
+                      <li class="globalnavbar-submenu-list-item">
+                        <a href="order/list" class="globalnavbar-submenu-link">Calendário Acadêmico</a>
+                      </li>
+                      <li class="globalnavbar-submenu-list-item">
+                        <a href="trade_in" class="globalnavbar-submenu-link">Critérios para Bolsas</a>
+                      </li>
+                      <li class="globalnavbar-submenu-list-item">
+                        <a href="payment_plan" class="globalnavbar-submenu-link">Processos Seletívos</a>
+                      </li>
+                      <li class="globalnavbar-submenu-list-item">
+                        <a href="personal_setup" class="globalnavbar-submenu-link">Linhas de Pesquisa</a>
+                      </li>
+                      <li class="globalnavbar-submenu-list-item">
+                        <a href="personal_setup" class="globalnavbar-submenu-link">Lista de Ofertas</a>
+                      </li>
+                    </ul>
+                  </div>
+                  <div class="globalnavbar-submenu-group">
+                    <h2 class="globalnavbar-submenu-header">Explorar</h2>
+                    <ul class="globalnavbar-submenu-list">
+                      <li class="globalnavbar-submenu-list-item">
+                        <a href="special_deals" class="globalnavbar-submenu-link">Parceiros</a>
+                      </li>
+                      <li class="globalnavbar-submenu-list-item">
+                        <a href="educationrouting" class="globalnavbar-submenu-link">Repositório dos Artigos</a>
+                      </li>
+                      <li class="globalnavbar-submenu-list-item">
+                        <a href="/retail/business/" class="globalnavbar-submenu-link">Planejamento Estratégico</a>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </li>
+          <li class="globalnavbar-item globalnavbar-item-extensao">
+            <a class="globalnavbar-link globalnavbar-link-extensao" href="/extensao/">
+              <span class="globalnavbar-link-extensao-container">
+                <span class="globalnavbar-link-text">Extensão</span>
+                <span class="globalnavbar-extensao-regular globalnavbar-link-extensao">
+                  <svg height="44" viewbox="0 0 15 44">
+                    <!-- <path d="COLOQUE-CÓDIGO site-https://qnn.github.io/svg-path-editor/ " /> -->
+                  </svg>
+                </span>
+              </span>
+            </a>
+            <!-- SUBMENU DOS LINKS -->
+            <div id="globalnavbar-submenu-link-" class="globalnavbar-flyout globalnavbar-submenu">
+              <div class="globalnavbar-flyout-scroll-container">
+                <div class="globalnavbar-flyout-content globalnavbar-submenu-content">
+                  <div class="globalnavbar-submenu-group globalnavbar-submenu-group-elevated">
+                    <h2 class="globalnavbar-submenu-header" id="c64e0a00">
+                      Departamento
+                    </h2>
+                    <ul class="globalnavbar-submenu-list" aria-labelledby="c64e0a00">
+                      <li class="globalnavbar-submenu-list-item-elevated">
+                        <a href="#" class="globalnavbar-submenu-link">História</a>
+                      </li>
+                      <li class="globalnavbar-submenu-list-item-elevated">
+                        <a href="#" class="globalnavbar-submenu-link"
+                          aria-label="Shop the latest Apple products">Programas e Orientações</a>
+                      </li>
+                      <li class="globalnavbar-submenu-list-item-elevated">
+                        <a href="#" class="globalnavbar-submenu-link">Administração</a>
+                      </li>
+                      <li class="globalnavbar-submenu-list-item-elevated">
+                        <a href="#" class="globalnavbar-submenu-link">Secretária</a>
+                      </li>
+                      <li class="globalnavbar-submenu-list-item-elevated">
+                        <a href="#" class="globalnavbar-submenu-link">Docentes</a>
+                      </li>
+                      <li class="globalnavbar-submenu-list-item-elevated">
+                        <a href="#" class="globalnavbar-submenu-link">Produção Acadêmica</a>
+                      </li>
+                      <li class="globalnavbar-submenu-list-item-elevated">
+                        <a href="#" class="globalnavbar-submenu-link">Calendário Academico</a>
+                      </li>
+                      <li class="globalnavbar-submenu-list-item-elevated">
+                        <a href="#" class="globalnavbar-submenu-link">Estatusto e Regimentos</a>
+                      </li>
+                    </ul>
+                  </div>
+                  <div class="globalnavbar-submenu-group">
+                    <h2 class="globalnavbar-submenu-header" id="b80e39ed">
+                      Links rápidas
+                    </h2>
+                    <ul class="globalnavbar-submenu-list" aria-labelledby="b80e39ed">
+                      <li class="globalnavbar-submenu-list-item">
+                        <a href="/retail/" class="globalnavbar-submenu-link">Find a Store</a>
+                      </li>
+                      <li class="globalnavbar-submenu-list-item">
+                        <a href="order/list" class="globalnavbar-submenu-link">Order Status</a>
+                      </li>
+                      <li class="globalnavbar-submenu-list-item">
+                        <a href="trade_in" class="globalnavbar-submenu-link">Apple Trade In</a>
+                      </li>
+                      <li class="globalnavbar-submenu-list-item">
+                        <a href="payment_plan" class="globalnavbar-submenu-link">Financing</a>
+                      </li>
+                      <li class="globalnavbar-submenu-list-item">
+                        <a href="personal_setup" class="globalnavbar-submenu-link">Personal Setup</a>
+                      </li>
+                    </ul>
+                  </div>
+                  <div class="globalnavbar-submenu-group">
+                    <h2 class="globalnavbar-submenu-header" id="68805228">
+                      Ajuda
+                    </h2>
+                    <ul class="globalnavbar-submenu-list" aria-labelledby="68805228">
+                      <li class="globalnavbar-submenu-list-item">
+                        <a href="special_deals" class="globalnavbar-submenu-link">Certified Refurbished</a>
+                      </li>
+                      <li class="globalnavbar-submenu-list-item">
+                        <a href="educationrouting" class="globalnavbar-submenu-link">Education</a>
+                      </li>
+                      <li class="globalnavbar-submenu-list-item">
+                        <a href="/retail/business/" class="globalnavbar-submenu-link">Business</a>
+                      </li>
+                      <li class="globalnavbar-submenu-list-item">
+                        <a href="eppstore/veteransandmilitary" class="globalnavbar-submenu-link">Veterans and
+                          Military</a>
+                      </li>
+                      <li class="globalnavbar-submenu-list-item">
+                        <a href="/r/store/government/" class="globalnavbar-submenu-link">Government</a>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </li>
+          <li class="globalnavbar-item globalnavbar-item-educacao">
+            <a class="globalnavbar-link globalnavbar-link-educacao" href="/educacao/">
+              <span class="globalnavbar-link-educacao-container">
+                <span class="globalnavbar-link-text">Educação</span>
+                <span class="globalnavbar-educacao-regular globalnavbar-link-educacao">
+                  <svg height="44" viewbox="0 0 15 44">
+                    <!-- <path d="COLOQUE-CÓDIGO site-https://qnn.github.io/svg-path-editor/ " /> -->
+                  </svg>
+                </span>
+              </span>
+            </a>
+            <!-- SUBMENU DOS LINKS -->
+            <div id="globalnavbar-submenu-link-" class="globalnavbar-flyout globalnavbar-submenu">
+              <div class="globalnavbar-flyout-scroll-container">
+                <div class="globalnavbar-flyout-content globalnavbar-submenu-content">
+                  <div class="globalnavbar-submenu-group globalnavbar-submenu-group-elevated">
+                    <h2 class="globalnavbar-submenu-header" id="c64e0a00">
+                      Departamento
+                    </h2>
+                    <ul class="globalnavbar-submenu-list" aria-labelledby="c64e0a00">
+                      <li class="globalnavbar-submenu-list-item-elevated">
+                        <a href="#" class="globalnavbar-submenu-link">História</a>
+                      </li>
+                      <li class="globalnavbar-submenu-list-item-elevated">
+                        <a href="#" class="globalnavbar-submenu-link"
+                          aria-label="Shop the latest Apple products">Programas e Orientações</a>
+                      </li>
+                      <li class="globalnavbar-submenu-list-item-elevated">
+                        <a href="#" class="globalnavbar-submenu-link">Administração</a>
+                      </li>
+                      <li class="globalnavbar-submenu-list-item-elevated">
+                        <a href="#" class="globalnavbar-submenu-link">Secretária</a>
+                      </li>
+                      <li class="globalnavbar-submenu-list-item-elevated">
+                        <a href="#" class="globalnavbar-submenu-link">Docentes</a>
+                      </li>
+                      <li class="globalnavbar-submenu-list-item-elevated">
+                        <a href="#" class="globalnavbar-submenu-link">Produção Acadêmica</a>
+                      </li>
+                      <li class="globalnavbar-submenu-list-item-elevated">
+                        <a href="#" class="globalnavbar-submenu-link">Calendário Academico</a>
+                      </li>
+                      <li class="globalnavbar-submenu-list-item-elevated">
+                        <a href="#" class="globalnavbar-submenu-link">Estatusto e Regimentos</a>
+                      </li>
+                    </ul>
+                  </div>
+                  <div class="globalnavbar-submenu-group">
+                    <h2 class="globalnavbar-submenu-header" id="b80e39ed">
+                      Links rápidas
+                    </h2>
+                    <ul class="globalnavbar-submenu-list" aria-labelledby="b80e39ed">
+                      <li class="globalnavbar-submenu-list-item">
+                        <a href="/retail/" class="globalnavbar-submenu-link">Find a Store</a>
+                      </li>
+                      <li class="globalnavbar-submenu-list-item">
+                        <a href="order/list" class="globalnavbar-submenu-link">Order Status</a>
+                      </li>
+                      <li class="globalnavbar-submenu-list-item">
+                        <a href="trade_in" class="globalnavbar-submenu-link">Apple Trade In</a>
+                      </li>
+                      <li class="globalnavbar-submenu-list-item">
+                        <a href="payment_plan" class="globalnavbar-submenu-link">Financing</a>
+                      </li>
+                      <li class="globalnavbar-submenu-list-item">
+                        <a href="personal_setup" class="globalnavbar-submenu-link">Personal Setup</a>
+                      </li>
+                    </ul>
+                  </div>
+                  <div class="globalnavbar-submenu-group">
+                    <h2 class="globalnavbar-submenu-header" id="68805228">
+                      Ajuda
+                    </h2>
+                    <ul class="globalnavbar-submenu-list" aria-labelledby="68805228">
+                      <li class="globalnavbar-submenu-list-item">
+                        <a href="special_deals" class="globalnavbar-submenu-link">Certified Refurbished</a>
+                      </li>
+                      <li class="globalnavbar-submenu-list-item">
+                        <a href="educationrouting" class="globalnavbar-submenu-link">Education</a>
+                      </li>
+                      <li class="globalnavbar-submenu-list-item">
+                        <a href="/retail/business/" class="globalnavbar-submenu-link">Business</a>
+                      </li>
+                      <li class="globalnavbar-submenu-list-item">
+                        <a href="eppstore/veteransandmilitary" class="globalnavbar-submenu-link">Veterans and
+                          Military</a>
+                      </li>
+                      <li class="globalnavbar-submenu-list-item">
+                        <a href="/r/store/government/" class="globalnavbar-submenu-link">Government</a>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </li>
+          <li class="globalnavbar-item globalnavbar-item-unb">
+            <a class="globalnavbar-link globalnavbar-link-unb" href="/unb/">
+              <span class="globalnavbar-link-unb-container">
+                <span class="globalnavbar-link-text">UnB</span>
+                <span class="globalnavbar-unb-regular globalnavbar-link-unb">
+                  <svg height="44" viewbox="0 0 15 44">
+                    <!-- <path d="COLOQUE-CÓDIGO site-https://qnn.github.io/svg-path-editor/ " /> -->
+                  </svg>
+                </span>
+              </span>
+            </a>
+            <!-- SUBMENU DOS LINKS -->
+            <div id="globalnavbar-submenu-link-" class="globalnavbar-flyout globalnavbar-submenu">
+              <div class="globalnavbar-flyout-scroll-container">
+                <div class="globalnavbar-flyout-content globalnavbar-submenu-content">
+                  <div class="globalnavbar-submenu-group globalnavbar-submenu-group-elevated">
+                    <h2 class="globalnavbar-submenu-header" id="c64e0a00">
+                      Departamento
+                    </h2>
+                    <ul class="globalnavbar-submenu-list" aria-labelledby="c64e0a00">
+                      <li class="globalnavbar-submenu-list-item-elevated">
+                        <a href="#" class="globalnavbar-submenu-link">História</a>
+                      </li>
+                      <li class="globalnavbar-submenu-list-item-elevated">
+                        <a href="#" class="globalnavbar-submenu-link"
+                          aria-label="Shop the latest Apple products">Programas e Orientações</a>
+                      </li>
+                      <li class="globalnavbar-submenu-list-item-elevated">
+                        <a href="#" class="globalnavbar-submenu-link">Administração</a>
+                      </li>
+                      <li class="globalnavbar-submenu-list-item-elevated">
+                        <a href="#" class="globalnavbar-submenu-link">Secretária</a>
+                      </li>
+                      <li class="globalnavbar-submenu-list-item-elevated">
+                        <a href="#" class="globalnavbar-submenu-link">Docentes</a>
+                      </li>
+                      <li class="globalnavbar-submenu-list-item-elevated">
+                        <a href="#" class="globalnavbar-submenu-link">Produção Acadêmica</a>
+                      </li>
+                      <li class="globalnavbar-submenu-list-item-elevated">
+                        <a href="#" class="globalnavbar-submenu-link">Calendário Academico</a>
+                      </li>
+                      <li class="globalnavbar-submenu-list-item-elevated">
+                        <a href="#" class="globalnavbar-submenu-link">Estatusto e Regimentos</a>
+                      </li>
+                    </ul>
+                  </div>
+                  <div class="globalnavbar-submenu-group">
+                    <h2 class="globalnavbar-submenu-header" id="b80e39ed">
+                      Links rápidas
+                    </h2>
+                    <ul class="globalnavbar-submenu-list" aria-labelledby="b80e39ed">
+                      <li class="globalnavbar-submenu-list-item">
+                        <a href="/retail/" class="globalnavbar-submenu-link">Find a Store</a>
+                      </li>
+                      <li class="globalnavbar-submenu-list-item">
+                        <a href="order/list" class="globalnavbar-submenu-link">Order Status</a>
+                      </li>
+                      <li class="globalnavbar-submenu-list-item">
+                        <a href="trade_in" class="globalnavbar-submenu-link">Apple Trade In</a>
+                      </li>
+                      <li class="globalnavbar-submenu-list-item">
+                        <a href="payment_plan" class="globalnavbar-submenu-link">Financing</a>
+                      </li>
+                      <li class="globalnavbar-submenu-list-item">
+                        <a href="personal_setup" class="globalnavbar-submenu-link">Personal Setup</a>
+                      </li>
+                    </ul>
+                  </div>
+                  <div class="globalnavbar-submenu-group">
+                    <h2 class="globalnavbar-submenu-header" id="68805228">
+                      Ajuda
+                    </h2>
+                    <ul class="globalnavbar-submenu-list" aria-labelledby="68805228">
+                      <li class="globalnavbar-submenu-list-item">
+                        <a href="special_deals" class="globalnavbar-submenu-link">Certified Refurbished</a>
+                      </li>
+                      <li class="globalnavbar-submenu-list-item">
+                        <a href="educationrouting" class="globalnavbar-submenu-link">Education</a>
+                      </li>
+                      <li class="globalnavbar-submenu-list-item">
+                        <a href="/retail/business/" class="globalnavbar-submenu-link">Business</a>
+                      </li>
+                      <li class="globalnavbar-submenu-list-item">
+                        <a href="eppstore/veteransandmilitary" class="globalnavbar-submenu-link">Veterans and
+                          Military</a>
+                      </li>
+                      <li class="globalnavbar-submenu-list-item">
+                        <a href="/r/store/government/" class="globalnavbar-submenu-link">Government</a>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </li>
+          <li class="globalnavbar-item globalnavbar-item-documentos">
+            <a class="globalnavbar-link globalnavbar-link-documentos" href="/documentos/">
+              <span class="globalnavbar-link-documentos-container">
+                <span class="globalnavbar-link-text">Documentos</span>
+                <span class="globalnavbar-documentos-regular globalnavbar-link-documentos">
+                  <svg height="44" viewbox="0 0 15 44">
+                    <!-- <path d="COLOQUE-CÓDIGO site-https://qnn.github.io/svg-path-editor/ " /> -->
+                  </svg>
+                </span>
+              </span>
+            </a>
+            <!-- SUBMENU DOS LINKS -->
+            <div id="globalnavbar-submenu-link-" class="globalnavbar-flyout globalnavbar-submenu">
+              <div class="globalnavbar-flyout-scroll-container">
+                <div class="globalnavbar-flyout-content globalnavbar-submenu-content">
+                  <div class="globalnavbar-submenu-group globalnavbar-submenu-group-elevated">
+                    <h2 class="globalnavbar-submenu-header" id="c64e0a00">
+                      Departamento
+                    </h2>
+                    <ul class="globalnavbar-submenu-list" aria-labelledby="c64e0a00">
+                      <li class="globalnavbar-submenu-list-item-elevated">
+                        <a href="#" class="globalnavbar-submenu-link">História</a>
+                      </li>
+                      <li class="globalnavbar-submenu-list-item-elevated">
+                        <a href="#" class="globalnavbar-submenu-link"
+                          aria-label="Shop the latest Apple products">Programas e Orientações</a>
+                      </li>
+                      <li class="globalnavbar-submenu-list-item-elevated">
+                        <a href="#" class="globalnavbar-submenu-link">Administração</a>
+                      </li>
+                      <li class="globalnavbar-submenu-list-item-elevated">
+                        <a href="#" class="globalnavbar-submenu-link">Secretária</a>
+                      </li>
+                      <li class="globalnavbar-submenu-list-item-elevated">
+                        <a href="#" class="globalnavbar-submenu-link">Docentes</a>
+                      </li>
+                      <li class="globalnavbar-submenu-list-item-elevated">
+                        <a href="#" class="globalnavbar-submenu-link">Produção Acadêmica</a>
+                      </li>
+                      <li class="globalnavbar-submenu-list-item-elevated">
+                        <a href="#" class="globalnavbar-submenu-link">Calendário Academico</a>
+                      </li>
+                      <li class="globalnavbar-submenu-list-item-elevated">
+                        <a href="#" class="globalnavbar-submenu-link">Estatusto e Regimentos</a>
+                      </li>
+                    </ul>
+                  </div>
+                  <div class="globalnavbar-submenu-group">
+                    <h2 class="globalnavbar-submenu-header" id="b80e39ed">
+                      Links rápidas
+                    </h2>
+                    <ul class="globalnavbar-submenu-list" aria-labelledby="b80e39ed">
+                      <li class="globalnavbar-submenu-list-item">
+                        <a href="/retail/" class="globalnavbar-submenu-link">Find a Store</a>
+                      </li>
+                      <li class="globalnavbar-submenu-list-item">
+                        <a href="order/list" class="globalnavbar-submenu-link">Order Status</a>
+                      </li>
+                      <li class="globalnavbar-submenu-list-item">
+                        <a href="trade_in" class="globalnavbar-submenu-link">Apple Trade In</a>
+                      </li>
+                      <li class="globalnavbar-submenu-list-item">
+                        <a href="payment_plan" class="globalnavbar-submenu-link">Financing</a>
+                      </li>
+                      <li class="globalnavbar-submenu-list-item">
+                        <a href="personal_setup" class="globalnavbar-submenu-link">Personal Setup</a>
+                      </li>
+                    </ul>
+                  </div>
+                  <div class="globalnavbar-submenu-group">
+                    <h2 class="globalnavbar-submenu-header" id="68805228">
+                      Ajuda
+                    </h2>
+                    <ul class="globalnavbar-submenu-list" aria-labelledby="68805228">
+                      <li class="globalnavbar-submenu-list-item">
+                        <a href="special_deals" class="globalnavbar-submenu-link">Certified Refurbished</a>
+                      </li>
+                      <li class="globalnavbar-submenu-list-item">
+                        <a href="educationrouting" class="globalnavbar-submenu-link">Education</a>
+                      </li>
+                      <li class="globalnavbar-submenu-list-item">
+                        <a href="/retail/business/" class="globalnavbar-submenu-link">Business</a>
+                      </li>
+                      <li class="globalnavbar-submenu-list-item">
+                        <a href="eppstore/veteransandmilitary" class="globalnavbar-submenu-link">Veterans and
+                          Military</a>
+                      </li>
+                      <li class="globalnavbar-submenu-list-item">
+                        <a href="/r/store/government/" class="globalnavbar-submenu-link">Government</a>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </li>
+          <li class="globalnavbar-item globalnavbar-item-noticias">
+            <a class="globalnavbar-link globalnavbar-link-noticias" href="/noticias/">
+              <span class="globalnavbar-link-noticias-container">
+                <span class="globalnavbar-link-text">Notícias</span>
+                <span class="globalnavbar-noticias-regular globalnavbar-link-noticias">
+                  <svg height="44" viewbox="0 0 15 44">
+                    <!-- <path d="COLOQUE-CÓDIGO site-https://qnn.github.io/svg-path-editor/ " /> -->
+                  </svg>
+                </span>
+              </span>
+            </a>
+            <!-- SUBMENU DOS LINKS -->
+            <div id="globalnavbar-submenu-link-" class="globalnavbar-flyout globalnavbar-submenu">
+              <div class="globalnavbar-flyout-scroll-container">
+                <div class="globalnavbar-flyout-content globalnavbar-submenu-content">
+                  <div class="globalnavbar-submenu-group globalnavbar-submenu-group-elevated">
+                    <h2 class="globalnavbar-submenu-header" id="c64e0a00">
+                      Departamento
+                    </h2>
+                    <ul class="globalnavbar-submenu-list" aria-labelledby="c64e0a00">
+                      <li class="globalnavbar-submenu-list-item-elevated">
+                        <a href="#" class="globalnavbar-submenu-link">História</a>
+                      </li>
+                      <li class="globalnavbar-submenu-list-item-elevated">
+                        <a href="#" class="globalnavbar-submenu-link"
+                          aria-label="Shop the latest Apple products">Programas e Orientações</a>
+                      </li>
+                      <li class="globalnavbar-submenu-list-item-elevated">
+                        <a href="#" class="globalnavbar-submenu-link">Administração</a>
+                      </li>
+                      <li class="globalnavbar-submenu-list-item-elevated">
+                        <a href="#" class="globalnavbar-submenu-link">Secretária</a>
+                      </li>
+                      <li class="globalnavbar-submenu-list-item-elevated">
+                        <a href="#" class="globalnavbar-submenu-link">Docentes</a>
+                      </li>
+                      <li class="globalnavbar-submenu-list-item-elevated">
+                        <a href="#" class="globalnavbar-submenu-link">Produção Acadêmica</a>
+                      </li>
+                      <li class="globalnavbar-submenu-list-item-elevated">
+                        <a href="#" class="globalnavbar-submenu-link">Calendário Academico</a>
+                      </li>
+                      <li class="globalnavbar-submenu-list-item-elevated">
+                        <a href="#" class="globalnavbar-submenu-link">Estatusto e Regimentos</a>
+                      </li>
+                    </ul>
+                  </div>
+                  <div class="globalnavbar-submenu-group">
+                    <h2 class="globalnavbar-submenu-header" id="b80e39ed">
+                      Links rápidas
+                    </h2>
+                    <ul class="globalnavbar-submenu-list" aria-labelledby="b80e39ed">
+                      <li class="globalnavbar-submenu-list-item">
+                        <a href="/retail/" class="globalnavbar-submenu-link">Find a Store</a>
+                      </li>
+                      <li class="globalnavbar-submenu-list-item">
+                        <a href="order/list" class="globalnavbar-submenu-link">Order Status</a>
+                      </li>
+                      <li class="globalnavbar-submenu-list-item">
+                        <a href="trade_in" class="globalnavbar-submenu-link">Apple Trade In</a>
+                      </li>
+                      <li class="globalnavbar-submenu-list-item">
+                        <a href="payment_plan" class="globalnavbar-submenu-link">Financing</a>
+                      </li>
+                      <li class="globalnavbar-submenu-list-item">
+                        <a href="personal_setup" class="globalnavbar-submenu-link">Personal Setup</a>
+                      </li>
+                    </ul>
+                  </div>
+                  <div class="globalnavbar-submenu-group">
+                    <h2 class="globalnavbar-submenu-header" id="68805228">
+                      Ajuda
+                    </h2>
+                    <ul class="globalnavbar-submenu-list" aria-labelledby="68805228">
+                      <li class="globalnavbar-submenu-list-item">
+                        <a href="special_deals" class="globalnavbar-submenu-link">Certified Refurbished</a>
+                      </li>
+                      <li class="globalnavbar-submenu-list-item">
+                        <a href="educationrouting" class="globalnavbar-submenu-link">Education</a>
+                      </li>
+                      <li class="globalnavbar-submenu-list-item">
+                        <a href="/retail/business/" class="globalnavbar-submenu-link">Business</a>
+                      </li>
+                      <li class="globalnavbar-submenu-list-item">
+                        <a href="eppstore/veteransandmilitary" class="globalnavbar-submenu-link">Veterans and
+                          Military</a>
+                      </li>
+                      <li class="globalnavbar-submenu-list-item">
+                        <a href="/r/store/government/" class="globalnavbar-submenu-link">Government</a>
+                      </li>
                     </ul>
                   </div>
                 </div>
@@ -910,16 +959,17 @@
             </div>
           </li>
           <li class="globalnavbar-item globalnavbar-search">
-            <a aria-label="Search estatistica.pro" class="globalnavbar-link globalnavbar-link-search" href="" role="button">
+            <a aria-label="Search estatistica.pro" class="globalnavbar-link globalnavbar-link-search" href=""
+              role="button">
               <span class="globalnavbar-image-regular">
-                <svg height="44" viewBox="0 0 14 44" xmlns="http://www.w3.org/2000/svg" width="15">
+                <svg height="44" viewBox="0 0 14 44" xmlns="http:/www.w3.org/2000/svg" width="15">
                   <path
                     d="M14.298,27.202l-3.87-3.87c0.701-0.929,1.122-2.081,1.122-3.332c0-3.06-2.489-5.55-5.55-5.55c-3.06,0-5.55,2.49-5.55,5.55 c0,3.061,2.49,5.55,5.55,5.55c1.251,0,2.403-0.421,3.332-1.122l3.87,3.87c0.151,0.151,0.35,0.228,0.548,0.228 s0.396-0.076,0.548-0.228C14.601,27.995,14.601,27.505,14.298,27.202z M1.55,20c0-2.454,1.997-4.45,4.45-4.45 c2.454,0,4.45,1.997,4.45,4.45S8.454,24.45,6,24.45C3.546,24.45,1.55,22.454,1.55,20z">
                   </path>
                 </svg>
               </span>
               <span class="globalnavbar-image-compact">
-                <svg height="44" viewBox="0 0 14 44" xmlns="http://www.w3.org/2000/svg" width="15">
+                <svg height="44" viewBox="0 0 14 44" xmlns="http:/www.w3.org/2000/svg" width="15">
                   <path
                     d="M14.298,27.202l-3.87-3.87c0.701-0.929,1.122-2.081,1.122-3.332c0-3.06-2.489-5.55-5.55-5.55c-3.06,0-5.55,2.49-5.55,5.55 c0,3.061,2.49,5.55,5.55,5.55c1.251,0,2.403-0.421,3.332-1.122l3.87,3.87c0.151,0.151,0.35,0.228,0.548,0.228 s0.396-0.076,0.548-0.228C14.601,27.995,14.601,27.505,14.298,27.202z M1.55,20c0-2.454,1.997-4.45,4.45-4.45 c2.454,0,4.45,1.997,4.45,4.45S8.454,24.45,6,24.45C3.546,24.45,1.55,22.454,1.55,20z">
                   </path>
@@ -928,7 +978,8 @@
             </a>
           </li>
           <li class="globalnavbar-item globalnavbar-profile">
-            <a aria-label="profile estatistica.pro" class="globalnavbar-link globalnavbar-link-profile" href="" role="button">
+            <a aria-label="profile estatistica.pro" class="globalnavbar-link globalnavbar-link-profile" href=""
+              role="button">
               <span class="globalnavbar-image-compact">
                 <svg xmlns="http://www.w3.org/2000/svg" width="15" height="44" viewBox="0 0 26 26" fill="none">
                   <path
@@ -940,41 +991,13 @@
                 </svg>
               </span>
             </a>
+            <!-- SUBMENU DOS LINKS -->
           </li>
         </ul>
-        <div class="globalnavbar-menutrigger">
-          <button id="globalnavbar-menutrigger-button" aria-controls="globalnavbar-list" aria-label="Menu"
-            data-topnav-menu-label-open="Menu" data-topnav-menu-label-close="Fechar" data-topnav-flyout-trigger-compact="menu"
-            class="globalnavbar-menutrigger-button">
-            <svg width="18" height="18" viewBox="0 0 18 18">
-              <polyline id="globalnavbar-menutrigger-bread-bottom" fill="none" stroke="currentColor" stroke-width="1.2"
-                stroke-linecap="round" stroke-linejoin="round" points="2 12, 16 12"
-                class="globalnavbar-menutrigger-bread globalnavbar-menutrigger-bread-bottom">
-                <animate id="globalnavbar-anim-menutrigger-bread-bottom-open" attributeName="points" keyTimes="0;0.5;1"
-                  dur="0.24s" begin="indefinite" fill="freeze" calcMode="spline" keySplines="0.42, 0, 1, 1;0, 0, 0.58, 1"
-                  values=" 2 12, 16 12; 2 9, 16 9; 3.5 15, 15 3.5"></animate>
-                <animate id="globalnavbar-anim-menutrigger-bread-bottom-close" attributeName="points" keyTimes="0;0.5;1"
-                  dur="0.24s" begin="indefinite" fill="freeze" calcMode="spline" keySplines="0.42, 0, 1, 1;0, 0, 0.58, 1"
-                  values=" 3.5 15, 15 3.5; 2 9, 16 9; 2 12, 16 12"></animate>
-              </polyline>
-              <polyline id="globalnavbar-menutrigger-bread-top" fill="none" stroke="currentColor" stroke-width="1.2"
-                stroke-linecap="round" stroke-linejoin="round" points="2 5, 16 5"
-                class="globalnavbar-menutrigger-bread globalnavbar-menutrigger-bread-top">
-                <animate id="globalnavbar-anim-menutrigger-bread-top-open" attributeName="points" keyTimes="0;0.5;1" dur="0.24s"
-                  begin="indefinite" fill="freeze" calcMode="spline" keySplines="0.42, 0, 1, 1;0, 0, 0.58, 1"
-                  values=" 2 5, 16 5; 2 9, 16 9; 3.5 3.5, 15 15"></animate>
-                <animate id="globalnavbar-anim-menutrigger-bread-top-close" attributeName="points" keyTimes="0;0.5;1" dur="0.24s"
-                  begin="indefinite" fill="freeze" calcMode="spline" keySplines="0.42, 0, 1, 1;0, 0, 0.58, 1"
-                  values=" 3.5 3.5, 15 15; 2 9, 16 9; 2 5, 16 5"></animate>
-              </polyline>
-            </svg>
-            </button>
-            </div>
       </div>
-      <span style="visibility: hidden; position: absolute; top: 0px; z-index: -1;">&nbsp;</span>
     </nav>
   </div>
-  <main id="globalmain" role="main" style="display: none;">
+  <main id="globalmain" role="main">
     <section class="homepage-section collection-module" data-module-template="heroes">
       <div data-unit-id="boasvindas" id="boasvindas">
         <div class="modulo-content">
@@ -1542,7 +1565,7 @@
       </div>
     </section>
   </main>
-  <footer class="" id="globalfooter" style="display: none;">
+  <footer class="" id="globalfooter">
     <div id="globalfooter-content">
       <h2 class="globalfooter-content-label" id="globalfooter-content-label" style="display: none">
         Estatistica
