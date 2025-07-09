@@ -1,6 +1,6 @@
 /* =============================================================================
    GLOBAL NAVBAR MASTER STYLES
-   Arquivo ÚNICO combinando build.globalnavbar.css + globalheader.css + globalnav-unified.css
+   Arquivo ÚNICO combinando build.globalnavbar.css + globalheader.css + globalnavbar-unified.css
    Compatível com nomenclaturas: #globalnavbar e #globalnav
    ============================================================================= */
 
@@ -11,62 +11,62 @@
    ============================================================================= */
 :root {
   /* Cores principais */
-  --globalnav-background: rgba(255, 255, 255, 0.8);
   --globalnavbar-background: rgba(255, 255, 255, 0.8);
-  --r-globalnav-background-opened: #fafafc;
+  --globalnavbar-background: rgba(255, 255, 255, 0.8);
   --r-globalnavbar-background-opened: #fafafc;
-  --r-globalnav-background-opened-dark: #161617;
+  --r-globalnavbar-background-opened: #fafafc;
+  --r-globalnavbar-background-opened-dark: #161617;
   --r-globalnavbar-background-opened-dark: #161617;
   
   /* Cores de texto */
-  --r-globalnav-color: rgba(0, 0, 0, 0.8);
   --r-globalnavbar-color: rgba(0, 0, 0, 0.8);
-  --r-globalnav-color-secondary: #333336;
+  --r-globalnavbar-color: rgba(0, 0, 0, 0.8);
   --r-globalnavbar-color-secondary: #333336;
-  --r-globalnav-color-secondary-black: rgba(0, 0, 0, 0.8);
+  --r-globalnavbar-color-secondary: #333336;
   --r-globalnavbar-color-secondary-black: rgba(0, 0, 0, 0.8);
-  --r-globalnav-color-hover: #000000;
+  --r-globalnavbar-color-secondary-black: rgba(0, 0, 0, 0.8);
   --r-globalnavbar-color-hover: #000000;
-  --r-globalnav-submenu-header-color: rgb(110, 110, 115);
+  --r-globalnavbar-color-hover: #000000;
+  --r-globalnavbar-submenu-header-color: rgb(110, 110, 115);
   --r-globalnavbar-submenu-header-color: rgb(110, 110, 115);
   
   /* Layout e dimensões */
-  --r-globalnav-height: 44px;
   --r-globalnavbar-height: 44px;
-  --r-globalnav-font-size: 17px;
+  --r-globalnavbar-height: 44px;
   --r-globalnavbar-font-size: 17px;
-  --globalnav-backdrop-filter: saturate(180%) blur(20px);
+  --r-globalnavbar-font-size: 17px;
+  --globalnavbar-backdrop-filter: saturate(180%) blur(20px);
   --globalnavbar-backdrop-filter: saturate(180%) blur(20px);
   
   /* Transições e animações */
-  --globalnav-transition-rate: 0.3s;
+  --globalnavbar-transition-rate: 0.3s;
   --globalnavbar-transition-rate: 0.3s;
   --easing-curve: cubic-bezier(0.4, 0, 0.6, 1);
-  --r-globalnav-flyout-rate: 240ms;
   --r-globalnavbar-flyout-rate: 240ms;
-  --r-globalnav-flyout-close-delay: 0.12s;
-  --r-globalnav-flyout-link-opacity-duration: 0.5s;
-  --r-globalnav-flyout-spacing: 88px;
-  --r-globalnav-next-flyout-height: 0px;
-  --r-globalnav-previous-flyout-height: 0px;
+  --r-globalnavbar-flyout-rate: 240ms;
+  --r-globalnavbar-flyout-close-delay: 0.12s;
+  --r-globalnavbar-flyout-link-opacity-duration: 0.5s;
+  --r-globalnavbar-flyout-spacing: 88px;
+  --r-globalnavbar-next-flyout-height: 0px;
+  --r-globalnavbar-previous-flyout-height: 0px;
   
   /* Flyout específico */
-  --r-globalnav-flyout-elevated-group-count: 1;
   --r-globalnavbar-flyout-elevated-group-count: 1;
-  --r-globalnav-flyout-group-number: 0;
+  --r-globalnavbar-flyout-elevated-group-count: 1;
   --r-globalnavbar-flyout-group-number: 0;
-  --r-globalnav-flyout-group-total: 2;
+  --r-globalnavbar-flyout-group-number: 0;
   --r-globalnavbar-flyout-group-total: 2;
-  --r-globalnav-flyout-height: 452px;
+  --r-globalnavbar-flyout-group-total: 2;
   --r-globalnavbar-flyout-height: 452px;
-  --r-globalnav-flyout-item-total: 0;
+  --r-globalnavbar-flyout-height: 452px;
   --r-globalnavbar-flyout-item-total: 0;
-  --r-globalnav-scrollbar-width: 15px;
+  --r-globalnavbar-flyout-item-total: 0;
+  --r-globalnavbar-scrollbar-width: 15px;
   --r-globalnavbar-scrollbar-width: 15px;
   
   /* Fontes */
   --r-globalfont-family: SF Pro Text, SF Pro Icons, Helvetica Neue, Helvetica, Arial, sans-serif;
-  --r-globalnav-text-zoom-scale: 1;
+  --r-globalnavbar-text-zoom-scale: 1;
   --r-globalnavbar-text-zoom-scale: 1;
   
   /* Focus e acessibilidade */
@@ -83,29 +83,29 @@
   position: sticky !important;
 }
 
-#globalnav ul,
-#globalnav ol,
-#globalnav li,
-#globalnav dl,
-#globalnav dt,
-#globalnav dd,
-#globalnav h1,
-#globalnav h2,
-#globalnav h3,
-#globalnav h4,
-#globalnav h5,
-#globalnav h6,
-#globalnav hgroup,
-#globalnav p,
-#globalnav blockquote,
-#globalnav figure,
-#globalnav form,
-#globalnav fieldset,
-#globalnav input,
-#globalnav legend,
-#globalnav pre,
-#globalnav abbr,
-#globalnav button,
+#globalnavbar ul,
+#globalnavbar ol,
+#globalnavbar li,
+#globalnavbar dl,
+#globalnavbar dt,
+#globalnavbar dd,
+#globalnavbar h1,
+#globalnavbar h2,
+#globalnavbar h3,
+#globalnavbar h4,
+#globalnavbar h5,
+#globalnavbar h6,
+#globalnavbar hgroup,
+#globalnavbar p,
+#globalnavbar blockquote,
+#globalnavbar figure,
+#globalnavbar form,
+#globalnavbar fieldset,
+#globalnavbar input,
+#globalnavbar legend,
+#globalnavbar pre,
+#globalnavbar abbr,
+#globalnavbar button,
 #globalnavbar ul,
 #globalnavbar ol,
 #globalnavbar li,
@@ -134,12 +134,12 @@
   border: 0;
 }
 
-#globalnav pre,
-#globalnav code,
-#globalnav address,
-#globalnav caption,
-#globalnav th,
-#globalnav figcaption,
+#globalnavbar pre,
+#globalnavbar code,
+#globalnavbar address,
+#globalnavbar caption,
+#globalnavbar th,
+#globalnavbar figcaption,
 #globalnavbar pre,
 #globalnavbar code,
 #globalnavbar address,
@@ -151,39 +151,39 @@
   font-style: normal;
 }
 
-#globalnav fieldset,
-#globalnav iframe,
+#globalnavbar fieldset,
+#globalnavbar iframe,
 #globalnavbar fieldset,
 #globalnavbar iframe {
   border: 0;
 }
 
-#globalnav caption,
-#globalnav th,
+#globalnavbar caption,
+#globalnavbar th,
 #globalnavbar caption,
 #globalnavbar th {
   text-align: left;
 }
 
-#globalnav table,
+#globalnavbar table,
 #globalnavbar table {
   border-collapse: collapse;
   border-spacing: 0;
 }
 
-#globalnav main,
-#globalnav summary,
-#globalnav details,
+#globalnavbar main,
+#globalnavbar summary,
+#globalnavbar details,
 #globalnavbar main,
 #globalnavbar summary,
 #globalnavbar details {
   display: block;
 }
 
-#globalnav audio,
-#globalnav canvas,
-#globalnav video,
-#globalnav progress,
+#globalnavbar audio,
+#globalnavbar canvas,
+#globalnavbar video,
+#globalnavbar progress,
 #globalnavbar audio,
 #globalnavbar canvas,
 #globalnavbar video,
@@ -191,7 +191,7 @@
   vertical-align: baseline;
 }
 
-#globalnav button,
+#globalnavbar button,
 #globalnavbar button {
   background: none;
   border: 0;
@@ -204,18 +204,18 @@
   vertical-align: inherit;
 }
 
-#globalnav button:disabled,
+#globalnavbar button:disabled,
 #globalnavbar button:disabled {
   cursor: default;
 }
 
-#globalnav :focus-visible,
+#globalnavbar :focus-visible,
 #globalnavbar :focus-visible {
   outline: 2px solid var(--sk-focus-color, #0071e3);
   outline-offset: var(--sk-focus-offset, 1px);
 }
 
-#globalnav ::-moz-focus-inner,
+#globalnavbar ::-moz-focus-inner,
 #globalnavbar ::-moz-focus-inner {
   border: 0;
   padding: 0;
@@ -242,37 +242,37 @@ html, body {
   align-content: center;
   width: 100%;
   max-width: 2560px;
-  height: var(--r-globalnav-height);
+  height: var(--r-globalnavbar-height);
   margin: 0;
   padding: 0;
   font-size: 17px;
   -webkit-user-select: none;
   user-select: none;
-  -webkit-backdrop-filter: var(--globalnav-backdrop-filter);
-  backdrop-filter: var(--globalnav-backdrop-filter);
+  -webkit-backdrop-filter: var(--globalnavbar-backdrop-filter);
+  backdrop-filter: var(--globalnavbar-backdrop-filter);
 }
 
 /* Direções RTL/LTR */
 #globalnav:not([dir=rtl]),
 #globalnavbar:not([dir=rtl]) {
-  --r-globalnav-start: var(--r-sk-start, left);
-  --r-globalnav-end: var(--r-sk-end, right);
-  --r-globalnav-safe-area-inset-start: var(--sk-safe-area-inset-start, env(safe-area-inset-left));
-  --r-globalnav-safe-area-inset-end: var(--sk-safe-area-inset-end, env(safe-area-inset-right));
-  --r-globalnav-logical-factor: 1;
+  --r-globalnavbar-start: var(--r-sk-start, left);
+  --r-globalnavbar-end: var(--r-sk-end, right);
+  --r-globalnavbar-safe-area-inset-start: var(--sk-safe-area-inset-start, env(safe-area-inset-left));
+  --r-globalnavbar-safe-area-inset-end: var(--sk-safe-area-inset-end, env(safe-area-inset-right));
+  --r-globalnavbar-logical-factor: 1;
 }
 
 #globalnav[dir=rtl],
 #globalnavbar[dir=rtl] {
-  --r-globalnav-start: var(--r-sk-start, right);
-  --r-globalnav-end: var(--r-sk-end, left);
-  --r-globalnav-safe-area-inset-start: var(--sk-safe-area-inset-start, env(safe-area-inset-right));
-  --r-globalnav-safe-area-inset-end: var(--sk-safe-area-inset-end, env(safe-area-inset-left));
-  --r-globalnav-logical-factor: -1;
+  --r-globalnavbar-start: var(--r-sk-start, right);
+  --r-globalnavbar-end: var(--r-sk-end, left);
+  --r-globalnavbar-safe-area-inset-start: var(--sk-safe-area-inset-start, env(safe-area-inset-right));
+  --r-globalnavbar-safe-area-inset-end: var(--sk-safe-area-inset-end, env(safe-area-inset-left));
+  --r-globalnavbar-logical-factor: -1;
 }
 
 /* Temas dark/light */
-#globalnav.globalnav-dark,
+#globalnav.globalnavbar-dark,
 #globalnav.globalheader-dark,
 .globalheader-dark #globalnav,
 .theme-dark #globalnav,
@@ -280,15 +280,15 @@ html, body {
 #globalnavbar.globalheader-dark,
 .globalheader-dark #globalnavbar,
 .theme-dark #globalnavbar {
-  --r-globalnav-color: rgba(255, 255, 255, 0.8);
-  --r-globalnav-color-secondary: #E8E8ED;
-  --r-globalnav-color-hover: #FFFFFF;
+  --r-globalnavbar-color: rgba(255, 255, 255, 0.8);
+  --r-globalnavbar-color-secondary: #E8E8ED;
+  --r-globalnavbar-color-hover: #FFFFFF;
 }
 
-#globalnav.globalnav-light,
+#globalnav.globalnavbar-light,
 #globalnav.globalheader-light,
-.globalheader-dark #globalnav.globalnav-light,
-.theme-dark #globalnav.globalnav-light,
+.globalheader-dark #globalnav.globalnavbar-light,
+.theme-dark #globalnav.globalnavbar-light,
 .globalheader-dark #globalnav.globalheader-light,
 .theme-dark #globalnav.globalheader-light,
 .globalheader-light #globalnav,
@@ -301,17 +301,17 @@ html, body {
 .theme-dark #globalnavbar.globalheader-light,
 .globalheader-light #globalnavbar,
 .theme-light #globalnavbar {
-  --r-globalnav-color: rgba(0, 0, 0, 0.8);
-  --r-globalnav-color-secondary: #333336;
-  --r-globalnav-color-hover: #000000;
+  --r-globalnavbar-color: rgba(0, 0, 0, 0.8);
+  --r-globalnavbar-color-secondary: #333336;
+  --r-globalnavbar-color-hover: #000000;
 }
 
 /* =============================================================================
    CONTEÚDO E ESTRUTURA (DUAL COMPATIBILITY)
    ============================================================================= */
-#globalnav .globalnav-content,
 #globalnavbar .globalnavbar-content,
-#globalnavbar .globalnav-content {
+#globalnavbar .globalnavbar-content,
+#globalnavbar .globalnavbar-content {
   margin: 0 auto;
   box-sizing: border-box;
   width: 100%;
@@ -320,9 +320,9 @@ html, body {
   z-index: 2;
 }
 
-#globalnav .globalnav-list,
 #globalnavbar .globalnavbar-list,
-#globalnavbar .globalnav-list {
+#globalnavbar .globalnavbar-list,
+#globalnavbar .globalnavbar-list {
   width: 100%;
   height: 44px;
   display: flex;
@@ -334,22 +334,22 @@ html, body {
   user-select: none;
 }
 
-#globalnav .globalnav-item,
 #globalnavbar .globalnavbar-item,
-#globalnavbar .globalnav-item {
+#globalnavbar .globalnavbar-item,
+#globalnavbar .globalnavbar-item {
   box-sizing: border-box;
   height: 44px;
 }
 
-#globalnav .globalnav-link,
 #globalnavbar .globalnavbar-link,
-#globalnavbar .globalnav-link {
+#globalnavbar .globalnavbar-link,
+#globalnavbar .globalnavbar-link {
   display: flex;
   align-items: center;
   justify-content: center;
   position: relative;
   z-index: 1;
-  padding: 0 calc(9px / var(--r-globalnav-text-zoom-scale, 1));
+  padding: 0 calc(9px / var(--r-globalnavbar-text-zoom-scale, 1));
   height: 44px;
   text-decoration: none;
   white-space: nowrap;
@@ -359,7 +359,7 @@ html, body {
   letter-spacing: -0.01em;
   font-family: var(--r-globalfont-family);
   line-height: 1;
-  color: var(--r-globalnav-color-secondary-black);
+  color: var(--r-globalnavbar-color-secondary-black);
   background: no-repeat;
   transition: color 0.32s cubic-bezier(0.4, 0, 0.6, 1);
 }
@@ -367,20 +367,26 @@ html, body {
 /* =============================================================================
    LOGO E MARCA ESTATÍSTICA (DUAL COMPATIBILITY)
    ============================================================================= */
-#globalnav .globalnav-link span[class*="globalnav-estatistica-regular"],
-#globalnav .globalnav-link span[class*="globalnav-estatistica-regular"] svg,
-#globalnavbar .globalnavbar-link span[class*="globalnavbar-estatistica-regular"],
-#globalnavbar .globalnavbar-link span[class*="globalnavbar-estatistica-regular"] svg {
-  height: var(--r-globalnav-height);
+nav[id="globalnavbar"] svg {
+  box-sizing: border-box;
+  height: var(--r-globalnavbar-height);
   width: max-content;
 }
 
-#globalnav .globalnav-link svg,
+#globalnavbar .globalnavbar-link span[class*="globalnavbar-estatistica-regular"],
+#globalnavbar .globalnavbar-link span[class*="globalnavbar-estatistica-regular"] svg,
+#globalnavbar .globalnavbar-link span[class*="globalnavbar-estatistica-regular"],
+#globalnavbar .globalnavbar-link span[class*="globalnavbar-estatistica-regular"] svg {
+  height: var(--r-globalnavbar-height);
+  width: max-content;
+}
+
+#globalnavbar .globalnavbar-link svg,
 #globalnavbar .globalnavbar-link svg {
   fill: currentColor;
 }
 
-#globalnav .globalnav-link-estatistica,
+#globalnavbar .globalnavbar-link-estatistica,
 #globalnavbar .globalnavbar-link-estatistica {
   font-size: 17px;
   line-height: 1.2353641176;
@@ -392,30 +398,30 @@ html, body {
   height: 100%;
 }
 
-#globalnav .globalnav-link-estatistica .globalnav-link-text,
+#globalnavbar .globalnavbar-link-estatistica .globalnavbar-link-text,
 #globalnavbar .globalnavbar-link-estatistica .globalnavbar-link-text {
   margin-inline-start: 4px;
 }
 
-#globalnav .globalnav-link-estatistica .globalnav-link-text-estatistica,
+#globalnavbar .globalnavbar-link-estatistica .globalnavbar-link-text-estatistica,
 #globalnavbar .globalnavbar-link-estatistica .globalnavbar-link-text-estatistica {
   display: none;
 }
 
-#globalnav .globalnav-link-estatistica:lang(pt-br),
+#globalnavbar .globalnavbar-link-estatistica:lang(pt-br),
 #globalnavbar .globalnavbar-link-estatistica:lang(pt-br) {
   letter-spacing: 0em;
   font-family: var(--r-globalfont-family);
 }
 
-#globalnav span[class*="-regular"],
+#globalnavbar span[class*="-regular"],
 #globalnavbar span[class*="-regular"] {
   height: auto;
   display: none;
   align-items: center;
 }
 
-#globalnav span[class*="globalnav-estatistica-regular"],
+#globalnavbar span[class*="globalnavbar-estatistica-regular"],
 #globalnavbar span[class*="globalnavbar-estatistica-regular"] {
   display: block;
   height: auto;
@@ -425,23 +431,23 @@ html, body {
 /* =============================================================================
    ESTADOS DE INTERAÇÃO (DUAL COMPATIBILITY)
    ============================================================================= */
-#globalnav .globalnav-link:hover,
-#globalnav .globalnav-link:focus[data-focus-method="key"],
-#globalnav .globalnav-link:focus-visible,
+#globalnavbar .globalnavbar-link:hover,
+#globalnavbar .globalnavbar-link:focus[data-focus-method="key"],
+#globalnavbar .globalnavbar-link:focus-visible,
 #globalnavbar .globalnavbar-link:hover,
 #globalnavbar .globalnavbar-link:focus[data-focus-method="key"],
 #globalnavbar .globalnavbar-link:focus-visible {
-  color: var(--r-globalnav-color-hover) !important;
+  color: var(--r-globalnavbar-color-hover) !important;
   text-decoration: none;
 }
 
-#globalnav .globalnav-link:focus,
+#globalnavbar .globalnavbar-link:focus,
 #globalnavbar .globalnavbar-link:focus {
   outline: none;
 }
 
-#globalnav .globalnav-link[data-focus-method=touch],
-#globalnav .globalnav-link[data-focus-method=mouse],
+#globalnavbar .globalnavbar-link[data-focus-method=touch],
+#globalnavbar .globalnavbar-link[data-focus-method=mouse],
 #globalnavbar .globalnavbar-link[data-focus-method=touch],
 #globalnavbar .globalnavbar-link[data-focus-method=mouse] {
   outline: none;
@@ -460,18 +466,18 @@ html, body {
   outline: none;
 }
 
-#globalnav.globalnav-hover-active,
+#globalnav.globalnavbar-hover-active,
 #globalnavbar.globalnavbar-hover-active {
-  background-color: var(--r-globalnav-background-opened);
+  background-color: var(--r-globalnavbar-background-opened);
   transition: background-color 0s ease;
 }
 
 /* =============================================================================
    SUBMENU / FLYOUT (DUAL COMPATIBILITY)
    ============================================================================= */
-#globalnav .globalnav-submenu,
+#globalnavbar .globalnavbar-submenu,
 #globalnavbar .globalnavbar-submenu {
-  background: var(--r-globalnav-background-opened);
+  background: var(--r-globalnavbar-background-opened);
   display: inherit;
   left: 50%;
   max-width: 2560px;
@@ -485,55 +491,55 @@ html, body {
   transform-origin: top;
   width: 100%;
   z-index: 100;
-  transition: max-height var(--globalnav-transition-rate) var(--easing-curve),
-    opacity var(--globalnav-transition-rate) var(--easing-curve), 
-    visibility var(--globalnav-transition-rate) step-end;
+  transition: max-height var(--globalnavbar-transition-rate) var(--easing-curve),
+    opacity var(--globalnavbar-transition-rate) var(--easing-curve), 
+    visibility var(--globalnavbar-transition-rate) step-end;
 }
 
 /* Ativação do submenu */
-#globalnav .globalnav-item:hover .globalnav-submenu,
-#globalnav .globalnav-item:focus-within .globalnav-submenu,
+#globalnavbar .globalnavbar-item:hover .globalnavbar-submenu,
+#globalnavbar .globalnavbar-item:focus-within .globalnavbar-submenu,
 #globalnavbar .globalnavbar-item:hover .globalnavbar-submenu,
 #globalnavbar .globalnavbar-item:focus-within .globalnavbar-submenu {
   max-height: 500px;
   opacity: 1;
   visibility: visible;
-  transition: max-height var(--globalnav-transition-rate) var(--easing-curve),
-    opacity var(--globalnav-transition-rate) var(--easing-curve), 
-    visibility var(--globalnav-transition-rate) step-start;
+  transition: max-height var(--globalnavbar-transition-rate) var(--easing-curve),
+    opacity var(--globalnavbar-transition-rate) var(--easing-curve), 
+    visibility var(--globalnavbar-transition-rate) step-start;
 }
 
-#globalnav .globalnav-submenu-content,
+#globalnavbar .globalnavbar-submenu-content,
 #globalnavbar .globalnavbar-submenu-content {
   box-sizing: border-box;
   display: flex;
   justify-content: space-between;
   margin: 0 auto;
-  max-width: calc(1024px - var(--r-globalnav-scrollbar-width));
+  max-width: calc(1024px - var(--r-globalnavbar-scrollbar-width));
   padding-bottom: 84px;
-  padding-inline-end: max(22px, var(--r-globalnav-safe-area-inset-end));
-  padding-inline-start: max(22px, var(--r-globalnav-safe-area-inset-start));
+  padding-inline-end: max(22px, var(--r-globalnavbar-safe-area-inset-end));
+  padding-inline-start: max(22px, var(--r-globalnavbar-safe-area-inset-start));
   padding-top: 40px;
   width: 100%;
   z-index: 2;
 }
 
-#globalnav .globalnav-submenu-group,
+#globalnavbar .globalnavbar-submenu-group,
 #globalnavbar .globalnavbar-submenu-group {
   box-sizing: border-box;
 }
 
-#globalnav .globalnav-submenu-group,
-#globalnav .globalnav-submenu-group-elevated,
+#globalnavbar .globalnavbar-submenu-group,
+#globalnavbar .globalnavbar-submenu-group-elevated,
 #globalnavbar .globalnavbar-submenu-group,
 #globalnavbar .globalnavbar-submenu-group-elevated {
   max-width: 50%;
   padding-inline-end: 88px;
 }
 
-#globalnav .globalnav-submenu-header,
+#globalnavbar .globalnavbar-submenu-header,
 #globalnavbar .globalnavbar-submenu-header {
-  color: var(--r-globalnav-submenu-header-color);
+  color: var(--r-globalnavbar-submenu-header-color);
   display: block;
   font-family: SF Pro Text, SF Pro Icons, Helvetica Neue, Helvetica, Arial, sans-serif;
   font-size: 12px;
@@ -542,12 +548,12 @@ html, body {
   line-height: 1.3333733333;
   opacity: 1;
   transform: translateY(0);
-  transition-delay: calc(var(--r-globalnav-flyout-group-delay) + 80ms);
+  transition-delay: calc(var(--r-globalnavbar-flyout-group-delay) + 80ms);
   transition-duration: 0.32s;
   transition-property: opacity, transform;
 }
 
-#globalnav .globalnav-submenu-list-item,
+#globalnavbar .globalnavbar-submenu-list-item,
 #globalnavbar .globalnavbar-submenu-list-item {
   font-family: SF Pro Text, SF Pro Icons, Helvetica Neue, Helvetica, Arial, sans-serif;
   font-size: 12px;
@@ -558,12 +564,12 @@ html, body {
   margin-inline-start: -11px;
 }
 
-#globalnav .globalnav-submenu-list-item:first-child,
+#globalnavbar .globalnavbar-submenu-list-item:first-child,
 #globalnavbar .globalnavbar-submenu-list-item:first-child {
   margin-top: 10px;
 }
 
-#globalnav .globalnav-submenu-list-item-elevated,
+#globalnavbar .globalnavbar-submenu-list-item-elevated,
 #globalnavbar .globalnavbar-submenu-list-item-elevated {
   font-family: SF Pro Display, SF Pro Icons, Helvetica Neue, Helvetica, Arial, sans-serif;
   font-size: 24px;
@@ -574,14 +580,14 @@ html, body {
   margin-inline-start: -11px;
 }
 
-#globalnav .globalnav-submenu-list-item-elevated .globalnav-submenu-link,
+#globalnavbar .globalnavbar-submenu-list-item-elevated .globalnavbar-submenu-link,
 #globalnavbar .globalnavbar-submenu-list-item-elevated .globalnavbar-submenu-link {
   padding-top: 9px;
 }
 
-#globalnav .globalnav-submenu-link,
+#globalnavbar .globalnavbar-submenu-link,
 #globalnavbar .globalnavbar-submenu-link {
-  color: var(--r-globalnav-color-secondary);
+  color: var(--r-globalnavbar-color-secondary);
   display: inline-block;
   margin-bottom: -6px;
   padding: 7px 11px;
@@ -590,40 +596,40 @@ html, body {
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
 
-#globalnav .globalnav-submenu-link:hover,
-#globalnav .globalnav-submenu-link:focus-visible,
+#globalnavbar .globalnavbar-submenu-link:hover,
+#globalnavbar .globalnavbar-submenu-link:focus-visible,
 #globalnavbar .globalnavbar-submenu-link:hover,
 #globalnavbar .globalnavbar-submenu-link:focus-visible {
-  color: var(--r-globalnav-color-hover);
+  color: var(--r-globalnavbar-color-hover);
 }
 
 /* Animações de entrada de itens */
-#globalnav .globalnav-item.globalnav-item-flyout-open .globalnav-submenu-list-item,
-#globalnav .globalnav-item.globalnav-item-flyout-open .globalnav-submenu-list-item-elevated,
+#globalnavbar .globalnavbar-item.globalnavbar-item-flyout-open .globalnavbar-submenu-list-item,
+#globalnavbar .globalnavbar-item.globalnavbar-item-flyout-open .globalnavbar-submenu-list-item-elevated,
 #globalnavbar .globalnavbar-item.globalnavbar-item-flyout-open .globalnavbar-submenu-list-item,
 #globalnavbar .globalnavbar-item.globalnavbar-item-flyout-open .globalnavbar-submenu-list-item-elevated {
-  --r-globalnav-flyout-item-number: 2;
+  --r-globalnavbar-flyout-item-number: 2;
   opacity: 1;
   transform: translateY(0);
   transition-duration: 0.32s;
   transition-delay: calc(
-    var(--r-globalnav-flyout-group-delay) + var(--r-globalnav-flyout-item-number) * 20ms + 80ms
+    var(--r-globalnavbar-flyout-group-delay) + var(--r-globalnavbar-flyout-item-number) * 20ms + 80ms
   );
 }
 
-.globalnav-submenu-list-item-elevated:nth-last-child(-n + 2) .globalnav-submenu-link,
+.globalnavbar-submenu-list-item-elevated:nth-last-child(-n + 2) .globalnavbar-submenu-link,
 .globalnavbar-submenu-list-item-elevated:nth-last-child(-n + 2) .globalnavbar-submenu-link {
   font-size: 12px;
   line-height: 16px;
 }
 
-.globalnav-submenu-list-item-elevated:nth-last-child(2),
+.globalnavbar-submenu-list-item-elevated:nth-last-child(2),
 .globalnavbar-submenu-list-item-elevated:nth-last-child(2) {
   margin-top: 12px !important;
 }
 
 /* Flyout scroll container */
-li.globalnav-item .globalnav-flyout-scroll-container,
+li.globalnavbar-item .globalnavbar-flyout-scroll-container,
 li.globalnavbar-item .globalnavbar-flyout-scroll-container {
   box-sizing: border-box;
   display: none;
@@ -639,14 +645,14 @@ li.globalnavbar-item .globalnavbar-flyout-scroll-container {
   z-index: 100;
 }
 
-li.globalnav-item:hover .globalnav-flyout-scroll-container,
-li.globalnav-item .globalnav-flyout-scroll-container:hover,
+li.globalnavbar-item:hover .globalnavbar-flyout-scroll-container,
+li.globalnavbar-item .globalnavbar-flyout-scroll-container:hover,
 li.globalnavbar-item:hover .globalnavbar-flyout-scroll-container,
 li.globalnavbar-item .globalnavbar-flyout-scroll-container:hover {
   display: block;
 }
 
-.globalnav-flyout-content,
+.globalnavbar-flyout-content,
 .globalnavbar-flyout-content {
   display: flex;
 }
@@ -654,12 +660,12 @@ li.globalnavbar-item .globalnavbar-flyout-scroll-container:hover {
 /* =============================================================================
    MENU MOBILE E TRIGGERS (DUAL COMPATIBILITY)
    ============================================================================= */
-#globalnav .globalnav-menuback,
+#globalnavbar .globalnavbar-menuback,
 #globalnavbar .globalnavbar-menuback {
   display: none;
 }
 
-#globalnav .globalnav-menutrigger,
+#globalnavbar .globalnavbar-menutrigger,
 #globalnavbar .globalnavbar-menutrigger {
   width: 48px;
   border-bottom: none;
@@ -669,23 +675,23 @@ li.globalnavbar-item .globalnavbar-flyout-scroll-container:hover {
 /* =============================================================================
    IMAGENS E ÍCONES (DUAL COMPATIBILITY)
    ============================================================================= */
-#globalnav .globalnav-image-compact,
+#globalnavbar .globalnavbar-image-compact,
 #globalnavbar .globalnavbar-image-compact {
   display: flex;
 }
 
-#globalnav .globalnav-image-regular,
+#globalnavbar .globalnavbar-image-regular,
 #globalnavbar .globalnavbar-image-regular {
   display: none;
 }
 
 /* Compatibilidade com Apple item */
-#globalnav .globalnav-item-apple,
+#globalnavbar .globalnavbar-item-apple,
 #globalnavbar .globalnavbar-item-apple {
   display: block;
 }
 
-#globalnav .globalnav-link-apple,
+#globalnavbar .globalnavbar-link-apple,
 #globalnavbar .globalnavbar-link-apple {
   font-size: 17px;
   line-height: 1.2353641176;
@@ -703,26 +709,26 @@ li.globalnavbar-item .globalnavbar-flyout-scroll-container:hover {
 @media only screen and (min-width: 834px) {
   #globalnav,
   #globalnavbar {
-    background: var(--globalnav-background);
+    background: var(--globalnavbar-background);
   }
 }
 
 /* Scrim e backdrop effects */
-#globalnav.globalnav-scrim,
-.globalnav-scrim #globalnav,
+#globalnav.globalnavbar-scrim,
+.globalnavbar-scrim #globalnav,
 #globalnavbar.globalnavbar-scrim,
 .globalnavbar-scrim #globalnavbar {
-  background: var(--globalnav-background);
-  --globalnav-background: rgba(250, 250, 252, 0.92);
+  background: var(--globalnavbar-background);
+  --globalnavbar-background: rgba(250, 250, 252, 0.92);
 }
 
 @supports ((-webkit-backdrop-filter: initial) or (backdrop-filter: initial)) {
-  #globalnav.globalnav-scrim,
-  .globalnav-scrim #globalnav,
+  #globalnav.globalnavbar-scrim,
+  .globalnavbar-scrim #globalnav,
   #globalnavbar.globalnavbar-scrim,
   .globalnavbar-scrim #globalnavbar {
-    --globalnav-backdrop-filter: saturate(180%) blur(20px);
-    --globalnav-background: rgba(250, 250, 252, 0.8);
+    --globalnavbar-backdrop-filter: saturate(180%) blur(20px);
+    --globalnavbar-background: rgba(250, 250, 252, 0.8);
   }
 }
 
@@ -739,61 +745,61 @@ li.globalnavbar-item .globalnavbar-flyout-scroll-container:hover {
   
   #globalnav,
   #globalnavbar {
-    --r-globalnav-height: 48px;
+    --r-globalnavbar-height: 48px;
     max-height: none;
   }
   
-  #globalnav .globalnav-content,
   #globalnavbar .globalnavbar-content,
-  #globalnavbar .globalnav-content {
+  #globalnavbar .globalnavbar-content,
+  #globalnavbar .globalnavbar-content {
     display: flex;
     padding: 0;
     position: relative;
     top: 0;
     width: 100%;
     height: max-content;
-    background: var(--globalnav-background);
-    transition: background var(--r-globalnav-flyout-rate) cubic-bezier(0.4, 0, 0.6, 1) 80ms;
+    background: var(--globalnavbar-background);
+    transition: background var(--r-globalnavbar-flyout-rate) cubic-bezier(0.4, 0, 0.6, 1) 80ms;
   }
   
-  #globalnav .globalnav-item,
   #globalnavbar .globalnavbar-item,
-  #globalnavbar .globalnav-item {
+  #globalnavbar .globalnavbar-item,
+  #globalnavbar .globalnavbar-item {
     width: auto;
     height: auto;
     transition: color 0.32s cubic-bezier(0.4, 0, 0.6, 1);
   }
   
-  #globalnav .globalnav-list > .globalnav-item,
   #globalnavbar .globalnavbar-list > .globalnavbar-item,
-  #globalnavbar .globalnav-list > .globalnav-item {
+  #globalnavbar .globalnavbar-list > .globalnavbar-item,
+  #globalnavbar .globalnavbar-list > .globalnavbar-item {
     height: 100%;
   }
 
-  #globalnav .globalnav-list > .globalnav-item > .globalnav-link,
   #globalnavbar .globalnavbar-list > .globalnavbar-item > .globalnavbar-link,
-  #globalnavbar .globalnav-list > .globalnav-item > .globalnav-link {
+  #globalnavbar .globalnavbar-list > .globalnavbar-item > .globalnavbar-link,
+  #globalnavbar .globalnavbar-list > .globalnavbar-item > .globalnavbar-link {
     opacity: 1;
     visibility: visible;
     transition: opacity 0.24s cubic-bezier(0.4, 0, 0.6, 1) 80ms, 
                 visibility 0.24s step-start 80ms;
   }
   
-  #globalnav .globalnav-item,
   #globalnavbar .globalnavbar-item,
-  #globalnavbar .globalnav-item {
+  #globalnavbar .globalnavbar-item,
+  #globalnavbar .globalnavbar-item {
     width: 48px;
   }
   
-  #globalnav .globalnav-item .globalnav-link,
   #globalnavbar .globalnavbar-item .globalnavbar-link,
-  #globalnavbar .globalnav-item .globalnav-link {
+  #globalnavbar .globalnavbar-item .globalnavbar-link,
+  #globalnavbar .globalnavbar-item .globalnavbar-link {
     height: 48px;
   }
   
-  #globalnav .globalnav-link,
   #globalnavbar .globalnavbar-link,
-  #globalnavbar .globalnav-link {
+  #globalnavbar .globalnavbar-link,
+  #globalnavbar .globalnavbar-link {
     font-size: 28px;
     line-height: 1.1428571429;
     font-weight: 600;
@@ -801,22 +807,22 @@ li.globalnavbar-item .globalnavbar-flyout-scroll-container:hover {
     font-family: var(--r-globalfont-family);
   }
   
-  #globalnav .globalnav-link:lang(pt-br),
   #globalnavbar .globalnavbar-link:lang(pt-br),
-  #globalnavbar .globalnav-link:lang(pt-br) {
+  #globalnavbar .globalnavbar-link:lang(pt-br),
+  #globalnavbar .globalnavbar-link:lang(pt-br) {
     font-family: var(--r-globalfont-family);
   }
 
   /* Ocultar textos em mobile, manter apenas ícones */
-  #globalnav span[class*="-regular"],
-  #globalnav span[class="globalnav-link-text"],
+  #globalnavbar span[class*="-regular"],
+  #globalnavbar span[class="globalnavbar-link-text"],
   #globalnavbar span[class*="-regular"],
   #globalnavbar span[class="globalnavbar-link-text"] {
     display: none;
   }
 
   /* Mostrar logo da Estatística em mobile */
-  #globalnav span[class*="-estatistica-regular"],
+  #globalnavbar span[class*="-estatistica-regular"],
   #globalnavbar span[class*="-estatistica-regular"] {
     height: auto;
     display: flex;
@@ -827,32 +833,32 @@ li.globalnavbar-item .globalnavbar-flyout-scroll-container:hover {
 /* =============================================================================
    UTILIDADES E CLASSES AUXILIARES
    ============================================================================= */
-.globalnav-hidden,
-.globalnav-svg-symbol,
+.globalnavbar-hidden,
+.globalnavbar-svg-symbol,
 .globalnavbar-hidden,
 .globalnavbar-svg-symbol {
   display: none;
 }
 
-.globalnav-placeholder,
+.globalnavbar-placeholder,
 .globalnavbar-placeholder {
   height: 44px;
 }
 
 @media only screen and (max-width: 833px) {
-  .globalnav-placeholder,
+  .globalnavbar-placeholder,
   .globalnavbar-placeholder {
     height: 48px;
   }
 }
 
 /* Desabilitar transições quando necessário */
-#globalnav.globalnav-block-transitions,
-#globalnav.globalnav-block-transitions:before,
-#globalnav.globalnav-block-transitions:after,
-#globalnav.globalnav-block-transitions *,
-#globalnav.globalnav-block-transitions *:before,
-#globalnav.globalnav-block-transitions *:after,
+#globalnav.globalnavbar-block-transitions,
+#globalnav.globalnavbar-block-transitions:before,
+#globalnav.globalnavbar-block-transitions:after,
+#globalnav.globalnavbar-block-transitions *,
+#globalnav.globalnavbar-block-transitions *:before,
+#globalnav.globalnavbar-block-transitions *:after,
 #globalnavbar.globalnavbar-block-transitions,
 #globalnavbar.globalnavbar-block-transitions:before,
 #globalnavbar.globalnavbar-block-transitions:after,
@@ -867,5 +873,5 @@ li.globalnavbar-item .globalnavbar-flyout-scroll-container:hover {
    FINAL: COMPATIBILIDADE ESPECÍFICA DE NOMENCLATURAS MISTAS
    ============================================================================= */
 
-/* Compatibilidade total entre nomenclaturas globalnav e globalnavbar */
+/* Compatibilidade total entre nomenclaturas globalnavbar e globalnavbar */
 /* Este arquivo suporta ambas as nomenclaturas sem conflitos */
