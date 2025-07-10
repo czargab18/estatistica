@@ -21,23 +21,39 @@ section[id="globalribbon"] {
 
 section[id="globalribbon"] div[id="globalribbon-content"] {
   width: 100%;
-  width: max-content;
+  display: flex;
+  justify-content: center;
   align-items: center;
-  justify-items: center;
 }
 
-section[id="globalribbon"] div[id="globalribbon-content"] p[class="ribbon-content"] {
-  align-items: center;
-  justify-items: center;
+section[id="globalribbon"] div[id="globalribbon-content"] p.globalribbon-content-item {
+  width: 100%;
+  text-align: center;
+  margin: 0;
 }
 
 section[id="globalribbon"] div[id="globalribbon-content"] span[id="globalribbon-content-item-mensage"],
 section[id="globalribbon"] div[id="globalribbon-content"] a {
   text-align: center;
   white-space: nowrap;
+}
+section[id="globalribbon"] div[id="globalribbon-content"] a {
   margin-left: 0.3em;
 }
 
-@media screen and (max-width: 320px) {
+@media screen and (max-width: 740px) {
+  section[id="globalribbon"] {
+    height: max-content;
+  }
+  section[id="globalribbon"] div[id="globalribbon-content"] {
+    width: 100%;
+    margin: 1em;
+  }
 
+  section[id="globalribbon"] div[id="globalribbon-content"] span[id="globalribbon-content-item-mensage"],
+  section[id="globalribbon"] div[id="globalribbon-content"] a {
+    text-align: center;
+    text-wrap-mode: wrap;
+    text-wrap-style: normal;
+  }
 }
