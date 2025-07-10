@@ -1,0 +1,43 @@
+@charset "UTF-8";
+section[id="globalribbon"] {
+  all: unset;
+  max-width: 2560px;
+  width: 100%;
+}
+
+section[id="globalribbon"] {
+  font-family: var(--r-globalfont-family);
+  font-size: 14px;
+  background-color: var(--r-bg-color-primary);
+  width: 100%;
+  max-width: 2560px;
+  min-width: 320px;
+  height: var(--r-globalribbon-height);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  user-select: none;
+}
+
+section[id="globalribbon"] div[id="globalribbon-content"] {
+  width: 100%;
+  width: max-content;
+  align-items: center;
+  justify-items: center;
+}
+
+section[id="globalribbon"] div[id="globalribbon-content"] p[class="ribbon-content"] {
+  align-items: center;
+  justify-items: center;
+}
+
+section[id="globalribbon"] div[id="globalribbon-content"] span[id="globalribbon-content-item-mensage"],
+section[id="globalribbon"] div[id="globalribbon-content"] a {
+  text-align: center;
+  white-space: nowrap;
+  margin-left: 0.3em;
+}
+
+@media screen and (max-width: 320px) {
+
+}
