@@ -11,49 +11,49 @@
    ============================================================================= */
 :root {
   /* Cores principais */
-  --globalnav-background: rgba(255, 255, 255, 0.8);
   --globalnavbar-background: rgba(255, 255, 255, 0.8);
-  --r-globalnav-background-opened: #fafafc;
+  --globalnavbar-background: rgba(255, 255, 255, 0.8);
   --r-globalnavbar-background-opened: #fafafc;
-  --r-globalnav-background-opened-dark: #161617;
+  --r-globalnavbar-background-opened: #fafafc;
+  --r-globalnavbar-background-opened-dark: #161617;
   --r-globalnavbar-background-opened-dark: #161617;
   
   /* Cores de texto */
-  --r-globalnav-color: rgba(0, 0, 0, 0.8);
   --r-globalnavbar-color: rgba(0, 0, 0, 0.8);
-  --r-globalnav-color-secondary: #333336;
+  --r-globalnavbar-color: rgba(0, 0, 0, 0.8);
   --r-globalnavbar-color-secondary: #333336;
-  --r-globalnav-color-secondary-black: rgba(0, 0, 0, 0.8);
+  --r-globalnavbar-color-secondary: #333336;
   --r-globalnavbar-color-secondary-black: rgba(0, 0, 0, 0.8);
-  --r-globalnav-color-hover: #000000;
+  --r-globalnavbar-color-secondary-black: rgba(0, 0, 0, 0.8);
   --r-globalnavbar-color-hover: #000000;
-  --r-globalnav-submenu-header-color: rgb(110, 110, 115);
+  --r-globalnavbar-color-hover: #000000;
+  --r-globalnavbar-submenu-header-color: rgb(110, 110, 115);
   --r-globalnavbar-submenu-header-color: rgb(110, 110, 115);
   
   /* Layout e dimensões */
-  --r-globalnav-height: 44px;
   --r-globalnavbar-height: 44px;
-  --r-globalnav-font-size: 17px;
+  --r-globalnavbar-height: 44px;
   --r-globalnavbar-font-size: 17px;
-  --globalnav-backdrop-filter: saturate(180%) blur(20px);
+  --r-globalnavbar-font-size: 17px;
+  --globalnavbar-backdrop-filter: saturate(180%) blur(20px);
   --globalnavbar-backdrop-filter: saturate(180%) blur(20px);
   
   /* Transições e animações */
-  --globalnav-transition-rate: 0.3s;
+  --globalnavbar-transition-rate: 0.3s;
   --globalnavbar-transition-rate: 0.3s;
   --easing-curve: cubic-bezier(0.4, 0, 0.6, 1);
-  --r-globalnav-flyout-rate: 240ms;
   --r-globalnavbar-flyout-rate: 240ms;
-  --r-globalnav-flyout-close-delay: 0.12s;
-  --r-globalnav-flyout-link-opacity-duration: 0.5s;
-  --r-globalnav-flyout-spacing: 88px;
-  --r-globalnav-next-flyout-height: 0px;
-  --r-globalnav-previous-flyout-height: 0px;
+  --r-globalnavbar-flyout-rate: 240ms;
+  --r-globalnavbar-flyout-close-delay: 0.12s;
+  --r-globalnavbar-flyout-link-opacity-duration: 0.5s;
+  --r-globalnavbar-flyout-spacing: 88px;
+  --r-globalnavbar-next-flyout-height: 0px;
+  --r-globalnavbar-previous-flyout-height: 0px;
   
   /* Flyout específico */
-  --r-globalnav-flyout-elevated-group-count: 1;
   --r-globalnavbar-flyout-elevated-group-count: 1;
-  --r-globalnav-flyout-group-number: 0;
+  --r-globalnavbar-flyout-elevated-group-count: 1;
+  --r-globalnavbar-flyout-group-number: 0;
   --r-globalnavbar-flyout-group-number: 0;
   
   /* Focus e acessibilidade */
@@ -186,29 +186,29 @@ body {
   position: sticky !important;
 }
 
-#globalnav ul,
-#globalnav ol,
-#globalnav li,
-#globalnav dl,
-#globalnav dt,
-#globalnav dd,
-#globalnav h1,
-#globalnav h2,
-#globalnav h3,
-#globalnav h4,
-#globalnav h5,
-#globalnav h6,
-#globalnav hgroup,
-#globalnav p,
-#globalnav blockquote,
-#globalnav figure,
-#globalnav form,
-#globalnav fieldset,
-#globalnav input,
-#globalnav legend,
-#globalnav pre,
-#globalnav abbr,
-#globalnav button,
+#globalnavbar ul,
+#globalnavbar ol,
+#globalnavbar li,
+#globalnavbar dl,
+#globalnavbar dt,
+#globalnavbar dd,
+#globalnavbar h1,
+#globalnavbar h2,
+#globalnavbar h3,
+#globalnavbar h4,
+#globalnavbar h5,
+#globalnavbar h6,
+#globalnavbar hgroup,
+#globalnavbar p,
+#globalnavbar blockquote,
+#globalnavbar figure,
+#globalnavbar form,
+#globalnavbar fieldset,
+#globalnavbar input,
+#globalnavbar legend,
+#globalnavbar pre,
+#globalnavbar abbr,
+#globalnavbar button,
 #globalnavbar ul,
 #globalnavbar ol,
 #globalnavbar li,
@@ -236,12 +236,12 @@ body {
   padding: 0;
 }
 
-#globalnav pre,
-#globalnav code,
-#globalnav address,
-#globalnav caption,
-#globalnav th,
-#globalnav figcaption,
+#globalnavbar pre,
+#globalnavbar code,
+#globalnavbar address,
+#globalnavbar caption,
+#globalnavbar th,
+#globalnavbar figcaption,
 #globalnavbar pre,
 #globalnavbar code,
 #globalnavbar address,
@@ -253,39 +253,39 @@ body {
   font-style: normal;
 }
 
-#globalnav fieldset,
-#globalnav iframe,
+#globalnavbar fieldset,
+#globalnavbar iframe,
 #globalnavbar fieldset,
 #globalnavbar iframe {
   border: 0;
 }
 
-#globalnav caption,
-#globalnav th,
+#globalnavbar caption,
+#globalnavbar th,
 #globalnavbar caption,
 #globalnavbar th {
   text-align: left;
 }
 
-#globalnav table,
+#globalnavbar table,
 #globalnavbar table {
   border-collapse: collapse;
   border-spacing: 0;
 }
 
-#globalnav main,
-#globalnav summary,
-#globalnav details,
+#globalnavbar main,
+#globalnavbar summary,
+#globalnavbar details,
 #globalnavbar main,
 #globalnavbar summary,
 #globalnavbar details {
   display: block;
 }
 
-#globalnav audio,
-#globalnav canvas,
-#globalnav video,
-#globalnav progress,
+#globalnavbar audio,
+#globalnavbar canvas,
+#globalnavbar video,
+#globalnavbar progress,
 #globalnavbar audio,
 #globalnavbar canvas,
 #globalnavbar video,
@@ -293,7 +293,7 @@ body {
   vertical-align: baseline;
 }
 
-#globalnav button,
+#globalnavbar button,
 #globalnavbar button {
   background: none;
   border: 0;
@@ -306,18 +306,18 @@ body {
   vertical-align: inherit;
 }
 
-#globalnav button:disabled,
+#globalnavbar button:disabled,
 #globalnavbar button:disabled {
   cursor: default;
 }
 
-#globalnav :focus-visible,
+#globalnavbar :focus-visible,
 #globalnavbar :focus-visible {
   outline: 2px solid var(--sk-focus-color, #0071e3);
   outline-offset: var(--sk-focus-offset, 1px);
 }
 
-#globalnav ::-moz-focus-inner,
+#globalnavbar ::-moz-focus-inner,
 #globalnavbar ::-moz-focus-inner {
   border: 0;
   padding: 0;
