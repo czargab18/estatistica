@@ -95,7 +95,7 @@ main {
   margin-bottom: 0px !important;
 }
 main header[id="title-block-header"] {
-  display: none;
+  display: block;
 }
 
 .fixed-top {
