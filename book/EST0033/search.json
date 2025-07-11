@@ -2,61 +2,43 @@
   {
     "objectID": "index.html",
     "href": "index.html",
-    "title": "Programa de Estatística Básica",
+    "title": "Estatística Exploratória",
     "section": "",
-    "text": "Programa de Estatística Básica",
+    "text": "Estatística Exploratória\nOBJETIVOS\n\nIntroduzir noções básicas de Análise Exploratória de Dados, familiarizando o estudante com sua terminologia e principais técnicas.\nFamiliarizar o estudante com as fases do trabalho estatístico e capacitá-lo, através da solução e discussão de exercícios, a sedimentar e utilizar os conceitos aprendidos na análise de dados.\nApresentar ao estudante uma visão geral da Estatística no Brasil: campo de aplicação, a profissão e sua regulamentação.\nApresentar ao estudante as principais fontes de dados estatísticos no Brasil.\nIntroduzir o estudante ao uso de aplicativos estatísticos para microcomputadores.\nDesenvolver a capacidade crítica e analítica do estudante através da discussão de exercícios e problemas, bem como a capacidade de se expressar oralmente e por escrito.",
     "crumbs": [
-      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Programa de Estatística Básica</span>"
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Estatística Exploratória</span>"
     ]
   },
   {
-    "objectID": "index.html#unidade-i-introdução-à-estatística",
-    "href": "index.html#unidade-i-introdução-à-estatística",
-    "title": "Programa de Estatística Básica",
-    "section": "UNIDADE I: INTRODUÇÃO À ESTATÍSTICA",
-    "text": "UNIDADE I: INTRODUÇÃO À ESTATÍSTICA\n\n1. Conceitos Fundamentais\n\nO que é Estatística?\n\nDefinição, aplicações e divisões (descritiva × inferencial).\n\n\nEstatística no Brasil\n\nHistórico e papel no setor público e privado.\n\n\n\n\n2. Profissão e Sistema Estatístico\n\nAtuação do Estatístico\n\nÁreas de trabalho e regulamentação profissional.\n\n\nSistema Estatístico Brasileiro\n\nIBGE, CONCLA, e outras instituições.\n\n\n\n\n3. Fontes de Dados\n\nBases nacionais\n\nCensos, PNAD, registros administrativos (ex: DATASUS).",
+    "objectID": "pretextuais/sumario.html",
+    "href": "pretextuais/sumario.html",
+    "title": "Sumário",
+    "section": "",
+    "text": "Sumário\n\nUNIDADE I: INTRODUÇÃO\n\nO que é Estatística?\nEstatística no BRASIL: desde a profissão no Brasil, passando pelo Sistema Estatístico Brasileiro, até as principais fontes de dados estatísticos.\n\nUNIDADE II: FASES DO TRABALHO ESTATÍSTICO\n\nPlanijamento: Elaboração de um projeto de pesquisa\nColeta de dados: Tipos de coleta de dados: censos, amostras, registros contínuos e o questionário\nApuração de dados: Escala de mensuração e tipos de variáveis\nApresentação de dados: Séries estatísticas (temporal, especificativa, geográfica, mistas e distribuições de frequências), tabelas de contingência e representação gráfica de variáveis qualitativas.\n\nUNIDADE III: RESUMO E REPRESENTAÇÃO DE VARIÁVEIS QUANTITATIVAS UNIDIMENSIONAIS\n\nRepresentação gráfica de variáveis quantitativas: diagrama de pontos, ramo e folhas, histograma, polígono de frequências\nMedidas de posição, variabilidade, assimetria e achatamento\nMedidas resistentes: quantis\nDesenho Esquemático (“Box-plot”)\n\nUNIDADE IV: ANÁLISE DE VARIÁVEIS BIDIMENSIONAIS\n\nMedidas de associação em Tabelas de Contingência (Medidas baseadas no Qui-Quadrado, Cramer)\nAssociação entre variáveis quantitativas: Diagrama de dispersão, Coeficiente de correlação de Pearson e Coeficiente de correlação de Spearman",
     "crumbs": [
-      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Programa de Estatística Básica</span>"
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Sumário</span>"
     ]
   },
   {
-    "objectID": "index.html#unidade-ii-etapas-do-método-estatístico",
-    "href": "index.html#unidade-ii-etapas-do-método-estatístico",
-    "title": "Programa de Estatística Básica",
-    "section": "UNIDADE II: ETAPAS DO MÉTODO ESTATÍSTICO",
-    "text": "UNIDADE II: ETAPAS DO MÉTODO ESTATÍSTICO\n\n1. Planejamento\n\nProjeto de Pesquisa\n\nDefinição de objetivos, população e amostra.\n\n\n\n\n2. Coleta de Dados\n\nMétodos\n\nCensos, amostragem (probabilística e não-probabilística).\n\n\nInstrumentos\n\nElaboração de questionários (tipos de perguntas, validação).\n\n\n\n\n3. Organização e Apuração\n\nVariáveis e Escalas\n\nQualitativas (nominal/ordinal) × Quantitativas (discreta/contínua).\n\n\n\n\n4. Apresentação de Dados\n\nSéries Estatísticas\n\nTemporal, geográfica, categórica.\n\n\nGráficos para Variáveis Qualitativas\n\nBarras, setores, pictogramas.",
+    "objectID": "textuais/unid1/introd.html",
+    "href": "textuais/unid1/introd.html",
+    "title": "O que é estatística?",
+    "section": "",
+    "text": "O que é estatística?\nEm desenvolvimento",
     "crumbs": [
-      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Programa de Estatística Básica</span>"
+      "Unidade I",
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>O que é estatística?</span>"
     ]
   },
   {
-    "objectID": "index.html#unidade-iii-análise-univariada-cap.-2-e-3-bussab-morettin-10ª-ed.",
-    "href": "index.html#unidade-iii-análise-univariada-cap.-2-e-3-bussab-morettin-10ª-ed.",
-    "title": "Programa de Estatística Básica",
-    "section": "UNIDADE III: ANÁLISE UNIVARIADA (Cap. 2 e 3 – Bussab & Morettin, 10ª ed.)",
-    "text": "UNIDADE III: ANÁLISE UNIVARIADA (Cap. 2 e 3 – Bussab & Morettin, 10ª ed.)\n\n1. Representação Gráfica\n\nDiagrama de pontos, ramo-e-folhas, histogramas.\n\n\n\n2. Medidas-Resumo\n\nPosição: Média, mediana, moda.\n\nVariabilidade: Amplitude, desvio padrão.\n\nForma: Coeficientes de assimetria e curtose.\n\n\n\n3. Análise Robustez\n\nBox-plot: Interpretação e identificação de outliers.",
+    "objectID": "textuais/unid1/brasil.html",
+    "href": "textuais/unid1/brasil.html",
+    "title": "Brasil",
+    "section": "",
+    "text": "Brasil\nEm desenvolvimento",
     "crumbs": [
-      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Programa de Estatística Básica</span>"
-    ]
-  },
-  {
-    "objectID": "index.html#unidade-iv-análise-bivariada-cap.-4-bussab-morettin-10ª-ed.",
-    "href": "index.html#unidade-iv-análise-bivariada-cap.-4-bussab-morettin-10ª-ed.",
-    "title": "Programa de Estatística Básica",
-    "section": "UNIDADE IV: ANÁLISE BIVARIADA (Cap. 4 – Bussab & Morettin, 10ª ed.)",
-    "text": "UNIDADE IV: ANÁLISE BIVARIADA (Cap. 4 – Bussab & Morettin, 10ª ed.)\n\n1. Variáveis Qualitativas\n\nTabelas de contingência\n\nMedidas de associação: Qui-Quadrado, V de Cramer.\n\n\n\n2. Variáveis Quantitativas\n\nDiagrama de dispersão\n\nCorrelação: Pearson (linear) e Spearman (monotônica).\n\n\n\n3. Relações Qualitativa × Quantitativa\n\nComparação de grupos: Box-plot por categoria.",
-    "crumbs": [
-      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Programa de Estatística Básica</span>"
-    ]
-  },
-  {
-    "objectID": "index.html#referências",
-    "href": "index.html#referências",
-    "title": "Programa de Estatística Básica",
-    "section": "REFERÊNCIAS",
-    "text": "REFERÊNCIAS\n\nBásica\n\nBUSSAB, W. O.; MORETTIN, P. A. Estatística Básica. 10ª ed. Saraiva, 2022.\n\nBARBETTA, P. A. Estatística Aplicada às Ciências Sociais. 9ª ed. UFSC, 2020.\n\n\n\nComplementar\n\nTRIOLA, M. F. Introdução à Estatística. 12ª ed. LTC, 2017.\n(Lista completa disponível no material complementar.)",
-    "crumbs": [
-      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Programa de Estatística Básica</span>"
+      "Unidade I",
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Brasil</span>"
     ]
   }
 ]
