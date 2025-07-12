@@ -1,4 +1,12 @@
-main[id="lists-book"]
+main[id*="book-list"] {
+  all: unset;
+  margin: 0;
+  padding: 0;
+  max-width: 2560px;
+  width: 100%;
+}
+
+main[id*="book-list"]
   :is(
     ul,
     ol,
@@ -28,25 +36,30 @@ main[id="lists-book"]
     code,
     details,
     div,
-    dl,
-    dt,
     figcaption,
     img,
     label,
     main,
     mark,
     nav,
-    ol,
     picture,
     samp,
     section,
     summary,
     time
   ) {
-  all: initial;
   margin: 0;
   padding: 0;
 }
+
+main[id*="book-list"] :is(h1, h2, h3, h4, h5, h6, p, div, span) {
+  display: block;
+  margin: 0;
+  padding: 0;
+  font-family: var(--r-globalfont-family);
+  font-size: 16px;
+}
+
 main[id="lists-book"] :is(h1, h2, h3, h4, h5, h6, p, div, span) {
   display: block;
   margin: 0;
@@ -80,6 +93,7 @@ main[id="lists-book"] :is(audio, canvas, video, progress) {
 main[id="lists-book"] {
   justify-items: center;
 }
+
 div[id="quarto-content"] {
   width: 1024px !important;
   min-height: calc(0px + 100vh);
@@ -90,10 +104,12 @@ div[id="quarto-content"] {
 #quarto-content > main {
   padding-top: 0px;
 }
+
 main {
   margin-top: 0px !important;
   margin-bottom: 0px !important;
 }
+
 main header[id="title-block-header"] {
   display: none;
 }
@@ -111,6 +127,7 @@ main header[id="title-block-header"] {
 #quarto-content nav {
   padding-top: 0;
 }
+
 nav[id="quarto-sidebar"] {
   padding: 0 !important;
 }
@@ -118,12 +135,15 @@ nav[id="quarto-sidebar"] {
 #quarto-sidebar :is(nav, div, span) {
   padding-right: 0;
 }
+
 nav .mt-2 {
   margin-top: 0 !important;
 }
+
 nav div[class*="sidebar-header"] {
   margin-top: 0 !important;
 }
+
 .sidebar-title {
   margin-top: 0;
   padding-bottom: 0;
@@ -131,16 +151,19 @@ nav div[class*="sidebar-header"] {
   line-height: 1.6rem;
   visibility: visible;
 }
+
 .sidebar.sidebar-navigation > * {
   padding-top: 0 !important;
 }
+
 body.floating .sidebar.sidebar-navigation {
   gap: 12px !important;
 }
 
-nav[id="quarto-sidebar"] > div:nth-child(n+3) {
+nav[id="quarto-sidebar"] > div:nth-child(n + 3) {
   padding-left: 12px !important;
 }
+
 nav[id="quarto-sidebar"] form div:first-child {
   padding-left: 4px !important;
 }
