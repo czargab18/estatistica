@@ -106,6 +106,14 @@ main[id*="book-list"] div[class="books-content"] {
   width: 980px;
 }
 
+@media only screen and (max-width: 1068px) {
+  main[id*="book-list"] div[class="books-content"] {
+    margin-inline-start: auto;
+    margin-inline-end: auto;
+    width: 764px;
+  }
+}
+
 main[id*="book-list"] div[class="books-content"] h2[class="book-title"] {
   margin-bottom: 16px;
   font-size: 28px;
@@ -114,6 +122,21 @@ main[id*="book-list"] div[class="books-content"] h2[class="book-title"] {
   letter-spacing: 0.007em;
   font-family: "SF Pro Display", "SF Pro Icons", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
   margin-top: 52px;
+}
+
+@media only screen and (max-width: 1068px) {
+  main[id*="book-list"] div[class="books-content"] h2[class="book-title"] {
+    margin-top: 48px;
+  }
+}
+@media only screen and (max-width: 1068px) {
+  main[id*="book-list"] div[class="books-content"] h2[class="book-title"] {
+    font-size: 24px;
+    line-height: 1.1666666667;
+    font-weight: 700;
+    letter-spacing: 0.009em;
+    font-family: "SF Pro Display", "SF Pro Icons", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+  }
 }
 
 main[id*="book-list"] div[class="books-content"] a[class*="book-item"] {
@@ -125,12 +148,32 @@ main[id*="book-list"] div[class="books-content"] a[class*="book-item"] {
   align-items: center;
   padding: 40px 0;
 }
-
+@media only screen and (max-width: 1068px) {
+  main[id*="book-list"] div[class="books-content"] a[class*="book-item"] {
+    padding: 32px 0;
+  }
+}
 main[id*="book-list"] div[class="books-content"] a[class*="book-item"] picture[class="viewport-picture"] {
   align-self: flex-start;
   flex-shrink: 0;
   font-size: 0;
   width: 295px;
+}
+@media only screen and (max-width: 1068px) {
+  main[id*="book-list"] div[class="books-content"] a[class*="book-item"] picture[class="viewport-picture"] {
+    width: 264px;
+  }
+}
+/*  ===================
+    Enquanto o item do livro não tiver imagem, exibe um fundo amarelo
+    para que o layout não fique quebrado.
+    =================== */
+
+main[id*="book-list"] div[class="books-content"] a[class*="book-item"] picture[class="viewport-picture"] {
+  box-sizing: border-box;
+  height: 148px;
+  width: 264px;
+  background-color: #ffc72c;
 }
 main[id*="book-list"]
   div[class="books-content"]
@@ -140,10 +183,17 @@ main[id*="book-list"]
   border-radius: 20px;
   width: 100%;
 }
+
 main[id*="book-list"] div[class="books-content"] a[class*="book-item"] div[class="item-content"] {
   margin-inline-start: 32px;
 }
-main[id*="book-list"] a[class*="book-item"] div[class="item-content"] p[class*="item-category category_"] {
+@media only screen and (max-width: 1068px) {
+  main[id*="book-list"] div[class="books-content"] a[class*="book-item"] div[class="item-content"] {
+    margin-inline-start: 24px;
+  }
+}
+
+main[id*="book-list"] a[class*="book-item"] div[class="item-content"] p[class*="item-category"] {
   color: #6e6e73;
   font-size: 14px;
   line-height: 1.2857742857;
@@ -152,7 +202,15 @@ main[id*="book-list"] a[class*="book-item"] div[class="item-content"] p[class*="
   font-family: "SF Pro Text", "SF Pro Icons", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
   text-transform: uppercase;
 }
-
+@media only screen and (max-width: 1068px) {
+  main[id*="book-list"] a[class*="book-item"] div[class="item-content"] p[class*="item-category"] {
+    font-size: 12px;
+    line-height: 1.3333733333;
+    font-weight: 700;
+    letter-spacing: -0.01em;
+    font-family: "SF Pro Text", "SF Pro Icons", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+  }
+}
 main[id*="book-list"] a[class*="book-item"] div[class="item-content"] h3[class="item-headline"] {
   font-size: 24px;
   line-height: 1.1666666667;
@@ -162,7 +220,15 @@ main[id*="book-list"] a[class*="book-item"] div[class="item-content"] h3[class="
   margin-top: 8px;
   -webkit-line-clamp: 3;
 }
-
+@media only screen and (max-width: 1068px) {
+  main[id*="book-list"] a[class*="book-item"] div[class="item-content"] h3[class="item-headline"] {
+    font-size: 21px;
+    line-height: 1.1904761905;
+    font-weight: 700;
+    letter-spacing: 0.011em;
+    font-family: "SF Pro Display", "SF Pro Icons", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+  }
+}
 main[id*="book-list"] a[class*="book-item"] div[class="item-content"] p[class="item-date last-update"] {
   color: #6e6e73;
   font-size: 14px;
