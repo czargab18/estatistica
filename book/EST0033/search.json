@@ -40,5 +40,49 @@
       "Unidade I",
       "<span class='chapter-number'>4</span>  <span class='chapter-title'>Brasil</span>"
     ]
+  },
+  {
+    "objectID": "textuais/unid2/introd.html",
+    "href": "textuais/unid2/introd.html",
+    "title": "Fase do Trabalho Estatístico?",
+    "section": "",
+    "text": "Fase do Trabalho Estatístico?\nEm desenvolvimento",
+    "crumbs": [
+      "Unidade II",
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Fase do Trabalho Estatístico?</span>"
+    ]
+  },
+  {
+    "objectID": "textuais/unid3/introd.html",
+    "href": "textuais/unid3/introd.html",
+    "title": "Análise de 1 variável",
+    "section": "",
+    "text": "UNIDADE III: RESUMO E REPRESENTAÇÃO DE VARIÁVEIS QUANTITATIVAS UNIDIMENSIONAIS Em desenvolvimento",
+    "crumbs": [
+      "Unidade III",
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Análise de 1 variável</span>"
+    ]
+  },
+  {
+    "objectID": "textuais/unid4/introd.html",
+    "href": "textuais/unid4/introd.html",
+    "title": "Análise de 2 variáveis",
+    "section": "",
+    "text": "ANÁLISE DE VARIÁVEIS BIDIMENSIONAIS",
+    "crumbs": [
+      "Unidade IV",
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Análise de 2 variáveis</span>"
+    ]
+  },
+  {
+    "objectID": "postextuais/apendice/formulas/cap1.html",
+    "href": "postextuais/apendice/formulas/cap1.html",
+    "title": "Formulas do Capitulo 1",
+    "section": "",
+    "text": "Distribuição Normal Não Padrão\n\n\n\n\\[\n  f(x) = \\frac{1}{\\sigma \\sqrt{2\\pi}} \\exp\\left( -\\frac{(x - \\mu)^2}{2\\sigma^2} \\right)\n\\]",
+    "crumbs": [
+      "Anexos",
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Formulas do Capitulo 1</span>"
+    ]
   }
 ]
