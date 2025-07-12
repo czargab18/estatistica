@@ -7,7 +7,7 @@
 @font-face {
   font-display: block;
   font-family: "bootstrap-icons";
-  src: url("/ac/books/1/pt_BR/assets/books-icons/bootstrap-icons.woff") format("woff");
+  src: url("/ac/globalothers/books/1/pt_BR/assets/icons/bootstrap-icons.woff") format("woff");
 }
 
 .bi::before,
