@@ -173,8 +173,15 @@ main[id*="book-list"] div[class="books-content"] a[class*="book-item"] picture[c
   box-sizing: border-box;
   height: 148px;
   width: 264px;
-  background-color: #ffc72c;
+
+  /* imagem controle */
+  display: flex;
+  justify-items: center;
+  align-content: center;
+  justify-content: center;
+  align-items: center;
 }
+
 main[id*="book-list"]
   div[class="books-content"]
   a[class*="book-item"]
