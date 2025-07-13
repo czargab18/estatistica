@@ -4,7 +4,7 @@
     "href": "index.html",
     "title": "Estatística Exploratória",
     "section": "",
-    "text": "Estatística Exploratória",
+    "text": "Estatística Exploratória\nEm desenvolvimento",
     "crumbs": [
       "<span class='chapter-number'>1</span>  <span class='chapter-title'>Estatística Exploratória</span>"
     ]
@@ -14,7 +14,47 @@
     "href": "pretextuais/sumario.html",
     "title": "Sumário",
     "section": "",
-    "text": "UNIDADE I: INTRODUÇÃO\n\nO que é Estatística?\nEstatística no BRASIL: desde a profissão no Brasil, passando pelo Sistema Estatístico Brasileiro, até as principais fontes de dados estatísticos.\n\nUNIDADE II: FASES DO TRABALHO ESTATÍSTICO\n\nPlanijamento: Elaboração de um projeto de pesquisa\nColeta de dados: Tipos de coleta de dados: censos, amostras, registros contínuos e o questionário\nApuração de dados: Escala de mensuração e tipos de variáveis\nApresentação de dados: Séries estatísticas (temporal, especificativa, geográfica, mistas e distribuições de frequências), tabelas de contingência e representação gráfica de variáveis qualitativas.\n\nUNIDADE III: RESUMO E REPRESENTAÇÃO DE VARIÁVEIS QUANTITATIVAS UNIDIMENSIONAIS\n\nRepresentação gráfica de variáveis quantitativas: diagrama de pontos, ramo e folhas, histograma, polígono de frequências\nMedidas de posição, variabilidade, assimetria e achatamento\nMedidas resistentes: quantis\nDesenho Esquemático (“Box-plot”)\n\nUNIDADE IV: ANÁLISE DE VARIÁVEIS BIDIMENSIONAIS\n\nMedidas de associação em Tabelas de Contingência (Medidas baseadas no Qui-Quadrado, Cramer)\nAssociação entre variáveis quantitativas: Diagrama de dispersão, Coeficiente de correlação de Pearson e Coeficiente de correlação de Spearman",
+    "text": "UNIDADE I: INTRODUÇÃO",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Sumário</span>"
+    ]
+  },
+  {
+    "objectID": "pretextuais/sumario.html#unidade-i-introdução",
+    "href": "pretextuais/sumario.html#unidade-i-introdução",
+    "title": "Sumário",
+    "section": "",
+    "text": "O que é Estatística?\nEstatística no Brasil\n\nA profissão de estatístico no Brasil\n\nSistema Estatístico Brasileiro\n\nPrincipais fontes de dados estatísticos",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Sumário</span>"
+    ]
+  },
+  {
+    "objectID": "pretextuais/sumario.html#unidade-ii-fases-do-trabalho-estatístico",
+    "href": "pretextuais/sumario.html#unidade-ii-fases-do-trabalho-estatístico",
+    "title": "Sumário",
+    "section": "UNIDADE II: FASES DO TRABALHO ESTATÍSTICO",
+    "text": "UNIDADE II: FASES DO TRABALHO ESTATÍSTICO\n\nPlanejamento\n\nElaboração de um projeto de pesquisa\n\nColeta de dados\n\nTipos de coleta: censos, amostras, registros contínuos\n\nO questionário\n\nApuração de dados\n\nEscala de mensuração\n\nTipos de variáveis\n\nApresentação de dados\n\nSéries estatísticas: temporal, especificativa, geográfica, mista\n\nDistribuições de frequências\n\nTabelas de contingência\n\nRepresentação gráfica de variáveis qualitativas",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Sumário</span>"
+    ]
+  },
+  {
+    "objectID": "pretextuais/sumario.html#unidade-iii-resumo-e-representação-de-variáveis-quantitativas-unidimensionais",
+    "href": "pretextuais/sumario.html#unidade-iii-resumo-e-representação-de-variáveis-quantitativas-unidimensionais",
+    "title": "Sumário",
+    "section": "UNIDADE III: RESUMO E REPRESENTAÇÃO DE VARIÁVEIS QUANTITATIVAS UNIDIMENSIONAIS",
+    "text": "UNIDADE III: RESUMO E REPRESENTAÇÃO DE VARIÁVEIS QUANTITATIVAS UNIDIMENSIONAIS\n\nRepresentação gráfica de variáveis quantitativas\n\nDiagrama de pontos\n\nRamo e folhas\n\nHistograma\n\nPolígono de frequências\n\nMedidas de posição, variabilidade, assimetria e achatamento\nMedidas resistentes: quantis\nDesenho esquemático (“Box-plot”)",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Sumário</span>"
+    ]
+  },
+  {
+    "objectID": "pretextuais/sumario.html#unidade-iv-análise-de-variáveis-bidimensionais",
+    "href": "pretextuais/sumario.html#unidade-iv-análise-de-variáveis-bidimensionais",
+    "title": "Sumário",
+    "section": "UNIDADE IV: ANÁLISE DE VARIÁVEIS BIDIMENSIONAIS",
+    "text": "UNIDADE IV: ANÁLISE DE VARIÁVEIS BIDIMENSIONAIS\n\nMedidas de associação em tabelas de contingência\n\nMedidas baseadas no Qui-Quadrado\n\nMedida de Cramer\n\nAssociação entre variáveis quantitativas\n\nDiagrama de dispersão\n\nCoeficiente de correlação de Pearson\n\nCoeficiente de correlação de Spearman",
     "crumbs": [
       "<span class='chapter-number'>2</span>  <span class='chapter-title'>Sumário</span>"
     ]
@@ -24,7 +64,7 @@
     "href": "textuais/unid1/introd.html",
     "title": "O que é estatística?",
     "section": "",
-    "text": "O que é estatística?\nEm desenvolvimento",
+    "text": "Em desenvolvimento",
     "crumbs": [
       "Unidade I",
       "<span class='chapter-number'>3</span>  <span class='chapter-title'>O que é estatística?</span>"
@@ -35,7 +75,7 @@
     "href": "textuais/unid1/brasil.html",
     "title": "Brasil",
     "section": "",
-    "text": "Brasil\nEm desenvolvimento",
+    "text": "Em desenvolvimento",
     "crumbs": [
       "Unidade I",
       "<span class='chapter-number'>4</span>  <span class='chapter-title'>Brasil</span>"
@@ -46,7 +86,7 @@
     "href": "textuais/unid2/introd.html",
     "title": "Fase do Trabalho Estatístico?",
     "section": "",
-    "text": "Fase do Trabalho Estatístico?\nEm desenvolvimento",
+    "text": "Em desenvolvimento",
     "crumbs": [
       "Unidade II",
       "<span class='chapter-number'>5</span>  <span class='chapter-title'>Fase do Trabalho Estatístico?</span>"
@@ -57,7 +97,7 @@
     "href": "textuais/unid3/introd.html",
     "title": "Análise de 1 variável",
     "section": "",
-    "text": "UNIDADE III: RESUMO E REPRESENTAÇÃO DE VARIÁVEIS QUANTITATIVAS UNIDIMENSIONAIS Em desenvolvimento",
+    "text": "Em Desenvolvimento",
     "crumbs": [
       "Unidade III",
       "<span class='chapter-number'>6</span>  <span class='chapter-title'>Análise de 1 variável</span>"
