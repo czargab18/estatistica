@@ -75,6 +75,105 @@
     ]
   },
   {
+    "objectID": "postextuais/apendice/ementa.html",
+    "href": "postextuais/apendice/ementa.html",
+    "title": "Ementa da disciplina",
+    "section": "",
+    "text": "2. OBJETIVOS:\nEsta ementa está sendo adaptada da disciplina ofertada pelo Departamentod de Estatística da Universidade de Brasília",
+    "crumbs": [
+      "Anexos",
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Ementa da disciplina</span>"
+    ]
+  },
+  {
+    "objectID": "postextuais/apendice/ementa.html#objetivos",
+    "href": "postextuais/apendice/ementa.html#objetivos",
+    "title": "Ementa da disciplina",
+    "section": "",
+    "text": "Introduzir noções básicas de Análise Exploratória de Dados, familiarizando o estudante com sua terminologia e principais técnicas.\n\nFamiliarizar o estudante com as fases do trabalho estatístico e capacitá-lo, através da solução e discussão de exercícios, a sedimentar e utilizar os conceitos aprendidos na análise de dados.\n\nApresentar ao estudante uma visão geral da Estatística no Brasil: campo de aplicação, a profissão e sua regulamentação.\n\nApresentar ao estudante as principais fontes de dados estatísticos no Brasil.\n\nIntroduzir o estudante ao uso de aplicativos estatísticos para microcomputadores.\n\nDesenvolver a capacidade crítica e analítica do estudante através da discussão de exercícios e problemas, bem como a capacidade de se expressar oralmente e por escrito.",
+    "crumbs": [
+      "Anexos",
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Ementa da disciplina</span>"
+    ]
+  },
+  {
+    "objectID": "postextuais/apendice/ementa.html#programa",
+    "href": "postextuais/apendice/ementa.html#programa",
+    "title": "Ementa da disciplina",
+    "section": "3. PROGRAMA:",
+    "text": "3. PROGRAMA:\n\nUNIDADE I: INTRODUÇÃO\n\nO que é ESTATÍSTICA?\n\nA ESTATÍSTICA no BRASIL\n\nA profissão de Estatístico no Brasil\n\nO Sistema Estatístico Brasileiro\n\nFontes de dados estatísticos no Brasil\n\n\n\nUNIDADE II: FASES DO TRABALHO ESTATÍSTICO\n\nPlanejamento\n\nElaboração de um projeto de pesquisa\n\nColeta de dados\n\nTipos de coleta de dados: censos, amostras, registros contínuos\n\nO questionário\n\nApuração de dados\n\nEscala de mensuração\n\nTipos de variáveis\n\nApresentação de dados\n\nSéries estatísticas: temporal, especificativa, geográfica, mistas e distribuições de frequências\n\nTabelas de contingência\n\nRepresentação gráfica de variáveis qualitativas\n\n\n\nUNIDADE III: RESUMO E REPRESENTAÇÃO DE VARIÁVEIS QUANTITATIVAS UNIDIMENSIONAIS\n\nRepresentação gráfica de variáveis quantitativas: diagrama de pontos, ramo e folhas, histograma, polígono de frequências\n\nMedidas de posição, variabilidade, assimetria e achatamento\n\nMedidas resistentes: quantis\n\nDesenho Esquemático (“Box-plot”)\n\n\n\nUNIDADE IV: ANÁLISE DE VARIÁVEIS BIDIMENSIONAIS\n\nMedidas de associação em Tabelas de Contingência (Medidas baseadas no Qui-Quadrado, Cramer)\n\nAssociação entre variáveis quantitativas\n\nDiagrama de dispersão\n\nCoeficiente de correlação de Pearson\n\nCoeficiente de correlação de Spearman",
+    "crumbs": [
+      "Anexos",
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Ementa da disciplina</span>"
+    ]
+  },
+  {
+    "objectID": "postextuais/apendice/ementa.html#referências-bibliográficas",
+    "href": "postextuais/apendice/ementa.html#referências-bibliográficas",
+    "title": "Ementa da disciplina",
+    "section": "4. REFERÊNCIAS BIBLIOGRÁFICAS",
+    "text": "4. REFERÊNCIAS BIBLIOGRÁFICAS\n\nBÁSICA:\n\nBARBETTA, Pedro A., Estatística Aplicada às Ciências Sociais, 7ª edição, Ed. da UFSC, 2007. (ou edições mais recentes)\n\nBUSSAB, W. e MORETTIN, P., Estatística Básica, 5ª Edição, Ed. Saraiva, São Paulo, 2003. (ou edições mais recentes)\n\nTOLEDO, G. L. e OVALLE, I. J., Estatística Básica, 2ª edição, Editora Atlas S.A, São Paulo, 2010.\n\n\n\nCOMPLEMENTAR:\n\nFONSECA, J. S. e MARTINS, G. A., Curso de Estatística, Editora Atlas S. A, São Paulo, 1994.\n\nHAKKERT, R., Fontes de dados demográficos, Textos Didáticos, ABEP, Belo Horizonte, 1996.\n\nLEVIN, J. e FOX, J. A, Estatística Aplicada às Ciências Humanas, 9º edição, Ed. Pearson, 2004.\n\nMAGALHÃES, Marcos N. e LIMA, Antonio Carlos P., Noções de Probabilidade e Estatística, EdUSP, São Paulo, 2002.\n\nSTEVENSON, W.J., Estatística Aplicada à Administração, Ed. Harbra, SP, 2000.\n\nBERQUÓ, E. S., GOTLIEB, Sabina L. D., SOUSA, J. M. P. de, Bioestatística, 2ª rev., São Paulo: Editora Pedagógica e Universitária Ltda., 2001.\n\nLEVINE, D. M., Estatística: Teoria e Aplicações usando o Microsoft Excel © em Português, 6ª edição, Rio de Janeiro: Livros Técnicos e Científicos Editora S.A., 2012.\n\nTRIOLA, M.F., Introdução à Estatística - Atualização da Tecnologia, 11ª edição, Rio de Janeiro: Livros Técnicos e Científicos Editora S.A., 2013.\n\nTRIOLA, M.F., E-Book - Introdução à Estatística - Atualização da Tecnologia, 11ª edição, Rio de Janeiro: Livros Técnicos e Científicos Editora S.A., 2013.\n\nVELLEMAN, P. e HOAGLIN, D.C., Applications, Basics and Computing Exploratory Data Analysis, 1ª edição, Boston: Duxbury Press, 1981.\n\nWILD, C. J.; SEBER, G. A. F., Encontros com o acaso: um primeiro curso de análise de dados e inferência, Rio de Janeiro: Livros Técnicos e Científicos, 2004.",
+    "crumbs": [
+      "Anexos",
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Ementa da disciplina</span>"
+    ]
+  },
+  {
+    "objectID": "postextuais/apendice/ementa.html#unidade-i-introdução-à-estatística",
+    "href": "postextuais/apendice/ementa.html#unidade-i-introdução-à-estatística",
+    "title": "Ementa da disciplina",
+    "section": "UNIDADE I: INTRODUÇÃO À ESTATÍSTICA",
+    "text": "UNIDADE I: INTRODUÇÃO À ESTATÍSTICA\n\n1. Conceitos Fundamentais\n\nO que é Estatística?\n\nDefinição, aplicações e divisões (descritiva × inferencial).\n\n\nEstatística no Brasil\n\nHistórico e papel no setor público e privado.\n\n\n\n\n2. Profissão e Sistema Estatístico\n\nAtuação do Estatístico\n\nÁreas de trabalho e regulamentação profissional.\n\n\nSistema Estatístico Brasileiro\n\nIBGE, CONCLA, e outras instituições.\n\n\n\n\n3. Fontes de Dados\n\nBases nacionais\n\nCensos, PNAD, registros administrativos (ex: DATASUS).",
+    "crumbs": [
+      "Anexos",
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Ementa da disciplina</span>"
+    ]
+  },
+  {
+    "objectID": "postextuais/apendice/ementa.html#unidade-ii-etapas-do-método-estatístico",
+    "href": "postextuais/apendice/ementa.html#unidade-ii-etapas-do-método-estatístico",
+    "title": "Ementa da disciplina",
+    "section": "UNIDADE II: ETAPAS DO MÉTODO ESTATÍSTICO",
+    "text": "UNIDADE II: ETAPAS DO MÉTODO ESTATÍSTICO\n\n1. Planejamento\n\nProjeto de Pesquisa\n\nDefinição de objetivos, população e amostra.\n\n\n\n\n2. Coleta de Dados\n\nMétodos\n\nCensos, amostragem (probabilística e não-probabilística).\n\n\nInstrumentos\n\nElaboração de questionários (tipos de perguntas, validação).\n\n\n\n\n3. Organização e Apuração\n\nVariáveis e Escalas\n\nQualitativas (nominal/ordinal) × Quantitativas (discreta/contínua).\n\n\n\n\n4. Apresentação de Dados\n\nSéries Estatísticas\n\nTemporal, geográfica, categórica.\n\n\nGráficos para Variáveis Qualitativas\n\nBarras, setores, pictogramas.",
+    "crumbs": [
+      "Anexos",
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Ementa da disciplina</span>"
+    ]
+  },
+  {
+    "objectID": "postextuais/apendice/ementa.html#unidade-iii-análise-univariada-cap.-2-e-3-bussab-morettin-10ª-ed.",
+    "href": "postextuais/apendice/ementa.html#unidade-iii-análise-univariada-cap.-2-e-3-bussab-morettin-10ª-ed.",
+    "title": "Ementa da disciplina",
+    "section": "UNIDADE III: ANÁLISE UNIVARIADA (Cap. 2 e 3 – Bussab & Morettin, 10ª ed.)",
+    "text": "UNIDADE III: ANÁLISE UNIVARIADA (Cap. 2 e 3 – Bussab & Morettin, 10ª ed.)\n\n1. Representação Gráfica\n\nDiagrama de pontos, ramo-e-folhas, histogramas.\n\n\n\n2. Medidas-Resumo\n\nPosição: Média, mediana, moda.\n\nVariabilidade: Amplitude, desvio padrão.\n\nForma: Coeficientes de assimetria e curtose.\n\n\n\n3. Análise Robustez\n\nBox-plot: Interpretação e identificação de outliers.",
+    "crumbs": [
+      "Anexos",
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Ementa da disciplina</span>"
+    ]
+  },
+  {
+    "objectID": "postextuais/apendice/ementa.html#unidade-iv-análise-bivariada-cap.-4-bussab-morettin-10ª-ed.",
+    "href": "postextuais/apendice/ementa.html#unidade-iv-análise-bivariada-cap.-4-bussab-morettin-10ª-ed.",
+    "title": "Ementa da disciplina",
+    "section": "UNIDADE IV: ANÁLISE BIVARIADA (Cap. 4 – Bussab & Morettin, 10ª ed.)",
+    "text": "UNIDADE IV: ANÁLISE BIVARIADA (Cap. 4 – Bussab & Morettin, 10ª ed.)\n\n1. Variáveis Qualitativas\n\nTabelas de contingência\n\nMedidas de associação: Qui-Quadrado, V de Cramer.\n\n\n\n2. Variáveis Quantitativas\n\nDiagrama de dispersão\n\nCorrelação: Pearson (linear) e Spearman (monotônica).\n\n\n\n3. Relações Qualitativa × Quantitativa\n\nComparação de grupos: Box-plot por categoria.",
+    "crumbs": [
+      "Anexos",
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Ementa da disciplina</span>"
+    ]
+  },
+  {
+    "objectID": "postextuais/apendice/ementa.html#referências",
+    "href": "postextuais/apendice/ementa.html#referências",
+    "title": "Ementa da disciplina",
+    "section": "REFERÊNCIAS",
+    "text": "REFERÊNCIAS\n\nBásica\n\nBUSSAB, W. O.; MORETTIN, P. A. Estatística Básica. 10ª ed. Saraiva, 2022.\n\nBARBETTA, P. A. Estatística Aplicada às Ciências Sociais. 9ª ed. UFSC, 2020.\n\n\n\nComplementar\n\nTRIOLA, M. F. Introdução à Estatística. 12ª ed. LTC, 2017.\n(Lista completa disponível no material complementar.)",
+    "crumbs": [
+      "Anexos",
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Ementa da disciplina</span>"
+    ]
+  },
+  {
     "objectID": "postextuais/apendice/formulas/cap1.html",
     "href": "postextuais/apendice/formulas/cap1.html",
     "title": "Formulas do Capitulo 1",
@@ -82,7 +181,7 @@
     "text": "Distribuição Normal Não Padrão\n\n\n\n\\[\n  f(x) = \\frac{1}{\\sigma \\sqrt{2\\pi}} \\exp\\left( -\\frac{(x - \\mu)^2}{2\\sigma^2} \\right)\n\\]",
     "crumbs": [
       "Anexos",
-      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Formulas do Capitulo 1</span>"
+      "<span class='chapter-number'>9</span>  <span class='chapter-title'>Formulas do Capitulo 1</span>"
     ]
   }
 ]
