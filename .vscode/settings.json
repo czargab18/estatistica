@@ -1,8 +1,9 @@
 {
   "files.exclude": {
-    "404.html": true,
     // OCULTAR ARQUIVOS GIT
     "**/.git": true,
+    "**/.github/copilot/": true,
+    "**/.github/ISSUE_TEMPLATE/": true,
     // OCULTAR SUBMODULOS GIT
     // submodulo API
     "api/.git": true,
@@ -32,7 +33,13 @@
     "**/Thumbs.db": true,
     "**/node_modules": true,
     // OCULTAR ARQUIVOS PYTHON
-    "**/*.egg-info": true
+    "**/*.egg-info": true,
+    // OCULTAR OUTRAS PASTAS
+    "404.html": true,
+    "*env*/": true,
+    ".quarto/": true,
+    "delete/": true,
+    "*libs*/": true
   },
 
   // Configurações: Editor
