@@ -1,0 +1,363 @@
+main[id*="book-list"] {
+  all: unset;
+  margin: 0;
+  padding: 0;
+  max-width: 2560px;
+  width: 100%;
+}
+
+main[id*="book-list"]
+  :is(
+    ul,
+    ol,
+    li,
+    dl,
+    dt,
+    dd,
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6,
+    hgroup,
+    p,
+    blockquote,
+    figure,
+    form,
+    fieldset,
+    input,
+    legend,
+    pre,
+    abbr,
+    button,
+    canvas,
+    caption,
+    code,
+    details,
+    div,
+    figcaption,
+    img,
+    label,
+    main,
+    mark,
+    nav,
+    picture,
+    samp,
+    section,
+    summary,
+    time
+  ) {
+  margin: 0;
+  padding: 0;
+}
+
+main[id*="book-list"] :is(h1, h2, h3, h4, h5, h6, p, div, span) {
+  display: block;
+  margin: 0;
+  padding: 0;
+  font-family: var(--r-globalfont-family);
+  font-size: 16px;
+}
+
+main[id*="book-list"] :is(h1, h2, h3, h4, h5, h6, p, div, span) {
+  display: block;
+  margin: 0;
+  padding: 0;
+  font-family: var(--r-globalfont-family);
+  font-size: 16px;
+}
+
+main[id*="book-list"] :is(pre, code, address, caption, th, figcaption) {
+  font-size: 1em;
+  font-weight: 400;
+  font-style: normal;
+}
+
+main[id*="book-list"] :is(fieldset, iframe) {
+  border: 0;
+}
+
+main[id*="book-list"] :is(caption, th) {
+  text-align: left;
+}
+
+main[id*="book-list"] :is(summary, details) {
+  display: block;
+}
+
+main[id*="book-list"] :is(audio, canvas, video, progress) {
+  vertical-align: baseline;
+}
+
+main[id*="book-list"] {
+  justify-items: center;
+}
+
+main[id*="book-list"] section[class="archive"] {
+  width: 100%;
+  height: max-content;
+  margin: 0 auto;
+}
+
+main[id*="book-list"] div[class="books-content"] {
+  margin-inline-start: auto;
+  margin-inline-end: auto;
+  width: 980px;
+}
+
+@media only screen and (max-width: 1068px) {
+  main[id*="book-list"] div[class="books-content"] {
+    margin-inline-start: auto;
+    margin-inline-end: auto;
+    width: 692px;
+  }
+}
+@media only screen and (max-width: 734px) {
+  main[id*="book-list"] div[class="books-content"] {
+    margin-inline-start: auto;
+    margin-inline-end: auto;
+    width: 87.5%;
+  }
+}
+main[id*="book-list"] div[class="books-content"] h2[class="book-title"] {
+  margin-bottom: 16px;
+  font-size: 28px;
+  line-height: 1.1428571429;
+  font-weight: 700;
+  letter-spacing: 0.007em;
+  font-family: "SF Pro Display", "SF Pro Icons", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+  margin-top: 52px;
+}
+
+@media only screen and (max-width: 1068px) {
+  main[id*="book-list"] div[class="books-content"] h2[class="book-title"] {
+    font-size: 24px;
+    line-height: 1.1666666667;
+    font-weight: 700;
+    letter-spacing: 0.009em;
+    font-family: "SF Pro Display", "SF Pro Icons", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+    margin-top: 48px;
+  }
+}
+
+@media only screen and (max-width: 734px) {
+  main[id*="book-list"] div[class="books-content"] h2[class="book-title"] {
+    margin-top: 44px;
+  }
+}
+
+main[id*="book-list"] div[class="books-content"] a[class*="book-item"] {
+  display: flex;
+  justify-content: flex-start;
+  margin: 0;
+  border-top: 1px solid #d2d2d7;
+  text-decoration: none;
+  align-items: center;
+  padding: 40px 0;
+}
+
+@media only screen and (max-width: 1068px) {
+  main[id*="book-list"] div[class="books-content"] a[class*="book-item"] {
+    padding: 32px 0;
+  }
+}
+@media only screen and (max-width: 734px) {
+  main[id*="book-list"] div[class="books-content"] a[class*="book-item"] {
+    align-items: flex-start;
+    padding: 28px 0;
+  }
+}
+
+main[id*="book-list"] div[class="books-content"] a[class*="book-item"] picture[class="viewport-picture"] {
+  align-self: flex-start;
+  flex-shrink: 0;
+  font-size: 0;
+  width: 295px;
+  display: flex;
+  justify-content: center;
+}
+
+@media only screen and (max-width: 1068px) {
+  main[id*="book-list"] div[class="books-content"] a[class*="book-item"] picture[class="viewport-picture"] {
+    width: 264px;
+  }
+}
+@media only screen and (max-width: 1068px) {
+  main[id*="book-list"] div[class="books-content"] a[class*="book-item"] picture[class="viewport-picture"] {
+    width: 105px;
+    height: max-content;
+  }
+}
+
+main[id*="book-list"]
+  div[class="books-content"]
+  a[class*="book-item"]
+  picture[class="viewport-picture"]
+  img[class="viewport-image"] {
+  border-radius: 20px;
+  width: max-content;
+  height: 165px;
+}
+
+@media only screen and (max-width: 1068px) {
+  main[id*="book-list"]
+    div[class="books-content"]
+    a[class*="book-item"]
+    picture[class="viewport-picture"]
+    img[class="viewport-image"] {
+    width: 105px;
+    height: 105px;
+  }
+}
+main[id*="book-list"] div[class="books-content"] a[class*="book-item"] div[class="item-content"] {
+  margin-inline-start: 32px;
+}
+@media only screen and (max-width: 1068px) {
+  main[id*="book-list"] div[class="books-content"] a[class*="book-item"] div[class="item-content"] {
+    margin-inline-start: 24px;
+  }
+}
+@media only screen and (max-width: 734px) {
+  main[id*="book-list"] div[class="books-content"] a[class*="book-item"] div[class="item-content"] {
+    margin-inline-start: 16px;
+  }
+}
+main[id*="book-list"] a[class*="book-item"] div[class="item-content"] p[class*="item-category"] {
+  color: #6e6e73;
+  font-size: 14px;
+  line-height: 1.2857742857;
+  font-weight: 700;
+  letter-spacing: -0.016em;
+  font-family: "SF Pro Text", "SF Pro Icons", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+  text-transform: uppercase;
+}
+@media only screen and (max-width: 1068px) {
+  main[id*="book-list"] a[class*="book-item"] div[class="item-content"] p[class*="item-category"] {
+    font-size: 12px;
+    line-height: 1.3333733333;
+    font-weight: 700;
+    letter-spacing: -0.01em;
+    font-family: "SF Pro Text", "SF Pro Icons", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+  }
+}
+main[id*="book-list"] a[class*="book-item"] div[class="item-content"] h3[class="item-headline"] {
+  font-size: 24px;
+  line-height: 1.1666666667;
+  font-weight: 700;
+  letter-spacing: 0.009em;
+  font-family: "SF Pro Display", "SF Pro Icons", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+  margin-top: 8px;
+  -webkit-line-clamp: 3;
+}
+@media only screen and (max-width: 1068px) {
+  main[id*="book-list"] a[class*="book-item"] div[class="item-content"] h3[class="item-headline"] {
+    font-size: 21px;
+    line-height: 1.1904761905;
+    font-weight: 700;
+    letter-spacing: 0.011em;
+    font-family: "SF Pro Display", "SF Pro Icons", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+  }
+}
+@media only screen and (max-width: 734px) {
+  main[id*="book-list"] a[class*="book-item"] div[class="item-content"] h3[class="item-headline"] {
+    font-size: 17px;
+    line-height: 1.2353641176;
+    font-weight: 700;
+    letter-spacing: -0.022em;
+    font-family: "SF Pro Text", "SF Pro Icons", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+  }
+}
+
+main[id*="book-list"] a[class*="book-item"] div[class="item-content"] p[class="item-date last-update"] {
+  color: #6e6e73;
+  font-size: 14px;
+  line-height: 1.4285914286;
+  font-weight: 600;
+  letter-spacing: -0.016em;
+  font-family: "SF Pro Text", "SF Pro Icons", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+  margin-top: 12px;
+}
+@media only screen and (max-width: 734px) {
+  main[id*="book-list"] a[class*="book-item"] div[class="item-content"] p[class="item-date last-update"] {
+    font-size: 14px;
+    line-height: 1.2857742857;
+    font-weight: 600;
+    letter-spacing: -0.016em;
+    font-family: "SF Pro Text", "SF Pro Icons", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+  }
+}
+/* 
+div[id="quarto-content"] {
+  width: 1024px !important;
+  min-height: calc(0px + 100vh);
+  max-width: 2560px;
+  width: 1024px;
+}
+
+#quarto-content > main {
+  padding-top: 0px;
+}
+
+main {
+  margin-top: 0px !important;
+  margin-bottom: 0px !important;
+}
+
+main header[id="title-block-header"] {
+  display: none;
+}
+
+.fixed-top {
+  position: relative !important;
+  top: 0;
+  right: 0;
+  left: 0;
+  z-index: 1030;
+  width: 100%;
+  max-width: 2560px;
+}
+
+#quarto-content nav {
+  padding-top: 0;
+}
+
+nav[id="quarto-sidebar"] {
+  padding: 0 !important;
+}
+
+#quarto-sidebar :is(nav, div, span) {
+  padding-right: 0;
+}
+
+nav .mt-2 {
+  margin-top: 0 !important;
+}
+
+nav div[class*="sidebar-header"] {
+  margin-top: 0 !important;
+}
+
+.sidebar-title {
+  margin-top: 0;
+  padding-bottom: 0;
+  font-size: 1.3rem;
+  line-height: 1.6rem;
+  visibility: visible;
+}
+
+.sidebar.sidebar-navigation > * {
+  padding-top: 0 !important;
+}
+
+body.floating .sidebar.sidebar-navigation {
+  gap: 12px !important;
+}
+
+nav[id="quarto-sidebar"] > div:nth-child(n + 3) {
+  padding-left: 12px !important;
+}
+
+nav[id="quarto-sidebar"] form div:first-child {
+  padding-left: 4px !important;
+} */

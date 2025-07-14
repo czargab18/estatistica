@@ -1,5 +1,6 @@
 {
   "files.exclude": {
+    "404.html": true,
     // OCULTAR ARQUIVOS GIT
     "**/.git": true,
     // OCULTAR SUBMODULOS GIT
