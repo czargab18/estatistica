@@ -6,7 +6,10 @@ on:
   push:
     branches: ["main"]
     paths: [
-        # Arquivos que disparam o workflow
+        # CONFIGURAÇÕES DO SITE
+        "**/.htaccess",
+        "**/CNAME",
+        # CONTEÚDO DO SITE
         "**/*.html",
         "**/*.css",
         "**/*.js",
@@ -25,6 +28,13 @@ on:
         "**/*.otf",
         "**/*.json",
         "**/*.xml",
+        # IGNORAR NO DEPLOY DO SITE
+        "!.github/",
+        "!.vscode/",
+        "!.gitignore",
+        "!.git/",
+        "!.gitattributes",
+        "!.vscode/"
       ]
 permissions:
   contents: read
