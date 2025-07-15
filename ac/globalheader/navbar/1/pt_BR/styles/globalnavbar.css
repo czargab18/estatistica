@@ -1,0 +1,115 @@
+nav[id="globalnavbar"] {
+  all: initial;
+}
+
+nav[id="globalnavbar"] ul,
+nav[id="globalnavbar"] ol,
+nav[id="globalnavbar"] li,
+nav[id="globalnavbar"] dl,
+nav[id="globalnavbar"] dt,
+nav[id="globalnavbar"] dd,
+nav[id="globalnavbar"] h1,
+nav[id="globalnavbar"] h2,
+nav[id="globalnavbar"] h3,
+nav[id="globalnavbar"] h4,
+nav[id="globalnavbar"] h5,
+nav[id="globalnavbar"] h6,
+nav[id="globalnavbar"] hgroup,
+nav[id="globalnavbar"] p,
+nav[id="globalnavbar"] blockquote,
+nav[id="globalnavbar"] figure,
+nav[id="globalnavbar"] form,
+nav[id="globalnavbar"] fieldset,
+nav[id="globalnavbar"] input,
+nav[id="globalnavbar"] legend,
+nav[id="globalnavbar"] pre,
+nav[id="globalnavbar"] abbr,
+nav[id="globalnavbar"] button {
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+nav[id="globalnavbar"] pre,
+nav[id="globalnavbar"] code,
+nav[id="globalnavbar"] address,
+nav[id="globalnavbar"] caption,
+nav[id="globalnavbar"] th,
+nav[id="globalnavbar"] figcaption {
+  font-size: 1em;
+  font-weight: 400;
+  font-style: normal;
+}
+
+nav[id="globalnavbar"] fieldset,
+nav[id="globalnavbar"] iframe {
+  border: 0;
+}
+
+nav[id="globalnavbar"] caption,
+nav[id="globalnavbar"] th {
+  text-align: left;
+}
+
+nav[id="globalnavbar"] main,
+nav[id="globalnavbar"] summary,
+nav[id="globalnavbar"] details {
+  display: block;
+}
+
+nav[id="globalnavbar"] audio,
+nav[id="globalnavbar"] canvas,
+nav[id="globalnavbar"] video,
+nav[id="globalnavbar"] progress {
+  vertical-align: baseline;
+}
+
+nav[id="globalnavbar"] button {
+  background: none;
+  border: 0;
+  box-sizing: content-box;
+  color: inherit;
+  cursor: pointer;
+  font: inherit;
+  line-height: inherit;
+  overflow: visible;
+  vertical-align: inherit;
+}
+
+nav[id="globalnavbar"] button:disabled {
+  cursor: default;
+}
+
+nav[id="globalnavbar"] ::-moz-focus-inner {
+  border: 0;
+  padding: 0;
+}
+
+
+
+nav[id="globalnavbar"] {
+
+  position: sticky;
+  top: 0;
+  right: 0;
+  left: 0;
+  z-index: 9999;
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  width: 100%;
+  max-width: 2560px;
+  height: var(--r-globalnav-height);
+  margin: 0;
+  padding: 0;
+}
+
+nav[id="globalnavbar"] div[class="globalnavbar-content"] {
+  margin: 0 auto;
+  box-sizing: border-box;
+  width: 100%;
+  max-width: 1024px;
+  padding: 0 22px;
+  z-index: 2;
+}
+
