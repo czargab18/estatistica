@@ -28,35 +28,37 @@ on:
         "**/*.otf",
         "**/*.json",
         "**/*.xml",
+        "**/.gitignore",
         # IGNORAR NO DEPLOY DO SITE
         "!.github/",
         "!.vscode/",
-        "!.gitignore",
         "!.git/",
         "!.gitattributes",
-        "!.vscode/"
       ]
+
 permissions:
   contents: read
   pages: write
   id-token: write
+
 concurrency:
   group: "pages"
   cancel-in-progress: false
 jobs:
   deploy:
-    strategy:
-      matrix:
-        env_name: [github-pages, ENVIRONMENT]
     environment:
-      name: ${{ matrix.env_name }}
+      name: github-pages
+    env:
       url: ${{ vars.URL }}
+      USEREMAIL: ${{ secrets.USEREMAIL }}
+      USERNAME: ${{ github.repository_owner }}
+      TOKEN_REPO_SYNC: ${{ secrets.TOKEN_REPO_SYNC }}
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
         uses: actions/checkout@v4
         with:
-          repository: ${{ github.repository_owner }}/estatistica
+          repository: ${{ env.USERNAME }}/estatistica
           token: ${{ env.TOKEN_REPO_SYNC }}
           path: "estatistica"
           ref: "main"
@@ -64,7 +66,7 @@ jobs:
       - name: Clonar submódulo 'wss'
         uses: actions/checkout@v4
         with:
-          repository: ${{ github.repository_owner }}/wss
+          repository: ${{ env.USERNAME }}/wss
           token: ${{ env.TOKEN_REPO_SYNC }}
           path: "wss"
           ref: "main"
@@ -79,6 +81,7 @@ jobs:
 
       - name: Setup Pages
         uses: actions/configure-pages@v5
+
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
