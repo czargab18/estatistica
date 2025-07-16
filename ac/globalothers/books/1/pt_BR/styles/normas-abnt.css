@@ -1,0 +1,10 @@
+/* temporariamente */
+p span[class="citation-long"] {
+  padding-left: 4cm;
+  display: block;
+  text-align: justify;
+}
+p span[class="headline-question"] {
+  width: max-content;
+  display: block;
+}
