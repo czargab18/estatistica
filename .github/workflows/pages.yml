@@ -45,16 +45,33 @@ concurrency:
   cancel-in-progress: false
 jobs:
   deploy:
+    strategy:
+      matrix:
+        env_name: [github-pages, ENVIRONMENT]
     environment:
-      name: github-pages
+      name: ${{ matrix.env_name }}
       url: ${{ vars.URL }}
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
         uses: actions/checkout@v4
         with:
-          path: "./"
+          repository: ${{ github.repository_owner }}/estatistica
+          token: ${{ env.TOKEN_REPO_SYNC }}
+          path: "estatistica"
           ref: "main"
+
+      - name: Clonar submódulo 'wss'
+        uses: actions/checkout@v4
+        with:
+          repository: ${{ github.repository_owner }}/wss
+          token: ${{ env.TOKEN_REPO_SYNC }}
+          path: "wss"
+          ref: "main"
+
+      - name: Copiar arquivos modificados de wss para estatistica/wss
+        run: |
+          rsync -av --update wss/ estatistica/wss/
 
       - name: Remover subpastas do 'deploy'
         run: |
