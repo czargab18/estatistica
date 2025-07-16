@@ -307,6 +307,7 @@ newshub/**/newsroom/
 !README.md
 !.github
 !.vscode
-!/.gitignore 
+!/.gitignore
 !.htaccess
 !CNAME
+/.quarto/
