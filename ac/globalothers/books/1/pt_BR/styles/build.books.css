@@ -287,6 +287,29 @@ main[id*="book-list"] a[class*="book-item"] div[class="item-content"] p[class="i
     font-family: "SF Pro Text", "SF Pro Icons", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
   }
 }
+
+@media (min-width: 992px) {
+  body main {
+    text-align: justify !important;
+  }
+  .page-columns {
+    margin-top: 1em !important;
+    display: grid !important;
+    gap: 0 !important;
+    grid-template-columns: [page-start] 0 [page-start-inset] minmax(50px, 175px) [body-start] 1.5em !important;
+    width: 980px !important;
+  }
+  .page-columns div,
+  .page-columns nav,
+  .page-columns main {
+    padding: 0 !important;
+    margin: 0 !important;
+  }
+  .page-columns main header {
+    display: none !important;
+  }
+}
+
 /* 
 div[id="quarto-content"] {
   width: 1024px !important;
