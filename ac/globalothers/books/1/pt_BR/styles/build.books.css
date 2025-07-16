@@ -310,6 +310,17 @@ main[id*="book-list"] a[class*="book-item"] div[class="item-content"] p[class="i
   }
 }
 
+/* temporariamente */
+p span[class="citation-long"] {
+  padding-left: 4cm;
+  display: inline-flex;
+  text-align: justify;
+}
+p span[class="headline-question"] {
+  width: 100%;
+  display: inline-flex;
+}
+
 /* 
 div[id="quarto-content"] {
   width: 1024px !important;
