@@ -73,11 +73,12 @@ jobs:
 
       - name: Copiar arquivos modificados de wss para estatistica/wss
         run: |
-          rsync -av --update wss/ estatistica/wss/
+          rsync -av --update wss/fonts.css estatistica/wss/
+          rsync -av --update wss/fonts estatistica/wss/
 
       - name: Remover subpastas do 'deploy'
         run: |
-          find . -type d \( -name "build" -o -name ".github" -o -name ".vscode" \) -exec rm -rf {} +
+          find . -type d \( -name "build" -o -name ".github" -o -name ".vscode" -o -name "README.md" \) -exec rm -rf {} +
 
       - name: Setup Pages
         uses: actions/configure-pages@v5
