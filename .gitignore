@@ -290,6 +290,7 @@ newsroom/**/*cache*
 # ########### IGNORAR
 newshub/**/*cache*
 newshub/**/newsroom/
+newshub/**/*_site*/
 
 # ########### NÃO IGNORAR
 !newshub/**/output/

@@ -47,10 +47,6 @@ newsroom/
 │   │   │   ├── archive/
 │   │   │   └── newsroom/         # articles ( /newsroom/index.html )
 │   │   │   └── imagens/          # Imagens gerais: logos, marcas, backgrounds etc.
-├── newshub/
-│   └── build/                    # Construir artigos
-│   │   ├── articles/             # Conteúdo dos artigos
-│   │   └── modelo.html/          # Modelo-base dos artigos
 ├── index.html                    # Página principal da newsroom
 └── README.md                     # Documentação
 ```
