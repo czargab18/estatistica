@@ -106,15 +106,16 @@ jobs:
           echo "folders_lista=$FOLDERS_NAMES" >> $GITHUB_OUTPUT
 
       - name: Move livros detectados para artefatos_books
+        id: move-livros
+        working-directory: estatistica/books
         if: steps.lista.outputs.folders_lista != ''
         env:
           FOLDERS_LISTA: ${{ steps.lista.outputs.folders_lista }}
         run: |
           mkdir -p artefatos_books
-          cd estatistica/books
           for folder in $FOLDERS_LISTA; do
             if [ -d "build/${folder}" ]; then
-              mv "build/${folder}" ../../../artefatos_books/
+              mv "build/${folder}" artefatos_books/
             fi
           done
 
@@ -122,20 +123,22 @@ jobs:
         uses: quarto-dev/quarto-actions/setup@v2
 
       - name: Renderiza livros Quarto
-        working-directory: artefatos_books
+        working-directory: estatistica/books/artefatos_books
+        env:
+          FOLDERS_LISTA: ${{ steps.lista.outputs.folders_lista }}
         run: |
           set -e
           echo "$FOLDERS_LISTA" | tr ' ' '\n' | while read folder; do
             if [ -d "${folder}" ]; then
               echo "Renderizando livro: $folder"
-              quarto render "${folder}" --to html --execute --output-dir "../_docs/${folder}"
+              quarto render "${folder}" --to html --execute --output-dir "../../_docs/${folder}"
             else
               echo "Pasta não encontrada: $folder"
             fi
           done
 
       - name: Limpa diretórios de 'libs'
-        working-directory: artefatos_books
+        working-directory: estatistica/books/artefatos_books
         run: |
             remover="libs _libs _site site_libs delete .quarto/ index_files"
             for nome in $remover; do
