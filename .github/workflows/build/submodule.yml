@@ -1,0 +1,232 @@
+name: Submodules e outras ações
+# description: Atualiza submodules e outras ações relacionadas
+
+on:
+  workflow_dispatch: 
+  repository_dispatch:
+      types: [submodule-books, submodule-newshub]
+  push:
+    branches: [main]
+
+
+jobs:
+  books:
+    if: ${{ github.event.action == 'submodule-books' }}
+    runs-on: ubuntu-latest
+    environment:
+      name: ENVIRONMENT
+    env:
+      USEREMAIL: ${{ secrets.USEREMAIL }}
+      USERNAME: ${{ github.repository_owner }}
+      TOKEN_REPO_SYNC: ${{ secrets.TOKEN_REPO_SYNC }}
+    steps:
+      - name: Checkout estatistica
+        uses: actions/checkout@v4
+        with:
+          token: ${{ env.TOKEN_REPO_SYNC }}
+          ref: main
+          submodules: 'true'
+          path: 'estatistica'
+
+      - name: Configura usuário do git
+        run: |
+          git config --global user.name "${{ env.USERNAME }}"
+          git config --global user.email "${{ env.USEREMAIL }}"
+
+      - name: Atualiza submodule books
+        run: |
+          git submodule update --remote books
+          git add books
+      
+      - name: Verificar submodulo 'books'
+        run: |
+          if [ cd estatistica/books ]; then
+            echo "Submodule 'books' updated successfully."
+          else
+            echo "Submodule 'books' update failed."
+            exit 1
+          fi
+
+      - name: Detectar books
+        run: |
+          if [ -d estatistica/books/* ]; then
+            echo "Submodule 'books' detectado."
+            cd estatistica/books/
+          else
+            echo "Submodule 'books' não detectado."
+            cd estatistica/
+            exit 1
+          fi
+
+      - name: Identifica arquivos alterados
+        working-directory: estatistica/books
+        id: arquivos-alterados
+        run: |
+          echo "Detectando arquivos para evento: ${{ github.event_name }}"
+
+          # Push - usa dados do evento diretamente
+          if [[ "${{ github.event_name }}" == "push" ]]; then
+            echo "Processando push..."
+            if [[ -n "${{ github.event.before || '' }}" ]] && [[ "${{ github.event.before }}" != "0000000000000000000000000000000000000000" ]]; then
+              git diff --name-only ${{ github.event.before }} ${{ github.sha }} > arquivos.txt 2>/dev/null || touch arquivos.txt
+            else
+              git diff --name-only HEAD~1 HEAD > arquivos.txt 2>/dev/null || touch arquivos.txt
+            fi
+
+          # workflow_dispatch - busca todos os arquivos relevantes
+          elif [[ "${{ github.event_name }}" == "workflow_dispatch" ]]; then
+            echo "Processando workflow_dispatch..."
+            find build -name "*.qmd" -o -name "*.yml" 2>/dev/null | grep -E '^build/.*\.(qmd|yml)$' > arquivos.txt || touch arquivos.txt
+          fi
+
+          # Remove linhas vazias e duplicatas
+          if [[ -f arquivos.txt ]]; then
+            grep -v '^$' arquivos.txt 2>/dev/null | sort -u > temp_arquivos.txt || touch temp_arquivos.txt
+            mv temp_arquivos.txt arquivos.txt
+          else
+            touch arquivos.txt
+          fi
+
+          echo "Arquivos detectados:"
+          cat arquivos.txt || echo "Nenhum arquivo encontrado"
+          echo "Total: $(wc -l < arquivos.txt 2>/dev/null || echo 0) arquivos"
+
+      - name: Extrai nomes de subdiretórios dos arquivos alterados
+        working-directory: estatistica/books
+        id: extrair_subdirs
+        run: |
+          FILES_NAMES=$(cat arquivos.txt)
+          echo "$FILES_NAMES" | grep -oE '^build/([A-Z]{3}[0-9]{4})/' | cut -d'/' -f2 > subdirs.txt
+
+      - name: Monta lista única de subdiretórios e exporta output
+        working-directory: estatistica/books
+        id: lista
+        run: |
+          FOLDERS_NAMES=$(cat subdirs.txt | sort | uniq | xargs)
+          echo "folders_lista=$FOLDERS_NAMES" >> $GITHUB_OUTPUT
+
+      - name: Move livros detectados para artefatos_books
+        id: move-livros
+        working-directory: estatistica/books
+        if: steps.lista.outputs.folders_lista != ''
+        env:
+          FOLDERS_LISTA: ${{ steps.lista.outputs.folders_lista }}
+        run: |
+          mkdir -p artefatos_books
+          for folder in $FOLDERS_LISTA; do
+            if [ -d "build/${folder}" ]; then
+              mv "build/${folder}" artefatos_books/
+            fi
+          done
+
+      - name: Configura Quarto
+        uses: quarto-dev/quarto-actions/setup@v2
+
+      - name: Renderiza livros Quarto
+        working-directory: estatistica/books/artefatos_books
+        env:
+          FOLDERS_LISTA: ${{ steps.lista.outputs.folders_lista }}
+        run: |
+          set -e
+          echo "$FOLDERS_LISTA" | tr ' ' '\n' | while read folder; do
+            if [ -d "${folder}" ]; then
+              echo "Renderizando livro: $folder"
+              quarto render "${folder}" --to html --execute --output-dir "./../_docs/${folder}"
+            else
+              echo "Pasta não encontrada: $folder"
+            fi
+          done
+
+      - name: Limpa diretórios de 'libs'
+        working-directory: estatistica/books/artefatos_books/_docs
+        run: |
+            remover="libs _libs _site site_libs delete .quarto/ index_files"
+            for nome in $remover; do
+              find . -type d -name "$nome" -exec rm -rf {} +
+            done
+
+    - name: Configura Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: "3.13"
+
+    - name: Instalar dependencias do Python
+      working-directory: estatistica/books
+      id: instalar-dependencias
+      run: |
+        python -m pip install --upgrade pip
+        pip install -r run/requirements.txt
+
+    - name: Corrigir links para GitHub Pages - Books
+      working-directory: estatistica/books
+      id: script-automacao-python
+      run: |
+        python run/cleanBooks.py --base-dir artefatos_books/_docs/ --base-ac build/ac/books
+
+    - name: Sincronizar pasta 'artefatos_books' com 'estatistica/book'
+      id: sincronizar-pasta
+      working-directory: estatistica
+      env:
+        FOLDERS_LISTA: ${{ steps.lista.outputs.folders_lista }}
+      run: |
+        rsync -av --update books/artefatos_books/. estatistica/book/
+    
+        - name: Set up authentication for git
+            run: |
+              git config --global url."https://x-access-token:${{ secrets.TOKEN_REPO_SYNC }}@github.com/".insteadOf "https://github.com/"
+
+    # - name: Commitar alterações de 'estatistica/books'
+    #   working-directory: estatistica
+    #   run: |
+    #     git add .
+    #     git commit -m "Atualiza submodulos e aplica ações do workflow" || echo "Nada a commitar"
+    #     git push origin main
+
+      - name: Garante que a branch book existe e faz checkout
+        working-directory: estatistica
+        run: |
+          if ! git rev-parse --verify book >/dev/null 2>&1; then
+            git checkout --orphan book
+            git rm -rf .
+            git commit --allow-empty -m "Cria branch book inicial"
+            git push origin book
+          else
+            git checkout book
+          fi
+
+      - name: Configura credenciais do Git
+        working-directory: estatistica
+        run: |
+          git config user.name "${{ env.USERNAME }}"
+          git config user.email "${{ env.USEREMAIL }}"
+          git remote set-url origin https://x-access-token:${{ env.TOKEN_REPO_SYNC }}@github.com/${{ env.USERNAME }}/estatistica.git
+
+      - name: Instala GitHub CLI
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y gh
+
+      - name: Cria branch temporária para PR
+        working-directory: estatistica
+        id: cria-branch-pr
+        run: |
+          BRANCH_NAME="update-books-$(date +'%Y%m%d-%H%M%S')-${GITHUB_RUN_ID}"
+          git checkout -b "$BRANCH_NAME"
+          echo "BRANCH_NAME=$BRANCH_NAME" >> $GITHUB_ENV
+
+      - name: Faz commit e push dos livros renderizados na branch temporária
+        working-directory: estatistica
+        run: |
+          git add book/
+          git commit -m "books: atualiza books a partir do repo:books" || echo "Nada a commitar"
+          git push origin "$BRANCH_NAME"
+
+      - name: Cria Pull Request para branch book
+        working-directory: estatistica
+        env:
+          GITHUB_TOKEN: ${{ secrets.TOKEN_REPO_SYNC }}
+        run: |
+          gh pr create --base book --head "$BRANCH_NAME" --title "books: atualização dos livros renderizados" --body "atualização automática dos livros renderizados pelo workflow."
+
+
+
