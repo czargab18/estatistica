@@ -1,0 +1,61 @@
+name: Submodules e outras ações
+# description: Atualiza submodules e outras ações relacionadas
+
+on:
+  workflow_dispatch: 
+  repository_dispatch:
+      types: [submodule-books, submodule-newshub]
+  push:
+    branches: [main]
+
+
+jobs:
+  books:
+    if: ${{ github.event.action == 'submodule-books' }}
+    runs-on: ubuntu-latest
+    environment:
+      name: ENVIRONMENT
+    env:
+      USEREMAIL: ${{ secrets.USEREMAIL }}
+      USERNAME: ${{ github.repository_owner }}
+      TOKEN_REPO_SYNC: ${{ secrets.TOKEN_REPO_SYNC }}
+    steps:
+      - name: Checkout estatistica
+        uses: actions/checkout@v4
+        with:
+          token: ${{ env.TOKEN_REPO_SYNC }}
+          ref: main
+          submodules: 'true'
+          path: 'estatistica'
+
+      - name: Configura usuário do git
+        run: |
+          git config --global user.name "${{ env.USERNAME }}"
+          git config --global user.email "${{ env.USEREMAIL }}"
+
+      - name: Atualiza submodule books
+        run: |
+          git submodule update --remote books
+          git add books
+      
+      - name: Verificar submodulo 'books'
+        run: |
+          if [ cd estatistica/books ]; then
+            echo "Submodule 'books' updated successfully."
+          else
+            echo "Submodule 'books' update failed."
+            exit 1
+          fi
+          
+      - name: Detectar books
+        run: |
+          if [ -d estatistica/books/* ]; then
+            echo "Submodule 'books' detectado."
+            cd estatistica/books/
+          else
+            echo "Submodule 'books' não detectado."
+            cd estatistica/
+            exit 1
+          fi
+      
+      
