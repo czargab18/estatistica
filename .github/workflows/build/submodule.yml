@@ -131,14 +131,14 @@ jobs:
           echo "$FOLDERS_LISTA" | tr ' ' '\n' | while read folder; do
             if [ -d "${folder}" ]; then
               echo "Renderizando livro: $folder"
-              quarto render "${folder}" --to html --execute --output-dir "../../_docs/${folder}"
+              quarto render "${folder}" --to html --execute --output-dir "./../_docs/${folder}"
             else
               echo "Pasta não encontrada: $folder"
             fi
           done
 
       - name: Limpa diretórios de 'libs'
-        working-directory: estatistica/books/artefatos_books
+        working-directory: estatistica/books/artefatos_books/_docs
         run: |
             remover="libs _libs _site site_libs delete .quarto/ index_files"
             for nome in $remover; do
@@ -161,4 +161,18 @@ jobs:
       working-directory: estatistica/books
       id: script-automacao-python
       run: |
-        python run/cleanBooks.py --base-dir book/ --base-ac build/ac/books
+        python run/cleanBooks.py --base-dir artefatos_books/_docs/ --base-ac build/ac/books
+
+    - name: Sincronizar pasta 'artefatos_books' com 'estatistica/book'
+      id: sincronizar-pasta
+      working-directory: estatistica
+      env:
+        FOLDERS_LISTA: ${{ steps.lista.outputs.folders_lista }}
+      run: |
+        rsync -av --update books/artefatos_books/. estatistica/book/
+    
+    - name: Commitar alterações de 'estatistica/books'
+
+
+
+    
