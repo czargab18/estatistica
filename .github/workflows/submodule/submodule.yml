@@ -6,7 +6,7 @@ on:
 
 
 jobs:
-  update-books:
+  books:
     if: ${{ github.event.action == 'submodule-books' }}
     runs-on: ubuntu-latest
     environment:
