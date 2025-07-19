@@ -92,31 +92,31 @@ jobs:
           echo "Total: $(wc -l < arquivos.txt 2>/dev/null || echo 0) arquivos"
 
       - name: Extrai nomes de subdiretórios dos arquivos alterados
+        working-directory: estatistica/books
         id: extrair_subdirs
         run: |
-          cd estatistica/books
           FILES_NAMES=$(cat arquivos.txt)
           echo "$FILES_NAMES" | grep -oE '^build/([A-Z]{3}[0-9]{4})/' | cut -d'/' -f2 > subdirs.txt
 
       - name: Monta lista única de subdiretórios e exporta output
+        working-directory: estatistica/books
         id: lista
         run: |
-          cd estatistica/books
           FOLDERS_NAMES=$(cat subdirs.txt | sort | uniq | xargs)
           echo "folders_lista=$FOLDERS_NAMES" >> $GITHUB_OUTPUT
 
-      - name: Move livros detectados para _books
-        if: steps.lista.outputs.folders_lista != ''
-        env:
-          FOLDERS_LISTA: ${{ steps.lista.outputs.folders_lista }}
-        run: |
-          mkdir -p estatistica/_books
-          cd estatistica/books
-          for folder in $FOLDERS_LISTA; do
-            if [ -d "build/${folder}" ]; then
-              mv "build/${folder}" ../../_books/
-            fi
-          done
+      # - name: Move livros detectados para books/artefatos
+      #   if: steps.lista.outputs.folders_lista != ''
+      #   env:
+      #     FOLDERS_LISTA: ${{ steps.lista.outputs.folders_lista }}
+      #   run: |
+      #     mkdir -p estatistica/books/artefatos
+      #     cd estatistica/books
+      #     for folder in $FOLDERS_LISTA; do
+      #       if [ -d "build/${folder}" ]; then
+      #         mv "build/${folder}" ../../books/artefatos/
+      #       fi
+      #     done
 
 
 
