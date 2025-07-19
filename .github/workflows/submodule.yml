@@ -5,12 +5,10 @@ on:
   workflow_dispatch: 
   repository_dispatch:
       types: [submodule-books, submodule-newshub]
-  push:
-    branches: [main]
 
 jobs:
   books:
-    if: ${{ github.event.action == 'submodule-books' }}
+    if: ${{ github.event.action == 'submodule-books' || github.event_name == 'workflow_dispatch' }}
     runs-on: ubuntu-latest
     environment:
       name: ENVIRONMENT
