@@ -118,3 +118,26 @@ jobs:
             fi
           done
 
+      - name: Configura Quarto
+        uses: quarto-dev/quarto-actions/setup@v2
+
+      - name: Renderiza livros Quarto
+        working-directory: artefatos_books
+        run: |
+          set -e
+          echo "$FOLDERS_LISTA" | tr ' ' '\n' | while read folder; do
+            if [ -d "${folder}" ]; then
+              echo "Renderizando livro: $folder"
+              quarto render "${folder}" --to html --execute --output-dir "../_docs/${folder}"
+            else
+              echo "Pasta não encontrada: $folder"
+            fi
+          done
+
+      - name: Limpa diretórios de 'libs'
+      working-directory: artefatos_books
+      run: |
+          remover="libs _libs _site site_libs delete .quarto/ index_files"
+          for nome in $remover; do
+            find . -type d -name "$nome" -exec rm -rf {} +
+          done
