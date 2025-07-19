@@ -46,7 +46,7 @@ jobs:
             echo "Submodule 'books' update failed."
             exit 1
           fi
-          
+
       - name: Detectar books
         run: |
           if [ -d estatistica/books/* ]; then
@@ -57,5 +57,66 @@ jobs:
             cd estatistica/
             exit 1
           fi
-      
-      
+
+      - name: Identifica arquivos alterados
+        working-directory: estatistica/books
+        id: arquivos-alterados
+        run: |
+          echo "Detectando arquivos para evento: ${{ github.event_name }}"
+
+          # Push - usa dados do evento diretamente
+          if [[ "${{ github.event_name }}" == "push" ]]; then
+            echo "Processando push..."
+            if [[ -n "${{ github.event.before || '' }}" ]] && [[ "${{ github.event.before }}" != "0000000000000000000000000000000000000000" ]]; then
+              git diff --name-only ${{ github.event.before }} ${{ github.sha }} > arquivos.txt 2>/dev/null || touch arquivos.txt
+            else
+              git diff --name-only HEAD~1 HEAD > arquivos.txt 2>/dev/null || touch arquivos.txt
+            fi
+
+          # workflow_dispatch - busca todos os arquivos relevantes
+          elif [[ "${{ github.event_name }}" == "workflow_dispatch" ]]; then
+            echo "Processando workflow_dispatch..."
+            find build -name "*.qmd" -o -name "*.yml" 2>/dev/null | grep -E '^build/.*\.(qmd|yml)$' > arquivos.txt || touch arquivos.txt
+          fi
+
+          # Remove linhas vazias e duplicatas
+          if [[ -f arquivos.txt ]]; then
+            grep -v '^$' arquivos.txt 2>/dev/null | sort -u > temp_arquivos.txt || touch temp_arquivos.txt
+            mv temp_arquivos.txt arquivos.txt
+          else
+            touch arquivos.txt
+          fi
+
+          echo "Arquivos detectados:"
+          cat arquivos.txt || echo "Nenhum arquivo encontrado"
+          echo "Total: $(wc -l < arquivos.txt 2>/dev/null || echo 0) arquivos"
+
+      - name: Extrai nomes de subdiretórios dos arquivos alterados
+        id: extrair_subdirs
+        run: |
+          cd estatistica/books
+          FILES_NAMES=$(cat arquivos.txt)
+          echo "$FILES_NAMES" | grep -oE '^build/([A-Z]{3}[0-9]{4})/' | cut -d'/' -f2 > subdirs.txt
+
+      - name: Monta lista única de subdiretórios e exporta output
+        id: lista
+        run: |
+          cd estatistica/books
+          FOLDERS_NAMES=$(cat subdirs.txt | sort | uniq | xargs)
+          echo "folders_lista=$FOLDERS_NAMES" >> $GITHUB_OUTPUT
+
+      - name: Move livros detectados para _books
+        if: steps.lista.outputs.folders_lista != ''
+        env:
+          FOLDERS_LISTA: ${{ steps.lista.outputs.folders_lista }}
+        run: |
+          mkdir -p estatistica/_books
+          cd estatistica/books
+          for folder in $FOLDERS_LISTA; do
+            if [ -d "build/${folder}" ]; then
+              mv "build/${folder}" ../../_books/
+            fi
+          done
+
+
+
