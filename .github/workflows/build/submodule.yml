@@ -171,8 +171,62 @@ jobs:
       run: |
         rsync -av --update books/artefatos_books/. estatistica/book/
     
-    - name: Commitar alterações de 'estatistica/books'
+        - name: Set up authentication for git
+            run: |
+              git config --global url."https://x-access-token:${{ secrets.TOKEN_REPO_SYNC }}@github.com/".insteadOf "https://github.com/"
+
+    # - name: Commitar alterações de 'estatistica/books'
+    #   working-directory: estatistica
+    #   run: |
+    #     git add .
+    #     git commit -m "Atualiza submodulos e aplica ações do workflow" || echo "Nada a commitar"
+    #     git push origin main
+
+      - name: Garante que a branch book existe e faz checkout
+        working-directory: estatistica
+        run: |
+          if ! git rev-parse --verify book >/dev/null 2>&1; then
+            git checkout --orphan book
+            git rm -rf .
+            git commit --allow-empty -m "Cria branch book inicial"
+            git push origin book
+          else
+            git checkout book
+          fi
+
+      - name: Configura credenciais do Git
+        working-directory: estatistica
+        run: |
+          git config user.name "${{ env.USERNAME }}"
+          git config user.email "${{ env.USEREMAIL }}"
+          git remote set-url origin https://x-access-token:${{ env.TOKEN_REPO_SYNC }}@github.com/${{ env.USERNAME }}/estatistica.git
+
+      - name: Instala GitHub CLI
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y gh
+
+      - name: Cria branch temporária para PR
+        working-directory: estatistica
+        id: cria-branch-pr
+        run: |
+          BRANCH_NAME="update-books-$(date +'%Y%m%d-%H%M%S')-${GITHUB_RUN_ID}"
+          git checkout -b "$BRANCH_NAME"
+          echo "BRANCH_NAME=$BRANCH_NAME" >> $GITHUB_ENV
+
+      - name: Faz commit e push dos livros renderizados na branch temporária
+        working-directory: estatistica
+        run: |
+          git add book/
+          git commit -m "books: atualiza books a partir do repo:books" || echo "Nada a commitar"
+          git push origin "$BRANCH_NAME"
+
+      - name: Cria Pull Request para branch book
+        working-directory: estatistica
+        env:
+          GITHUB_TOKEN: ${{ secrets.TOKEN_REPO_SYNC }}
+        run: |
+          gh pr create --base book --head "$BRANCH_NAME" --title "books: atualização dos livros renderizados" --body "atualização automática dos livros renderizados pelo workflow."
 
 
 
-    
