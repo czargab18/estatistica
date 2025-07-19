@@ -135,9 +135,27 @@ jobs:
           done
 
       - name: Limpa diretórios de 'libs'
-      working-directory: artefatos_books
+        working-directory: artefatos_books
+        run: |
+            remover="libs _libs _site site_libs delete .quarto/ index_files"
+            for nome in $remover; do
+              find . -type d -name "$nome" -exec rm -rf {} +
+            done
+
+    - name: Configura Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: "3.13"
+
+    - name: Instalar dependencias do Python
+      working-directory: estatistica/books
+      id: instalar-dependencias
       run: |
-          remover="libs _libs _site site_libs delete .quarto/ index_files"
-          for nome in $remover; do
-            find . -type d -name "$nome" -exec rm -rf {} +
-          done
+        python -m pip install --upgrade pip
+        pip install -r run/requirements.txt
+
+    - name: Corrigir links para GitHub Pages - Books
+      working-directory: estatistica/books
+      id: script-automacao-python
+      run: |
+        python run/cleanBooks.py --base-dir book/ --base-ac build/ac/books
