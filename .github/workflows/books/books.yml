@@ -1,0 +1,332 @@
+name: "Renderizar Livros - Quarto"
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths: ["build/**/*.qmd", "build/**/*.yml", "build/*.html", "build/*.bib", ".github/workflows/*books*.yml"]
+
+permissions:
+  contents: write
+  pull-requests: read
+  pages: write
+  id-token: write
+
+jobs:
+  detectar:
+    runs-on: ubuntu-latest
+    if: github.event_name == 'push' || github.event_name == 'workflow_dispatch'
+    environment:
+      name: ENVIRONMENT
+    env:
+      TOKEN_REPO_SYNC: ${{ secrets.TOKEN_REPO_SYNC }}
+      USEREMAIL: ${{ secrets.USEREMAIL }}
+      USERNAME: ${{ github.repository_owner }}
+    outputs:
+      FOLDERS_LISTA: ${{ steps.lista.outputs.folders_lista }}
+    steps:
+      - name: Clona o Repositório BOOKS
+        uses: actions/checkout@v4
+        with:
+          repository: ${{ env.USERNAME }}/books
+          token: ${{ secrets.GITHUB_TOKEN }}
+          path: books
+          ref: main
+          fetch-depth: 30
+
+      - name: Identifica arquivos alterados
+        id: arquivos-alterados
+        run: |
+          cd books
+          echo "Detectando arquivos para evento: ${{ github.event_name }}"
+
+          # Push - usa dados do evento diretamente  
+          if [[ "${{ github.event_name }}" == "push" ]]; then
+            echo "Processando push..."
+            if [[ -n "${{ github.event.before || '' }}" ]] && [[ "${{ github.event.before }}" != "0000000000000000000000000000000000000000" ]]; then
+              git diff --name-only ${{ github.event.before }} ${{ github.sha }} > arquivos.txt 2>/dev/null || touch arquivos.txt
+            else
+              git diff --name-only HEAD~1 HEAD > arquivos.txt 2>/dev/null || touch arquivos.txt
+            fi
+
+          # workflow_dispatch - busca todos os arquivos relevantes
+          elif [[ "${{ github.event_name }}" == "workflow_dispatch" ]]; then
+            echo "Processando workflow_dispatch..."
+            find build -name "*.qmd" -o -name "*.yml" 2>/dev/null | grep -E '^build/.*\.(qmd|yml)$' > arquivos.txt || touch arquivos.txt
+          fi
+
+          # Remove linhas vazias e duplicatas
+          if [[ -f arquivos.txt ]]; then
+            grep -v '^$' arquivos.txt 2>/dev/null | sort -u > temp_arquivos.txt || touch temp_arquivos.txt
+            mv temp_arquivos.txt arquivos.txt
+          else
+            touch arquivos.txt
+          fi
+
+          echo "Arquivos detectados:"
+          cat arquivos.txt || echo "Nenhum arquivo encontrado"
+          echo "Total: $(wc -l < arquivos.txt 2>/dev/null || echo 0) arquivos"
+
+      - name: Extrai nomes de subdiretórios dos arquivos alterados
+        id: extrair_subdirs
+        run: |
+          cd books
+          FILES_NAMES=$(cat arquivos.txt)
+          echo "$FILES_NAMES" | grep -oE '^build/([A-Z]{3}[0-9]{4})/' | cut -d'/' -f2 > subdirs.txt
+
+      - name: Monta lista única de subdiretórios e exporta output
+        id: lista
+        run: |
+          cd books
+          FOLDERS_NAMES=$(cat subdirs.txt | sort | uniq | xargs)
+          echo "folders_lista=$FOLDERS_NAMES" >> $GITHUB_OUTPUT
+
+      - name: Move livros detectados para _books
+        if: steps.lista.outputs.folders_lista != ''
+        env:
+          FOLDERS_LISTA: ${{ steps.lista.outputs.folders_lista }}
+        run: |
+          mkdir -p _books
+          cd books
+          for folder in $FOLDERS_LISTA; do
+            if [ -d "build/${folder}" ]; then
+              mv "build/${folder}" ../_books/
+            fi
+          done
+
+      - name: Exporta Books como Artefato
+        if: steps.lista.outputs.folders_lista != ''
+        uses: actions/upload-artifact@v4
+        with:
+          name: books_detectados
+          path: _books
+
+  renderizar:
+    needs: [detectar]
+    runs-on: ubuntu-latest
+    if: needs.detectar.outputs.FOLDERS_LISTA != ''
+    env:
+      FOLDERS_LISTA: ${{ needs.detectar.outputs.FOLDERS_LISTA }}
+    outputs:
+      BOOKS_RENDERIZADOS: ${{ steps.renderizar.outputs.books_renderizados }}
+
+    steps:
+      - name: Baixa artefato
+        uses: actions/download-artifact@v4
+        with:
+          name: books_detectados
+          path: _books
+
+      - name: Configura Quarto
+        uses: quarto-dev/quarto-actions/setup@v2
+
+      - name: Renderiza livros Quarto
+        env:
+          FOLDERS_LISTA: ${{ needs.detectar.outputs.FOLDERS_LISTA }}
+        run: |
+          set -e
+          cd _books
+          echo "$FOLDERS_LISTA" | tr ' ' '\n' | while read folder; do
+            if [ -d "${folder}" ]; then
+              echo "Renderizando livro: $folder"
+              quarto render "${folder}" --to html --execute --output-dir "../../_docs/${folder}"
+            else
+              echo "Pasta não encontrada: $folder"
+            fi
+          done
+
+      - name: Limpa diretórios '_docs/ac/site_libs' e '_docs/delete'
+        run: |
+          cd _docs
+          remover="site_libs delete outra_pasta"
+          for nome in $remover; do
+            find . -type d -name "$nome" -exec rm -rf {} +
+          done
+
+      - name: Exporta livros renderizados
+        uses: actions/upload-artifact@v4
+        with:
+          name: books_renderizados
+          path: "./_docs"
+
+  books:
+    needs: [renderizar]
+    runs-on: ubuntu-latest
+    environment:
+      name: ENVIRONMENT
+    steps:
+      - name: Clona o Repositório 'BOOKS'
+        uses: actions/checkout@v4
+        with:
+          repository: ${{ github.repository }}
+          token: ${{ secrets.GITHUB_TOKEN }}
+          ref: main
+          path: books
+
+      - name: Baixa Artefato para 'GitHub Pages'
+        uses: actions/download-artifact@v4
+        with:
+          name: books_renderizados
+          path: "./books/book"
+
+      - name: Configura Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: "3.13"
+
+      - name: Instalar dependencias do Python
+        run: |
+          cd books
+          python -m pip install --upgrade pip
+          pip install -r run/requirements.txt
+
+      - name: Corrigir links para GitHub Pages - Books
+        run: |
+          cd books
+          python run/cleanBooks.py --base-dir book/ --base-ac build/ac/books
+
+      - name: Salva Artefato para GitHub Pages
+        uses: actions/upload-pages-artifact@v3
+        with:
+          name: github-pages
+          path: "./books/book"
+
+      - name: Faz deploy para GitHub Pages - Books
+        uses: actions/deploy-pages@v4
+        with:
+          artifact_name: github-pages
+
+  estatistica:
+    needs: [renderizar, books]
+    runs-on: ubuntu-latest
+    if: needs.detectar.outputs.FOLDERS_LISTA != ''
+    environment:
+      name: ENVIRONMENT
+    env:
+      FOLDERS_LISTA: ${{ needs.detectar.outputs.FOLDERS_LISTA }}
+      USERNAME: ${{ github.repository_owner }}
+      USEREMAIL: ${{ secrets.USEREMAIL }}
+      TOKEN_REPO_SYNC: ${{ secrets.TOKEN_REPO_SYNC }}
+    steps:
+      - name: Clona o Repositório ESTATISTICA
+        uses: actions/checkout@v4
+        with:
+          ref: book
+          path: estatistica
+          fetch-depth: 1
+          repository: ${{ env.USERNAME }}/estatistica
+          token: ${{ env.TOKEN_REPO_SYNC }}
+
+      - name: Set up authentication for git
+        run: |
+          git config --global url."https://x-access-token:${{ secrets.TOKEN_REPO_SYNC }}@github.com/".insteadOf "https://github.com/"
+
+      - name: Baixar submodulo 'books'
+        uses: actions/checkout@v4
+        with:
+          token: ${{ env.TOKEN_REPO_SYNC }}
+          repository: ${{ env.USERNAME }}/books
+          ref: main
+          path: books
+          fetch-depth: 1
+
+      - name: Configura Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: "3.13"
+
+      - name: Instalar dependencias  do python
+        run: |
+          cd books
+          python -m pip install --upgrade pip
+          pip install -r run/requirements.txt
+
+      - name: Baixa artefato dos livros renderizados
+        uses: actions/download-artifact@v4
+        with:
+          name: books_renderizados
+          path: "books/book"
+
+      - name: Corrigir links dos <head>
+        run: |
+          cd books
+          python run/cleanBooks.py --base-dir book/ --base-ac build/ac/
+
+      - name: Sincroniza arquivos do artefato com a branch book
+        run: |
+          rsync -av --update books/book/ estatistica/book/
+
+      - name: Garante que a branch book existe e faz checkout
+        working-directory: estatistica
+        run: |
+          if ! git rev-parse --verify book >/dev/null 2>&1; then
+            git checkout --orphan book
+            git rm -rf .
+            git commit --allow-empty -m "Cria branch book inicial"
+            git push origin book
+          else
+            git checkout book
+          fi
+
+      - name: Configura credenciais do Git
+        working-directory: estatistica
+        run: |
+          git config user.name "${{ env.USERNAME }}"
+          git config user.email "${{ env.USEREMAIL }}"
+          git remote set-url origin https://x-access-token:${{ env.TOKEN_REPO_SYNC }}@github.com/${{ env.USERNAME }}/estatistica.git
+
+      - name: Faz commit e push dos livros renderizados
+        working-directory: estatistica
+        run: |
+          git add book/
+          git commit -m "books: atualiza books a partir do repo:books" || echo "Nada a commitar"
+          git push --force origin book
+
+  cleanup:
+    needs: [estatistica, books]
+    runs-on: ubuntu-latest
+    steps:
+      - name: Deleta artefatos
+        uses: geekyeggo/delete-artifact@v5
+        with:
+          name: |
+            books_detectados
+            books_renderizados
+            github-pages
+
+  # pull_request_book_to_stag:
+  #   needs: [estatistica]
+  #   runs-on: ubuntu-latest
+  #   environment: 
+  #     name: ENVIRONMENT
+  #   env:
+  #     TOKEN_REPO_SYNC: ${{ secrets.TOKEN_REPO_SYNC }}
+  #     USERNAME: ${{ github.repository_owner }}
+  #     USEREMAIL: ${{ secrets.USEREMAIL }}
+  #   steps:
+  #     - name: Checkout branch book
+  #       uses: actions/checkout@v4
+  #       with:
+  #         repository: ${{ env.USERNAME }}/estatistica
+  #         ref: book
+  #         token: ${{ env.TOKEN_REPO_SYNC }}
+  #         fetch-depth: 0
+
+  #     - name: Cria Pull Request da branch book para stag
+  #       uses: peter-evans/create-pull-request@v7
+  #       with:
+  #         token: ${{ env.TOKEN_REPO_SYNC }}
+  #         commit-message: "books: atualiza books a partir do repo:books"
+  #         committer: "${{ env.USERNAME }} <${{ env.USEREMAIL }}>"
+  #         author: "${{ env.USERNAME }} <${{ env.USEREMAIL }}>"
+  #         signoff: false
+  #         branch: book
+  #         base: stag
+  #         delete-branch: false
+  #         title: "books: atualiza books: book → stag"
+  #         body: |
+  #           Sincronização automática dos livros renderizados da branch
+  #         labels: |
+  #           livros
+  #           quarto
+  #           front-end
