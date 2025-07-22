@@ -12,3 +12,7 @@
 	path = newshub
 	url = https://github.com/czargab18/newshub.git
 	branch = main
+
+[submodule "wss"]
+    path = wss
+    url = https://github.com/czargab18/wss.git
