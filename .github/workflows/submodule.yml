@@ -2,13 +2,17 @@ name: Submodules e outras ações
 # description: Atualiza submodules e outras ações relacionadas
 
 on:
-  workflow_dispatch: 
+  workflow_dispatch:
   repository_dispatch:
-      types: [submodule-books, submodule-newshub]
+    types: [submodule-books, submodule-newshub]
 
 jobs:
   books:
-    if: ${{ github.event.action == 'submodule-books' || github.event_name == 'workflow_dispatch' }}
+    if: ${{ github.event.action == 'submodule-books' ||
+      github.event.action == 'submodule-newshub' ||
+      github.event.action == 'submodule-backend' ||
+      github.event_name == 'workflow_dispatch'
+      }}
     runs-on: ubuntu-latest
     environment:
       name: ENVIRONMENT
@@ -22,8 +26,8 @@ jobs:
         with:
           token: ${{ env.TOKEN_REPO_SYNC }}
           ref: main
-          submodules: 'true'
-          path: 'estatistica'
+          submodules: "true"
+          path: "estatistica"
 
       - name: Configura usuário do git
         run: |
@@ -34,7 +38,7 @@ jobs:
         run: |
           git submodule update --remote books
           git add books
-      
+
       - name: Verificar submodulo 'books'
         run: |
           if [ cd estatistica/books ]; then
@@ -137,10 +141,10 @@ jobs:
       - name: Limpa diretórios de 'libs'
         working-directory: estatistica/books/artefatos_books/_docs
         run: |
-            remover="libs _libs _site site_libs delete .quarto/ index_files"
-            for nome in $remover; do
-              find . -type d -name "$nome" -exec rm -rf {} +
-            done
+          remover="libs _libs _site site_libs delete .quarto/ index_files"
+          for nome in $remover; do
+            find . -type d -name "$nome" -exec rm -rf {} +
+          done
 
       - name: Configura Python
         uses: actions/setup-python@v4
@@ -167,7 +171,7 @@ jobs:
           FOLDERS_LISTA: ${{ steps.lista.outputs.folders_lista }}
         run: |
           rsync -av --update books/artefatos_books/. estatistica/book/
-      
+
           - name: Set up authentication for git
               run: |
                 git config --global url."https://x-access-token:${{ secrets.TOKEN_REPO_SYNC }}@github.com/".insteadOf "https://github.com/"
@@ -224,6 +228,3 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.TOKEN_REPO_SYNC }}
         run: |
           gh pr create --base book --head "$BRANCH_NAME" --title "books: atualização dos livros renderizados" --body "atualização automática dos livros renderizados pelo workflow."
-
-
-
