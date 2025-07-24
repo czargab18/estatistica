@@ -15,11 +15,11 @@ Este documento orienta agentes de IA (Copilot, Claude, Cursor, etc.) para máxim
 - **sd/**: Diretório de dados estruturados (imagens, vídeos, JSONs). Siga a estrutura exemplificada em `sd/README.md`.
 
 ## Convenções e Padrões
-- Scripts de automação e build geralmente em Python, Bash ou PowerShell. Priorize Python moderno e scripts utilitários.
-- Componentização: Sempre que possível, reutilize componentes de `ac/components/` e siga os marcadores HTML para inclusão automática.
-- Estrutura de dados e assets segue padrões de subpastas por tipo e contexto (ex: `sd/images/br/banners/`).
-- Exportação/importação de dados em CSV para apps, com formato padronizado e validação de menções (SS, MS, MM, MI, II, SR, TR, SF).
-- Documentação e exemplos de uso estão nos diversos `README.md` espalhados pelo projeto — consulte antes de criar novos fluxos.
+ - Sempre que usar IA para gerar ou modificar código, marque explicitamente no início do arquivo ou bloco com um comentário, exemplo:
+   - Python: `# Código gerado/assistido por IA`
+   - HTML: `<!-- Código gerado/assistido por IA -->`
+   - Markdown: `<!-- IA -->`
+   - Outros formatos: adapte o comentário conforme a sintaxe.
 
 ## Workflows de Desenvolvimento
 - Para build de livros: use Quarto, scripts Python e R. Veja `books/build/` e `books/run/`.
