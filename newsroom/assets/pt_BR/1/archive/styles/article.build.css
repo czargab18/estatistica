@@ -1,0 +1,215 @@
+html,
+body[class*="body-article"] {
+  width: 100%;
+}
+
+body[class*="body-article"],
+main[class$="main-article"],
+article[class="article"] {
+  margin: 0;
+  padding: 0;
+  width: max-content;
+  max-width: 2560px;
+  margin: 0 auto;
+}
+
+body[class*="body-article"] {
+  min-width: 320px;
+  font-size: 17px;
+  line-height: 1.4705882353;
+  font-weight: 400;
+  letter-spacing: -0.022em;
+  font-family: "SF Pro Text", "SF Pro Icons", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+  background-color: var(--sk-body-background-color, rgb(255, 255, 255));
+  color: var(--sk-body-text-color, rgb(29, 29, 31));
+  font-style: normal;
+}
+
+body[class*="body-article"] figure,
+body[class*="body-article"] figcaption {
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --sk-body-text-color: rgb(29, 29, 31);
+  --sk-headline-text-color: rgb(29, 29, 31);
+  --sk-body-background-color: rgb(255, 255, 255);
+  --sk-body-font-stack: text;
+  --sk-default-stacked-margin: 0.4em;
+  --sk-paragraph-plus-element-margin: 0.8em;
+  --sk-headline-plus-first-element-margin: 0.8em;
+  --sk-headline-plus-headline-margin: 0.4em;
+  --sk-paragraph-plus-headline-margin: 1.6em;
+
+  /* conteudo */
+  --r-width-article-page: 980px;
+}
+
+main[class$="main-article"] {
+  margin: 0 auto;
+  max-width: 2560px;
+  width: max-content;
+}
+
+main[class$="main-article"] article[class="article"] {
+  display: block;
+  margin: 0 auto;
+  width: var(--r-width-article-page);
+  margin-top: 52px;
+}
+
+article[class="article"] div[class$="component"] {
+  margin-top: 44px;
+  margin-bottom: 44px;
+}
+
+article[class="article"] div[class="category component"] {
+  margin-bottom: 20px;
+  margin-top: 52px;
+}
+
+@media only screen and (min-width: 1441px) {
+  article[class="article"] div[class$="component"] {
+    margin-inline-start: auto;
+    margin-inline-end: auto;
+    width: var(--r-width-article-page);
+  }
+}
+
+article[class="article"] div[class$="component"] {
+  margin-inline-start: auto;
+  margin-inline-end: auto;
+  width: var(--r-width-article-page);
+}
+
+article[class="article"] div[class$="component"] div[class="component-content"] {
+  margin-inline-start: auto;
+  margin-inline-end: auto;
+  width: 653px;
+}
+
+article[class="article"] div[class$="component"] div[class="component-content"] div[class="category-eyebrow"] {
+  font-size: 12px;
+  line-height: 1.3333733333;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  font-family: "SF Pro Text", "SF Pro Icons", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+}
+
+article[class="article"] div[class$="component"] div[class="category-eyebrow"] span[class="category-eyebrow-category"] {
+  text-transform: uppercase;
+  color: #6e6e73;
+  border-color: #6e6e73;
+}
+
+article[class="article"] div[class$="component"] div[class="category-eyebrow"] span[class="category-eyebrow-category"],
+article[class="article"] div[class$="component"] div[class="category-eyebrow"] span[class="category-eyebrow-date"] {
+  display: block;
+}
+
+.category-eyebrow-date {
+  color: #6e6e73;
+}
+.category-eyebrow-date {
+  font-size: 14px;
+  line-height: 1.2857742857;
+  font-weight: 600;
+  letter-spacing: -0.016em;
+  font-family: "SF Pro Text", "SF Pro Icons", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+}
+.category-eyebrow-category,
+.category-eyebrow-date {
+  display: block;
+}
+
+article[class="article"] div[class^="pagetitle"] {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+article[class="article"] div[class^="pagetitle"] h1[class="hero-headline"] {
+  font-size: 48px;
+  line-height: 1.0834933333;
+  font-weight: 700;
+  letter-spacing: -0.003em;
+  font-family: "SF Pro Display", "SF Pro Icons", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+article[class="article"] div[class="article-header"],
+article[class="article"] div[class="article-header"] div[class^="article-subhead"] {
+  font-size: 24px;
+  line-height: 1.1666666667;
+  font-weight: 500;
+  letter-spacing: 0.009em;
+  font-family: "SF Pro Display", "SF Pro Icons", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+  margin-top: 20px;
+  margin-bottom: 0;
+}
+
+article[class="article"] section :is(h1, h2, h3, h4, h5, h6),
+article[class="article"] section :is(p, span, div, figure, figcaption) {
+  width: 653px;
+  margin: 0 auto;
+}
+
+article[class="article"] section figure {
+  position: relative;
+  width: 980px;
+  max-width: 100%;
+  height: max-content;
+  margin: 0 auto;
+  margin-top: 44px;
+  margin-bottom: 44px;
+}
+
+article[class="article"] figure img {
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+}
+
+@media (max-width: 1000px) {
+  article[class="article"] section figure {
+    width: 100%;
+    max-width: 100%;
+  }
+}
+
+article[class="article"] figure figcaption {
+  position: relative;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  color: #6e6e73;
+  font-size: 12px;
+  line-height: 1.3333733333;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  font-family: "SF Pro Text", "SF Pro Icons", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+  margin: 0 auto;
+  margin-top: 16px;
+}
+
+article[class="article"] section h2,
+article[class="article"] section .pagebody-header {
+  font-size: 24px;
+  line-height: 1.1666666667;
+  font-weight: 700;
+  letter-spacing: 0.009em;
+  font-family: "SF Pro Display", "SF Pro Icons", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+  margin-bottom: 16px;
+  margin-top: 52px;
+  font-weight: 600;
+  color: var(--sk-headline-text-color, rgb(29, 29, 31));
+}
+
+article[class="article"] section p {
+  font-size: 19px;
+  line-height: 1.4211026316;
+  font-weight: 400;
+  letter-spacing: 0.012em;
+  font-family: "SF Pro Display", "SF Pro Icons", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+}
