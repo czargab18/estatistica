@@ -30,19 +30,12 @@ jobs:
       - name: Renderiza artigos Quarto
         run: |
           mkdir -p newsroom/article
-          quarto render article/artigo.qmd --to html --output-dir newsroom/article
-          for file in build/article/*.md; do
-            if [ -f "$file" ]; then
-              quarto render "$file" --to html --output-dir newsroom/article
-            fi
-          done
+          quarto render article/ --to html --output-dir newsroom/article
 
       - name: Copia assets para publicação
         run: |
           mkdir -p newsroom/assets
           cp -r newsroom/assets/* newsroom/assets/
-          mkdir -p newsroom/assets_apple
-          cp -r newsroom/assets_apple/* newsroom/assets_apple/
 
       - name: Copia templates para publicação
         run: |
