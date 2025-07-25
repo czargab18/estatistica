@@ -1,5 +1,9 @@
+main [data-module-template="noticias"] {
+  display: none !important;
+}
+
 .main [data-module-template="noticias"] {
-   all: initial;
+   all: unset;
 }
 .main [data-module-template="noticias"],
 .main [data-module-template="noticias"] .standalone-module,
