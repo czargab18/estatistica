@@ -47,16 +47,16 @@ jobs:
             exit 1
           fi
 
-      - name: Detectar e nomes dos livros alterados
+      - name: Detectar e salvar nomes dos livros alterados
         working-directory: estatistica/books
         run: |
           git fetch
-          git diff --name-only HEAD @{u} \
+          PASTAS=$(git diff --name-only HEAD @{u} \
             | grep -E '^build/[A-Z]{3}[0-9]{4}/.*\.(yml|qmd)$' \
             | sed -E 's|^(build/[A-Z]{3}[0-9]{4}).*|\1|' \
-            | sort -u > ../pastas_livros_alterados.txt
-          cat ../pastas_livros_alterados.txt
-        # Detectar livros
+            | sort -u | tr '\n' ' ')
+          echo "PASTAS_LIVROS_ALTERADOS=$PASTAS" >> $GITHUB_OUTPUT
+
 
       - name: Identifica arquivos alterados
         # Identifica arquivos alterados
@@ -115,3 +115,4 @@ jobs:
 
       - name: Cria Pull Request para branch book
         # Cria Pull Request para branch book
+
