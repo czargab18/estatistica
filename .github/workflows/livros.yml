@@ -121,9 +121,11 @@ jobs:
           git commit -m "books: atualiza livros renderizados via 'estatistica'." || echo "Nada a commitar"
           git push origin main
 
-      - name: Garante que a branch book existe e faz checkout
-        id: garante_branch_book
-        # Garante que a branch book existe e faz checkout
+      - name: Copiar arquivos para estatistica/book
+        id: sincronizar_livros_renderizados
+        working-directory: estatistica
+        run: |
+          rsync -av --update books/_book/ estatistica/book/
 
       - name: Configura credenciais do Git
         id: configura_credenciais_git
