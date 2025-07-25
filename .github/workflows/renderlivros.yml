@@ -10,7 +10,7 @@ jobs:
   books:
     runs-on: ubuntu-latest
     environment:
-      name: ENVIRONMENT
+      name: github-pages
     env:
       USEREMAIL: ${{ secrets.USEREMAIL }}
       USERNAME: ${{ github.repository_owner }}
