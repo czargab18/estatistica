@@ -107,21 +107,19 @@ jobs:
           python -m pip install --upgrade pip
           pip install -r run/requirements.txt
 
-      - name: Corrigir links para GitHub Pages - Books
-        id: corrige_links_github_pages_books
-        # Corrigir links para GitHub Pages - Books
+      - name: Automação de Links com Python
+        working-directory: estatistica/books/
+        id: automacao_links_books_python
+        run: |
+          python run/cleanBooks.py --base-dir _book/
 
-      - name: Sincronizar pasta 'artefatos_books' com 'estatistica/book'
-        id: sincroniza_artefatos_books
-        # Sincronizar pasta 'artefatos_books' com 'estatistica/book'
-
-      # - name: Commitar alterações de 'estatistica/books'
-      #   id: commita_alteracoes_books
-      #   working-directory: estatistica
-      #   run: |
-      #     git add .
-      #     git commit -m "Atualiza submodulos e aplica ações do workflow" || echo "Nada a commitar"
-      #     git push origin main
+      - name: Commitar alterações de 'estatistica/books'
+        id: commita_alteracoes_books
+        working-directory: estatistica/books
+        run: |
+          git add _books
+          git commit -m "books: atualiza livros renderizados via 'estatistica'." || echo "Nada a commitar"
+          git push origin main
 
       - name: Garante que a branch book existe e faz checkout
         id: garante_branch_book
