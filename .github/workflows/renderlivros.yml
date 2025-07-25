@@ -41,7 +41,7 @@ jobs:
 
       - name: Verificar submodulo 'books'
         id: verifica_submodulo_books
-        working-directory: estatistica/books
+        working-directory: estatistica
         run: |
           if [ cd books ]; then
             echo "Submodule 'books' updated successfully."
