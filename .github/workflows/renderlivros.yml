@@ -1,4 +1,4 @@
-name: Submodules e outras ações
+name: Atualiza submodules e renderiza livros
 # description: Atualiza submodules e outras ações relacionadas
 
 on:
