@@ -37,12 +37,18 @@ jobs:
           mkdir -p newsroom/assets
           cp -r newsroom/assets/* newsroom/assets/
 
-      - name: Copia templates para publicação
+      - name: Copia templates HTML para publicação
         run: |
           mkdir -p newsroom/templates/artigo/html
           cp -r templates/artigo/html/* newsroom/templates/artigo/html/
+
+      - name: Copia templates Quarto para publicação
+        run: |
           mkdir -p newsroom/templates/artigo/quarto
           cp -r templates/artigo/quarto/* newsroom/templates/artigo/quarto/
+
+      - name: Copia templates Global para publicação
+        run: |
           mkdir -p newsroom/templates/global
           cp -r templates/global/* newsroom/templates/global/
 
