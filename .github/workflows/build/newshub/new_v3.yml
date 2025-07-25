@@ -4,9 +4,7 @@ on:
   workflow_dispatch:
   push:
     branches: [main]
-    paths: [
-      "**/artigo.qmd"
-    ]
+    paths: ["**/artigo.qmd"]
 
 permissions:
   contents: write
@@ -84,3 +82,33 @@ jobs:
         uses: actions/deploy-pages@v4
         with:
           artifact_name: github-pages
+
+  renderizar:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout do repositório
+        uses: actions/checkout@v4
+
+      - name: Instala Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: "3.13"
+
+      - name: Instala dependências do Python
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r run/requirements.txt
+
+      - name: Configura Quarto
+        uses: quarto-dev/quarto-actions/setup@v2
+
+      - name: Renderiza notícias Quarto
+        run: |
+          mkdir -p newsroom
+          quarto render article/ --to html --output-dir newsroom
+
+      - name: Salva artefato renderizado
+        uses: actions/upload-artifact@v4
+        with:
+          name: newsroom_renderizados
+          path: newsroom
