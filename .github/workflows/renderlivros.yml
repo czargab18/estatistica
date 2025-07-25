@@ -34,6 +34,7 @@ jobs:
 
       - name: Atualiza submodules books e backend
         id: atualiza_submodulos_books_backend
+        working-directory: estatistica
         run: |
           git submodule update --remote books backend
           git add books backend
