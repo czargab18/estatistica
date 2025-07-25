@@ -1,1 +1,66 @@
 name: news_v3
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths: ["build/newshub/**/*.qmd", "build/newshub/**/*.yml", "build/newshub/*.html", "build/newshub/*.bib", ".github/workflows/*newshub*.yml"]
+
+permissions:
+  contents: write
+  pull-requests: read
+  pages: write
+  id-token: write
+
+jobs:
+  build-news:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout do repositório
+        uses: actions/checkout@v4
+
+      - name: Instala dependências do Python
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r run/requirements.txt
+
+      - name: Configura Quarto
+        uses: quarto-dev/quarto-actions/setup@v2
+
+      - name: Renderiza notícias Quarto
+        run: |
+          mkdir -p newsroom
+          for folder in $(ls build/newshub); do
+            if [ -d "build/newshub/$folder" ]; then
+              quarto render "build/newshub/$folder" --to html --execute --output-dir "newsroom/$folder"
+            fi
+          done
+
+      - name: Publica notícias
+        run: |
+          # Adicione comandos para publicar em czargab18.github.io/newshub/
+          echo "Publicando notícias..."
+
+      - name: Commit e push das alterações
+        run: |
+          git config --global user.name "github-actions"
+          git config --global user.email "github-actions@github.com"
+          git add newsroom/*
+          git commit -m "Atualiza notícias renderizadas" || echo "Nada para commitar"
+          git push
+
+      - name: Sincroniza arquivos via API
+        run: |
+          # Adicione comandos para notificar o repositório estatistica.pro via API
+          echo "Sincronizando arquivos..."
+
+      - name: Salva artefato para GitHub Pages
+        uses: actions/upload-pages-artifact@v3
+        with:
+          name: github-pages
+          path: "./newsroom"
+
+      - name: Faz deploy para GitHub Pages - News
+        uses: actions/deploy-pages@v4
+        with:
+          artifact_name: github-pages
