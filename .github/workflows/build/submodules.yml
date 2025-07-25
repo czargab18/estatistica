@@ -19,6 +19,7 @@ jobs:
           echo "Evento: ${{ github.event_name }}"
       
       - name: Detectar tipo de disparo
+        if: github.event_name == 'repository_dispatch'
         run: |
           if [ "${{ github.event.action }}" == "submodule-books" ]; then
             echo "Disparo por submodule-books"
