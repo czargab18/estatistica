@@ -83,11 +83,15 @@ jobs:
 
       - name: Limpa diretórios de 'libs'
         id: limpa_libs
-        working-directory: estatistica/books/_books
+        working-directory: estatistica/books
         if: ${{ steps.detectar_livros_alterados.outputs.PASTAS_LIVROS_ALTERADOS != '' }}
-        run: |       
-          LIBS = [libs site_libs _libs _site delete _books index_files .quarto .gitignore]
-
+        run: |
+          LIBS="libs site_libs _libs _site delete _books index_files"
+          for PASTA in $(echo "${{ steps.detectar_livros_alterados.outputs.PASTAS_LIVROS_ALTERADOS }}"); do
+            for DIR in $LIBS; do
+              find "$PASTA" -type d -name "$DIR" -exec rm -rf {} +
+            done
+          done
 
       - name: Configura Python
         id: configura_python
