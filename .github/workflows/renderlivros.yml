@@ -10,7 +10,7 @@ jobs:
   books:
     runs-on: ubuntu-latest
     environment:
-      name: ENVIRONMENT
+      name: github-pages
     env:
       USEREMAIL: ${{ secrets.USEREMAIL }}
       USERNAME: ${{ github.repository_owner }}
@@ -38,6 +38,7 @@ jobs:
         run: |
           git submodule update --remote books backend
           git add books backend
+          git submodule foreach git fetch
 
       - name: Verificar submodulo 'books'
         id: verifica_submodulo_books
@@ -45,7 +46,6 @@ jobs:
         run: |
           if [ cd books ]; then
             echo "Submodule 'books' updated successfully."
-            git fetch
           else
             echo "Submodule 'books' update failed."
             exit 1
