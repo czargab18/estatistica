@@ -139,6 +139,14 @@ jobs:
             git checkout book
           fi
 
+      - name: Commitar alterações de 'estatistica'
+        id: commita_alteracoes_book
+        working-directory: estatistica
+        run: |
+          git add book
+          git commit -m "book: atualiza livros renderizados via 'estatistica'." || echo "Nada a commitar"
+          git push origin book
+
       - name: Instala GitHub CLI
         id: instala_github_cli
         # Instala GitHub CLI
