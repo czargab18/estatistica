@@ -4,7 +4,9 @@ on:
   workflow_dispatch:
   push:
     branches: [main]
-    paths: ["build/newshub/**/*.qmd", "build/newshub/**/*.yml", "build/newshub/*.html", "build/newshub/*.bib", ".github/workflows/*newshub*.yml"]
+    paths: [
+      "**/artigo.qmd"
+    ]
 
 permissions:
   contents: write
@@ -27,19 +29,37 @@ jobs:
       - name: Configura Quarto
         uses: quarto-dev/quarto-actions/setup@v2
 
-      - name: Renderiza notícias Quarto
+      - name: Renderiza artigos Quarto
         run: |
-          mkdir -p newsroom
-          for folder in $(ls build/newshub); do
-            if [ -d "build/newshub/$folder" ]; then
-              quarto render "build/newshub/$folder" --to html --execute --output-dir "newsroom/$folder"
+          mkdir -p newsroom/article
+          quarto render article/artigo.qmd --to html --output-dir newsroom/article
+          # Renderiza também artigos em build/article se existirem
+          for file in build/article/*.md; do
+            if [ -f "$file" ]; then
+              quarto render "$file" --to html --output-dir newsroom/article
             fi
           done
 
+      - name: Copia assets para publicação
+        run: |
+          mkdir -p newsroom/assets
+          cp -r newsroom/assets/* newsroom/assets/
+          mkdir -p newsroom/assets_apple
+          cp -r newsroom/assets_apple/* newsroom/assets_apple/
+
+      - name: Copia templates para publicação
+        run: |
+          mkdir -p newsroom/templates/artigo/html
+          cp -r templates/artigo/html/* newsroom/templates/artigo/html/
+          mkdir -p newsroom/templates/artigo/quarto
+          cp -r templates/artigo/quarto/* newsroom/templates/artigo/quarto/
+          mkdir -p newsroom/templates/global
+          cp -r templates/global/* newsroom/templates/global/
+
       - name: Publica notícias
         run: |
-          # Adicione comandos para publicar em czargab18.github.io/newshub/
           echo "Publicando notícias..."
+          # Adicione comandos para deploy externo se necessário
 
       - name: Commit e push das alterações
         run: |
@@ -51,8 +71,8 @@ jobs:
 
       - name: Sincroniza arquivos via API
         run: |
-          # Adicione comandos para notificar o repositório estatistica.pro via API
           echo "Sincronizando arquivos..."
+          # Adicione comandos para notificar o repositório estatistica.pro via API
 
       - name: Salva artefato para GitHub Pages
         uses: actions/upload-pages-artifact@v3
