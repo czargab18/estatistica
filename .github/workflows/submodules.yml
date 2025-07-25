@@ -24,7 +24,10 @@ jobs:
             echo "Disparo por submodule-books"
           elif [ "${{ github.event.action }}" == "submodule-newshub" ]; then
             echo "Disparo por submodule-newshub"
+          elif [ "${{ github.event.action }}" == "submodule-backend" ]; then
+            echo "Disparo por submodule-backend"
+          elif [ "${{ github.event.action }}" == "submodule-wss" ]; then
+            echo "Disparo por submodule-wss"
           else
             echo "Outro tipo de disparo: ${{ github.event.action }}"
           fi
-
