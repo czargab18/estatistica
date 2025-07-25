@@ -29,10 +29,19 @@ jobs:
 
       - name: Renderiza livros Quarto
         run: |
+          mkdir -p _docs
           for folder in $(ls build); do
             if [ -d "build/$folder" ]; then
               quarto render "build/$folder" --to html --execute --output-dir "_docs/$folder"
             fi
+          done
+
+      - name: Substitui livros antigos por novos renderizados
+        run: |
+          mkdir -p book
+          for folder in $(ls _docs); do
+            rm -rf "book/$folder"
+            mv "_docs/$folder" "book/$folder"
           done
 
       - name: Corrige links para GitHub Pages - Books
