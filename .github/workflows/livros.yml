@@ -149,17 +149,18 @@ jobs:
 
       - name: Instala GitHub CLI
         id: instala_github_cli
-        # Instala GitHub CLI
-
-      - name: Cria branch temporária para PR
-        id: cria_branch_temporaria_pr
-        # Cria branch temporária para PR
-
-      - name: Faz commit e push dos livros renderizados na branch temporária
-        id: commit_push_livros_branch_temporaria
-        # Faz commit e push dos livros renderizados na branch temporária
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y gh
 
       - name: Cria Pull Request para branch book
         id: cria_pull_request_book
-        # Cria Pull Request para branch book
+        working-directory: estatistica
+        run: |
+          gh auth login --with-token < ${{ secrets.GITHUB_TOKEN }}
+          gh pr create \
+            --base main \
+            --head book \
+            --title "Atualiza livros renderizados" \
+            --body "Atualização automática dos livros renderizados via workflow."
 
