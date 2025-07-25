@@ -1,0 +1,29 @@
+# Código gerado/assistido por IA
+name: Submodules Dispatch
+
+on:
+  workflow_dispatch:
+  repository_dispatch:
+    types: [submodule-books, submodule-newshub, submodule-backend, submodule-wss]
+
+
+jobs:
+  print-repo:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Print repositório que ativou a action
+        run: |
+          echo "Action ativada pelo repositório: ${{ github.event.repository.full_name }}"
+          echo "Event type recebido: ${{ github.event.action }}"
+          case "${{ github.event.action }}" in
+            atualiza-backend)
+              echo "Submódulo: backend" ;;
+            atualiza-books)
+              echo "Submódulo: books" ;;
+            atualiza-newshub)
+              echo "Submódulo: newshub" ;;
+            atualiza-wss)
+              echo "Submódulo: wss" ;;
+            *)
+              echo "Submódulo não identificado" ;;
+          esac
