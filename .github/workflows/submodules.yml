@@ -20,5 +20,11 @@ jobs:
       
       - name: Detectar tipo de disparo
         run: |
-          if [ "${{ github.event_name }}" == "repository_dispatch" ]; then
-            echo "Disparo por repository_dispatch"
+          if [ "${{ github.event.action }}" == "submodule-books" ]; then
+            echo "Disparo por submodule-books"
+          elif [ "${{ github.event.action }}" == "submodule-newshub" ]; then
+            echo "Disparo por submodule-newshub"
+          else
+            echo "Outro tipo de disparo: ${{ github.event.action }}"
+          fi
+
