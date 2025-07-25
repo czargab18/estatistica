@@ -33,11 +33,11 @@ jobs:
           git config --global user.name "${{ env.USERNAME }}"
           git config --global user.email "${{ env.USEREMAIL }}"
 
-      - name: Atualiza submodule books
-        id: atualiza_submodulo_books
+      - name: Atualiza submodules books e backend
+        id: atualiza_submodulos_books_backend
         run: |
-          git submodule update --remote books
-          git add books
+          git submodule update --remote books backend
+          git add books backend
 
       - name: Verificar submodulo 'books'
         id: verifica_submodulo_books
@@ -83,7 +83,7 @@ jobs:
 
       - name: Limpa diretórios de 'libs'
         id: limpa_libs
-        working-directory: estatistica/books
+        working-directory: estatistica/books/_books
         if: ${{ steps.detectar_livros_alterados.outputs.PASTAS_LIVROS_ALTERADOS != '' }}
         run: |
           LIBS="libs site_libs _libs _site delete _books index_files"
@@ -95,11 +95,17 @@ jobs:
 
       - name: Configura Python
         id: configura_python
-        # Configura Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.x'
+          check-latest: true
 
       - name: Instalar dependencias do Python
+        working-directory: estatistica/books/
         id: instala_dependencias_python
-        # Instalar dependencias do Python
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r run/requirements.txt
 
       - name: Corrigir links para GitHub Pages - Books
         id: corrige_links_github_pages_books
