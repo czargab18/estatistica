@@ -36,11 +36,16 @@ jobs:
             fi
           done
 
-      - name: Substitui livros antigos por novos renderizados
+      - name: Remove versões antigas dos livros renderizados
         run: |
           mkdir -p book
           for folder in $(ls _docs); do
             rm -rf "book/$folder"
+          done
+
+      - name: Move novos livros renderizados para book
+        run: |
+          for folder in $(ls _docs); do
             mv "_docs/$folder" "book/$folder"
           done
 
