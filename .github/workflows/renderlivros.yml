@@ -40,14 +40,14 @@ jobs:
           git add books backend
           git submodule foreach git fetch
 
-      - name: Verificar submodulo 'books'
+      - name: Verificar submódulo 'books'
         id: verifica_submodulo_books
         working-directory: estatistica
         run: |
-          if [ cd books ]; then
-            echo "Submodule 'books' updated successfully."
+          if cd books; then
+            echo "Submódulo 'books' atualizado com sucesso."
           else
-            echo "Submodule 'books' update failed."
+            echo "Falha ao atualizar o submódulo 'books'."
             exit 1
           fi
 
