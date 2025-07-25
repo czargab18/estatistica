@@ -4,15 +4,11 @@ name: Submodules e outras ações
 on:
   workflow_dispatch:
   repository_dispatch:
-    types: [submodule-books, submodule-newshub]
+    types: [submodule-books]
 
 jobs:
   books:
-    if: ${{ github.event.action == 'submodule-books' ||
-      github.event.action == 'submodule-newshub' ||
-      github.event.action == 'submodule-backend' ||
-      github.event_name == 'workflow_dispatch'
-      }}
+    if: ${{ github.event.action == 'submodule-books' }}
     runs-on: ubuntu-latest
     environment:
       name: ENVIRONMENT
