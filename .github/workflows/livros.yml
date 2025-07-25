@@ -57,23 +57,15 @@ jobs:
             | sort -u | tr '\n' ' ')
           echo "PASTAS_LIVROS_ALTERADOS=$PASTAS" >> $GITHUB_OUTPUT
 
-
-      - name: Identifica arquivos alterados
-        # Identifica arquivos alterados
-
-      - name: Extrai nomes de subdiretórios dos arquivos alterados
-        # Extrai nomes de subdiretórios dos arquivos alterados
-
-      - name: Monta lista única de subdiretórios e exporta output
-        # Monta lista única de subdiretórios e exporta output
-
-      - name: Move livros detectados para artefatos_books
-        # Move livros detectados para artefatos_books
-
       - name: Configura Quarto
-        # Configura Quarto
+        uses: quarto-dev/quarto-actions/setup@v2
 
-      - name: Renderiza livros Quarto
+      - name: Versão do Quarto
+        run: quarto --version 
+
+      - name: Renderiza livros Modificados
+        run: |
+
         # Renderiza livros Quarto
 
       - name: Limpa diretórios de 'libs'
