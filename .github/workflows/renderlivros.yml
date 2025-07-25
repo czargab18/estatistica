@@ -63,9 +63,11 @@ jobs:
           PADRAO='^build/[A-Z]{3}[0-9]{4}/'
           PASTAS=$(git diff --name-only origin/main \
             | grep -E "$PADRAO" \
-            | sed -E 's|^(build/[A-Z]{3}[0-9]{4}).*|\1|' \
-            | sort -u | tr '\n' ' ')
-          echo "PASTAS_LIVROS_ALTERADOS=$PASTAS" >> $GITHUB_OUTPUT
+            | sed -E 's|^build/([A-Z]{3}[0-9]{4})(/.*)?|\1|' \
+            | sort -u)
+          echo "PASTAS_LIVROS_ALTERADOS<<EOF" >> $GITHUB_OUTPUT
+          echo "$PASTAS" >> $GITHUB_OUTPUT
+          echo "EOF" >> $GITHUB_OUTPUT
 
       - name: Configura Quarto
         id: configura_quarto
