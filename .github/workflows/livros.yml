@@ -127,9 +127,17 @@ jobs:
         run: |
           rsync -av --update books/_book/ estatistica/book/
 
-      - name: Configura credenciais do Git
-        id: configura_credenciais_git
-        # Configura credenciais do Git
+      - name: Garante que a branch 'book' existe e faz checkout
+        working-directory: estatistica
+        run: |
+          if ! git rev-parse --verify book >/dev/null 2>&1; then
+            git checkout --orphan book
+            git rm -rf .
+            git commit --allow-empty -m "Cria branch book inicial"
+            git push origin book
+          else
+            git checkout book
+          fi
 
       - name: Instala GitHub CLI
         id: instala_github_cli
