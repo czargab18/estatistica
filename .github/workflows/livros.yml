@@ -19,6 +19,7 @@ jobs:
       GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
     steps:
       - name: Checkout estatistica
+        id: checkout_estatistica
         uses: actions/checkout@v4
         with:
           token: ${{ env.GITHUB_TOKEN }}
@@ -27,16 +28,19 @@ jobs:
           submodules: "true"
 
       - name: Configura usuário do git
+        id: configura_usuario_git
         run: |
           git config --global user.name "${{ env.USERNAME }}"
           git config --global user.email "${{ env.USEREMAIL }}"
 
       - name: Atualiza submodule books
+        id: atualiza_submodulo_books
         run: |
           git submodule update --remote books
           git add books
 
       - name: Verificar submodulo 'books'
+        id: verifica_submodulo_books
         working-directory: estatistica/books
         run: |
           if [ cd books ]; then
@@ -48,9 +52,10 @@ jobs:
           fi
 
       - name: Detectar e salvar nomes dos livros alterados
+        id: detectar_livros_alterados
         working-directory: estatistica/books
         run: |
-          git fetch
+          PADRAO='^build/[A-Z]{3}[0-9]{4}$'
           PASTAS=$(git diff --name-only HEAD @{u} \
             | grep -E '^build/[A-Z]{3}[0-9]{4}/.*\.(yml|qmd)$' \
             | sed -E 's|^(build/[A-Z]{3}[0-9]{4}).*|\1|' \
@@ -58,32 +63,46 @@ jobs:
           echo "PASTAS_LIVROS_ALTERADOS=$PASTAS" >> $GITHUB_OUTPUT
 
       - name: Configura Quarto
+        id: configura_quarto
         uses: quarto-dev/quarto-actions/setup@v2
 
       - name: Versão do Quarto
+        id: versao_quarto
         run: quarto --version 
 
       - name: Renderiza livros Modificados
+        id: renderiza_livros_modificados
+        if: ${{ steps.detectar_livros_alterados.outputs.PASTAS_LIVROS_ALTERADOS != '' }}
         run: |
-
+          PASTAS=$(echo "${{ steps.detectar_livros_alterados.outputs.PASTAS_LIVROS_ALTERADOS }}" | tr ' ' '\n')
+          for PASTA in $PASTAS; do
+            echo "Renderizando livros na pasta: $PASTA"
+            quarto render "$PASTA" --to html --execute --output-dir "../../_docs/${folder}"
+          done
         # Renderiza livros Quarto
 
       - name: Limpa diretórios de 'libs'
+        id: limpa_libs
         # Limpa diretórios de 'libs'
 
       - name: Configura Python
+        id: configura_python
         # Configura Python
 
       - name: Instalar dependencias do Python
+        id: instala_dependencias_python
         # Instalar dependencias do Python
 
       - name: Corrigir links para GitHub Pages - Books
+        id: corrige_links_github_pages_books
         # Corrigir links para GitHub Pages - Books
 
       - name: Sincronizar pasta 'artefatos_books' com 'estatistica/book'
+        id: sincroniza_artefatos_books
         # Sincronizar pasta 'artefatos_books' com 'estatistica/book'
 
       # - name: Commitar alterações de 'estatistica/books'
+      #   id: commita_alteracoes_books
       #   working-directory: estatistica
       #   run: |
       #     git add .
@@ -91,20 +110,26 @@ jobs:
       #     git push origin main
 
       - name: Garante que a branch book existe e faz checkout
+        id: garante_branch_book
         # Garante que a branch book existe e faz checkout
 
       - name: Configura credenciais do Git
+        id: configura_credenciais_git
         # Configura credenciais do Git
 
       - name: Instala GitHub CLI
+        id: instala_github_cli
         # Instala GitHub CLI
 
       - name: Cria branch temporária para PR
+        id: cria_branch_temporaria_pr
         # Cria branch temporária para PR
 
       - name: Faz commit e push dos livros renderizados na branch temporária
+        id: commit_push_livros_branch_temporaria
         # Faz commit e push dos livros renderizados na branch temporária
 
       - name: Cria Pull Request para branch book
+        id: cria_pull_request_book
         # Cria Pull Request para branch book
 
