@@ -68,6 +68,7 @@ jobs:
           echo "PASTAS_LIVROS_ALTERADOS<<EOF" >> $GITHUB_OUTPUT
           echo "$PASTAS" >> $GITHUB_OUTPUT
           echo "EOF" >> $GITHUB_OUTPUT
+          echo "Pastas alteradas: $(echo "$PASTAS" | tr '\n' ' ')"
 
       - name: Configura Quarto
         id: configura_quarto
@@ -80,7 +81,7 @@ jobs:
       - name: Renderiza livros Modificados
         working-directory: estatistica/books
         id: renderiza_livros_modificados
-        if: ${{ steps.detectar_livros_alterados.outputs.PASTAS_LIVROS_ALTERADOS != '' }}
+        
         run: |
           PASTAS=$(echo "${{ steps.detectar_livros_alterados.outputs.PASTAS_LIVROS_ALTERADOS }}" | tr ' ' '\n')
           for PASTA in $PASTAS; do
@@ -91,7 +92,7 @@ jobs:
       - name: Limpa diretórios de 'libs'
         id: limpa_libs
         working-directory: estatistica/books/_books
-        if: ${{ steps.detectar_livros_alterados.outputs.PASTAS_LIVROS_ALTERADOS != '' }}
+        
         run: |
           LIBS="libs site_libs _libs _site delete _books index_files"
           for PASTA in $(echo "${{ steps.detectar_livros_alterados.outputs.PASTAS_LIVROS_ALTERADOS }}"); do
