@@ -192,14 +192,36 @@
     ]
   },
   {
-    "objectID": "postextuais/apendice/formulas/cap1.html",
-    "href": "postextuais/apendice/formulas/cap1.html",
-    "title": "Formulas do Capitulo 1",
-    "section": "",
-    "text": "Distribuição Normal Não Padrão\n\n\n\n\\[\n  f(x) = \\frac{1}{\\sigma \\sqrt{2\\pi}} \\exp\\left( -\\frac{(x - \\mu)^2}{2\\sigma^2} \\right)\n\\]",
+    "objectID": "postextuais/apendice/ementa.html#estrutura-do-curso-de-estatística-básica",
+    "href": "postextuais/apendice/ementa.html#estrutura-do-curso-de-estatística-básica",
+    "title": "Programa de Estatística Básica",
+    "section": "Estrutura do Curso de Estatística Básica",
+    "text": "Estrutura do Curso de Estatística Básica\n\n1. Visão Geral do Curso\n\nSlide\nVisão Geral do Curso (vídeo, 6m)\n\n\n\n2. Conceitos Iniciais\n\nSlides - Conceitos Iniciais\nConceitos Iniciais (vídeo, 20m)\n\n\n\n3. Séries Estatísticas\n\nSlides - Séries Estatísticas\nSéries Estatísticas (vídeo, 5m)\n\n\n\n4. Gráficos\n\nSlides - Gráficos\nGráficos (vídeo, 15m)\nDiagrama de Pareto (vídeo, 6m)\n\n\n\n5. Distribuição de Frequências\n\nSlides - Distribuição de Frequências\nDistribuição de Frequências (vídeo, 18m)\nExercícios - Distribuição de Frequências\nResoluções Exercícios - Distribuição de Frequências\n\n\n\n6. Histograma e Polígono de Frequências\n\nSlides - Histograma e Polígono de Frequências\nHistograma e Polígono de Frequências (vídeo, 5m)\n\n\n\n7. Medidas de Posição\n\nSlides - Medidas de Posição\nMédia Aritmética (vídeo, 9m)\nMédia Ponderada (vídeo, 6m)\nExercícios - Média Aritmética e Média Ponderada\nResoluções Exercícios - Média Aritmética e Média Ponderada\nMediana (vídeo, 20m)\nExercícios - Mediana\nResoluções Exercícios - Mediana\nModa (vídeo, 8m)\nExercícios - Moda\nResoluções Exercícios - Moda\n\n\n\n8. Medidas Separatrizes\n\nSlides - Medidas Separatrizes\nMedidas Separatrizes (vídeo, 14m)\nMedidas Separatrizes no Excel (vídeo, 5m)\nExercícios - Medidas Separatrizes\nResoluções Exercícios - Medidas Separatrizes\n\n\n\n9. Probabilidade\n\nSlides - Probabilidade\nProbabilidade - Conceitos Iniciais (vídeo, 7m)\nProbabilidade Frequentista (vídeo, 13m)\nProbabilidade - Teoremas da Soma (vídeo, 20m)\nProbabilidade - Teoremas do Produto (vídeo, 18m)\nExercícios - Probabilidade\nResoluções Exercícios - Probabilidade\n\n\n\n10. Medidas de Dispersão\n\nSlides - Medidas de Dispersão\nVariância (vídeo, 10m)\nDesvio Padrão (vídeo, 18m)\nCoeficiente de Variação (vídeo, 5m)\nExercícios Propostos - Medidas de Dispersão\nResolução Exercícios Propostos - Medidas de Dispersão\n\n\n\n11. Distribuição Binomial\n\nSlides - Distribuição Binomial\nDistribuição Binomial (vídeo, 24m)\nExercícios - Distribuição Binomial\nResoluções Exercícios - Distribuição Binomial\n\n\n\n12. Medidas de Associação\n\nSlides - Medidas de Associação\nMedidas de Associação (vídeo, 30m)\nExercícios - Medidas de Associação\nResoluções Exercícios - Medidas de Associação\n\n\n\n13. Análise de Regressão Linear Simples\n\nSlides - Análise de Regressão Linear Simples\nAnálise de Regressão Linear Simples (vídeo, 36m)\nExercícios - Análise de Regressão Linear Simples\nResoluções Exercícios - Análise de Regressão Linear Simples\n\n\n\n14. Distribuição Normal\n\nSlides - Distribuição Normal\nTabela Distribuição Normal Padrão\nDistribuição Normal (vídeo, 33m)\nAproximação da Distribuição Binomial pela Distribuição Normal (vídeo, 3m)\nFunção Distribuição Normal no Excel (vídeo, 3m)\nExercícios - Distribuição Normal\nResoluções Exercícios - Distribuição Normal\n\n\n\n15. Teorema do Limite Central - TLC\n\nSlides - Teorema do Limite Central - TLC\nTeorema do Limite Central - TLC (vídeo, 22m)\nExercícios - Teorema do Limite Central\nResoluções Exercícios - Teorema do Limite Central\n\n\n\n16. Estimação\n\nSlides - Estimação\nTabela Distribuição t\nPopulação Normal e Desvio Padrão Conhecido (vídeo, 19m)\nDistribuição t (vídeo, 13m)\nComo Escolher a Distribuição Adequada (vídeo, 4m)\nEstimativa Intervalar Para Proporções Populacionais (vídeo, 11m)\nExercícios Propostos - Estimação\nResoluções Exercícios Propostos - Estimação\n\n\n\n17. Teste de Hipóteses Com Uma Amostra\n\nSlides - Teste de Hipóteses\nTeste de Hipóteses - Introdução e Distribuição Normal (vídeo, 29m)\nTeste de Hipóteses - Distribuição t (vídeo, 7m)\nTeste de Hipóteses para Proporções (vídeo, 11m)\nExercícios - Teste de Hipóteses\nResoluções Exercícios - Teste de Hipóteses\nErrata Correção Questão 6\n\n\n\n18. Referências Bibliográficas\n\nReferências Bibliográficas",
     "crumbs": [
       "Anexos",
-      "<span class='chapter-number'>9</span>  <span class='chapter-title'>Formulas do Capitulo 1</span>"
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Programa de Estatística Básica</span>"
+    ]
+  },
+  {
+    "objectID": "postextuais/apendice/formulas/formulas.html",
+    "href": "postextuais/apendice/formulas/formulas.html",
+    "title": "Formulas de Medidas Resumo",
+    "section": "",
+    "text": "Medidas de posição\nMedidas de dispersão\nQuantis empiricos\nBox Plot\nTransformações",
+    "crumbs": [
+      "Anexos",
+      "<span class='chapter-number'>9</span>  <span class='chapter-title'>Formulas de Medidas Resumo</span>"
+    ]
+  },
+  {
+    "objectID": "postextuais/apendice/formulas/formulas.html#medidas-de-posição",
+    "href": "postextuais/apendice/formulas/formulas.html#medidas-de-posição",
+    "title": "Formulas de Medidas Resumo",
+    "section": "",
+    "text": "Média aritmética (dados não-agrupados\n\\[\\bar{x} = \\frac{\\sum_{i=1}^n x_i}{n}\\]\nMédia aritmética (dados agrupados): \\[\\bar{x} = \\frac{\\sum_{i=1}^k f_i x_i}{\\sum_{i=1}^k f_i}\\]\nMédia geral \\[\\bar{x}_g = \\frac{\\sum_{j=1}^m n_j \\bar{x}_j}{\\sum_{j=1}^m n_j}\\]\nMédia harmônica (Dados não agrupados): \\[H = \\frac{n}{\\sum_{i=1}^n \\frac{1}{x_i}}\\]\nMédia harmônica (dados agrupados) \\[H = \\frac{\\sum_{i=1}^k f_i}{\\sum_{i=1}^k \\frac{f_i}{x_i}}\\]\nMediana\n\nDados não agrupados: Para dados ordenados: se \\(n\\) ímpar, \\[Md = x_{\\left(\\frac{n+1}{2}\\right)}\\] se \\(n\\) par, \\[Md = \\frac{x_{\\left(\\frac{n}{2}\\right)} + x_{\\left(\\frac{n}{2}+1\\right)}}{2}\\]\nDados agrupados: \\[Md = L + \\frac{\\left(\\frac{N}{2} - F_{ant}\\right)}{f_{Md}} \\cdot h\\] onde: \\(L\\) = limite inferior da classe mediana, \\(N\\) = total de observações, \\(F_{ant}\\) = frequência acumulada antes da classe mediana, \\(f_{Md}\\) = frequência da classe mediana, \\(h\\) = amplitude da classe.\n\nQuartis\n\nDados não agrupados: \\[Q_k = x_{\\left(\\frac{k(n+1)}{4}\\right)}\\], onde \\(k=1,2,3\\)\nDados agrupados: \\[Q_k = L + \\frac{\\left(\\frac{kN}{4} - F_{ant}\\right)}{f_{Q_k}} \\cdot h\\]\n\nDecis\n\nDados não agrupados: \\[D_k = x_{\\left(\\frac{k(n+1)}{10}\\right)}\\], onde \\(k=1,2,...,9\\)$\nDados agrupados: \\[D_k = L + \\frac{\\left(\\frac{kN}{10} - F_{ant}\\right)}{f_{D_k}} \\cdot h\\]\n\nPercentis\n\nDados não agrupados: \\[P_k = x_{\\left(\\frac{k(n+1)}{100}\\right)}\\], onde \\(k=1,2,...,99\\)$\nDados agrupados: \\[P_k = L + \\frac{\\left(\\frac{kN}{100} - F_{ant}\\right)}{f_{P_k}} \\cdot h\\]\n\nModa\n\nDados não agrupados: valor mais frequente.\nDados agrupados: \\[Mo = L + \\frac{(f_1 - f_0)}{(2f_1 - f_0 - f_2)} \\cdot h\\]\nonde: \\(L\\) = limite inferior da classe modal, \\(f_1\\) = frequência da classe modal, \\(f_0\\) = frequência da classe anterior, \\(f_2\\) = frequência da classe posterior, \\(h\\) = amplitude da classe.",
+    "crumbs": [
+      "Anexos",
+      "<span class='chapter-number'>9</span>  <span class='chapter-title'>Formulas de Medidas Resumo</span>"
     ]
   }
 ]
