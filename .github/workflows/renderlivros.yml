@@ -25,6 +25,11 @@ jobs:
           ref: main
           path: "estatistica"
           submodules: "true"
+          fetch-depth: 0
+      - name: Inicializa submódulos
+        id: inicializa_submodulos
+        working-directory: estatistica
+        run: git submodule update --init --recursive
 
       - name: Configura usuário do git
         id: configura_usuario_git
@@ -44,10 +49,10 @@ jobs:
         id: verifica_submodulo_books
         working-directory: estatistica
         run: |
-          if cd books; then
-            echo "Submódulo 'books' atualizado com sucesso."
+          if [ -d books ]; then
+            echo "Submódulo 'books' está presente."
           else
-            echo "Falha ao atualizar o submódulo 'books'."
+            echo "Submódulo 'books' não encontrado!"
             exit 1
           fi
 
@@ -56,7 +61,7 @@ jobs:
         working-directory: estatistica/books
         run: |
           PADRAO='^build/[A-Z]{3}[0-9]{4}/'
-          PASTAS=$(git diff --name-only HEAD @{u} \
+          PASTAS=$(git diff --name-only origin/main \
             | grep -E "$PADRAO" \
             | sed -E 's|^(build/[A-Z]{3}[0-9]{4}).*|\1|' \
             | sort -u | tr '\n' ' ')
