@@ -55,9 +55,9 @@ jobs:
         id: detectar_livros_alterados
         working-directory: estatistica/books
         run: |
-          PADRAO='^build/[A-Z]{3}[0-9]{4}$'
+          PADRAO='^build/[A-Z]{3}[0-9]{4}/'
           PASTAS=$(git diff --name-only HEAD @{u} \
-            | grep -E '^build/[A-Z]{3}[0-9]{4}/.*\.(yml|qmd)$' \
+            | grep -E "$PADRAO" \
             | sed -E 's|^(build/[A-Z]{3}[0-9]{4}).*|\1|' \
             | sort -u | tr '\n' ' ')
           echo "PASTAS_LIVROS_ALTERADOS=$PASTAS" >> $GITHUB_OUTPUT
@@ -71,19 +71,23 @@ jobs:
         run: quarto --version 
 
       - name: Renderiza livros Modificados
+        working-directory: estatistica/books
         id: renderiza_livros_modificados
         if: ${{ steps.detectar_livros_alterados.outputs.PASTAS_LIVROS_ALTERADOS != '' }}
         run: |
           PASTAS=$(echo "${{ steps.detectar_livros_alterados.outputs.PASTAS_LIVROS_ALTERADOS }}" | tr ' ' '\n')
           for PASTA in $PASTAS; do
             echo "Renderizando livros na pasta: $PASTA"
-            quarto render "$PASTA" --to html --execute --output-dir "../../_docs/${folder}"
+            quarto render build/$PASTA --to html --execute --output-dir "../../books/${folder}"
           done
-        # Renderiza livros Quarto
 
       - name: Limpa diretórios de 'libs'
         id: limpa_libs
-        # Limpa diretórios de 'libs'
+        working-directory: estatistica/books/_books
+        if: ${{ steps.detectar_livros_alterados.outputs.PASTAS_LIVROS_ALTERADOS != '' }}
+        run: |       
+          LIBS = [libs site_libs _libs _site delete _books index_files .quarto .gitignore]
+
 
       - name: Configura Python
         id: configura_python
