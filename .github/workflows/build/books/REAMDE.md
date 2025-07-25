@@ -13,4 +13,6 @@ Esta action é acionada quando um arquivo é editado no repositório, e ela exec
 
 5. **Commit e push das alterações**: Se houver alterações nos livros, a action faz um commit e push dessas alterações para o repositório remoto.
 
-6. **Sincronização de arquivos**: o repositório `books` notifica, via API, o repositório `estatistica.pro` para que puxe as alterações do submodulo, sinconize os arquivos entre os repositórios e atualize o site [estatistica.pro/book/](https://estatistica.pro/book/).
+6. **Sincronização de arquivos**: o repositório `books` notifica, via API, o repositório `estatistica.pro` para que puxe as alterações do submodulo, sinconize os arquivos entre os repositórios e atualize apágina do site [estatistica.pro/book/](https://estatistica.pro/book/).
+
+Os livros renderizados ficaram em uma pasta `book` dentro do repositório `books`.
