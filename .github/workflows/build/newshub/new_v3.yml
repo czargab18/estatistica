@@ -1,0 +1,82 @@
+name: news_v3
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths: ["**/artigo.qmd"]
+
+permissions:
+  contents: write
+  pull-requests: read
+  pages: write
+  id-token: write
+
+jobs:
+  build-news:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout do repositório
+        uses: actions/checkout@v4
+
+      - name: Instala dependências do Python
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r run/requirements.txt
+
+      - name: Configura Quarto
+        uses: quarto-dev/quarto-actions/setup@v2
+
+      - name: Renderiza artigos Quarto
+        run: |
+          mkdir -p newsroom/article
+          quarto render article/ --to html --output-dir newsroom/article
+
+      - name: Copia assets para publicação
+        run: |
+          mkdir -p newsroom/assets
+          cp -r newsroom/assets/* newsroom/assets/
+
+      - name: Copia templates HTML para publicação
+        run: |
+          mkdir -p newsroom/templates/artigo/html
+          cp -r templates/artigo/html/* newsroom/templates/artigo/html/
+
+      - name: Copia templates Quarto para publicação
+        run: |
+          mkdir -p newsroom/templates/artigo/quarto
+          cp -r templates/artigo/quarto/* newsroom/templates/artigo/quarto/
+
+      - name: Copia templates Global para publicação
+        run: |
+          mkdir -p newsroom/templates/global
+          cp -r templates/global/* newsroom/templates/global/
+
+      - name: Publica notícias
+        run: |
+          echo "Publicando notícias..."
+          # Adicione comandos para deploy externo se necessário
+
+      - name: Commit e push das alterações
+        run: |
+          git config --global user.name "github-actions"
+          git config --global user.email "github-actions@github.com"
+          git add newsroom/*
+          git commit -m "Atualiza notícias renderizadas" || echo "Nada para commitar"
+          git push
+
+      - name: Sincroniza arquivos via API
+        run: |
+          echo "Sincronizando arquivos..."
+          # Adicione comandos para notificar o repositório estatistica.pro via API
+
+      - name: Salva artefato para GitHub Pages
+        uses: actions/upload-pages-artifact@v3
+        with:
+          name: github-pages
+          path: "./newsroom"
+
+      - name: Faz deploy para GitHub Pages - News
+        uses: actions/deploy-pages@v4
+        with:
+          artifact_name: github-pages
