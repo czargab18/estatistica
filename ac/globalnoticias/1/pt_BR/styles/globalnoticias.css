@@ -1,6 +1,4 @@
-main [data-module-template="noticias"] {
-  display: none !important;
-}
+@charset "UTF-8";
 
 .main [data-module-template="noticias"] {
    all: unset;
