@@ -1,0 +1,23 @@
+# Código gerado/assistido por IA
+name: notify_books
+
+on:
+  push:
+    branches: [main]
+    paths: ["books/**/*.qmd", "books/**/*.yml", "books/*.html", "books/*.bib"]
+
+jobs:
+  notifica-books:
+    runs-on: ubuntu-latest
+    environment:
+      name: ENVIRONMENT
+    env:
+      TOKEN: ${{ secrets.TOKEN_REPO_SYNC }}
+    steps:
+      - name: Dispara 'repository_dispatch' no books
+        run: |
+          curl -X POST \
+            -H "Accept: application/vnd.github+json" \
+            -H "Authorization: Bearer $TOKEN" \
+            https://api.github.com/repos/czargab18/books/dispatches \
+            -d '{"event_type": "atualiza-books"}'

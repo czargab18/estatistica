@@ -1,0 +1,65 @@
+name: books_v5
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths: ["build/**/*.qmd", "build/**/*.yml", "build/*.html", "build/*.bib", ".github/workflows/*books*.yml"]
+
+permissions:
+  contents: write
+  pull-requests: read
+  pages: write
+  id-token: write
+
+jobs:
+  build-books:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout do repositório
+        uses: actions/checkout@v4
+
+      - name: Instala dependências do Python
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r run/requirements.txt
+
+      - name: Configura Quarto
+        uses: quarto-dev/quarto-actions/setup@v2
+
+      - name: Renderiza livros Quarto
+        run: |
+          mkdir -p _docs
+          for folder in $(ls build); do
+            if [ -d "build/$folder" ]; then
+              quarto render "build/$folder" --to html --execute --output-dir "_docs/$folder"
+            fi
+          done
+
+      - name: Remove versões antigas dos livros renderizados
+        run: |
+          mkdir -p book
+          for folder in $(ls _docs); do
+            rm -rf "book/$folder"
+          done
+
+      - name: Move novos livros renderizados para book
+        run: |
+          for folder in $(ls _docs); do
+            mv "_docs/$folder" "book/$folder"
+          done
+
+      - name: Corrige links para GitHub Pages - Books
+        run: |
+          python run/cleanBooks.py --base-dir _docs/ --base-ac build/ac/books
+
+      - name: Salva artefato para GitHub Pages
+        uses: actions/upload-pages-artifact@v3
+        with:
+          name: github-pages
+          path: "./_docs"
+
+      - name: Faz deploy para GitHub Pages - Books
+        uses: actions/deploy-pages@v4
+        with:
+          artifact_name: github-pages
