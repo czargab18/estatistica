@@ -4,8 +4,7 @@ name: Submodules Dispatch
 on:
   workflow_dispatch:
   repository_dispatch:
-    types: [submodule-books, submodule-newshub, submodule-backend, submodule-wss]
-
+    types: [atualizar-books, atualizar-newshub, atualizar-backend, atualizar-wss]
 
 jobs:
   disparo:
@@ -27,8 +26,8 @@ jobs:
             echo "Disparo por submodule-newshub"
           elif [ "${{ github.event.action }}" == "submodule-backend" ]; then
             echo "Disparo por submodule-backend"
-          elif [ "${{ github.event.action }}" == "submodule-wss" ]; then
-            echo "Disparo por submodule-wss"
+          elif [ "${{ github.event.action }}" == "atualizar-wss" ]; then
+            echo "Disparo por atualizar-wss"
           else
             echo "Outro tipo de disparo: ${{ github.event.action }}"
           fi
