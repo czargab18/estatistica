@@ -1,0 +1,343 @@
+name: "Renderizar Livros - Quarto"
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths: ["build/**/*.qmd", "build/**/*.yml", "build/index.html", "build/ac/*.html"]
+  pull_request:
+    branches: [ma]
+    paths: ["build/**/*.qmd", "build/**/*.yml", "build/index.html", "build/ac/*.html"]
+
+permissions:
+  contents: write
+  pull-requests: read
+  pages: write
+  id-token: write
+
+jobs:
+  detectar:
+    runs-on: ubuntu-latest
+    if: github.event_name == 'push' ||
+      github.event_name == 'workflow_dispatch' ||
+      (github.event_name == 'pull_request' && github.event.pull_request.merged == true)
+    environment:
+      name: ENVIRONMENT
+    env:
+      TOKEN_REPO_SYNC: ${{ secrets.TOKEN_REPO_SYNC }}
+      USEREMAIL: ${{ secrets.USEREMAIL }}
+      USERNAME: ${{ github.repository_owner }}
+    outputs:
+      FOLDERS_LISTA: ${{ steps.lista.outputs.folders_lista }}
+    steps:
+      - name: Clona o Repositório BOOKS
+        uses: actions/checkout@v4
+        with:
+          repository: ${{ env.USERNAME  }}/books
+          token: ${{ secrets.TOKEN_REPO_SYNC }}
+          path: books
+          ref: main
+          fetch-depth: 30
+
+      - name: Identifica arquivos alterados
+        id: arquivos-alterados
+        run: |
+          cd books
+          echo "Detectando arquivos para evento: ${{ github.event_name }}"
+
+          # Pull Request - usa dados do evento diretamente
+          if [[ "${{ github.event_name }}" == "pull_request" ]]; then
+            echo "Processando pull request..."
+            # Usa git diff com SHA do evento (ignora se não disponível)
+            if [[ -n "${{ github.event.pull_request.head.sha || '' }}" ]] && [[ -n "${{ github.event.pull_request.base.sha || '' }}" ]]; then
+              git diff --name-only ${{ github.event.pull_request.base.sha }} ${{ github.event.pull_request.head.sha }} > arquivos.txt 2>/dev/null || touch arquivos.txt
+            else
+              # Fallback usando merge-base
+              git diff --name-only $(git merge-base HEAD origin/main 2>/dev/null || echo HEAD~1) HEAD > arquivos.txt 2>/dev/null || touch arquivos.txt
+            fi
+
+          # Push - usa dados do evento diretamente  
+          elif [[ "${{ github.event_name }}" == "push" ]]; then
+            echo "Processando push..."
+            # Usa before/after do evento (ignora se não disponível)
+            if [[ -n "${{ github.event.before || '' }}" ]] && [[ "${{ github.event.before }}" != "0000000000000000000000000000000000000000" ]]; then
+              git diff --name-only ${{ github.event.before }} ${{ github.sha }} > arquivos.txt 2>/dev/null || touch arquivos.txt
+            else
+              # Fallback para último commit
+              git diff --name-only HEAD~1 HEAD > arquivos.txt 2>/dev/null || touch arquivos.txt
+            fi
+
+          # Outros eventos - busca todos os arquivos relevantes
+          else
+            echo "Processando outros eventos..."
+            find build -name "*.qmd" -o -name "*.yml" 2>/dev/null | grep -E '^build/.*\.(qmd|yml)$' > arquivos.txt || touch arquivos.txt
+          fi
+
+          # Remove linhas vazias e duplicatas
+          if [[ -f arquivos.txt ]]; then
+            grep -v '^$' arquivos.txt 2>/dev/null | sort -u > temp_arquivos.txt || touch temp_arquivos.txt
+            mv temp_arquivos.txt arquivos.txt
+          else
+            touch arquivos.txt
+          fi
+
+          echo "Arquivos detectados:"
+          cat arquivos.txt || echo "Nenhum arquivo encontrado"
+          echo "Total: $(wc -l < arquivos.txt 2>/dev/null || echo 0) arquivos"
+
+      - name: Extrai nomes de subdiretórios dos arquivos alterados
+        id: extrair_subdirs
+        run: |
+          cd books
+          FILES_NAMES=$(cat arquivos.txt)
+          echo "$FILES_NAMES" | grep -oE '^build/([A-Z]{3}[0-9]{4})/' | cut -d'/' -f2 > subdirs.txt
+
+      - name: Monta lista única de subdiretórios e exporta output
+        id: lista
+        run: |
+          cd books
+          FOLDERS_NAMES=$(cat subdirs.txt | sort | uniq | xargs)
+          echo "folders_lista=$FOLDERS_NAMES" >> $GITHUB_OUTPUT
+
+      - name: Move livros detectados para _books
+        if: steps.lista.outputs.folders_lista != ''
+        env:
+          FOLDERS_LISTA: ${{ steps.lista.outputs.folders_lista }}
+        run: |
+          mkdir -p _books
+          cd books
+          for folder in $FOLDERS_LISTA; do
+            if [ -d "build/${folder}" ]; then
+              mv "build/${folder}" ../_books/
+            fi
+          done
+
+      - name: Exporta Books como Artefato
+        if: steps.lista.outputs.folders_lista != ''
+        uses: actions/upload-artifact@v4
+        with:
+          name: books_detectados
+          path: _books
+
+  renderizar:
+    needs: [detectar]
+    runs-on: ubuntu-latest
+    if: needs.detectar.outputs.FOLDERS_LISTA != ''
+    env:
+      FOLDERS_LISTA: ${{ needs.detectar.outputs.FOLDERS_LISTA }}
+    outputs:
+      BOOKS_RENDERIZADOS: ${{ steps.renderizar.outputs.books_renderizados }}
+
+    steps:
+      - name: Baixa artefato
+        uses: actions/download-artifact@v4
+        with:
+          name: books_detectados
+          path: _books
+
+      - name: Configura Quarto
+        uses: quarto-dev/quarto-actions/setup@v2
+
+      - name: Renderiza livros Quarto
+        env:
+          FOLDERS_LISTA: ${{ needs.detectar.outputs.FOLDERS_LISTA }}
+        run: |
+          set -e
+          cd _books
+          echo "$FOLDERS_LISTA" | tr ' ' '\n' | while read folder; do
+            if [ -d "${folder}" ]; then
+              echo "Renderizando livro: $folder"
+              quarto render "${folder}" --to html --execute --output-dir "../../_docs/${folder}"
+            else
+              echo "Pasta não encontrada: $folder"
+            fi
+          done
+
+      - name: Limpa diretórios '_docs/ac/site_libs' e '_docs/delete'
+        run: |
+          cd _docs
+          rm -rf ac/site_libs
+          rm -rf delete
+
+      - name: Exporta livros renderizados
+        uses: actions/upload-artifact@v4
+        with:
+          name: books_renderizados
+          path: "./_docs"
+
+  backend:
+    needs: [renderizar]
+    runs-on: ubuntu-latest
+    if: needs.detectar.outputs.FOLDERS_LISTA != ''
+    environment:
+      name: ENVIRONMENT
+    env:
+      TOKEN_REPO_SYNC: ${{ secrets.TOKEN_REPO_SYNC }}
+      FOLDERS_LISTA: ${{ needs.detectar.outputs.FOLDERS_LISTA }}
+      USERNAME: ${{ github.repository_owner }}
+    steps:
+      - name: Configura Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: "3.13"
+
+      - name: Clona o Repositório BACKEND
+        uses: actions/checkout@v4
+        with:
+          repository: ${{ env.USERNAME  }}/backend
+          token: ${{ secrets.TOKEN_REPO_SYNC }}
+          path: backend
+          ref: main
+
+      - name: Instala pacote backend
+        run: |
+          set -e
+          pip install -e backend
+
+      - name: Baixa artefatos BOOKS RENDERIZADOS
+        uses: actions/download-artifact@v4
+        with:
+          name: books_renderizados
+          path: ./backend/_books/
+
+      - name: Automatiza livros (backend)
+        id: backend_books
+        run: |
+          set -e
+          python backend/tasks/actionbooks/renderbook.py 2>&1 | tee backend_output.log
+          if grep -i "warning\|error" backend_output.log; then
+            echo "Erros ou warnings detectados durante a execução do script!"
+            exit 1
+          fi
+
+      - name: Exporta atualizações dos livros renderizados
+        uses: actions/upload-artifact@v4
+        with:
+          name: books_backend
+          path: ./backend/_books/
+
+  sync_artefato:
+    needs: [backend]
+    runs-on: ubuntu-latest
+    environment:
+      name: ENVIRONMENT
+    env:
+      USEREMAIL: ${{ secrets.USEREMAIL }}
+      USERNAME: ${{ github.repository_owner }}
+    steps:
+      - name: Checkout da branch 'books'
+        uses: actions/checkout@v4
+        with:
+          ref: books
+          path: books
+          fetch-depth: 0
+
+      - name: Baixa artefato dos livros renderizados
+        uses: actions/download-artifact@v4
+        with:
+          name: books_backend
+          path: _books
+
+      - name: Sincroniza arquivos do artefato com a branch books
+        run: |
+          rsync -av --update _books/ books/
+
+      - name: Salva Artefato Completo
+        uses: actions/upload-artifact@v4
+        with:
+          name: artefatos_books
+          path: "books"
+
+  pages:
+    needs: [sync_artefato]
+    runs-on: ubuntu-latest
+    environment:
+      name: ENVIRONMENT
+    steps:
+      - name: Baixa Artefato para GitHub Pages
+        uses: actions/download-artifact@v4
+        with:
+          name: artefatos_books
+          path: "./"
+
+      - name: Salva Artefato para GitHub Pages
+        uses: actions/upload-pages-artifact@v3
+        with:
+          name: github-pages
+          path: "./"
+
+      - name: Faz deploy para GitHub Pages
+        uses: actions/deploy-pages@v4
+        with:
+          artifact_name: github-pages
+
+  estatistica:
+    needs: [sync_artefato]
+    runs-on: ubuntu-latest
+    if: needs.detectar.outputs.FOLDERS_LISTA != ''
+    environment:
+      name: ENVIRONMENT
+    env:
+      FOLDERS_LISTA: ${{ needs.detectar.outputs.FOLDERS_LISTA }}
+      USERNAME: ${{ github.repository_owner }}
+      USEREMAIL: ${{ secrets.USEREMAIL }}
+      TOKEN_REPO_SYNC: ${{ secrets.TOKEN_REPO_SYNC }}
+    steps:
+      - name: Clona o Repositório ESTATISTICA
+        uses: actions/checkout@v4
+        with:
+          ref: book
+          path: estatistica
+          fetch-depth: 0
+          repository: ${{ env.USERNAME }}/estatistica
+          token: ${{ secrets.TOKEN_REPO_SYNC }}
+
+      - name: Baixa artefato dos livros renderizados
+        uses: actions/download-artifact@v4
+        with:
+          name: artefatos_books
+          path: _books
+
+      - name: Garante que a branch book existe e faz checkout
+        working-directory: estatistica
+        run: |
+          if ! git rev-parse --verify book >/dev/null 2>&1; then
+            git checkout --orphan book
+            git rm -rf .
+            git commit --allow-empty -m "Cria branch book inicial"
+            git push origin book
+          else
+            git checkout book
+          fi
+
+      - name: Sincroniza arquivos do artefato com a branch book
+        run: |
+          rsync -av --update --delete _books/ estatistica/books/
+
+      - name: Configura credenciais do Git
+        working-directory: estatistica
+        run: |
+          git config user.name "${{ env.USERNAME }}"
+          git config user.email "${{ env.USEREMAIL }}"
+          git remote set-url origin https://x-access-token:${{ env.TOKEN_REPO_SYNC }}@github.com/${{ env.USERNAME }}/estatistica.git
+
+      - name: Faz commit e push dos livros renderizados
+        working-directory: estatistica
+        run: |
+          git add books/
+          git commit -m "books: atualiza books a partir do repo:books" || echo "Nada a commitar"
+          git push --force origin book
+
+  cleanup:
+    needs: [pages, estatistica]
+    runs-on: ubuntu-latest
+    steps:
+      - name: Deleta artefatos
+        uses: geekyeggo/delete-artifact@v5
+        with:
+          name: |
+            github-pages
+            books_renderizados
+            books_detectados
+            books_backend
+            artefatos_books

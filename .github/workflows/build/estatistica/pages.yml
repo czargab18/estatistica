@@ -1,0 +1,103 @@
+name: GitHub Pages
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: "0 0 16 * 1"
+  push:
+    branches: ["main"]
+    paths: [
+        # CONFIGURAÇÕES DO SITE
+        "**/.htaccess",
+        "**/CNAME",
+        # CONTEÚDO DO SITE
+        "**/*.html",
+        "**/*.css",
+        "**/*.js",
+        "**/*.png",
+        "**/*.jpeg",
+        "**/*.jpg",
+        "**/*.svg",
+        "**/*.gif",
+        "**/*.webp",
+        "**/*.bmp",
+        "**/*.ico",
+        "**/*.woff",
+        "**/*.woff2",
+        "**/*.ttf",
+        "**/*.eot",
+        "**/*.otf",
+        "**/*.json",
+        "**/*.xml",
+        "**/.gitignore",
+        # IGNORAR NO DEPLOY DO SITE
+        "!.github/",
+        "!.vscode/",
+        "!.git/",
+        "!.gitattributes",
+      ]
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: "pages"
+  cancel-in-progress: false
+jobs:
+  deploy:
+    environment:
+      name: github-pages
+    env:
+      url: ${{ vars.URL }}
+      USEREMAIL: ${{ secrets.USEREMAIL }}
+      USERNAME: ${{ github.repository_owner }}
+      TOKEN_REPO_SYNC: ${{ secrets.TOKEN_REPO_SYNC }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          repository: ${{ env.USERNAME }}/estatistica
+          token: ${{ env.TOKEN_REPO_SYNC }}
+          path: "estatistica"
+          ref: "main"
+
+      - name: Clonar submódulo 'wss'
+        uses: actions/checkout@v4
+        with:
+          repository: ${{ env.USERNAME }}/wss
+          token: ${{ env.TOKEN_REPO_SYNC }}
+          path: "wss"
+          ref: "main"
+
+      - name: Copiar arquivos modificados de wss para estatistica/wss
+        run: |
+          rsync -av --update wss/fonts.css estatistica/wss/
+          rsync -av --update wss/fonts estatistica/wss/
+
+      - name: Remover subpastas do 'deploy'
+        run: |
+          find . -type d \( -name "build" -o -name ".github" -o -name ".vscode" -o -name "README.md" \) -exec rm -rf {} +
+
+      - name: Setup Pages
+        uses: actions/configure-pages@v5
+
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: estatistica
+
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
+
+  cleanup:
+    needs: [deploy]
+    runs-on: ubuntu-latest
+    steps:
+      - name: Deleta artefatos
+        uses: geekyeggo/delete-artifact@v5
+        with:
+          name: |
+            github-pages
