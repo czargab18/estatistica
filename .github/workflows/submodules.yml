@@ -39,9 +39,10 @@ jobs:
 
       - name: Atualizar submodule 'books'
         working-directory: estatistica
+        env:
+          TOKEN: ${{ env.TOKEN }}
         run: |
-          git submodule init books
-          git submodule update books
+          git submodule update --init books
 
       - name: Garante que a branch 'book' existe e faz checkout
         working-directory: estatistica
