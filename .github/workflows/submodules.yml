@@ -16,7 +16,7 @@ env:
 
 jobs:
   books:
-    if: ${{ github.event_name == 'workflow_dispatch' || (github.event_name == 'repository_dispatch' && github.event.action == 'atualizar-books') }}
+    if: ${{ github.event_name == 'workflow_dispatch' || github.event.action == 'atualizar-books' }}
     runs-on: ubuntu-latest
     environment:
       name: ENVIRONMENT
