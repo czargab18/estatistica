@@ -5,19 +5,24 @@ on:
   workflow_dispatch:
   repository_dispatch:
     types: [atualizar-books, atualizar-newshub, atualizar-backend, atualizar-wss]
+env:
+  url: ${{ vars.URL }}
+  TOKEN: ${{ secrets.TOKEN_REPO_SYNC }}
+  USERNAME: ${{ github.repository_owner }}
+  USEREMAIL: ${{ secrets.USEREMAIL }}
 
 jobs:
   disparo:
     runs-on: ubuntu-latest
-    env:
-      USERNAME: ${{ github.repository_owner }}
-      TOKEN: ${{ secrets.TOKEN_REPO_SYNC }}
+    environment:
+      name: ENVIRONMENT
+
     steps:
       - name: Detectar evento de disparo
         run: |
           echo "Evento: ${{ github.event_name }}"
-      
-      - name: Detectar tipo de disparo
+
+      - name: Detectar Submodule que disparou
         if: github.event_name == 'repository_dispatch'
         run: |
           if [ "${{ github.event.action }}" == "atualizar-books" ]; then
