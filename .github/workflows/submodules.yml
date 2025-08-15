@@ -32,8 +32,8 @@ jobs:
       - name: Configura credenciais do Git
         working-directory: estatistica
         run: |
-          git config --global url."https://${{ secrets.GITHUB_TOKEN }}:x-oauth-basic@github.com/".insteadOf "https://github.com/"
-          git remote set-url origin https://${{ secrets.GITHUB_TOKEN }}:x-oauth-basic@github.com/${{ github.repository }}.git
+          git config --global url."https://${{ env.TOKEN }}:x-oauth-basic@github.com/".insteadOf "https://github.com/"
+          git remote set-url origin https://${{ env.TOKEN }}:x-oauth-basic@github.com/${{ github.repository }}.git
           git config user.name "${{ env.USERNAME }}"
           git config user.email "${{ env.USEREMAIL }}@users.noreply.github.com"
 
