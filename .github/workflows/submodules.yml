@@ -21,11 +21,12 @@ jobs:
     environment:
       name: ENVIRONMENT
     steps:
-      - name: Checkout Repositório
+      - name: Checkout
         uses: actions/checkout@v4
         with:
           repository: ${{ env.USERNAME }}/estatistica
           token: ${{ env.TOKEN }}
+          path: "estatistica"
           ref: "main"
 
       - name: Configura credenciais do Git
@@ -45,7 +46,7 @@ jobs:
         working-directory: estatistica
         run: |
           ORIGIN="books/book"
-          DESTINO="estatistica/books"
+          DESTINO="books"
           rsync -av --update "$DESTINO"/ "$ORIGIN"/ 
 
       - name: Faz commit e push dos livros renderizados
