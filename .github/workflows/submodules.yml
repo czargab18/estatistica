@@ -27,7 +27,9 @@ jobs:
           repository: ${{ env.USERNAME }}/estatistica
           token: ${{ env.TOKEN }}
           path: "estatistica"
-          ref: "main"
+          ref: "stag"
+          fetch-depth: 0
+          fetch-tags: true
 
       - name: Configura credenciais do Git
         working-directory: estatistica
@@ -56,6 +58,7 @@ jobs:
       - name: Faz commit e push dos livros renderizados
         working-directory: estatistica
         run: |
+          git checkout -B book
           git add book/
           git commit -m "book: atualiza 'livros' a partir do submodule:books" || echo "Nada a commitar"
           git push --force origin book
