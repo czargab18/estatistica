@@ -1,10 +1,13 @@
 # Código gerado/assistido por IA
 name: Submodules Dispatch
+description: 
+  Workflow para atualizar arquivos dos submódulos com o repositório Estatística.
 
 on:
   workflow_dispatch:
   repository_dispatch:
     types: [atualizar-books, atualizar-newshub, atualizar-backend, atualizar-wss]
+
 env:
   url: ${{ vars.URL }}
   TOKEN: ${{ secrets.TOKEN_REPO_SYNC }}
@@ -12,27 +15,27 @@ env:
   USEREMAIL: ${{ secrets.USEREMAIL }}
 
 jobs:
-  disparo:
+  books:
     runs-on: ubuntu-latest
     environment:
       name: ENVIRONMENT
-
     steps:
-      - name: Detectar evento de disparo
-        run: |
-          echo "Evento: ${{ github.event_name }}"
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          repository: ${{ env.USERNAME }}/estatistica
+          token: ${{ env.TOKEN }}
+          path: "estatistica"
+          ref: "main"
 
-      - name: Detectar Submodule que disparou
-        if: github.event_name == 'repository_dispatch'
+      - name: Atualizar submodule 'books'
+        working-directory: estatistica
         run: |
-          if [ "${{ github.event.action }}" == "atualizar-books" ]; then
-            echo "Disparo por atualizar-books"
-          elif [ "${{ github.event.action }}" == "atualizar-newshub" ]; then
-            echo "Disparo por atualizar-newshub"
-          elif [ "${{ github.event.action }}" == "atualizar-backend" ]; then
-            echo "Disparo por atualizar-backend"
-          elif [ "${{ github.event.action }}" == "atualizar-wss" ]; then
-            echo "Disparo por atualizar-wss"
-          else
-            echo "Outro tipo de disparo: ${{ github.event.action }}"
-          fi
+          git submodule init books
+          git submodule update books
+      
+      - name: Sincronizar pastas entre os repositórios
+        run: |
+          ORIGIN="books/book"
+          DESTINO="estatistica/books"
+          rsync -av --delete estatistica/books/ books/ --exclude=".git" --exclude=".github" --exclude=".vscode" --exclude="README.md"
