@@ -16,6 +16,7 @@ env:
 
 jobs:
   books:
+    if: ${{ github.event_name == 'workflow_dispatch' || (github.event_name == 'repository_dispatch' && github.event.action == 'atualizar-books') }}
     runs-on: ubuntu-latest
     environment:
       name: ENVIRONMENT
@@ -33,10 +34,37 @@ jobs:
         run: |
           git submodule init books
           git submodule update books
-      
+
+      - name: Garante que a branch 'book' existe e faz checkout
+        working-directory: estatistica
+        run: |
+          if ! git rev-parse --verify book >/dev/null 2>&1; then
+            git checkout --orphan book
+            git rm -rf .
+            git commit --allow-empty -m "Cria branch book inicial"
+            git push origin book
+          else
+            git checkout book
+          fi
+
+      - name: Configura credenciais do Git
+        working-directory: estatistica
+        run: |
+          git config user.name "${{ env.USERNAME }}"
+          git config user.email "${{ env.USEREMAIL }}"
+          git remote set-url origin https://x-access-token:${{ env.TOKEN }}@github.com/${{ env.USERNAME }}/estatistica.git
+
       - name: Sincronizar pastas entre os repositórios
+        working-directory: estatistica
         run: |
           ORIGIN="books/book"
           DESTINO="estatistica/books"
-          exclude=(".git" ".github" ".vscode" "README.md")
-          rsync -av --update "$DESTINO"/ "$ORIGIN"/ --exclude=".git" --exclude=".github" --exclude=".vscode" --exclude="README.md"
+          rsync -av --update "$DESTINO"/ "$ORIGIN"/ 
+
+      - name: Faz commit e push dos livros renderizados
+        working-directory: estatistica
+        run: |
+          git add book/
+          git commit -m "book: atualiza 'livros' a partir do submodule:books" || echo "Nada a commitar"
+          git push --force origin book
+
