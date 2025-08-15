@@ -39,8 +39,6 @@ jobs:
 
       - name: Atualizar submodule 'books'
         working-directory: estatistica
-        env:
-          TOKEN: ${{ env.TOKEN }}
         run: |
           git submodule update --init books
 
