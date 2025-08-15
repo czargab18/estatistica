@@ -66,9 +66,19 @@ jobs:
           submodules: true
           ref: "main"
 
+      - name: Atualizar submodule 'wss'
+        working-directory: estatistica
+        run: |
+          git submodule init wss
+          git submodule update wss
+
+
       - name: Remover subpastas do 'deploy'
         run: |
-          PASTAS=("build" ".github" ".vscode" "README.md", "templates", "assets_apple", "outros_books", "tests", "actions", "src")
+          PASTAS=(
+          "build", ".github", ".vscode", "templates", "assets_apple", "outros_books", "tests", "actions", "src"
+          "README.md", "LICENSE", "CONTRIBUTING.md", "CODE_OF_CONDUCT.md"
+          )
           for pasta in "${PASTAS[@]}"; do
             rm -rf "$pasta"
           done
