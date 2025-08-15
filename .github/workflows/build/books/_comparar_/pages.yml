@@ -1,4 +1,4 @@
-name: GitHub Pages
+name: GitHub Pages - Books
 on:
   workflow_dispatch:
   schedule:
@@ -47,29 +47,34 @@ concurrency:
 jobs:
   deploy:
     environment:
-      name: github-pages
+      name: ENVIRONMENT
     env:
       url: ${{ vars.URL }}
       USEREMAIL: ${{ secrets.USEREMAIL }}
       USERNAME: ${{ github.repository_owner }}
-      TOKEN_REPO_SYNC: ${{ secrets.TOKEN_REPO_SYNC }}
+      TOKEN: ${{ secrets.TOKEN_REPO_SYNC }}
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
         uses: actions/checkout@v4
         with:
-          repository: ${{ env.USERNAME }}/estatistica
-          token: ${{ env.TOKEN_REPO_SYNC }}
-          path: "estatistica"
+          repository: ${{ env.USERNAME }}/books
+          token: ${{ env.TOKEN }}
+          path: "books"
           ref: "main"
-          submodules: true
 
-      - name: Remover subpastas do 'deploy'
+      - name: Clonar submódulo 'wss'
+        uses: actions/checkout@v4
+        with:
+          repository: ${{ env.USERNAME }}/wss
+          token: ${{ env.TOKEN }}
+          path: "wss"
+          ref: "main"
+
+      - name: Adiciona 'fonts'
         run: |
-          PASTAS=("build" ".github" ".vscode" "README.md")
-          for pasta in "${PASTAS[@]}"; do
-            rm -rf "$pasta"
-          done
+          rsync -av --update wss/fonts.css books/book/wss/
+          rsync -av --update wss/fonts books/book/wss/
 
       - name: Setup Pages
         uses: actions/configure-pages@v5
@@ -77,11 +82,16 @@ jobs:
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: estatistica
+          path: books/book
+          name: github-pages
 
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          artifact_name: github-pages
+
 
   cleanup:
     needs: [deploy]
