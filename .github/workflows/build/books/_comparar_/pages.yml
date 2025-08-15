@@ -1,8 +1,8 @@
-name: GitHub Pages
+name: GitHub Pages - Books
 on:
   workflow_dispatch:
-  # schedule:
-  #   - cron: "0 0 16 * 1"
+  schedule:
+    - cron: "0 0 16 * 1"
   push:
     branches: ["main"]
     paths: [
@@ -44,44 +44,37 @@ permissions:
 concurrency:
   group: "pages"
   cancel-in-progress: false
-
-env:
-  url: ${{ vars.URL }}
-  TOKEN: ${{ secrets.TOKEN_REPO_SYNC }}
-  USERNAME: ${{ github.repository_owner }}
-  USEREMAIL: ${{ secrets.USEREMAIL }}
-
 jobs:
   deploy:
     environment:
       name: ENVIRONMENT
+    env:
+      url: ${{ vars.URL }}
+      USEREMAIL: ${{ secrets.USEREMAIL }}
+      USERNAME: ${{ github.repository_owner }}
+      TOKEN: ${{ secrets.TOKEN_REPO_SYNC }}
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
         uses: actions/checkout@v4
         with:
-          repository: ${{ env.USERNAME }}/estatistica
+          repository: ${{ env.USERNAME }}/books
           token: ${{ env.TOKEN }}
-          path: "estatistica"
-          submodules: true
+          path: "books"
           ref: "main"
 
-      - name: Atualizar submodule 'wss'
-        working-directory: estatistica
-        run: |
-          git submodule init wss
-          git submodule update wss
+      - name: Clonar submódulo 'wss'
+        uses: actions/checkout@v4
+        with:
+          repository: ${{ env.USERNAME }}/wss
+          token: ${{ env.TOKEN }}
+          path: "wss"
+          ref: "main"
 
-
-      - name: Remover subpastas do 'deploy'
+      - name: Adiciona 'fonts'
         run: |
-          PASTAS=(
-          "build", ".github", ".vscode", "templates", "assets_apple", "outros_books", "tests", "actions", "src"
-          "README.md", "LICENSE", "CONTRIBUTING.md", "CODE_OF_CONDUCT.md"
-          )
-          for pasta in "${PASTAS[@]}"; do
-            rm -rf "$pasta"
-          done
+          rsync -av --update wss/fonts.css books/book/wss/
+          rsync -av --update wss/fonts books/book/wss/
 
       - name: Setup Pages
         uses: actions/configure-pages@v5
@@ -89,11 +82,16 @@ jobs:
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: estatistica
+          path: books/book
+          name: github-pages
 
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          artifact_name: github-pages
+
 
   cleanup:
     needs: [deploy]

@@ -1,33 +1,70 @@
 # Código gerado/assistido por IA
 name: Submodules Dispatch
+description: 
+  Workflow para atualizar arquivos dos submódulos com o repositório Estatística.
 
 on:
   workflow_dispatch:
   repository_dispatch:
     types: [atualizar-books, atualizar-newshub, atualizar-backend, atualizar-wss]
 
+env:
+  url: ${{ vars.URL }}
+  TOKEN: ${{ secrets.TOKEN_REPO_SYNC }}
+  USERNAME: ${{ github.repository_owner }}
+  USEREMAIL: ${{ secrets.USEREMAIL }}
+
 jobs:
-  disparo:
+  books:
+    if: ${{ github.event_name == 'workflow_dispatch' || github.event.action == 'atualizar-books' }}
     runs-on: ubuntu-latest
-    env:
-      USERNAME: ${{ github.repository_owner }}
-      TOKEN: ${{ secrets.TOKEN_REPO_SYNC }}
+    environment:
+      name: ENVIRONMENT
     steps:
-      - name: Detectar evento de disparo
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          repository: ${{ env.USERNAME }}/estatistica
+          token: ${{ env.TOKEN }}
+          path: "estatistica"
+          ref: "main"
+
+      - name: Atualizar submodule 'books'
+        working-directory: estatistica
         run: |
-          echo "Evento: ${{ github.event_name }}"
-      
-      - name: Detectar tipo de disparo
-        if: github.event_name == 'repository_dispatch'
+          git submodule init books
+          git submodule update books
+
+      - name: Garante que a branch 'book' existe e faz checkout
+        working-directory: estatistica
         run: |
-          if [ "${{ github.event.action }}" == "atualizar-books" ]; then
-            echo "Disparo por atualizar-books"
-          elif [ "${{ github.event.action }}" == "atualizar-newshub" ]; then
-            echo "Disparo por atualizar-newshub"
-          elif [ "${{ github.event.action }}" == "atualizar-backend" ]; then
-            echo "Disparo por atualizar-backend"
-          elif [ "${{ github.event.action }}" == "atualizar-wss" ]; then
-            echo "Disparo por atualizar-wss"
+          if ! git rev-parse --verify book >/dev/null 2>&1; then
+            git checkout --orphan book
+            git rm -rf .
+            git commit --allow-empty -m "Cria branch book inicial"
+            git push origin book
           else
-            echo "Outro tipo de disparo: ${{ github.event.action }}"
+            git checkout book
           fi
+
+      - name: Configura credenciais do Git
+        working-directory: estatistica
+        run: |
+          git config user.name "${{ env.USERNAME }}"
+          git config user.email "${{ env.USEREMAIL }}"
+          git remote set-url origin https://x-access-token:${{ env.TOKEN }}@github.com/${{ env.USERNAME }}/estatistica.git
+
+      - name: Sincronizar pastas entre os repositórios
+        working-directory: estatistica
+        run: |
+          ORIGIN="books/book"
+          DESTINO="estatistica/books"
+          rsync -av --update "$DESTINO"/ "$ORIGIN"/ 
+
+      - name: Faz commit e push dos livros renderizados
+        working-directory: estatistica
+        run: |
+          git add book/
+          git commit -m "book: atualiza 'livros' a partir do submodule:books" || echo "Nada a commitar"
+          git push --force origin book
+
