@@ -1,8 +1,8 @@
 name: GitHub Pages
 on:
   workflow_dispatch:
-  schedule:
-    - cron: "0 0 16 * 1"
+  # schedule:
+  #   - cron: "0 0 16 * 1"
   push:
     branches: ["main"]
     paths: [
@@ -44,29 +44,31 @@ permissions:
 concurrency:
   group: "pages"
   cancel-in-progress: false
+
+env:
+  url: ${{ vars.URL }}
+  TOKEN: ${{ secrets.TOKEN_REPO_SYNC }}
+  USERNAME: ${{ github.repository_owner }}
+  USEREMAIL: ${{ secrets.USEREMAIL }}
+
 jobs:
   deploy:
     environment:
-      name: github-pages
-    env:
-      url: ${{ vars.URL }}
-      USEREMAIL: ${{ secrets.USEREMAIL }}
-      USERNAME: ${{ github.repository_owner }}
-      TOKEN_REPO_SYNC: ${{ secrets.TOKEN_REPO_SYNC }}
+      name: ENVIRONMENT
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
         uses: actions/checkout@v4
         with:
           repository: ${{ env.USERNAME }}/estatistica
-          token: ${{ env.TOKEN_REPO_SYNC }}
+          token: ${{ env.TOKEN }}
           path: "estatistica"
-          ref: "main"
           submodules: true
+          ref: "main"
 
       - name: Remover subpastas do 'deploy'
         run: |
-          PASTAS=("build" ".github" ".vscode" "README.md")
+          PASTAS=("build" ".github" ".vscode" "README.md", "templates", "assets_apple", "outros_books", "tests", "actions", "src")
           for pasta in "${PASTAS[@]}"; do
             rm -rf "$pasta"
           done
