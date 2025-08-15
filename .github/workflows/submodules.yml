@@ -29,6 +29,14 @@ jobs:
           path: "estatistica"
           ref: "main"
 
+      - name: Configura credenciais do Git
+        working-directory: estatistica
+        run: |
+          git config --global url."https://${{ secrets.GITHUB_TOKEN }}:x-oauth-basic@github.com/".insteadOf "https://github.com/"
+          git remote set-url origin https://${{ secrets.GITHUB_TOKEN }}:x-oauth-basic@github.com/${{ github.repository }}.git
+          git config user.name "${{ github.actor }}"
+          git config user.email "${{ github.actor }}@users.noreply.github.com"
+
       - name: Atualizar submodule 'books'
         working-directory: estatistica
         run: |
@@ -46,13 +54,6 @@ jobs:
           else
             git checkout book
           fi
-
-      - name: Configura credenciais do Git
-        working-directory: estatistica
-        run: |
-          git config user.name "${{ env.USERNAME }}"
-          git config user.email "${{ env.USEREMAIL }}"
-          git remote set-url origin https://x-access-token:${{ env.TOKEN }}@github.com/${{ env.USERNAME }}/estatistica.git
 
       - name: Sincronizar pastas entre os repositórios
         working-directory: estatistica
