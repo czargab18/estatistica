@@ -21,19 +21,12 @@ jobs:
     environment:
       name: ENVIRONMENT
     steps:
-      - name: Checkout
+      - name: Checkout Repositório
         uses: actions/checkout@v4
         with:
           repository: ${{ env.USERNAME }}/estatistica
           token: ${{ env.TOKEN }}
-          path: "estatistica"
           ref: "main"
-
-      - run: |
-          ls -R /home/runner/work/
-          
-      - run: |
-          ls -R /home/runner/work/estatistica
 
       - name: Configura credenciais do Git
         working-directory: estatistica
@@ -47,22 +40,6 @@ jobs:
         working-directory: estatistica
         run: |
           git submodule update --init books
-
-      # - name: Garante que a branch 'book' existe e faz checkout
-      #   working-directory: estatistica
-      #   run: |
-      #     if git ls-remote --exit-code --heads origin book >/dev/null 2>&1; then
-      #       # A branch book existe no remoto
-      #       git fetch origin book:book
-      #       git checkout book
-      #       git pull origin book || true
-      #     else
-      #       # A branch book NÃO existe no remoto, cria ela
-      #       git checkout --orphan book
-      #       git rm -rf .
-      #       git commit --allow-empty -m "repo: cria branch book inicial"
-      #       git push origin book
-      #     fi
 
       - name: Sincronizar pastas entre os repositórios
         working-directory: estatistica
