@@ -38,4 +38,5 @@ jobs:
         run: |
           ORIGIN="books/book"
           DESTINO="estatistica/books"
-          rsync -av --delete estatistica/books/ books/ --exclude=".git" --exclude=".github" --exclude=".vscode" --exclude="README.md"
+          exclude=(".git" ".github" ".vscode" "README.md")
+          rsync -av --update "$DESTINO"/ "$ORIGIN"/ --exclude=".git" --exclude=".github" --exclude=".vscode" --exclude="README.md"
