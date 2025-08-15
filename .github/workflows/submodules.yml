@@ -29,6 +29,12 @@ jobs:
           path: "estatistica"
           ref: "main"
 
+      - run: |
+          ls -R /home/runner/work/
+          
+      - run: |
+          ls -R /home/runner/work/estatistica
+
       - name: Configura credenciais do Git
         working-directory: estatistica
         run: |
