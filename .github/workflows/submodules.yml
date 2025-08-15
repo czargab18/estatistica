@@ -42,6 +42,10 @@ jobs:
         run: |
           git submodule update --init books
 
+      # PASSOS PARA AUTOMAÇÃO DO BOOKS PARA O REPOSITÓRIO ESTATÍSTICA
+      # usar o repositório 'backend' com backend/action/book/ para a renderização
+      # EM DESENVOLVIMENTO
+
       - name: Sincronizar pastas entre os repositórios
         working-directory: estatistica
         run: |
