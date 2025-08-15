@@ -46,7 +46,7 @@ jobs:
         working-directory: estatistica
         run: |
           ORIGIN="books/book"
-          DESTINO="books"
+          DESTINO="book"
           rsync -av --update "$DESTINO"/ "$ORIGIN"/ 
 
       - name: Faz commit e push dos livros renderizados
