@@ -66,11 +66,12 @@ jobs:
           submodules: true
           ref: "main"
 
-      - name: Submodule 'books' e 'wss'
+      - name: Atualizar submodule 'wss'
         working-directory: estatistica
         run: |
-          git submodule update --init --recursive
-          git submodule foreach --recursive 'git checkout main && git pull origin main'
+          git submodule init wss
+          git submodule update wss
+
 
       - name: Remover subpastas do 'deploy'
         run: |
