@@ -1,0 +1,69 @@
+# Submenu 
+
+boasvindas
+  - destaque
+    - Estatutos e Regimentos
+    - Mapa do Campus
+    - Registro Academico
+    - Programas e Orientações
+    - Biblioteca Central
+    - Manual para Calouros
+    - Calendário Acadêmico (Graduação e Pós-Graduação)
+    - passos apos aprovação (Checklist)
+    - evento de boas vindas
+
+  - links rápidos
+    - Plataformas
+    - Contatos Institucionais (email, telefones, etc -  dep. inst. da UnB)
+    - Serviços
+    - Menção
+    - Créditos
+    - Estágio Não Obrigatório
+
+  - Ajuda
+    - Auxilios e Bolsas
+    - Identidade Estudantil
+    - Ouvidoria
+    - Perguntas Frequentes (FAQ)
+
+
+departamento
+  - destaque
+    - historia
+    - instalacoes
+    - administracao
+    - secretaria
+    - docente
+    - documentos
+    - producao
+    - coordenacoes
+    - grupos-de-pesquisa
+
+  - explorar (departamento)
+    - Mapa do Campus
+    - Biblioteca Central
+    - Notícias
+    - Eventos
+    - Parceiros
+    - Benefícios
+    - Comissoes
+    - Chefia
+    - Galeria de imagens
+  
+  - links rápidos
+    - SIGAA
+    - Moodle MAT 
+    - Aprender3
+    - Calendário Acadêmico (Graduação e Pós-Graduação)
+    - Normas e Regulamentos (departamento ou UnB)
+    - Projeto R
+    - GitHub (estudantes)
+    - Samsung (estudantes)
+
+  - Ajuda
+    - Registro Academico
+    - Identidade Estudantil
+    - Auxilios e Bolsas
+    - Manual para Calouros
+    - Editais (departamento ou UnB)
+    - Ouvidoria
