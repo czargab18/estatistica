@@ -84,7 +84,7 @@ main[id="globalmain"] section[data-module-template="heroes"] div.unit-image-warp
 main[id="globalmain"] section[data-module-template="promos"] div.unit-image-warpper {
   width: 100%;
   height: 100%;
-  background-image: linear-gradient(to bottom, #6197f5, #dad9d9);
+  background-color: #000000;
 }
 
 main[id="globalmain"] section[data-module-template="heroes"] figure {
@@ -102,7 +102,8 @@ main[id="globalmain"] section[data-module-template="heroes"] figure[id="unit-ima
 
 /* gradiente */
 main[id="globalmain"] section[data-module-template="heroes"] div:nth-child(2) .unit-image-warpper {
-  background: radial-gradient(circle at top, #ffcd07 3%, rgb(245, 30, 30) 50%, #bc3131 70%);
+  /* background: radial-gradient(circle at top, #ffcd07 3%, rgb(245, 30, 30) 50%, #bc3131 70%); */
+
 }
 
 main[id="globalmain"] section[data-module-template="heroes"] div:nth-child(2) .unit-image-warpper figure[id="unit-image-graduacao"] {
