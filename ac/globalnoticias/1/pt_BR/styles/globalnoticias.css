@@ -5,7 +5,7 @@
 }
 .main [data-module-template="noticias"],
 .main [data-module-template="noticias"] .standalone-module,
-.main [data-module-template] div[clas="home-section"] {
+.main [data-module-template] div[class="home-section"] {
   box-sizing: border-box;
   overflow: visible;
   border-top-width: 0px;
@@ -13,12 +13,12 @@
   border-right-width: 0px;
 }
 
-.main [data-module-tamplete] .collection-module {
+.main [data-module-template] .collection-module {
   display: grid;
   width: 100%;
 }
 
-.main div[clas="module-content"] {
+.main div[class="module-content"] {
   width: 100%;
   position: relative;
   box-sizing: border-box;
