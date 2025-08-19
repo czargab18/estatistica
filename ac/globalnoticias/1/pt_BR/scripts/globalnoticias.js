@@ -1,14 +1,16 @@
 document.addEventListener("DOMContentLoaded", function () {
   const gallery = document.getElementById("noticias");
   const playButton = document.getElementById("playButton");
-  const playIcon = document.getElementById("playIcon");
-  const pauseIcon = document.getElementById("pauseIcon");
+  const playIcon = document.getElementById("play-icon");
+  const pauseIcon = document.getElementById("pause-icon");
 
   let slideshowPlaying = false;
 
   function togglePlayPauseIcons() {
-    playIcon.style.display = slideshowPlaying ? "block" : "none";
-    pauseIcon.style.display = slideshowPlaying ? "none" : "block";
+    if (playIcon && pauseIcon) {
+      playIcon.style.display = slideshowPlaying ? "none" : "block";
+      pauseIcon.style.display = slideshowPlaying ? "block" : "none";
+    }
   }
 
   function toggleSlideshow() {
@@ -18,16 +20,18 @@ document.addEventListener("DOMContentLoaded", function () {
 
     if (slideshowPlaying) {
       playButton.classList.remove("paused");
-      playButton.setAttribute("aria-label", "pause Apple TV plus gallery");
+      playButton.setAttribute("aria-label", "pause slideshow gallery");
       gallery.classList.add("autoplay");
     } else {
       playButton.classList.add("paused");
-      playButton.setAttribute("aria-label", "play Apple TV plus gallery");
+      playButton.setAttribute("aria-label", "play slideshow gallery");
       gallery.classList.remove("autoplay");
     }
   }
 
-  // playButton.addEventListener("click", toggleSlideshow);
+  if (playButton) {
+    playButton.addEventListener("click", toggleSlideshow);
+  }
   togglePlayPauseIcons();
 });
 
@@ -48,16 +52,19 @@ document.addEventListener("DOMContentLoaded", function () {
   let isPlaying = false;
 
   function hideAllSlides() {
-    slides.forEach((slide) => {
-      slide.style.display = "none";
+    slides.forEach((slide, index) => {
+      slide.style.display = index === currentSlideIndex ? "block" : "none";
+      slide.classList.remove("current");
     });
+    if (slides[currentSlideIndex]) {
+      slides[currentSlideIndex].classList.add("current");
+    }
   }
 
   function showSlide(index) {
     if (index >= 0 && index < slides.length) {
-      hideAllSlides();
-      slides[index].style.display = "block";
       currentSlideIndex = index;
+      hideAllSlides();
       updateTablist(index);
     }
   }
@@ -76,15 +83,19 @@ document.addEventListener("DOMContentLoaded", function () {
   function startAutoPlay() {
     autoPlayInterval = setInterval(nextSlide, 5000);
     isPlaying = true;
-    playIcon.style.display = "none";
-    pauseIcon.style.display = "block";
+    if (playIcon && pauseIcon) {
+      playIcon.style.display = "none";
+      pauseIcon.style.display = "block";
+    }
   }
 
   function stopAutoPlay() {
     clearInterval(autoPlayInterval);
     isPlaying = false;
-    playIcon.style.display = "block";
-    pauseIcon.style.display = "none";
+    if (playIcon && pauseIcon) {
+      playIcon.style.display = "block";
+      pauseIcon.style.display = "none";
+    }
   }
 
   function togglePlayPause() {
@@ -99,26 +110,31 @@ document.addEventListener("DOMContentLoaded", function () {
     dots.forEach((dot) => {
       dot.classList.remove("current");
     });
-    dots[index].classList.add("current");
+    if (dots[index]) {
+      dots[index].classList.add("current");
+    }
   }
 
   dots.forEach((dot, index) => {
-    dot.addEventListener("click", () => {
+    dot.addEventListener("click", (e) => {
+      e.preventDefault();
       showSlide(index);
       stopAutoPlay();
     });
   });
 
-  playPauseButton.addEventListener("click", () => {
-    togglePlayPause();
-  });
+  if (playPauseButton) {
+    playPauseButton.addEventListener("click", () => {
+      togglePlayPause();
+    });
+  }
 
   const observer = new IntersectionObserver(
     (entries) => {
       entries.forEach((entry) => {
         if (entry.isIntersecting && !isPlaying) {
           startAutoPlay();
-        } else {
+        } else if (!entry.isIntersecting && isPlaying) {
           stopAutoPlay();
         }
       });
@@ -126,21 +142,27 @@ document.addEventListener("DOMContentLoaded", function () {
     { threshold: 0.5 }
   );
 
-  observer.observe(noticiasSection);
+  if (noticiasSection) {
+    observer.observe(noticiasSection);
+  }
 
-  paddlenav.addEventListener("click", (event) => {
-    const target = event.target.closest("button");
-    if (target && target.classList.contains("paddlenav-arrow")) {
-      const direction = target.classList.contains("paddlenav-arrow-previous")
-        ? -1
-        : 1;
-      const newIndex =
-        (currentSlideIndex + direction + slides.length) % slides.length;
-      showSlide(newIndex);
-      stopAutoPlay();
-    }
-  });
+  if (paddlenav) {
+    paddlenav.addEventListener("click", (event) => {
+      const target = event.target.closest("button");
+      if (target && target.classList.contains("paddlenav-arrow")) {
+        const direction = target.classList.contains("paddlenav-arrow-previous")
+          ? -1
+          : 1;
+        const newIndex =
+          (currentSlideIndex + direction + slides.length) % slides.length;
+        showSlide(newIndex);
+        stopAutoPlay();
+      }
+    });
+  }
 
-  showSlide(0);
-  dots[0].classList.add("current");
+  // Inicialização
+  if (slides.length > 0) {
+    showSlide(0);
+  }
 });
