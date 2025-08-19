@@ -1,16 +1,22 @@
 @charset "UTF-8";
 
 .main [data-module-template="noticias"] {
-   all: unset;
+  all: unset;
 }
+
 .main [data-module-template="noticias"],
 .main [data-module-template="noticias"] .standalone-module,
 .main [data-module-template] div[class="home-section"] {
+  -webkit-box-sizing: border-box;
   box-sizing: border-box;
+  border-style: solid;
   overflow: visible;
   border-top-width: 0px;
   border-left-width: 0px;
   border-right-width: 0px;
+      z-index: 40;
+          position: relative;
+            border-bottom: 0;
 }
 
 .main [data-module-template] .collection-module {
@@ -75,6 +81,7 @@
   height: 100%;
   will-change: opacity;
 }
+
 .main [data-module-template="noticias"] .gallery .gallery-item {
   --abs: Max(var(--progress), var(--progress) * -1);
   --progress-0-1: clamp(0, var(--abs), 1);
@@ -112,79 +119,91 @@
   background-repeat: no-repeat;
   background-color: #0071e3;
   min-height: 495px;
-    /* altura mínima padrão */
-  }
-  
-  /* Configurações específicas por breakpoint */
-  @media (min-width: 1441px) {
-    .main [data-module-template="noticias"] .gallery .gallery-item a {
-      min-height: 680px;
-    }
-  }
-  
-  @media (min-width: 1069px) and (max-width: 1440px) {
-    .main [data-module-template="noticias"] .gallery .gallery-item a {
-      min-height: 680px;
-    }
-  }
-  
-  @media (min-width: 735px) and (max-width: 1068px) {
-    .main [data-module-template="noticias"] .gallery .gallery-item a {
-      min-height: 580px;
-    }
-  }
-  
-  @media (max-width: 734px) {
-    .main [data-module-template="noticias"] .gallery .gallery-item a {
-      min-height: 495px;
-    }
-  }
-  
-  
-  .main [data-module-template="noticias"] .gallery #noticias-01 a {
-    background-image: url("/ac/globalnoticias/1/pt_BR/assets/2024/2024.1/2/20/1/20240215_assinatura-finalizacao-obra-cds_betomonteiro_3.jpg");
+  /* altura mínima padrão */
 }
+
+/* Configurações específicas por breakpoint */
+@media (min-width: 1441px) {
+  .main [data-module-template="noticias"] .gallery .gallery-item a {
+    min-height: 680px;
+  }
+}
+
+@media (min-width: 1069px) and (max-width: 1440px) {
+  .main [data-module-template="noticias"] .gallery .gallery-item a {
+    min-height: 680px;
+  }
+}
+
+@media (min-width: 735px) and (max-width: 1068px) {
+  .main [data-module-template="noticias"] .gallery .gallery-item a {
+    min-height: 580px;
+  }
+}
+
+@media (max-width: 734px) {
+  .main [data-module-template="noticias"] .gallery .gallery-item a {
+    min-height: 495px;
+  }
+}
+
+
+.main [data-module-template="noticias"] .gallery #noticias-01 a {
+  background-image: url("/ac/globalnoticias/1/pt_BR/assets/2024/2024.1/2/20/1/20240215_assinatura-finalizacao-obra-cds_betomonteiro_3.jpg");
+}
+
 .main [data-module-template="noticias"] .gallery #noticias-02 a {
   background-image: url("/ac/globalnoticias/1/pt_BR/assets/2024/2024.1/2/20/2/20240219_reuniao-unb-cldf_renanlisboa-cldf_1.jpg");
 }
+
 .main [data-module-template="noticias"] .gallery #noticias-03 a {
   background-image: url("/ac/globalnoticias/1/pt_BR/assets/2024/2024.1/2/21/20240215_cad_betomonteiro_1.jpg");
 }
+
 .main [data-module-template="noticias"] .gallery #noticias-04 a {
   background-image: url("/ac/globalnoticias/1/pt_BR/assets/2024/2024.1/2/22/22022024_SerieAscom_campus-party-2023.png");
 }
+
 .main [data-module-template="noticias"] .gallery #noticias-05 a {
   background-image: url("/ac/globalnoticias/1/pt_BR/assets/2024/2024.1/2/23/23fev2024_campanhainstitucional2024_designsecomunb.png");
 }
+
 .main [data-module-template="noticias"] .gallery #noticias-06 a {
   background-image: url("/ac/globalnoticias/1/pt_BR/assets/grande.jpg");
 }
+
 .main [data-module-template="noticias"] .gallery #noticias-07 a {
   background-image: url("/ac/globalnoticias/1/pt_BR/assets/unb.png");
 }
+
 .main [data-module-template="noticias"] .gallery #noticias-08 a {
   background-image: url("/ac/globalnoticias/1/pt_BR/assets/grande.jpg");
 }
+
 .main [data-module-template="noticias"] .gallery #noticias-09 a {
   background-image: url("/ac/globalnoticias/1/pt_BR/assets/unb.png");
 }
+
 .main [data-module-template="noticias"] .gallery #noticias-10 a {
   background-image: url("/ac/globalnoticias/1/pt_BR/assets/grande.jpg");
 }
+
 .main [data-module-template="noticias"] .gallery #noticias-11 a {
   background-image: url("/ac/globalnoticias/1/pt_BR/assets/grande.jpg");
 }
+
 .main [data-module-template="noticias"] .gallery #noticias-12 a {
   background-image: url("/ac/globalnoticias/1/pt_BR/assets/grande.jpg");
-  }
-  
-  /* Fallback para blocos sem imagem específica */
-  .main [data-module-template="noticias"] .gallery .gallery-item a:not([style*="background-image"]) {
+}
+
+/* Fallback para blocos sem imagem específica */
+.main [data-module-template="noticias"] .gallery .gallery-item a:not([style*="background-image"]) {
   background-color: #0071e3;
   /* cor de fundo padrão azul */
-    background-image: linear-gradient(135deg, #0071e3 0%, #005bb5 100%);
-    /* gradiente sutil */
+  background-image: linear-gradient(135deg, #0071e3 0%, #005bb5 100%);
+  /* gradiente sutil */
 }
+
 /* =================== TABLIST =================== */
 .main [data-module-template="noticias"] .gallery .tablist-wrapper {
   position: absolute;
@@ -192,6 +211,7 @@
   left: 50%;
   transform: translate(-50%);
 }
+
 .main [data-module-template="noticias"] .dotnav {
   text-align: center;
   box-sizing: border-box;
@@ -216,6 +236,7 @@
   background-color: rgba(0, 0, 0, 0.42);
   transition: background-color 100ms linear;
 }
+
 .main [data-module-template="noticias"] .dotnav-item {
   top: 0;
   left: 0;
@@ -230,14 +251,13 @@
 }
 
 /* circuloPreto - slideAtual */
-.main
-  [data-module-template="noticias"]
-  .tablist-wrapper
-  .dotnav
-  /* precisam estar juntos para a propriedade ser aplicada */
-  .dotnav-item.current {
+.main [data-module-template="noticias"] .tablist-wrapper .dotnav
+
+/* precisam estar juntos para a propriedade ser aplicada */
+.dotnav-item.current {
   background-color: rgba(0, 0, 0, 0.8);
 }
+
 /* ocultar os textos dos tablists */
 .visuallyhidden {
   position: absolute;
@@ -249,10 +269,12 @@
   padding: 0;
   border: 0;
 }
+
 /* ============= BOTÃO - PLAY e PAUSAR ============= */
 .main [data-module-template="noticias"] .gallery .play-pause.show {
   display: block;
 }
+
 .main [data-module-template="noticias"] .gallery .play-pause {
   display: none;
   position: absolute;
@@ -272,6 +294,7 @@
   width: calc(100% - 15px);
   height: 100%;
 }
+
 .main [data-module-template="noticias"] .gallery .info-top {
   position: absolute;
   top: 0;
@@ -279,6 +302,7 @@
   width: 100%;
   display: none;
 }
+
 .main [data-module-template="noticias"] .gallery .info-top .logo {
   width: 220px;
   height: 54px;
@@ -288,11 +312,8 @@
   background-position: top center;
   margin: 0 auto;
 }
-.main
-  [data-module-template="noticias"]
-  .gallery
-  .gallery-item.current
-  .info-bottom {
+
+.main [data-module-template="noticias"] .gallery .gallery-item.current .info-bottom {
   opacity: 0.999;
   -webkit-transform: translateY(0);
   transform: translateY(0);
