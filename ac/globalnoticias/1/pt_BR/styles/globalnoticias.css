@@ -47,7 +47,7 @@ div[class="module-content"] {
   flex-direction: column;
 }
 
-[data-module-template="tv-plus-gallery"] .gallery {
+[data-module-template="noticias"] .gallery {
   overflow: hidden;
   position: relative;
   height: 561.13167px;
@@ -290,15 +290,11 @@ div[class="module-content"] {
 }
 
 /* circuloPreto - slideAtual */
-[data-module-template="noticias"] .tablist-wrapper .dotnav
-
-/* precisam estar juntos para a propriedade ser aplicada */
-.dotnav-item.current {
+[data-module-template="noticias"] .tablist-wrapper .dotnav .dotnav-item.current { 
   background-color: rgba(0, 0, 0, 0.8);
 }
 
-/* ocultar os textos dos tablists */
-.visuallyhidden {
+[data-module-template="noticias"] .tablist-wrapper .dotnav .dotnav-item li a span.visuallyhidden {
   position: absolute;
   clip: rect(1px, 1px, 1px, 1px);
   clip-path: inset(0px 0px 99.9% 99.9%);
@@ -441,10 +437,29 @@ div[class="module-content"] {
   font-weight: 700;
 }
 
+[data-module-template="noticias"] .paddlenav,
+[data-module-template="noticias"] .paddlenav ul {
+  margin: 0;
+  list-style: none;
+}
+
+[data-module-template="noticias"] .gallery .paddlenav ul {
+  list-style: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 9999;
+  pointer-events: none;
+}
+
 [data-module-template="noticias"] .gallery .paddlenav li {
   position: absolute;
   bottom: 38px;
   top: 0;
+  margin: 0;
+  list-style: none;
 }
 
 [data-module-template="noticias"] .gallery .paddlenav li.next {
@@ -505,30 +520,31 @@ div[class="module-content"] {
   height: 100%;
   text-align: center;
   margin-top: 0;
-  pointer-events: all;
+  pointer-events: all
 }
 
 [data-module-template="noticias"] .gallery .paddlenav button:focus,
 [data-module-template="noticias"] .gallery .paddlenav button:active {
-  background: none;
+  background: none
 }
 
 [data-module-template="noticias"] .gallery .paddlenav button:after {
-  display: none;
+  display: none
 }
 
 @media only screen and (max-width: 734px) {
   [data-module-template="noticias"] .gallery .paddlenav button:after {
-    display: block;
+    display: block
   }
 }
 
 @media (max-width: 320px) {
   [data-module-template="noticias"] .gallery .paddlenav button:after {
-    display: none;
+    display: none
   }
 }
 
 [data-module-template="noticias"] .gallery .paddlenav button:hover {
-  background: none;
+  background: none
 }
+
