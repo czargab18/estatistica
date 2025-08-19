@@ -1,3 +1,12 @@
+# ac - assets and compoents
+
+- `build`: construição de componentes
+- `components`: componentes criados para reutilização em várias páginas do site.
+- `README.md`: documentação sobre os componentes e como utilizá-los.
+- `templates`: modelos HTML que utilizam os componentes.
+- `utils`: scripts utilitários para automatizar tarefas relacionadas aos componentes.
+
+
 # Components
 
 Esta pasta reúne os componentes reutilizáveis do projeto. Cada arquivo representa uma parte modular e independente, podendo ser incluído em diferentes páginas ou seções do site para garantir consistência visual e facilitar a manutenção.
