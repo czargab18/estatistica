@@ -141,54 +141,38 @@ div[class="module-content"] {
   transition: transform 0.3s ease-in-out;
 }
 
-/* =================== IMAGENS =================== */
-[data-module-template="noticias"] .gallery .gallery-item a {
+[data-module-template="noticias"] .gallery .item-container a {
+  opacity: calc((var(--progress-0-1) * -0.7) + .99);
   background-size: cover;
   background-position: center;
+  width: 980px;
   margin: 0 auto;
   height: 100%;
-  will-change: opacity;
-  /* Configurações padrão para blocos sem imagem específica */
-  position: absolute;
-  top: 0;
-  left: 7.5px;
-  width: calc(100% - 15px);
-  background-position: center;
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-color: #0071e3;
-  min-height: 495px;
-  /* altura mínima padrão */
+  will-change: opacity
 }
 
-/* Configurações específicas por breakpoint */
 @media (min-width: 1441px) {
-  [data-module-template="noticias"] .gallery .gallery-item a {
-    min-height: 680px;
+  [data-module-template="noticias"] .gallery .item-container a {
+    width: 1250px
   }
 }
 
-@media (min-width: 1069px) and (max-width: 1440px) {
-  [data-module-template="noticias"] .gallery .gallery-item a {
-    min-height: 680px;
+@media only screen and (max-width: 1068px) {
+  [data-module-template="noticias"] .gallery .item-container a {
+    width: 689px
   }
 }
 
-@media (min-width: 735px) and (max-width: 1068px) {
-  [data-module-template="noticias"] .gallery .gallery-item a {
-    min-height: 580px;
-  }
-}
-
-@media (max-width: 734px) {
-  [data-module-template="noticias"] .gallery .gallery-item a {
-    min-height: 495px;
+@media only screen and (max-width: 734px) {
+  [data-module-template="noticias"] .gallery .item-container a {
+    width: 274px;
+    background-position: top center
   }
 }
 
 
 [data-module-template="noticias"] .gallery #noticias-01 a {
-  background-image: url("/ac/globalnoticias/1/pt_BR/assets/2024/2024.1/2/20/1/20240215_assinatura-finalizacao-obra-cds_betomonteiro_3.jpg");
+  background-image: url("/sd/1/pt_BR/banners/heroes/home/astronauta-banner-grande.png");
 }
 
 [data-module-template="noticias"] .gallery #noticias-02 a {
