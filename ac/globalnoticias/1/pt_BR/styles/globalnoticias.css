@@ -529,10 +529,15 @@ div[class="module-content"] {
   Nova estrutura de css para o módulo de notícias
   ==========================*/
 
-/* Classes e IDs não declarados encontrados na estrutura HTML */
-
 /* Section principal */
-[data-module-template="noticias"] .homepage-section {}
+[data-module-template="noticias"] .homepage-section,
+[data-module-template="noticias"] .standalone-module
+[data-module-template="noticias"] [data-module-template="noticias"] {}
+
+[data-module-template="noticias"] div[class="module-content"] {}
+
+[data-module-template="noticias"] div[class="module-content"] div[class="gallery autoplay"],
+[data-module-template="noticias"] div[class="module-content"] div[id="noticias"] {}
 
 /* Classe autoplay da galeria */
 [data-module-template="noticias"] .gallery.autoplay {}
