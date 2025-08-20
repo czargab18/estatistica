@@ -1,0 +1,145 @@
+ESTRUTURA DE IDS E CLASSES - SEÇÃO NOTÍCIAS (HTML COMPLETO)
+===============================================================
+
+ESTRUTURA PRINCIPAL:
+-------------------
+section class="homepage-section standalone-module" data-module-template="noticias"
+├── div class="module-content"
+    └── div class="gallery autoplay" id="noticias"
+        ├── div class="item-container"
+        │   ├── div class="gallery-item" id="noticias-01" (style="display: none;")
+        │   │   └── a href="[URL_NOTICIA]"
+        │   │       └── div class="inner"
+        │   │           ├── div class="info-top"
+        │   │           │   ├── figure class="atv-plus-icon noticias-icon"
+        │   │           │   └── figure class="logo"
+        │   │           └── div class="info-bottom"
+        │   │               ├── div class="custom-button play"
+        │   │               └── p class="typography-shows-genre"
+        │   │                   ├── span class="genre"
+        │   │                   └── span class="m-dot"
+        │   │
+        │   ├── div class="gallery-item current" id="noticias-02" (style="display: block;")
+        │   ├── div class="gallery-item" id="noticias-03" (style="display: none;")
+        │   ├── div class="gallery-item" id="noticias-04" (style="display: none;")
+        │   ├── div class="gallery-item" id="noticias-05" (style="display: none;")
+        │   ├── div class="gallery-item" id="noticias-06" (style="display: none;")
+        │   ├── div class="gallery-item" id="noticias-07" (style="display: none;")
+        │   ├── div class="gallery-item" id="noticias-08" (style="display: none;")
+        │   ├── div class="gallery-item" id="noticias-09" (style="display: none;")
+        │   └── div class="gallery-item" id="noticias-10" (style="display: none;")
+        │       (Todos seguem a mesma estrutura interna)
+        │
+        ├── div class="paddlenav paddlenav-framed" data-analytics-gallery-interaction-type="paddlenav"
+        │   └── ul
+        │       ├── li class="previous"
+        │       │   └── button class="paddlenav-arrow paddlenav-arrow-previous"
+        │       └── li class="next"
+        │           └── button class="paddlenav-arrow paddlenav-arrow-next"
+        │
+        ├── div class="tablist-wrapper"
+        │   └── div class="dotnav" data-analytics-gallery-interaction-type="dotnav"
+        │       └── ul class="dotnav-items" role="tablist"
+        │           ├── li class="current" role="presentation"
+        │           │   └── a class="dotnav-item" id="noticias-01-trigger"
+        │           │       └── span class="visuallyhidden"
+        │           ├── li role="presentation"
+        │           │   └── a class="dotnav-item current" id="noticias-02-trigger"
+        │           ├── li role="presentation"
+        │           │   └── a class="dotnav-item" id="noticias-03-trigger"
+        │           ├── li role="presentation"
+        │           │   └── a class="dotnav-item" id="noticias-04-trigger"
+        │           ├── li role="presentation"
+        │           │   └── a class="dotnav-item" id="noticias-05-trigger"
+        │           ├── li role="presentation"
+        │           │   └── a class="dotnav-item" id="noticias-06-trigger"
+        │           ├── li role="presentation"
+        │           │   └── a class="dotnav-item" id="noticias-07-trigger"
+        │           ├── li role="presentation"
+        │           │   └── a class="dotnav-item" id="noticias-08-trigger"
+        │           ├── li role="presentation"
+        │           │   └── a class="dotnav-item" id="noticias-09-trigger"
+        │           └── li role="presentation"
+        │               └── a class="dotnav-item" id="noticias-10-trigger"
+        │
+        └── button class="play-pause playing show" id="playButton"
+            └── svg height="32" viewBox="0 0 85 85" width="24"
+                ├── g id="pause-icon" style="display: none;"
+                │   ├── path (círculo externo)
+                │   ├── path (barra esquerda)
+                │   └── path (barra direita)
+                └── g id="play-icon" style="display: block;"
+                    ├── path (círculo externo)
+                    └── path (triângulo play)
+
+LISTA DE CLASSES UTILIZADAS:
+---------------------------
+- homepage-section
+- standalone-module
+- module-content
+- gallery
+- autoplay (NOVA - detectada na estrutura HTML)
+- item-container
+- gallery-item
+- current
+- inner
+- info-top
+- atv-plus-icon
+- noticias-icon
+- logo
+- info-bottom
+- custom-button
+- play
+- typography-shows-genre
+- genre
+- m-dot
+- paddlenav
+- paddlenav-framed
+- previous
+- next
+- paddlenav-arrow
+- paddlenav-arrow-previous
+- paddlenav-arrow-next
+- tablist-wrapper
+- dotnav
+- dotnav-items
+- dotnav-item
+- visuallyhidden
+- play-pause
+- playing
+- show
+
+LISTA DE IDS UTILIZADOS:
+-----------------------
+- noticias (galeria principal)
+- noticias-01 até noticias-10 (itens da galeria)
+- noticias-01-trigger até noticias-10-trigger (pontos de navegação)
+- playButton (botão play/pause)
+- pause-icon (grupo SVG do ícone de pause)
+- play-icon (grupo SVG do ícone de play)
+
+DATA-ATTRIBUTES IDENTIFICADOS:
+------------------------------
+- data-module-template="noticias" (section principal)
+- data-ac-gallery-item (todos os gallery-item)
+- data-original-aria-hidden (todos os gallery-item)
+- data-analytics-gallery-item-id (alguns gallery-item)
+- data-analytics-activitymap-region-id (alguns links)
+- data-analytics-exit-link (alguns links)
+- data-analytics-title (alguns links)
+- data-rid-relay (alguns links)
+- data-analytics-gallery-interaction-type (paddlenav e dotnav)
+- data-ac-gallery-trigger (todos os dotnav-item)
+
+OBSERVAÇÕES IMPORTANTES:
+-----------------------
+- Estrutura de galeria com 10 itens de notícias
+- Sistema de navegação com setas (paddlenav) e pontos (dotnav)
+- Botão de play/pause para autoplay com SVG interno
+- Item atual marcado com "current" (noticias-02 no exemplo)
+- Controle de visibilidade via style="display: none/block"
+- Cada item segue a mesma estrutura interna
+- Links externos para notícias da UnB (reais nos primeiros itens)
+- Classe 'autoplay' adicionada à galeria principal
+- Dupla marcação 'current' (em li e em a do dotnav)
+- Atributos ARIA para acessibilidade completos
