@@ -108,6 +108,20 @@ section[data-module-template="noticias"] .gallery .item-container {
   }
 }
 
+section[data-module-template="noticias"] .gallery .item-container .gallery-item:nth-child(1) {
+  --progress: 0;
+    z-index: 1;
+    opacity: 1;
+    transform: translate(0px, 0px);
+}
+
+section[data-module-template="noticias"] .gallery .item-container .gallery-item:nth-child(2) {
+  --progress: 1;
+    z-index: 0;
+    opacity: 1;
+    transform: translate(1265px, 0px);
+}
+
 section[data-module-template="noticias"] .gallery .item-container .gallery-item {
   --abs: Max(var(--progress), var(--progress) * -1);
   --progress-0-1: clamp(0, var(--abs), 1);
@@ -173,55 +187,10 @@ section[data-module-template="noticias"] .gallery .item-container a {
   }
 }
 
-section[data-module-template="noticias"] .gallery #noticias-01 a {
+section[data-module-template="noticias"] .gallery .item-container #noticias-01 a {
   background-image: url("/sd/1/pt_BR/banners/promos/home/caquito-banner-medio.png");
-  max-inline-size: 100%;
-  height: auto;
 }
 
-section[data-module-template="noticias"] .gallery #noticias-02 a {
-  background-image: url("/ac/globalnoticias/1/pt_BR/assets/2024/2024.1/2/20/2/20240219_reuniao-unb-cldf_renanlisboa-cldf_1.jpg");
-}
-
-section[data-module-template="noticias"] .gallery #noticias-03 a {
-  background-image: url("/ac/globalnoticias/1/pt_BR/assets/2024/2024.1/2/21/20240215_cad_betomonteiro_1.jpg");
-}
-
-section[data-module-template="noticias"] .gallery #noticias-04 a {
-  background-image: url("/ac/globalnoticias/1/pt_BR/assets/2024/2024.1/2/22/22022024_SerieAscom_campus-party-2023.png");
-}
-
-section[data-module-template="noticias"] .gallery #noticias-05 a {
-  background-image: url("/ac/globalnoticias/1/pt_BR/assets/2024/2024.1/2/23/23fev2024_campanhainstitucional2024_designsecomunb.png");
-}
-
-section[data-module-template="noticias"] .gallery #noticias-06 a {
-  background-image: url("/ac/globalnoticias/1/pt_BR/assets/grande.jpg");
-}
-
-section[data-module-template="noticias"] .gallery #noticias-07 a {
-  background-image: url("/ac/globalnoticias/1/pt_BR/assets/unb.png");
-}
-
-section[data-module-template="noticias"] .gallery #noticias-08 a {
-  background-image: url("/ac/globalnoticias/1/pt_BR/assets/grande.jpg");
-}
-
-section[data-module-template="noticias"] .gallery #noticias-09 a {
-  background-image: url("/ac/globalnoticias/1/pt_BR/assets/unb.png");
-}
-
-section[data-module-template="noticias"] .gallery #noticias-10 a {
-  background-image: url("/ac/globalnoticias/1/pt_BR/assets/grande.jpg");
-}
-
-section[data-module-template="noticias"] .gallery #noticias-11 a {
-  background-image: url("/ac/globalnoticias/1/pt_BR/assets/grande.jpg");
-}
-
-section[data-module-template="noticias"] .gallery #noticias-12 a {
-  background-image: url("/ac/globalnoticias/1/pt_BR/assets/grande.jpg");
-}
 
 /* Fallback para blocos sem imagem específica */
 section[data-module-template="noticias"] .gallery .gallery-item a:not([style*="background-image"]) {
