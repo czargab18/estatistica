@@ -81,16 +81,26 @@ div[class="module-content"] {
   }
 }
 
-[data-module-template="noticias"] .gallery .item-container {
-  position: relative;
-  /* width: 980px; */
-  width: 995px;
-  height: 100%;
-  margin: 0 auto;
-  will-change: transform;
-  overflow-x: auto;
-  scroll-snap-type: x mandatory;
-  scroll-behavior: smooth;
+[data-module-template="noticias"] .gallery .gallery-item {
+  --abs: Max(var(--progress), var(--progress) * -1);
+  --progress-0-1: clamp(0, var(--abs), 1);
+  --progress-1-1: clamp(-1, var(--progress), 1);
+  overflow: hidden;
+  position: absolute;
+  left: 0;
+  height: 523.13167px;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  will-change: opacity;
+  z-index: 0 !important;
 }
 
 @media (min-width: 1441px) {
@@ -121,25 +131,6 @@ div[class="module-content"] {
   will-change: opacity;
 }
 
-[data-module-template="noticias"] .gallery .gallery-item {
-  --abs: Max(var(--progress), var(--progress) * -1);
-  --progress-0-1: clamp(0, var(--abs), 1);
-  --progress-1-1: clamp(-1, var(--progress), 1);
-  overflow: hidden;
-  position: absolute;
-  left: 0;
-  height: 523.13167px;
-  width: 100%;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  will-change: opacity;
-  flex: 1 0 100%;
-  transform: translateX(var(--progress) * 100%);
-  transition: transform 0.3s ease-in-out;
-}
 
 [data-module-template="noticias"] .gallery .item-container a {
   opacity: calc((var(--progress-0-1) * -0.7) + .99);
@@ -172,7 +163,9 @@ div[class="module-content"] {
 
 
 [data-module-template="noticias"] .gallery #noticias-01 a {
-  background-image: url("/sd/1/pt_BR/banners/heroes/home/astronauta-banner-grande.png");
+  background-image: url("/sd/1/pt_BR/banners/promos/home/caquito-banner-medio.png");
+  max-inline-size: 100%;
+  height: auto;
 }
 
 [data-module-template="noticias"] .gallery #noticias-02 a {
