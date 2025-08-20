@@ -1,8 +1,8 @@
 @charset "UTF-8";
 
-section[data-module-template="noticias"] {
+/* section[data-module-template="noticias"] {
   all: unset;
-}
+} */
 
 section[data-module-template="noticias"],
 [data-module-template].homepage-section,
