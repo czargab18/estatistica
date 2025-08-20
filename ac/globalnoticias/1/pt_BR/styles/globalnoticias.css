@@ -530,9 +530,8 @@ div[class="module-content"] {
   ==========================*/
 
 /* Section principal */
-[data-module-template="noticias"] .homepage-section,
-[data-module-template="noticias"] .standalone-module
-[data-module-template="noticias"] [data-module-template="noticias"] {}
+section[data-module-template="noticias"],
+section[class="homepage-section standalone-module"] {}
 
 [data-module-template="noticias"] div[class="module-content"] {}
 
