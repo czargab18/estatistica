@@ -88,6 +88,7 @@ section[data-module-template="noticias"] .gallery .item-container {
   will-change: transform;
   transform: translate3d(0px, 0px, 0px);
   transition: transform 1s cubic-bezier(0.645, 0.045, 0.355, 1);
+    opacity: 1;
 }
 
 @media (min-width: 1441px) {
@@ -110,17 +111,62 @@ section[data-module-template="noticias"] .gallery .item-container {
 
 section[data-module-template="noticias"] .gallery .item-container .gallery-item:nth-child(1) {
   --progress: 0;
+  z-index: 1;
+  transform: translate(0px, 0px);
+}
+
+/* demais filhos - Muda via js 
+    ID: tv-plus-gallery-item-1 Style: --progress: 0;
     z-index: 1;
     opacity: 1;
     transform: translate(0px, 0px);
-}
-
-section[data-module-template="noticias"] .gallery .item-container .gallery-item:nth-child(2) {
-  --progress: 1;
+    
+    ID: tv-plus-gallery-item-2 Style: --progress: 1;
     z-index: 0;
     opacity: 1;
     transform: translate(1265px, 0px);
-}
+    
+    ID: tv-plus-gallery-item-3 Style: --progress: 2;
+    z-index: 0;
+    opacity: 1;
+    transform: translate(2530px, 0px);
+    
+    ID: tv-plus-gallery-item-4 Style: --progress: 3;
+    z-index: 0;
+    opacity: 1;
+    transform: translate(3795px, 0px);
+    
+    ID: tv-plus-gallery-item-5 Style: --progress: 4;
+    z-index: 0;
+    opacity: 1;
+    transform: translate(5060px, 0px);
+    
+    ID: tv-plus-gallery-item-6 Style: --progress: 5;
+    z-index: 0;
+    opacity: 1;
+    transform: translate(6325px, 0px);
+    
+    ID: tv-plus-gallery-item-7 Style: --progress: 6;
+    z-index: 0;
+    opacity: 1;
+    transform: translate(7590px, 0px);
+    
+    ID: tv-plus-gallery-item-8 Style: --progress: 7;
+    z-index: 0;
+    opacity: 1;
+    transform: translate(8855px, 0px);
+    
+    ID: tv-plus-gallery-item-9 Style: --progress: 8;
+    z-index: 0;
+    opacity: 1;
+    transform: translate(10120px, 0px);
+    
+    ID: tv-plus-gallery-item-10 Style: --progress: -1;
+    z-index: 0;
+    opacity: 1;
+    transform: translate(-1265px, 0px);
+} */
+
 
 section[data-module-template="noticias"] .gallery .item-container .gallery-item {
   --abs: Max(var(--progress), var(--progress) * -1);
@@ -156,6 +202,7 @@ section[data-module-template="noticias"] .gallery .item-container a {
   margin: 0 auto;
   height: 100%;
   will-change: opacity;
+  display: block;
 }
 
 section[data-module-template="noticias"] .gallery .item-container a {
