@@ -438,38 +438,8 @@ section[data-module-template="noticias"] .gallery .info-bottom .custom-button:la
   font-family: "SF Pro AR", "SF Pro AR Text", "SF Pro Text", "SF Pro Gulf", "SF Pro Icons", "Helvetica Neue", "Helvetica", "Arial", sans-serif
 }
 
-section[data-module-template="noticias"] .gallery .info-bottom .custom-button:lang(ja) {
-  letter-spacing: 0em;
-  font-family: "SF Pro JP", "SF Pro Text", "SF Pro Icons", "Hiragino Kaku Gothic Pro", "ヒラギノ角ゴ Pro W3", "メイリオ", "Meiryo", "ＭＳ Ｐゴシック", "Helvetica Neue", "Helvetica", "Arial", sans-serif
-}
-
-section[data-module-template="noticias"] .gallery .info-bottom .custom-button:lang(ko) {
-  letter-spacing: 0em;
-  font-family: "SF Pro KR", "SF Pro Text", "SF Pro Icons", "Apple Gothic", "HY Gulim", "MalgunGothic", "HY Dotum", "Lexi Gulim", "Helvetica Neue", "Helvetica", "Arial", sans-serif
-}
-
 section[data-module-template="noticias"] .gallery .info-bottom .custom-button:lang(zh) {
   letter-spacing: 0em
-}
-
-section[data-module-template="noticias"] .gallery .info-bottom .custom-button:lang(th) {
-  font-family: "SF Pro TH", "SF Pro Text", "SF Pro Icons", "Helvetica Neue", "Helvetica", "Arial", sans-serif
-}
-
-section[data-module-template="noticias"] .gallery .info-bottom .custom-button:lang(zh-CN) {
-  font-family: "SF Pro SC", "SF Pro Text", "SF Pro Icons", "PingFang SC", "Helvetica Neue", "Helvetica", "Arial", sans-serif
-}
-
-section[data-module-template="noticias"] .gallery .info-bottom .custom-button:lang(zh-HK) {
-  font-family: "SF Pro HK", "SF Pro Text", "SF Pro Icons", "PingFang HK", "Helvetica Neue", "Helvetica", "Arial", sans-serif
-}
-
-section[data-module-template="noticias"] .gallery .info-bottom .custom-button:lang(zh-MO) {
-  font-family: "SF Pro HK", "SF Pro TC", "SF Pro Text", "SF Pro Icons", "PingFang HK", "Helvetica Neue", "Helvetica", "Arial", sans-serif
-}
-
-section[data-module-template="noticias"] .gallery .info-bottom .custom-button:lang(zh-TW) {
-  font-family: "SF Pro TC", "SF Pro Text", "SF Pro Icons", "PingFang TC", "Helvetica Neue", "Helvetica", "Arial", sans-serif
 }
 
 @media only screen and (max-width: 1068px) {
@@ -494,79 +464,6 @@ section[data-module-template="noticias"] .gallery .info-bottom .custom-button:la
     font-family: "SF Pro AR", "SF Pro AR Text", "SF Pro Text", "SF Pro Gulf", "SF Pro Icons", "Helvetica Neue", "Helvetica", "Arial", sans-serif
   }
 }
-
-section[data-module-template="noticias"] .gallery .info-bottom p {
-  font-size: 20px;
-  line-height: 1.1;
-  font-weight: 400;
-  letter-spacing: 0em;
-  font-family: "SF Pro Display", "SF Pro Icons", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
-  margin-left: 18px;
-  font-weight: 400;
-  color: #fff;
-  text-shadow: 0px 0px 5px rgba(0, 0, 0, 0.6)
-}
-
-section[data-module-template="noticias"] .gallery .info-bottom p:lang(pt-br) {
-  font-family: "SF Pro AR", "SF Pro AR Display", "SF Pro Display", "SF Pro Gulf", "SF Pro Icons", "Helvetica Neue", "Helvetica", "Arial", sans-serif
-}
-
-
-@media only screen and (max-width: 1068px) {
-  section[data-module-template="noticias"] .gallery .info-bottom p {
-    font-size: 17px;
-    line-height: 1.23536;
-    font-weight: 400;
-    letter-spacing: -.022em;
-    font-family: "SF Pro Text", "SF Pro Icons", "Helvetica Neue", "Helvetica", "Arial", sans-serif
-  }
-
-  section[data-module-template="noticias"] .gallery .info-bottom p:lang(pt-br) {
-    letter-spacing: 0em;
-    font-family: "SF Pro AR", "SF Pro AR Text", "SF Pro Text", "SF Pro Gulf", "SF Pro Icons", "Helvetica Neue", "Helvetica", "Arial", sans-serif
-  }
-}
-
-@media only screen and (max-width: 734px) {
-  section[data-module-template="noticias"] .gallery .info-bottom p {
-    font-size: 15px;
-    line-height: 1.33338;
-    font-weight: 400;
-    letter-spacing: 0em;
-    font-family: "SF Pro Text", "SF Pro Icons", "Helvetica Neue", "Helvetica", "Arial", sans-serif
-  }
-
-  section[data-module-template="noticias"] .gallery .info-bottom p:lang(pt-br) {
-    font-family: "SF Pro AR", "SF Pro AR Text", "SF Pro Text", "SF Pro Gulf", "SF Pro Icons", "Helvetica Neue", "Helvetica", "Arial", sans-serif
-  }
-}
-
-section[data-module-template="noticias"] .gallery .info-bottom p span {
-  font-weight: 700
-}
-
-@media only screen and (max-width: 734px) {
-  section[data-module-template="noticias"] .gallery .info-bottom p span {
-    display: block
-  }
-}
-
-@media only screen and (max-width: 734px) {
-  section[data-module-template="noticias"] .gallery .info-bottom p span.m-dot {
-    display: none
-  }
-}
-
-@media only screen and (max-width: 734px) {
-  section[data-module-template="noticias"] .gallery .info-bottom p {
-    margin: 0 auto 12px;
-    text-align: center;
-    padding: 0 15px;
-    white-space: pre-wrap;
-    overflow: visible
-  }
-}
-
 
 section[data-module-template="noticias"] .gallery .info-bottom .custom-button {
   border-radius: 980px;
@@ -628,6 +525,73 @@ section[data-module-template="noticias"] .gallery .info-bottom p {
   font-weight: 400;
   letter-spacing: 0em;
   font-family: "SF Pro Display", "SF Pro Icons", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+  margin-left: 18px;
+  font-weight: 400;
+  color: #fff;
+  text-shadow: 0px 0px 5px rgba(0, 0, 0, 0.6)
+}
+
+section[data-module-template="noticias"] .gallery .info-bottom p:lang(pt-br) {
+  font-family: "SF Pro AR", "SF Pro AR Display", "SF Pro Display", "SF Pro Gulf", "SF Pro Icons", "Helvetica Neue", "Helvetica", "Arial", sans-serif
+}
+
+
+@media only screen and (max-width: 1068px) {
+  section[data-module-template="noticias"] .gallery .info-bottom p {
+    font-size: 17px;
+    line-height: 1.23536;
+    font-weight: 400;
+    letter-spacing: -.022em;
+    font-family: "SF Pro Text", "SF Pro Icons", "Helvetica Neue", "Helvetica", "Arial", sans-serif
+  }
+}
+
+@media only screen and (max-width: 734px) {
+  section[data-module-template="noticias"] .gallery .info-bottom p {
+    font-size: 15px;
+    line-height: 1.33338;
+    font-weight: 400;
+    letter-spacing: 0em;
+    font-family: "SF Pro Text", "SF Pro Icons", "Helvetica Neue", "Helvetica", "Arial", sans-serif
+  }
+
+  section[data-module-template="noticias"] .gallery .info-bottom p:lang(pt-br) {
+    font-family: "SF Pro AR", "SF Pro AR Text", "SF Pro Text", "SF Pro Gulf", "SF Pro Icons", "Helvetica Neue", "Helvetica", "Arial", sans-serif
+  }
+}
+
+section[data-module-template="noticias"] .gallery .info-bottom p span {
+  font-weight: 700
+}
+
+@media only screen and (max-width: 734px) {
+  section[data-module-template="noticias"] .gallery .info-bottom p span {
+    display: block
+  }
+}
+
+@media only screen and (max-width: 734px) {
+  section[data-module-template="noticias"] .gallery .info-bottom p span.m-dot {
+    display: none
+  }
+}
+
+@media only screen and (max-width: 734px) {
+  section[data-module-template="noticias"] .gallery .info-bottom p {
+    margin: 0 auto 12px;
+    text-align: center;
+    padding: 0 15px;
+    white-space: pre-wrap;
+    overflow: visible
+  }
+}
+
+section[data-module-template="noticias"] .gallery .info-bottom p {
+  font-size: 20px;
+  line-height: 1.1;
+  font-weight: 400;
+  letter-spacing: 0em;
+  font-family: "SF Pro Display", "SF Pro Icons", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
   margin-left: 40px;
   font-weight: 400;
   color: #fff;
@@ -649,7 +613,6 @@ section[data-module-template="noticias"] .gallery .info-bottom p span {
 }
 
 @media only screen and (max-width: 734px) {
-
   section[data-module-template="noticias"] .gallery .info-bottom p span.m-dot,
   section[data-module-template="noticias"] .gallery .info-bottom p span.cdot {
     display: none
@@ -658,27 +621,7 @@ section[data-module-template="noticias"] .gallery .info-bottom p span {
 
 
 /* =================== CONTINUAR =================== */
-/* =================== CONTINUAR =================== */
-/* =================== CONTINUAR =================== */
-/* =================== CONTINUAR =================== */
-/* =================== CONTINUAR =================== */
-/* =================== CONTINUAR =================== */
-/* =================== CONTINUAR =================== */
-/* =================== CONTINUAR =================== */
-/* =================== CONTINUAR =================== */
-/* =================== CONTINUAR =================== */
-/* =================== CONTINUAR =================== */
-/* =================== CONTINUAR =================== */
-/* =================== CONTINUAR =================== */
-/* =================== CONTINUAR =================== */
-/* =================== CONTINUAR =================== */
 
-
-
-
-
-
-/* =================== TABLIST =================== */
 section[data-module-template="noticias"] .gallery .tablist-wrapper {
   position: absolute;
   bottom: 7px;
@@ -724,7 +667,6 @@ section[data-module-template="noticias"] .dotnav-item {
   padding: 0;
 }
 
-/* circuloPreto - slideAtual */
 section[data-module-template="noticias"] .tablist-wrapper .dotnav .dotnav-item.current {
   background-color: rgba(0, 0, 0, 0.8);
 }
@@ -740,10 +682,6 @@ section[data-module-template="noticias"] .tablist-wrapper .dotnav .dotnav-item l
   border: 0;
 }
 
-
-
-
-/* ============= BOTÃO - PLAY e PAUSAR ============= */
 section[data-module-template="noticias"] .gallery .play-pause.show {
   display: block;
 }
