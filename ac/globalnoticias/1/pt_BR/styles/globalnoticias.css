@@ -422,15 +422,11 @@ section[data-module-template="noticias"] .gallery .info-bottom .custom-button {
   border-style: solid;
   border-width: 1px;
   min-width: 28px;
-  padding-left: 21px;
-  padding-right: 21px;
-  padding-top: 11px;
-  padding-bottom: 11px;
+  padding: 21px 21px 11px 21px;
   --sk-button-margin-horizontal: 18px;
   --sk-button-margin-vertical: 18px;
   border-color: transparent;
-  -ms-flex-negative: 0;
-  flex-shrink: 0
+  flex-shrink: 0;
 }
 
 section[data-module-template="noticias"] .gallery .info-bottom .custom-button:lang(pt-br) {
@@ -448,14 +444,9 @@ section[data-module-template="noticias"] .gallery .info-bottom .custom-button:la
     --sk-button-margin-vertical: 14px;
     font-size: 14px;
     line-height: 1.42859;
-    font-weight: 400;
     letter-spacing: -.016em;
-    font-family: "SF Pro Text", "SF Pro Icons", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
     min-width: 30px;
-    padding-left: 15px;
-    padding-right: 15px;
-    padding-top: 7px;
-    padding-bottom: 7px
+    padding: 7px 15px;
   }
 
   section[data-module-template="noticias"] .gallery .info-bottom .custom-button:lang(pt-br) {
