@@ -555,33 +555,6 @@ section[data-module-template="noticias"] .gallery .info-bottom p:lang(ar) {
   font-family: "SF Pro AR", "SF Pro AR Display", "SF Pro Display", "SF Pro Gulf", "SF Pro Icons", "Helvetica Neue", "Helvetica", "Arial", sans-serif
 }
 
-section[data-module-template="noticias"] .gallery .info-bottom p:lang(ja) {
-  font-family: "SF Pro JP", "SF Pro Display", "SF Pro Icons", "Hiragino Kaku Gothic Pro", "ヒラギノ角ゴ Pro W3", "メイリオ", "Meiryo", "ＭＳ Ｐゴシック", "Helvetica Neue", "Helvetica", "Arial", sans-serif
-}
-
-section[data-module-template="noticias"] .gallery .info-bottom p:lang(ko) {
-  font-family: "SF Pro KR", "SF Pro Display", "SF Pro Icons", "Apple Gothic", "HY Gulim", "MalgunGothic", "HY Dotum", "Lexi Gulim", "Helvetica Neue", "Helvetica", "Arial", sans-serif
-}
-
-section[data-module-template="noticias"] .gallery .info-bottom p:lang(th) {
-  font-family: "SF Pro TH", "SF Pro Display", "SF Pro Icons", "Helvetica Neue", "Helvetica", "Arial", sans-serif
-}
-
-section[data-module-template="noticias"] .gallery .info-bottom p:lang(zh-CN) {
-  font-family: "SF Pro SC", "SF Pro Display", "SF Pro Icons", "PingFang SC", "Helvetica Neue", "Helvetica", "Arial", sans-serif
-}
-
-section[data-module-template="noticias"] .gallery .info-bottom p:lang(zh-HK) {
-  font-family: "SF Pro HK", "SF Pro Display", "SF Pro Icons", "PingFang HK", "Helvetica Neue", "Helvetica", "Arial", sans-serif
-}
-
-section[data-module-template="noticias"] .gallery .info-bottom p:lang(zh-MO) {
-  font-family: "SF Pro HK", "SF Pro TC", "SF Pro Display", "SF Pro Icons", "PingFang HK", "Helvetica Neue", "Helvetica", "Arial", sans-serif
-}
-
-section[data-module-template="noticias"] .gallery .info-bottom p:lang(zh-TW) {
-  font-family: "SF Pro TC", "SF Pro Display", "SF Pro Icons", "PingFang TC", "Helvetica Neue", "Helvetica", "Arial", sans-serif
-}
 
 @media only screen and (max-width: 1068px) {
   section[data-module-template="noticias"] .gallery .info-bottom p {
@@ -596,44 +569,6 @@ section[data-module-template="noticias"] .gallery .info-bottom p:lang(zh-TW) {
     letter-spacing: 0em;
     font-family: "SF Pro AR", "SF Pro AR Text", "SF Pro Text", "SF Pro Gulf", "SF Pro Icons", "Helvetica Neue", "Helvetica", "Arial", sans-serif
   }
-
-  section[data-module-template="noticias"] .gallery .info-bottom p:lang(ja) {
-    letter-spacing: 0em;
-    font-family: "SF Pro JP", "SF Pro Text", "SF Pro Icons", "Hiragino Kaku Gothic Pro", "ヒラギノ角ゴ Pro W3", "メイリオ", "Meiryo", "ＭＳ Ｐゴシック", "Helvetica Neue", "Helvetica", "Arial", sans-serif
-  }
-
-  section[data-module-template="noticias"] .gallery .info-bottom p:lang(ko) {
-    line-height: 1.35296;
-    letter-spacing: 0em;
-    font-family: "SF Pro KR", "SF Pro Text", "SF Pro Icons", "Apple Gothic", "HY Gulim", "MalgunGothic", "HY Dotum", "Lexi Gulim", "Helvetica Neue", "Helvetica", "Arial", sans-serif
-  }
-
-  section[data-module-template="noticias"] .gallery .info-bottom p:lang(zh) {
-    line-height: 1.35296;
-    letter-spacing: 0em
-  }
-
-  section[data-module-template="noticias"] .gallery .info-bottom p:lang(th) {
-    line-height: 1.35296;
-    letter-spacing: 0em;
-    font-family: "SF Pro TH", "SF Pro Text", "SF Pro Icons", "Helvetica Neue", "Helvetica", "Arial", sans-serif
-  }
-
-  section[data-module-template="noticias"] .gallery .info-bottom p:lang(zh-CN) {
-    font-family: "SF Pro SC", "SF Pro Text", "SF Pro Icons", "PingFang SC", "Helvetica Neue", "Helvetica", "Arial", sans-serif
-  }
-
-  section[data-module-template="noticias"] .gallery .info-bottom p:lang(zh-HK) {
-    font-family: "SF Pro HK", "SF Pro Text", "SF Pro Icons", "PingFang HK", "Helvetica Neue", "Helvetica", "Arial", sans-serif
-  }
-
-  section[data-module-template="noticias"] .gallery .info-bottom p:lang(zh-MO) {
-    font-family: "SF Pro HK", "SF Pro TC", "SF Pro Text", "SF Pro Icons", "PingFang HK", "Helvetica Neue", "Helvetica", "Arial", sans-serif
-  }
-
-  section[data-module-template="noticias"] .gallery .info-bottom p:lang(zh-TW) {
-    font-family: "SF Pro TC", "SF Pro Text", "SF Pro Icons", "PingFang TC", "Helvetica Neue", "Helvetica", "Arial", sans-serif
-  }
 }
 
 @media only screen and (max-width: 734px) {
@@ -647,34 +582,6 @@ section[data-module-template="noticias"] .gallery .info-bottom p:lang(zh-TW) {
 
   section[data-module-template="noticias"] .gallery .info-bottom p:lang(ar) {
     font-family: "SF Pro AR", "SF Pro AR Text", "SF Pro Text", "SF Pro Gulf", "SF Pro Icons", "Helvetica Neue", "Helvetica", "Arial", sans-serif
-  }
-
-  section[data-module-template="noticias"] .gallery .info-bottom p:lang(ja) {
-    font-family: "SF Pro JP", "SF Pro Text", "SF Pro Icons", "Hiragino Kaku Gothic Pro", "ヒラギノ角ゴ Pro W3", "メイリオ", "Meiryo", "ＭＳ Ｐゴシック", "Helvetica Neue", "Helvetica", "Arial", sans-serif
-  }
-
-  section[data-module-template="noticias"] .gallery .info-bottom p:lang(ko) {
-    font-family: "SF Pro KR", "SF Pro Text", "SF Pro Icons", "Apple Gothic", "HY Gulim", "MalgunGothic", "HY Dotum", "Lexi Gulim", "Helvetica Neue", "Helvetica", "Arial", sans-serif
-  }
-
-  section[data-module-template="noticias"] .gallery .info-bottom p:lang(th) {
-    font-family: "SF Pro TH", "SF Pro Text", "SF Pro Icons", "Helvetica Neue", "Helvetica", "Arial", sans-serif
-  }
-
-  section[data-module-template="noticias"] .gallery .info-bottom p:lang(zh-CN) {
-    font-family: "SF Pro SC", "SF Pro Text", "SF Pro Icons", "PingFang SC", "Helvetica Neue", "Helvetica", "Arial", sans-serif
-  }
-
-  section[data-module-template="noticias"] .gallery .info-bottom p:lang(zh-HK) {
-    font-family: "SF Pro HK", "SF Pro Text", "SF Pro Icons", "PingFang HK", "Helvetica Neue", "Helvetica", "Arial", sans-serif
-  }
-
-  section[data-module-template="noticias"] .gallery .info-bottom p:lang(zh-MO) {
-    font-family: "SF Pro HK", "SF Pro TC", "SF Pro Text", "SF Pro Icons", "PingFang HK", "Helvetica Neue", "Helvetica", "Arial", sans-serif
-  }
-
-  section[data-module-template="noticias"] .gallery .info-bottom p:lang(zh-TW) {
-    font-family: "SF Pro TC", "SF Pro Text", "SF Pro Icons", "PingFang TC", "Helvetica Neue", "Helvetica", "Arial", sans-serif
   }
 }
 
@@ -731,40 +638,6 @@ section[data-module-template="noticias"] .gallery .info-bottom .custom-button:la
   font-family: "SF Pro AR", "SF Pro AR Text", "SF Pro Text", "SF Pro Gulf", "SF Pro Icons", "Helvetica Neue", "Helvetica", "Arial", sans-serif
 }
 
-section[data-module-template="noticias"] .gallery .info-bottom .custom-button:lang(ja) {
-  letter-spacing: 0em;
-  font-family: "SF Pro JP", "SF Pro Text", "SF Pro Icons", "Hiragino Kaku Gothic Pro", "ヒラギノ角ゴ Pro W3", "メイリオ", "Meiryo", "ＭＳ Ｐゴシック", "Helvetica Neue", "Helvetica", "Arial", sans-serif
-}
-
-section[data-module-template="noticias"] .gallery .info-bottom .custom-button:lang(ko) {
-  letter-spacing: 0em;
-  font-family: "SF Pro KR", "SF Pro Text", "SF Pro Icons", "Apple Gothic", "HY Gulim", "MalgunGothic", "HY Dotum", "Lexi Gulim", "Helvetica Neue", "Helvetica", "Arial", sans-serif
-}
-
-section[data-module-template="noticias"] .gallery .info-bottom .custom-button:lang(zh) {
-  letter-spacing: 0em
-}
-
-section[data-module-template="noticias"] .gallery .info-bottom .custom-button:lang(th) {
-  font-family: "SF Pro TH", "SF Pro Text", "SF Pro Icons", "Helvetica Neue", "Helvetica", "Arial", sans-serif
-}
-
-section[data-module-template="noticias"] .gallery .info-bottom .custom-button:lang(zh-CN) {
-  font-family: "SF Pro SC", "SF Pro Text", "SF Pro Icons", "PingFang SC", "Helvetica Neue", "Helvetica", "Arial", sans-serif
-}
-
-section[data-module-template="noticias"] .gallery .info-bottom .custom-button:lang(zh-HK) {
-  font-family: "SF Pro HK", "SF Pro Text", "SF Pro Icons", "PingFang HK", "Helvetica Neue", "Helvetica", "Arial", sans-serif
-}
-
-section[data-module-template="noticias"] .gallery .info-bottom .custom-button:lang(zh-MO) {
-  font-family: "SF Pro HK", "SF Pro TC", "SF Pro Text", "SF Pro Icons", "PingFang HK", "Helvetica Neue", "Helvetica", "Arial", sans-serif
-}
-
-section[data-module-template="noticias"] .gallery .info-bottom .custom-button:lang(zh-TW) {
-  font-family: "SF Pro TC", "SF Pro Text", "SF Pro Icons", "PingFang TC", "Helvetica Neue", "Helvetica", "Arial", sans-serif
-}
-
 @media only screen and (max-width: 1068px) {
   section[data-module-template="noticias"] .gallery .info-bottom .custom-button {
     --sk-button-margin-horizontal: 14px;
@@ -786,51 +659,12 @@ section[data-module-template="noticias"] .gallery .info-bottom .custom-button:la
     letter-spacing: 0em;
     font-family: "SF Pro AR", "SF Pro AR Text", "SF Pro Text", "SF Pro Gulf", "SF Pro Icons", "Helvetica Neue", "Helvetica", "Arial", sans-serif
   }
-
-  section[data-module-template="noticias"] .gallery .info-bottom .custom-button:lang(ja) {
-    letter-spacing: 0em;
-    font-family: "SF Pro JP", "SF Pro Text", "SF Pro Icons", "Hiragino Kaku Gothic Pro", "ヒラギノ角ゴ Pro W3", "メイリオ", "Meiryo", "ＭＳ Ｐゴシック", "Helvetica Neue", "Helvetica", "Arial", sans-serif
-  }
-
-  section[data-module-template="noticias"] .gallery .info-bottom .custom-button:lang(ko) {
-    line-height: 1.57143;
-    letter-spacing: 0em;
-    font-family: "SF Pro KR", "SF Pro Text", "SF Pro Icons", "Apple Gothic", "HY Gulim", "MalgunGothic", "HY Dotum", "Lexi Gulim", "Helvetica Neue", "Helvetica", "Arial", sans-serif
-  }
-
-  section[data-module-template="noticias"] .gallery .info-bottom .custom-button:lang(zh) {
-    line-height: 1.5;
-    letter-spacing: 0em
-  }
-
-  section[data-module-template="noticias"] .gallery .info-bottom .custom-button:lang(th) {
-    line-height: 1.35718;
-    letter-spacing: 0em;
-    font-family: "SF Pro TH", "SF Pro Text", "SF Pro Icons", "Helvetica Neue", "Helvetica", "Arial", sans-serif
-  }
-
-  section[data-module-template="noticias"] .gallery .info-bottom .custom-button:lang(zh-CN) {
-    font-family: "SF Pro SC", "SF Pro Text", "SF Pro Icons", "PingFang SC", "Helvetica Neue", "Helvetica", "Arial", sans-serif
-  }
-
-  section[data-module-template="noticias"] .gallery .info-bottom .custom-button:lang(zh-HK) {
-    font-family: "SF Pro HK", "SF Pro Text", "SF Pro Icons", "PingFang HK", "Helvetica Neue", "Helvetica", "Arial", sans-serif
-  }
-
-  section[data-module-template="noticias"] .gallery .info-bottom .custom-button:lang(zh-MO) {
-    font-family: "SF Pro HK", "SF Pro TC", "SF Pro Text", "SF Pro Icons", "PingFang HK", "Helvetica Neue", "Helvetica", "Arial", sans-serif
-  }
-
-  section[data-module-template="noticias"] .gallery .info-bottom .custom-button:lang(zh-TW) {
-    font-family: "SF Pro TC", "SF Pro Text", "SF Pro Icons", "PingFang TC", "Helvetica Neue", "Helvetica", "Arial", sans-serif
-  }
 }
 
 section[data-module-template="noticias"] .gallery .info-bottom .custom-button.button-primary-light {
   background: #F5F5F7 !important;
   color: #000 !important;
 }
-
 
 section[data-module-template="noticias"] .gallery .info-bottom p {
   font-size: 20px;
@@ -847,6 +681,43 @@ section[data-module-template="noticias"] .gallery .info-bottom p {
 section[data-module-template="noticias"] .gallery .info-bottom p span {
   font-weight: 700;
 }
+
+section[data-module-template="noticias"] .gallery .info-bottom p span {
+  font-weight: 700
+}
+
+@media only screen and (max-width: 734px) {
+  section[data-module-template="noticias"] .gallery .info-bottom p span {
+    display: block
+  }
+}
+
+@media only screen and (max-width: 734px) {
+  section[data-module-template="noticias"] .gallery .info-bottom p span.m-dot,
+  section[data-module-template="noticias"] .gallery .info-bottom p span.cdot {
+    display: none
+  }
+}
+
+
+/* =================== CONTINUAR =================== */
+/* =================== CONTINUAR =================== */
+/* =================== CONTINUAR =================== */
+/* =================== CONTINUAR =================== */
+/* =================== CONTINUAR =================== */
+/* =================== CONTINUAR =================== */
+/* =================== CONTINUAR =================== */
+/* =================== CONTINUAR =================== */
+/* =================== CONTINUAR =================== */
+/* =================== CONTINUAR =================== */
+/* =================== CONTINUAR =================== */
+/* =================== CONTINUAR =================== */
+/* =================== CONTINUAR =================== */
+/* =================== CONTINUAR =================== */
+/* =================== CONTINUAR =================== */
+
+
+
 
 
 
