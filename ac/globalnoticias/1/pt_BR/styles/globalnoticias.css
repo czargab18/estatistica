@@ -189,6 +189,27 @@ section[data-module-template="noticias"] .gallery .item-container .gallery-item 
   will-change: opacity;
   z-index: 0 !important
 }
+@media (min-width: 1441px) {
+  section[data-module-template="noticias"] .gallery .item-container .gallery-item {
+    height: 667.25979px;
+  }
+}
+
+@media only screen and (max-width: 1068px) {
+  section[data-module-template="noticias"] .gallery .item-container .gallery-item {
+    height: 367.79359px
+  }
+}
+
+@media only screen and (max-width: 734px) {
+  section[data-module-template="noticias"] .gallery .item-container .gallery-item {
+    height: 495px
+  }
+}
+
+section[data-module-template="noticias"] .gallery .item-container .gallery-item.theme-dark {
+  background: #fff
+}
 
 section[data-module-template="noticias"] .gallery .item-container .gallery-item.current {
   z-index: 1 !important
