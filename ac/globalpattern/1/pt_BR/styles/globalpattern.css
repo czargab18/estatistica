@@ -95,6 +95,16 @@
   font-family: var(--r-globalfont-family);
 }
 
+/* Global Header */
+#globalheader {
+  all: unset;
+}
+
+#globalheader {
+  width: 100%;
+  max-width: 2560px;
+  display: contents;
+}
 
 ul,
 ol,
@@ -663,15 +673,4 @@ main {
   font-size: smaller;
   vertical-align: sub;
   line-height: 1;
-}
-
-/* Global Header */
-#globalheader {
-  all: unset;
-}
-
-#globalheader {
-  width: 100%;
-  max-width: 2560px;
-  display: contents;
 }
