@@ -68,19 +68,6 @@ section[data-module-template="noticias"] div[class="module-content"] #noticias {
   }
 }
 
-section[data-module-template="noticias"] div[class="module-content"] .gallery h3.visuallyhidden,
-section[data-module-template="noticias"] div[class="module-content"] #noticias h3.visuallyhidden {
-  position: absolute;
-  clip: rect(1px, 1px, 1px, 1px);
-  -webkit-clip-path: inset(0px 0px 99.9% 99.9%);
-  clip-path: inset(0px 0px 99.9% 99.9%);
-  overflow: hidden;
-  height: 1px;
-  width: 1px;
-  padding: 0;
-  border: 0;
-}
-
 section[data-module-template="noticias"] .gallery .item-container {
   position: relative;
   width: 995px;
@@ -660,17 +647,6 @@ section[data-module-template="noticias"] .dotnav-item {
 
 section[data-module-template="noticias"] .tablist-wrapper .dotnav .dotnav-item.current {
   background-color: rgba(0, 0, 0, 0.8);
-}
-
-section[data-module-template="noticias"] .tablist-wrapper .dotnav .dotnav-item li a span.visuallyhidden {
-  position: absolute;
-  clip: rect(1px, 1px, 1px, 1px);
-  clip-path: inset(0px 0px 99.9% 99.9%);
-  overflow: hidden;
-  height: 1px;
-  width: 1px;
-  padding: 0;
-  border: 0;
 }
 
 section[data-module-template="noticias"] .gallery .play-pause.show {

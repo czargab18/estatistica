@@ -90,17 +90,6 @@
   --r-globalnavbar-background: rgba(251, 251, 253, 0.8);
 }
 
-.visuallyhidden {
-  position: absolute;
-  clip: rect(1px, 1px, 1px, 1px);
-  -webkit-clip-path: inset(0px 0px 99.9% 99.9%);
-  clip-path: inset(0px 0px 99.9% 99.9%);
-  overflow: hidden;
-  height: 1px;
-  width: 1px;
-  padding: 0;
-  border: 0;
-}
 
 * {
   font-family: var(--r-globalfont-family);
@@ -680,6 +669,7 @@ main {
 #globalheader {
   all: unset;
 }
+
 #globalheader {
   width: 100%;
   max-width: 2560px;
