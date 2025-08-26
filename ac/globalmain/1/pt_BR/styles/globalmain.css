@@ -337,6 +337,7 @@ main[id="globalmain"] section[data-module-template="heroes"] .unit-image-warpper
 
 main[id="globalmain"] section[data-module-template="heroes"] div[data-unit-id]:nth-child(2n - 1) {
   background-color: #1b1a1a;
+  background-color: #ffcd07;
 }
 
 main[id="globalmain"] section[data-module-template="heroes"] div[data-unit-id]:nth-child(2n - 1) :is(h1, h2, h3, p) {
@@ -354,3 +355,6 @@ main[id="globalmain"] section[data-module-template="heroes"] div[data-unit-id]:n
 [data-module-template="promos"] {
   display: none !important;
 }
+
+
+
