@@ -309,3 +309,17 @@ main[id="globalmain"] [data-module-template] [data-unit-id] .unit-image {
   transform: translatex(-50%);
   background-color: transparent;
 }
+
+
+main[id="globalmain"] section[data-module-template="heroes"] figure[id="unit-image-boasvindas"] {
+  display: block !important;
+  max-width: 100% !important;
+  margin: 0 auto !important;
+  margin: auto !important;
+  width: 100% !important;
+  height: 100% !important;
+  background-image: url("/sd/banners/pt_BR/heroes/home/inclusao.png") !important;
+  background-color: #ffffff !important;
+  background-repeat: no-repeat !important;
+  background-position: center !important;
+}
