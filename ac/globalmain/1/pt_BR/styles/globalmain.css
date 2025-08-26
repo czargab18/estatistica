@@ -84,7 +84,6 @@ main[id="globalmain"] section[data-module-template="heroes"] div.unit-image-warp
 main[id="globalmain"] section[data-module-template="promos"] div.unit-image-warpper {
   width: 100%;
   height: 100%;
-  background-color: #000000;
 }
 
 main[id="globalmain"] section[data-module-template="heroes"] figure {
@@ -311,7 +310,7 @@ main[id="globalmain"] [data-module-template] [data-unit-id] .unit-image {
 }
 
 
-main[id="globalmain"] section[data-module-template="heroes"] figure[id*="unit-image-"] {
+main[id="globalmain"] section[data-module-template="heroes"] figure.unit-image {
   display: block;
   max-width: 100%;
   margin: 0 auto;
@@ -321,17 +320,37 @@ main[id="globalmain"] section[data-module-template="heroes"] figure[id*="unit-im
   background-repeat: no-repeat;
 }
 
-
 main[id="globalmain"] section[data-module-template="heroes"] figure[id="unit-image-boasvindas"] {
   background-position: center 8px;
-  background-color: #000000;
   background-image: url("/sd/banners/pt_BR/heroes/home/inclusao.png");
-
 }
+
 
 main[id="globalmain"] section[data-module-template="heroes"] .unit-image-warpper figure[id="unit-image-graduacao"] {
   background-position: center 72px !important;
-  background-color: #ffffff;
   background-image: url("/sd/banners/pt_BR/heroes/home/graduacao_inclusao.jpg") !important;
   background-size: contain !important;
+}
+
+
+/* ==== BLOCO ORGANIZADO ABAIXO ==== */
+
+main[id="globalmain"] section[data-module-template="heroes"] div[data-unit-id]:nth-child(2n - 1) {
+  background-color: #1b1a1a;
+}
+
+main[id="globalmain"] section[data-module-template="heroes"] div[data-unit-id]:nth-child(2n - 1) :is(h1, h2, h3, p) {
+  color: #ffffff;
+}
+
+main[id="globalmain"] section[data-module-template="heroes"] div[data-unit-id]:nth-child(2n) {
+  background-color: #ffffff;
+}
+
+main[id="globalmain"] section[data-module-template="heroes"] div[data-unit-id]:nth-child(2n) :is(h1, h2, h3, p) {
+  color: #1b1a1a;
+}
+
+[data-module-template="promos"] {
+  display: none !important;
 }
