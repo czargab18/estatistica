@@ -1,53 +1,62 @@
+@charset "UTF-8";
+
 main[id*="book-list"] {
   all: unset;
   margin: 0;
   padding: 0;
   max-width: 2560px;
   width: 100%;
+  --sk-headline-text-color: rgb(29, 29, 31);
 }
 
-main[id*="book-list"]
-  :is(
-    ul,
-    ol,
-    li,
-    dl,
-    dt,
-    dd,
-    h1,
-    h2,
-    h3,
-    h4,
-    h5,
-    h6,
-    hgroup,
-    p,
-    blockquote,
-    figure,
-    form,
-    fieldset,
-    input,
-    legend,
-    pre,
-    abbr,
-    button,
-    canvas,
-    caption,
-    code,
-    details,
-    div,
-    figcaption,
-    img,
-    label,
-    main,
-    mark,
-    nav,
-    picture,
-    samp,
-    section,
-    summary,
-    time
-  ) {
+main[id*="book-list"] :is(h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6) {
+  color: var(--sk-headline-text-color, rgb(29, 29, 31));
+}
+
+main[id*="book-list"] :is(ul,
+  ol,
+  li,
+  dl,
+  dt,
+  dd,
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  hgroup,
+  p,
+  blockquote,
+  figure,
+  form,
+  fieldset,
+  input,
+  legend,
+  pre,
+  abbr,
+  button,
+  canvas,
+  caption,
+  code,
+  details,
+  div,
+  figcaption,
+  img,
+  label,
+  main,
+  mark,
+  nav,
+  picture,
+  samp,
+  section,
+  summary,
+  time) {
   margin: 0;
   padding: 0;
 }
@@ -113,6 +122,7 @@ main[id*="book-list"] div[class="books-content"] {
     width: 692px;
   }
 }
+
 @media only screen and (max-width: 734px) {
   main[id*="book-list"] div[class="books-content"] {
     margin-inline-start: auto;
@@ -120,6 +130,7 @@ main[id*="book-list"] div[class="books-content"] {
     width: 87.5%;
   }
 }
+
 main[id*="book-list"] div[class="books-content"] h2[class="book-title"] {
   margin-bottom: 16px;
   font-size: 28px;
@@ -162,6 +173,7 @@ main[id*="book-list"] div[class="books-content"] a[class*="book-item"] {
     padding: 32px 0;
   }
 }
+
 @media only screen and (max-width: 734px) {
   main[id*="book-list"] div[class="books-content"] a[class*="book-item"] {
     align-items: flex-start;
@@ -183,6 +195,7 @@ main[id*="book-list"] div[class="books-content"] a[class*="book-item"] picture[c
     width: 264px;
   }
 }
+
 @media only screen and (max-width: 1068px) {
   main[id*="book-list"] div[class="books-content"] a[class*="book-item"] picture[class="viewport-picture"] {
     width: 105px;
@@ -190,39 +203,35 @@ main[id*="book-list"] div[class="books-content"] a[class*="book-item"] picture[c
   }
 }
 
-main[id*="book-list"]
-  div[class="books-content"]
-  a[class*="book-item"]
-  picture[class="viewport-picture"]
-  img[class="viewport-image"] {
+main[id*="book-list"] div[class="books-content"] a[class*="book-item"] picture[class="viewport-picture"] img[class="viewport-image"] {
   border-radius: 20px;
   width: max-content;
   height: 165px;
 }
 
 @media only screen and (max-width: 1068px) {
-  main[id*="book-list"]
-    div[class="books-content"]
-    a[class*="book-item"]
-    picture[class="viewport-picture"]
-    img[class="viewport-image"] {
+  main[id*="book-list"] div[class="books-content"] a[class*="book-item"] picture[class="viewport-picture"] img[class="viewport-image"] {
     width: 105px;
     height: 105px;
   }
 }
+
 main[id*="book-list"] div[class="books-content"] a[class*="book-item"] div[class="item-content"] {
   margin-inline-start: 32px;
 }
+
 @media only screen and (max-width: 1068px) {
   main[id*="book-list"] div[class="books-content"] a[class*="book-item"] div[class="item-content"] {
     margin-inline-start: 24px;
   }
 }
+
 @media only screen and (max-width: 734px) {
   main[id*="book-list"] div[class="books-content"] a[class*="book-item"] div[class="item-content"] {
     margin-inline-start: 16px;
   }
 }
+
 main[id*="book-list"] a[class*="book-item"] div[class="item-content"] p[class*="item-category"] {
   color: #6e6e73;
   font-size: 14px;
@@ -232,6 +241,7 @@ main[id*="book-list"] a[class*="book-item"] div[class="item-content"] p[class*="
   font-family: "SF Pro Text", "SF Pro Icons", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
   text-transform: uppercase;
 }
+
 @media only screen and (max-width: 1068px) {
   main[id*="book-list"] a[class*="book-item"] div[class="item-content"] p[class*="item-category"] {
     font-size: 12px;
@@ -241,6 +251,7 @@ main[id*="book-list"] a[class*="book-item"] div[class="item-content"] p[class*="
     font-family: "SF Pro Text", "SF Pro Icons", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
   }
 }
+
 main[id*="book-list"] a[class*="book-item"] div[class="item-content"] h3[class="item-headline"] {
   font-size: 24px;
   line-height: 1.1666666667;
@@ -250,6 +261,7 @@ main[id*="book-list"] a[class*="book-item"] div[class="item-content"] h3[class="
   margin-top: 8px;
   -webkit-line-clamp: 3;
 }
+
 @media only screen and (max-width: 1068px) {
   main[id*="book-list"] a[class*="book-item"] div[class="item-content"] h3[class="item-headline"] {
     font-size: 21px;
@@ -259,6 +271,7 @@ main[id*="book-list"] a[class*="book-item"] div[class="item-content"] h3[class="
     font-family: "SF Pro Display", "SF Pro Icons", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
   }
 }
+
 @media only screen and (max-width: 734px) {
   main[id*="book-list"] a[class*="book-item"] div[class="item-content"] h3[class="item-headline"] {
     font-size: 17px;
@@ -278,6 +291,7 @@ main[id*="book-list"] a[class*="book-item"] div[class="item-content"] p[class="i
   font-family: "SF Pro Text", "SF Pro Icons", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
   margin-top: 12px;
 }
+
 @media only screen and (max-width: 734px) {
   main[id*="book-list"] a[class*="book-item"] div[class="item-content"] p[class="item-date last-update"] {
     font-size: 14px;
@@ -292,6 +306,7 @@ main[id*="book-list"] a[class*="book-item"] div[class="item-content"] p[class="i
   body main {
     text-align: justify !important;
   }
+
   .page-columns {
     margin-top: 1em !important;
     display: grid !important;
@@ -299,12 +314,14 @@ main[id*="book-list"] a[class*="book-item"] div[class="item-content"] p[class="i
     grid-template-columns: [page-start] 0 [page-start-inset] minmax(50px, 175px) [body-start] 1.5em !important;
     width: 980px !important;
   }
+
   .page-columns div,
   .page-columns nav,
   .page-columns main {
     padding: 0 !important;
     margin: 0 !important;
   }
+
   .page-columns main header {
     display: none !important;
   }
@@ -316,6 +333,7 @@ p span[class="citation-long"] {
   display: block;
   text-align: justify;
 }
+
 p span[class="headline-question"] {
   width: max-content;
   display: block;

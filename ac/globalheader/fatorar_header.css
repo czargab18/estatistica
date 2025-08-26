@@ -5401,16 +5401,6 @@ html[dir="rtl"] #globalnavbar-bag .ac-bag-flyout-container .ac-gn-bagview-nav-im
 .selfclear:after {
   clear: both;
 }
-.visuallyhidden {
-  position: absolute;
-  clip: rect(1px, 1px, 1px, 1px);
-  clip-path: inset(0 0 99.9% 99.9%);
-  overflow: hidden;
-  height: 1px;
-  width: 1px;
-  padding: 0;
-  border: 0;
-}
 @media only screen and (inverted-colors) {
   .no-inversion {
     filter: invert(1);
@@ -5647,19 +5637,6 @@ nav[id="globalnavbar"]  span[class*="globalnavbar-link-chevron"] {
   padding: 0;
   border: 0;
 }
-
-.visuallyhidden {
-  position: absolute;
-  clip: rect(1px, 1px, 1px, 1px);
-  clip-path: inset(0 0 99.9% 99.9%);
-  overflow: hidden;
-  height: 1px;
-  width: 1px;
-  padding: 0;
-  border: 0;
-}
-
-
 
 /* =======================================================
     Algumas coisas para usar depois
@@ -5920,17 +5897,6 @@ nav[id="globalnavbar"]  span[class*="globalnavbar-link-chevron"] {
 
 .selfclear:after {
   clear: both;
-}
-
-.visuallyhidden {
-  position: absolute;
-  clip: rect(1px, 1px, 1px, 1px);
-  clip-path: inset(0 0 99.9% 99.9%);
-  overflow: hidden;
-  height: 1px;
-  width: 1px;
-  padding: 0;
-  border: 0;
 }
 
 @media only screen and (inverted-colors) {
