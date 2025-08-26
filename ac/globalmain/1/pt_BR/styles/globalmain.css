@@ -311,15 +311,27 @@ main[id="globalmain"] [data-module-template] [data-unit-id] .unit-image {
 }
 
 
+main[id="globalmain"] section[data-module-template="heroes"] figure[id*="unit-image-"] {
+  display: block;
+  max-width: 100%;
+  margin: 0 auto;
+  margin: auto;
+  width: 100%;
+  height: 100%;
+  background-repeat: no-repeat;
+}
+
+
 main[id="globalmain"] section[data-module-template="heroes"] figure[id="unit-image-boasvindas"] {
-  display: block !important;
-  max-width: 100% !important;
-  margin: 0 auto !important;
-  margin: auto !important;
-  width: 100% !important;
-  height: 100% !important;
-  background-image: url("/sd/banners/pt_BR/heroes/home/inclusao.png") !important;
-  background-color: #ffffff !important;
-  background-repeat: no-repeat !important;
-  background-position: center !important;
+  background-position: center 8px;
+  background-color: #000000;
+  background-image: url("/sd/banners/pt_BR/heroes/home/inclusao.png");
+
+}
+
+main[id="globalmain"] section[data-module-template="heroes"] .unit-image-warpper figure[id="unit-image-graduacao"] {
+  background-position: center 72px !important;
+  background-color: #ffffff;
+  background-image: url("/sd/banners/pt_BR/heroes/home/graduacao_inclusao.jpg") !important;
+  background-size: contain !important;
 }
