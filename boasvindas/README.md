@@ -2,7 +2,7 @@
 
 > Falta adicionar seta (diagonal para cima e direita) nos lilnks para outras páginas fora do site.
 
-# Sugestões de Páginas
+# Sugestões de Páginas (eu)
 []: # - [Boas-vindas](/boasvindas/)
 []: # - [Contatos](/boasvindas/contatos/index.html)
         exmplo: https://bce.unb.br/ajuda/fale-conosco/contatos/
@@ -17,4 +17,6 @@
           - https://sistemas.ufac.br/mapa/
           - https://portal.ufcg.edu.br/administracao/91-mapa-dos-campi.html
           - https://www.prefe.ufu.br/central-de-conteudos/documentos/mapas-dos-campi
+
+# Sugestões de Páginas (copilot)
 
