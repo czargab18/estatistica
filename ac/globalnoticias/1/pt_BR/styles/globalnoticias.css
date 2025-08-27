@@ -497,6 +497,7 @@ section[data-module-template="noticias"] .gallery .info-bottom .custom-button.bu
   color: #000 !important;
 }
 
+/* Regras base para o parágrafo */
 section[data-module-template="noticias"] .gallery .info-bottom p {
   font-size: 20px;
   line-height: 1.1;
@@ -504,23 +505,28 @@ section[data-module-template="noticias"] .gallery .info-bottom p {
   letter-spacing: 0em;
   font-family: "SF Pro Display", "SF Pro Icons", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
   margin-left: 18px;
-  font-weight: 400;
   color: #fff;
-  text-shadow: 0px 0px 5px rgba(0, 0, 0, 0.6)
+  text-shadow: 0px 0px 5px rgba(0, 0, 0, 0.6);
+  white-space: normal; /* Garantindo quebra de linha normal */
+  word-wrap: break-word; /* Quebra de palavra adequada */
 }
 
 section[data-module-template="noticias"] .gallery .info-bottom p:lang(pt-br) {
-  font-family: "SF Pro AR", "SF Pro AR Display", "SF Pro Display", "SF Pro Gulf", "SF Pro Icons", "Helvetica Neue", "Helvetica", "Arial", sans-serif
+  font-family: "SF Pro AR", "SF Pro AR Display", "SF Pro Display", "SF Pro Gulf", "SF Pro Icons", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
 }
 
+/* Regras para spans dentro do parágrafo */
+section[data-module-template="noticias"] .gallery .info-bottom p span {
+  font-weight: 700;
+}
 
+/* Media queries em ordem crescente */
 @media only screen and (max-width: 1068px) {
   section[data-module-template="noticias"] .gallery .info-bottom p {
     font-size: 17px;
     line-height: 1.23536;
-    font-weight: 400;
     letter-spacing: -.022em;
-    font-family: "SF Pro Text", "SF Pro Icons", "Helvetica Neue", "Helvetica", "Arial", sans-serif
+    font-family: "SF Pro Text", "SF Pro Icons", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
   }
 }
 
@@ -528,29 +534,27 @@ section[data-module-template="noticias"] .gallery .info-bottom p:lang(pt-br) {
   section[data-module-template="noticias"] .gallery .info-bottom p {
     font-size: 15px;
     line-height: 1.33338;
-    font-weight: 400;
     letter-spacing: 0em;
-    font-family: "SF Pro Text", "SF Pro Icons", "Helvetica Neue", "Helvetica", "Arial", sans-serif
+    font-family: "SF Pro Text", "SF Pro Icons", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+    margin: 0 auto 12px;
+    text-align: center;
+    padding: 0 15px;
+    white-space: normal;
+    overflow: visible;
+    word-wrap: break-word;
   }
 
   section[data-module-template="noticias"] .gallery .info-bottom p:lang(pt-br) {
-    font-family: "SF Pro AR", "SF Pro AR Text", "SF Pro Text", "SF Pro Gulf", "SF Pro Icons", "Helvetica Neue", "Helvetica", "Arial", sans-serif
+    font-family: "SF Pro AR", "SF Pro AR Text", "SF Pro Text", "SF Pro Gulf", "SF Pro Icons", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
   }
-}
 
-section[data-module-template="noticias"] .gallery .info-bottom p span {
-  font-weight: 700
-}
-
-@media only screen and (max-width: 734px) {
   section[data-module-template="noticias"] .gallery .info-bottom p span {
-    display: block
+    display: block;
   }
-}
 
-@media only screen and (max-width: 734px) {
-  section[data-module-template="noticias"] .gallery .info-bottom p span.m-dot {
-    display: none
+  section[data-module-template="noticias"] .gallery .info-bottom p span.m-dot,
+  section[data-module-template="noticias"] .gallery .info-bottom p span.cdot {
+    display: none;
   }
 }
 
@@ -559,45 +563,19 @@ section[data-module-template="noticias"] .gallery .info-bottom p span {
     margin: 0 auto 12px;
     text-align: center;
     padding: 0 15px;
-    white-space: pre-wrap;
-    overflow: visible
+    white-space: normal; /* Mudando de pre-wrap para normal */
+    overflow: visible;
+    word-wrap: break-word; /* Adicionando quebra de palavra adequada */
   }
 }
 
-section[data-module-template="noticias"] .gallery .info-bottom p {
-  font-size: 20px;
-  line-height: 1.1;
-  font-weight: 400;
-  letter-spacing: 0em;
-  font-family: "SF Pro Display", "SF Pro Icons", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
-  margin-left: 40px;
-  font-weight: 400;
-  color: #fff;
-  text-shadow: 0px 0px 5px rgba(0, 0, 0, 0.6);
-}
-
-section[data-module-template="noticias"] .gallery .info-bottom p span {
-  font-weight: 700;
-}
-
-section[data-module-template="noticias"] .gallery .info-bottom p span {
-  font-weight: 700
-}
+/* Removendo duplicações - mantendo apenas uma versão consolidada */
 
 @media only screen and (max-width: 734px) {
   section[data-module-template="noticias"] .gallery .info-bottom p span {
     display: block
   }
 }
-
-@media only screen and (max-width: 734px) {
-
-  section[data-module-template="noticias"] .gallery .info-bottom p span.m-dot,
-  section[data-module-template="noticias"] .gallery .info-bottom p span.cdot {
-    display: none
-  }
-}
-
 
 /* =================== CONTINUAR =================== */
 
