@@ -87,20 +87,15 @@ graduacao
     - producao
 
   - links rápidos
-    - SIGAA
     - calendarioacademico-grad
-    - registro-academico
-    - identidade-estudantil
     - documentos-grad
     - normativos-graduacao
     - iniciacao-cientifica
     - programas-institucionais
 
   - Ajuda
-    - boas-vindas
     - perguntas-frequentes-grad
-    - Auxilios e Bolsas
-    - Manual para Calouros
+    - boas-vindas-calouros
     - Ouvidoria
 
 pos-graduacao
