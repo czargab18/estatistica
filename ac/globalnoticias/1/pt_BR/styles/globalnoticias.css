@@ -651,6 +651,7 @@ section[data-module-template="noticias"] .gallery .play-pause {
 section[data-module-template="noticias"] .paddlenav,
 section[data-module-template="noticias"] .paddlenav ul {
   margin: 0;
+  padding: 0;
   list-style: none;
 }
 
@@ -660,6 +661,7 @@ section[data-module-template="noticias"] .paddlenav .paddlenav-arrow {
   overflow: hidden;
   position: absolute;
   text-align: center;
+  cursor: pointer;
   -webkit-transition: 100ms background-color linear, 100ms color linear, 100ms opacity linear;
   transition: 100ms background-color linear, 100ms color linear, 100ms opacity linear;
 }
