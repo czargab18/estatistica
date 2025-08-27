@@ -26,7 +26,6 @@ boasvindas
     - Ouvidoria
     - Perguntas Frequentes (FAQ)
 
-
 departamento
   - destaque
     - historia
@@ -67,3 +66,52 @@ departamento
     - Manual para Calouros
     - Editais (departamento ou UnB)
     - Ouvidoria
+
+graduacao
+  - destaque
+    - descricao
+    - disciplinas
+    - nucleo-docente-estruturante
+    - coordenacao
+    - docentes
+    - estagio
+    - monitoria
+
+  - explorar (graduacao)
+    - manual-para-estudantes
+    - processos-seletivos
+    - formas-de-ingresso
+    - aluno-especial
+    - matricula
+    - egresso
+    - producao
+
+  - links rápidos
+    - SIGAA
+    - calendarioacademico-grad
+    - registro-academico
+    - identidade-estudantil
+    - documentos-grad
+    - normativos-graduacao
+    - iniciacao-cientifica
+    - programas-institucionais
+
+  - Ajuda
+    - boas-vindas
+    - perguntas-frequentes-grad
+    - Auxilios e Bolsas
+    - Manual para Calouros
+    - Ouvidoria
+
+pos-graduacao
+
+documentos
+
+unb
+
+Educacao
+
+Extenção
+
+Noticias
+
