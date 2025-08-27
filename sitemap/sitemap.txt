@@ -2,12 +2,13 @@
 
 boasvindas
   - destaque
-    - Estatutos e Regimentos
-    - Mapa do Campus
     - Registro Academico
+    - Matricula
+    - Mapa do Campus
+    - Manual para Calouros
+    - Estatutos e Regimentos
     - Programas e Orientações
     - Biblioteca Central
-    - Manual para Calouros
     - Calendário Acadêmico (Graduação e Pós-Graduação)
     - passos apos aprovação (Checklist)
     - evento de boas vindas
