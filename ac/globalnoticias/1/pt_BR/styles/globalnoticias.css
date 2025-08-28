@@ -610,10 +610,6 @@ section[data-module-template="noticias"] .paddlenav .paddlenav-arrow-previous {
   top: 50%;
 }
 
-section[data-module-template="noticias"] .paddlenav .paddlenav-arrow:hover {
-  text-decoration: none;
-}
-
 section[data-module-template="noticias"] .paddlenav .paddlenav-arrow:disabled,
 section[data-module-template="noticias"] .paddlenav .paddlenav-arrow.disabled {
   cursor: pointer;
@@ -678,11 +674,6 @@ section[data-module-template="noticias"] .paddlenav .paddlenav-arrow-previous::a
   }
 }
 
-section[data-module-template="noticias"] .paddlenav .paddlenav-arrow:hover::before,
-section[data-module-template="noticias"] .paddlenav .paddlenav-arrow:hover::after {
-  opacity: 0.8;
-}
-
 section[data-module-template="noticias"] .paddlenav .paddlenav-arrow:active::before,
 section[data-module-template="noticias"] .paddlenav .paddlenav-arrow:active::after {
   opacity: 0.9;
@@ -744,11 +735,6 @@ section[data-module-template="noticias"] .paddlenav .paddlenav-arrow {
   color: rgba(0, 0, 0, 0.56);
 }
 
-section[data-module-template="noticias"] .paddlenav .paddlenav-arrow:hover {
-  background-color: rgba(0, 0, 0, 0);
-  color: rgba(0, 0, 0, 0.64);
-}
-
 section[data-module-template="noticias"] .paddlenav .paddlenav-arrow:focus[data-focus-method="mouse"]:not(input):not(textarea):not(select),
 section[data-module-template="noticias"] .paddlenav .paddlenav-arrow:focus[data-focus-method="touch"]:not(input):not(textarea):not(select) {
   -webkit-box-shadow: none;
@@ -756,12 +742,6 @@ section[data-module-template="noticias"] .paddlenav .paddlenav-arrow:focus[data-
 }
 
 section[data-module-template="noticias"] .paddlenav .paddlenav-arrow:active {
-  background-color: rgba(0, 0, 0, 0);
-  color: rgba(0, 0, 0, 0.64);
-}
-
-section[data-module-template="noticias"] .paddlenav .paddlenav-arrow:focus[data-focus-method="mouse"]:not(input):not(textarea):not(select):hover,
-section[data-module-template="noticias"] .paddlenav .paddlenav-arrow:focus[data-focus-method="touch"]:not(input):not(textarea):not(select):hover {
   background-color: rgba(0, 0, 0, 0);
   color: rgba(0, 0, 0, 0.64);
 }
@@ -804,31 +784,11 @@ section[data-module-template="noticias"] .paddlenav .paddlenav-arrow-previous {
   }
 }
 
-section[data-module-template="noticias"] .paddlenav-framed .paddlenav-arrow {
-  background-color: rgba(210, 210, 215, 0.64);
-  color: rgba(0, 0, 0, 0.56);
-}
-
-section[data-module-template="noticias"] .paddlenav-framed .paddlenav-arrow:hover {
-  background-color: rgba(223, 223, 227, 0.6976);
-  color: rgba(0, 0, 0, 0.64);
-}
 
 section[data-module-template="noticias"] .paddlenav-framed .paddlenav-arrow:focus[data-focus-method="mouse"]:not(input):not(textarea):not(select),
 section[data-module-template="noticias"] .paddlenav-framed .paddlenav-arrow:focus[data-focus-method="touch"]:not(input):not(textarea):not(select) {
   -webkit-box-shadow: none;
   box-shadow: none;
-}
-
-section[data-module-template="noticias"] .paddlenav-framed .paddlenav-arrow:active {
-  background-color: rgba(193, 193, 198, 0.6544);
-  color: rgba(0, 0, 0, 0.64);
-}
-
-section[data-module-template="noticias"] .paddlenav-framed .paddlenav-arrow:focus[data-focus-method="mouse"]:not(input):not(textarea):not(select):hover,
-section[data-module-template="noticias"] .paddlenav-framed .paddlenav-arrow:focus[data-focus-method="touch"]:not(input):not(textarea):not(select):hover {
-  background-color: rgba(223, 223, 227, 0.6976);
-  color: rgba(0, 0, 0, 0.64);
 }
 
 section[data-module-template="noticias"] .paddlenav-framed .paddlenav-arrow:focus[data-focus-method="mouse"]:not(input):not(textarea):not(select):active,
@@ -911,7 +871,6 @@ section[data-module-template="noticias"] .gallery .paddlenav li.previous {
 }
 
 section[data-module-template="noticias"] .gallery .paddlenav button {
-  top: 50%;
   left: 0;
   right: 0;
   width: 100%;
@@ -919,8 +878,6 @@ section[data-module-template="noticias"] .gallery .paddlenav button {
   margin: 0 auto;
   pointer-events: all;
   border: none;
-  /* background-color: rgba(210, 210, 215, 0.64); */
-  background: none !important;
   color: rgba(0, 0, 0, 0.56);
   font-family: "SF Pro Icons";
   font-weight: 300;
@@ -933,34 +890,26 @@ section[data-module-template="noticias"] .gallery .paddlenav button {
   position: relative;
   text-align: center;
   cursor: pointer;
-  -webkit-transition: 100ms background-color linear, 100ms color linear, 100ms opacity linear;
-  transition: 100ms background-color linear, 100ms color linear, 100ms opacity linear;
-}
-
-section[data-module-template="noticias"] .gallery .paddlenav button:focus,
-section[data-module-template="noticias"] .gallery .paddlenav button:active {
   background: none;
   outline: none;
+  -webkit-transition: 100ms background-color linear, 100ms color linear, 100ms opacity linear;
+  transition: 100ms background-color linear, 100ms color linear, 100ms opacity linear, opacity 0.2s ease-in-out, transform 0.2s ease-in-out;
 }
 
-section[data-module-template="noticias"] .gallery .paddlenav button:after {
+section[data-module-template="noticias"] .gallery .paddlenav button::after {
   display: none;
+  opacity: 1;
+  top: 50%;
 }
 
-@media only screen and (max-width: 734px) {
-  section[data-module-template="noticias"] .gallery .paddlenav button:after {
-    display: block;
-  }
+section[data-module-template="noticias"] .gallery .paddlenav button:active::after {
+  opacity: 0.9;
+  transform: scale(0.95);
 }
 
-@media (max-width: 320px) {
-  section[data-module-template="noticias"] .gallery .paddlenav button:after {
-    display: none;
-  }
-}
-
-section[data-module-template="noticias"] .gallery .paddlenav button:hover {
-  background: none;
+section[data-module-template="noticias"] .gallery .paddlenav button:disabled::after,
+section[data-module-template="noticias"] .gallery .paddlenav button.disabled::after {
+  opacity: 1;
 }
 
 section[data-module-template="noticias"] .gallery .paddlenav .previous button::after,
@@ -980,6 +929,10 @@ section[data-module-template="noticias"] .gallery .paddlenav .next button::after
 }
 
 @media only screen and (max-width: 734px) {
+  section[data-module-template="noticias"] .gallery .paddlenav button::after {
+    display: block;
+  }
+  
   section[data-module-template="noticias"] .gallery .paddlenav .previous button::after {
     content: "\F35A";
     margin-left: -0.1em;
@@ -991,107 +944,8 @@ section[data-module-template="noticias"] .gallery .paddlenav .next button::after
   }
 }
 
-section[data-module-template="noticias"] .gallery .paddlenav button::after {
-  opacity: 1;
-  transition: opacity 0.2s ease-in-out, transform 0.2s ease-in-out;
-}
-
-section[data-module-template="noticias"] .gallery .paddlenav button:hover::after {
-  opacity: 0.8;
-  transform: scale(1.1);
-}
-
-section[data-module-template="noticias"] .gallery .paddlenav button:active::after {
-  opacity: 0.9;
-  transform: scale(0.95);
-}
-
-section[data-module-template="noticias"] .gallery .paddlenav button:disabled::after,
-section[data-module-template="noticias"] .gallery .paddlenav button.disabled::after {
-  opacity: 1;
-}
-
-section[data-module-template="noticias"] .gallery .paddlenav button:hover {
-  background-color: rgba(0, 0, 0, 0.05);
-  border-radius: 50%;
-}
-
-section[data-module-template="noticias"] .gallery .item-container a {
-  background-image: url("/sd/banners/pt_BR/promos/home/caquito-banner-medio.png");
-  background-color: #0071e3;
-}
-
-section[data-module-template="noticias"] .paddlenav .paddlenav-arrow-next::before,
-section[data-module-template="noticias"] .paddlenav .paddlenav-arrow-next::after {
-  font-family: "SF Pro Icons";
-  color: inherit;
-  display: inline-block;
-  font-style: normal;
-  font-weight: inherit;
-  font-size: inherit;
-  line-height: 1;
-  text-decoration: none;
-  position: relative;
-  z-index: 1;
-  content: "";
-}
-
-section[data-module-template="noticias"] .paddlenav .paddlenav-arrow-next::before {
-  display: none;
-}
-
-section[data-module-template="noticias"] .paddlenav .paddlenav-arrow-next::after {
-  margin-right: -0.056em;
-}
-
-section[data-module-template="noticias"] .paddlenav .paddlenav-arrow-previous::after {
-  font-family: "SF Pro Icons";
-  content: "";
-  display: inline-block;
-  width: 12px;
-  height: 20px;
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: contain;
-  vertical-align: middle;
-  margin-left: -0.056em;
-}
-
-@media only screen and (max-width: 734px) {
-
-  section[data-module-template="noticias"] .paddlenav .paddlenav-arrow-next::after,
-  section[data-module-template="noticias"] .paddlenav .paddlenav-arrow-previous::after {
-    width: 8px;
-    height: 14px;
+@media (max-width: 320px) {
+  section[data-module-template="noticias"] .gallery .paddlenav button::after {
+    display: none;
   }
-
-  section[data-module-template="noticias"] .paddlenav .paddlenav-arrow-next::after {
-    margin-right: -0.1em;
-  }
-
-  section[data-module-template="noticias"] .paddlenav .paddlenav-arrow-previous::after {
-    margin-left: -0.1em;
-  }
-}
-
-section[data-module-template="noticias"] .paddlenav .paddlenav-arrow:hover::after {
-  opacity: 0.8;
-}
-
-section[data-module-template="noticias"] .paddlenav .paddlenav-arrow:active::after {
-  opacity: 0.9;
-}
-
-section[data-module-template="noticias"] .paddlenav .paddlenav-arrow:disabled::after,
-section[data-module-template="noticias"] .paddlenav .paddlenav-arrow.disabled::after {
-  opacity: 1;
-}
-
-section[data-module-template="noticias"] .paddlenav .paddlenav-arrow {
-  transition: all 0.2s ease-in-out;
-}
-
-section[data-module-template="noticias"] .paddlenav .paddlenav-arrow:hover {
-  transform: scale(1.05);
-  background-color: rgba(0, 0, 0, 0.1);
 }
