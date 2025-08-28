@@ -1061,14 +1061,4 @@ section[data-module-template="noticias"] .paddlenav .paddlenav-arrow:hover {
   background-color: rgba(0, 0, 0, 0.1);
 }
 
-section[data-module-template="noticias"] .gallery .paddlenav .previous button {
-  font-family: "SF Pro Icons";
-  content: "";
-}
-section[data-module-template="noticias"] .gallery .paddlenav .previous button::after {
-  content: "\F35A";
-}
 
-section[data-module-template="noticias"] .gallery .paddlenav .next button::after {
-  content: "\F35B";
-}
