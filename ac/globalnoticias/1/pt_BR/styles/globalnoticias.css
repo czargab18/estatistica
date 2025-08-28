@@ -1021,9 +1021,134 @@ section[data-module-template="noticias"] .paddlenav .paddlenav-arrow:hover {
   background-color: rgba(0, 0, 0, 0.1);
 }
 
-/* Estado ativo/focus para acessibilidade */
-/* section[data-module-template="noticias"] .paddlenav .paddlenav-arrow:focus,
-  section[data-module-template="noticias"] .paddlenav .paddlenav-arrow:active {
-    outline: 2px solid rgba(0, 122, 255, 0.5);
-    outline-offset: 2px;
-} */
+section[data-module-template="noticias"] .paddlenav .paddlenav-arrow-next::before,
+section[data-module-template="noticias"] .paddlenav .paddlenav-arrow-next::after {
+  font-family: "SF Pro Icons";
+  color: inherit;
+  display: inline-block;
+  font-style: normal;
+  font-weight: inherit;
+  font-size: inherit;
+  line-height: 1;
+  text-decoration: none;
+  position: relative;
+  z-index: 1;
+}
+
+section[data-module-template="noticias"] .paddlenav .paddlenav-arrow-next::before {
+  display: none;
+}
+
+section[data-module-template="noticias"] .paddlenav .paddlenav-arrow-next::before,
+section[data-module-template="noticias"] .paddlenav .paddlenav-arrow-next::after {
+  content: "";
+}
+
+section[data-module-template="noticias"] .paddlenav .paddlenav-arrow-next::after {
+  margin-right: -0.056em;
+}
+
+/* Definições ::before e ::after para PREVIOUS (seta esquerda) */
+section[data-module-template="noticias"] .paddlenav .paddlenav-arrow-previous::before,
+section[data-module-template="noticias"] .paddlenav .paddlenav-arrow-previous::after {
+  font-family: "SF Pro Icons";
+  color: inherit;
+  display: inline-block;
+  font-style: normal;
+  font-weight: inherit;
+  font-size: inherit;
+  line-height: 1;
+  text-decoration: none;
+  position: relative;
+  z-index: 1;
+}
+
+section[data-module-template="noticias"] .paddlenav .paddlenav-arrow-previous::before {
+  display: none;
+}
+
+section[data-module-template="noticias"] .paddlenav .paddlenav-arrow-previous::before,
+section[data-module-template="noticias"] .paddlenav .paddlenav-arrow-previous::after {
+  content: "";
+}
+
+section[data-module-template="noticias"] .paddlenav .paddlenav-arrow-previous::after {
+  margin-left: -0.056em;
+}
+
+/* Ajustes responsivos para mobile */
+@media only screen and (max-width: 734px) {
+
+  section[data-module-template="noticias"] .paddlenav .paddlenav-arrow-next::before,
+  section[data-module-template="noticias"] .paddlenav .paddlenav-arrow-next::after {
+    font-family: "SF Pro Icons";
+    color: inherit;
+    display: inline-block;
+    font-style: normal;
+    font-weight: inherit;
+    font-size: inherit;
+    line-height: 1;
+    text-decoration: none;
+    position: relative;
+    z-index: 1;
+  }
+
+  section[data-module-template="noticias"] .paddlenav .paddlenav-arrow-next::before {
+    display: none;
+  }
+
+  section[data-module-template="noticias"] .paddlenav .paddlenav-arrow-next::before,
+  section[data-module-template="noticias"] .paddlenav .paddlenav-arrow-next::after {
+    content: "";
+  }
+
+  section[data-module-template="noticias"] .paddlenav .paddlenav-arrow-next::after {
+    margin-right: -0.1em;
+  }
+
+  section[data-module-template="noticias"] .paddlenav .paddlenav-arrow-previous::before,
+  section[data-module-template="noticias"] .paddlenav .paddlenav-arrow-previous::after {
+    font-family: "SF Pro Icons";
+    color: inherit;
+    display: inline-block;
+    font-style: normal;
+    font-weight: inherit;
+    font-size: inherit;
+    line-height: 1;
+    text-decoration: none;
+    position: relative;
+    z-index: 1;
+  }
+
+  section[data-module-template="noticias"] .paddlenav .paddlenav-arrow-previous::before {
+    display: none;
+  }
+
+  section[data-module-template="noticias"] .paddlenav .paddlenav-arrow-previous::before,
+  section[data-module-template="noticias"] .paddlenav .paddlenav-arrow-previous::after {
+    content: "";
+  }
+
+  section[data-module-template="noticias"] .paddlenav .paddlenav-arrow-previous::after {
+    margin-left: -0.1em;
+  }
+}
+
+/* Para navegação circular - sempre ativo */
+section[data-module-template="noticias"] .paddlenav .paddlenav-arrow:disabled::before,
+section[data-module-template="noticias"] .paddlenav .paddlenav-arrow:disabled::after,
+section[data-module-template="noticias"] .paddlenav .paddlenav-arrow.disabled::before,
+section[data-module-template="noticias"] .paddlenav .paddlenav-arrow.disabled::after {
+  opacity: 1;
+}
+
+/* Estados visuais das setas */
+section[data-module-template="noticias"] .paddlenav .paddlenav-arrow:hover::before,
+section[data-module-template="noticias"] .paddlenav .paddlenav-arrow:hover::after {
+  opacity: 0.8;
+}
+
+section[data-module-template="noticias"] .paddlenav .paddlenav-arrow:active::before,
+section[data-module-template="noticias"] .paddlenav .paddlenav-arrow:active::after {
+  opacity: 0.9;
+}
