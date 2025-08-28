@@ -102,6 +102,18 @@ section[data-module-template="noticias"] .gallery .item-container .gallery-item:
   transform: translate(0px, 0px);
 }
 
+/* 
+ * Propriedades inline aplicadas dinamicamente pelo JavaScript:
+ * - --progress: varia conforme posição relativa ao slide atual (ex: -1, 0, 1, 2...)
+ * - z-index: 1 para slide atual, 0 para os demais
+ * - opacity: sempre 1 para todos os slides
+ * - transform: translate(Xpx, 0px) onde X = index * containerWidth
+ *
+ * Exemplo dinâmico:
+ * Slide atual: --progress: 0; z-index: 1; opacity: 1; transform: translate(0px, 0px);
+ * Próximo slide: --progress: 1; z-index: 0; opacity: 1; transform: translate(1265px, 0px);
+ * Slide anterior: --progress: -1; z-index: 0; opacity: 1; transform: translate(-1265px, 0px);
+ */
 /* demais filhos - Muda via js 
     ID: tv-plus-gallery-item-1 Style: --progress: 0;
     z-index: 1;
@@ -847,11 +859,13 @@ section[data-module-template="noticias"] .paddlenav-framed .paddlenav-arrow:hove
   color: rgba(0, 0, 0, 0.64);
 }
 
-section[data-module-template="noticias"] .paddlenav-framed .paddlenav-arrow:focus {
+/* section[data-module-template="noticias"] .paddlenav-framed .paddlenav-arrow:focus {
   -webkit-box-shadow: 0 0 0 3px #fff, 0 0 0 5px #0071E3;
   box-shadow: 0 0 0 3px #fff, 0 0 0 5px #0071E3;
   outline: none;
 }
+
+*/
 
 section[data-module-template="noticias"] .paddlenav-framed .paddlenav-arrow:focus[data-focus-method="mouse"]:not(input):not(textarea):not(select),
 section[data-module-template="noticias"] .paddlenav-framed .paddlenav-arrow:focus[data-focus-method="touch"]:not(input):not(textarea):not(select) {

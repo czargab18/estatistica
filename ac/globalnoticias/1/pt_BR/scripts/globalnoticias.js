@@ -12,9 +12,9 @@
             this.itemContainer = this.gallery?.querySelector('.item-container');
             this.items = this.gallery?.querySelectorAll('.gallery-item');
             this.paddlenav = this.gallery?.querySelector('.paddlenav');
-            this.nextButton = this.paddlenav?.querySelector('.next button');
-            this.prevButton = this.paddlenav?.querySelector('.previous button');
-          this.playButton = this.gallery?.querySelector('.play-pause');
+          this.nextButton = this.paddlenav?.querySelector('.next button, .paddlenav-arrow-next');
+          this.prevButton = this.paddlenav?.querySelector('.previous button, .paddlenav-arrow-previous');
+          this.playButton = this.gallery?.querySelector('.play-pause, #playButton');
           this.playIcon = this.gallery?.querySelector('#play-icon');
           this.pauseIcon = this.gallery?.querySelector('#pause-icon');
           this.dots = this.gallery?.querySelectorAll('.dotnav-item');
@@ -27,8 +27,24 @@
             
             if (this.isValid()) {
                 this.init();
+            } else {
+              console.warn('❌ PaddleNavigation: Invalid gallery setup for', gallerySelector);
+              this.logDebugInfo();
             }
         }
+
+      logDebugInfo() {
+        console.log('Debug Info:', {
+          gallery: !!this.gallery,
+          itemContainer: !!this.itemContainer,
+          items: this.items?.length,
+          paddlenav: !!this.paddlenav,
+          nextButton: !!this.nextButton,
+          prevButton: !!this.prevButton,
+          playButton: !!this.playButton,
+          dots: this.dots?.length
+        });
+      }
 
         isValid() {
             return this.gallery && this.itemContainer && this.items && 
@@ -37,6 +53,9 @@
         }
 
         init() {
+          // Set initial inline styles for all gallery items
+          this.setInitialStyles();
+
             // Bind event listeners
           this.nextButton.addEventListener('click', () => {
             this.next();
@@ -79,6 +98,27 @@
           this.updatePlayPauseIcons();
         }
 
+      setInitialStyles() {
+        // Set initial inline styles for all gallery items based on their position
+        const containerWidth = this.getContainerWidth();
+
+        this.items.forEach((item, index) => {
+          const progress = index - this.currentIndex; // currentIndex is 0 initially
+          const translateItemX = index * containerWidth;
+          const zIndex = index === this.currentIndex ? 1 : 0;
+
+          // Apply inline styles exactly as requested
+          item.style.cssText = `--progress: ${progress}; z-index: ${zIndex}; opacity: 1; transform: translate(${translateItemX}px, 0px);`;
+
+          // Ensure first item has 'current' class
+          if (index === 0) {
+            item.classList.add('current');
+          } else {
+            item.classList.remove('current');
+          }
+        });
+      }
+
         next() {
             if (this.currentIndex < this.totalItems - 1) {
                 this.currentIndex++;
@@ -114,25 +154,25 @@
             // Calculate container width based on current breakpoint
             const containerWidth = this.getContainerWidth();
             
-            // Move the container to show current item
+          // Keep container transform for smooth transition
             const translateX = -(this.currentIndex * containerWidth);
             this.itemContainer.style.transform = `translate3d(${translateX}px, 0px, 0px)`;
 
-            // Update individual items positions and z-index
+          // Update individual items with inline styles as requested
             this.items.forEach((item, index) => {
                 const progress = index - this.currentIndex;
                 const translateItemX = index * containerWidth;
                 
-                item.style.setProperty('--progress', progress);
-                item.style.transform = `translate(${translateItemX}px, 0px)`;
-                item.style.zIndex = index === this.currentIndex ? 1 : 0;
-                item.style.opacity = 1;
+              // Apply inline styles exactly as shown in the example
+              item.style.cssText = `--progress: ${progress}; z-index: ${index === this.currentIndex ? 1 : 0}; opacity: 1; transform: translate(${translateItemX}px, 0px);`;
 
-                // Add/remove active class
+              // Add/remove current class (matching HTML structure)
                 if (index === this.currentIndex) {
-                    item.classList.add('active');
+                  item.classList.add('current');
+                  item.classList.remove('gallery-item'); // temporarily remove to re-add
+                  item.classList.add('gallery-item');
                 } else {
-                    item.classList.remove('active');
+                  item.classList.remove('current');
                 }
             });
         }
@@ -377,6 +417,8 @@
 
         // Handle window resize
         handleResize() {
+          // Recalculate and apply inline styles for new container width
+          this.setInitialStyles();
             this.updateGallery();
         }
 
@@ -389,18 +431,35 @@
 
     // Auto-initialize when DOM is ready
     function initializePaddleNav() {
-        const galleries = document.querySelectorAll('section[data-module-template="noticias"] .gallery');
-        const paddleNavInstances = [];
+      // Look for the specific noticias gallery
+      const mainGallery = document.querySelector('section[data-module-template="noticias"] .gallery#noticias');
+      const paddleNavInstances = [];
 
-        galleries.forEach((gallery, index) => {
-            const selectorId = `#noticias-gallery-${index}`;
-            gallery.id = `noticias-gallery-${index}`;
-            
-            const paddleNav = new PaddleNavigation(`#${gallery.id}`);
-            if (paddleNav.isValid()) {
+      if (mainGallery) {
+        const paddleNav = new PaddleNavigation('#noticias');
+        if (paddleNav.isValid()) {
+          paddleNavInstances.push(paddleNav);
+          console.log('✅ PaddleNavigation initialized for #noticias gallery');
+        } else {
+          console.warn('❌ Failed to initialize PaddleNavigation for #noticias gallery');
+        }
+      } else {
+      // Fallback: look for any gallery in noticias section
+          const galleries = document.querySelectorAll('section[data-module-template="noticias"] .gallery');
+
+          galleries.forEach((gallery, index) => {
+              const galleryId = gallery.id || `noticias-gallery-${index}`;
+              if (!gallery.id) {
+                gallery.id = galleryId;
+              }
+
+              const paddleNav = new PaddleNavigation(`#${galleryId}`);
+              if (paddleNav.isValid()) {
                 paddleNavInstances.push(paddleNav);
-            }
-        });
+                  console.log(`✅ PaddleNavigation initialized for #${galleryId}`);
+              }
+            });
+        }
 
         // Handle window resize for all instances
         let resizeTimeout;
