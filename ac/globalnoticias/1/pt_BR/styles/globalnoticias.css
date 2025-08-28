@@ -647,7 +647,9 @@ section[data-module-template="noticias"] .gallery .play-pause {
   color: #1d1d1d;
 }
 
-/* =================== PADDLENAV - Baseado no CSS original =================== */
+/* =================== PADDLENAV - Navegação Circular =================== */
+/* Baseado no CSS original com modificações para suporte a navegação circular */
+/* Os botões sempre permanecem visíveis e ativos, permitindo loop infinito */
 section[data-module-template="noticias"] .paddlenav,
 section[data-module-template="noticias"] .paddlenav ul {
   margin: 0;
@@ -675,22 +677,27 @@ section[data-module-template="noticias"] .paddlenav .paddlenav-arrow:hover {
   text-decoration: none;
 }
 
+/* Para navegação circular, os botões paddlenav sempre ficam ativos */
 section[data-module-template="noticias"] .paddlenav .paddlenav-arrow:disabled,
 section[data-module-template="noticias"] .paddlenav .paddlenav-arrow.disabled {
-  cursor: default;
-  opacity: 0;
+  cursor: pointer;
+    /* Mudando de default para pointer */
+    opacity: 1;
+    /* Mudando de 0 para 1 - sempre visível */
 }
 
 section[data-module-template="noticias"] .paddlenav .paddlenav-arrow:disabled:focus[data-focus-method="mouse"]:not(input):not(textarea):not(select),
 section[data-module-template="noticias"] .paddlenav .paddlenav-arrow:disabled:focus[data-focus-method="touch"]:not(input):not(textarea):not(select),
 section[data-module-template="noticias"] .paddlenav .paddlenav-arrow.disabled:focus[data-focus-method="mouse"]:not(input):not(textarea):not(select),
 section[data-module-template="noticias"] .paddlenav .paddlenav-arrow.disabled:focus[data-focus-method="touch"]:not(input):not(textarea):not(select) {
-  opacity: 0;
+  opacity: 1;
+    /* Mudando de 0 para 1 - sempre visível */
 }
 
 html.touch section[data-module-template="noticias"] .paddlenav .paddlenav-arrow:disabled,
 html.touch section[data-module-template="noticias"] .paddlenav .paddlenav-arrow.disabled {
-  opacity: 0;
+  opacity: 1;
+    /* Mudando de 0 para 1 - sempre visível */
 }
 
 section[data-module-template="noticias"] .paddlenav .paddlenav-arrow {
@@ -1049,7 +1056,27 @@ section[data-module-template="noticias"] .paddlenav .paddlenav-arrow:active::aft
   opacity: 0.9;
 }
 
+/* Para navegação circular, os ícones dos botões sempre ficam ativos */
 section[data-module-template="noticias"] .paddlenav .paddlenav-arrow:disabled::after,
 section[data-module-template="noticias"] .paddlenav .paddlenav-arrow.disabled::after {
-  opacity: 0.3;
+  opacity: 1;
+    /* Mudando de 0.3 para 1 - sempre visível */
+  }
+  
+  /* Navegação Circular - Estados Visuais Aprimorados */
+  section[data-module-template="noticias"] .paddlenav .paddlenav-arrow {
+    transition: all 0.2s ease-in-out;
+  }
+  
+  /* Feedback visual sutil para indicar navegação circular */
+  section[data-module-template="noticias"] .paddlenav .paddlenav-arrow:hover {
+    transform: scale(1.05);
+    background-color: rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Estado ativo/focus para acessibilidade */
+  section[data-module-template="noticias"] .paddlenav .paddlenav-arrow:focus,
+  section[data-module-template="noticias"] .paddlenav .paddlenav-arrow:active {
+    outline: 2px solid rgba(0, 122, 255, 0.5);
+    outline-offset: 2px;
 }
