@@ -650,16 +650,16 @@ html.touch section[data-module-template="noticias"] .paddlenav .paddlenav-arrow.
 
 section[data-module-template="noticias"] .paddlenav .paddlenav-arrow {
   font-weight: 300;
-  width: 5.29412rem;
-  height: 5.29412rem;
-  border-radius: 5.29412rem;
-  font-size: 53px;
-  line-height: 5.29412rem;
+  width: 3.5rem;
+  height: 3.5rem;
+  border-radius: 3.5rem;
+  font-size: 24px;
+  line-height: 3.5rem;
 }
 
 section[data-module-template="noticias"] .paddlenav .paddlenav-arrow-next,
 section[data-module-template="noticias"] .paddlenav .paddlenav-arrow-previous {
-  margin-top: -2.64706rem;
+  margin-top: -1.75rem;
 }
 
 /* =================== DEFINIÇÕES CORRETAS APPLE TV+ =================== */
@@ -803,16 +803,16 @@ section[data-module-template="noticias"] .paddlenav .paddlenav-arrow-previous {
 @media only screen and (max-width: 734px) {
   section[data-module-template="noticias"] .paddlenav .paddlenav-arrow {
     font-weight: 300;
-    width: 3.05882rem;
-    height: 3.05882rem;
-    border-radius: 3.05882rem;
-    font-size: 53px;
-    line-height: 3.05882rem;
+    width: 2.5rem;
+    height: 2.5rem;
+    border-radius: 2.5rem;
+    font-size: 20px;
+    line-height: 2.5rem;
   }
 
   section[data-module-template="noticias"] .paddlenav .paddlenav-arrow-next,
   section[data-module-template="noticias"] .paddlenav .paddlenav-arrow-previous {
-    margin-top: -1.52941rem;
+    margin-top: -1.25rem;
   }
 
   section[data-module-template="noticias"] .paddlenav .paddlenav-arrow-next::after {
@@ -980,22 +980,27 @@ section[data-module-template="noticias"] .gallery .paddlenav .previous button {
   content: "";
 }
 
-section[data-module-template="noticias"] .gallery .paddlenav .previous button::after {
-  content: "\F35A";
+section[data-module-template="noticias"] .gallery .paddlenav .previous button::after,
+section[data-module-template="noticias"] .gallery .paddlenav .next button::after {
+  display: inline-block;
+  width: 100%;
+  height: auto;
   font-family: "SF Pro Icons";
   color: inherit;
-  font-size: inherit;
-  display: inline-block;
-  margin-left: -0.056em;
+  font-size: 1.5em;
+  font-weight: 600;
+  font-style: normal;
+  line-height: 52px;
+  position: relative;
+  z-index: 1;
+}
+
+section[data-module-template="noticias"] .gallery .paddlenav .previous button::after {
+  content: "\F35A";
 }
 
 section[data-module-template="noticias"] .gallery .paddlenav .next button::after {
   content: "\F35B";
-  font-family: "SF Pro Icons";
-  color: inherit;
-  font-size: inherit;
-  display: inline-block;
-  margin-right: -0.056em;
 }
 
 /* Responsividade mobile para Unicode icons */
@@ -1003,7 +1008,7 @@ section[data-module-template="noticias"] .gallery .paddlenav .next button::after
   section[data-module-template="noticias"] .gallery .paddlenav .previous button::after {
     margin-left: -0.1em;
   }
-  
+
   section[data-module-template="noticias"] .gallery .paddlenav .next button::after {
     margin-right: -0.1em;
   }
@@ -1122,5 +1127,3 @@ section[data-module-template="noticias"] .paddlenav .paddlenav-arrow:hover {
   transform: scale(1.05);
   background-color: rgba(0, 0, 0, 0.1);
 }
-
-
