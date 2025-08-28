@@ -24,6 +24,7 @@
       this.autoPlayInterval = null;
       this.isPlaying = false;
       this.autoPlayDelay = 5000; // 5 segundos
+      this.transitionDuration = 600; // Duração padrão das transições em ms
 
       if (this.isValid()) {
         this.init();
@@ -53,6 +54,11 @@
     }
 
     init() {
+      // Set CSS transition for smooth animations
+      if (this.itemContainer) {
+        this.itemContainer.style.transition = `transform ${this.transitionDuration}ms cubic-bezier(0.23, 1, 0.320, 1)`;
+      }
+
       // Set initial inline styles for all gallery items
       this.setInitialStyles();
 
@@ -188,9 +194,9 @@
 
           // Reabilita transições após um frame
           requestAnimationFrame(() => {
-            this.itemContainer.style.transition = '';
+            this.itemContainer.style.transition = `transform ${this.transitionDuration}ms cubic-bezier(0.23, 1, 0.320, 1)`;
           });
-        }, 300); // Tempo da transição CSS
+        }, this.transitionDuration); // Usa a duração configurada
 
       } else { // direction === 'previous'
         // Transição do primeiro slide (currentIndex = totalItems-1 após decremento) para o último
@@ -212,9 +218,9 @@
 
           // Reabilita transições após um frame
           requestAnimationFrame(() => {
-            this.itemContainer.style.transition = '';
+            this.itemContainer.style.transition = `transform ${this.transitionDuration}ms cubic-bezier(0.23, 1, 0.320, 1)`;
           });
-        }, 300); // Tempo da transição CSS
+        }, this.transitionDuration); // Usa a duração configurada
       }
     }
 
@@ -518,6 +524,13 @@
       if (this.isPlaying) {
         this.stopAutoPlay();
         this.startAutoPlay();
+      }
+    }
+
+    setTransitionDuration(duration) {
+      this.transitionDuration = duration;
+      if (this.itemContainer) {
+        this.itemContainer.style.transition = `transform ${this.transitionDuration}ms cubic-bezier(0.23, 1, 0.320, 1)`;
       }
     }
 
