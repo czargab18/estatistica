@@ -53,9 +53,9 @@
         }
 
         init() {
-          // Set initial inline styles for all gallery items
-          this.setInitialStyles();
-
+            // Set initial inline styles for all gallery items
+            this.setInitialStyles();
+            
             // Bind event listeners
           this.nextButton.addEventListener('click', () => {
             this.next();
@@ -120,25 +120,104 @@
       }
 
         next() {
-            if (this.currentIndex < this.totalItems - 1) {
-                this.currentIndex++;
-            } else {
-              this.currentIndex = 0; // Loop back to first item
+            const wasLastSlide = this.currentIndex === this.totalItems - 1;
+            
+            this.currentIndex++;
+            
+            if (this.currentIndex >= this.totalItems) {
+                this.currentIndex = 0;
+                
+                if (wasLastSlide) {
+                    // Navegação circular suave do último para o primeiro
+                    this.smoothCircularTransition('next');
+                    return;
+                }
             }
-          this.updateGallery();
-          this.updateButtons();
-          this.updateDots();
+            
+            this.updateGallery();
+            this.updateButtons();
+            this.updateDots();
         }
 
         previous() {
-            if (this.currentIndex > 0) {
-                this.currentIndex--;
-            } else {
-              this.currentIndex = this.totalItems - 1; // Loop to last item
+            const wasFirstSlide = this.currentIndex === 0;
+            
+            this.currentIndex--;
+            
+            if (this.currentIndex < 0) {
+                this.currentIndex = this.totalItems - 1;
+                
+                if (wasFirstSlide) {
+                    // Navegação circular suave do primeiro para o último
+                    this.smoothCircularTransition('previous');
+                    return;
+                }
             }
-          this.updateGallery();
-          this.updateButtons();
-          this.updateDots();
+            
+            this.updateGallery();
+            this.updateButtons();
+            this.updateDots();
+        }
+
+        smoothCircularTransition(direction) {
+            const containerWidth = this.getContainerWidth();
+            
+            if (direction === 'next') {
+                // Do último slide (índice totalItems-1) para o primeiro (índice 0)
+                
+                // 1. Posiciona o primeiro slide imediatamente após o último
+                const firstSlide = this.items[0];
+                const nextPosition = this.totalItems * containerWidth;
+                firstSlide.style.transform = `translate(${nextPosition}px, 0px)`;
+                firstSlide.style.cssText = `--progress: ${this.totalItems}; z-index: 1; opacity: 1; transform: translate(${nextPosition}px, 0px);`;
+                
+                // 2. Move o container para mostrar o primeiro slide na posição temporária
+                setTimeout(() => {
+                    const translateX = -(nextPosition);
+                    this.itemContainer.style.transform = `translate3d(${translateX}px, 0px, 0px)`;
+                    
+                    // 3. Após a transição, reposiciona tudo normalmente
+                    setTimeout(() => {
+                        this.itemContainer.classList.add('no-transition');
+                        this.updateGallery();
+                        this.updateButtons();
+                        this.updateDots();
+                        
+                        // 4. Re-ativa as transições
+                        setTimeout(() => {
+                            this.itemContainer.classList.remove('no-transition');
+                        }, 50);
+                    }, 1000);
+                }, 10);
+                
+            } else { // direction === 'previous'
+                // Do primeiro slide (índice 0) para o último (índice totalItems-1)
+                
+                // 1. Posiciona o último slide imediatamente antes do primeiro
+                const lastSlide = this.items[this.totalItems - 1];
+                const previousPosition = -containerWidth;
+                lastSlide.style.transform = `translate(${previousPosition}px, 0px)`;
+                lastSlide.style.cssText = `--progress: -1; z-index: 1; opacity: 1; transform: translate(${previousPosition}px, 0px);`;
+                
+                // 2. Move o container para mostrar o último slide na posição temporária
+                setTimeout(() => {
+                    const translateX = -(previousPosition);
+                    this.itemContainer.style.transform = `translate3d(${translateX}px, 0px, 0px)`;
+                    
+                    // 3. Após a transição, reposiciona tudo normalmente
+                    setTimeout(() => {
+                        this.itemContainer.classList.add('no-transition');
+                        this.updateGallery();
+                        this.updateButtons();
+                        this.updateDots();
+                        
+                        // 4. Re-ativa as transições
+                        setTimeout(() => {
+                            this.itemContainer.classList.remove('no-transition');
+                        }, 50);
+                    }, 1000);
+                }, 10);
+            }
         }
 
         goToSlide(index) {
@@ -154,30 +233,26 @@
             // Calculate container width based on current breakpoint
             const containerWidth = this.getContainerWidth();
             
-          // Keep container transform for smooth transition
+            // Move container to show current item
             const translateX = -(this.currentIndex * containerWidth);
             this.itemContainer.style.transform = `translate3d(${translateX}px, 0px, 0px)`;
 
-          // Update individual items with inline styles as requested
+            // Update individual items with inline styles as requested
             this.items.forEach((item, index) => {
                 const progress = index - this.currentIndex;
                 const translateItemX = index * containerWidth;
                 
-              // Apply inline styles exactly as shown in the example
-              item.style.cssText = `--progress: ${progress}; z-index: ${index === this.currentIndex ? 1 : 0}; opacity: 1; transform: translate(${translateItemX}px, 0px);`;
+                // Apply inline styles exactly as shown in the example
+                item.style.cssText = `--progress: ${progress}; z-index: ${index === this.currentIndex ? 1 : 0}; opacity: 1; transform: translate(${translateItemX}px, 0px);`;
 
-              // Add/remove current class (matching HTML structure)
+                // Add/remove current class (matching HTML structure)
                 if (index === this.currentIndex) {
-                  item.classList.add('current');
-                  item.classList.remove('gallery-item'); // temporarily remove to re-add
-                  item.classList.add('gallery-item');
+                    item.classList.add('current');
                 } else {
-                  item.classList.remove('current');
+                    item.classList.remove('current');
                 }
             });
-        }
-
-        updateButtons() {
+        }        updateButtons() {
             // Enable/disable buttons based on current position
             const isFirstItem = this.currentIndex === 0;
             const isLastItem = this.currentIndex === this.totalItems - 1;

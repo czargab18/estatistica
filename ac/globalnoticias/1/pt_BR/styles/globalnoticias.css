@@ -78,6 +78,10 @@ section[data-module-template="noticias"] .gallery .item-container {
   opacity: 1;
 }
 
+/* Desabilita transição durante repositionamento circular */
+section[data-module-template="noticias"] .gallery .item-container.no-transition {
+  transition: none !important;
+}
 @media (min-width: 1441px) {
   section[data-module-template="noticias"] .gallery .item-container {
     width: 1265px;
