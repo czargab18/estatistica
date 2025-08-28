@@ -948,8 +948,10 @@ section[data-module-template="noticias"] .gallery .item-container a {
 
 /* Ícones das setas para paddlenav - Baseado no SF Pro Icons */
 section[data-module-template="noticias"] .paddlenav .paddlenav-arrow-next::after {
-  font-family: "SF Pro Icons";
   content: "";
+}
+section[data-module-template="noticias"] .paddlenav .paddlenav-arrow-next::after {
+  font-family: "SF Pro Icons";
   display: inline-block;
   width: 12px;
   height: 20px;
