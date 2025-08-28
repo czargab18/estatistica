@@ -54,11 +54,6 @@
     }
 
     init() {
-      // Set CSS transition for smooth animations
-      if (this.itemContainer) {
-        this.itemContainer.style.transition = `transform ${this.transitionDuration}ms cubic-bezier(0.23, 1, 0.320, 1)`;
-      }
-
       // Set initial inline styles for all gallery items
       this.setInitialStyles();
 
@@ -194,7 +189,7 @@
 
           // Reabilita transições após um frame
           requestAnimationFrame(() => {
-            this.itemContainer.style.transition = `transform ${this.transitionDuration}ms cubic-bezier(0.23, 1, 0.320, 1)`;
+            this.itemContainer.style.transition = '';
           });
         }, this.transitionDuration); // Usa a duração configurada
 
@@ -218,7 +213,7 @@
 
           // Reabilita transições após um frame
           requestAnimationFrame(() => {
-            this.itemContainer.style.transition = `transform ${this.transitionDuration}ms cubic-bezier(0.23, 1, 0.320, 1)`;
+            this.itemContainer.style.transition = '';
           });
         }, this.transitionDuration); // Usa a duração configurada
       }
@@ -529,8 +524,9 @@
 
     setTransitionDuration(duration) {
       this.transitionDuration = duration;
+      // Update CSS custom property for transition duration
       if (this.itemContainer) {
-        this.itemContainer.style.transition = `transform ${this.transitionDuration}ms cubic-bezier(0.23, 1, 0.320, 1)`;
+        this.itemContainer.style.setProperty('--transition-duration', `${duration}ms`);
       }
     }
 
