@@ -662,6 +662,59 @@ section[data-module-template="noticias"] .paddlenav .paddlenav-arrow-previous {
   margin-top: -2.64706rem;
 }
 
+/* =================== DEFINIÇÕES CORRETAS APPLE TV+ =================== */
+
+/* PREVIOUS (seta esquerda) - Definição correta */
+section[data-module-template="noticias"] .paddlenav .paddlenav-arrow-previous::before,
+section[data-module-template="noticias"] .paddlenav .paddlenav-arrow-previous::after {
+  font-family: "SF Pro Icons";
+  color: inherit;
+  display: inline-block;
+  font-style: normal;
+  font-weight: inherit;
+  font-size: inherit;
+  line-height: 1;
+  text-decoration: none;
+  position: relative;
+  z-index: 1;
+}
+
+section[data-module-template="noticias"] .paddlenav .paddlenav-arrow-previous::before {
+  display: none;
+}
+
+section[data-module-template="noticias"] .paddlenav .paddlenav-arrow-previous::after {
+  margin-left: -0.056em;
+}
+
+/* Responsividade mobile */
+@media only screen and (max-width: 734px) {
+  section[data-module-template="noticias"] .paddlenav .paddlenav-arrow-next::after {
+    margin-right: -0.1em;
+  }
+
+  section[data-module-template="noticias"] .paddlenav .paddlenav-arrow-previous::after {
+    margin-left: -0.1em;
+  }
+}
+
+/* Estados visuais */
+section[data-module-template="noticias"] .paddlenav .paddlenav-arrow:hover::before,
+section[data-module-template="noticias"] .paddlenav .paddlenav-arrow:hover::after {
+  opacity: 0.8;
+}
+
+section[data-module-template="noticias"] .paddlenav .paddlenav-arrow:active::before,
+section[data-module-template="noticias"] .paddlenav .paddlenav-arrow:active::after {
+  opacity: 0.9;
+}
+
+section[data-module-template="noticias"] .paddlenav .paddlenav-arrow:disabled::before,
+section[data-module-template="noticias"] .paddlenav .paddlenav-arrow:disabled::after,
+section[data-module-template="noticias"] .paddlenav .paddlenav-arrow.disabled::before,
+section[data-module-template="noticias"] .paddlenav .paddlenav-arrow.disabled::after {
+  opacity: 1;
+}
 /* Comentado - interferindo com SVG icons
 section[data-module-template="noticias"] .paddlenav .paddlenav-arrow-next::before,
 section[data-module-template="noticias"] .paddlenav .paddlenav-arrow-next::after {
@@ -947,19 +1000,26 @@ section[data-module-template="noticias"] .gallery .item-container a {
 }
 
 /* Ícones das setas para paddlenav - Baseado no SF Pro Icons */
-section[data-module-template="noticias"] .paddlenav .paddlenav-arrow-next::after {
-  content: "";
-}
+section[data-module-template="noticias"] .paddlenav .paddlenav-arrow-next::before,
 section[data-module-template="noticias"] .paddlenav .paddlenav-arrow-next::after {
   font-family: "SF Pro Icons";
+  color: inherit;
   display: inline-block;
-  width: 12px;
-  height: 20px;
-  background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='20' viewBox='0 0 12 20'%3E%3Cpath d='M1.5 18.5L10 10 1.5 1.5' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round' fill='none'/%3E%3C/svg%3E");
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: contain;
-  vertical-align: middle;
+  font-style: normal;
+  font-weight: inherit;
+  font-size: inherit;
+  line-height: 1;
+  text-decoration: none;
+  position: relative;
+  z-index: 1;
+  content: "";
+}
+
+section[data-module-template="noticias"] .paddlenav .paddlenav-arrow-next::before {
+  display: none;
+}
+
+section[data-module-template="noticias"] .paddlenav .paddlenav-arrow-next::after {
   margin-right: -0.056em;
 }
 
@@ -1021,134 +1081,3 @@ section[data-module-template="noticias"] .paddlenav .paddlenav-arrow:hover {
   background-color: rgba(0, 0, 0, 0.1);
 }
 
-section[data-module-template="noticias"] .paddlenav .paddlenav-arrow-next::before,
-section[data-module-template="noticias"] .paddlenav .paddlenav-arrow-next::after {
-  font-family: "SF Pro Icons";
-  color: inherit;
-  display: inline-block;
-  font-style: normal;
-  font-weight: inherit;
-  font-size: inherit;
-  line-height: 1;
-  text-decoration: none;
-  position: relative;
-  z-index: 1;
-}
-
-section[data-module-template="noticias"] .paddlenav .paddlenav-arrow-next::before {
-  display: none;
-}
-
-section[data-module-template="noticias"] .paddlenav .paddlenav-arrow-next::before,
-section[data-module-template="noticias"] .paddlenav .paddlenav-arrow-next::after {
-  content: "";
-}
-
-section[data-module-template="noticias"] .paddlenav .paddlenav-arrow-next::after {
-  margin-right: -0.056em;
-}
-
-/* Definições ::before e ::after para PREVIOUS (seta esquerda) */
-section[data-module-template="noticias"] .paddlenav .paddlenav-arrow-previous::before,
-section[data-module-template="noticias"] .paddlenav .paddlenav-arrow-previous::after {
-  font-family: "SF Pro Icons";
-  color: inherit;
-  display: inline-block;
-  font-style: normal;
-  font-weight: inherit;
-  font-size: inherit;
-  line-height: 1;
-  text-decoration: none;
-  position: relative;
-  z-index: 1;
-}
-
-section[data-module-template="noticias"] .paddlenav .paddlenav-arrow-previous::before {
-  display: none;
-}
-
-section[data-module-template="noticias"] .paddlenav .paddlenav-arrow-previous::before,
-section[data-module-template="noticias"] .paddlenav .paddlenav-arrow-previous::after {
-  content: "";
-}
-
-section[data-module-template="noticias"] .paddlenav .paddlenav-arrow-previous::after {
-  margin-left: -0.056em;
-}
-
-/* Ajustes responsivos para mobile */
-@media only screen and (max-width: 734px) {
-
-  section[data-module-template="noticias"] .paddlenav .paddlenav-arrow-next::before,
-  section[data-module-template="noticias"] .paddlenav .paddlenav-arrow-next::after {
-    font-family: "SF Pro Icons";
-    color: inherit;
-    display: inline-block;
-    font-style: normal;
-    font-weight: inherit;
-    font-size: inherit;
-    line-height: 1;
-    text-decoration: none;
-    position: relative;
-    z-index: 1;
-  }
-
-  section[data-module-template="noticias"] .paddlenav .paddlenav-arrow-next::before {
-    display: none;
-  }
-
-  section[data-module-template="noticias"] .paddlenav .paddlenav-arrow-next::before,
-  section[data-module-template="noticias"] .paddlenav .paddlenav-arrow-next::after {
-    content: "";
-  }
-
-  section[data-module-template="noticias"] .paddlenav .paddlenav-arrow-next::after {
-    margin-right: -0.1em;
-  }
-
-  section[data-module-template="noticias"] .paddlenav .paddlenav-arrow-previous::before,
-  section[data-module-template="noticias"] .paddlenav .paddlenav-arrow-previous::after {
-    font-family: "SF Pro Icons";
-    color: inherit;
-    display: inline-block;
-    font-style: normal;
-    font-weight: inherit;
-    font-size: inherit;
-    line-height: 1;
-    text-decoration: none;
-    position: relative;
-    z-index: 1;
-  }
-
-  section[data-module-template="noticias"] .paddlenav .paddlenav-arrow-previous::before {
-    display: none;
-  }
-
-  section[data-module-template="noticias"] .paddlenav .paddlenav-arrow-previous::before,
-  section[data-module-template="noticias"] .paddlenav .paddlenav-arrow-previous::after {
-    content: "";
-  }
-
-  section[data-module-template="noticias"] .paddlenav .paddlenav-arrow-previous::after {
-    margin-left: -0.1em;
-  }
-}
-
-/* Para navegação circular - sempre ativo */
-section[data-module-template="noticias"] .paddlenav .paddlenav-arrow:disabled::before,
-section[data-module-template="noticias"] .paddlenav .paddlenav-arrow:disabled::after,
-section[data-module-template="noticias"] .paddlenav .paddlenav-arrow.disabled::before,
-section[data-module-template="noticias"] .paddlenav .paddlenav-arrow.disabled::after {
-  opacity: 1;
-}
-
-/* Estados visuais das setas */
-section[data-module-template="noticias"] .paddlenav .paddlenav-arrow:hover::before,
-section[data-module-template="noticias"] .paddlenav .paddlenav-arrow:hover::after {
-  opacity: 0.8;
-}
-
-section[data-module-template="noticias"] .paddlenav .paddlenav-arrow:active::before,
-section[data-module-template="noticias"] .paddlenav .paddlenav-arrow:active::after {
-  opacity: 0.9;
-}
