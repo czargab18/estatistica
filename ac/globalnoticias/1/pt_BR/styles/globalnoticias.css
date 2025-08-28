@@ -925,6 +925,7 @@ section[data-module-template="noticias"] .gallery .paddlenav button {
   pointer-events: all;
   border: none;
   cursor: pointer;
+  font-family: "SF Pro Icons";
 }
 
 section[data-module-template="noticias"] .gallery .paddlenav button:focus,
@@ -953,11 +954,6 @@ section[data-module-template="noticias"] .gallery .paddlenav button:hover {
   background: none;
 }
 
-section[data-module-template="noticias"] .gallery .paddlenav .previous button {
-  font-family: "SF Pro Icons";
-  content: "";
-}
-
 section[data-module-template="noticias"] .gallery .paddlenav .previous button::after,
 section[data-module-template="noticias"] .gallery .paddlenav .next button::after {
   display: inline-block;
@@ -971,6 +967,7 @@ section[data-module-template="noticias"] .gallery .paddlenav .next button::after
   line-height: 52px;
   position: relative;
   z-index: 1;
+  content: "";
 }
 
 @media only screen and (max-width: 734px) {
