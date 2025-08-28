@@ -24,7 +24,6 @@
       this.autoPlayInterval = null;
       this.isPlaying = false;
       this.autoPlayDelay = 5000; // 5 segundos
-      this.transitionDuration = 600; // Duração padrão das transições em ms
 
       if (this.isValid()) {
         this.init();
@@ -105,19 +104,11 @@
 
       this.items.forEach((item, index) => {
         const progress = index - this.currentIndex; // currentIndex is 0 initially
-        let translateItemX = index * containerWidth;
+        const translateItemX = index * containerWidth;
         const zIndex = index === this.currentIndex ? 1 : 0;
 
-        // Special positioning: when starting on first slide (index 0), position last slide as previous
-        if (this.currentIndex === 0 && index === this.totalItems - 1) {
-          // Position last slide to the left of first slide (as previous)
-          translateItemX = -containerWidth;
-          const adjustedProgress = -1; // Previous slide progress
-          item.style.cssText = `--progress: ${adjustedProgress}; z-index: 0; opacity: 1; transform: translate(${translateItemX}px, 0px);`;
-        } else {
-          // Normal positioning for all other slides
-          item.style.cssText = `--progress: ${progress}; z-index: ${zIndex}; opacity: 1; transform: translate(${translateItemX}px, 0px);`;
-        }
+        // Apply inline styles exactly as requested
+        item.style.cssText = `--progress: ${progress}; z-index: ${zIndex}; opacity: 1; transform: translate(${translateItemX}px, 0px);`;
 
         // Ensure first item has 'current' class
         if (index === 0) {
@@ -135,16 +126,17 @@
 
       if (this.currentIndex >= this.totalItems) {
         this.currentIndex = 0;
+
+        if (wasLastSlide) {
+          // Navegação circular suave do último para o primeiro
+          this.smoothCircularTransition('next');
+          return;
+        }
       }
 
-      // Use smooth circular transition for last -> first
-      if (wasLastSlide) {
-        this.smoothCircularTransition('next');
-      } else {
-        this.updateGallery();
-        this.updateButtons();
-        this.updateDots();
-      }
+      this.updateGallery();
+      this.updateButtons();
+      this.updateDots();
     }
 
     previous() {
@@ -154,68 +146,77 @@
 
       if (this.currentIndex < 0) {
         this.currentIndex = this.totalItems - 1;
+
+        if (wasFirstSlide) {
+          // Navegação circular suave do primeiro para o último
+          this.smoothCircularTransition('previous');
+          return;
+        }
       }
 
-      // Use smooth circular transition for first -> last
-      if (wasFirstSlide) {
-        this.smoothCircularTransition('previous');
-      } else {
-        this.updateGallery();
-        this.updateButtons();
-        this.updateDots();
-      }
+      this.updateGallery();
+      this.updateButtons();
+      this.updateDots();
     }
 
     smoothCircularTransition(direction) {
       const containerWidth = this.getContainerWidth();
 
       if (direction === 'next') {
-        // Transição do último slide (currentIndex = 0 após incremento) para o primeiro
-        // O primeiro slide já está posicionado à direita pelo updateGallery()
+        // Do último slide (índice totalItems-1) para o primeiro (índice 0)
 
-        // Mover o container suavemente para mostrar o primeiro slide
-        const translateX = -(this.totalItems * containerWidth);
-        this.itemContainer.style.transform = `translate3d(${translateX}px, 0px, 0px) transition: transform 1s cubic-bezier(0.645, 0.045, 0.355, 1);`;
+        // 1. Posiciona o primeiro slide imediatamente após o último
+        const firstSlide = this.items[0];
+        const nextPosition = this.totalItems * containerWidth;
+        firstSlide.style.transform = `translate(${nextPosition}px, 0px)`;
+        firstSlide.style.cssText = `--progress: ${this.totalItems}; z-index: 1; opacity: 1; transform: translate(${nextPosition}px, 0px);`;
 
-        // Após a transição CSS, reposicionar tudo normalmente
+        // 2. Move o container para mostrar o primeiro slide na posição temporária
         setTimeout(() => {
-          // Temporariamente desabilita transições para reposicionamento instantâneo
-          this.itemContainer.style.transition = 'none';
+          const translateX = -(nextPosition);
+          this.itemContainer.style.transform = `translate3d(${translateX}px, 0px, 0px)`;
 
-          // Atualiza para posicionamento normal
-          this.updateGallery();
-          this.updateButtons();
-          this.updateDots();
+          // 3. Após a transição, reposiciona tudo normalmente
+          setTimeout(() => {
+            this.itemContainer.classList.add('no-transition');
+            this.updateGallery();
+            this.updateButtons();
+            this.updateDots();
 
-          // Reabilita transições após um frame
-          requestAnimationFrame(() => {
-            this.itemContainer.style.transition = '';
-          });
-        }, this.transitionDuration); // Usa a duração configurada
+            // 4. Re-ativa as transições
+            setTimeout(() => {
+              this.itemContainer.classList.remove('no-transition');
+            }, 50);
+          }, 1000);
+        }, 10);
 
       } else { // direction === 'previous'
-        // Transição do primeiro slide (currentIndex = totalItems-1 após decremento) para o último
-        // O último slide já está posicionado à esquerda pelo updateGallery()
+        // Do primeiro slide (índice 0) para o último (índice totalItems-1)
 
-        // Mover o container suavemente para mostrar o último slide
-        const translateX = containerWidth;
-        this.itemContainer.style.transform = `translate3d(${translateX}px, 0px, 0px)`;
+        // 1. Posiciona o último slide imediatamente antes do primeiro
+        const lastSlide = this.items[this.totalItems - 1];
+        const previousPosition = -containerWidth;
+        lastSlide.style.transform = `translate(${previousPosition}px, 0px)`;
+        lastSlide.style.cssText = `--progress: -1; z-index: 1; opacity: 1; transform: translate(${previousPosition}px, 0px);`;
 
-        // Após a transição CSS, reposicionar tudo normalmente
+        // 2. Move o container para mostrar o último slide na posição temporária
         setTimeout(() => {
-          // Temporariamente desabilita transições para reposicionamento instantâneo
-          this.itemContainer.style.transition = 'none';
+          const translateX = -(previousPosition);
+          this.itemContainer.style.transform = `translate3d(${translateX}px, 0px, 0px)`;
 
-          // Atualiza para posicionamento normal
-          this.updateGallery();
-          this.updateButtons();
-          this.updateDots();
+          // 3. Após a transição, reposiciona tudo normalmente
+          setTimeout(() => {
+            this.itemContainer.classList.add('no-transition');
+            this.updateGallery();
+            this.updateButtons();
+            this.updateDots();
 
-          // Reabilita transições após um frame
-          requestAnimationFrame(() => {
-            this.itemContainer.style.transition = '';
-          });
-        }, this.transitionDuration); // Usa a duração configurada
+            // 4. Re-ativa as transições
+            setTimeout(() => {
+              this.itemContainer.classList.remove('no-transition');
+            }, 50);
+          }, 1000);
+        }, 10);
       }
     }
 
@@ -239,26 +240,10 @@
       // Update individual items with inline styles as requested
       this.items.forEach((item, index) => {
         const progress = index - this.currentIndex;
-        let translateItemX = index * containerWidth;
+        const translateItemX = index * containerWidth;
 
-        // Special positioning: when on first slide (index 0), position last slide as previous
-        if (this.currentIndex === 0 && index === this.totalItems - 1) {
-          // Position last slide to the left of first slide (as previous)
-          translateItemX = -containerWidth;
-          const adjustedProgress = -1; // Previous slide progress
-          item.style.cssText = `--progress: ${adjustedProgress}; z-index: 0; opacity: 1; transform: translate(${translateItemX}px, 0px);`;
-        }
-        // Special positioning: when on last slide, position first slide as next
-        else if (this.currentIndex === this.totalItems - 1 && index === 0) {
-          // Position first slide to the right of last slide (as next)
-          translateItemX = this.totalItems * containerWidth;
-          const adjustedProgress = 1; // Next slide progress
-          item.style.cssText = `--progress: ${adjustedProgress}; z-index: 0; opacity: 1; transform: translate(${translateItemX}px, 0px);`;
-        }
-        // Normal positioning for all other slides
-        else {
-          item.style.cssText = `--progress: ${progress}; z-index: ${index === this.currentIndex ? 1 : 0}; opacity: 1; transform: translate(${translateItemX}px, 0px);`;
-        }
+        // Apply inline styles exactly as shown in the example
+        item.style.cssText = `--progress: ${progress}; z-index: ${index === this.currentIndex ? 1 : 0}; opacity: 1; transform: translate(${translateItemX}px, 0px);`;
 
         // Add/remove current class (matching HTML structure)
         if (index === this.currentIndex) {
@@ -267,24 +252,7 @@
           item.classList.remove('current');
         }
       });
-
-      // Show/hide previous slide preview based on current position
-      if (this.currentIndex === 0) {
-        this.showPreviousSlidePreview();
-      } else {
-        this.hidePreviews();
-      }
-
-      // Show/hide next slide preview based on current position
-      if (this.currentIndex === this.totalItems - 1) {
-        this.showNextSlidePreview();
-      }
-
-      this.updateButtons();
-      this.updateDots();
-    }
-
-    updateButtons() {
+    } updateButtons() {
       // Enable/disable buttons based on current position
       const isFirstItem = this.currentIndex === 0;
       const isLastItem = this.currentIndex === this.totalItems - 1;
@@ -519,272 +487,6 @@
       if (this.isPlaying) {
         this.stopAutoPlay();
         this.startAutoPlay();
-      }
-    }
-
-    setTransitionDuration(duration) {
-      this.transitionDuration = duration;
-      // Update CSS custom property for transition duration
-      if (this.itemContainer) {
-        this.itemContainer.style.setProperty('--transition-duration', `${duration}ms`);
-      }
-    }
-
-    // Show preview of the previous slide when on first slide
-    showPreviousSlidePreview() {
-      if (this.currentIndex === 0 && this.totalItems > 1) {
-        const lastSlideIndex = this.totalItems - 1;
-        const lastSlide = this.items[lastSlideIndex];
-
-        // Get the background image from the last slide
-        const lastSlideLink = lastSlide?.querySelector('a');
-        const backgroundImage = lastSlideLink ?
-          window.getComputedStyle(lastSlideLink).backgroundImage : null;
-
-        // Create or update preview element
-        let previewElement = this.gallery.querySelector('.previous-slide-preview');
-
-        if (!previewElement) {
-          previewElement = document.createElement('div');
-          previewElement.className = 'previous-slide-preview';
-          previewElement.style.cssText = `
-            position: absolute;
-            left: -120px;
-            top: 50%;
-            transform: translateY(-50%);
-            width: 80px;
-            height: 60px;
-            background-size: cover;
-            background-position: center;
-            border-radius: 8px;
-            opacity: 0.7;
-            transition: opacity 0.3s ease;
-            pointer-events: none;
-            z-index: 5;
-          `;
-          this.gallery.appendChild(previewElement);
-        }
-
-        if (backgroundImage && backgroundImage !== 'none') {
-          previewElement.style.backgroundImage = backgroundImage;
-          previewElement.style.opacity = '0.7';
-        }
-      }
-    }
-
-    // Show preview of the next slide when on last slide
-    showNextSlidePreview() {
-      if (this.currentIndex === this.totalItems - 1 && this.totalItems > 1) {
-        const firstSlide = this.items[0];
-
-        // Get the background image from the first slide
-        const firstSlideLink = firstSlide?.querySelector('a');
-        const backgroundImage = firstSlideLink ?
-          window.getComputedStyle(firstSlideLink).backgroundImage : null;
-
-        // Create or update preview element
-        let previewElement = this.gallery.querySelector('.next-slide-preview');
-
-        if (!previewElement) {
-          previewElement = document.createElement('div');
-          previewElement.className = 'next-slide-preview';
-          previewElement.style.cssText = `
-            position: absolute;
-            right: -120px;
-            top: 50%;
-            transform: translateY(-50%);
-            width: 80px;
-            height: 60px;
-            background-size: cover;
-            background-position: center;
-            border-radius: 8px;
-            opacity: 0.7;
-            transition: opacity 0.3s ease;
-            pointer-events: none;
-            z-index: 5;
-          `;
-          this.gallery.appendChild(previewElement);
-        }
-
-        if (backgroundImage && backgroundImage !== 'none') {
-          previewElement.style.backgroundImage = backgroundImage;
-          previewElement.style.opacity = '0.7';
-        }
-      }
-    }
-
-    // Hide preview elements
-    hidePreviews() {
-      const previousPreview = this.gallery.querySelector('.previous-slide-preview');
-      const nextPreview = this.gallery.querySelector('.next-slide-preview');
-
-      if (previousPreview) {
-        previousPreview.style.opacity = '0';
-      }
-
-      if (nextPreview) {
-        nextPreview.style.opacity = '0';
-      }
-    }
-
-    // Show preview of the previous slide when on first slide
-    showPreviousSlidePreview() {
-      if (this.currentIndex === 0 && this.totalItems > 1) {
-        const lastSlideIndex = this.totalItems - 1;
-        const lastSlide = this.items[lastSlideIndex];
-
-        // Get the background image from the last slide
-        const lastSlideLink = lastSlide?.querySelector('a');
-        const backgroundImage = lastSlideLink ?
-          window.getComputedStyle(lastSlideLink).backgroundImage : null;
-
-        // Create or update preview element
-        let previewElement = this.gallery.querySelector('.previous-slide-preview');
-
-        if (!previewElement) {
-          previewElement = document.createElement('div');
-          previewElement.className = 'previous-slide-preview';
-          previewElement.style.cssText = `
-            position: absolute;
-            left: -100px;
-            top: 50%;
-            transform: translateY(-50%);
-            width: 80px;
-            height: 60px;
-            background-size: cover;
-            background-position: center;
-            border-radius: 8px;
-            opacity: 0.7;
-            z-index: 10;
-            transition: opacity 0.3s ease, transform 0.3s ease;
-            cursor: pointer;
-          `;
-
-          // Add click handler to go to last slide
-          previewElement.addEventListener('click', () => {
-            this.goToSlide(lastSlideIndex);
-            this.stopAutoPlay();
-          });
-
-          // Add hover effects
-          previewElement.addEventListener('mouseenter', () => {
-            previewElement.style.opacity = '1';
-            previewElement.style.transform = 'translateY(-50%) scale(1.05)';
-          });
-
-          previewElement.addEventListener('mouseleave', () => {
-            previewElement.style.opacity = '0.7';
-            previewElement.style.transform = 'translateY(-50%) scale(1)';
-          });
-
-          this.gallery.appendChild(previewElement);
-        }
-
-        // Update background image
-        if (backgroundImage && backgroundImage !== 'none') {
-          previewElement.style.backgroundImage = backgroundImage;
-          previewElement.style.display = 'block';
-        }
-
-        return previewElement;
-      }
-
-      return null;
-    }
-
-    // Hide preview of the previous slide
-    hidePreviousSlidePreview() {
-      const previewElement = this.gallery.querySelector('.previous-slide-preview');
-      if (previewElement) {
-        previewElement.style.display = 'none';
-      }
-    }
-
-    // Show preview of the next slide when on last slide
-    showNextSlidePreview() {
-      if (this.currentIndex === this.totalItems - 1 && this.totalItems > 1) {
-        const firstSlideIndex = 0;
-        const firstSlide = this.items[firstSlideIndex];
-
-        // Get the background image from the first slide
-        const firstSlideLink = firstSlide?.querySelector('a');
-        const backgroundImage = firstSlideLink ?
-          window.getComputedStyle(firstSlideLink).backgroundImage : null;
-
-        // Create or update preview element
-        let previewElement = this.gallery.querySelector('.next-slide-preview');
-
-        if (!previewElement) {
-          previewElement = document.createElement('div');
-          previewElement.className = 'next-slide-preview';
-          previewElement.style.cssText = `
-            position: absolute;
-            right: -100px;
-            top: 50%;
-            transform: translateY(-50%);
-            width: 80px;
-            height: 60px;
-            background-size: cover;
-            background-position: center;
-            border-radius: 8px;
-            opacity: 0.7;
-            z-index: 10;
-            transition: opacity 0.3s ease, transform 0.3s ease;
-            cursor: pointer;
-          `;
-
-          // Add click handler to go to first slide
-          previewElement.addEventListener('click', () => {
-            this.goToSlide(firstSlideIndex);
-            this.stopAutoPlay();
-          });
-
-          // Add hover effects
-          previewElement.addEventListener('mouseenter', () => {
-            previewElement.style.opacity = '1';
-            previewElement.style.transform = 'translateY(-50%) scale(1.05)';
-          });
-
-          previewElement.addEventListener('mouseleave', () => {
-            previewElement.style.opacity = '0.7';
-            previewElement.style.transform = 'translateY(-50%) scale(1)';
-          });
-
-          this.gallery.appendChild(previewElement);
-        }
-
-        // Update background image
-        if (backgroundImage && backgroundImage !== 'none') {
-          previewElement.style.backgroundImage = backgroundImage;
-          previewElement.style.display = 'block';
-        }
-
-        return previewElement;
-      }
-
-      return null;
-    }
-
-    // Hide preview of the next slide
-    hideNextSlidePreview() {
-      const previewElement = this.gallery.querySelector('.next-slide-preview');
-      if (previewElement) {
-        previewElement.style.display = 'none';
-      }
-    }
-
-    // Toggle slide previews on/off
-    toggleSlidePreviews(enabled = true) {
-      if (enabled) {
-        if (this.currentIndex === 0) {
-          this.showPreviousSlidePreview();
-        }
-        if (this.currentIndex === this.totalItems - 1) {
-          this.showNextSlidePreview();
-        }
-      } else {
-        this.hidePreviousSlidePreview();
-        this.hideNextSlidePreview();
       }
     }
 
