@@ -681,9 +681,7 @@ section[data-module-template="noticias"] .paddlenav .paddlenav-arrow:hover {
 section[data-module-template="noticias"] .paddlenav .paddlenav-arrow:disabled,
 section[data-module-template="noticias"] .paddlenav .paddlenav-arrow.disabled {
   cursor: pointer;
-    /* Mudando de default para pointer */
     opacity: 1;
-    /* Mudando de 0 para 1 - sempre visível */
 }
 
 section[data-module-template="noticias"] .paddlenav .paddlenav-arrow:disabled:focus[data-focus-method="mouse"]:not(input):not(textarea):not(select),
@@ -691,13 +689,11 @@ section[data-module-template="noticias"] .paddlenav .paddlenav-arrow:disabled:fo
 section[data-module-template="noticias"] .paddlenav .paddlenav-arrow.disabled:focus[data-focus-method="mouse"]:not(input):not(textarea):not(select),
 section[data-module-template="noticias"] .paddlenav .paddlenav-arrow.disabled:focus[data-focus-method="touch"]:not(input):not(textarea):not(select) {
   opacity: 1;
-    /* Mudando de 0 para 1 - sempre visível */
 }
 
 html.touch section[data-module-template="noticias"] .paddlenav .paddlenav-arrow:disabled,
 html.touch section[data-module-template="noticias"] .paddlenav .paddlenav-arrow.disabled {
   opacity: 1;
-    /* Mudando de 0 para 1 - sempre visível */
 }
 
 section[data-module-template="noticias"] .paddlenav .paddlenav-arrow {
@@ -714,7 +710,6 @@ section[data-module-template="noticias"] .paddlenav .paddlenav-arrow-previous {
   margin-top: -2.64706rem;
 }
 
-/* Ícones das setas */
 section[data-module-template="noticias"] .paddlenav .paddlenav-arrow-next::before,
 section[data-module-template="noticias"] .paddlenav .paddlenav-arrow-next::after {
   font-family: "SF Pro Icons";
@@ -769,7 +764,6 @@ section[data-module-template="noticias"] .paddlenav .paddlenav-arrow-previous::a
   margin-left: -0.056em;
 }
 
-/* Estilos visuais base dos botões */
 section[data-module-template="noticias"] .paddlenav .paddlenav-arrow {
   background-color: rgba(0, 0, 0, 0);
   color: rgba(0, 0, 0, 0.56);
