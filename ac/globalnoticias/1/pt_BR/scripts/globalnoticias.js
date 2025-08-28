@@ -12,16 +12,39 @@
             this.itemContainer = this.gallery?.querySelector('.item-container');
             this.items = this.gallery?.querySelectorAll('.gallery-item');
             this.paddlenav = this.gallery?.querySelector('.paddlenav');
-            this.nextButton = this.paddlenav?.querySelector('.next button');
-            this.prevButton = this.paddlenav?.querySelector('.previous button');
+          this.nextButton = this.paddlenav?.querySelector('.next button, .paddlenav-arrow-next');
+          this.prevButton = this.paddlenav?.querySelector('.previous button, .paddlenav-arrow-previous');
+          this.playButton = this.gallery?.querySelector('.play-pause, #playButton');
+          this.playIcon = this.gallery?.querySelector('#play-icon');
+          this.pauseIcon = this.gallery?.querySelector('#pause-icon');
+          this.dots = this.gallery?.querySelectorAll('.dotnav-item');
             
             this.currentIndex = 0;
             this.totalItems = this.items?.length || 0;
+          this.autoPlayInterval = null;
+          this.isPlaying = false;
+          this.autoPlayDelay = 5000; // 5 segundos
             
             if (this.isValid()) {
                 this.init();
+            } else {
+              console.warn('❌ PaddleNavigation: Invalid gallery setup for', gallerySelector);
+              this.logDebugInfo();
             }
         }
+
+      logDebugInfo() {
+        console.log('Debug Info:', {
+          gallery: !!this.gallery,
+          itemContainer: !!this.itemContainer,
+          items: this.items?.length,
+          paddlenav: !!this.paddlenav,
+          nextButton: !!this.nextButton,
+          prevButton: !!this.prevButton,
+          playButton: !!this.playButton,
+          dots: this.dots?.length
+        });
+      }
 
         isValid() {
             return this.gallery && this.itemContainer && this.items && 
@@ -30,9 +53,34 @@
         }
 
         init() {
+            // Set initial inline styles for all gallery items
+            this.setInitialStyles();
+            
             // Bind event listeners
-            this.nextButton.addEventListener('click', this.next.bind(this));
-            this.prevButton.addEventListener('click', this.previous.bind(this));
+          this.nextButton.addEventListener('click', () => {
+            this.next();
+            this.stopAutoPlay();
+          });
+          this.prevButton.addEventListener('click', () => {
+            this.previous();
+            this.stopAutoPlay();
+          });
+
+          // Play/pause button
+          if (this.playButton) {
+            this.playButton.addEventListener('click', this.togglePlayPause.bind(this));
+          }
+
+          // Dots navigation
+          if (this.dots) {
+            this.dots.forEach((dot, index) => {
+              dot.addEventListener('click', (e) => {
+                e.preventDefault();
+                this.goToSlide(index);
+                this.stopAutoPlay();
+              });
+            });
+          }
 
             // Keyboard navigation
             document.addEventListener('keydown', this.handleKeydown.bind(this));
@@ -40,24 +88,135 @@
             // Touch/swipe support (basic)
             this.addTouchSupport();
 
+          // Intersection Observer for auto-start
+          this.addIntersectionObserver();
+
             // Initialize first state
             this.updateGallery();
             this.updateButtons();
+          this.updateDots();
+          this.updatePlayPauseIcons();
         }
 
+      setInitialStyles() {
+        // Set initial inline styles for all gallery items based on their position
+        const containerWidth = this.getContainerWidth();
+
+        this.items.forEach((item, index) => {
+          const progress = index - this.currentIndex; // currentIndex is 0 initially
+          const translateItemX = index * containerWidth;
+          const zIndex = index === this.currentIndex ? 1 : 0;
+
+          // Apply inline styles exactly as requested
+          item.style.cssText = `--progress: ${progress}; z-index: ${zIndex}; opacity: 1; transform: translate(${translateItemX}px, 0px);`;
+
+          // Ensure first item has 'current' class
+          if (index === 0) {
+            item.classList.add('current');
+          } else {
+            item.classList.remove('current');
+          }
+        });
+      }
+
         next() {
-            if (this.currentIndex < this.totalItems - 1) {
-                this.currentIndex++;
-                this.updateGallery();
-                this.updateButtons();
+            const wasLastSlide = this.currentIndex === this.totalItems - 1;
+            
+            this.currentIndex++;
+            
+            if (this.currentIndex >= this.totalItems) {
+                this.currentIndex = 0;
+                
+                if (wasLastSlide) {
+                    // Navegação circular suave do último para o primeiro
+                    this.smoothCircularTransition('next');
+                    return;
+                }
             }
+            
+            this.updateGallery();
+            this.updateButtons();
+            this.updateDots();
         }
 
         previous() {
-            if (this.currentIndex > 0) {
-                this.currentIndex--;
-                this.updateGallery();
-                this.updateButtons();
+            const wasFirstSlide = this.currentIndex === 0;
+            
+            this.currentIndex--;
+            
+            if (this.currentIndex < 0) {
+                this.currentIndex = this.totalItems - 1;
+                
+                if (wasFirstSlide) {
+                    // Navegação circular suave do primeiro para o último
+                    this.smoothCircularTransition('previous');
+                    return;
+                }
+            }
+            
+            this.updateGallery();
+            this.updateButtons();
+            this.updateDots();
+        }
+
+        smoothCircularTransition(direction) {
+            const containerWidth = this.getContainerWidth();
+            
+            if (direction === 'next') {
+                // Do último slide (índice totalItems-1) para o primeiro (índice 0)
+                
+                // 1. Posiciona o primeiro slide imediatamente após o último
+                const firstSlide = this.items[0];
+                const nextPosition = this.totalItems * containerWidth;
+                firstSlide.style.transform = `translate(${nextPosition}px, 0px)`;
+                firstSlide.style.cssText = `--progress: ${this.totalItems}; z-index: 1; opacity: 1; transform: translate(${nextPosition}px, 0px);`;
+                
+                // 2. Move o container para mostrar o primeiro slide na posição temporária
+                setTimeout(() => {
+                    const translateX = -(nextPosition);
+                    this.itemContainer.style.transform = `translate3d(${translateX}px, 0px, 0px)`;
+                    
+                    // 3. Após a transição, reposiciona tudo normalmente
+                    setTimeout(() => {
+                        this.itemContainer.classList.add('no-transition');
+                        this.updateGallery();
+                        this.updateButtons();
+                        this.updateDots();
+                        
+                        // 4. Re-ativa as transições
+                        setTimeout(() => {
+                            this.itemContainer.classList.remove('no-transition');
+                        }, 50);
+                    }, 1000);
+                }, 10);
+                
+            } else { // direction === 'previous'
+                // Do primeiro slide (índice 0) para o último (índice totalItems-1)
+                
+                // 1. Posiciona o último slide imediatamente antes do primeiro
+                const lastSlide = this.items[this.totalItems - 1];
+                const previousPosition = -containerWidth;
+                lastSlide.style.transform = `translate(${previousPosition}px, 0px)`;
+                lastSlide.style.cssText = `--progress: -1; z-index: 1; opacity: 1; transform: translate(${previousPosition}px, 0px);`;
+                
+                // 2. Move o container para mostrar o último slide na posição temporária
+                setTimeout(() => {
+                    const translateX = -(previousPosition);
+                    this.itemContainer.style.transform = `translate3d(${translateX}px, 0px, 0px)`;
+                    
+                    // 3. Após a transição, reposiciona tudo normalmente
+                    setTimeout(() => {
+                        this.itemContainer.classList.add('no-transition');
+                        this.updateGallery();
+                        this.updateButtons();
+                        this.updateDots();
+                        
+                        // 4. Re-ativa as transições
+                        setTimeout(() => {
+                            this.itemContainer.classList.remove('no-transition');
+                        }, 50);
+                    }, 1000);
+                }, 10);
             }
         }
 
@@ -66,6 +225,7 @@
                 this.currentIndex = index;
                 this.updateGallery();
                 this.updateButtons();
+              this.updateDots();
             }
         }
 
@@ -73,50 +233,136 @@
             // Calculate container width based on current breakpoint
             const containerWidth = this.getContainerWidth();
             
-            // Move the container to show current item
+            // Move container to show current item
             const translateX = -(this.currentIndex * containerWidth);
             this.itemContainer.style.transform = `translate3d(${translateX}px, 0px, 0px)`;
 
-            // Update individual items positions and z-index
+            // Update individual items with inline styles as requested
             this.items.forEach((item, index) => {
                 const progress = index - this.currentIndex;
                 const translateItemX = index * containerWidth;
                 
-                item.style.setProperty('--progress', progress);
-                item.style.transform = `translate(${translateItemX}px, 0px)`;
-                item.style.zIndex = index === this.currentIndex ? 1 : 0;
-                item.style.opacity = 1;
+                // Apply inline styles exactly as shown in the example
+                item.style.cssText = `--progress: ${progress}; z-index: ${index === this.currentIndex ? 1 : 0}; opacity: 1; transform: translate(${translateItemX}px, 0px);`;
 
-                // Add/remove active class
+                // Add/remove current class (matching HTML structure)
                 if (index === this.currentIndex) {
-                    item.classList.add('active');
+                    item.classList.add('current');
                 } else {
-                    item.classList.remove('active');
+                    item.classList.remove('current');
                 }
             });
-        }
-
-        updateButtons() {
+        }        updateButtons() {
             // Enable/disable buttons based on current position
             const isFirstItem = this.currentIndex === 0;
             const isLastItem = this.currentIndex === this.totalItems - 1;
 
-            // Update previous button
-            if (isFirstItem) {
+          // For infinite loop, buttons are always enabled if we have more than 1 item
+          if (this.totalItems > 1) {
+            this.prevButton.disabled = false;
+            this.prevButton.classList.remove('disabled');
+            this.nextButton.disabled = false;
+            this.nextButton.classList.remove('disabled');
+          } else {
                 this.prevButton.disabled = true;
                 this.prevButton.classList.add('disabled');
-            } else {
-                this.prevButton.disabled = false;
-                this.prevButton.classList.remove('disabled');
-            }
+          this.nextButton.disabled = true;
+          this.nextButton.classList.add('disabled');
+        }
+      }
 
-            // Update next button
-            if (isLastItem) {
-                this.nextButton.disabled = true;
-                this.nextButton.classList.add('disabled');
+      updateDots() {
+        if (!this.dots) return;
+
+        this.dots.forEach((dot, index) => {
+          if (index === this.currentIndex) {
+            dot.classList.add('current');
+          } else {
+            dot.classList.remove('current');
+          }
+        });
+      }
+
+      startAutoPlay() {
+        if (this.autoPlayInterval) return; // Already playing
+
+        this.autoPlayInterval = setInterval(() => {
+          this.next();
+        }, this.autoPlayDelay);
+
+        this.isPlaying = true;
+        this.updatePlayPauseIcons();
+
+        if (this.gallery) {
+          this.gallery.classList.add('autoplay');
+        }
+      }
+
+      stopAutoPlay() {
+        if (this.autoPlayInterval) {
+          clearInterval(this.autoPlayInterval);
+          this.autoPlayInterval = null;
+        }
+
+        this.isPlaying = false;
+        this.updatePlayPauseIcons();
+
+        if (this.gallery) {
+          this.gallery.classList.remove('autoplay');
+        }
+      }
+
+      togglePlayPause() {
+        if (this.isPlaying) {
+          this.stopAutoPlay();
             } else {
-                this.nextButton.disabled = false;
-                this.nextButton.classList.remove('disabled');
+            this.startAutoPlay();
+          }
+        }
+
+      updatePlayPauseIcons() {
+        if (this.playIcon && this.pauseIcon) {
+          if (this.isPlaying) {
+            this.playIcon.style.display = 'none';
+            this.pauseIcon.style.display = 'block';
+          } else {
+            this.playIcon.style.display = 'block';
+            this.pauseIcon.style.display = 'none';
+          }
+        }
+
+        if (this.playButton) {
+          if (this.isPlaying) {
+            this.playButton.classList.remove('paused');
+            this.playButton.setAttribute('aria-label', 'pause slideshow gallery');
+          } else {
+            this.playButton.classList.add('paused');
+            this.playButton.setAttribute('aria-label', 'play slideshow gallery');
+          }
+        }
+      }
+
+      addIntersectionObserver() {
+        const observer = new IntersectionObserver((entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting && !this.isPlaying) {
+              // Auto-start when gallery comes into view
+              setTimeout(() => {
+                if (entry.isIntersecting && !this.isPlaying) {
+                  this.startAutoPlay();
+                }
+              }, 1000); // Delay 1 segundo antes de iniciar
+            } else if (!entry.isIntersecting && this.isPlaying) {
+              this.stopAutoPlay();
+            }
+          });
+        }, {
+          threshold: 0.5,
+          rootMargin: '0px 0px -100px 0px' // Start a bit before fully visible
+        });
+
+        if (this.gallery) {
+          observer.observe(this.gallery);
             }
         }
 
@@ -144,20 +390,29 @@
             switch (event.key) {
                 case 'ArrowLeft':
                     event.preventDefault();
+                this.stopAutoPlay();
                     this.previous();
                     break;
                 case 'ArrowRight':
                     event.preventDefault();
+                this.stopAutoPlay();
                     this.next();
                     break;
                 case 'Home':
                     event.preventDefault();
+                this.stopAutoPlay();
                     this.goToSlide(0);
                     break;
                 case 'End':
                     event.preventDefault();
+                this.stopAutoPlay();
                     this.goToSlide(this.totalItems - 1);
                     break;
+              case ' ': // Spacebar
+              case 'Enter':
+                event.preventDefault();
+                this.togglePlayPause();
+                break;
             }
         }
 
@@ -185,6 +440,8 @@
 
                 // Check if horizontal swipe is more significant than vertical
                 if (Math.abs(deltaX) > Math.abs(deltaY) && Math.abs(deltaX) > threshold) {
+                  this.stopAutoPlay(); // Stop autoplay on swipe
+
                     if (deltaX > 0) {
                         // Swipe right - go to previous
                         this.previous();
@@ -221,26 +478,63 @@
             return this.totalItems;
         }
 
+      isAutoPlaying() {
+        return this.isPlaying;
+      }
+
+      setAutoPlayDelay(delay) {
+        this.autoPlayDelay = delay;
+        if (this.isPlaying) {
+          this.stopAutoPlay();
+          this.startAutoPlay();
+        }
+      }
+
         // Handle window resize
         handleResize() {
+          // Recalculate and apply inline styles for new container width
+          this.setInitialStyles();
             this.updateGallery();
         }
+
+      // Cleanup method
+      destroy() {
+        this.stopAutoPlay();
+        // Remove event listeners would go here if needed
+      }
     }
 
     // Auto-initialize when DOM is ready
     function initializePaddleNav() {
-        const galleries = document.querySelectorAll('section[data-module-template="noticias"] .gallery');
-        const paddleNavInstances = [];
+      // Look for the specific noticias gallery
+      const mainGallery = document.querySelector('section[data-module-template="noticias"] .gallery#noticias');
+      const paddleNavInstances = [];
 
-        galleries.forEach((gallery, index) => {
-            const selectorId = `#noticias-gallery-${index}`;
-            gallery.id = `noticias-gallery-${index}`;
-            
-            const paddleNav = new PaddleNavigation(`#${gallery.id}`);
-            if (paddleNav.isValid()) {
+      if (mainGallery) {
+        const paddleNav = new PaddleNavigation('#noticias');
+        if (paddleNav.isValid()) {
+          paddleNavInstances.push(paddleNav);
+          console.log('✅ PaddleNavigation initialized for #noticias gallery');
+        } else {
+          console.warn('❌ Failed to initialize PaddleNavigation for #noticias gallery');
+        }
+      } else {
+      // Fallback: look for any gallery in noticias section
+          const galleries = document.querySelectorAll('section[data-module-template="noticias"] .gallery');
+
+          galleries.forEach((gallery, index) => {
+              const galleryId = gallery.id || `noticias-gallery-${index}`;
+              if (!gallery.id) {
+                gallery.id = galleryId;
+              }
+
+              const paddleNav = new PaddleNavigation(`#${galleryId}`);
+              if (paddleNav.isValid()) {
                 paddleNavInstances.push(paddleNav);
-            }
-        });
+                  console.log(`✅ PaddleNavigation initialized for #${galleryId}`);
+              }
+            });
+        }
 
         // Handle window resize for all instances
         let resizeTimeout;
