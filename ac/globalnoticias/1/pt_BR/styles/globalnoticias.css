@@ -946,7 +946,6 @@ section[data-module-template="noticias"] .gallery .paddlenav button {
   pointer-events: all;
   border: none;
   cursor: pointer;
-  font-family: "SF Pro Icons";
 }
 
 section[data-module-template="noticias"] .gallery .paddlenav button:focus,
@@ -973,6 +972,69 @@ section[data-module-template="noticias"] .gallery .paddlenav button:after {
 
 section[data-module-template="noticias"] .gallery .paddlenav button:hover {
   background: none;
+}
+
+/* Unicode SF Pro Icons para botões de navegação */
+section[data-module-template="noticias"] .gallery .paddlenav .previous button {
+  font-family: "SF Pro Icons";
+  content: "";
+}
+
+section[data-module-template="noticias"] .gallery .paddlenav .previous button::after {
+  content: "\F35A";
+  font-family: "SF Pro Icons";
+  color: inherit;
+  font-size: inherit;
+  display: inline-block;
+  margin-left: -0.056em;
+}
+
+section[data-module-template="noticias"] .gallery .paddlenav .next button::after {
+  content: "\F35B";
+  font-family: "SF Pro Icons";
+  color: inherit;
+  font-size: inherit;
+  display: inline-block;
+  margin-right: -0.056em;
+}
+
+/* Responsividade mobile para Unicode icons */
+@media only screen and (max-width: 734px) {
+  section[data-module-template="noticias"] .gallery .paddlenav .previous button::after {
+    margin-left: -0.1em;
+  }
+  
+  section[data-module-template="noticias"] .gallery .paddlenav .next button::after {
+    margin-right: -0.1em;
+  }
+}
+
+/* Estados visuais aprimorados para botões Unicode */
+section[data-module-template="noticias"] .gallery .paddlenav button::after {
+  opacity: 1;
+  transition: opacity 0.2s ease-in-out, transform 0.2s ease-in-out;
+}
+
+section[data-module-template="noticias"] .gallery .paddlenav button:hover::after {
+  opacity: 0.8;
+  transform: scale(1.1);
+}
+
+section[data-module-template="noticias"] .gallery .paddlenav button:active::after {
+  opacity: 0.9;
+  transform: scale(0.95);
+}
+
+/* Para navegação circular, os ícones dos botões sempre ficam ativos */
+section[data-module-template="noticias"] .gallery .paddlenav button:disabled::after,
+section[data-module-template="noticias"] .gallery .paddlenav button.disabled::after {
+  opacity: 1;
+}
+
+/* Feedback visual sutil para os botões */
+section[data-module-template="noticias"] .gallery .paddlenav button:hover {
+  background-color: rgba(0, 0, 0, 0.05);
+  border-radius: 50%;
 }
 
 section[data-module-template="noticias"] .gallery .item-container a {
