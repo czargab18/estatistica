@@ -125,13 +125,13 @@
             this.currentIndex++;
             
             if (this.currentIndex >= this.totalItems) {
-                this.currentIndex = 0;
+              this.currentIndex = 0; // Vai para o primeiro slide
                 
-                if (wasLastSlide) {
-                    // Navegação circular suave do último para o primeiro
-                    this.smoothCircularTransition('next');
-                    return;
-                }
+              // Sempre atualiza diretamente para garantir que funciona
+              this.updateGallery();
+              this.updateButtons();
+              this.updateDots();
+              return;
             }
             
             this.updateGallery();
@@ -145,13 +145,13 @@
             this.currentIndex--;
             
             if (this.currentIndex < 0) {
-                this.currentIndex = this.totalItems - 1;
+              this.currentIndex = this.totalItems - 1; // Vai para o último slide
                 
-                if (wasFirstSlide) {
-                    // Navegação circular suave do primeiro para o último
-                    this.smoothCircularTransition('previous');
-                    return;
-                }
+              // Sempre atualiza diretamente para garantir que funciona
+              this.updateGallery();
+              this.updateButtons();
+              this.updateDots();
+              return;
             }
             
             this.updateGallery();
