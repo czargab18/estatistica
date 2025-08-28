@@ -104,11 +104,19 @@
 
       this.items.forEach((item, index) => {
         const progress = index - this.currentIndex; // currentIndex is 0 initially
-        const translateItemX = index * containerWidth;
+        let translateItemX = index * containerWidth;
         const zIndex = index === this.currentIndex ? 1 : 0;
 
-        // Apply inline styles exactly as requested
-        item.style.cssText = `--progress: ${progress}; z-index: ${zIndex}; opacity: 1; transform: translate(${translateItemX}px, 0px);`;
+        // Special positioning: when starting on first slide (index 0), position last slide as previous
+        if (this.currentIndex === 0 && index === this.totalItems - 1) {
+          // Position last slide to the left of first slide (as previous)
+          translateItemX = -containerWidth;
+          const adjustedProgress = -1; // Previous slide progress
+          item.style.cssText = `--progress: ${adjustedProgress}; z-index: 0; opacity: 1; transform: translate(${translateItemX}px, 0px);`;
+        } else {
+          // Normal positioning for all other slides
+          item.style.cssText = `--progress: ${progress}; z-index: ${zIndex}; opacity: 1; transform: translate(${translateItemX}px, 0px);`;
+        }
 
         // Ensure first item has 'current' class
         if (index === 0) {
@@ -120,18 +128,10 @@
     }
 
     next() {
-      const wasLastSlide = this.currentIndex === this.totalItems - 1;
-
       this.currentIndex++;
 
       if (this.currentIndex >= this.totalItems) {
         this.currentIndex = 0;
-
-        if (wasLastSlide) {
-          // Navegação circular suave do último para o primeiro
-          this.smoothCircularTransition('next');
-          return;
-        }
       }
 
       this.updateGallery();
@@ -140,18 +140,10 @@
     }
 
     previous() {
-      const wasFirstSlide = this.currentIndex === 0;
-
       this.currentIndex--;
 
       if (this.currentIndex < 0) {
         this.currentIndex = this.totalItems - 1;
-
-        if (wasFirstSlide) {
-          // Navegação circular suave do primeiro para o último
-          this.smoothCircularTransition('previous');
-          return;
-        }
       }
 
       this.updateGallery();
@@ -240,10 +232,28 @@
       // Update individual items with inline styles as requested
       this.items.forEach((item, index) => {
         const progress = index - this.currentIndex;
-        const translateItemX = index * containerWidth;
+        let translateItemX = index * containerWidth;
 
-        // Apply inline styles exactly as shown in the example
-        item.style.cssText = `--progress: ${progress}; z-index: ${index === this.currentIndex ? 1 : 0}; opacity: 1; transform: translate(${translateItemX}px, 0px);`;
+        // Special positioning: when on first slide (index 0), position last slide as previous
+        if (this.currentIndex === 0 && index === this.totalItems - 1) {
+          // Position last slide to the left of first slide (as previous)
+          translateItemX = -containerWidth;
+          const adjustedProgress = -1; // Previous slide progress
+          item.style.cssText = `--progress: ${adjustedProgress}; z-index: 0; opacity: 1; transform: translate(${translateItemX}px, 0px);`;
+          console.log(`🔄 Circular positioning: Last slide (${index}) positioned as previous of first slide with transform: ${translateItemX}px`);
+        }
+        // Special positioning: when on last slide, position first slide as next
+        else if (this.currentIndex === this.totalItems - 1 && index === 0) {
+          // Position first slide to the right of last slide (as next)
+          translateItemX = this.totalItems * containerWidth;
+          const adjustedProgress = 1; // Next slide progress
+          item.style.cssText = `--progress: ${adjustedProgress}; z-index: 0; opacity: 1; transform: translate(${translateItemX}px, 0px);`;
+          console.log(`🔄 Circular positioning: First slide (${index}) positioned as next of last slide with transform: ${translateItemX}px`);
+        }
+        // Normal positioning for all other slides
+        else {
+          item.style.cssText = `--progress: ${progress}; z-index: ${index === this.currentIndex ? 1 : 0}; opacity: 1; transform: translate(${translateItemX}px, 0px);`;
+        }
 
         // Add/remove current class (matching HTML structure)
         if (index === this.currentIndex) {
@@ -257,16 +267,19 @@
       if (this.currentIndex === 0) {
         this.showPreviousSlidePreview();
       } else {
-        this.hidePreviousSlidePreview();
+        this.hidePreviews();
       }
 
       // Show/hide next slide preview based on current position
       if (this.currentIndex === this.totalItems - 1) {
         this.showNextSlidePreview();
-      } else {
-        this.hideNextSlidePreview();
       }
-    } updateButtons() {
+
+      this.updateButtons();
+      this.updateDots();
+    }
+
+    updateButtons() {
       // Enable/disable buttons based on current position
       const isFirstItem = this.currentIndex === 0;
       const isLastItem = this.currentIndex === this.totalItems - 1;
@@ -501,6 +514,103 @@
       if (this.isPlaying) {
         this.stopAutoPlay();
         this.startAutoPlay();
+      }
+    }
+
+    // Show preview of the previous slide when on first slide
+    showPreviousSlidePreview() {
+      if (this.currentIndex === 0 && this.totalItems > 1) {
+        const lastSlideIndex = this.totalItems - 1;
+        const lastSlide = this.items[lastSlideIndex];
+
+        // Get the background image from the last slide
+        const lastSlideLink = lastSlide?.querySelector('a');
+        const backgroundImage = lastSlideLink ?
+          window.getComputedStyle(lastSlideLink).backgroundImage : null;
+
+        // Create or update preview element
+        let previewElement = this.gallery.querySelector('.previous-slide-preview');
+
+        if (!previewElement) {
+          previewElement = document.createElement('div');
+          previewElement.className = 'previous-slide-preview';
+          previewElement.style.cssText = `
+            position: absolute;
+            left: -120px;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 80px;
+            height: 60px;
+            background-size: cover;
+            background-position: center;
+            border-radius: 8px;
+            opacity: 0.7;
+            transition: opacity 0.3s ease;
+            pointer-events: none;
+            z-index: 5;
+          `;
+          this.gallery.appendChild(previewElement);
+        }
+
+        if (backgroundImage && backgroundImage !== 'none') {
+          previewElement.style.backgroundImage = backgroundImage;
+          previewElement.style.opacity = '0.7';
+        }
+      }
+    }
+
+    // Show preview of the next slide when on last slide
+    showNextSlidePreview() {
+      if (this.currentIndex === this.totalItems - 1 && this.totalItems > 1) {
+        const firstSlide = this.items[0];
+
+        // Get the background image from the first slide
+        const firstSlideLink = firstSlide?.querySelector('a');
+        const backgroundImage = firstSlideLink ?
+          window.getComputedStyle(firstSlideLink).backgroundImage : null;
+
+        // Create or update preview element
+        let previewElement = this.gallery.querySelector('.next-slide-preview');
+
+        if (!previewElement) {
+          previewElement = document.createElement('div');
+          previewElement.className = 'next-slide-preview';
+          previewElement.style.cssText = `
+            position: absolute;
+            right: -120px;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 80px;
+            height: 60px;
+            background-size: cover;
+            background-position: center;
+            border-radius: 8px;
+            opacity: 0.7;
+            transition: opacity 0.3s ease;
+            pointer-events: none;
+            z-index: 5;
+          `;
+          this.gallery.appendChild(previewElement);
+        }
+
+        if (backgroundImage && backgroundImage !== 'none') {
+          previewElement.style.backgroundImage = backgroundImage;
+          previewElement.style.opacity = '0.7';
+        }
+      }
+    }
+
+    // Hide preview elements
+    hidePreviews() {
+      const previousPreview = this.gallery.querySelector('.previous-slide-preview');
+      const nextPreview = this.gallery.querySelector('.next-slide-preview');
+
+      if (previousPreview) {
+        previousPreview.style.opacity = '0';
+      }
+
+      if (nextPreview) {
+        nextPreview.style.opacity = '0';
       }
     }
 
