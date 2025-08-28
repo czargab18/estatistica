@@ -14,9 +14,16 @@
             this.paddlenav = this.gallery?.querySelector('.paddlenav');
             this.nextButton = this.paddlenav?.querySelector('.next button');
             this.prevButton = this.paddlenav?.querySelector('.previous button');
+          this.playButton = this.gallery?.querySelector('.play-pause');
+          this.playIcon = this.gallery?.querySelector('#play-icon');
+          this.pauseIcon = this.gallery?.querySelector('#pause-icon');
+          this.dots = this.gallery?.querySelectorAll('.dotnav-item');
             
             this.currentIndex = 0;
             this.totalItems = this.items?.length || 0;
+          this.autoPlayInterval = null;
+          this.isPlaying = false;
+          this.autoPlayDelay = 5000; // 5 segundos
             
             if (this.isValid()) {
                 this.init();
@@ -31,8 +38,30 @@
 
         init() {
             // Bind event listeners
-            this.nextButton.addEventListener('click', this.next.bind(this));
-            this.prevButton.addEventListener('click', this.previous.bind(this));
+          this.nextButton.addEventListener('click', () => {
+            this.next();
+            this.stopAutoPlay();
+          });
+          this.prevButton.addEventListener('click', () => {
+            this.previous();
+            this.stopAutoPlay();
+          });
+
+          // Play/pause button
+          if (this.playButton) {
+            this.playButton.addEventListener('click', this.togglePlayPause.bind(this));
+          }
+
+          // Dots navigation
+          if (this.dots) {
+            this.dots.forEach((dot, index) => {
+              dot.addEventListener('click', (e) => {
+                e.preventDefault();
+                this.goToSlide(index);
+                this.stopAutoPlay();
+              });
+            });
+          }
 
             // Keyboard navigation
             document.addEventListener('keydown', this.handleKeydown.bind(this));
@@ -40,25 +69,36 @@
             // Touch/swipe support (basic)
             this.addTouchSupport();
 
+          // Intersection Observer for auto-start
+          this.addIntersectionObserver();
+
             // Initialize first state
             this.updateGallery();
             this.updateButtons();
+          this.updateDots();
+          this.updatePlayPauseIcons();
         }
 
         next() {
             if (this.currentIndex < this.totalItems - 1) {
                 this.currentIndex++;
-                this.updateGallery();
-                this.updateButtons();
+            } else {
+              this.currentIndex = 0; // Loop back to first item
             }
+          this.updateGallery();
+          this.updateButtons();
+          this.updateDots();
         }
 
         previous() {
             if (this.currentIndex > 0) {
                 this.currentIndex--;
-                this.updateGallery();
-                this.updateButtons();
+            } else {
+              this.currentIndex = this.totalItems - 1; // Loop to last item
             }
+          this.updateGallery();
+          this.updateButtons();
+          this.updateDots();
         }
 
         goToSlide(index) {
@@ -66,6 +106,7 @@
                 this.currentIndex = index;
                 this.updateGallery();
                 this.updateButtons();
+              this.updateDots();
             }
         }
 
@@ -101,22 +142,112 @@
             const isFirstItem = this.currentIndex === 0;
             const isLastItem = this.currentIndex === this.totalItems - 1;
 
-            // Update previous button
-            if (isFirstItem) {
+          // For infinite loop, buttons are always enabled if we have more than 1 item
+          if (this.totalItems > 1) {
+            this.prevButton.disabled = false;
+            this.prevButton.classList.remove('disabled');
+            this.nextButton.disabled = false;
+            this.nextButton.classList.remove('disabled');
+          } else {
                 this.prevButton.disabled = true;
                 this.prevButton.classList.add('disabled');
-            } else {
-                this.prevButton.disabled = false;
-                this.prevButton.classList.remove('disabled');
-            }
+          this.nextButton.disabled = true;
+          this.nextButton.classList.add('disabled');
+        }
+      }
 
-            // Update next button
-            if (isLastItem) {
-                this.nextButton.disabled = true;
-                this.nextButton.classList.add('disabled');
+      updateDots() {
+        if (!this.dots) return;
+
+        this.dots.forEach((dot, index) => {
+          if (index === this.currentIndex) {
+            dot.classList.add('current');
+          } else {
+            dot.classList.remove('current');
+          }
+        });
+      }
+
+      startAutoPlay() {
+        if (this.autoPlayInterval) return; // Already playing
+
+        this.autoPlayInterval = setInterval(() => {
+          this.next();
+        }, this.autoPlayDelay);
+
+        this.isPlaying = true;
+        this.updatePlayPauseIcons();
+
+        if (this.gallery) {
+          this.gallery.classList.add('autoplay');
+        }
+      }
+
+      stopAutoPlay() {
+        if (this.autoPlayInterval) {
+          clearInterval(this.autoPlayInterval);
+          this.autoPlayInterval = null;
+        }
+
+        this.isPlaying = false;
+        this.updatePlayPauseIcons();
+
+        if (this.gallery) {
+          this.gallery.classList.remove('autoplay');
+        }
+      }
+
+      togglePlayPause() {
+        if (this.isPlaying) {
+          this.stopAutoPlay();
             } else {
-                this.nextButton.disabled = false;
-                this.nextButton.classList.remove('disabled');
+            this.startAutoPlay();
+          }
+        }
+
+      updatePlayPauseIcons() {
+        if (this.playIcon && this.pauseIcon) {
+          if (this.isPlaying) {
+            this.playIcon.style.display = 'none';
+            this.pauseIcon.style.display = 'block';
+          } else {
+            this.playIcon.style.display = 'block';
+            this.pauseIcon.style.display = 'none';
+          }
+        }
+
+        if (this.playButton) {
+          if (this.isPlaying) {
+            this.playButton.classList.remove('paused');
+            this.playButton.setAttribute('aria-label', 'pause slideshow gallery');
+          } else {
+            this.playButton.classList.add('paused');
+            this.playButton.setAttribute('aria-label', 'play slideshow gallery');
+          }
+        }
+      }
+
+      addIntersectionObserver() {
+        const observer = new IntersectionObserver((entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting && !this.isPlaying) {
+              // Auto-start when gallery comes into view
+              setTimeout(() => {
+                if (entry.isIntersecting && !this.isPlaying) {
+                  this.startAutoPlay();
+                }
+              }, 1000); // Delay 1 segundo antes de iniciar
+            } else if (!entry.isIntersecting && this.isPlaying) {
+              this.stopAutoPlay();
+            }
+          });
+        }, {
+          threshold: 0.5,
+          rootMargin: '0px 0px -100px 0px' // Start a bit before fully visible
+        });
+
+        if (this.gallery) {
+          observer.observe(this.gallery);
             }
         }
 
@@ -144,20 +275,29 @@
             switch (event.key) {
                 case 'ArrowLeft':
                     event.preventDefault();
+                this.stopAutoPlay();
                     this.previous();
                     break;
                 case 'ArrowRight':
                     event.preventDefault();
+                this.stopAutoPlay();
                     this.next();
                     break;
                 case 'Home':
                     event.preventDefault();
+                this.stopAutoPlay();
                     this.goToSlide(0);
                     break;
                 case 'End':
                     event.preventDefault();
+                this.stopAutoPlay();
                     this.goToSlide(this.totalItems - 1);
                     break;
+              case ' ': // Spacebar
+              case 'Enter':
+                event.preventDefault();
+                this.togglePlayPause();
+                break;
             }
         }
 
@@ -185,6 +325,8 @@
 
                 // Check if horizontal swipe is more significant than vertical
                 if (Math.abs(deltaX) > Math.abs(deltaY) && Math.abs(deltaX) > threshold) {
+                  this.stopAutoPlay(); // Stop autoplay on swipe
+
                     if (deltaX > 0) {
                         // Swipe right - go to previous
                         this.previous();
@@ -221,10 +363,28 @@
             return this.totalItems;
         }
 
+      isAutoPlaying() {
+        return this.isPlaying;
+      }
+
+      setAutoPlayDelay(delay) {
+        this.autoPlayDelay = delay;
+        if (this.isPlaying) {
+          this.stopAutoPlay();
+          this.startAutoPlay();
+        }
+      }
+
         // Handle window resize
         handleResize() {
             this.updateGallery();
         }
+
+      // Cleanup method
+      destroy() {
+        this.stopAutoPlay();
+        // Remove event listeners would go here if needed
+      }
     }
 
     // Auto-initialize when DOM is ready
