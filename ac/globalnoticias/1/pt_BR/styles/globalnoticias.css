@@ -698,7 +698,6 @@ section[data-module-template="noticias"] .paddlenav .paddlenav-arrow-previous::a
   }
 }
 
-/* Estados visuais */
 section[data-module-template="noticias"] .paddlenav .paddlenav-arrow:hover::before,
 section[data-module-template="noticias"] .paddlenav .paddlenav-arrow:hover::after {
   opacity: 0.8;
@@ -715,7 +714,7 @@ section[data-module-template="noticias"] .paddlenav .paddlenav-arrow.disabled::b
 section[data-module-template="noticias"] .paddlenav .paddlenav-arrow.disabled::after {
   opacity: 1;
 }
-/* Comentado - interferindo com SVG icons
+
 section[data-module-template="noticias"] .paddlenav .paddlenav-arrow-next::before,
 section[data-module-template="noticias"] .paddlenav .paddlenav-arrow-next::after {
   font-family: "SF Pro Icons";
@@ -759,7 +758,6 @@ section[data-module-template="noticias"] .paddlenav .paddlenav-arrow-previous::b
 section[data-module-template="noticias"] .paddlenav .paddlenav-arrow-previous::after {
   margin-left: -0.056em;
 }
-*/
 
 section[data-module-template="noticias"] .paddlenav .paddlenav-arrow {
   background-color: rgba(0, 0, 0, 0);
@@ -771,17 +769,11 @@ section[data-module-template="noticias"] .paddlenav .paddlenav-arrow:hover {
   color: rgba(0, 0, 0, 0.64);
 }
 
-/* section[data-module-template="noticias"] .paddlenav .paddlenav-arrow:focus {
-  -webkit-box-shadow: 0 0 0 3px #fff, 0 0 0 5px #0071E3;
-  box-shadow: 0 0 0 3px #fff, 0 0 0 5px #0071E3;
-  outline: none;
-} */
-
-/* section[data-module-template="noticias"] .paddlenav .paddlenav-arrow:focus[data-focus-method="mouse"]:not(input):not(textarea):not(select),
+section[data-module-template="noticias"] .paddlenav .paddlenav-arrow:focus[data-focus-method="mouse"]:not(input):not(textarea):not(select),
 section[data-module-template="noticias"] .paddlenav .paddlenav-arrow:focus[data-focus-method="touch"]:not(input):not(textarea):not(select) {
   -webkit-box-shadow: none;
   box-shadow: none;
-} */
+}
 
 section[data-module-template="noticias"] .paddlenav .paddlenav-arrow:active {
   background-color: rgba(0, 0, 0, 0);
@@ -808,7 +800,6 @@ section[data-module-template="noticias"] .paddlenav .paddlenav-arrow-previous {
   left: 18px;
 }
 
-/* Versão mobile */
 @media only screen and (max-width: 734px) {
   section[data-module-template="noticias"] .paddlenav .paddlenav-arrow {
     font-weight: 300;
@@ -833,7 +824,6 @@ section[data-module-template="noticias"] .paddlenav .paddlenav-arrow-previous {
   }
 }
 
-/* Estilos framed (com fundo) */
 section[data-module-template="noticias"] .paddlenav-framed .paddlenav-arrow {
   background-color: rgba(210, 210, 215, 0.64);
   color: rgba(0, 0, 0, 0.56);
@@ -843,14 +833,6 @@ section[data-module-template="noticias"] .paddlenav-framed .paddlenav-arrow:hove
   background-color: rgba(223, 223, 227, 0.6976);
   color: rgba(0, 0, 0, 0.64);
 }
-
-/* section[data-module-template="noticias"] .paddlenav-framed .paddlenav-arrow:focus {
-  -webkit-box-shadow: 0 0 0 3px #fff, 0 0 0 5px #0071E3;
-  box-shadow: 0 0 0 3px #fff, 0 0 0 5px #0071E3;
-  outline: none;
-}
-
-*/
 
 section[data-module-template="noticias"] .paddlenav-framed .paddlenav-arrow:focus[data-focus-method="mouse"]:not(input):not(textarea):not(select),
 section[data-module-template="noticias"] .paddlenav-framed .paddlenav-arrow:focus[data-focus-method="touch"]:not(input):not(textarea):not(select) {
@@ -965,7 +947,6 @@ section[data-module-template="noticias"] .gallery .paddlenav button {
   border: none;
   cursor: pointer;
   font-family: "SF Pro Icons";
-  content: "";
 }
 
 section[data-module-template="noticias"] .gallery .paddlenav button:focus,
@@ -999,7 +980,6 @@ section[data-module-template="noticias"] .gallery .item-container a {
   background-color: #0071e3;
 }
 
-/* Ícones das setas para paddlenav - Baseado no SF Pro Icons */
 section[data-module-template="noticias"] .paddlenav .paddlenav-arrow-next::before,
 section[data-module-template="noticias"] .paddlenav .paddlenav-arrow-next::after {
   font-family: "SF Pro Icons";
@@ -1081,3 +1061,14 @@ section[data-module-template="noticias"] .paddlenav .paddlenav-arrow:hover {
   background-color: rgba(0, 0, 0, 0.1);
 }
 
+section[data-module-template="noticias"] .gallery .paddlenav .previous button {
+  font-family: "SF Pro Icons";
+  content: "";
+}
+section[data-module-template="noticias"] .gallery .paddlenav .previous button::after {
+  content: "\F35A";
+}
+
+section[data-module-template="noticias"] .gallery .paddlenav .next button::after {
+  content: "\F35B";
+}
