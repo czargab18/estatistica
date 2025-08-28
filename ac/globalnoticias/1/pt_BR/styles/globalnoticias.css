@@ -964,7 +964,6 @@ section[data-module-template="noticias"] .gallery .paddlenav .next button::after
   width: 100%;
   height: auto;
   font-family: "SF Pro Icons";
-  content: "";
   color: inherit;
   font-size: 1.5em;
   font-weight: 600;
