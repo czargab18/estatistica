@@ -82,6 +82,7 @@ section[data-module-template="noticias"] .gallery .item-container {
 section[data-module-template="noticias"] .gallery .item-container.no-transition {
   transition: none !important;
 }
+
 @media (min-width: 1441px) {
   section[data-module-template="noticias"] .gallery .item-container {
     width: 1265px;
@@ -632,7 +633,7 @@ section[data-module-template="noticias"] .paddlenav .paddlenav-arrow:hover {
 section[data-module-template="noticias"] .paddlenav .paddlenav-arrow:disabled,
 section[data-module-template="noticias"] .paddlenav .paddlenav-arrow.disabled {
   cursor: pointer;
-    opacity: 1;
+  opacity: 1;
 }
 
 section[data-module-template="noticias"] .paddlenav .paddlenav-arrow:disabled:focus[data-focus-method="mouse"]:not(input):not(textarea):not(select),
@@ -661,6 +662,7 @@ section[data-module-template="noticias"] .paddlenav .paddlenav-arrow-previous {
   margin-top: -2.64706rem;
 }
 
+/* Comentado - interferindo com SVG icons
 section[data-module-template="noticias"] .paddlenav .paddlenav-arrow-next::before,
 section[data-module-template="noticias"] .paddlenav .paddlenav-arrow-next::after {
   font-family: "SF Pro Icons";
@@ -701,14 +703,10 @@ section[data-module-template="noticias"] .paddlenav .paddlenav-arrow-previous::b
   display: none;
 }
 
-section[data-module-template="noticias"] .paddlenav .paddlenav-arrow-previous::before,
-section[data-module-template="noticias"] .paddlenav .paddlenav-arrow-previous::after {
-  content: "";
-}
-
 section[data-module-template="noticias"] .paddlenav .paddlenav-arrow-previous::after {
   margin-left: -0.056em;
 }
+*/
 
 section[data-module-template="noticias"] .paddlenav .paddlenav-arrow {
   background-color: rgba(0, 0, 0, 0);
@@ -768,18 +766,18 @@ section[data-module-template="noticias"] .paddlenav .paddlenav-arrow-previous {
     line-height: 3.05882rem;
   }
 
-    section[data-module-template="noticias"] .paddlenav .paddlenav-arrow-next,
-    section[data-module-template="noticias"] .paddlenav .paddlenav-arrow-previous {
-      margin-top: -1.52941rem;
-    }
+  section[data-module-template="noticias"] .paddlenav .paddlenav-arrow-next,
+  section[data-module-template="noticias"] .paddlenav .paddlenav-arrow-previous {
+    margin-top: -1.52941rem;
+  }
 
-    section[data-module-template="noticias"] .paddlenav .paddlenav-arrow-next::after {
-      margin-right: -0.1em;
-    }
+  section[data-module-template="noticias"] .paddlenav .paddlenav-arrow-next::after {
+    margin-right: -0.1em;
+  }
 
-    section[data-module-template="noticias"] .paddlenav .paddlenav-arrow-previous::after {
-      margin-left: -0.1em;
-    }
+  section[data-module-template="noticias"] .paddlenav .paddlenav-arrow-previous::after {
+    margin-left: -0.1em;
+  }
 }
 
 /* Estilos framed (com fundo) */
@@ -806,6 +804,7 @@ section[data-module-template="noticias"] .paddlenav-framed .paddlenav-arrow:focu
   -webkit-box-shadow: none;
   box-shadow: none;
 }
+
 section[data-module-template="noticias"] .paddlenav-framed .paddlenav-arrow:active {
   background-color: rgba(193, 193, 198, 0.6544);
   color: rgba(0, 0, 0, 0.64);
@@ -855,6 +854,7 @@ section[data-module-template="noticias"] .gallery .paddlenav li.next {
   right: 0;
   left: calc(50% + 505px);
 }
+
 @media only screen and (min-width: 1441px) {
   section[data-module-template="noticias"] .gallery .paddlenav li.next {
     left: calc(50% + 640px);
@@ -892,9 +892,9 @@ section[data-module-template="noticias"] .gallery .paddlenav li.previous {
 
 @media only screen and (max-width: 734px) {
   section[data-module-template="noticias"] .gallery .paddlenav li.previous {
-      right: calc(50% + 152px);
-    }
+    right: calc(50% + 152px);
   }
+}
 
 section[data-module-template="noticias"] .gallery .paddlenav button {
   width: auto;
@@ -911,6 +911,8 @@ section[data-module-template="noticias"] .gallery .paddlenav button {
   pointer-events: all;
   border: none;
   cursor: pointer;
+  font-family: "SF Pro Icons";
+  content: "";
 }
 
 section[data-module-template="noticias"] .gallery .paddlenav button:focus,
@@ -938,14 +940,15 @@ section[data-module-template="noticias"] .gallery .paddlenav button:after {
 section[data-module-template="noticias"] .gallery .paddlenav button:hover {
   background: none;
 }
+
 section[data-module-template="noticias"] .gallery .item-container a {
   background-image: url("/sd/banners/pt_BR/promos/home/caquito-banner-medio.png");
   background-color: #0071e3;
 }
-/* =================== ÍCONES PADDLENAV - SF Pro Icons =================== */
 
 /* Ícones das setas para paddlenav - Baseado no SF Pro Icons */
 section[data-module-template="noticias"] .paddlenav .paddlenav-arrow-next::after {
+  font-family: "SF Pro Icons";
   content: "";
   display: inline-block;
   width: 12px;
@@ -959,11 +962,11 @@ section[data-module-template="noticias"] .paddlenav .paddlenav-arrow-next::after
 }
 
 section[data-module-template="noticias"] .paddlenav .paddlenav-arrow-previous::after {
-  content: "";
+  font-family: "SF Pro Icons";
+  content: "";
   display: inline-block;
   width: 12px;
   height: 20px;
-  background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='20' viewBox='0 0 12 20'%3E%3Cpath d='M10.5 1.5L2 10l8.5 8.5' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round' fill='none'/%3E%3C/svg%3E");
   background-repeat: no-repeat;
   background-position: center;
   background-size: contain;
@@ -1002,22 +1005,22 @@ section[data-module-template="noticias"] .paddlenav .paddlenav-arrow:active::aft
 section[data-module-template="noticias"] .paddlenav .paddlenav-arrow:disabled::after,
 section[data-module-template="noticias"] .paddlenav .paddlenav-arrow.disabled::after {
   opacity: 1;
-    /* Mudando de 0.3 para 1 - sempre visível */
-  }
-  
-  /* Navegação Circular - Estados Visuais Aprimorados */
-  section[data-module-template="noticias"] .paddlenav .paddlenav-arrow {
-    transition: all 0.2s ease-in-out;
-  }
-  
-  /* Feedback visual sutil para indicar navegação circular */
-  section[data-module-template="noticias"] .paddlenav .paddlenav-arrow:hover {
-    transform: scale(1.05);
-    background-color: rgba(0, 0, 0, 0.1);
-  }
-  
-  /* Estado ativo/focus para acessibilidade */
-  /* section[data-module-template="noticias"] .paddlenav .paddlenav-arrow:focus,
+  /* Mudando de 0.3 para 1 - sempre visível */
+}
+
+/* Navegação Circular - Estados Visuais Aprimorados */
+section[data-module-template="noticias"] .paddlenav .paddlenav-arrow {
+  transition: all 0.2s ease-in-out;
+}
+
+/* Feedback visual sutil para indicar navegação circular */
+section[data-module-template="noticias"] .paddlenav .paddlenav-arrow:hover {
+  transform: scale(1.05);
+  background-color: rgba(0, 0, 0, 0.1);
+}
+
+/* Estado ativo/focus para acessibilidade */
+/* section[data-module-template="noticias"] .paddlenav .paddlenav-arrow:focus,
   section[data-module-template="noticias"] .paddlenav .paddlenav-arrow:active {
     outline: 2px solid rgba(0, 122, 255, 0.5);
     outline-offset: 2px;
