@@ -252,6 +252,20 @@
           item.classList.remove('current');
         }
       });
+
+      // Show/hide previous slide preview based on current position
+      if (this.currentIndex === 0) {
+        this.showPreviousSlidePreview();
+      } else {
+        this.hidePreviousSlidePreview();
+      }
+
+      // Show/hide next slide preview based on current position
+      if (this.currentIndex === this.totalItems - 1) {
+        this.showNextSlidePreview();
+      } else {
+        this.hideNextSlidePreview();
+      }
     } updateButtons() {
       // Enable/disable buttons based on current position
       const isFirstItem = this.currentIndex === 0;
@@ -487,6 +501,167 @@
       if (this.isPlaying) {
         this.stopAutoPlay();
         this.startAutoPlay();
+      }
+    }
+
+    // Show preview of the previous slide when on first slide
+    showPreviousSlidePreview() {
+      if (this.currentIndex === 0 && this.totalItems > 1) {
+        const lastSlideIndex = this.totalItems - 1;
+        const lastSlide = this.items[lastSlideIndex];
+
+        // Get the background image from the last slide
+        const lastSlideLink = lastSlide?.querySelector('a');
+        const backgroundImage = lastSlideLink ?
+          window.getComputedStyle(lastSlideLink).backgroundImage : null;
+
+        // Create or update preview element
+        let previewElement = this.gallery.querySelector('.previous-slide-preview');
+
+        if (!previewElement) {
+          previewElement = document.createElement('div');
+          previewElement.className = 'previous-slide-preview';
+          previewElement.style.cssText = `
+            position: absolute;
+            left: -100px;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 80px;
+            height: 60px;
+            background-size: cover;
+            background-position: center;
+            border-radius: 8px;
+            opacity: 0.7;
+            z-index: 10;
+            transition: opacity 0.3s ease, transform 0.3s ease;
+            cursor: pointer;
+          `;
+
+          // Add click handler to go to last slide
+          previewElement.addEventListener('click', () => {
+            this.goToSlide(lastSlideIndex);
+            this.stopAutoPlay();
+          });
+
+          // Add hover effects
+          previewElement.addEventListener('mouseenter', () => {
+            previewElement.style.opacity = '1';
+            previewElement.style.transform = 'translateY(-50%) scale(1.05)';
+          });
+
+          previewElement.addEventListener('mouseleave', () => {
+            previewElement.style.opacity = '0.7';
+            previewElement.style.transform = 'translateY(-50%) scale(1)';
+          });
+
+          this.gallery.appendChild(previewElement);
+        }
+
+        // Update background image
+        if (backgroundImage && backgroundImage !== 'none') {
+          previewElement.style.backgroundImage = backgroundImage;
+          previewElement.style.display = 'block';
+        }
+
+        return previewElement;
+      }
+
+      return null;
+    }
+
+    // Hide preview of the previous slide
+    hidePreviousSlidePreview() {
+      const previewElement = this.gallery.querySelector('.previous-slide-preview');
+      if (previewElement) {
+        previewElement.style.display = 'none';
+      }
+    }
+
+    // Show preview of the next slide when on last slide
+    showNextSlidePreview() {
+      if (this.currentIndex === this.totalItems - 1 && this.totalItems > 1) {
+        const firstSlideIndex = 0;
+        const firstSlide = this.items[firstSlideIndex];
+
+        // Get the background image from the first slide
+        const firstSlideLink = firstSlide?.querySelector('a');
+        const backgroundImage = firstSlideLink ?
+          window.getComputedStyle(firstSlideLink).backgroundImage : null;
+
+        // Create or update preview element
+        let previewElement = this.gallery.querySelector('.next-slide-preview');
+
+        if (!previewElement) {
+          previewElement = document.createElement('div');
+          previewElement.className = 'next-slide-preview';
+          previewElement.style.cssText = `
+            position: absolute;
+            right: -100px;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 80px;
+            height: 60px;
+            background-size: cover;
+            background-position: center;
+            border-radius: 8px;
+            opacity: 0.7;
+            z-index: 10;
+            transition: opacity 0.3s ease, transform 0.3s ease;
+            cursor: pointer;
+          `;
+
+          // Add click handler to go to first slide
+          previewElement.addEventListener('click', () => {
+            this.goToSlide(firstSlideIndex);
+            this.stopAutoPlay();
+          });
+
+          // Add hover effects
+          previewElement.addEventListener('mouseenter', () => {
+            previewElement.style.opacity = '1';
+            previewElement.style.transform = 'translateY(-50%) scale(1.05)';
+          });
+
+          previewElement.addEventListener('mouseleave', () => {
+            previewElement.style.opacity = '0.7';
+            previewElement.style.transform = 'translateY(-50%) scale(1)';
+          });
+
+          this.gallery.appendChild(previewElement);
+        }
+
+        // Update background image
+        if (backgroundImage && backgroundImage !== 'none') {
+          previewElement.style.backgroundImage = backgroundImage;
+          previewElement.style.display = 'block';
+        }
+
+        return previewElement;
+      }
+
+      return null;
+    }
+
+    // Hide preview of the next slide
+    hideNextSlidePreview() {
+      const previewElement = this.gallery.querySelector('.next-slide-preview');
+      if (previewElement) {
+        previewElement.style.display = 'none';
+      }
+    }
+
+    // Toggle slide previews on/off
+    toggleSlidePreviews(enabled = true) {
+      if (enabled) {
+        if (this.currentIndex === 0) {
+          this.showPreviousSlidePreview();
+        }
+        if (this.currentIndex === this.totalItems - 1) {
+          this.showNextSlidePreview();
+        }
+      } else {
+        this.hidePreviousSlidePreview();
+        this.hideNextSlidePreview();
       }
     }
 
