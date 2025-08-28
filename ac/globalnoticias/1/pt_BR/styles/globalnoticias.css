@@ -78,7 +78,6 @@ section[data-module-template="noticias"] .gallery .item-container {
   opacity: 1;
 }
 
-/* Desabilita transição durante repositionamento circular */
 section[data-module-template="noticias"] .gallery .item-container.no-transition {
   transition: none !important;
 }
@@ -449,7 +448,6 @@ section[data-module-template="noticias"] .gallery .info-bottom .custom-button.bu
   color: #000 !important;
 }
 
-/* Regras base para o parágrafo */
 section[data-module-template="noticias"] .gallery .info-bottom p {
   font-size: 20px;
   line-height: 1.1;
@@ -460,21 +458,17 @@ section[data-module-template="noticias"] .gallery .info-bottom p {
   color: #fff;
   text-shadow: 0px 0px 5px rgba(0, 0, 0, 0.6);
   white-space: normal;
-  /* Garantindo quebra de linha normal */
   word-wrap: break-word;
-  /* Quebra de palavra adequada */
 }
 
 section[data-module-template="noticias"] .gallery .info-bottom p:lang(pt-br) {
   font-family: "SF Pro AR", "SF Pro AR Display", "SF Pro Display", "SF Pro Gulf", "SF Pro Icons", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
 }
 
-/* Regras para spans dentro do parágrafo */
 section[data-module-template="noticias"] .gallery .info-bottom p span {
   font-weight: 700;
 }
 
-/* Media queries em ordem crescente */
 @media only screen and (max-width: 1068px) {
   section[data-module-template="noticias"] .gallery .info-bottom p {
     font-size: 17px;
@@ -518,22 +512,16 @@ section[data-module-template="noticias"] .gallery .info-bottom p span {
     text-align: center;
     padding: 0 15px;
     white-space: normal;
-    /* Mudando de pre-wrap para normal */
     overflow: visible;
     word-wrap: break-word;
-    /* Adicionando quebra de palavra adequada */
   }
 }
-
-/* Removendo duplicações - mantendo apenas uma versão consolidada */
 
 @media only screen and (max-width: 734px) {
   section[data-module-template="noticias"] .gallery .info-bottom p span {
     display: block
   }
 }
-
-/* =================== CONTINUAR =================== */
 
 section[data-module-template="noticias"] .gallery .tablist-wrapper {
   position: absolute;
@@ -599,9 +587,6 @@ section[data-module-template="noticias"] .gallery .play-pause {
   color: #1d1d1d;
 }
 
-/* =================== PADDLENAV - Navegação Circular =================== */
-/* Baseado no CSS original com modificações para suporte a navegação circular */
-/* Os botões sempre permanecem visíveis e ativos, permitindo loop infinito */
 section[data-module-template="noticias"] .paddlenav,
 section[data-module-template="noticias"] .paddlenav ul {
   margin: 0;
@@ -629,7 +614,6 @@ section[data-module-template="noticias"] .paddlenav .paddlenav-arrow:hover {
   text-decoration: none;
 }
 
-/* Para navegação circular, os botões paddlenav sempre ficam ativos */
 section[data-module-template="noticias"] .paddlenav .paddlenav-arrow:disabled,
 section[data-module-template="noticias"] .paddlenav .paddlenav-arrow.disabled {
   cursor: pointer;
@@ -662,9 +646,6 @@ section[data-module-template="noticias"] .paddlenav .paddlenav-arrow-previous {
   margin-top: -1.75rem;
 }
 
-/* =================== DEFINIÇÕES CORRETAS APPLE TV+ =================== */
-
-/* PREVIOUS (seta esquerda) - Definição correta */
 section[data-module-template="noticias"] .paddlenav .paddlenav-arrow-previous::before,
 section[data-module-template="noticias"] .paddlenav .paddlenav-arrow-previous::after {
   font-family: "SF Pro Icons";
@@ -687,7 +668,6 @@ section[data-module-template="noticias"] .paddlenav .paddlenav-arrow-previous::a
   margin-left: -0.056em;
 }
 
-/* Responsividade mobile */
 @media only screen and (max-width: 734px) {
   section[data-module-template="noticias"] .paddlenav .paddlenav-arrow-next::after {
     margin-right: -0.1em;
@@ -865,7 +845,6 @@ section[data-module-template="noticias"] .paddlenav-framed .paddlenav-arrow-prev
   left: 18px;
 }
 
-/* Layout dos botões na galeria */
 section[data-module-template="noticias"] .gallery .paddlenav ul {
   list-style: none;
   position: absolute;
@@ -974,7 +953,6 @@ section[data-module-template="noticias"] .gallery .paddlenav button:hover {
   background: none;
 }
 
-/* Unicode SF Pro Icons para botões de navegação */
 section[data-module-template="noticias"] .gallery .paddlenav .previous button {
   font-family: "SF Pro Icons";
   content: "";
@@ -986,6 +964,7 @@ section[data-module-template="noticias"] .gallery .paddlenav .next button::after
   width: 100%;
   height: auto;
   font-family: "SF Pro Icons";
+  content: "";
   color: inherit;
   font-size: 1.5em;
   font-weight: 600;
@@ -995,26 +974,18 @@ section[data-module-template="noticias"] .gallery .paddlenav .next button::after
   z-index: 1;
 }
 
-section[data-module-template="noticias"] .gallery .paddlenav .previous button::after {
-  content: "\F35A";
-}
-
-section[data-module-template="noticias"] .gallery .paddlenav .next button::after {
-  content: "\F35B";
-}
-
-/* Responsividade mobile para Unicode icons */
 @media only screen and (max-width: 734px) {
   section[data-module-template="noticias"] .gallery .paddlenav .previous button::after {
+    content: "\F35A";
     margin-left: -0.1em;
   }
 
   section[data-module-template="noticias"] .gallery .paddlenav .next button::after {
     margin-right: -0.1em;
+    content: "\F35B";
   }
 }
 
-/* Estados visuais aprimorados para botões Unicode */
 section[data-module-template="noticias"] .gallery .paddlenav button::after {
   opacity: 1;
   transition: opacity 0.2s ease-in-out, transform 0.2s ease-in-out;
@@ -1030,13 +1001,11 @@ section[data-module-template="noticias"] .gallery .paddlenav button:active::afte
   transform: scale(0.95);
 }
 
-/* Para navegação circular, os ícones dos botões sempre ficam ativos */
 section[data-module-template="noticias"] .gallery .paddlenav button:disabled::after,
 section[data-module-template="noticias"] .gallery .paddlenav button.disabled::after {
   opacity: 1;
 }
 
-/* Feedback visual sutil para os botões */
 section[data-module-template="noticias"] .gallery .paddlenav button:hover {
   background-color: rgba(0, 0, 0, 0.05);
   border-radius: 50%;
@@ -1083,7 +1052,6 @@ section[data-module-template="noticias"] .paddlenav .paddlenav-arrow-previous::a
   margin-left: -0.056em;
 }
 
-/* Ajustes para tamanhos menores */
 @media only screen and (max-width: 734px) {
 
   section[data-module-template="noticias"] .paddlenav .paddlenav-arrow-next::after,
@@ -1101,7 +1069,6 @@ section[data-module-template="noticias"] .paddlenav .paddlenav-arrow-previous::a
   }
 }
 
-/* Estados visuais aprimorados */
 section[data-module-template="noticias"] .paddlenav .paddlenav-arrow:hover::after {
   opacity: 0.8;
 }
@@ -1110,19 +1077,15 @@ section[data-module-template="noticias"] .paddlenav .paddlenav-arrow:active::aft
   opacity: 0.9;
 }
 
-/* Para navegação circular, os ícones dos botões sempre ficam ativos */
 section[data-module-template="noticias"] .paddlenav .paddlenav-arrow:disabled::after,
 section[data-module-template="noticias"] .paddlenav .paddlenav-arrow.disabled::after {
   opacity: 1;
-  /* Mudando de 0.3 para 1 - sempre visível */
 }
 
-/* Navegação Circular - Estados Visuais Aprimorados */
 section[data-module-template="noticias"] .paddlenav .paddlenav-arrow {
   transition: all 0.2s ease-in-out;
 }
 
-/* Feedback visual sutil para indicar navegação circular */
 section[data-module-template="noticias"] .paddlenav .paddlenav-arrow:hover {
   transform: scale(1.05);
   background-color: rgba(0, 0, 0, 0.1);
