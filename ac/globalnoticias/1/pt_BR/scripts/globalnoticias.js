@@ -175,7 +175,7 @@
 
         // Mover o container suavemente para mostrar o primeiro slide
         const translateX = -(this.totalItems * containerWidth);
-        this.itemContainer.style.transform = `translate3d(${translateX}px, 0px, 0px)`;
+        this.itemContainer.style.transform = `translate3d(${translateX}px, 0px, 0px) transition: transform 1s cubic-bezier(0.645, 0.045, 0.355, 1);`;
 
         // Após a transição CSS, reposicionar tudo normalmente
         setTimeout(() => {
