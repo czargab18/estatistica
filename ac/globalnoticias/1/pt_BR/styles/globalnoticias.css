@@ -199,6 +199,11 @@ section[data-module-template="noticias"] .gallery .item-container a {
   background-color: #0071e3;
 }
 
+section[data-module-template="noticias"] .gallery .item-container :nth-child(2n) a {
+  background-image: url("/sd/banners/pt_BR/promos/home/caquito-banner-medio.png");
+  background-color: #ffe600;
+}
+
 section[data-module-template="noticias"] .gallery .inner {
   position: absolute;
   top: 0;
