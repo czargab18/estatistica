@@ -103,15 +103,26 @@
       const containerWidth = this.getContainerWidth();
 
       this.items.forEach((item, index) => {
-        const progress = index - this.currentIndex; // currentIndex is 0 initially
-        const translateItemX = index * containerWidth;
+        let progress = index - this.currentIndex; // currentIndex is 0 initially
+        let translateItemX = (index - this.currentIndex) * containerWidth;
         const zIndex = index === this.currentIndex ? 1 : 0;
+
+        // Posicionamento circular: quando current está no primeiro, último fica como previous
+        if (this.currentIndex === 0 && index === this.totalItems - 1) {
+          progress = -1;
+          translateItemX = -containerWidth;
+        }
+        // Posicionamento circular: quando current está no último, primeiro fica como next
+        else if (this.currentIndex === this.totalItems - 1 && index === 0) {
+          progress = 1;
+          translateItemX = containerWidth;
+        }
 
         // Apply inline styles exactly as requested
         item.style.cssText = `--progress: ${progress}; z-index: ${zIndex}; opacity: 1; transform: translate(${translateItemX}px, 0px);`;
 
-        // Ensure first item has 'current' class
-        if (index === 0) {
+        // Ensure current item has 'current' class
+        if (index === this.currentIndex) {
           item.classList.add('current');
         } else {
           item.classList.remove('current');
@@ -233,14 +244,24 @@
       // Calculate container width based on current breakpoint
       const containerWidth = this.getContainerWidth();
 
-      // Move container to show current item
-      const translateX = -(this.currentIndex * containerWidth);
-      this.itemContainer.style.transform = `translate3d(${translateX}px, 0px, 0px)`;
+      // For circular navigation, we don't move the container, only reposition individual items
+      this.itemContainer.style.transform = `translate3d(0px, 0px, 0px)`;
 
       // Update individual items with inline styles as requested
       this.items.forEach((item, index) => {
-        const progress = index - this.currentIndex;
-        const translateItemX = index * containerWidth;
+        let progress = index - this.currentIndex;
+        let translateItemX = (index - this.currentIndex) * containerWidth;
+
+        // Posicionamento circular: quando current está no primeiro, último fica como previous
+        if (this.currentIndex === 0 && index === this.totalItems - 1) {
+          progress = -1;
+          translateItemX = -containerWidth;
+        }
+        // Posicionamento circular: quando current está no último, primeiro fica como next
+        else if (this.currentIndex === this.totalItems - 1 && index === 0) {
+          progress = 1;
+          translateItemX = containerWidth;
+        }
 
         // Apply inline styles exactly as shown in the example
         item.style.cssText = `--progress: ${progress}; z-index: ${index === this.currentIndex ? 1 : 0}; opacity: 1; transform: translate(${translateItemX}px, 0px);`;
