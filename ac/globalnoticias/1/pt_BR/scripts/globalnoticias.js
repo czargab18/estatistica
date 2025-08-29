@@ -131,18 +131,10 @@
     }
 
     next() {
-      const wasLastSlide = this.currentIndex === this.totalItems - 1;
-
       this.currentIndex++;
 
       if (this.currentIndex >= this.totalItems) {
         this.currentIndex = 0;
-      }
-
-      // Sempre use transição suave para navegação circular
-      if (wasLastSlide) {
-        this.smoothCircularTransition('next');
-        return;
       }
 
       this.updateGallery();
@@ -151,18 +143,10 @@
     }
 
     previous() {
-      const wasFirstSlide = this.currentIndex === 0;
-
       this.currentIndex--;
 
       if (this.currentIndex < 0) {
         this.currentIndex = this.totalItems - 1;
-      }
-
-      // Sempre use transição suave para navegação circular
-      if (wasFirstSlide) {
-        this.smoothCircularTransition('previous');
-        return;
       }
 
       this.updateGallery();
@@ -171,54 +155,13 @@
     }
 
     smoothCircularTransition(direction) {
-      const containerWidth = this.getContainerWidth();
-
-      if (direction === 'next') {
-        // Do último slide (índice totalItems-1) para o primeiro (índice 0)
-        // Primeiro slide deve aparecer à direita do último
-        const firstSlide = this.items[0];
-        firstSlide.style.cssText = `--progress: 1; z-index: 1; opacity: 1; transform: translate(${containerWidth}px, 0px);`;
-
-        // Força uma pequena pausa para garantir que o posicionamento foi aplicado
-        requestAnimationFrame(() => {
-          // Agora move o primeiro slide para a posição central (0)
-          firstSlide.style.cssText = `--progress: 0; z-index: 1; opacity: 1; transform: translate(0px, 0px);`;
-
-          // Move o último slide para fora da tela (esquerda)
-          const lastSlide = this.items[this.totalItems - 1];
-          lastSlide.style.cssText = `--progress: -1; z-index: 0; opacity: 1; transform: translate(${-containerWidth}px, 0px);`;
-
-          // Após a transição, atualiza todos os slides normalmente
-          setTimeout(() => {
-            this.updateGallery();
-            this.updateButtons();
-            this.updateDots();
-          }, 500); // Tempo da transição CSS
-        });
-
-      } else { // direction === 'previous'
-        // Do primeiro slide (índice 0) para o último (índice totalItems-1)
-        // Último slide deve aparecer à esquerda do primeiro
-        const lastSlide = this.items[this.totalItems - 1];
-        lastSlide.style.cssText = `--progress: -1; z-index: 1; opacity: 1; transform: translate(${-containerWidth}px, 0px);`;
-
-        // Força uma pequena pausa para garantir que o posicionamento foi aplicado
-        requestAnimationFrame(() => {
-          // Agora move o último slide para a posição central (0)
-          lastSlide.style.cssText = `--progress: 0; z-index: 1; opacity: 1; transform: translate(0px, 0px);`;
-
-          // Move o primeiro slide para fora da tela (direita)
-          const firstSlide = this.items[0];
-          firstSlide.style.cssText = `--progress: 1; z-index: 0; opacity: 1; transform: translate(${containerWidth}px, 0px);`;
-
-          // Após a transição, atualiza todos os slides normalmente
-          setTimeout(() => {
-            this.updateGallery();
-            this.updateButtons();
-            this.updateDots();
-          }, 500); // Tempo da transição CSS
-        });
-      }
+      // Para navegação circular, usamos a mesma lógica do updateGallery
+      // mas com uma pequena pausa para permitir transição suave
+      requestAnimationFrame(() => {
+        this.updateGallery();
+        this.updateButtons();
+        this.updateDots();
+      });
     }
 
     goToSlide(index) {
@@ -234,7 +177,7 @@
       // Calculate container width based on current breakpoint
       const containerWidth = this.getContainerWidth();
 
-      // For circular navigation, we don't move the container, only reposition individual items
+      // Reset container position for item-based navigation
       this.itemContainer.style.transform = `translate3d(0px, 0px, 0px)`;
 
       // Update individual items with inline styles as requested
