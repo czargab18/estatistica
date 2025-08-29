@@ -36,7 +36,6 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     setupEventListeners() {
-      // Listener para mudanças de viewport
       let resizeTimer;
       window.addEventListener("resize", () => {
         clearTimeout(resizeTimer);
@@ -87,7 +86,6 @@ document.addEventListener("DOMContentLoaded", function () {
       this.setupEventListeners();
       this.button.setAttribute("aria-expanded", "false");
       
-      // Garante que o ícone tenha conteúdo de fallback se estiver vazio
       if (this.icon) {
         if (!this.icon.textContent.trim()) {
           this.icon.textContent = '+';
@@ -101,7 +99,6 @@ document.addEventListener("DOMContentLoaded", function () {
         this.toggle();
       });
 
-      // Fecha ao clicar em links (apenas em mobile)
       const links = this.column.querySelectorAll(".gf-directory-column-section-link");
       links.forEach((link) => {
         link.addEventListener("click", () => {
@@ -123,7 +120,6 @@ document.addEventListener("DOMContentLoaded", function () {
       this.section.classList.add("gf-directory-column-expanded");
       this.button.setAttribute("aria-expanded", "true");
       
-      // Animação suave da lista
       this.animateList(true);
     }
 
@@ -134,7 +130,6 @@ document.addEventListener("DOMContentLoaded", function () {
       this.section.classList.remove("gf-directory-column-expanded");
       this.button.setAttribute("aria-expanded", "false");
       
-      // Animação suave da lista
       this.animateList(false);
     }
 
@@ -145,7 +140,6 @@ document.addEventListener("DOMContentLoaded", function () {
       if (!isSmallScreen) return;
 
       if (expanding) {
-        // Expandindo - mostra com animação
         this.list.style.display = 'block';
         this.list.style.opacity = '0';
         this.list.style.transform = 'translateY(-10px)';
@@ -156,7 +150,6 @@ document.addEventListener("DOMContentLoaded", function () {
           this.list.style.transform = 'translateY(0)';
         });
       } else {
-        // Colapsando - esconde com animação
         this.list.style.transition = 'opacity 0.3s ease, transform 0.3s ease';
         this.list.style.opacity = '0';
         this.list.style.transform = 'translateY(-10px)';
@@ -171,7 +164,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
     updateForBreakpoint(isSmallScreen) {
       if (isSmallScreen) {
-        // Mobile: habilita acordeon
         this.button.removeAttribute("disabled");
         this.button.setAttribute("aria-expanded", this.expanded ? "true" : "false");
         
@@ -179,13 +171,11 @@ document.addEventListener("DOMContentLoaded", function () {
           this.button.setAttribute("aria-controls", this.list.id);
         }
       } else {
-        // Desktop: desabilita acordeon, mostra tudo
         this.collapse();
         this.button.setAttribute("disabled", "");
         this.button.removeAttribute("aria-expanded");
         this.button.removeAttribute("aria-controls");
         
-        // Reset estilos da lista
         this.list.style.display = '';
         this.list.style.opacity = '';
         this.list.style.transform = '';
