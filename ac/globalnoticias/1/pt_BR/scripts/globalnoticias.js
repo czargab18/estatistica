@@ -1,7 +1,22 @@
 /**
  * Globalnoticias.js - Sistema Completo de Navegação para Galeria de Notícias
  * Baseado nos padrões do Apple TV+ para navegação entre slides com PaddleNav
- * Inclui suporte para touch, teclado, e navegação por clique
+ * Inclui suporte para     updateButtons() {
+      const isFirstItem = this.currentIndex === 0;
+      const isLastItem = this.currentIndex === this.totalItems - 1;
+
+      if (this.totalItems > 1) {
+        this.prevButton.disabled = false;
+        this.prevButton.classList.remove('disabled');
+        this.nextButton.disabled = false;
+        this.nextButton.classList.remove('disabled');
+      } else {
+        this.prevButton.disabled = true;
+        this.prevButton.classList.add('disabled');
+        this.nextButton.disabled = true;
+        this.nextButton.classList.add('disabled');
+      }
+    }navegação por clique
  */
 (function () {
   'use strict';
@@ -23,7 +38,7 @@
       this.totalItems = this.items?.length || 0;
       this.autoPlayInterval = null;
       this.isPlaying = false;
-      this.autoPlayDelay = 5000; // 5 segundos
+      this.autoPlayDelay = 5000;
 
       if (this.isValid()) {
         this.init();
@@ -53,10 +68,8 @@
     }
 
     init() {
-      // Set initial inline styles for all gallery items
       this.setInitialStyles();
 
-      // Bind event listeners
       this.nextButton.addEventListener('click', () => {
         this.next();
         this.stopAutoPlay();
@@ -66,12 +79,10 @@
         this.stopAutoPlay();
       });
 
-      // Play/pause button
       if (this.playButton) {
         this.playButton.addEventListener('click', this.togglePlayPause.bind(this));
       }
 
-      // Dots navigation
       if (this.dots) {
         this.dots.forEach((dot, index) => {
           dot.addEventListener('click', (e) => {
@@ -82,16 +93,12 @@
         });
       }
 
-      // Keyboard navigation
       document.addEventListener('keydown', this.handleKeydown.bind(this));
 
-      // Touch/swipe support (basic)
       this.addTouchSupport();
 
-      // Intersection Observer for auto-start
       this.addIntersectionObserver();
 
-      // Initialize first state
       this.updateGallery();
       this.updateButtons();
       this.updateDots();
@@ -99,29 +106,24 @@
     }
 
     setInitialStyles() {
-      // Set initial inline styles for all gallery items based on their position
       const containerWidth = this.getContainerWidth();
 
       this.items.forEach((item, index) => {
-        let progress = index - this.currentIndex; // currentIndex is 0 initially
+        let progress = index - this.currentIndex;
         let translateItemX = (index - this.currentIndex) * containerWidth;
         const zIndex = index === this.currentIndex ? 1 : 0;
 
-        // Posicionamento circular: quando current está no primeiro, último fica como previous
         if (this.currentIndex === 0 && index === this.totalItems - 1) {
           progress = -1;
           translateItemX = -containerWidth;
         }
-        // Posicionamento circular: quando current está no último, primeiro fica como next
         else if (this.currentIndex === this.totalItems - 1 && index === 0) {
           progress = 1;
           translateItemX = containerWidth;
         }
 
-        // Apply inline styles exactly as requested
         item.style.cssText = `--progress: ${progress}; z-index: ${zIndex}; opacity: 1; transform: translate(${translateItemX}px, 0px);`;
 
-        // Ensure current item has 'current' class
         if (index === this.currentIndex) {
           item.classList.add('current');
         } else {
@@ -155,8 +157,6 @@
     }
 
     smoothCircularTransition(direction) {
-      // Para navegação circular, usamos a mesma lógica do updateGallery
-      // mas com uma pequena pausa para permitir transição suave
       requestAnimationFrame(() => {
         this.updateGallery();
         this.updateButtons();
@@ -174,32 +174,25 @@
     }
 
     updateGallery() {
-      // Calculate container width based on current breakpoint
       const containerWidth = this.getContainerWidth();
 
-      // Reset container position for item-based navigation
       this.itemContainer.style.transform = `translate3d(0px, 0px, 0px)`;
 
-      // Update individual items with inline styles as requested
       this.items.forEach((item, index) => {
         let progress = index - this.currentIndex;
         let translateItemX = (index - this.currentIndex) * containerWidth;
 
-        // Posicionamento circular: quando current está no primeiro, último fica como previous
         if (this.currentIndex === 0 && index === this.totalItems - 1) {
           progress = -1;
           translateItemX = -containerWidth;
         }
-        // Posicionamento circular: quando current está no último, primeiro fica como next
         else if (this.currentIndex === this.totalItems - 1 && index === 0) {
           progress = 1;
           translateItemX = containerWidth;
         }
 
-        // Apply inline styles exactly as shown in the example
         item.style.cssText = `--progress: ${progress}; z-index: ${index === this.currentIndex ? 1 : 0}; opacity: 1; transform: translate(${translateItemX}px, 0px);`;
 
-        // Add/remove current class (matching HTML structure)
         if (index === this.currentIndex) {
           item.classList.add('current');
         } else {
@@ -238,7 +231,7 @@
     }
 
     startAutoPlay() {
-      if (this.autoPlayInterval) return; // Already playing
+      if (this.autoPlayInterval) return;
 
       this.autoPlayInterval = setInterval(() => {
         this.next();
@@ -300,19 +293,18 @@
       const observer = new IntersectionObserver((entries) => {
         entries.forEach((entry) => {
           if (entry.isIntersecting && !this.isPlaying) {
-            // Auto-start when gallery comes into view
             setTimeout(() => {
               if (entry.isIntersecting && !this.isPlaying) {
                 this.startAutoPlay();
               }
-            }, 1000); // Delay 1 segundo antes de iniciar
+            }, 1000);
           } else if (!entry.isIntersecting && this.isPlaying) {
             this.stopAutoPlay();
           }
         });
       }, {
         threshold: 0.5,
-        rootMargin: '0px 0px -100px 0px' // Start a bit before fully visible
+        rootMargin: '0px 0px -100px 0px'
       });
 
       if (this.gallery) {
@@ -321,22 +313,20 @@
     }
 
     getContainerWidth() {
-      // Return width based on current breakpoint (matching CSS media queries)
       const windowWidth = window.innerWidth;
 
       if (windowWidth >= 1441) {
-        return 1265; // xlarge
+        return 1265;
       } else if (windowWidth > 1068) {
-        return 995;  // desktop
+        return 995;
       } else if (windowWidth > 734) {
-        return 704;  // medium
+        return 704;
       } else {
-        return 289;  // small
+        return 289;
       }
     }
 
     handleKeydown(event) {
-      // Only handle keys when gallery is in focus or visible
       if (!this.gallery.closest(':focus-within') && !this.isInViewport()) {
         return;
       }
@@ -362,7 +352,7 @@
           this.stopAutoPlay();
           this.goToSlide(this.totalItems - 1);
           break;
-        case ' ': // Spacebar
+        case ' ':
         case 'Enter':
           event.preventDefault();
           this.togglePlayPause();
@@ -375,7 +365,7 @@
       let startY = 0;
       let deltaX = 0;
       let deltaY = 0;
-      const threshold = 50; // minimum distance for swipe
+      const threshold = 50;
 
       this.itemContainer.addEventListener('touchstart', (e) => {
         startX = e.touches[0].clientX;
@@ -392,20 +382,16 @@
       this.itemContainer.addEventListener('touchend', (e) => {
         if (!startX || !startY) return;
 
-        // Check if horizontal swipe is more significant than vertical
         if (Math.abs(deltaX) > Math.abs(deltaY) && Math.abs(deltaX) > threshold) {
-          this.stopAutoPlay(); // Stop autoplay on swipe
+          this.stopAutoPlay();
 
           if (deltaX > 0) {
-            // Swipe right - go to previous
             this.previous();
           } else {
-            // Swipe left - go to next
             this.next();
           }
         }
 
-        // Reset values
         startX = 0;
         startY = 0;
         deltaX = 0;
@@ -444,23 +430,17 @@
       }
     }
 
-    // Handle window resize
     handleResize() {
-      // Recalculate and apply inline styles for new container width
       this.setInitialStyles();
       this.updateGallery();
     }
 
-    // Cleanup method
     destroy() {
       this.stopAutoPlay();
-      // Remove event listeners would go here if needed
     }
   }
 
-  // Auto-initialize when DOM is ready
   function initializePaddleNav() {
-    // Look for the specific noticias gallery
     const mainGallery = document.querySelector('section[data-module-template="noticias"] .gallery#noticias');
     const paddleNavInstances = [];
 
@@ -473,7 +453,6 @@
         console.warn('❌ Failed to initialize PaddleNavigation for #noticias gallery');
       }
     } else {
-      // Fallback: look for any gallery in noticias section
       const galleries = document.querySelectorAll('section[data-module-template="noticias"] .gallery');
 
       galleries.forEach((gallery, index) => {
@@ -490,7 +469,6 @@
       });
     }
 
-    // Handle window resize for all instances
     let resizeTimeout;
     window.addEventListener('resize', () => {
       clearTimeout(resizeTimeout);
@@ -504,14 +482,12 @@
     return paddleNavInstances;
   }
 
-  // Initialize when DOM is ready
   if (document.readyState === 'loading') {
     document.addEventListener('DOMContentLoaded', initializePaddleNav);
   } else {
     initializePaddleNav();
   }
 
-  // Export for external use
   window.PaddleNavigation = PaddleNavigation;
   window.initializePaddleNav = initializePaddleNav;
 
