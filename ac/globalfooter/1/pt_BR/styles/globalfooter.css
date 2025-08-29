@@ -36,8 +36,8 @@
   --footer-directory-title-color: #1d1d1f;
   --footer-directory-title-color-hover: #000;
   --footer-focus-color: #0071E3;
-    --footer-focus-color-alt: #000;
-    --footer-focus-offset: 1px;
+  --footer-focus-color-alt: #000;
+  --footer-focus-offset: 1px;
   font-size: 12px;
   line-height: 1.33337;
   font-weight: 400;
@@ -50,13 +50,13 @@
   position: static;
   z-index: 1;
   box-sizing: border-box;
-  }
-  
-  /* Sistema de reset mais robusto */
-  #globalfooter *,
-  #globalfooter *:before,
-  #globalfooter *:after {
-    box-sizing: border-box;
+}
+
+/* Sistema de reset mais robusto */
+#globalfooter *,
+#globalfooter *:before,
+#globalfooter *:after {
+  box-sizing: border-box;
 }
 
 #globalfooter :is(h1, h2, h3, h4, h6) {
@@ -86,6 +86,7 @@
   outline: 2px solid var(--footer-focus-color);
   outline-offset: -2px;
 }
+
 /* ========== CONTEÚDO ========== */
 #globalfooter #globalfooter-content {
   margin: 0 auto;
@@ -276,33 +277,38 @@
 
 @media only screen and (max-width: 833px) {
   #globalfooter .gf-directory-column-section-title-icon {
-    width: 11px;
-      height: 6px;
-      margin-top: 5px;
-    display: flex;
-    align-items: center;
-      justify-content: center;
+    width: 14px;
+    height: 14px;
+    margin-top: 2px;
+    margin-right: 8px;
+    display: block;
+    float: right;
     font-size: 14px;
     font-weight: normal;
     color: var(--footer-directory-title-color);
-      transition: transform 0.3s ease;
-      float: right;
-    }
-    
-    /* Ícone SVG animado */
-    #globalfooter .gf-directory-column-section-title-icon::before {
-      content: "";
-      width: 11px;
-      height: 6px;
-      background-image: url('data:image/svg+xml,<svg width="11" height="6" viewBox="0 0 11 6" xmlns="http://www.w3.org/2000/svg"><polyline stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" fill="none" points="10.075 0.675 5.5 5.323 0.925 0.675"/></svg>');
-      background-repeat: no-repeat;
-      background-position: center;
     transition: transform 0.3s ease;
+    text-align: center;
+    line-height: 1;
   }
-    /* Estado expandido */
-    #globalfooter .gf-directory-column-section.gf-directory-column-expanded .gf-directory-column-section-title-icon::before {
-      transform: rotate(180deg);
-    }
+
+  /* Assegurar que o conteúdo de texto seja visível */
+  #globalfooter .gf-directory-column-section-title-icon {
+    color: var(--footer-directory-title-color) !important;
+    font-family: inherit;
+  }
+
+  /* Ícone SVG como conteúdo adicional (não substitui o texto) */
+  #globalfooter .gf-directory-column-section-title-icon:empty::after {
+    content: "▼";
+    font-size: 10px;
+    display: block;
+  }
+
+  /* Estado expandido - rotação do ícone */
+  #globalfooter .gf-directory-column-section.gf-directory-column-expanded .gf-directory-column-section-title-icon {
+    transform: rotate(45deg);
+    transition: transform 0.3s cubic-bezier(0.2, 0, 0.38, 0.9);
+  }
 }
 
 #globalfooter .gf-directory-column-section-title>.gf-directory-column-section-title-text {
@@ -320,8 +326,8 @@
   list-style: none;
   padding: 0;
   display: block;
-    /* Sempre visível em desktop */
-    visibility: visible;
+  /* Sempre visível em desktop */
+  visibility: visible;
 }
 
 @media only screen and (max-width: 833px) {
@@ -332,24 +338,24 @@
     padding-bottom: 16px;
     position: static;
     visibility: visible;
-      transform: none;
-      z-index: 1;
+    transform: none;
+    z-index: 1;
     will-change: transform;
     display: none;
-      /* Inicialmente oculto */
-    
-      /* Transições suaves */
-      opacity: 0;
-      transform: translateY(-10px);
-      transition: opacity 0.3s ease, transform 0.3s ease, display 0s 0.3s;
+    /* Inicialmente oculto */
+
+    /* Transições suaves */
+    opacity: 0;
+    transform: translateY(-10px);
+    transition: opacity 0.3s ease, transform 0.3s ease, display 0s 0.3s;
   }
 
-    /* Estado expandido: listas visíveis com animação */
-    #globalfooter .gf-directory-column-section.gf-directory-column-expanded .gf-directory-column-section-list {
-      display: block;
-      opacity: 1;
-      transform: translateY(0);
-      transition: opacity 0.3s ease, transform 0.3s ease;
+  /* Estado expandido: listas visíveis com animação */
+  #globalfooter .gf-directory-column-section.gf-directory-column-expanded .gf-directory-column-section-list {
+    display: block;
+    opacity: 1;
+    transform: translateY(0);
+    transition: opacity 0.3s ease, transform 0.3s ease;
   }
 }
 
@@ -383,10 +389,6 @@
 @media only screen and (max-width: 833px) {
   #globalfooter .gf-directory-column-section.gf-directory-column-expanded .gf-directory-column-section-title {
     color: var(--footer-directory-title-color-hover);
-  }
-
-  #globalfooter .gf-directory-column-section.gf-directory-column-expanded .gf-directory-column-section-title-icon {
-    transform: rotate(45deg) scale(1.08);
   }
 
   #globalfooter .gf-directory-column-section.gf-directory-column-expanded .gf-directory-column-section-list {
@@ -563,34 +565,29 @@
 
 /* Controle de exibição para acordeon mobile - Sistema Apple */
 @media only screen and (max-width: 833px) {
+
   /* Garantir que todas as listas iniciem ocultas */
-    #globalfooter .gf-directory-column-section-list {
+  #globalfooter .gf-directory-column-section-list {
     display: none !important;
   }
 
-    /* Estado expandido: listas visíveis com transições suaves */
-    #globalfooter .gf-directory-column-section.gf-directory-column-expanded .gf-directory-column-section-list {
+  /* Estado expandido: listas visíveis com transições suaves */
+  #globalfooter .gf-directory-column-section.gf-directory-column-expanded .gf-directory-column-section-list {
     display: block !important;
-      animation: expandList 0.3s ease-out forwards;
+    animation: expandList 0.3s ease-out forwards;
+  }
+
+  /* Animação de expansão */
+  @keyframes expandList {
+    from {
+      opacity: 0;
+      transform: translateY(-10px);
     }
-    
-    /* Animação de expansão */
-    @keyframes expandList {
-      from {
-        opacity: 0;
-        transform: translateY(-10px);
-      }
-    
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
+
+    to {
+      opacity: 1;
+      transform: translateY(0);
+
     }
-    
-    /* Animação de rotação do ícone */
-    #globalfooter .gf-directory-column-section.gf-directory-column-expanded .gf-directory-column-section-title-icon::before {
-      transform: rotate(180deg);
-      transition: transform 0.3s cubic-bezier(0.2, 0, 0.38, 0.9);
   }
 }
-

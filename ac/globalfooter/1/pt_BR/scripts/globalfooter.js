@@ -87,9 +87,11 @@ document.addEventListener("DOMContentLoaded", function () {
       this.setupEventListeners();
       this.button.setAttribute("aria-expanded", "false");
       
-      // Remove o texto '+' e usa CSS para o ícone
+      // Garante que o ícone tenha conteúdo de fallback se estiver vazio
       if (this.icon) {
-        this.icon.textContent = '';
+        if (!this.icon.textContent.trim()) {
+          this.icon.textContent = '+';
+        }
       }
     }
 
