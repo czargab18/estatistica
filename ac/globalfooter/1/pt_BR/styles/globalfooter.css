@@ -1,6 +1,24 @@
 #globalfooter {
-   all: initial;
+  all: unset;
 }
+
+#globalfooter span,
+#globalfooter p {
+  display: inline;
+}
+
+#globalfooter .visuallyhidden {
+  position: absolute;
+  clip: rect(1px, 1px, 1px, 1px);
+  -webkit-clip-path: inset(0px 0px 99.9% 99.9%);
+  clip-path: inset(0px 0px 99.9% 99.9%);
+  overflow: hidden;
+  height: 1px;
+  width: 1px;
+  padding: 0;
+  border: 0;
+}
+
 #globalfooter {
   font-weight: normal;
   text-size-adjust: 100%;
@@ -8,6 +26,7 @@
   max-width: 2560px;
   width: 100%;
 }
+
 #globalfooter {
   --footer-background: #f5f5f7;
   --footer-border-color: #d2d2d7;
@@ -33,13 +52,15 @@
   color: var(--footer-directory-title-color);
 }
 
-#globalfooter :is(h1, h2, h3, h4, h6) > button {
+#globalfooter :is(h1, h2, h3, h4, h6)>button {
   color: var(--footer-directory-title-color);
 }
+
 #globalfooter a {
   color: var(--footer-link-color);
   text-decoration: none;
 }
+
 #globalfooter a:hover {
   text-decoration: underline;
 }
@@ -52,6 +73,7 @@
   padding-bottom: 18px;
   max-width: 980px;
 }
+
 /* #globalfooter #globalfooter-content a {
   color: rgb(245, 30, 30);
 } */
@@ -62,10 +84,12 @@
   padding-bottom: 16px;
   padding-left: 0px;
 }
+
 #globalfooter #globalfooter-note a {
   text-decoration: underline;
   color: var(--footer-link-color);
 }
+
 #globalfooter #globalfooter-note ol {
   list-style-position: outside;
   margin: 0;
@@ -97,6 +121,7 @@
 #globalfooter #globalfooter-note small {
   font-size: 1em;
 }
+
 /* ========== NAVEGAÇÃO-links ========== */
 /* footer -> content -> nav */
 #globalfooter #globalfooter-navgation {
@@ -145,17 +170,18 @@
 /* caso tenham 2 colunas dentro de >- gf-directory-column
    onde a segunda receberia a propriedade
 */
-#globalfooter .gf-directory-column-section ~ .gf-directory-column-section {
+#globalfooter .gf-directory-column-section~.gf-directory-column-section {
   padding-top: 24px;
 }
+
 /* media query da 2 coluna */
 @media only screen and (max-width: 833px) {
-  #globalfooter .gf-directory-column-section ~ .gf-directory-column-section {
+  #globalfooter .gf-directory-column-section~.gf-directory-column-section {
     padding-top: 0;
   }
 }
 
-#globalfooter .gf-directory-column-section-title > .gf-directory-column-section-title-text,
+#globalfooter .gf-directory-column-section-title>.gf-directory-column-section-title-text,
 #globalfooter .gf-directory-column-section-title-button {
   font-size: 12px;
   line-height: 1.33337;
@@ -239,12 +265,12 @@
   }
 }
 
-#globalfooter .gf-directory-column-section-title > .gf-directory-column-section-title-text {
+#globalfooter .gf-directory-column-section-title>.gf-directory-column-section-title-text {
   display: block;
 }
 
 @media only screen and (max-width: 833px) {
-  #globalfooter .gf-directory-column-section-title > .gf-directory-column-section-title-text {
+  #globalfooter .gf-directory-column-section-title>.gf-directory-column-section-title-text {
     display: none;
   }
 }
@@ -364,11 +390,13 @@
   z-index: 2;
   white-space: normal;
 }
+
 @media only screen and (max-width: 833px) {
   #globalfooter .gf-copyright-secretaria-locale {
     float: none;
   }
 }
+
 /* secretaria -> locale - links */
 #globalfooter .gf-copyright-locale-link {
   border-left: 1px solid var(--footer-pipe-color);
@@ -376,11 +404,13 @@
   padding-left: 11px;
   display: inline;
 }
+
 #globalfooter .gf-copyright-locale-link:first-child {
   border-left: none;
   margin-left: 0;
   padding-left: 0;
 }
+
 #globalfooter a.locale-dep-unb {
   color: var(--footer-text-color);
   text-decoration: none;
@@ -433,6 +463,7 @@
   justify-content: space-between;
   align-items: baseline;
 }
+
 @media only screen and (max-width: 833px) {
   #globalfooter ul.gf-copyright-legal-links {
     margin-top: 10px;
@@ -442,6 +473,7 @@
     flex-wrap: wrap;
     align-content: space-between;
   }
+
   /*   #globalfooter ul span.footer-espacador {
     display: none;
   } */
@@ -468,11 +500,13 @@
   border-top: none;
   text-transform: uppercase;
 }
+
 @media only screen and (max-width: 833px) {
   #globalfooter .gf-copyright-locale {
     margin-top: 10px;
     position: static;
   }
+
   /*   #globalfooter-copyright #gf-copyright-legal a.locale-BR {
     padding-bottom: 19px;
   } */
@@ -484,13 +518,10 @@
   #globalfooter ul#footer-directory-column-section-products {
     display: none;
   }
+
   #globalfooter ul.footer-directory-column-section-products-expanded {
     display: block;
     transition: transform 300ms ease;
   }
 }
 
-footer span,
-footer p {
-  display: inline;
-}
