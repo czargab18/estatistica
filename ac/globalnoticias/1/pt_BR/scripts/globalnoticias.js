@@ -137,12 +137,12 @@
 
       if (this.currentIndex >= this.totalItems) {
         this.currentIndex = 0;
+      }
 
-        if (wasLastSlide) {
-          // Navegação circular suave do último para o primeiro
-          this.smoothCircularTransition('next');
-          return;
-        }
+      // Sempre use transição suave para navegação circular
+      if (wasLastSlide) {
+        this.smoothCircularTransition('next');
+        return;
       }
 
       this.updateGallery();
@@ -157,12 +157,12 @@
 
       if (this.currentIndex < 0) {
         this.currentIndex = this.totalItems - 1;
+      }
 
-        if (wasFirstSlide) {
-          // Navegação circular suave do primeiro para o último
-          this.smoothCircularTransition('previous');
-          return;
-        }
+      // Sempre use transição suave para navegação circular
+      if (wasFirstSlide) {
+        this.smoothCircularTransition('previous');
+        return;
       }
 
       this.updateGallery();
@@ -175,59 +175,49 @@
 
       if (direction === 'next') {
         // Do último slide (índice totalItems-1) para o primeiro (índice 0)
-
-        // 1. Posiciona o primeiro slide imediatamente após o último
+        // Primeiro slide deve aparecer à direita do último
         const firstSlide = this.items[0];
-        const nextPosition = this.totalItems * containerWidth;
-        firstSlide.style.transform = `translate(${nextPosition}px, 0px)`;
-        firstSlide.style.cssText = `--progress: ${this.totalItems}; z-index: 1; opacity: 1; transform: translate(${nextPosition}px, 0px);`;
+        firstSlide.style.cssText = `--progress: 1; z-index: 1; opacity: 1; transform: translate(${containerWidth}px, 0px);`;
 
-        // 2. Move o container para mostrar o primeiro slide na posição temporária
-        setTimeout(() => {
-          const translateX = -(nextPosition);
-          this.itemContainer.style.transform = `translate3d(${translateX}px, 0px, 0px)`;
+        // Força uma pequena pausa para garantir que o posicionamento foi aplicado
+        requestAnimationFrame(() => {
+          // Agora move o primeiro slide para a posição central (0)
+          firstSlide.style.cssText = `--progress: 0; z-index: 1; opacity: 1; transform: translate(0px, 0px);`;
 
-          // 3. Após a transição, reposiciona tudo normalmente
+          // Move o último slide para fora da tela (esquerda)
+          const lastSlide = this.items[this.totalItems - 1];
+          lastSlide.style.cssText = `--progress: -1; z-index: 0; opacity: 1; transform: translate(${-containerWidth}px, 0px);`;
+
+          // Após a transição, atualiza todos os slides normalmente
           setTimeout(() => {
-            this.itemContainer.classList.add('no-transition');
             this.updateGallery();
             this.updateButtons();
             this.updateDots();
-
-            // 4. Re-ativa as transições
-            setTimeout(() => {
-              this.itemContainer.classList.remove('no-transition');
-            }, 50);
-          }, 1000);
-        }, 10);
+          }, 500); // Tempo da transição CSS
+        });
 
       } else { // direction === 'previous'
         // Do primeiro slide (índice 0) para o último (índice totalItems-1)
-
-        // 1. Posiciona o último slide imediatamente antes do primeiro
+        // Último slide deve aparecer à esquerda do primeiro
         const lastSlide = this.items[this.totalItems - 1];
-        const previousPosition = -containerWidth;
-        lastSlide.style.transform = `translate(${previousPosition}px, 0px)`;
-        lastSlide.style.cssText = `--progress: -1; z-index: 1; opacity: 1; transform: translate(${previousPosition}px, 0px);`;
+        lastSlide.style.cssText = `--progress: -1; z-index: 1; opacity: 1; transform: translate(${-containerWidth}px, 0px);`;
 
-        // 2. Move o container para mostrar o último slide na posição temporária
-        setTimeout(() => {
-          const translateX = -(previousPosition);
-          this.itemContainer.style.transform = `translate3d(${translateX}px, 0px, 0px)`;
+        // Força uma pequena pausa para garantir que o posicionamento foi aplicado
+        requestAnimationFrame(() => {
+          // Agora move o último slide para a posição central (0)
+          lastSlide.style.cssText = `--progress: 0; z-index: 1; opacity: 1; transform: translate(0px, 0px);`;
 
-          // 3. Após a transição, reposiciona tudo normalmente
+          // Move o primeiro slide para fora da tela (direita)
+          const firstSlide = this.items[0];
+          firstSlide.style.cssText = `--progress: 1; z-index: 0; opacity: 1; transform: translate(${containerWidth}px, 0px);`;
+
+          // Após a transição, atualiza todos os slides normalmente
           setTimeout(() => {
-            this.itemContainer.classList.add('no-transition');
             this.updateGallery();
             this.updateButtons();
             this.updateDots();
-
-            // 4. Re-ativa as transições
-            setTimeout(() => {
-              this.itemContainer.classList.remove('no-transition');
-            }, 50);
-          }, 1000);
-        }, 10);
+          }, 500); // Tempo da transição CSS
+        });
       }
     }
 
