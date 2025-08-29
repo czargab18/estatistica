@@ -473,6 +473,10 @@
   display: none;
 }
 
+/* Ocultar qualquer SVG que possa estar dentro do ícone */
+#globalfooter .gf-directory-column-section-title-icon svg {
+  display: none !important;
+}
 @media only screen and (max-width: 833px) {
   #globalfooter .gf-directory-column-section-title-icon {
     width: 14px;
@@ -493,11 +497,13 @@
   #globalfooter .gf-directory-column-section-title-icon {
     color: var(--footer-directory-title-color) !important;
     font-family: inherit;
+    font-size: 0;
+      /* Esconder texto original */
   }
 
-  /* Ícone SVG como conteúdo adicional (não substitui o texto) */
-  #globalfooter .gf-directory-column-section-title-icon:empty::after {
-    content: "▼";
+    /* Ícone usando content "\F35E" */
+    #globalfooter .gf-directory-column-section-title-icon::after {
+      content: "\F35E";
     font-size: 10px;
     display: block;
   }
