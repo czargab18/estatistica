@@ -1,26 +1,10 @@
 /**
  * Globalnoticias.js - Sistema Completo de Navegação para Galeria de Notícias
  * Baseado nos padrões do Apple TV+ para navegação entre slides com PaddleNav
- * Inclui suporte para     updateButtons() {
-      const isFirstItem = this.currentIndex === 0;
-      const isLastItem = this.currentIndex === this.totalItems - 1;
-
-      if (this.totalItems > 1) {
-        this.prevButton.disabled = false;
-        this.prevButton.classList.remove('disabled');
-        this.nextButton.disabled = false;
-        this.nextButton.classList.remove('disabled');
-      } else {
-        this.prevButton.disabled = true;
-        this.prevButton.classList.add('disabled');
-        this.nextButton.disabled = true;
-        this.nextButton.classList.add('disabled');
-      }
-    }navegação por clique
+ * Inclui suporte para touch, teclado, e navegação por clique
  */
 (function () {
   'use strict';
-
   class PaddleNavigation {
     constructor(gallerySelector) {
       this.gallery = document.querySelector(gallerySelector);
@@ -33,13 +17,11 @@
       this.playIcon = this.gallery?.querySelector('#play-icon');
       this.pauseIcon = this.gallery?.querySelector('#pause-icon');
       this.dots = this.gallery?.querySelectorAll('.dotnav-item');
-
       this.currentIndex = 0;
       this.totalItems = this.items?.length || 0;
       this.autoPlayInterval = null;
       this.isPlaying = false;
       this.autoPlayDelay = 5000;
-
       if (this.isValid()) {
         this.init();
       } else {
@@ -60,7 +42,6 @@
         dots: this.dots?.length
       });
     }
-
     isValid() {
       return this.gallery && this.itemContainer && this.items &&
         this.paddlenav && this.nextButton && this.prevButton &&
@@ -69,7 +50,6 @@
 
     init() {
       this.setInitialStyles();
-
       this.nextButton.addEventListener('click', () => {
         this.next();
         this.stopAutoPlay();
@@ -78,11 +58,9 @@
         this.previous();
         this.stopAutoPlay();
       });
-
       if (this.playButton) {
         this.playButton.addEventListener('click', this.togglePlayPause.bind(this));
       }
-
       if (this.dots) {
         this.dots.forEach((dot, index) => {
           dot.addEventListener('click', (e) => {
@@ -92,13 +70,9 @@
           });
         });
       }
-
       document.addEventListener('keydown', this.handleKeydown.bind(this));
-
       this.addTouchSupport();
-
       this.addIntersectionObserver();
-
       this.updateGallery();
       this.updateButtons();
       this.updateDots();
@@ -107,12 +81,10 @@
 
     setInitialStyles() {
       const containerWidth = this.getContainerWidth();
-
       this.items.forEach((item, index) => {
         let progress = index - this.currentIndex;
         let translateItemX = (index - this.currentIndex) * containerWidth;
         const zIndex = index === this.currentIndex ? 1 : 0;
-
         if (this.currentIndex === 0 && index === this.totalItems - 1) {
           progress = -1;
           translateItemX = -containerWidth;
@@ -121,9 +93,7 @@
           progress = 1;
           translateItemX = containerWidth;
         }
-
         item.style.cssText = `--progress: ${progress}; z-index: ${zIndex}; opacity: 1; transform: translate(${translateItemX}px, 0px);`;
-
         if (index === this.currentIndex) {
           item.classList.add('current');
         } else {
@@ -134,23 +104,18 @@
 
     next() {
       this.currentIndex++;
-
       if (this.currentIndex >= this.totalItems) {
         this.currentIndex = 0;
       }
-
       this.updateGallery();
       this.updateButtons();
       this.updateDots();
     }
-
     previous() {
       this.currentIndex--;
-
       if (this.currentIndex < 0) {
         this.currentIndex = this.totalItems - 1;
       }
-
       this.updateGallery();
       this.updateButtons();
       this.updateDots();
@@ -175,13 +140,10 @@
 
     updateGallery() {
       const containerWidth = this.getContainerWidth();
-
       this.itemContainer.style.transform = `translate3d(0px, 0px, 0px)`;
-
       this.items.forEach((item, index) => {
         let progress = index - this.currentIndex;
         let translateItemX = (index - this.currentIndex) * containerWidth;
-
         if (this.currentIndex === 0 && index === this.totalItems - 1) {
           progress = -1;
           translateItemX = -containerWidth;
@@ -190,9 +152,7 @@
           progress = 1;
           translateItemX = containerWidth;
         }
-
         item.style.cssText = `--progress: ${progress}; z-index: ${index === this.currentIndex ? 1 : 0}; opacity: 1; transform: translate(${translateItemX}px, 0px);`;
-
         if (index === this.currentIndex) {
           item.classList.add('current');
         } else {
@@ -220,7 +180,6 @@
 
     updateDots() {
       if (!this.dots) return;
-
       this.dots.forEach((dot, index) => {
         if (index === this.currentIndex) {
           dot.classList.add('current');
@@ -229,31 +188,24 @@
         }
       });
     }
-
     startAutoPlay() {
       if (this.autoPlayInterval) return;
-
       this.autoPlayInterval = setInterval(() => {
         this.next();
       }, this.autoPlayDelay);
-
       this.isPlaying = true;
       this.updatePlayPauseIcons();
-
       if (this.gallery) {
         this.gallery.classList.add('autoplay');
       }
     }
-
     stopAutoPlay() {
       if (this.autoPlayInterval) {
         clearInterval(this.autoPlayInterval);
         this.autoPlayInterval = null;
       }
-
       this.isPlaying = false;
       this.updatePlayPauseIcons();
-
       if (this.gallery) {
         this.gallery.classList.remove('autoplay');
       }
@@ -277,7 +229,6 @@
           this.pauseIcon.style.display = 'none';
         }
       }
-
       if (this.playButton) {
         if (this.isPlaying) {
           this.playButton.classList.remove('paused');
@@ -306,7 +257,6 @@
         threshold: 0.5,
         rootMargin: '0px 0px -100px 0px'
       });
-
       if (this.gallery) {
         observer.observe(this.gallery);
       }
@@ -330,7 +280,6 @@
       if (!this.gallery.closest(':focus-within') && !this.isInViewport()) {
         return;
       }
-
       switch (event.key) {
         case 'ArrowLeft':
           event.preventDefault();
@@ -366,32 +315,25 @@
       let deltaX = 0;
       let deltaY = 0;
       const threshold = 50;
-
       this.itemContainer.addEventListener('touchstart', (e) => {
         startX = e.touches[0].clientX;
         startY = e.touches[0].clientY;
       }, { passive: true });
-
       this.itemContainer.addEventListener('touchmove', (e) => {
         if (!startX || !startY) return;
-
         deltaX = e.touches[0].clientX - startX;
         deltaY = e.touches[0].clientY - startY;
       }, { passive: true });
-
       this.itemContainer.addEventListener('touchend', (e) => {
         if (!startX || !startY) return;
-
         if (Math.abs(deltaX) > Math.abs(deltaY) && Math.abs(deltaX) > threshold) {
           this.stopAutoPlay();
-
           if (deltaX > 0) {
             this.previous();
           } else {
             this.next();
           }
         }
-
         startX = 0;
         startY = 0;
         deltaX = 0;
@@ -413,15 +355,12 @@
     getCurrentIndex() {
       return this.currentIndex;
     }
-
     getTotalItems() {
       return this.totalItems;
     }
-
     isAutoPlaying() {
       return this.isPlaying;
     }
-
     setAutoPlayDelay(delay) {
       this.autoPlayDelay = delay;
       if (this.isPlaying) {
@@ -429,21 +368,17 @@
         this.startAutoPlay();
       }
     }
-
     handleResize() {
       this.setInitialStyles();
       this.updateGallery();
     }
-
     destroy() {
       this.stopAutoPlay();
     }
   }
-
   function initializePaddleNav() {
     const mainGallery = document.querySelector('section[data-module-template="noticias"] .gallery#noticias');
     const paddleNavInstances = [];
-
     if (mainGallery) {
       const paddleNav = new PaddleNavigation('#noticias');
       if (paddleNav.isValid()) {
@@ -454,13 +389,11 @@
       }
     } else {
       const galleries = document.querySelectorAll('section[data-module-template="noticias"] .gallery');
-
       galleries.forEach((gallery, index) => {
         const galleryId = gallery.id || `noticias-gallery-${index}`;
         if (!gallery.id) {
           gallery.id = galleryId;
         }
-
         const paddleNav = new PaddleNavigation(`#${galleryId}`);
         if (paddleNav.isValid()) {
           paddleNavInstances.push(paddleNav);
@@ -468,7 +401,6 @@
         }
       });
     }
-
     let resizeTimeout;
     window.addEventListener('resize', () => {
       clearTimeout(resizeTimeout);
@@ -478,7 +410,6 @@
         });
       }, 100);
     });
-
     return paddleNavInstances;
   }
 
@@ -487,8 +418,6 @@
   } else {
     initializePaddleNav();
   }
-
   window.PaddleNavigation = PaddleNavigation;
   window.initializePaddleNav = initializePaddleNav;
-
 })();
