@@ -93,7 +93,10 @@
           progress = 1;
           translateItemX = containerWidth;
         }
-        item.style.cssText = `--progress: ${progress}; z-index: ${zIndex}; opacity: 1; transform: translate(${translateItemX}px, 0px);`;
+        item.style.setProperty('--progress', progress);
+        item.style.zIndex = zIndex;
+        item.style.opacity = 1;
+        item.style.transform = `translate(${translateItemX}px, 0px)`;
         if (index === this.currentIndex) {
           item.classList.add('current');
         } else {
@@ -152,7 +155,10 @@
           progress = 1;
           translateItemX = containerWidth;
         }
-        item.style.cssText = `--progress: ${progress}; z-index: ${index === this.currentIndex ? 1 : 0}; opacity: 1; transform: translate(${translateItemX}px, 0px);`;
+        item.style.setProperty('--progress', progress);
+        item.style.zIndex = index === this.currentIndex ? 1 : 0;
+        item.style.opacity = 1;
+        item.style.transform = `translate(${translateItemX}px, 0px)`;
         if (index === this.currentIndex) {
           item.classList.add('current');
         } else {
