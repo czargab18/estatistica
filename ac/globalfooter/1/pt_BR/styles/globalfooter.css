@@ -152,8 +152,8 @@
 /* ========== NOTAS-INFO ========== */
 #globalfooter #globalfooter-note {
   border-bottom: 1px solid var(--footer-border-color);
-  padding-bottom: 16px;
   padding-left: 0px;
+  padding-bottom: 16px;
 }
 
 #globalfooter #globalfooter-note a {
@@ -352,8 +352,8 @@
   font-family: var(--r-globalfont-family);
   display: flex;
   flex-wrap: nowrap;
-  padding-top: 20px;
-  padding-bottom: 28px;
+  /* padding-top: 20px; */
+  /* padding-bottom: 28px; */
 }
 
 @media only screen and (max-width: 833px) {
