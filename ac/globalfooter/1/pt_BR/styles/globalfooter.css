@@ -1,13 +1,20 @@
 #globalfooter {
-   all: initial;
+  all: unset;
 }
-#globalfooter {
-  font-weight: normal;
-  text-size-adjust: 100%;
-  font-family: var(--r-globalfont-family);
-  max-width: 2560px;
-  width: 100%;
+
+#globalfooter p,
+#globalfooter span {
+  display: inline;
 }
+
+/* ========== FONTES APPLE LEGACY ========== */
+@font-face {
+  font-family: "Apple Legacy Chevron";
+  font-style: normal;
+  font-weight: 400;
+  src: local("\f8ff"), url("../assets/ac-footer/legacy/appleicons_text.woff") format("woff"), url("../assets/ac-footer/legacy/appleicons_text.ttf") format("truetype")
+}
+
 #globalfooter {
   --footer-background: #f5f5f7;
   --footer-border-color: #d2d2d7;
@@ -16,32 +23,117 @@
   --footer-pipe-color: #86868b;
   --footer-directory-title-color: #1d1d1f;
   --footer-directory-title-color-hover: #000;
+  --footer-focus-color: #0071E3;
+  --footer-focus-color-alt: #000;
+  --footer-focus-offset: 1px;
+  --footer-directory-title-focus-offset: 4px;
+  --footer-section-border-color: var(--footer-border-color);
   font-size: 12px;
   line-height: 1.33337;
   font-weight: 400;
   letter-spacing: -0.01em;
-  font-family: var(--r-globalfont-family);
+  font-family: "SF Pro Text", "Myriad Set Pro", "SF Pro Icons", "Apple Legacy Chevron", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
   background: var(--footer-background);
   color: var(--footer-text-color);
-  min-width: 320px;
+  min-width: 1024px;
   overflow: hidden;
-  position: static;
+  position: relative;
   z-index: 1;
+  box-sizing: border-box;
+  width: 100%;
+  max-width: 2560px;
+}
+
+@media only screen and (max-width: 1044px) {
+  #globalfooter {
+    min-width: 320px;
+  }
+}
+
+/* Sistema de reset mais robusto */
+#globalfooter *,
+#globalfooter *:before,
+#globalfooter *:after {
+  box-sizing: border-box;
+}
+
+#globalfooter .visuallyhidden {
+  position: absolute;
+  clip: rect(1px, 1px, 1px, 1px);
+  -webkit-clip-path: inset(0px 0px 99.9% 99.9%);
+  clip-path: inset(0px 0px 99.9% 99.9%);
+  overflow: hidden;
+  height: 1px;
+  width: 1px;
+  padding: 0;
+  border: 0;
+}
+
+/* ========== ESTRUTURA PRINCIPAL ========== */
+#globalfooter .ac-gf-content {
+  margin: 0 auto;
+  max-width: 1024px;
+  width: 100%;
+  padding: 0;
+  position: relative;
+  z-index: 1;
+}
+
+#globalfooter .ac-gf-breadcrumbs {
+  border-bottom: 1px solid var(--footer-section-border-color);
+  padding: 17px 0;
+}
+
+#globalfooter .ac-gf-directory {
+  background: var(--footer-background);
+  padding: 19px 0 9px;
+  border-bottom: 1px solid var(--footer-section-border-color);
+}
+
+#globalfooter .ac-gf-sosumi {
+  padding: 21px 0 10px;
+  background: var(--footer-background);
+  color: var(--footer-text-color);
+  font-size: 12px;
+  line-height: 1.33337;
+}
+
+@media only screen and (max-width: 833px) {
+  #globalfooter .ac-gf-directory {
+    padding: 0;
+  }
+
+  #globalfooter .ac-gf-sosumi {
+    padding: 21px 0 12px;
+  }
 }
 
 #globalfooter :is(h1, h2, h3, h4, h6) {
   color: var(--footer-directory-title-color);
 }
 
-#globalfooter :is(h1, h2, h3, h4, h6) > button {
+#globalfooter :is(h1, h2, h3, h4, h6)>button {
   color: var(--footer-directory-title-color);
 }
+
 #globalfooter a {
   color: var(--footer-link-color);
   text-decoration: none;
 }
+
 #globalfooter a:hover {
   text-decoration: underline;
+}
+
+/* Suporte a foco (acessibilidade) */
+#globalfooter :focus-visible {
+  outline: 2px solid var(--footer-focus-color);
+  outline-offset: var(--footer-focus-offset);
+}
+
+#globalfooter .gf-directory-column-section-title-button:focus-visible {
+  outline: 2px solid var(--footer-focus-color);
+  outline-offset: -2px;
 }
 
 /* ========== CONTEÚDO ========== */
@@ -52,6 +144,7 @@
   padding-bottom: 18px;
   max-width: 980px;
 }
+
 /* #globalfooter #globalfooter-content a {
   color: rgb(245, 30, 30);
 } */
@@ -59,13 +152,15 @@
 /* ========== NOTAS-INFO ========== */
 #globalfooter #globalfooter-note {
   border-bottom: 1px solid var(--footer-border-color);
-  padding-bottom: 16px;
   padding-left: 0px;
+  padding-bottom: 16px;
 }
+
 #globalfooter #globalfooter-note a {
   text-decoration: underline;
   color: var(--footer-link-color);
 }
+
 #globalfooter #globalfooter-note ol {
   list-style-position: outside;
   margin: 0;
@@ -97,7 +192,157 @@
 #globalfooter #globalfooter-note small {
   font-size: 1em;
 }
-/* ========== NAVEGAÇÃO-links ========== */
+
+/* ========== DIRECTORY/ACCORDION ESTRUTURAS (PADRÃO APPLE) ========== */
+#globalfooter .ac-gf-directory-column {
+  float: left;
+  width: 20%;
+  margin: 0;
+  padding: 0;
+}
+
+@media only screen and (max-width: 833px) {
+  #globalfooter .ac-gf-directory-column {
+    float: none;
+    width: 100%;
+    border-top: 1px solid var(--footer-section-border-color);
+  }
+
+  #globalfooter .ac-gf-directory-column:first-child {
+    border-top: none;
+  }
+}
+
+/* Seções dentro das colunas */
+#globalfooter .ac-gf-directory-column-section {
+  margin-bottom: 24px;
+}
+
+@media only screen and (max-width: 833px) {
+  #globalfooter .ac-gf-directory-column-section {
+    position: relative;
+    z-index: 1;
+    margin-bottom: 0;
+    overflow: hidden;
+  }
+}
+
+/* Títulos das seções (Apple style) */
+#globalfooter .ac-gf-directory-column-section-title {
+  display: block;
+  color: var(--footer-directory-title-color);
+  font-size: 12px;
+  line-height: 1.33337;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  margin: 0 0 12px;
+  text-decoration: none;
+  outline: none;
+  -webkit-tap-highlight-color: transparent;
+}
+
+#globalfooter .ac-gf-directory-column-section-title:hover {
+  color: var(--footer-directory-title-color-hover);
+}
+
+#globalfooter .ac-gf-directory-column-section-title:focus {
+  outline: var(--footer-focus-offset) solid var(--footer-focus-color);
+  outline-offset: var(--footer-directory-title-focus-offset);
+}
+
+@media only screen and (max-width: 833px) {
+  #globalfooter .ac-gf-directory-column-section-title {
+    position: relative;
+    display: block;
+    padding: 11px 44px 12px 0;
+    margin: 0;
+    cursor: pointer;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    background: none;
+    border: none;
+    width: 100%;
+    text-align: left;
+    font: inherit;
+  }
+
+  #globalfooter .ac-gf-directory-column-section-title::after {
+    content: "+";
+    position: absolute;
+    top: 11px;
+    right: 0;
+    width: 44px;
+    height: 44px;
+    line-height: 44px;
+    text-align: center;
+    font-family: "Apple Legacy Chevron";
+    font-size: 32px;
+    font-weight: 300;
+    color: var(--footer-text-color);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    transform: rotate(0deg);
+    transition: transform 0.3s cubic-bezier(0.4, 0.0, 0.6, 1.0);
+  }
+
+  #globalfooter .ac-gf-directory-column-section.ac-gf-directory-column-section-expanded .ac-gf-directory-column-section-title::after {
+    transform: rotate(45deg);
+  }
+}
+
+/* Listas de links (padrão Apple) */
+#globalfooter .ac-gf-directory-column-section-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+@media only screen and (max-width: 833px) {
+  #globalfooter .ac-gf-directory-column-section-list {
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
+    transition: max-height 0.4s cubic-bezier(0.4, 0.0, 0.6, 1.0),
+      opacity 0.3s cubic-bezier(0.4, 0.0, 0.6, 1.0);
+  }
+
+  #globalfooter .ac-gf-directory-column-section.ac-gf-directory-column-section-expanded .ac-gf-directory-column-section-list {
+    max-height: 1000px;
+    opacity: 1;
+    padding-bottom: 12px;
+  }
+}
+
+/* Items da lista */
+#globalfooter .ac-gf-directory-column-section-item {
+  margin-bottom: 8px;
+}
+
+#globalfooter .ac-gf-directory-column-section-item:last-child {
+  margin-bottom: 0;
+}
+
+/* Links (padrão Apple) */
+#globalfooter .ac-gf-directory-column-section-link {
+  color: var(--footer-link-color);
+  text-decoration: none;
+  font-size: 12px;
+  line-height: 1.33337;
+  font-weight: 400;
+  letter-spacing: -0.01em;
+}
+
+#globalfooter .ac-gf-directory-column-section-link:hover {
+  text-decoration: underline;
+}
+
+@media only screen and (max-width: 833px) {
+  #globalfooter .ac-gf-directory-column-section-link {
+    display: block;
+    padding: 6px 0;
+  }
+}
+
+/* ========== NAVEGAÇÃO-links (MANTENDO COMPATIBILIDADE) ========== */
 /* footer -> content -> nav */
 #globalfooter #globalfooter-navgation {
   font-size: 12px;
@@ -107,8 +352,8 @@
   font-family: var(--r-globalfont-family);
   display: flex;
   flex-wrap: nowrap;
-  padding-top: 20px;
-  padding-bottom: 28px;
+  /* padding-top: 20px; */
+  /* padding-bottom: 28px; */
 }
 
 @media only screen and (max-width: 833px) {
@@ -145,17 +390,18 @@
 /* caso tenham 2 colunas dentro de >- gf-directory-column
    onde a segunda receberia a propriedade
 */
-#globalfooter .gf-directory-column-section ~ .gf-directory-column-section {
+#globalfooter .gf-directory-column-section~.gf-directory-column-section {
   padding-top: 24px;
 }
+
 /* media query da 2 coluna */
 @media only screen and (max-width: 833px) {
-  #globalfooter .gf-directory-column-section ~ .gf-directory-column-section {
+  #globalfooter .gf-directory-column-section~.gf-directory-column-section {
     padding-top: 0;
   }
 }
 
-#globalfooter .gf-directory-column-section-title > .gf-directory-column-section-title-text,
+#globalfooter .gf-directory-column-section-title>.gf-directory-column-section-title-text,
 #globalfooter .gf-directory-column-section-title-button {
   font-size: 12px;
   line-height: 1.33337;
@@ -222,29 +468,65 @@
   } */
 }
 
-/* icone do botão à esquerda */
+/* ========== SISTEMA DE ÍCONS (baseado na Apple) ========== */
 #globalfooter .gf-directory-column-section-title-icon {
   display: none;
 }
 
+/* Ocultar qualquer SVG que possa estar dentro do ícone */
+#globalfooter .gf-directory-column-section-title-icon svg {
+  display: none !important;
+}
 @media only screen and (max-width: 833px) {
   #globalfooter .gf-directory-column-section-title-icon {
-    display: flex;
+    width: 14px;
+    height: 14px;
+    margin-top: 2px;
+    margin-right: 8px;
+    display: block;
     float: right;
     font-size: 14px;
     font-weight: normal;
-    margin-top: -2px;
-    margin-right: 8px;
+    color: var(--footer-directory-title-color);
     transition: transform 0.3s ease;
+    text-align: center;
+    line-height: 1;
+  }
+
+  /* Assegurar que o conteúdo de texto seja visível */
+  #globalfooter .gf-directory-column-section-title-icon {
+    color: var(--footer-directory-title-color) !important;
+    font-family: inherit;
+    font-size: 0;
+      /* Esconder texto original */
+  }
+
+    /* Ícone + por padrão (seção fechada) */
+    #globalfooter .gf-directory-column-section-title-icon::after {
+    content: "+";
+      font-size: 14px;
+      display: block;
+      font-weight: 300;
+    }
+    
+    /* Estado expandido - ícone × (rotacionado) */
+    #globalfooter .gf-directory-column-section.gf-directory-column-expanded .gf-directory-column-section-title-icon::after {
+    content: "\F35E";
+  }
+
+  /* Estado expandido - rotação do ícone */
+  #globalfooter .gf-directory-column-section.gf-directory-column-expanded .gf-directory-column-section-title-icon {
+    transform: rotate(45deg);
+    transition: transform 0.3s cubic-bezier(0.2, 0, 0.38, 0.9);
   }
 }
 
-#globalfooter .gf-directory-column-section-title > .gf-directory-column-section-title-text {
+#globalfooter .gf-directory-column-section-title>.gf-directory-column-section-title-text {
   display: block;
 }
 
 @media only screen and (max-width: 833px) {
-  #globalfooter .gf-directory-column-section-title > .gf-directory-column-section-title-text {
+  #globalfooter .gf-directory-column-section-title>.gf-directory-column-section-title-text {
     display: none;
   }
 }
@@ -253,6 +535,9 @@
   margin-right: 20px;
   list-style: none;
   padding: 0;
+  display: block;
+  /* Sempre visível em desktop */
+  visibility: visible;
 }
 
 @media only screen and (max-width: 833px) {
@@ -261,20 +546,26 @@
     overflow: hidden;
     padding-top: 5px;
     padding-bottom: 16px;
-    position: absolute;
-    top: 100%;
-    left: 0;
-    width: 100%;
-    visibility: hidden;
-    z-index: -1;
-    transform: translateY(-100px);
-    will-change: transform;
-  }
-
-  #globalfooter .gf-directory-column-section-list {
     position: static;
     visibility: visible;
     transform: none;
+    z-index: 1;
+    will-change: transform;
+    display: none;
+    /* Inicialmente oculto */
+
+    /* Transições suaves */
+    opacity: 0;
+    transform: translateY(-10px);
+    transition: opacity 0.3s ease, transform 0.3s ease, display 0s 0.3s;
+  }
+
+  /* Estado expandido: listas visíveis com animação */
+  #globalfooter .gf-directory-column-section.gf-directory-column-expanded .gf-directory-column-section-list {
+    display: block;
+    opacity: 1;
+    transform: translateY(0);
+    transition: opacity 0.3s ease, transform 0.3s ease;
   }
 }
 
@@ -308,10 +599,6 @@
 @media only screen and (max-width: 833px) {
   #globalfooter .gf-directory-column-section.gf-directory-column-expanded .gf-directory-column-section-title {
     color: var(--footer-directory-title-color-hover);
-  }
-
-  #globalfooter .gf-directory-column-section.gf-directory-column-expanded .gf-directory-column-section-title-icon {
-    transform: rotate(45deg) scale(1.08);
   }
 
   #globalfooter .gf-directory-column-section.gf-directory-column-expanded .gf-directory-column-section-list {
@@ -364,11 +651,13 @@
   z-index: 2;
   white-space: normal;
 }
+
 @media only screen and (max-width: 833px) {
   #globalfooter .gf-copyright-secretaria-locale {
     float: none;
   }
 }
+
 /* secretaria -> locale - links */
 #globalfooter .gf-copyright-locale-link {
   border-left: 1px solid var(--footer-pipe-color);
@@ -376,11 +665,13 @@
   padding-left: 11px;
   display: inline;
 }
+
 #globalfooter .gf-copyright-locale-link:first-child {
   border-left: none;
   margin-left: 0;
   padding-left: 0;
 }
+
 #globalfooter a.locale-dep-unb {
   color: var(--footer-text-color);
   text-decoration: none;
@@ -433,6 +724,7 @@
   justify-content: space-between;
   align-items: baseline;
 }
+
 @media only screen and (max-width: 833px) {
   #globalfooter ul.gf-copyright-legal-links {
     margin-top: 10px;
@@ -442,6 +734,7 @@
     flex-wrap: wrap;
     align-content: space-between;
   }
+
   /*   #globalfooter ul span.footer-espacador {
     display: none;
   } */
@@ -468,29 +761,43 @@
   border-top: none;
   text-transform: uppercase;
 }
+
 @media only screen and (max-width: 833px) {
   #globalfooter .gf-copyright-locale {
     margin-top: 10px;
     position: static;
   }
+
   /*   #globalfooter-copyright #gf-copyright-legal a.locale-BR {
     padding-bottom: 19px;
   } */
 }
 
-/* teste - interatividade tela < 833px*/
-
+/* Controle de exibição para acordeon mobile - Sistema Apple */
 @media only screen and (max-width: 833px) {
-  #globalfooter ul#footer-directory-column-section-products {
-    display: none;
-  }
-  #globalfooter ul.footer-directory-column-section-products-expanded {
-    display: block;
-    transition: transform 300ms ease;
-  }
-}
 
-footer span,
-footer p {
-  display: inline;
+  /* Garantir que todas as listas iniciem ocultas */
+  #globalfooter .gf-directory-column-section-list {
+    display: none !important;
+  }
+
+  /* Estado expandido: listas visíveis com transições suaves */
+  #globalfooter .gf-directory-column-section.gf-directory-column-expanded .gf-directory-column-section-list {
+    display: block !important;
+    animation: expandList 0.3s ease-out forwards;
+  }
+
+  /* Animação de expansão */
+  @keyframes expandList {
+    from {
+      opacity: 0;
+      transform: translateY(-10px);
+    }
+
+    to {
+      opacity: 1;
+      transform: translateY(0);
+
+    }
+  }
 }
