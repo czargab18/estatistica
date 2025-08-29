@@ -501,11 +501,17 @@
       /* Esconder texto original */
   }
 
-    /* Ícone usando content "\F35E" */
+    /* Ícone + por padrão (seção fechada) */
     #globalfooter .gf-directory-column-section-title-icon::after {
-      content: "\F35E";
-    font-size: 10px;
-    display: block;
+    content: "+";
+      font-size: 14px;
+      display: block;
+      font-weight: 300;
+    }
+    
+    /* Estado expandido - ícone × (rotacionado) */
+    #globalfooter .gf-directory-column-section.gf-directory-column-expanded .gf-directory-column-section-title-icon::after {
+    content: "\F35E";
   }
 
   /* Estado expandido - rotação do ícone */
