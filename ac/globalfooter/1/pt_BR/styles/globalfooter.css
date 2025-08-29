@@ -279,6 +279,9 @@
   margin-right: 20px;
   list-style: none;
   padding: 0;
+  display: block;
+    /* Sempre visível em desktop */
+    visibility: visible;
 }
 
 @media only screen and (max-width: 833px) {
@@ -287,20 +290,17 @@
     overflow: hidden;
     padding-top: 5px;
     padding-bottom: 16px;
-    position: absolute;
-    top: 100%;
-    left: 0;
-    width: 100%;
-    visibility: hidden;
-    z-index: -1;
-    transform: translateY(-100px);
+    position: static;
+      visibility: visible;
+      transform: none;
+      z-index: 1;
     will-change: transform;
+    display: block;
   }
 
-  #globalfooter .gf-directory-column-section-list {
-    position: static;
-    visibility: visible;
-    transform: none;
+    /* Estado inicial oculto para listas colapsáveis */
+    #globalfooter .gf-directory-column-section:not(.gf-directory-column-expanded) .gf-directory-column-section-list {
+      display: none;
   }
 }
 
@@ -512,16 +512,17 @@
   } */
 }
 
-/* teste - interatividade tela < 833px*/
-
+/* Controle de exibição para acordeon mobile */
 @media only screen and (max-width: 833px) {
-  #globalfooter ul#footer-directory-column-section-products {
+  /* Estado padrão: listas ocultas */
+    #globalfooter .gf-directory-column-section-list {
     display: none;
   }
 
-  #globalfooter ul.footer-directory-column-section-products-expanded {
+    /* Estado expandido: listas visíveis */
+    #globalfooter .gf-directory-column-section.gf-directory-column-expanded .gf-directory-column-section-list {
     display: block;
-    transition: transform 300ms ease;
+    transition: all 300ms ease;
   }
 }
 
