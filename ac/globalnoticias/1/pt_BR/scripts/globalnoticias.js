@@ -85,17 +85,26 @@
         let progress = index - this.currentIndex;
         let translateItemX = (index - this.currentIndex) * containerWidth;
         const zIndex = index === this.currentIndex ? 1 : 0;
+        let isVisible = false;
+
         if (this.currentIndex === 0 && index === this.totalItems - 1) {
           progress = -1;
           translateItemX = -containerWidth;
+          isVisible = true;
         }
         else if (this.currentIndex === this.totalItems - 1 && index === 0) {
           progress = 1;
           translateItemX = containerWidth;
+          isVisible = true;
         }
+        else if (Math.abs(progress) <= 1) {
+          isVisible = true;
+        }
+
         item.style.setProperty('--progress', progress);
         item.style.zIndex = zIndex;
-        item.style.opacity = 1;
+        item.style.opacity = isVisible ? 1 : 0;
+        item.style.visibility = isVisible ? 'visible' : 'hidden';
         item.style.transform = `translate(${translateItemX}px, 0px)`;
         if (index === this.currentIndex) {
           item.classList.add('current');
@@ -147,18 +156,28 @@
       this.items.forEach((item, index) => {
         let progress = index - this.currentIndex;
         let translateItemX = (index - this.currentIndex) * containerWidth;
+        let isVisible = false;
+
         if (this.currentIndex === 0 && index === this.totalItems - 1) {
           progress = -1;
           translateItemX = -containerWidth;
+          isVisible = true;
         }
         else if (this.currentIndex === this.totalItems - 1 && index === 0) {
           progress = 1;
           translateItemX = containerWidth;
+          isVisible = true;
         }
+        else if (Math.abs(progress) <= 1) {
+          isVisible = true;
+        }
+
         item.style.setProperty('--progress', progress);
         item.style.zIndex = index === this.currentIndex ? 1 : 0;
-        item.style.opacity = 1;
+        item.style.opacity = isVisible ? 1 : 0;
+        item.style.visibility = isVisible ? 'visible' : 'hidden';
         item.style.transform = `translate(${translateItemX}px, 0px)`;
+
         if (index === this.currentIndex) {
           item.classList.add('current');
         } else {
