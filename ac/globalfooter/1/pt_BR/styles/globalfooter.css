@@ -2,9 +2,59 @@
   all: unset;
 }
 
-#globalfooter span,
-#globalfooter p {
+#globalfooter p,
+#globalfooter span {
   display: inline;
+}
+
+/* ========== FONTES APPLE LEGACY ========== */
+@font-face {
+  font-family: "Apple Legacy Chevron";
+  font-style: normal;
+  font-weight: 400;
+  src: local("\f8ff"), url("../assets/ac-footer/legacy/appleicons_text.woff") format("woff"), url("../assets/ac-footer/legacy/appleicons_text.ttf") format("truetype")
+}
+
+#globalfooter {
+  --footer-background: #f5f5f7;
+  --footer-border-color: #d2d2d7;
+  --footer-text-color: #6e6e73;
+  --footer-link-color: #424245;
+  --footer-pipe-color: #86868b;
+  --footer-directory-title-color: #1d1d1f;
+  --footer-directory-title-color-hover: #000;
+  --footer-focus-color: #0071E3;
+  --footer-focus-color-alt: #000;
+  --footer-focus-offset: 1px;
+  --footer-directory-title-focus-offset: 4px;
+  --footer-section-border-color: var(--footer-border-color);
+  font-size: 12px;
+  line-height: 1.33337;
+  font-weight: 400;
+  letter-spacing: -0.01em;
+  font-family: "SF Pro Text", "Myriad Set Pro", "SF Pro Icons", "Apple Legacy Chevron", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+  background: var(--footer-background);
+  color: var(--footer-text-color);
+  min-width: 1024px;
+  overflow: hidden;
+  position: relative;
+  z-index: 1;
+  box-sizing: border-box;
+  width: 100%;
+  max-width: 2560px;
+}
+
+@media only screen and (max-width: 1044px) {
+  #globalfooter {
+    min-width: 320px;
+  }
+}
+
+/* Sistema de reset mais robusto */
+#globalfooter *,
+#globalfooter *:before,
+#globalfooter *:after {
+  box-sizing: border-box;
 }
 
 #globalfooter .visuallyhidden {
@@ -19,44 +69,43 @@
   border: 0;
 }
 
-#globalfooter {
-  font-weight: normal;
-  text-size-adjust: 100%;
-  font-family: var(--r-globalfont-family);
-  max-width: 2560px;
+/* ========== ESTRUTURA PRINCIPAL ========== */
+#globalfooter .ac-gf-content {
+  margin: 0 auto;
+  max-width: 1024px;
   width: 100%;
+  padding: 0;
+  position: relative;
+  z-index: 1;
 }
 
-#globalfooter {
-  --footer-background: #f5f5f7;
-  --footer-border-color: #d2d2d7;
-  --footer-text-color: #6e6e73;
-  --footer-link-color: #424245;
-  --footer-pipe-color: #86868b;
-  --footer-directory-title-color: #1d1d1f;
-  --footer-directory-title-color-hover: #000;
-  --footer-focus-color: #0071E3;
-  --footer-focus-color-alt: #000;
-  --footer-focus-offset: 1px;
-  font-size: 12px;
-  line-height: 1.33337;
-  font-weight: 400;
-  letter-spacing: -0.01em;
-  font-family: var(--r-globalfont-family), "SF Pro Text", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+#globalfooter .ac-gf-breadcrumbs {
+  border-bottom: 1px solid var(--footer-section-border-color);
+  padding: 17px 0;
+}
+
+#globalfooter .ac-gf-directory {
+  background: var(--footer-background);
+  padding: 19px 0 9px;
+  border-bottom: 1px solid var(--footer-section-border-color);
+}
+
+#globalfooter .ac-gf-sosumi {
+  padding: 21px 0 10px;
   background: var(--footer-background);
   color: var(--footer-text-color);
-  min-width: 320px;
-  overflow: hidden;
-  position: static;
-  z-index: 1;
-  box-sizing: border-box;
+  font-size: 12px;
+  line-height: 1.33337;
 }
 
-/* Sistema de reset mais robusto */
-#globalfooter *,
-#globalfooter *:before,
-#globalfooter *:after {
-  box-sizing: border-box;
+@media only screen and (max-width: 833px) {
+  #globalfooter .ac-gf-directory {
+    padding: 0;
+  }
+
+  #globalfooter .ac-gf-sosumi {
+    padding: 21px 0 12px;
+  }
 }
 
 #globalfooter :is(h1, h2, h3, h4, h6) {
@@ -144,7 +193,156 @@
   font-size: 1em;
 }
 
-/* ========== NAVEGAÇÃO-links ========== */
+/* ========== DIRECTORY/ACCORDION ESTRUTURAS (PADRÃO APPLE) ========== */
+#globalfooter .ac-gf-directory-column {
+  float: left;
+  width: 20%;
+  margin: 0;
+  padding: 0;
+}
+
+@media only screen and (max-width: 833px) {
+  #globalfooter .ac-gf-directory-column {
+    float: none;
+    width: 100%;
+    border-top: 1px solid var(--footer-section-border-color);
+  }
+
+  #globalfooter .ac-gf-directory-column:first-child {
+    border-top: none;
+  }
+}
+
+/* Seções dentro das colunas */
+#globalfooter .ac-gf-directory-column-section {
+  margin-bottom: 24px;
+}
+
+@media only screen and (max-width: 833px) {
+  #globalfooter .ac-gf-directory-column-section {
+    position: relative;
+    z-index: 1;
+    margin-bottom: 0;
+    overflow: hidden;
+  }
+}
+
+/* Títulos das seções (Apple style) */
+#globalfooter .ac-gf-directory-column-section-title {
+  display: block;
+  color: var(--footer-directory-title-color);
+  font-size: 12px;
+  line-height: 1.33337;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  margin: 0 0 12px;
+  text-decoration: none;
+  outline: none;
+  -webkit-tap-highlight-color: transparent;
+}
+
+#globalfooter .ac-gf-directory-column-section-title:hover {
+  color: var(--footer-directory-title-color-hover);
+}
+
+#globalfooter .ac-gf-directory-column-section-title:focus {
+  outline: var(--footer-focus-offset) solid var(--footer-focus-color);
+  outline-offset: var(--footer-directory-title-focus-offset);
+}
+
+@media only screen and (max-width: 833px) {
+  #globalfooter .ac-gf-directory-column-section-title {
+    position: relative;
+    display: block;
+    padding: 11px 44px 12px 0;
+    margin: 0;
+    cursor: pointer;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    background: none;
+    border: none;
+    width: 100%;
+    text-align: left;
+    font: inherit;
+  }
+
+  #globalfooter .ac-gf-directory-column-section-title::after {
+    content: "+";
+    position: absolute;
+    top: 11px;
+    right: 0;
+    width: 44px;
+    height: 44px;
+    line-height: 44px;
+    text-align: center;
+    font-family: "Apple Legacy Chevron";
+    font-size: 32px;
+    font-weight: 300;
+    color: var(--footer-text-color);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    transform: rotate(0deg);
+    transition: transform 0.3s cubic-bezier(0.4, 0.0, 0.6, 1.0);
+  }
+
+  #globalfooter .ac-gf-directory-column-section.ac-gf-directory-column-section-expanded .ac-gf-directory-column-section-title::after {
+    transform: rotate(45deg);
+  }
+}
+
+/* Listas de links (padrão Apple) */
+#globalfooter .ac-gf-directory-column-section-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+@media only screen and (max-width: 833px) {
+  #globalfooter .ac-gf-directory-column-section-list {
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
+    transition: max-height 0.4s cubic-bezier(0.4, 0.0, 0.6, 1.0),
+      opacity 0.3s cubic-bezier(0.4, 0.0, 0.6, 1.0);
+  }
+
+  #globalfooter .ac-gf-directory-column-section.ac-gf-directory-column-section-expanded .ac-gf-directory-column-section-list {
+    max-height: 1000px;
+    opacity: 1;
+    padding-bottom: 12px;
+  }
+}
+
+/* Items da lista */
+#globalfooter .ac-gf-directory-column-section-item {
+  margin-bottom: 8px;
+}
+
+#globalfooter .ac-gf-directory-column-section-item:last-child {
+  margin-bottom: 0;
+}
+
+/* Links (padrão Apple) */
+#globalfooter .ac-gf-directory-column-section-link {
+  color: var(--footer-link-color);
+  text-decoration: none;
+  font-size: 12px;
+  line-height: 1.33337;
+  font-weight: 400;
+  letter-spacing: -0.01em;
+}
+
+#globalfooter .ac-gf-directory-column-section-link:hover {
+  text-decoration: underline;
+}
+
+@media only screen and (max-width: 833px) {
+  #globalfooter .ac-gf-directory-column-section-link {
+    display: block;
+    padding: 6px 0;
+  }
+}
+
+/* ========== NAVEGAÇÃO-links (MANTENDO COMPATIBILIDADE) ========== */
 /* footer -> content -> nav */
 #globalfooter #globalfooter-navgation {
   font-size: 12px;
