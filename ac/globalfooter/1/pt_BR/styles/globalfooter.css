@@ -503,7 +503,6 @@
     
     /* Estado expandido - ícone × (rotacionado) */
     #globalfooter .gf-directory-column-section.gf-directory-column-expanded .gf-directory-column-section-title-icon::after {
-    content: "\F35E";
   }
 
   /* Estado expandido - rotação do ícone */
