@@ -89,16 +89,236 @@
 /* ========== ESTRUTURA PRINCIPAL ========== */
 #globalfooter .ac-gf-content {
   margin: 0 auto;
-  max-width: 1024px;
+  max-width: 980px;
   width: 100%;
-  padding: 0;
+  padding: 0 22px;
   position: relative;
   z-index: 1;
 }
 
-#globalfooter .ac-gf-breadcrumbs {
-  border-bottom: 1px solid var(--footer-section-border-color);
+/* ========== SUPORTE A SAFE AREA (IPHONE) ========== */
+html:not([dir=rtl]) #globalfooter .ac-gf-content {
+  padding-left: max(22px, env(safe-area-inset-left));
+  padding-right: max(22px, env(safe-area-inset-right));
+}
+
+html[dir=rtl] #globalfooter .ac-gf-content {
+  padding-left: max(22px, env(safe-area-inset-right));
+  padding-right: max(22px, env(safe-area-inset-left));
+}
+
+@media only screen and (max-width: 833px) {
+  html:not([dir=rtl]) #globalfooter .ac-gf-content {
+    padding-left: max(16px, env(safe-area-inset-left));
+    padding-right: max(16px, env(safe-area-inset-right));
+  }
+
+  html[dir=rtl] #globalfooter .ac-gf-content {
+    padding-left: max(16px, env(safe-area-inset-right));
+    padding-right: max(16px, env(safe-area-inset-left));
+  }
+}
+
+/* ========== TEMA ESCURO E CLARO (APPLE STYLE) ========== */
+#globalfooter.ac-globalfooter-dark,
+#globalfooter.theme-dark,
+.theme-dark #globalfooter {
+  --footer-background: #1d1d1f;
+  --footer-border-color: #ffffff3d;
+  --footer-text-color: #ffffff8f;
+  --footer-link-color: #fffc;
+  --footer-pipe-color: #fff6;
+  --footer-directory-title-color: #ffffffeb;
+  --footer-directory-title-color-hover: #fff;
+}
+
+#globalfooter.ac-globalfooter-light,
+#globalfooter.theme-light {
+  --footer-background: #f5f5f7;
+  --footer-border-color: #00000029;
+  --footer-text-color: #0000008f;
+  --footer-link-color: #000000b8;
+  --footer-pipe-color: #0000007a;
+  --footer-directory-title-color: #000000e0;
+  --footer-directory-title-color-hover: #000;
+}
+
+/* ========== SUPORTE A CONTRASTE ALTO ========== */
+@media (prefers-contrast: more) {
+
+  #globalfooter a:link,
+  #globalfooter a:link:hover {
+    text-decoration: underline;
+  }
+}
+
+.globalfooter-breadcrumbs {
+  color: var(--footer-link-color);
   padding: 17px 0;
+  position: relative;
+  z-index: 1
+}
+
+.globalfooter-breadcrumbs:after,
+.globalfooter-breadcrumbs:before {
+  content: " ";
+  display: table
+}
+
+.globalfooter-breadcrumbs:after {
+  clear: both
+}
+
+@media only screen and (max-width: 833px) {
+  .globalfooter-breadcrumbs {
+    border-bottom: 1px solid var(--footer-section-border-color)
+  }
+}
+
+#globalfooter .ac-gf-breadcrumbs:after,
+#globalfooter .ac-gf-breadcrumbs:before {
+  content: " ";
+  display: table;
+}
+
+#globalfooter .ac-gf-breadcrumbs:after {
+  clear: both;
+}
+
+@media only screen and (max-width: 833px) {
+  #globalfooter .globalfooter-breadcrumbs {
+    border-bottom: 1px solid var(--footer-section-border-color);
+  }
+}
+
+#globalfooter .globalfooter-breadcrumbs a {
+  color: var(--footer-link-color);
+  text-decoration: none;
+}
+
+#globalfooter .ac-gf-breadcrumbs-home {
+  position: absolute;
+  top: 17px;
+  left: 0;
+  z-index: 2;
+  display: inline-block;
+  text-decoration: none;
+}
+
+#globalfooter .ac-gf-breadcrumbs-home-icon {
+  background-color: #000000b8;
+  color: #0000;
+  display: block;
+  height: 18px;
+  -webkit-mask-image: url(../45dfd13….svg);
+  mask-image: url(../45dfd13….svg);
+  position: relative;
+  width: 14px;
+  z-index: 2;
+}
+
+#globalfooter .ac-gf-breadcrumbs-home:hover {
+  text-decoration: none;
+}
+
+#globalfooter .ac-gf-breadcrumbs-home:hover .ac-gf-breadcrumbs-home-icon {
+  background-color: var(--footer-directory-title-color);
+}
+
+#globalfooter .ac-gf-breadcrumbs-home-label {
+  position: absolute;
+  clip: rect(1px, 1px, 1px, 1px);
+  border: 0;
+  -webkit-clip-path: inset(0 0 99.9% 99.9%);
+  clip-path: inset(0 0 99.9% 99.9%);
+  height: 1px;
+  overflow: hidden;
+  padding: 0;
+  width: 1px;
+}
+
+#globalfooter .globalfooter-breadcrumbs-path {
+  font-family: SF Pro Text, SF Pro Icons, Helvetica Neue, Helvetica, Arial, sans-serif;
+  font-size: 12px;
+  font-weight: 400;
+  letter-spacing: -.01em;
+  line-height: 1.3333733333;
+  position: relative;
+  z-index: 1;
+}
+
+#globalfooter .globalfooter-breadcrumbs-path:after,
+#globalfooter .globalfooter-breadcrumbs-path:before {
+  content: " ";
+  display: table;
+}
+
+#globalfooter .globalfooter-breadcrumbs-path:after {
+  clear: both;
+}
+
+#globalfooter .globalfooter-breadcrumbs-list {
+  list-style: none;
+  max-height: 9999px;
+  padding-inline-start: 25px;
+  text-align: start;
+}
+
+#globalfooter .globalfooter-breadcrumbs-item {
+  margin-inline-end: 7px;
+  max-width: 100%;
+  overflow: hidden;
+  padding: 3px 4px 3px 0;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  margin: 0;
+  padding: 0;
+}
+
+#globalfooter .globalfooter-breadcrumbs-item:before {
+  content: "\F35B";
+  display: inline-block;
+  /* height: 11px; */
+  /* margin-top: -1px; */
+  margin-inline-end: 11px;
+  vertical-align: middle;
+  width: 6px;
+}
+
+/* #globalfooter .globalfooter-breadcrumbs-item:first-child:before {
+  display: none;
+} */
+
+#globalfooter .globalfooter-breadcrumbs-item a {
+  color: var(--footer-link-color);
+  text-decoration: none;
+}
+
+#globalfooter .globalfooter-breadcrumbs-item a:hover {
+  text-decoration: underline;
+}
+
+#globalfooter .ac-gf-breadcrumbs+.ac-gf-directory {
+  padding-top: 0;
+}
+
+@media only screen and (max-width: 833px) {
+  #globalfooter .ac-gf-breadcrumbs+.ac-gf-directory {
+    padding-top: 0;
+  }
+}
+
+/* ========== MELHORIAS DE ACESSIBILIDADE ========== */
+#globalfooter .ac-gf-label {
+  position: absolute;
+  clip: rect(1px, 1px, 1px, 1px);
+  -webkit-clip-path: inset(0px 0px 99.9% 99.9%);
+  clip-path: inset(0px 0px 99.9% 99.9%);
+  overflow: hidden;
+  height: 1px;
+  width: 1px;
+  padding: 0;
+  border: 0;
 }
 
 #globalfooter .ac-gf-directory {
@@ -522,9 +742,6 @@
     display: block;
     font-weight: 300;
   }
-
-  /* Estado expandido - ícone × (rotacionado) */
-  #globalfooter .gf-directory-column-section.gf-directory-column-expanded .gf-directory-column-section-title-icon::after {}
 
   /* Estado expandido - rotação do ícone */
   #globalfooter .gf-directory-column-section.gf-directory-column-expanded .gf-directory-column-section-title-icon {
