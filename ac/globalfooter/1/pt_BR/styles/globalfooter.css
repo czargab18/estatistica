@@ -1,5 +1,52 @@
+/* ========== CONFIGURAÇÕES DE FONTES @font-face ========== */
+@font-face{font-family:"Apple Legacy Chevron";font-style:normal;font-weight:100;src:local(\f8ff),url(../assets/ac-footer/legacy/appleicons_ultralight.woff) format("woff"),url(../assets/ac-footer/legacy/appleicons_ultralight.ttf) format("truetype")}
+@font-face{font-family:"Apple Icons 100";src:url(../assets/ac-footer/legacy/appleicons_ultralight.eot)}
+@font-face{font-family:"Apple Legacy Chevron";font-style:normal;font-weight:200;src:local(\f8ff),url(../assets/ac-footer/legacy/appleicons_thin.woff) format("woff"),url(../assets/ac-footer/legacy/appleicons_thin.ttf) format("truetype")}
+@font-face{font-family:"Apple Icons 200";src:url(../assets/ac-footer/legacy/appleicons_thin.eot)}
+@font-face{font-family:"Apple Legacy Chevron";font-style:normal;font-weight:300;src:local(\f8ff),url(../assets/ac-footer/legacy/appleicons_thin.woff) format("woff"),url(../assets/ac-footer/legacy/appleicons_thin.ttf) format("truetype")}
+@font-face{font-family:"Apple Icons 300";src:url(../assets/ac-footer/legacy/appleicons_thin.eot)}
+@font-face{font-family:"Apple Legacy Chevron";font-style:normal;font-weight:400;src:local(\f8ff),url(../assets/ac-footer/legacy/appleicons_text.woff) format("woff"),url(../assets/ac-footer/legacy/appleicons_text.ttf) format("truetype")}
+@font-face{font-family:"Apple Icons 400";src:url(../assets/ac-footer/legacy/appleicons_text.eot)}
+@font-face{font-family:"Apple Legacy Chevron";font-style:normal;font-weight:500;src:local(\f8ff),url(../assets/ac-footer/legacy/appleicons_text.woff) format("woff"),url(../assets/ac-footer/legacy/appleicons_text.ttf) format("truetype")}
+@font-face{font-family:"Apple Icons 500";src:url(../assets/ac-footer/legacy/appleicons_text.eot)}
+@font-face{font-family:"Apple Legacy Chevron";font-style:normal;font-weight:600;src:local(\f8ff),url(../assets/ac-footer/legacy/appleicons_text.woff) format("woff"),url(../assets/ac-footer/legacy/appleicons_text.ttf) format("truetype")}
+@font-face{font-family:"Apple Icons 600";src:url(../assets/ac-footer/legacy/appleicons_text.eot)}
+@font-face{font-family:"Apple Legacy Chevron";font-style:normal;font-weight:700;src:local(\f8ff),url(../assets/ac-footer/legacy/appleicons_text.woff) format("woff"),url(../assets/ac-footer/legacy/appleicons_text.ttf) format("truetype")}
+@font-face{font-family:"Apple Icons 700";src:url(../assets/ac-footer/legacy/appleicons_text.eot)}
+@font-face{font-family:"Apple Legacy Chevron";font-style:normal;font-weight:800;src:local(\f8ff),url(../assets/ac-footer/legacy/appleicons_text.woff) format("woff"),url(../assets/ac-footer/legacy/appleicons_text.ttf) format("truetype")}
+@font-face{font-family:"Apple Icons 800";src:url(../assets/ac-footer/legacy/appleicons_text.eot)}
+@font-face{font-family:"Apple Legacy Chevron";font-style:normal;font-weight:900;src:local(\f8ff),url(../assets/ac-footer/legacy/appleicons_text.woff) format("woff"),url(../assets/ac-footer/legacy/appleicons_text.ttf) format("truetype")}
+@font-face{font-family:"Apple Icons 900";src:url(../assets/ac-footer/legacy/appleicons_text.eot)}
+
+/* ========== RESET E CONFIGURAÇÕES GLOBAIS ========== */
 #globalfooter {
-  all: unset;
+  --footer-background: #f5f5f7;
+  --footer-border-color: #d2d2d7;
+  --footer-text-color: #6e6e73;
+  --footer-link-color: #424245;
+  --footer-pipe-color: #86868b;
+  --footer-directory-title-color: #1d1d1f;
+  --footer-directory-title-color-hover: #000;
+  --footer-focus-color: #0071E3;
+  --footer-focus-color-alt: #000;
+  --footer-focus-offset: 1px;
+  --footer-directory-title-focus-offset: 4px;
+  --footer-section-border-color: var(--footer-border-color);
+  
+  font-size: 12px;
+  line-height: 1.33337;
+  font-weight: 400;
+  letter-spacing: -0.01em;
+  font-family: "SF Pro Text", "Myriad Set Pro", "SF Pro Icons", "Apple Legacy Chevron", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+  background: var(--footer-background);
+  color: var(--footer-text-color);
+  min-width: 1024px;
+  overflow: hidden;
+  position: relative;
+  z-index: 1;
+  box-sizing: border-box;
+  width: 100%;
+  max-width: 2560px;
 }
 
 #globalfooter *,
@@ -25,33 +72,32 @@
   border: 0;
 }
 
-#globalfooter {
-  --footer-background: #f5f5f7;
-  --footer-border-color: #d2d2d7;
-  --footer-text-color: #6e6e73;
-  --footer-link-color: #424245;
-  --footer-pipe-color: #86868b;
-  --footer-directory-title-color: #1d1d1f;
-  --footer-directory-title-color-hover: #000;
-  --footer-focus-color: #0071E3;
-  --footer-focus-color-alt: #000;
-  --footer-focus-offset: 1px;
-  --footer-directory-title-focus-offset: 4px;
-  --footer-section-border-color: var(--footer-border-color);
-  font-size: 12px;
-  line-height: 1.33337;
-  font-weight: 400;
-  letter-spacing: -0.01em;
-  font-family: "SF Pro Text", "Myriad Set Pro", "SF Pro Icons", "Apple Legacy Chevron", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
-  background: var(--footer-background);
-  color: var(--footer-text-color);
-  min-width: 1024px;
-  overflow: hidden;
-  position: relative;
-  z-index: 1;
-  box-sizing: border-box;
-  width: 100%;
-  max-width: 2560px;
+#globalfooter :is(h1, h2, h3, h4, h6) {
+  color: var(--footer-directory-title-color);
+}
+
+#globalfooter :is(h1, h2, h3, h4, h6)>button {
+  color: var(--footer-directory-title-color);
+}
+
+#globalfooter a {
+  color: var(--footer-link-color);
+  text-decoration: none;
+}
+
+#globalfooter a:hover {
+  text-decoration: underline;
+}
+
+#globalfooter :focus-visible {
+  outline: 2px solid var(--footer-focus-color);
+  outline-offset: var(--footer-focus-offset);
+}
+
+@media only screen and (max-width: 1044px) {
+  #globalfooter {
+    min-width: 320px;
+  }
 }
 
 @media only screen and (max-width: 1044px) {
@@ -601,24 +647,23 @@
   }
 }
 
-/* ========== COPYRIGHT ========== */
+/* ========== #globalfooter-copyright (Copyright Section) ========== */
 #globalfooter #globalfooter-copyright {
-  /* border-top: 1px solid var(--footer-border-color); */
-  /* padding-bottom: calc(21px + constant(safe-area-inset-bottom)); */
   padding: 12px 0 21px;
   display: flex;
   flex-direction: column;
   font-size: 12px;
 }
 
-/* secretaria */
+/* Seção Secretaria */
 #globalfooter .gf-copyright-secretaria {
-  --footer-link-color: #06c;
+  --footer-mini-shop-link-color: #06c;
   max-height: 9999px;
   padding-bottom: 3px;
   display: flex;
   flex-direction: column;
   border-bottom: 1px solid var(--footer-border-color);
+  margin-bottom: 12px;
 }
 
 @media only screen and (max-width: 833px) {
@@ -627,18 +672,16 @@
   }
 }
 
-/* "secretaria-text" */
 #globalfooter .gf-copyright-secretaria-text a,
 #globalfooter .gf-copyright-secretaria-text a:hover {
-  color: var(--footer-link-color);
+  color: var(--footer-mini-shop-link-color);
   text-decoration: underline;
 }
 
-/* secretaria -> locale */
+/* Seção Locale da Secretaria */
 #globalfooter .gf-copyright-secretaria-locale {
   margin-top: 5px;
   position: relative;
-  /* top: 6px; */
   z-index: 2;
   white-space: normal;
 }
@@ -649,7 +692,6 @@
   }
 }
 
-/* secretaria -> locale - links */
 #globalfooter .gf-copyright-locale-link {
   border-left: 1px solid var(--footer-pipe-color);
   margin-left: 7px;
@@ -672,7 +714,7 @@
   text-decoration: underline;
 }
 
-/* copyright-termos */
+/* Seção Legal (Copyright e Links) */
 #globalfooter #gf-copyright-legal {
   position: relative;
   top: 4px;
@@ -681,17 +723,6 @@
   align-items: baseline;
 }
 
-/*
- #globalfooter #gf-copyright-legal::before,
-#globalfooter #gf-copyright-legal::after {
-  content: " ";
-  display: table;
-}
-
-#globalfooter #gf-copyright-legal::after {
-  clear: both;
-}
- */
 @media only screen and (max-width: 833px) {
   #globalfooter #gf-copyright-legal {
     padding-top: 12px;
@@ -699,39 +730,27 @@
   }
 }
 
-/* copyright-termos -> text */
-/* #globalfooter .gf-copyright-legal-text {
-} */
-
-/* copyright-termos -> ul.links */
+/* Lista de Links Legais */
 #globalfooter ul.gf-copyright-legal-links {
   position: relative;
   z-index: 1;
-  margin-left: 30px;
-  margin-right: 30px;
+  margin: 0 30px;
   list-style-type: none;
   display: inline-flex;
-  gap: 0px 17px;
+  gap: 0 17px;
   justify-content: space-between;
   align-items: baseline;
 }
 
 @media only screen and (max-width: 833px) {
   #globalfooter ul.gf-copyright-legal-links {
-    margin-top: 10px;
-    margin-left: 0px;
-    margin-right: 0px;
-    margin-inline-start: 0;
+    margin: 10px 0 0 0;
     flex-wrap: wrap;
     align-content: space-between;
   }
-
-  /*   #globalfooter ul span.footer-espacador {
-    display: none;
-  } */
 }
 
-/* espaçador */
+/* Espaçador */
 #globalfooter-copyright .footer-espacador {
   --color-espacador: #d2d2d7;
   width: 0.12em;
@@ -741,13 +760,13 @@
   display: block;
 }
 
+/* Seção Locale do Copyright */
 #gf-copyright-legal .gf-copyright-locale {
   position: absolute;
   right: 0;
   z-index: 2;
 }
 
-/*  copyright-termos -> locale-BR */
 #globalfooter-copyright #gf-copyright-legal a.locale-BR {
   border-top: none;
   text-transform: uppercase;
@@ -757,38 +776,5 @@
   #globalfooter .gf-copyright-locale {
     margin-top: 10px;
     position: static;
-  }
-
-  /*   #globalfooter-copyright #gf-copyright-legal a.locale-BR {
-    padding-bottom: 19px;
-  } */
-}
-
-/* Controle de exibição para acordeon mobile - Sistema Apple */
-@media only screen and (max-width: 833px) {
-
-  /* Garantir que todas as listas iniciem ocultas */
-  #globalfooter .gf-directory-column-section-list {
-    display: none !important;
-  }
-
-  /* Estado expandido: listas visíveis com transições suaves */
-  #globalfooter .gf-directory-column-section.gf-directory-column-expanded .gf-directory-column-section-list {
-    display: block !important;
-    animation: expandList 0.3s ease-out forwards;
-  }
-
-  /* Animação de expansão */
-  @keyframes expandList {
-    from {
-      opacity: 0;
-      transform: translateY(-10px);
-    }
-
-    to {
-      opacity: 1;
-      transform: translateY(0);
-
-    }
   }
 }
