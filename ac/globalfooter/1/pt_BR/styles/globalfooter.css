@@ -192,32 +192,32 @@
 }
 
 /* ========== DIRECTORY/ACCORDION ESTRUTURAS (PADRÃO APPLE) ========== */
-#globalfooter .ac-gf-directory-column {
-  float: left;
-  width: 20%;
+#ac-globalfooter .ac-gf-directory-column {
+  flex: 1;
+  min-width: 0;
   margin: 0;
   padding: 0;
 }
 
 @media only screen and (max-width: 833px) {
-  #globalfooter .ac-gf-directory-column {
-    float: none;
+  #ac-globalfooter .ac-gf-directory-column {
+      flex: none;
     width: 100%;
     border-top: 1px solid var(--footer-section-border-color);
   }
 
-  #globalfooter .ac-gf-directory-column:first-child {
+    #ac-globalfooter .ac-gf-directory-column:first-child {
     border-top: none;
   }
 }
 
 /* Seções dentro das colunas */
-#globalfooter .ac-gf-directory-column-section {
+#ac-globalfooter .ac-gf-directory-column-section {
   margin-bottom: 24px;
 }
 
 @media only screen and (max-width: 833px) {
-  #globalfooter .ac-gf-directory-column-section {
+  #ac-globalfooter .ac-gf-directory-column-section {
     position: relative;
     z-index: 1;
     margin-bottom: 0;
@@ -226,7 +226,7 @@
 }
 
 /* Títulos das seções (Apple style) */
-#globalfooter .ac-gf-directory-column-section-title {
+#ac-globalfooter .ac-gf-directory-column-section-title {
   display: block;
   color: var(--footer-directory-title-color);
   font-size: 12px;
@@ -239,17 +239,17 @@
   -webkit-tap-highlight-color: transparent;
 }
 
-#globalfooter .ac-gf-directory-column-section-title:hover {
+#ac-globalfooter .ac-gf-directory-column-section-title:hover {
   color: var(--footer-directory-title-color-hover);
 }
 
-#globalfooter .ac-gf-directory-column-section-title:focus {
+#ac-globalfooter .ac-gf-directory-column-section-title:focus {
   outline: var(--footer-focus-offset) solid var(--footer-focus-color);
   outline-offset: var(--footer-directory-title-focus-offset);
 }
 
 @media only screen and (max-width: 833px) {
-  #globalfooter .ac-gf-directory-column-section-title {
+  #ac-globalfooter .ac-gf-directory-column-section-title {
     position: relative;
     display: block;
     padding: 11px 44px 12px 0;
@@ -263,7 +263,7 @@
     font: inherit;
   }
 
-  #globalfooter .ac-gf-directory-column-section-title::after {
+    #ac-globalfooter .ac-gf-directory-column-section-title::after {
     content: "";
     position: absolute;
     top: 11px;
@@ -282,20 +282,20 @@
     transition: transform 0.3s cubic-bezier(0.4, 0.0, 0.6, 1.0);
   }
 
-  #globalfooter .ac-gf-directory-column-section.ac-gf-directory-column-section-expanded .ac-gf-directory-column-section-title::after {
+    #ac-globalfooter .ac-gf-directory-column-section.ac-gf-directory-column-section-expanded .ac-gf-directory-column-section-title::after {
     transform: rotate(45deg);
   }
 }
 
 /* Listas de links (padrão Apple) */
-#globalfooter .ac-gf-directory-column-section-list {
+#ac-globalfooter .ac-gf-directory-column-section-list {
   list-style: none;
   margin: 0;
   padding: 0;
 }
 
 @media only screen and (max-width: 833px) {
-  #globalfooter .ac-gf-directory-column-section-list {
+  #ac-globalfooter .ac-gf-directory-column-section-list {
     max-height: 0;
     overflow: hidden;
     opacity: 0;
@@ -303,7 +303,7 @@
       opacity 0.3s cubic-bezier(0.4, 0.0, 0.6, 1.0);
   }
 
-  #globalfooter .ac-gf-directory-column-section.ac-gf-directory-column-section-expanded .ac-gf-directory-column-section-list {
+    #ac-globalfooter .ac-gf-directory-column-section.ac-gf-directory-column-section-expanded .ac-gf-directory-column-section-list {
     max-height: 1000px;
     opacity: 1;
     padding-bottom: 12px;
@@ -311,16 +311,16 @@
 }
 
 /* Items da lista */
-#globalfooter .ac-gf-directory-column-section-item {
+#ac-globalfooter .ac-gf-directory-column-section-item {
   margin-bottom: 8px;
 }
 
-#globalfooter .ac-gf-directory-column-section-item:last-child {
+#ac-globalfooter .ac-gf-directory-column-section-item:last-child {
   margin-bottom: 0;
 }
 
 /* Links (padrão Apple) */
-#globalfooter .ac-gf-directory-column-section-link {
+#ac-globalfooter .ac-gf-directory-column-section-link {
   color: var(--footer-link-color);
   text-decoration: none;
   font-size: 12px;
@@ -329,12 +329,12 @@
   letter-spacing: -0.01em;
 }
 
-#globalfooter .ac-gf-directory-column-section-link:hover {
+#ac-globalfooter .ac-gf-directory-column-section-link:hover {
   text-decoration: underline;
 }
 
 @media only screen and (max-width: 833px) {
-  #globalfooter .ac-gf-directory-column-section-link {
+  #ac-globalfooter .ac-gf-directory-column-section-link {
     display: block;
     padding: 6px 0;
   }
