@@ -287,15 +287,15 @@ html[dir=rtl] #globalfooter .ac-gf-content {
   text-decoration: none;
 }
 
-#globalfooter .ac-gf-breadcrumbs-home-icon {
+#globalfooter .globalfooter-breadcrumbs-home-icon {
   background-color: #000000b8;
-  color: #0000;
+  color: #ffffff00;
   display: block;
   height: 18px;
-  -webkit-mask-image: url(../45dfd13….svg);
-  mask-image: url(../45dfd13….svg);
-  position: relative;
   width: 14px;
+  -webkit-mask-image: url("/sd/favicons/pt_BR/estatistica.svg");
+  mask-image: url("/sd/favicons/pt_BR/estatistica.svg");
+  position: relative;
   z-index: 2;
 }
 
@@ -303,7 +303,7 @@ html[dir=rtl] #globalfooter .ac-gf-content {
   text-decoration: none;
 }
 
-#globalfooter .ac-gf-breadcrumbs-home:hover .ac-gf-breadcrumbs-home-icon {
+#globalfooter .ac-gf-breadcrumbs-home:hover .globalfooter-breadcrumbs-home-icon {
   background-color: var(--footer-directory-title-color);
 }
 
