@@ -47,7 +47,10 @@
     "*env*/": true,
     ".quarto/": true,
     "delete/": true,
-    "*libs*/": true
+    "*libs*/": true,
+    // OCULTAR OUTRAS ARQUIVOS
+    "CNAME": true,
+    ".htaccess": true,
   },
 
   // Configurações: Editor
