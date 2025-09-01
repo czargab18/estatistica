@@ -266,7 +266,7 @@
   }
 
   #globalfooter .ac-gf-directory-column-section-title::after {
-    content: "+";
+    content: "";
     position: absolute;
     top: 11px;
     right: 0;
@@ -503,7 +503,7 @@
 
     /* Ícone + por padrão (seção fechada) */
     #globalfooter .gf-directory-column-section-title-icon::after {
-    content: "+";
+    content: "";
       font-size: 14px;
       display: block;
       font-weight: 300;
@@ -516,7 +516,7 @@
 
   /* Estado expandido - rotação do ícone */
   #globalfooter .gf-directory-column-section.gf-directory-column-expanded .gf-directory-column-section-title-icon {
-    transform: rotate(45deg);
+    transform: rotate(90deg);
     transition: transform 0.3s cubic-bezier(0.2, 0, 0.38, 0.9);
   }
 }
