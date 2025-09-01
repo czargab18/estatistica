@@ -2,17 +2,27 @@
   all: unset;
 }
 
+#globalfooter *,
+#globalfooter *:before,
+#globalfooter *:after {
+  box-sizing: border-box;
+}
+
 #globalfooter p,
 #globalfooter span {
   display: inline;
 }
 
-/* ========== FONTES APPLE LEGACY ========== */
-@font-face {
-  font-family: "Apple Legacy Chevron";
-  font-style: normal;
-  font-weight: 400;
-  src: local("\f8ff"), url("../assets/ac-footer/legacy/appleicons_text.woff") format("woff"), url("../assets/ac-footer/legacy/appleicons_text.ttf") format("truetype")
+#globalfooter .visuallyhidden {
+  position: absolute;
+  clip: rect(1px, 1px, 1px, 1px);
+  -webkit-clip-path: inset(0px 0px 99.9% 99.9%);
+  clip-path: inset(0px 0px 99.9% 99.9%);
+  overflow: hidden;
+  height: 1px;
+  width: 1px;
+  padding: 0;
+  border: 0;
 }
 
 #globalfooter {
@@ -50,24 +60,6 @@
   }
 }
 
-/* Sistema de reset mais robusto */
-#globalfooter *,
-#globalfooter *:before,
-#globalfooter *:after {
-  box-sizing: border-box;
-}
-
-#globalfooter .visuallyhidden {
-  position: absolute;
-  clip: rect(1px, 1px, 1px, 1px);
-  -webkit-clip-path: inset(0px 0px 99.9% 99.9%);
-  clip-path: inset(0px 0px 99.9% 99.9%);
-  overflow: hidden;
-  height: 1px;
-  width: 1px;
-  padding: 0;
-  border: 0;
-}
 
 /* ========== ESTRUTURA PRINCIPAL ========== */
 #globalfooter .ac-gf-content {
