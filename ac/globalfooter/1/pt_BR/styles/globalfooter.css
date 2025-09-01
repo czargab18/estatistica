@@ -508,9 +508,6 @@
     font-weight: 300;
   }
 
-  /* Estado expandido - ícone × (rotacionado) */
-  #globalfooter .gf-directory-column-section.gf-directory-column-expanded .gf-directory-column-section-title-icon::after {}
-
   /* Estado expandido - rotação do ícone */
   #globalfooter .gf-directory-column-section.gf-directory-column-expanded .gf-directory-column-section-title-icon {
     transform: rotate(90deg);
@@ -732,9 +729,8 @@
   text-transform: uppercase;
 }
 
-@media only screen and (max-width: 833px) {
 /* ========== FOOTER SECTION (APPLE STYLE) ========== */
-  #ac-globalfooter .ac-gf-footer {
+#ac-globalfooter .ac-gf-footer {
     border-top: 1px solid var(--footer-section-border-color);
     padding: 17px 0 11px;
   }
