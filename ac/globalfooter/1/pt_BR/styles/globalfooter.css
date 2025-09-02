@@ -230,7 +230,18 @@ html[dir=rtl] #globalfooter .ac-gf-content {
   }
 }
 
-.globalfooter-breadcrumbs * {
+#globalfooter .globalfooter-breadcrumbs {
+  display: none !important;
+}
+
+
+#globalfooter .globalfooter-breadcrumbs {
+  padding: 8px 0;
+  border-bottom: 1px solid var(--footer-border-color);
+}
+
+#globalfooter .globalfooter-breadcrumbs,
+#globalfooter .globalfooter-breadcrumbs :is(a, span, div, ol, ul, li) {
   display: inline-flex;
 }
 
@@ -287,14 +298,14 @@ html[dir=rtl] #globalfooter .ac-gf-content {
   text-decoration: none;
 }
 
-#globalfooter .globalfooter-breadcrumbs-home-icon {
+#globalfooter nav .globalfooter-breadcrumbs-home-icon {
   background-color: #000000b8;
   color: #ffffff00;
   display: block;
   height: 18px;
   width: 14px;
   -webkit-mask-image: url("/sd/favicons/pt_BR/estatistica.svg");
-  mask-image: url("/sd/favicons/pt_BR/estatistica.svg");
+  background-image: url("/sd/favicons/pt_BR/estatistica.svg");
   position: relative;
   z-index: 2;
 }
@@ -827,7 +838,7 @@ html[dir=rtl] #globalfooter .ac-gf-content {
 
   /* Estado expandido - rotação do ícone */
   #globalfooter .gf-directory-column-section.gf-directory-column-expanded .gf-directory-column-section-title-icon {
-    transform: rotate(90deg);
+    transform: rotate(180deg);
     transition: transform 0.3s cubic-bezier(0.2, 0, 0.38, 0.9);
   }
 }
