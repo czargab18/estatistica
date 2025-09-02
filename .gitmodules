@@ -18,5 +18,5 @@
     url = https://github.com/czargab18/wss.git
 
 [submodule "api"]
-    path = api
-    url = https://github.com/czargab18/api.git
+	path = api
+	url = https://github.com/czargab18/api.git
