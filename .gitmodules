@@ -16,3 +16,7 @@
 [submodule "wss"]
     path = wss
     url = https://github.com/czargab18/wss.git
+
+[submodule "api"]
+    path = api
+    url = https://github.com/czargab18/api.git
