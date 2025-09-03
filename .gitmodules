@@ -16,3 +16,9 @@
 [submodule "wss"]
     path = wss
     url = https://github.com/czargab18/wss.git
+    branch = main
+
+[submodule "dados"]
+	path = dados
+	url = https://github.com/czargab18/dados.git
+	branch = main
