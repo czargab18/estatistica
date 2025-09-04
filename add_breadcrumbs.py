@@ -18,9 +18,9 @@ class BreadcrumbsManager:
         self.root_path = Path(root_path)
         
     def get_page_title(self, html_content: str, segment: str) -> str:
-        """Gera título baseado apenas no nome do diretório"""
-        # Usar apenas capitalização do nome do diretório
-        return segment.capitalize()
+        """Gera título baseado apenas no nome do diretório em lowercase"""
+        # Manter texto em lowercase
+        return segment
     
     def generate_breadcrumbs(self, file_path: Path, html_content: str) -> str:
         """Gera o HTML dos breadcrumbs baseado no caminho do arquivo"""
