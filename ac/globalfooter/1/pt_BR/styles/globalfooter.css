@@ -241,7 +241,7 @@ html[dir=rtl] #globalfooter .ac-gf-content {
 
 .globalfooter-breadcrumbs {
   color: var(--footer-link-color);
-  padding: 17px 0;
+  padding: 8px 0;
   position: relative;
   z-index: 1
 }
@@ -285,7 +285,7 @@ html[dir=rtl] #globalfooter .ac-gf-content {
 
 #globalfooter .ac-gf-breadcrumbs-home {
   position: absolute;
-  top: 17px;
+  /* top: 17px; */
   left: 0;
   z-index: 2;
   display: inline-block;
@@ -1062,7 +1062,7 @@ html[dir=rtl] #globalfooter .ac-gf-content {
 
 /* Breadcrumbs - Baseado no padrão Apple */
 #globalfooter .ac-gf-breadcrumbs {
-  padding: 17px 0;
+  padding: 8px 0;
   position: relative;
   z-index: 1;
   color: var(--footer-link-color);
@@ -1084,7 +1084,7 @@ html[dir=rtl] #globalfooter .ac-gf-content {
   position: absolute;
   inset-inline-start: 0;
   z-index: 2;
-  top: 17px;
+  /* top: 17px; */
   display: inline-block;
   text-decoration: none;
 }
