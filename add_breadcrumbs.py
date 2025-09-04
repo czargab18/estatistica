@@ -18,24 +18,8 @@ class BreadcrumbsManager:
         self.root_path = Path(root_path)
         
     def get_page_title(self, html_content: str, segment: str) -> str:
-        """Extrai o título da página do HTML ou usa capitalização"""
-        # Tentar extrair título do HTML
-        title_match = re.search(r'<title>(.*?)</title>', html_content, re.IGNORECASE)
-        if title_match:
-            title = title_match.group(1).strip()
-            # Remove "- Estatística UnB" do título
-            clean_title = re.sub(r'\s*-\s*Estatística\s*UnB.*$', '', title, flags=re.IGNORECASE).strip()
-            if clean_title and clean_title != 'Estatística':
-                return clean_title
-        
-        # Tentar extrair H1
-        h1_match = re.search(r'<h1[^>]*>(.*?)</h1>', html_content, re.IGNORECASE | re.DOTALL)
-        if h1_match:
-            h1_text = re.sub(r'<[^>]+>', '', h1_match.group(1)).strip()
-            if h1_text:
-                return h1_text
-        
-        # Usar capitalização simples
+        """Gera título baseado apenas no nome do diretório"""
+        # Usar apenas capitalização do nome do diretório
         return segment.capitalize()
     
     def generate_breadcrumbs(self, file_path: Path, html_content: str) -> str:
@@ -122,7 +106,7 @@ class BreadcrumbsManager:
         
         return breadcrumbs_html
     
-    def process_file(self, file_path: Path, dry_run: bool = False) -> bool:
+    def process_file(self, file_path: Path, dry_run: bool = False, force: bool = False) -> bool:
         """Processa um arquivo HTML adicionando breadcrumbs"""
         try:
             # Ler arquivo
@@ -130,9 +114,16 @@ class BreadcrumbsManager:
                 content = f.read()
             
             # Verificar se já tem breadcrumbs
-            if 'ac-gf-breadcrumbs' in content:
-                print(f"⚠️  {file_path.relative_to(self.root_path)} - já possui breadcrumbs")
+            if 'ac-gf-breadcrumbs' in content and not force:
+                print(f"⚠️  {file_path.relative_to(self.root_path)} - já possui breadcrumbs (use --force para sobrescrever)")
                 return False
+            
+            # Se force=True e já tem breadcrumbs, remover os existentes
+            if 'ac-gf-breadcrumbs' in content and force:
+                print(f"🔄 {file_path.relative_to(self.root_path)} - removendo breadcrumbs existentes")
+                # Remover breadcrumbs existentes
+                pattern = r'<nav class="ac-gf-breadcrumbs"[^>]*>.*?</nav>\s*'
+                content = re.sub(pattern, '', content, flags=re.DOTALL)
             
             # Gerar breadcrumbs
             breadcrumbs_html = self.generate_breadcrumbs(file_path, content)
@@ -146,8 +137,23 @@ class BreadcrumbsManager:
             match = re.search(pattern, content)
             
             if not match:
-                print(f"❌ {file_path.relative_to(self.root_path)} - não encontrou nav.ac-gf-directory")
-                return False
+                # Tentar padrão alternativo sem id
+                pattern = r'(\s*)<nav class="ac-gf-directory[^"]*"[^>]*>'
+                match = re.search(pattern, content)
+
+            if not match:
+                # Se não encontrar nav.ac-gf-directory, tentar inserir antes do </footer>
+                pattern = r'(\s*)</footer>'
+                match = re.search(pattern, content)
+                
+                if not match:
+                    # Se não encontrar footer, tentar antes do </body>
+                    pattern = r'(\s*)</body>'
+                    match = re.search(pattern, content)
+                    
+                    if not match:
+                        print(f"❌ {file_path.relative_to(self.root_path)} - não encontrou local para inserir breadcrumbs")
+                        return False
             
             # Inserir breadcrumbs
             new_content = content[:match.start()] + breadcrumbs_html + '\n' + content[match.start():]
@@ -167,7 +173,7 @@ class BreadcrumbsManager:
             print(f"❌ {file_path.relative_to(self.root_path)} - erro: {e}")
             return False
     
-    def process_directory(self, pattern: str = "**/*.html", dry_run: bool = False):
+    def process_directory(self, pattern: str = "**/*.html", dry_run: bool = False, force: bool = False):
         """Processa múltiplos arquivos HTML"""
         files = list(self.root_path.glob(pattern))
         
@@ -214,7 +220,7 @@ class BreadcrumbsManager:
         success_count = 0
         for file_path in filtered_files:
             print(f"\n📄 Processando: {file_path.relative_to(self.root_path)}")
-            if self.process_file(file_path, dry_run):
+            if self.process_file(file_path, dry_run, force):
                 success_count += 1
         
         print("-" * 80)
@@ -232,6 +238,8 @@ def main():
                        help='Padrão de arquivos para processar (padrão: **/*.html)')
     parser.add_argument('--dry-run', '-d', action='store_true',
                        help='Modo dry-run - apenas mostra o que seria feito')
+    parser.add_argument('--force', action='store_true',
+                       help='Forçar sobrescrita de breadcrumbs existentes')
     parser.add_argument('--file', '-f', 
                        help='Processar apenas um arquivo específico')
     
@@ -246,10 +254,10 @@ def main():
             print(f"❌ Arquivo não encontrado: {file_path}")
             return
         
-        manager.process_file(file_path, args.dry_run)
+        manager.process_file(file_path, args.dry_run, args.force)
     else:
         # Processar múltiplos arquivos
-        manager.process_directory(args.pattern, args.dry_run)
+        manager.process_directory(args.pattern, args.dry_run, args.force)
 
 
 if __name__ == '__main__':
