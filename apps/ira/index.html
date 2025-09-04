@@ -1111,7 +1111,7 @@
       </div>
     </section>
   </main>
-  <footer class="footer" id="globalfooter">
+  <footer class="footer js" id="globalfooter">
     <div id="globalfooter-content">
       <h2 class="visuallyhidden" id="globalfooter-content-label">
         Estatistica
@@ -1158,15 +1158,48 @@
           </li>
         </ul>
       </section>
+      <nav class="ac-gf-breadcrumbs" aria-label="Breadcrumbs" role="navigation">
+        <a href="/" class="ac-gf-breadcrumbs-home" target="_self">
+          <span class="ac-gf-breadcrumbs-home-icon" aria-hidden="true"></span>
+          <span class="ac-gf-breadcrumbs-home-label">Estatística UnB</span>
+        </a>
+        <div class="ac-gf-breadcrumbs-path">
+          <ol class="ac-gf-breadcrumbs-list" vocab="http://schema.org/" typeof="BreadcrumbList">
+              <li class="ac-gf-breadcrumbs-item" property="itemListElement" typeof="ListItem">
+                <a class="ac-gf-breadcrumbs-link" href="/apps/" target="_self" property="item" typeof="WebPage">
+                  <span property="name">apps</span>
+                </a>
+                <meta property="position" content="1">
+              </li>
+              <li class="ac-gf-breadcrumbs-item" property="itemListElement" typeof="ListItem">
+                <span property="name">ira</span>
+                <meta property="position" content="2">
+              </li>
+          </ol>
+        </div>
+      </nav>
+
       <nav class="ac-gf-directory with-5-columns" id="globalfooter-navgation">
         <div class="gf-directory-column">
           <div class="gf-directory-column-section">
             <h3 class="gf-directory-column-section-title">
               <span class="gf-directory-column-section-title-text"> Departamento </span>
-              <button aria-controls="footer-directory-column-section-departamento" aria-expanded="false"
-                class="gf-directory-column-section-title-button">
+              <button class="gf-directory-column-section-title-button" disabled="">
                 <span class="gf-directory-column-section-title-text">Departamento</span>
-                <span class="gf-directory-column-section-title-icon">+</span>
+                <span class="gf-directory-column-section-title-icon"><svg
+                    class="gf-directory-column-section-title-icon-svg" width="11" height="6" viewBox="0 0 11 6">
+                    <polyline data-footer-icon-shape="" stroke="currentColor" stroke-linecap="round"
+                      stroke-linejoin="round" fill="none" fill-rule="evenodd" points="10.075 0.675 5.5 5.323 0.925 0.675">
+                      <animate data-footer-animate="expand" attributeName="points" values="10.075 0.675 5.5 5.323 0.925 0.675;
+                              10.075 3 5.5 3 0.925 3;
+                              10.075 5.325 5.5 0.676 0.925 5.325" dur="320ms" begin="indefinite" fill="freeze"
+                        keyTimes="0; 0.5; 1" calcMode="spline" keySplines="0.12, 0, 0.38, 0; 0.2, 1, 0.68, 1"></animate>
+                      <animate data-footer-animate="collapse" attributeName="points" values="10.075 5.325 5.5 0.676 0.925 5.325;
+                              10.075 3 5.5 3 0.925 3;
+                              10.075 0.675 5.5 5.323 0.925 0.675" dur="320ms" begin="indefinite" fill="freeze"
+                        keyTimes="0; 0.5; 1" calcMode="spline" keySplines="0.2, 0, 0.68, 0; 0.2, 1, 0.68, 1"></animate>
+                    </polyline>
+                  </svg></span>
               </button>
             </h3>
             <ul class="gf-directory-column-section-list" id="footer-directory-column-section-departamento" role="list">
@@ -1227,10 +1260,22 @@
           <div class="gf-directory-column-section">
             <h3 class="gf-directory-column-section-title">
               <span class="gf-directory-column-section-title-text"> Links Importante </span>
-              <button aria-controls="footer-directory-column-section-links" aria-expanded="false"
-                class="gf-directory-column-section-title-button">
+              <button class="gf-directory-column-section-title-button" disabled="">
                 <span class="gf-directory-column-section-title-text">Links Importante</span>
-                <span class="gf-directory-column-section-title-icon">+</span>
+                <span class="gf-directory-column-section-title-icon"><svg
+                    class="gf-directory-column-section-title-icon-svg" width="11" height="6" viewBox="0 0 11 6">
+                    <polyline data-footer-icon-shape="" stroke="currentColor" stroke-linecap="round"
+                      stroke-linejoin="round" fill="none" fill-rule="evenodd" points="10.075 0.675 5.5 5.323 0.925 0.675">
+                      <animate data-footer-animate="expand" attributeName="points" values="10.075 0.675 5.5 5.323 0.925 0.675;
+                              10.075 3 5.5 3 0.925 3;
+                              10.075 5.325 5.5 0.676 0.925 5.325" dur="320ms" begin="indefinite" fill="freeze"
+                        keyTimes="0; 0.5; 1" calcMode="spline" keySplines="0.12, 0, 0.38, 0; 0.2, 1, 0.68, 1"></animate>
+                      <animate data-footer-animate="collapse" attributeName="points" values="10.075 5.325 5.5 0.676 0.925 5.325;
+                              10.075 3 5.5 3 0.925 3;
+                              10.075 0.675 5.5 5.323 0.925 0.675" dur="320ms" begin="indefinite" fill="freeze"
+                        keyTimes="0; 0.5; 1" calcMode="spline" keySplines="0.2, 0, 0.68, 0; 0.2, 1, 0.68, 1"></animate>
+                    </polyline>
+                  </svg></span>
               </button>
             </h3>
             <ul class="gf-directory-column-section-list" id="footer-directory-column-section-links" role="list">
@@ -1281,10 +1326,22 @@
           <div class="gf-directory-column-section">
             <h3 class="gf-directory-column-section-title">
               <span class="gf-directory-column-section-title-text"> Secretaria de Administração Academica </span>
-              <button aria-controls="footer-directory-column-section-secretaria" aria-expanded="false"
-                class="gf-directory-column-section-title-button">
+              <button class="gf-directory-column-section-title-button" disabled="">
                 <span class="gf-directory-column-section-title-text">Secretaria de Administração Academica</span>
-                <span class="gf-directory-column-section-title-icon">+</span>
+                <span class="gf-directory-column-section-title-icon"><svg
+                    class="gf-directory-column-section-title-icon-svg" width="11" height="6" viewBox="0 0 11 6">
+                    <polyline data-footer-icon-shape="" stroke="currentColor" stroke-linecap="round"
+                      stroke-linejoin="round" fill="none" fill-rule="evenodd" points="10.075 0.675 5.5 5.323 0.925 0.675">
+                      <animate data-footer-animate="expand" attributeName="points" values="10.075 0.675 5.5 5.323 0.925 0.675;
+                              10.075 3 5.5 3 0.925 3;
+                              10.075 5.325 5.5 0.676 0.925 5.325" dur="320ms" begin="indefinite" fill="freeze"
+                        keyTimes="0; 0.5; 1" calcMode="spline" keySplines="0.12, 0, 0.38, 0; 0.2, 1, 0.68, 1"></animate>
+                      <animate data-footer-animate="collapse" attributeName="points" values="10.075 5.325 5.5 0.676 0.925 5.325;
+                              10.075 3 5.5 3 0.925 3;
+                              10.075 0.675 5.5 5.323 0.925 0.675" dur="320ms" begin="indefinite" fill="freeze"
+                        keyTimes="0; 0.5; 1" calcMode="spline" keySplines="0.2, 0, 0.68, 0; 0.2, 1, 0.68, 1"></animate>
+                    </polyline>
+                  </svg></span>
               </button>
             </h3>
             <ul class="gf-directory-column-section-list" id="footer-directory-column-section-secretaria" role="list">
@@ -1350,10 +1407,22 @@
           <div class="gf-directory-column-section">
             <h3 class="gf-directory-column-section-title">
               <span class="gf-directory-column-section-title-text"> Administrativo - UnB </span>
-              <button aria-controls="footer-directory-column-section-administrativo" aria-expanded="false"
-                class="gf-directory-column-section-title-button">
+              <button class="gf-directory-column-section-title-button" disabled="">
                 <span class="gf-directory-column-section-title-text"> Administrativo - UnB </span>
-                <span class="gf-directory-column-section-title-icon">+</span>
+                <span class="gf-directory-column-section-title-icon"><svg
+                    class="gf-directory-column-section-title-icon-svg" width="11" height="6" viewBox="0 0 11 6">
+                    <polyline data-footer-icon-shape="" stroke="currentColor" stroke-linecap="round"
+                      stroke-linejoin="round" fill="none" fill-rule="evenodd" points="10.075 0.675 5.5 5.323 0.925 0.675">
+                      <animate data-footer-animate="expand" attributeName="points" values="10.075 0.675 5.5 5.323 0.925 0.675;
+                              10.075 3 5.5 3 0.925 3;
+                              10.075 5.325 5.5 0.676 0.925 5.325" dur="320ms" begin="indefinite" fill="freeze"
+                        keyTimes="0; 0.5; 1" calcMode="spline" keySplines="0.12, 0, 0.38, 0; 0.2, 1, 0.68, 1"></animate>
+                      <animate data-footer-animate="collapse" attributeName="points" values="10.075 5.325 5.5 0.676 0.925 5.325;
+                              10.075 3 5.5 3 0.925 3;
+                              10.075 0.675 5.5 5.323 0.925 0.675" dur="320ms" begin="indefinite" fill="freeze"
+                        keyTimes="0; 0.5; 1" calcMode="spline" keySplines="0.2, 0, 0.68, 0; 0.2, 1, 0.68, 1"></animate>
+                    </polyline>
+                  </svg></span>
               </button>
             </h3>
             <ul class="gf-directory-column-section-list" id="footer-directory-column-section-administrativo" role="list">
@@ -1399,10 +1468,22 @@
           <div class="gf-directory-column-section">
             <h3 class="gf-directory-column-section-title">
               <span class="gf-directory-column-section-title-text"> Serviçoes da Universidade </span>
-              <button aria-controls="footer-directory-column-section-servicos" aria-expanded="false"
-                class="gf-directory-column-section-title-button">
+              <button class="gf-directory-column-section-title-button" disabled="">
                 <span class="gf-directory-column-section-title-text"> Serviçoes da Universidade </span>
-                <span class="gf-directory-column-section-title-icon">+</span>
+                <span class="gf-directory-column-section-title-icon"><svg
+                    class="gf-directory-column-section-title-icon-svg" width="11" height="6" viewBox="0 0 11 6">
+                    <polyline data-footer-icon-shape="" stroke="currentColor" stroke-linecap="round"
+                      stroke-linejoin="round" fill="none" fill-rule="evenodd" points="10.075 0.675 5.5 5.323 0.925 0.675">
+                      <animate data-footer-animate="expand" attributeName="points" values="10.075 0.675 5.5 5.323 0.925 0.675;
+                              10.075 3 5.5 3 0.925 3;
+                              10.075 5.325 5.5 0.676 0.925 5.325" dur="320ms" begin="indefinite" fill="freeze"
+                        keyTimes="0; 0.5; 1" calcMode="spline" keySplines="0.12, 0, 0.38, 0; 0.2, 1, 0.68, 1"></animate>
+                      <animate data-footer-animate="collapse" attributeName="points" values="10.075 5.325 5.5 0.676 0.925 5.325;
+                              10.075 3 5.5 3 0.925 3;
+                              10.075 0.675 5.5 5.323 0.925 0.675" dur="320ms" begin="indefinite" fill="freeze"
+                        keyTimes="0; 0.5; 1" calcMode="spline" keySplines="0.2, 0, 0.68, 0; 0.2, 1, 0.68, 1"></animate>
+                    </polyline>
+                  </svg></span>
               </button>
             </h3>
             <ul class="gf-directory-column-section-list" id="footer-directory-column-section-servicos" role="list">
@@ -1471,11 +1552,11 @@
             <li class="gf-copy-legal-links-item" role="listitem">
               <a class="gf-copy-legal-link" href="/legal/">Politica de Privacidade</a>
             </li>
-            <span class="footer-espacador"> </span>
+            <span class="footer-espacador">&nbsp;</span>
             <li class="gf-copy-legal-links-item" role="listitem">
               <a class="gf-copy-legal-link" href="/legal/">Termos de uso</a>
             </li>
-            <span class="footer-espacador"> </span>
+            <span class="footer-espacador">&nbsp;</span>
             <li class="gf-copy-legal-links-item" role="listitem">
               <a class="gf-copy-legal-link" href="/sitemap/">
                 Site Map</a>

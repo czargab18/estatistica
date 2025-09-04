@@ -185,11 +185,93 @@
       }
   }
 
+  // Classe para Breadcrumbs
+  class FooterBreadcrumbs {
+    constructor(element) {
+      this.element = element;
+      this.init();
+    }
+
+    init() {
+      this.setupStructure();
+      this.handleVisibility();
+    }
+
+    setupStructure() {
+      // Garantir que a estrutura está correta
+      const homeLink = this.element.querySelector('.ac-gf-breadcrumbs-home');
+      if (homeLink && !homeLink.querySelector('.ac-gf-breadcrumbs-home-icon')) {
+        this.createHomeIcon(homeLink);
+      }
+    }
+
+    createHomeIcon(homeLink) {
+      const icon = document.createElement('span');
+      icon.className = 'ac-gf-breadcrumbs-home-icon';
+      icon.setAttribute('aria-hidden', 'true');
+
+      const label = document.createElement('span');
+      label.className = 'ac-gf-breadcrumbs-home-label';
+      label.textContent = homeLink.textContent.trim() || 'Página Inicial';
+
+      homeLink.innerHTML = '';
+      homeLink.appendChild(icon);
+      homeLink.appendChild(label);
+    }
+
+    handleVisibility() {
+      // Mostrar breadcrumbs apenas se não estivermos na home
+      const isHomePage = window.location.pathname === '/' ||
+        window.location.pathname === '/index.html' ||
+        window.location.pathname.endsWith('/estatistica/');
+
+      if (isHomePage) {
+        this.element.style.display = 'none';
+      } else {
+        this.element.style.display = 'block';
+      }
+    }
+
+    static createBreadcrumbs(path, title) {
+      // Método estático para criar breadcrumbs dinamicamente
+      const breadcrumbsHtml = `
+        <nav class="ac-gf-breadcrumbs" aria-label="Breadcrumbs" role="navigation">
+          <a href="/" class="ac-gf-breadcrumbs-home" target="_self">
+            <span class="ac-gf-breadcrumbs-home-icon" aria-hidden="true"></span>
+            <span class="ac-gf-breadcrumbs-home-label">Estatística UnB</span>
+          </a>
+          <div class="ac-gf-breadcrumbs-path">
+            <ol class="ac-gf-breadcrumbs-list" vocab="http://schema.org/" typeof="BreadcrumbList">
+              ${path.map((item, index) => {
+        if (index === path.length - 1) {
+          return `<li class="ac-gf-breadcrumbs-item" property="itemListElement" typeof="ListItem">
+                    <span property="name">${item.name}</span>
+                    <meta property="position" content="${index + 1}">
+                  </li>`;
+        } else {
+          return `<li class="ac-gf-breadcrumbs-item" property="itemListElement" typeof="ListItem">
+                    <a class="ac-gf-breadcrumbs-link" href="${item.url}" target="_self" property="item" typeof="WebPage">
+                      <span property="name">${item.name}</span>
+                    </a>
+                    <meta property="position" content="${index + 1}">
+                  </li>`;
+        }
+      }).join('')}
+            </ol>
+          </div>
+        </nav>
+      `;
+
+      return breadcrumbsHtml;
+    }
+  }
+
   // Classe principal do Global Footer
   class GlobalFooter {
     constructor(element) {
       this.el = element;
       this.sections = [];
+      this.breadcrumbs = null;
       this.init();
     }
 
@@ -201,9 +283,22 @@
         // Inicializa o sistema de viewport
         ViewportEmitter.init();
 
+        // Inicializar breadcrumbs - DESATIVADO
+        // this.initializeBreadcrumbs();
+
         // Configura as seções do diretório
         this.initializeDirectory();
-        }
+      }
+
+    // MÉTODO DESATIVADO - initializeBreadcrumbs
+    /*
+    initializeBreadcrumbs() {
+      const breadcrumbsElement = this.el.querySelector('.ac-gf-breadcrumbs');
+      if (breadcrumbsElement) {
+        this.breadcrumbs = new FooterBreadcrumbs(breadcrumbsElement);
+      }
+    }
+    */
 
       initializeDirectory() {
         const sections = this.el.querySelectorAll('.gf-directory-column-section');
@@ -223,8 +318,215 @@
       destroy() {
         this.sections.forEach(section => section.destroy());
         this.sections = [];
-        }
+        this.breadcrumbs = null;
+      }
   }
+
+  // Sistema automático de breadcrumbs - DESATIVADO
+  /*
+  class AutoBreadcrumbs {
+    constructor() {
+      this.init();
+    }
+
+    init() {
+      this.createBreadcrumbsHTML();
+      this.setupBreadcrumbs();
+    }
+
+    // Método para obter título da página ou criar nome amigável
+    getPageTitle(segment) {
+      // Primeiro tenta pegar o title da página
+      const pageTitle = document.title;
+      if (pageTitle && pageTitle !== '' && !pageTitle.includes('404')) {
+        // Se tiver "- Estatística UnB" remove essa parte
+        const cleanTitle = pageTitle.replace(/\s*-\s*Estatística\s*UnB.*$/i, '').trim();
+        if (cleanTitle) {
+          return cleanTitle;
+        }
+      }
+
+      // Tenta pegar o H1 da página
+      const h1 = document.querySelector('h1');
+      if (h1 && h1.textContent.trim()) {
+        return h1.textContent.trim();
+      }
+
+      // Mapeamento de URLs conhecidas para nomes amigáveis
+      const pathMappings = {
+        'boasvindas': 'Boas-vindas',
+        'book': 'Livros',
+        'books': 'Livros',
+        'newsroom': 'Sala de Imprensa',
+        'newshub': 'Central de Notícias',
+        'pages': 'Páginas',
+        'docente': 'Docente',
+        'leadership': 'Liderança',
+        'legal': 'Legal',
+        'privacy': 'Privacidade',
+        'terms': 'Termos',
+        'sitemap': 'Mapa do Site',
+        'errors': 'Erros',
+        'apps': 'Aplicativos',
+        'EST0033': 'Estatística Básica',
+        'MAT0075': 'Matemática Aplicada',
+        'TAS0000': 'Tópicos Avançados',
+        'CIC0007': 'Ciência da Computação'
+      };
+
+      // Se tiver mapeamento específico, usar
+      if (pathMappings[segment]) {
+        return pathMappings[segment];
+      }
+
+      // Senão, capitalizar primeira letra
+      return segment.charAt(0).toUpperCase() + segment.slice(1);
+    }
+
+    createBreadcrumbsHTML() {
+      // Verifica se o breadcrumbs já existe
+      if (document.querySelector('.ac-gf-breadcrumbs')) {
+        return;
+      }
+
+      // Encontra onde inserir (antes da navegação do footer)
+      const footerNav = document.querySelector('#globalfooter-navgation') ||
+        document.querySelector('.ac-gf-directory');
+
+      if (!footerNav) return;
+
+      // Cria o HTML dos breadcrumbs
+      const breadcrumbsHTML = `
+        <nav class="ac-gf-breadcrumbs" aria-label="Breadcrumbs" role="navigation" style="display: none;">
+          <a href="/" class="ac-gf-breadcrumbs-home" target="_self">
+            <span class="ac-gf-breadcrumbs-home-icon" aria-hidden="true"></span>
+            <span class="ac-gf-breadcrumbs-home-label">Estatística UnB</span>
+          </a>
+          <div class="ac-gf-breadcrumbs-path">
+            <ol class="ac-gf-breadcrumbs-list" vocab="http://schema.org/" typeof="BreadcrumbList" id="auto-breadcrumbs">
+            </ol>
+          </div>
+        </nav>
+      `;
+
+      // Insere antes da navegação
+      footerNav.insertAdjacentHTML('beforebegin', breadcrumbsHTML);
+    }
+
+    setupBreadcrumbs() {
+      const path = window.location.pathname;
+      const breadcrumbsNav = document.querySelector('.ac-gf-breadcrumbs');
+      const container = document.getElementById('auto-breadcrumbs');
+
+      // Debug - mostra informações no console
+      console.log('=== BREADCRUMBS DEBUG ===');
+      console.log('Path atual:', path);
+      console.log('Breadcrumbs nav encontrado:', !!breadcrumbsNav);
+      console.log('Container encontrado:', !!container);
+
+      if (!breadcrumbsNav || !container) {
+        console.log('❌ Breadcrumbs ou container não encontrados');
+        return;
+      }
+
+      // Se for home ou páginas especiais, ocultar breadcrumbs
+      if (path === '/' ||
+        path === '/index.html' ||
+        path.endsWith('/estatistica/') ||
+        path.endsWith('/footer.html')) {
+        console.log('🏠 Página especial detectada - ocultando breadcrumbs');
+        breadcrumbsNav.style.display = 'none';
+        return;
+      }
+
+      // Filtrar e criar breadcrumbs baseado na URL
+      let pathSegments = path.split('/').filter(segment => segment);
+
+      console.log('Path segments antes do filtro:', pathSegments);
+
+      // Se o último segmento for um arquivo HTML, extrair o nome sem extensão
+      if (pathSegments.length > 0) {
+        const lastSegment = pathSegments[pathSegments.length - 1];
+        if (lastSegment.endsWith('.html') && lastSegment !== 'index.html') {
+          // Substitui o arquivo HTML pelo nome sem extensão
+          pathSegments[pathSegments.length - 1] = lastSegment.replace('.html', '');
+        } else if (lastSegment === 'index.html') {
+          // Remove index.html
+          pathSegments.pop();
+        }
+      }
+
+      // Remove outros arquivos especiais
+      pathSegments = pathSegments.filter(segment =>
+        segment !== 'footer.html' &&
+        segment !== ''
+      );
+
+      console.log('Path segments após filtro:', pathSegments);
+
+      const breadcrumbItems = [];
+
+      // Se não tiver segmentos válidos, ocultar breadcrumbs
+      if (pathSegments.length === 0) {
+        console.log('❌ Nenhum segmento válido - ocultando breadcrumbs');
+        breadcrumbsNav.style.display = 'none';
+        return;
+      }
+
+      pathSegments.forEach((segment, index) => {
+        const url = '/' + pathSegments.slice(0, index + 1).join('/') + '/';
+        let name;
+
+        // Para o último segmento (página atual), usar método inteligente
+        if (index === pathSegments.length - 1) {
+          name = this.getPageTitle(segment);
+          breadcrumbItems.push({ name }); // Último item sem URL
+        } else {
+          name = this.getPageTitle(segment);
+          breadcrumbItems.push({ name, url });
+        }
+      });
+
+      console.log('Breadcrumb items criados:', breadcrumbItems);
+
+      // Preencher container apenas se tiver itens
+      container.innerHTML = '';
+      if (breadcrumbItems.length > 0) {
+        breadcrumbItems.forEach((item, index) => {
+          const li = document.createElement('li');
+          li.className = 'ac-gf-breadcrumbs-item';
+          li.setAttribute('property', 'itemListElement');
+          li.setAttribute('typeof', 'ListItem');
+
+          if (item.url) {
+            li.innerHTML = `
+              <a class="ac-gf-breadcrumbs-link" href="${item.url}" target="_self" property="item" typeof="WebPage">
+                <span property="name">${item.name}</span>
+              </a>
+              <meta property="position" content="${index + 1}">
+            `;
+          } else {
+            li.innerHTML = `
+              <span property="name">${item.name}</span>
+              <meta property="position" content="${index + 1}">
+            `;
+          }
+
+          container.appendChild(li);
+        });
+
+        // Mostrar breadcrumbs
+        breadcrumbsNav.style.display = 'block';
+        console.log('✅ Breadcrumbs criados e exibidos');
+      } else {
+        // Ocultar se não tiver itens
+        breadcrumbsNav.style.display = 'none';
+        console.log('❌ Nenhum item criado - ocultando breadcrumbs');
+      }
+      console.log('=========================');
+    }
+  }
+  */ // FIM DO COMENTÁRIO - AutoBreadcrumbs DESATIVADO
 
   // Inicialização automática quando o DOM estiver pronto
   function init() {
@@ -235,6 +537,8 @@
         
       if (footerElement) {
         new GlobalFooter(footerElement);
+        // Inicializar breadcrumbs automáticos - DESATIVADO
+        // new AutoBreadcrumbs();
       }
     }
 

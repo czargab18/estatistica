@@ -234,12 +234,6 @@ html[dir=rtl] #globalfooter .ac-gf-content {
   display: none !important;
 }
 
-
-#globalfooter .globalfooter-breadcrumbs {
-  padding: 8px 0;
-  border-bottom: 1px solid var(--footer-border-color);
-}
-
 #globalfooter .globalfooter-breadcrumbs,
 #globalfooter .globalfooter-breadcrumbs :is(a, span, div, ol, ul, li) {
   display: inline-flex;
@@ -247,7 +241,7 @@ html[dir=rtl] #globalfooter .ac-gf-content {
 
 .globalfooter-breadcrumbs {
   color: var(--footer-link-color);
-  padding: 17px 0;
+  padding: 8px 0;
   position: relative;
   z-index: 1
 }
@@ -291,7 +285,7 @@ html[dir=rtl] #globalfooter .ac-gf-content {
 
 #globalfooter .ac-gf-breadcrumbs-home {
   position: absolute;
-  top: 17px;
+  /* top: 17px; */
   left: 0;
   z-index: 2;
   display: inline-block;
@@ -304,6 +298,7 @@ html[dir=rtl] #globalfooter .ac-gf-content {
   display: block;
   height: 18px;
   width: 14px;
+  mask-image: url("/sd/favicons/pt_BR/estatistica.svg");
   -webkit-mask-image: url("/sd/favicons/pt_BR/estatistica.svg");
   background-image: url("/sd/favicons/pt_BR/estatistica.svg");
   position: relative;
@@ -1061,5 +1056,188 @@ html[dir=rtl] #globalfooter .ac-gf-content {
   #globalfooter .gf-copyright-locale {
     margin-top: 10px;
     position: static;
+  }
+}
+/* ========== MIGALHAS DE PÃO (BREADCRUMBS) ========== */
+
+/* Breadcrumbs - Baseado no padrão Apple */
+#globalfooter .ac-gf-breadcrumbs {
+  padding: 8px 0;
+  position: relative;
+  z-index: 1;
+  color: var(--footer-link-color);
+  border-bottom: 1px solid var(--footer-section-border-color);
+}
+
+#globalfooter .ac-gf-breadcrumbs::before,
+#globalfooter .ac-gf-breadcrumbs::after {
+  content: " ";
+  display: table;
+}
+
+#globalfooter .ac-gf-breadcrumbs::after {
+  clear: both;
+}
+
+/* Breadcrumbs Home Link */
+#globalfooter .ac-gf-breadcrumbs-home {
+  position: absolute;
+  inset-inline-start: 0;
+  z-index: 2;
+  /* top: 17px; */
+  display: inline-block;
+  text-decoration: none;
+}
+
+/* Home Icon */
+#globalfooter .ac-gf-breadcrumbs-home-icon {
+  width: 14px;
+  height: 18px;
+  display: block;
+  position: relative;
+  z-index: 2;
+  color: rgba(0, 0, 0, 0);
+  background-color: var(--footer-link-color);
+  -webkit-mask-image: url("/sd/favicons/pt_BR/estatistica.svg");
+  mask-image: url("/sd/favicons/pt_BR/estatistica.svg");
+  -webkit-mask-size: contain;
+  mask-size: contain;
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
+  -webkit-mask-position: center;
+  mask-position: center;
+}
+
+/* Home Icon Hover */
+#globalfooter .ac-gf-breadcrumbs-home:hover {
+  text-decoration: none;
+}
+
+#globalfooter .ac-gf-breadcrumbs-home:hover .ac-gf-breadcrumbs-home-icon {
+  background-color: var(--footer-directory-title-color);
+}
+
+/* Home Label (Screen Reader) */
+#globalfooter .ac-gf-breadcrumbs-home-label {
+  position: absolute;
+  clip: rect(1px, 1px, 1px, 1px);
+  -webkit-clip-path: inset(0 0 99.9% 99.9%);
+  clip-path: inset(0 0 99.9% 99.9%);
+  overflow: hidden;
+  height: 1px;
+  width: 1px;
+  padding: 0;
+  border: 0;
+}
+
+/* Breadcrumbs Path Container */
+#globalfooter .ac-gf-breadcrumbs-path {
+  font-size: 12px;
+  line-height: 1.3333733333;
+  font-weight: 400;
+  letter-spacing: -0.01em;
+  font-family: "SF Pro Text", "Myriad Set Pro", "SF Pro Icons", "Apple Legacy Chevron", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+  position: relative;
+  z-index: 1;
+}
+
+#globalfooter .ac-gf-breadcrumbs-path::before,
+#globalfooter .ac-gf-breadcrumbs-path::after {
+  content: " ";
+  display: table;
+}
+
+#globalfooter .ac-gf-breadcrumbs-path::after {
+  clear: both;
+}
+
+/* Breadcrumbs List */
+#globalfooter .ac-gf-breadcrumbs-list {
+  max-height: 9999px;
+  padding-inline-start: 25px;
+  text-align: start;
+  list-style: none;
+  margin: 0;
+  padding-left: 25px;
+}
+
+/* Breadcrumbs Items */
+#globalfooter .ac-gf-breadcrumbs-item {
+  margin-inline-end: 7px;
+  padding: 3px 4px 3px 0;
+  max-width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  float: left;
+  margin: 0;
+  padding: 0;
+}
+
+/* Breadcrumb Separator (Chevron) */
+#globalfooter .ac-gf-breadcrumbs-item:before {
+  width: 6px;
+  height: 11px;
+  content: "";
+  display: inline-block;
+  vertical-align: middle;
+  margin-top: -1px;
+  margin-inline-end: 11px;
+  margin-right: 11px;
+  background-color: var(--footer-pipe-color);
+  -webkit-mask-image: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='6' height='11' viewBox='0 0 6 11'%3E%3Cpath d='M1 1l4 4.5L1 10' fill='none' stroke='currentColor' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+  mask-image: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='6' height='11' viewBox='0 0 6 11'%3E%3Cpath d='M1 1l4 4.5L1 10' fill='none' stroke='currentColor' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+  -webkit-mask-size: contain;
+  mask-size: contain;
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
+  -webkit-mask-position: center;
+  mask-position: center;
+}
+
+/* Breadcrumb Links */
+#globalfooter .ac-gf-breadcrumbs-item a {
+  color: var(--footer-link-color);
+  text-decoration: none;
+}
+
+#globalfooter .ac-gf-breadcrumbs-item a:hover {
+  text-decoration: underline;
+}
+
+/* Tema Escuro - Breadcrumbs */
+#globalfooter.ac-globalfooter-dark .ac-gf-breadcrumbs-home-icon,
+#globalfooter.theme-dark .ac-gf-breadcrumbs-home-icon,
+.theme-dark #globalfooter .ac-gf-breadcrumbs-home-icon {
+  background-color: rgba(255, 255, 255, 0.8);
+}
+
+#globalfooter.ac-globalfooter-dark .ac-gf-breadcrumbs-home:hover .ac-gf-breadcrumbs-home-icon,
+#globalfooter.theme-dark .ac-gf-breadcrumbs-home:hover .ac-gf-breadcrumbs-home-icon,
+.theme-dark #globalfooter .ac-gf-breadcrumbs-home:hover .ac-gf-breadcrumbs-home-icon {
+  background-color: rgba(255, 255, 255, 0.92);
+}
+
+#globalfooter.ac-globalfooter-dark .ac-gf-breadcrumbs-item:before,
+#globalfooter.theme-dark .ac-gf-breadcrumbs-item:before,
+.theme-dark #globalfooter .ac-gf-breadcrumbs-item:before {
+  background-color: rgba(255, 255, 255, 0.4);
+}
+
+/* Responsivo - Mobile */
+@media only screen and (max-width: 833px) {
+  #globalfooter .ac-gf-breadcrumbs {
+    border-bottom: 1px solid var(--footer-section-border-color);
+  }
+}
+
+/* Ajuste quando breadcrumbs seguem o diretório */
+#globalfooter .ac-gf-breadcrumbs+.ac-gf-directory {
+  padding-top: 0;
+}
+
+@media only screen and (max-width: 833px) {
+  #globalfooter .ac-gf-breadcrumbs+.ac-gf-directory {
+    padding-top: 0;
   }
 }
