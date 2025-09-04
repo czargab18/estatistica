@@ -236,7 +236,7 @@
       // Método estático para criar breadcrumbs dinamicamente
       const breadcrumbsHtml = `
         <nav class="ac-gf-breadcrumbs" aria-label="Breadcrumbs" role="navigation">
-          <a href="/" class="ac-gf-breadcrumbs-home">
+          <a href="/" class="ac-gf-breadcrumbs-home" target="_self">
             <span class="ac-gf-breadcrumbs-home-icon" aria-hidden="true"></span>
             <span class="ac-gf-breadcrumbs-home-label">Estatística UnB</span>
           </a>
@@ -250,7 +250,7 @@
                   </li>`;
         } else {
           return `<li class="ac-gf-breadcrumbs-item" property="itemListElement" typeof="ListItem">
-                    <a class="ac-gf-breadcrumbs-link" href="${item.url}" property="item" typeof="WebPage">
+                    <a class="ac-gf-breadcrumbs-link" href="${item.url}" target="_self" property="item" typeof="WebPage">
                       <span property="name">${item.name}</span>
                     </a>
                     <meta property="position" content="${index + 1}">
@@ -394,7 +394,7 @@
       // Cria o HTML dos breadcrumbs
       const breadcrumbsHTML = `
         <nav class="ac-gf-breadcrumbs" aria-label="Breadcrumbs" role="navigation" style="display: none;">
-          <a href="/" class="ac-gf-breadcrumbs-home">
+          <a href="/" class="ac-gf-breadcrumbs-home" target="_self">
             <span class="ac-gf-breadcrumbs-home-icon" aria-hidden="true"></span>
             <span class="ac-gf-breadcrumbs-home-label">Estatística UnB</span>
           </a>
@@ -496,7 +496,7 @@
 
           if (item.url) {
             li.innerHTML = `
-              <a class="ac-gf-breadcrumbs-link" href="${item.url}" property="item" typeof="WebPage">
+              <a class="ac-gf-breadcrumbs-link" href="${item.url}" target="_self" property="item" typeof="WebPage">
                 <span property="name">${item.name}</span>
               </a>
               <meta property="position" content="${index + 1}">
