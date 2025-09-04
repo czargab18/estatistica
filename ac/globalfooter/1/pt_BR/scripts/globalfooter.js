@@ -319,6 +319,127 @@
       }
   }
 
+  // Sistema automático de breadcrumbs
+  class AutoBreadcrumbs {
+    constructor() {
+      this.init();
+    }
+
+    init() {
+      this.createBreadcrumbsHTML();
+      this.setupBreadcrumbs();
+    }
+
+    createBreadcrumbsHTML() {
+      // Verifica se o breadcrumbs já existe
+      if (document.querySelector('.ac-gf-breadcrumbs')) {
+        return;
+      }
+
+      // Encontra onde inserir (antes da navegação do footer)
+      const footerNav = document.querySelector('#globalfooter-navgation') ||
+        document.querySelector('.ac-gf-directory');
+
+      if (!footerNav) return;
+
+      // Cria o HTML dos breadcrumbs
+      const breadcrumbsHTML = `
+        <nav class="ac-gf-breadcrumbs" aria-label="Breadcrumbs" role="navigation" style="display: none;">
+          <a href="/" class="ac-gf-breadcrumbs-home">
+            <span class="ac-gf-breadcrumbs-home-icon" aria-hidden="true"></span>
+            <span class="ac-gf-breadcrumbs-home-label">Estatística UnB</span>
+          </a>
+          <div class="ac-gf-breadcrumbs-path">
+            <ol class="ac-gf-breadcrumbs-list" vocab="http://schema.org/" typeof="BreadcrumbList" id="auto-breadcrumbs">
+            </ol>
+          </div>
+        </nav>
+      `;
+
+      // Insere antes da navegação
+      footerNav.insertAdjacentHTML('beforebegin', breadcrumbsHTML);
+    }
+
+    setupBreadcrumbs() {
+      const path = window.location.pathname;
+      const breadcrumbsNav = document.querySelector('.ac-gf-breadcrumbs');
+      const container = document.getElementById('auto-breadcrumbs');
+
+      if (!breadcrumbsNav || !container) return;
+
+      // Se for home ou páginas especiais, ocultar breadcrumbs
+      if (path === '/' ||
+        path === '/index.html' ||
+        path.endsWith('/estatistica/') ||
+        path === '/boasvindas/' ||
+        path === '/boasvindas/index.html' ||
+        path.endsWith('/footer.html')) {
+        breadcrumbsNav.style.display = 'none';
+        return;
+      }
+
+      // Filtrar arquivos desnecessários e criar breadcrumbs baseado na URL
+      const pathSegments = path.split('/').filter(segment =>
+        segment &&
+        segment !== 'index.html' &&
+        segment !== 'footer.html' &&
+        !segment.endsWith('.html')
+      );
+
+      const breadcrumbItems = [];
+
+      // Se não tiver segmentos válidos, ocultar breadcrumbs
+      if (pathSegments.length === 0) {
+        breadcrumbsNav.style.display = 'none';
+        return;
+      }
+
+      pathSegments.forEach((segment, index) => {
+        const url = '/' + pathSegments.slice(0, index + 1).join('/') + '/';
+        const name = segment.charAt(0).toUpperCase() + segment.slice(1);
+
+        if (index === pathSegments.length - 1) {
+          breadcrumbItems.push({ name }); // Último item sem URL
+        } else {
+          breadcrumbItems.push({ name, url });
+        }
+      });
+
+      // Preencher container apenas se tiver itens
+      container.innerHTML = '';
+      if (breadcrumbItems.length > 0) {
+        breadcrumbItems.forEach((item, index) => {
+          const li = document.createElement('li');
+          li.className = 'ac-gf-breadcrumbs-item';
+          li.setAttribute('property', 'itemListElement');
+          li.setAttribute('typeof', 'ListItem');
+
+          if (item.url) {
+            li.innerHTML = `
+              <a class="ac-gf-breadcrumbs-link" href="${item.url}" property="item" typeof="WebPage">
+                <span property="name">${item.name}</span>
+              </a>
+              <meta property="position" content="${index + 1}">
+            `;
+          } else {
+            li.innerHTML = `
+              <span property="name">${item.name}</span>
+              <meta property="position" content="${index + 1}">
+            `;
+          }
+
+          container.appendChild(li);
+        });
+
+        // Mostrar breadcrumbs
+        breadcrumbsNav.style.display = 'block';
+      } else {
+        // Ocultar se não tiver itens
+        breadcrumbsNav.style.display = 'none';
+      }
+    }
+  }
+
   // Inicialização automática quando o DOM estiver pronto
   function init() {
     const footerElement = document.getElementById('globalfooter') ||
@@ -328,6 +449,8 @@
         
       if (footerElement) {
         new GlobalFooter(footerElement);
+        // Inicializar breadcrumbs automáticos
+        new AutoBreadcrumbs();
       }
     }
 
