@@ -185,11 +185,93 @@
       }
   }
 
+  // Classe para Breadcrumbs
+  class FooterBreadcrumbs {
+    constructor(element) {
+      this.element = element;
+      this.init();
+    }
+
+    init() {
+      this.setupStructure();
+      this.handleVisibility();
+    }
+
+    setupStructure() {
+      // Garantir que a estrutura está correta
+      const homeLink = this.element.querySelector('.ac-gf-breadcrumbs-home');
+      if (homeLink && !homeLink.querySelector('.ac-gf-breadcrumbs-home-icon')) {
+        this.createHomeIcon(homeLink);
+      }
+    }
+
+    createHomeIcon(homeLink) {
+      const icon = document.createElement('span');
+      icon.className = 'ac-gf-breadcrumbs-home-icon';
+      icon.setAttribute('aria-hidden', 'true');
+
+      const label = document.createElement('span');
+      label.className = 'ac-gf-breadcrumbs-home-label';
+      label.textContent = homeLink.textContent.trim() || 'Página Inicial';
+
+      homeLink.innerHTML = '';
+      homeLink.appendChild(icon);
+      homeLink.appendChild(label);
+    }
+
+    handleVisibility() {
+      // Mostrar breadcrumbs apenas se não estivermos na home
+      const isHomePage = window.location.pathname === '/' ||
+        window.location.pathname === '/index.html' ||
+        window.location.pathname.endsWith('/estatistica/');
+
+      if (isHomePage) {
+        this.element.style.display = 'none';
+      } else {
+        this.element.style.display = 'block';
+      }
+    }
+
+    static createBreadcrumbs(path, title) {
+      // Método estático para criar breadcrumbs dinamicamente
+      const breadcrumbsHtml = `
+        <nav class="ac-gf-breadcrumbs" aria-label="Breadcrumbs" role="navigation">
+          <a href="/" class="ac-gf-breadcrumbs-home">
+            <span class="ac-gf-breadcrumbs-home-icon" aria-hidden="true"></span>
+            <span class="ac-gf-breadcrumbs-home-label">Estatística UnB</span>
+          </a>
+          <div class="ac-gf-breadcrumbs-path">
+            <ol class="ac-gf-breadcrumbs-list" vocab="http://schema.org/" typeof="BreadcrumbList">
+              ${path.map((item, index) => {
+        if (index === path.length - 1) {
+          return `<li class="ac-gf-breadcrumbs-item" property="itemListElement" typeof="ListItem">
+                    <span property="name">${item.name}</span>
+                    <meta property="position" content="${index + 1}">
+                  </li>`;
+        } else {
+          return `<li class="ac-gf-breadcrumbs-item" property="itemListElement" typeof="ListItem">
+                    <a class="ac-gf-breadcrumbs-link" href="${item.url}" property="item" typeof="WebPage">
+                      <span property="name">${item.name}</span>
+                    </a>
+                    <meta property="position" content="${index + 1}">
+                  </li>`;
+        }
+      }).join('')}
+            </ol>
+          </div>
+        </nav>
+      `;
+
+      return breadcrumbsHtml;
+    }
+  }
+
   // Classe principal do Global Footer
   class GlobalFooter {
     constructor(element) {
       this.el = element;
       this.sections = [];
+      this.breadcrumbs = null;
       this.init();
     }
 
@@ -201,9 +283,19 @@
         // Inicializa o sistema de viewport
         ViewportEmitter.init();
 
+        // Inicializar breadcrumbs
+        this.initializeBreadcrumbs();
+
         // Configura as seções do diretório
         this.initializeDirectory();
-        }
+      }
+
+    initializeBreadcrumbs() {
+      const breadcrumbsElement = this.el.querySelector('.ac-gf-breadcrumbs');
+      if (breadcrumbsElement) {
+        this.breadcrumbs = new FooterBreadcrumbs(breadcrumbsElement);
+      }
+    }
 
       initializeDirectory() {
         const sections = this.el.querySelectorAll('.gf-directory-column-section');
@@ -223,7 +315,8 @@
       destroy() {
         this.sections.forEach(section => section.destroy());
         this.sections = [];
-        }
+        this.breadcrumbs = null;
+      }
   }
 
   // Inicialização automática quando o DOM estiver pronto
