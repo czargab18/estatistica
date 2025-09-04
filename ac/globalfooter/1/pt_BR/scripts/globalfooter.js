@@ -283,19 +283,22 @@
         // Inicializa o sistema de viewport
         ViewportEmitter.init();
 
-        // Inicializar breadcrumbs
-        this.initializeBreadcrumbs();
+        // Inicializar breadcrumbs - DESATIVADO
+        // this.initializeBreadcrumbs();
 
         // Configura as seções do diretório
         this.initializeDirectory();
       }
 
+    // MÉTODO DESATIVADO - initializeBreadcrumbs
+    /*
     initializeBreadcrumbs() {
       const breadcrumbsElement = this.el.querySelector('.ac-gf-breadcrumbs');
       if (breadcrumbsElement) {
         this.breadcrumbs = new FooterBreadcrumbs(breadcrumbsElement);
       }
     }
+    */
 
       initializeDirectory() {
         const sections = this.el.querySelectorAll('.gf-directory-column-section');
@@ -319,7 +322,8 @@
       }
   }
 
-  // Sistema automático de breadcrumbs
+  // Sistema automático de breadcrumbs - DESATIVADO
+  /*
   class AutoBreadcrumbs {
     constructor() {
       this.init();
@@ -522,6 +526,7 @@
       console.log('=========================');
     }
   }
+  */ // FIM DO COMENTÁRIO - AutoBreadcrumbs DESATIVADO
 
   // Inicialização automática quando o DOM estiver pronto
   function init() {
@@ -532,8 +537,8 @@
         
       if (footerElement) {
         new GlobalFooter(footerElement);
-        // Inicializar breadcrumbs automáticos
-        new AutoBreadcrumbs();
+        // Inicializar breadcrumbs automáticos - DESATIVADO
+        // new AutoBreadcrumbs();
       }
     }
 
