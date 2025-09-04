@@ -16,6 +16,11 @@ env:
   USERNAME: ${{ github.repository_owner }}
   USEREMAIL: ${{ secrets.USEREMAIL }}
 
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
 jobs:
   books:
     permissions:
