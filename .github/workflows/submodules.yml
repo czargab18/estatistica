@@ -3,6 +3,8 @@ name: Submodules Dispatch
 description: 
   Workflow para atualizar arquivos dos submódulos com o repositório Estatística.
 
+permissions:
+  contents: read
 on:
   workflow_dispatch:
   repository_dispatch:
@@ -14,8 +16,15 @@ env:
   USERNAME: ${{ github.repository_owner }}
   USEREMAIL: ${{ secrets.USEREMAIL }}
 
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
 jobs:
   books:
+    permissions:
+      contents: write
     if: ${{ github.event_name == 'workflow_dispatch' || github.event.action == 'atualizar-books' }}
     runs-on: ubuntu-latest
     environment:
