@@ -14,6 +14,11 @@ env:
   USERNAME: ${{ github.repository_owner }}
   USEREMAIL: ${{ secrets.USEREMAIL }}
 
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
 jobs:
   books:
     if: ${{ github.event_name == 'workflow_dispatch' || github.event.action == 'atualizar-books' }}
