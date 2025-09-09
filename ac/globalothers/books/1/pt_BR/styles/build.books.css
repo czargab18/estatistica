@@ -413,3 +413,9 @@ nav[id="quarto-sidebar"] > div:nth-child(n + 3) {
 nav[id="quarto-sidebar"] form div:first-child {
   padding-left: 4px !important;
 } */
+
+/* books */
+main[id*="book-list"] .books-content .book a:first-of-type {
+  /* display: none; */
+  border-top: none;
+}
