@@ -49,7 +49,6 @@ estatistica/
 │   ├── newsroom/    # Sistema de artigos
 │   └── boasvindas/  # Página de boas-vindas
 ├── sd/              # Structure data (dados estruturados)
-│   ├── ./
 ├── sitemap/         # Mapa do site
 └── wss/             # WebSocket Server (não implementado)
 ```
