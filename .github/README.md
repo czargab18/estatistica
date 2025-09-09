@@ -1,24 +1,22 @@
 # Estatística
+Projeto iniciado 26 de Março de 2023, veja o commit inicial [aqui](https://github.com/czargab18/estatistica/commit/567feace1153d96d9bb24393abb1294ae7ae1bc1). Começou como um repositório simples para aprendizado sobre Desenvolvimento Web e depois como um site a ser entregue para o [Departamento de Estatística](https://est.unb.br) da Universidade de Brasília. Hoje o Projeto é não tem sentido definido, apenas continua como uma forma de aprimorar o meu racicionio lógico e habilidades de programação. 
 
-Este projeto é muitas coisas e nada ao mesmo tempo. Algumas coisas são apenas para desenvolver habilidades, como o design do projeto é para a criatividade ou os **books** para a escrita. Outras para criar problemas e suas devidas soluções, mesmo que tenha que ter `n` soluções para cada problema. Buscarei nos tempos livres da graduação dedicar-me ao projeto.
+Hoje Há funcionalidades que estão sendo desenvolvidadas, como os [livros](https://github.com/czargab18/books) e [artigos](https://github.com/czargab18/newshub), não disponivel, feitos em Quarto Markdown pelo software [Quarto](https://quarto.org).
 
-## Qual o ponto de ignição?
-Primeiro, um ponto de ignição é um ponto que antecede o caminho. O começo de tudo.
-Inicialmente, encantei-me pelo design e programação web. Tentei desenvolver essas habilidades ao redesenhar e construir o site do Departamento de Estatística da Universidade de Brasília.
+Sobre os livros, são uma forma que encontrei para organizar e disponibilizar materiais sobre Estatistica focado no meu proprio aprendizado. Atualmente estou com problemas para escrever de forma rápida o conteúdo, desenvolvidos primordialmente com minhas notas de aula e exercícios resolvidos. Assim como no vídeo intitulado ["O Diário de Henry Jones"](https://www.youtube.com/watch?v=ii5Q2fCl8C0&t=1s), buscarei o mesmo mas para a área de Estatística. A ideia de possuir algo que contenha tudo o que estudei ou estudarei me parece essencial para meu progresso na área, além de um bom ponto de partida para referências bibliográficas futuras.
 
-## Caminho
+Os artigos são uma forma de deixar noticias e comunicados importantes para a comunidade.
+Também há outras funcionalidades, veja o diretório [apps](/apps/) para mais detalhes.
 
-Muitas coisas foram incorporadas a este repositório. **books** é o meu desejo de construir livros sobre estatistica com base em minhas notas de aulas e exercícios resolvidos, da maneira que eu desejar. Sujeito a escrever e reescrever quantas vezes eu desejar até ficar do meu agrado.
+## Referências
+- akita
+- copilot
+- claude
 
-## Bom, para quem é este projeto?
-Eu o desenvolverei principalmente e exclusivamente para mim. Assim como no vídeo intitulado "O Diário de Henry Jones", veja (AKITA, 2025), buscarei o mesmo mas para a área de Estatística. A ideia de possuir algo que contenha tudo o que estudei ou estudarei me parece essencial para meu progresso na área, além de um bom ponto de partida para referências bibliográficas.
 
+--- 
 ## Por que a demora??
-A principal razão é falta de dedicação exclusiva ao projeto. O projeto é algo que não me trará retorno financeiro, mas sim um retorno intelectual. O que me faz dedicar-me a ele em momentos livres, como férias ou finais de semana. Além disso, o projeto é algo que não tem um fim.
-
-A segunda razão é a constante reestruturação do projeto ou de partes dele. O que pode levar tempo, mas é necessário para o bom funcionamento. Além disso, a reestruturação é algo que pode ser feito em paralelo com o desenvolvimento.
-
-Como não há um fim, não haverá pressa para concluir o projeto.
+O projeto não terá fim definido. Tudo esta em constante mudança, refatoração e desenvolvimento. Pode levar tempo até apresentar de fato algo concreto e funcional como primeira versão.
 
 ## 📁 Estrutura do Projeto
 
@@ -40,83 +38,8 @@ estatistica/
 └── sd/              # Assets e recursos (imagens, ícones, etc)
 ```
 
-## Pastas em desenvolvimento
-
-### 📚 **books**
-Livros em desenvolvimento. O objetivo é criar livros sobre estatística com base em minhas notas de aulas e exercícios resolvidos, da maneira que eu desejar. Sujeito a escrever e reescrever quantas vezes eu desejar até ficar do meu agrado. 
-
-### 🛠️ **apps** 
-Aplicativos em desenvolvimento para facilitar a vida acadêmica e profissional. Recursos como calculadoras, simuladores, geradores de gráficos e tabelas.
-
-- **ira**: Aplicativo para calcular o Índice de Rendimento Acadêmico (IRA) da Universidade de Brasília. Interface simples e intuitiva onde o usuário informa notas e créditos das disciplinas cursadas. Calcula o IRA automaticamente e permite salvar os dados em CSV para consultas futuras.
-- **notas para mestrado**: Calculadora para análise de notas necessárias para ingresso em programas de pós-graduação.
-- **simuladores estatísticos**: Ferramentas interativas para demonstração de conceitos estatísticos.
-
-### 👨‍🏫 **docentes**
-Seção dedicada a informações sobre docentes do Departamento de Estatística, incluindo:
-- Perfis acadêmicos e profissionais
-- Áreas de pesquisa e especialização
-- Publicações e contribuições
-- Informações de contato
-
-### 📰 **newsroom**
-Sistema para escrita e publicação de artigos acadêmicos usando Quarto. Organizado por idioma, ano e mês para facilitar a navegação e arquivo histórico.
-
-### 🎉 **boasvindas**
-Página de apresentação e boas-vindas ao projeto, explicando:
-- Objetivos e missão do projeto
-- Como navegar pelos recursos
-- Guias para novos usuários
-- Links para seções principais
-
-### 📊 **appsShiny**
-Aplicações interativas desenvolvidas em R Shiny para:
-- Visualização de dados em tempo real
-- Análises estatísticas interativas
-- Dashboards educacionais
-- Ferramentas de demonstração para aulas
-
-### 📰 **newshub** (Submódulo)
-Sistema avançado de renderização de Markdown para HTML no estilo Apple Newsroom. Desenvolvido como submódulo independente para reutilização em outros projetos.
-
-**Características principais:**
-- 🎨 Templates Apple Newsroom autênticos
-- 🧩 Sistema de componentes dinâmicos  
-- 🖼️ Processamento automático de imagens
-- 📊 Suporte completo a frontmatter YAML
-- ⚡ Scripts Python, PowerShell e Batch
-- 🔄 Conversão inteligente: `artigo.md` → `index.html`
-
-**Como usar:**
-```bash
-# Renderizar um artigo
-python newshub/build/run/render.py newshub/build/article/artigo.md
-
-# Com opções avançadas
-python newshub/build/run/render.py artigo.md --verbose --open
-```
-
-### Renderizar Livros
-```bash
-# Navegar para um livro específico
-cd books/EST0033
-
-# Renderizar o livro
-quarto render
-
-# Visualizar localmente
-quarto preview
-```
-
 ## 🤝 Contribuindo
 
-Consulte [.github/copilot/.copilot-instructions.md](.github/copilot/.copilot-instructions.md) para padrões de commit e desenvolvimento.
+Contribuições são bem-vindas! Sinta-se à vontade para abrir issues ou pull requests. Para grandes mudanças, por favor, abra uma issue primeiro para discutir o que você gostaria de mudar.
 
-## 👨‍🏫 Autor
-
-**César Gabriel**  
-Departamento de Estatística - UnB
-
----
-
-> 💡 **Nota**: Este é um projeto pessoal desenvolvido para fins educacionais e de aprendizado contínuo. Como não há um fim definido, não há pressa para sua conclusão - o foco está no processo de aprendizado e desenvolvimento de habilidades.
+Por favor, evite usar as branch `main`, `stag`, `dev0`, `dev1`, `dev2`, `news`, `book` para desenvolvimento direto. Crie uma nova branch a partir de `stag` para suas alterações usando como nome o suficso `devX`, onde X é o próximo número de devs disponível. Branches de test devem ser enviadas como `devX-test`, ou faça o merge e envia o push em `devX`.
