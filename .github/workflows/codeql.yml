@@ -27,8 +27,6 @@ on:
       - '**/*.xlsx'
       - '**/*.ppt'
       - '**/*.pptx'
-      - '**/*.env'
-      - '**/.env.*'
       - '**/LICENSE'
       - '**/README*'
       - '**/CONTRIBUTING*'
@@ -58,8 +56,6 @@ on:
       - '**/*.xlsx'
       - '**/*.ppt'
       - '**/*.pptx'
-      - '**/*.env'
-      - '**/.env.*'
       - '**/LICENSE'
       - '**/README*'
       - '**/CONTRIBUTING*'
@@ -86,6 +82,7 @@ jobs:
         uses: github/codeql-action/init@v3
         with:
           languages: ${{ matrix.language }}
+          queries: security-extended
 
       # Se precisar de build customizada, adicione steps aqui (exemplo para node/python)
       - name: Autobuild
