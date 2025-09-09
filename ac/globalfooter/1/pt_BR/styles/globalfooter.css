@@ -411,7 +411,7 @@ html[dir=rtl] #globalfooter .globalfooter-content {
 }
 
 /* ========== MELHORIAS DE ACESSIBILIDADE ========== */
-#globalfooter .globalfooter-label {
+footer[class*="footer-home"] a.globalfooter-breadcrumbs-home span.globalfooter-breadcrumbs-home-label {
   position: absolute;
   clip: rect(1px, 1px, 1px, 1px);
   -webkit-clip-path: inset(0px 0px 99.9% 99.9%);
