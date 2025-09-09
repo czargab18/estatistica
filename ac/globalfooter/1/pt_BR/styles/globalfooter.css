@@ -230,6 +230,11 @@ html[dir=rtl] #globalfooter .globalfooter-content {
   }
 }
 
+footer#globalfooter.footer-home .globalfooter-breadcrumbs {
+  /* ocultar na página inicial */
+  display: none;
+}
+
 #globalfooter .globalfooter-breadcrumbs {
   height: 32px;
   display: inline-flex;
@@ -243,6 +248,11 @@ html[dir=rtl] #globalfooter .globalfooter-content {
   flex-wrap: wrap;
 }
 
+#globalfooter .globalfooter-breadcrumbs * {
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
 #globalfooter .globalfooter-breadcrumbs,
 #globalfooter .globalfooter-breadcrumbs :is(a, span, div, ol, ul, li) {
   display: inline-flex;
