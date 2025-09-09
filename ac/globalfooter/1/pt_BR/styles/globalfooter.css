@@ -232,15 +232,15 @@ html[dir=rtl] #globalfooter .ac-gf-content {
 
 #globalfooter .globalfooter-breadcrumbs {
   height: 32px;
-    display: inline-flex;
-    align-content: center;
-    justify-content: flex-start;
-    align-items: center;
-    border-bottom: 1px solid var(--footer-border-color);
-    padding-left: 0px;
-    padding-bottom: 8px;
-    margin-bottom: 16px;
-    flex-wrap: wrap;
+  display: inline-flex;
+  align-content: center;
+  justify-content: flex-start;
+  align-items: center;
+  border-bottom: 1px solid var(--footer-border-color);
+  padding-left: 0px;
+  padding-bottom: 8px;
+  margin-bottom: 16px;
+  flex-wrap: wrap;
 }
 
 #globalfooter .globalfooter-breadcrumbs,
@@ -310,11 +310,11 @@ html[dir=rtl] #globalfooter .ac-gf-content {
   mask-image: url("/sd/favicons/pt_BR/estatistica.svg");
   -webkit-mask-image: url("/sd/favicons/pt_BR/estatistica.svg");
   mask-size: contain;
-    -webkit-mask-size: contain;
-    mask-repeat: no-repeat;
-    -webkit-mask-repeat: no-repeat;
-    mask-position: center;
-    -webkit-mask-position: center;
+  -webkit-mask-size: contain;
+  mask-repeat: no-repeat;
+  -webkit-mask-repeat: no-repeat;
+  mask-position: center;
+  -webkit-mask-position: center;
   position: relative;
   z-index: 2;
 }
