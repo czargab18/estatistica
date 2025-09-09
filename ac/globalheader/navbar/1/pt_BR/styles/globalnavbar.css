@@ -1,6 +1,18 @@
-/* Reset de estilos globais */
+/* ========== CONTAINER PAI - GLOBALHEADER ========== */
+/* Garantir que o container pai permita o funcionamento do sticky */
+#globalheader {
+  position: relative;
+  overflow: visible;
+  width: 100%;
+  max-width: 2560px;
+  margin: 0 auto;
+}
+
 #globalnavbar {
-  all: initial;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  box-sizing: border-box;
 }
 
 #globalnavbar ul,
@@ -90,8 +102,8 @@
 #globalnavbar {
   position: sticky;
   top: 0;
-  right: 0;
   left: 0;
+  right: 0;
   z-index: 9999;
   display: flex;
   flex-direction: column;
@@ -99,8 +111,9 @@
   width: 100%;
   max-width: 2560px;
   height: var(--r-globalnav-height);
-  margin: 0;
+  margin: 0 auto; /* Centraliza a navbar */
   padding: 0;
+  background: var(--globalnavbar-background);
 }
 
 #globalnavbar .globalnavbar-content {
@@ -693,11 +706,17 @@ li.globalnavbar-item .globalnavbar-flyout-scroll-container:hover {
 nav {
   width: 100% !important;
 }
+
+/* Corrigido o problema do sticky - removido o override desnecessário */
 @media only screen and (max-width: 833px) {
-  #globalheader aside,
-  #globalheader nav {
+  #globalheader aside {
     width: 100% !important;
     display: none !important;
+  }
+  
+  #globalheader nav {
+    width: 100% !important;
+    /* Removido display: none para permitir que o sticky funcione */
   }
 }
 
