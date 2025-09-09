@@ -25,17 +25,29 @@ estatistica/
 ├── books/           # Livros digitais em Quarto
 │   ├── EST0033/     # Estatística Básica
 │   ├── CIC0007/     # Fundamentos de Programação
-│   ├── MAT0075/     # Matemática para Estatística
-│   └── TAS0000/     # Tópicos Avançados
+│   └── MAT0075/     # Matemática para Estatística
 ├── newshub/         # 📰 Sistema de renderização Apple Newsroom (submódulo)
 │   └── build/       # Scripts de renderização e templates
 ├── pages/           # Páginas do site
 │   ├── docente/     # Páginas docentes
 │   ├── newsroom/    # Sistema de artigos
 │   └── boasvindas/  # Página de boas-vindas
-├── apps/            # Aplicações (IRA, etc)
-├── ac/              # Componentes globais (navbar, footer, etc)
-└── sd/              # Assets e recursos (imagens, ícones, etc)
+├── apps/            # Aplicações
+│   └── ira/         # Calculadora de IRA
+├── ac/              # Assets and Components (componentes globais)
+│   ├── globalfooter/
+│   ├── globalheader/
+│   ├── globalmain/
+│   ├── globalnewsroom/
+│   ├── globalnoticias/
+│   ├── globalothers/
+│   └── globalpattern/
+├── sd/              # Assets e recursos (imagens, ícones, etc)
+├── backend/         # Automação, scripts e configurações
+│   └── actions/
+├── boasvindas/      # Página de boas-vindas para calouros
+├── sitemap/         # Mapa do site
+└── wss/             # WebSocket Server (não implementado)
 ```
 
 ## 🤝 Contribuindo
