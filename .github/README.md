@@ -22,18 +22,6 @@ O projeto não terá fim definido. Tudo esta em constante mudança, refatoraçã
 
 ```
 estatistica/
-├── books/           # Livros digitais em Quarto
-│   ├── EST0033/     # Estatística Básica
-│   ├── CIC0007/     # Fundamentos de Programação
-│   └── MAT0075/     # Matemática para Estatística
-├── newshub/         # 📰 Sistema de renderização Apple Newsroom (submódulo)
-│   └── build/       # Scripts de renderização e templates
-├── pages/           # Páginas do site
-│   ├── docente/     # Páginas docentes
-│   ├── newsroom/    # Sistema de artigos
-│   └── boasvindas/  # Página de boas-vindas
-├── apps/            # Aplicações
-│   └── ira/         # Calculadora de IRA
 ├── ac/              # Assets and Components (componentes globais)
 │   ├── globalfooter/
 │   ├── globalheader/
@@ -42,10 +30,26 @@ estatistica/
 │   ├── globalnoticias/
 │   ├── globalothers/
 │   └── globalpattern/
-├── sd/              # Assets e recursos (imagens, ícones, etc)
-├── backend/         # Automação, scripts e configurações
-│   └── actions/
+├── apps/            # Aplicações
+│   └── ira/         # Calculadora de IRA
+├── backend/         # submodule
 ├── boasvindas/      # Página de boas-vindas para calouros
+├── erros/              # 
+│   ├── 404/index.html     # 
+├── books/           # submodule
+├── book/            # Livros digitais em Quarto
+│   ├── TAS0000/     # Projeto de Books
+│   ├── CIC0007/     # Fundamentos de Programação
+│   ├── EST0033/     # Estatística Básica
+│   └── MAT0075/     # Matemática para Estatística
+├── newshub/         # submodule
+├── newsroom/        # 📰 Sistema de renderização Apple Newsroom (submódulo)
+├── pages/           # Páginas do site
+│   ├── docente/     # Páginas docentes
+│   ├── newsroom/    # Sistema de artigos
+│   └── boasvindas/  # Página de boas-vindas
+├── sd/              # Structure data (dados estruturados)
+│   ├── ./
 ├── sitemap/         # Mapa do site
 └── wss/             # WebSocket Server (não implementado)
 ```
