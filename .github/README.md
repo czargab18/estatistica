@@ -8,16 +8,6 @@ Sobre os livros, são uma forma que encontrei para organizar e disponibilizar ma
 Os artigos são uma forma de deixar noticias e comunicados importantes para a comunidade.
 Também há outras funcionalidades, veja o diretório [apps](/apps/) para mais detalhes.
 
-## Referências
-- akita
-- copilot
-- claude
-
-
---- 
-## Por que a demora??
-O projeto não terá fim definido. Tudo esta em constante mudança, refatoração e desenvolvimento. Pode levar tempo até apresentar de fato algo concreto e funcional como primeira versão.
-
 ## 📁 Estrutura do Projeto
 
 ```
@@ -53,8 +43,12 @@ estatistica/
 └── wss/             # WebSocket Server (não implementado)
 ```
 
-## 🤝 Contribuindo
+## Contribuindo
 
 Contribuições são bem-vindas! Sinta-se à vontade para abrir issues ou pull requests. Para grandes mudanças, por favor, abra uma issue primeiro para discutir o que você gostaria de mudar.
 
 Por favor, evite usar as branch `main`, `stag`, `dev0`, `dev1`, `dev2`, `news`, `book` para desenvolvimento direto. Crie uma nova branch a partir de `stag` para suas alterações usando como nome o suficso `devX`, onde X é o próximo número de devs disponível. Branches de test devem ser enviadas como `devX-test`, ou faça o merge e envia o push em `devX`.
+
+## Referências
+- akita
+- GitHub Copilot e seus modelos
