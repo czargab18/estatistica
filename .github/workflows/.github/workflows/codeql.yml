@@ -1,0 +1,95 @@
+name: "CodeQL"
+
+on:
+  push:
+    paths-ignore:
+      # Arquivos estáticos e de documentação ignorados para análise
+      - '**/*.html'
+      - '**/*.css'
+      - '**/*.md'
+      - '**/*.txt'
+      - '**/*.jpg'
+      - '**/*.jpeg'
+      - '**/*.png'
+      - '**/*.gif'
+      - '**/*.svg'
+      - '**/*.ico'
+      - '**/*.yml'
+      - '**/*.yaml'
+      - '**/*.json'
+      - '**/*.lock'
+      - '**/*.csv'
+      - '**/*.tsv'
+      - '**/*.pdf'
+      - '**/*.doc'
+      - '**/*.docx'
+      - '**/*.xls'
+      - '**/*.xlsx'
+      - '**/*.ppt'
+      - '**/*.pptx'
+      - '**/*.env'
+      - '**/.env.*'
+      - '**/LICENSE'
+      - '**/README*'
+      - '**/CONTRIBUTING*'
+  pull_request:
+    paths-ignore:
+      # Mesma lista para PRs
+      - '**/*.html'
+      - '**/*.css'
+      - '**/*.md'
+      - '**/*.txt'
+      - '**/*.jpg'
+      - '**/*.jpeg'
+      - '**/*.png'
+      - '**/*.gif'
+      - '**/*.svg'
+      - '**/*.ico'
+      - '**/*.yml'
+      - '**/*.yaml'
+      - '**/*.json'
+      - '**/*.lock'
+      - '**/*.csv'
+      - '**/*.tsv'
+      - '**/*.pdf'
+      - '**/*.doc'
+      - '**/*.docx'
+      - '**/*.xls'
+      - '**/*.xlsx'
+      - '**/*.ppt'
+      - '**/*.pptx'
+      - '**/*.env'
+      - '**/.env.*'
+      - '**/LICENSE'
+      - '**/README*'
+      - '**/CONTRIBUTING*'
+
+jobs:
+  analyze:
+    name: Analyze
+    runs-on: ubuntu-latest
+    permissions:
+      actions: read
+      contents: read
+      security-events: write
+
+    strategy:
+      fail-fast: false
+      matrix:
+        language: [ 'python', 'javascript' ] # Adicione/remova linguagens conforme seu projeto
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Initialize CodeQL
+        uses: github/codeql-action/init@v3
+        with:
+          languages: ${{ matrix.language }}
+
+      # Se precisar de build customizada, adicione steps aqui (exemplo para node/python)
+      - name: Autobuild
+        uses: github/codeql-action/autobuild@v3
+
+      - name: Perform CodeQL Analysis
+        uses: github/codeql-action/analyze@v3
