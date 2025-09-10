@@ -1,7 +1,6 @@
 @charset "UTF-8";
 
 #globalheader {
-  all: unset;
   position: relative;
   overflow: visible;
   width: 100%;
