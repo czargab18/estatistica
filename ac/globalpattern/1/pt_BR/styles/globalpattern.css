@@ -1406,22 +1406,6 @@ html.enhance-xp .section-airpods-pro {
   }
 }
 
-html.enhance-xp .section-airpods-pro {
-  padding: 105px 0 98px
-}
-
-@media(max-width: 1068px) {
-  html.enhance-xp .section-airpods-pro {
-    padding: 60px 0 57px
-  }
-}
-
-@media(max-width: 734px) {
-  html.enhance-xp .section-airpods-pro {
-    padding: 55px 0 54px
-  }
-}
-
 html.text-zoom .section-hero .copy-container {
   max-width: 80%
 }
