@@ -96,9 +96,9 @@
 }
 
 /* Global Header */
-#globalheader {
+/* #globalheader {
   all: unset;
-}
+} */
 
 #globalheader {
   width: 100%;

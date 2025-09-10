@@ -536,10 +536,6 @@ li.globalnavbar-item .globalnavbar-flyout-scroll-container:hover {
     opacity var(--globalnav-transition-rate) var(--easing-curve), visibility var(--globalnav-transition-rate) step-start;
 }
 
-#globalnavbar {
-  all: unset;
-}
-
 :root {
   --r-globalnavbar-flyout-elevated-group-count: 1;
   --r-globalnavbar-flyout-group-number: 0;
