@@ -1,7 +1,12 @@
 @charset "UTF-8";
 
 #globalheader {
-  all: unset
+  all: unset;
+  position: relative;
+  overflow: visible;
+  width: 100%;
+  max-width: 2560px;
+  margin: 0 auto;
 }
 
 #globalheader html {
