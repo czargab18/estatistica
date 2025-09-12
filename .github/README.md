@@ -1,4 +1,5 @@
 # Estatística
+
 Projeto iniciado 26 de Março de 2023, veja o commit inicial [aqui](https://github.com/czargab18/estatistica/commit/567feace1153d96d9bb24393abb1294ae7ae1bc1). Começou como um repositório simples para aprendizado sobre Desenvolvimento Web e depois como um site a ser entregue para o [Departamento de Estatística](https://est.unb.br) da Universidade de Brasília. Hoje o projeto não tem sentido bem definido, apenas continua como uma forma de aprimorar o meu racicionio lógico e habilidades de programação. 
 
 Hoje Há funcionalidades que estão sendo desenvolvidadas, como os [livros](https://github.com/czargab18/books) e [artigos](https://github.com/czargab18/newshub), não disponivel, feitos em Quarto Markdown pelo software [Quarto](https://quarto.org).

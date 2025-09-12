@@ -1,6 +1,6 @@
 @charset "UTF-8";
 #globalaside {
-  all: initial;
+  all:  unset;
 }
 #globalaside body {
   margin: 0;
