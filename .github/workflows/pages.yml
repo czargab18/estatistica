@@ -63,7 +63,6 @@ jobs:
           repository: ${{ env.USERNAME }}/estatistica
           token: ${{ env.TOKEN }}
           path: "estatistica"
-          submodules: true
           ref: "main"
 
       - name: Atualizar submodule 'wss'
