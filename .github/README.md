@@ -1,5 +1,6 @@
 # Estatística
-Projeto iniciado 26 de Março de 2023, veja o commit inicial [aqui](https://github.com/czargab18/estatistica/commit/567feace1153d96d9bb24393abb1294ae7ae1bc1). Começou como um repositório simples para aprendizado sobre Desenvolvimento Web e depois como um site a ser entregue para o [Departamento de Estatística](https://est.unb.br) da Universidade de Brasília. Hoje o Projeto é não tem sentido definido, apenas continua como uma forma de aprimorar o meu racicionio lógico e habilidades de programação. 
+
+Projeto iniciado 26 de Março de 2023, veja o commit inicial [aqui](https://github.com/czargab18/estatistica/commit/567feace1153d96d9bb24393abb1294ae7ae1bc1). Começou como um repositório simples para aprendizado sobre Desenvolvimento Web e depois como um site a ser entregue para o [Departamento de Estatística](https://est.unb.br) da Universidade de Brasília. Hoje o projeto não tem sentido bem definido, apenas continua como uma forma de aprimorar o meu racicionio lógico e habilidades de programação. 
 
 Hoje Há funcionalidades que estão sendo desenvolvidadas, como os [livros](https://github.com/czargab18/books) e [artigos](https://github.com/czargab18/newshub), não disponivel, feitos em Quarto Markdown pelo software [Quarto](https://quarto.org).
 
@@ -47,7 +48,7 @@ estatistica/
 
 Contribuições são bem-vindas! Sinta-se à vontade para abrir issues ou pull requests. Para grandes mudanças, por favor, abra uma issue primeiro para discutir o que você gostaria de mudar.
 
-Por favor, evite usar as branch `main`, `stag`, `dev0`, `dev1`, `dev2`, `news`, `book` para desenvolvimento direto. Crie uma nova branch a partir de `stag` para suas alterações usando como nome o suficso `devX`, onde X é o próximo número de devs disponível. Branches de test devem ser enviadas como `devX-test`, ou faça o merge e envia o push em `devX`.
+Por favor, evite usar as branch `main`, `stag`, `dev0`, `dev1`, `dev2`, `news`, `book` para desenvolvimento direto. Crie uma nova branch a partir de `stag` para suas alterações usando como nome o sufixo `devX`, onde X é o próximo número de devs disponível. Branches de test devem ser enviadas como `devX-test`, ou faça o merge e envia o push em `devX`.
 
 ## Referências
 - akita
