@@ -95,6 +95,12 @@
 #globalheader progress {
   vertical-align: baseline
 }
+#globalheader svg {
+  display: block;
+  fill: currentColor;
+  height: 100%;
+  width: auto;
+}
 
 #globalheader button {
   background: none;
