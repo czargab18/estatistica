@@ -65,12 +65,16 @@ jobs:
           path: "estatistica"
           ref: "main"
 
+      - name: Configurar git para usar o TOKEN nos submódulos
+        run: |
+          git config --global url."https://${TOKEN}:x-oauth-basic@github.com/".insteadOf "https://github.com/"
+        env:
+          TOKEN: ${{ env.TOKEN }}
+
       - name: Atualizar submodule 'wss'
         working-directory: estatistica
         run: |
-          git submodule init wss
-          git submodule update wss
-
+          git submodule update --init wss
 
       - name: Remover subpastas do 'deploy'
         run: |
