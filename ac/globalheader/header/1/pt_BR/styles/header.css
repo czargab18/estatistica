@@ -46,6 +46,17 @@
   padding: 0
 }
 
+
+#globalheader ul,
+#globalheader li,
+#globalheader a {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  text-decoration: none;
+  color: inherit;
+}
+
 #globalheader pre,
 #globalheader code,
 #globalheader address,
@@ -83,6 +94,12 @@
 #globalheader video,
 #globalheader progress {
   vertical-align: baseline
+}
+#globalheader svg {
+  display: block;
+  fill: currentColor;
+  height: 100%;
+  width: auto;
 }
 
 #globalheader button {
