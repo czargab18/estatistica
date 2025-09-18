@@ -43,11 +43,14 @@
     // OCULTAR ARQUIVOS PYTHON
     "**/*.egg-info": true,
     // OCULTAR OUTRAS PASTAS
+    "**/*env*/": true,
+    "**/.quarto/": true,
+    "**/delete/": true,
+    "**/*libs*/": true,
+    // OCULTAR OUTRAS ARQUIVOS
     "404.html": true,
-    "*env*/": true,
-    ".quarto/": true,
-    "delete/": true,
-    "*libs*/": true
+    "CNAME": true,
+    ".htaccess": true,
   },
 
   // Configurações: Editor

@@ -84,7 +84,6 @@ main[id="globalmain"] section[data-module-template="heroes"] div.unit-image-warp
 main[id="globalmain"] section[data-module-template="promos"] div.unit-image-warpper {
   width: 100%;
   height: 100%;
-  background-image: linear-gradient(to bottom, #6197f5, #dad9d9);
 }
 
 main[id="globalmain"] section[data-module-template="heroes"] figure {
@@ -102,7 +101,8 @@ main[id="globalmain"] section[data-module-template="heroes"] figure[id="unit-ima
 
 /* gradiente */
 main[id="globalmain"] section[data-module-template="heroes"] div:nth-child(2) .unit-image-warpper {
-  background: radial-gradient(circle at top, #ffcd07 3%, rgb(245, 30, 30) 50%, #bc3131 70%);
+  /* background: radial-gradient(circle at top, #ffcd07 3%, rgb(245, 30, 30) 50%, #bc3131 70%); */
+
 }
 
 main[id="globalmain"] section[data-module-template="heroes"] div:nth-child(2) .unit-image-warpper figure[id="unit-image-graduacao"] {
@@ -308,3 +308,53 @@ main[id="globalmain"] [data-module-template] [data-unit-id] .unit-image {
   transform: translatex(-50%);
   background-color: transparent;
 }
+
+
+main[id="globalmain"] section[data-module-template="heroes"] figure.unit-image {
+  display: block;
+  max-width: 100%;
+  margin: 0 auto;
+  margin: auto;
+  width: 100%;
+  height: 100%;
+  background-repeat: no-repeat;
+}
+
+main[id="globalmain"] section[data-module-template="heroes"] figure[id="unit-image-boasvindas"] {
+  background-position: center 8px;
+  background-image: url("/sd/banners/pt_BR/heroes/home/inclusao.png");
+}
+
+
+main[id="globalmain"] section[data-module-template="heroes"] .unit-image-warpper figure[id="unit-image-graduacao"] {
+  background-position: center 72px !important;
+  background-image: url("/sd/banners/pt_BR/heroes/home/graduacao_inclusao.jpg") !important;
+  background-size: contain !important;
+}
+
+
+/* ==== BLOCO ORGANIZADO ABAIXO ==== */
+
+main[id="globalmain"] section[data-module-template="heroes"] div[data-unit-id]:nth-child(2n - 1) {
+  background-color: #1b1a1a;
+  background-color: #ffcd07;
+}
+
+main[id="globalmain"] section[data-module-template="heroes"] div[data-unit-id]:nth-child(2n - 1) :is(h1, h2, h3, p) {
+  color: #ffffff;
+}
+
+main[id="globalmain"] section[data-module-template="heroes"] div[data-unit-id]:nth-child(2n) {
+  background-color: #ffffff;
+}
+
+main[id="globalmain"] section[data-module-template="heroes"] div[data-unit-id]:nth-child(2n) :is(h1, h2, h3, p) {
+  color: #1b1a1a;
+}
+
+[data-module-template="promos"] {
+  display: none !important;
+}
+
+
+

@@ -1,3 +1,0 @@
-# Novas action:
-
-- **components.yml**: destinado a atualizar os components em `ac/components` dentro do repositório. Deve usar um script Python para isso, e action apenas roda o script quando detectar alterações em arquivos `ac/components/**/*.html` 

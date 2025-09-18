@@ -12,14 +12,6 @@ Fonte Large Figma = 34px
   - 34px / 14px = 2.4 em
 - Referência: https://www.gov.br/ds/fundamentos-visuais/visao-geral
 */
-/* cor padrão */
-[class^="headline"],
-[class^="body"],
-[class^="callout"],
-[class^="footnote"],
-[class^="caption"] {
-  color: rgba(0, 0, 0, 0.56);
-}
 
 /* SF Pro Text */
 .headline-large-regular-text {

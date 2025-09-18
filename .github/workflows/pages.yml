@@ -1,8 +1,8 @@
 name: GitHub Pages
 on:
   workflow_dispatch:
-  schedule:
-    - cron: "0 0 16 * 1"
+  # schedule:
+  #   - cron: "0 0 16 * 1"
   push:
     branches: ["main"]
     paths: [
@@ -44,41 +44,43 @@ permissions:
 concurrency:
   group: "pages"
   cancel-in-progress: false
+
+env:
+  url: ${{ vars.URL }}
+  TOKEN: ${{ secrets.TOKEN_REPO_SYNC }}
+  USERNAME: ${{ github.repository_owner }}
+  USEREMAIL: ${{ secrets.USEREMAIL }}
+
 jobs:
   deploy:
     environment:
-      name: github-pages
-    env:
-      url: ${{ vars.URL }}
-      USEREMAIL: ${{ secrets.USEREMAIL }}
-      USERNAME: ${{ github.repository_owner }}
-      TOKEN_REPO_SYNC: ${{ secrets.TOKEN_REPO_SYNC }}
+      name: ENVIRONMENT
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
         uses: actions/checkout@v4
         with:
           repository: ${{ env.USERNAME }}/estatistica
-          token: ${{ env.TOKEN_REPO_SYNC }}
+          token: ${{ env.TOKEN }}
           path: "estatistica"
           ref: "main"
 
-      - name: Clonar submódulo 'wss'
-        uses: actions/checkout@v4
-        with:
-          repository: ${{ env.USERNAME }}/wss
-          token: ${{ env.TOKEN_REPO_SYNC }}
-          path: "wss"
-          ref: "main"
-
-      - name: Copiar arquivos modificados de wss para estatistica/wss
+      - name: Atualizar submodule 'wss'
+        working-directory: estatistica
         run: |
-          rsync -av --update wss/fonts.css estatistica/wss/
-          rsync -av --update wss/fonts estatistica/wss/
+          git submodule init wss
+          git submodule update wss
+
 
       - name: Remover subpastas do 'deploy'
         run: |
-          find . -type d \( -name "build" -o -name ".github" -o -name ".vscode" -o -name "README.md" \) -exec rm -rf {} +
+          PASTAS=(
+          "build", ".github", ".vscode", "templates", "assets_apple", "outros_books", "tests", "actions", "src"
+          "README.md", "LICENSE", "CONTRIBUTING.md", "CODE_OF_CONDUCT.md"
+          )
+          for pasta in "${PASTAS[@]}"; do
+            rm -rf "$pasta"
+          done
 
       - name: Setup Pages
         uses: actions/configure-pages@v5
