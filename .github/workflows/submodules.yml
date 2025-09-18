@@ -21,6 +21,8 @@ permissions:
 
 jobs:
   books:
+    permissions:
+      contents: write
     if: ${{ github.event_name == 'workflow_dispatch' || github.event.action == 'atualizar-books' }}
     runs-on: ubuntu-latest
     environment:
