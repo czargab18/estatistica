@@ -2,53 +2,55 @@ name: "CodeQL"
 
 on:
   push:
-    paths-ignore:
-      # Arquivos estáticos e de documentação ignorados para análise
-      - '**/*.html'
-      - '**/*.css'
-      - '**/*.md'
-      - '**/*.jpg'
-      - '**/*.jpeg'
-      - '**/*.png'
-      - '**/*.gif'
-      - '**/*.svg'
-      - '**/*.ico'
-      - '**/*.lock'
-      - '**/*.tsv'
-      - '**/*.pdf'
-      - '**/*.doc'
-      - '**/*.docx'
-      - '**/*.xls'
-      - '**/*.xlsx'
-      - '**/*.ppt'
-      - '**/*.pptx'
-      - '**/LICENSE'
-      - '**/README*'
-      - '**/CONTRIBUTING*'
+    paths-ignore: [
+        # Arquivos estáticos e de documentação ignorados para análise,
+        "**/*.html",
+        "**/*.css",
+        "**/*.md",
+        "**/*.jpg",
+        "**/*.jpeg",
+        "**/*.png",
+        "**/*.gif",
+        "**/*.svg",
+        "**/*.ico",
+        "**/*.lock",
+        "**/*.tsv",
+        "**/*.pdf",
+        "**/*.doc",
+        "**/*.docx",
+        "**/*.xls",
+        "**/*.xlsx",
+        "**/*.ppt",
+        "**/*.pptx",
+        "**/LICENSE",
+        "**/README*",
+        "**/CONTRIBUTING*",
+      ]
   pull_request:
-    paths-ignore:
-      # Mesma lista para PRs
-      - '**/*.html'
-      - '**/*.css'
-      - '**/*.md'
-      - '**/*.jpg'
-      - '**/*.jpeg'
-      - '**/*.png'
-      - '**/*.gif'
-      - '**/*.svg'
-      - '**/*.ico'
-      - '**/*.lock'
-      - '**/*.tsv'
-      - '**/*.pdf'
-      - '**/*.doc'
-      - '**/*.docx'
-      - '**/*.xls'
-      - '**/*.xlsx'
-      - '**/*.ppt'
-      - '**/*.pptx'
-      - '**/LICENSE'
-      - '**/README*'
-      - '**/CONTRIBUTING*'
+    paths-ignore: [
+        # Arquivos estáticos e de documentação ignorados para análise,
+        "**/*.html",
+        "**/*.css",
+        "**/*.md",
+        "**/*.jpg",
+        "**/*.jpeg",
+        "**/*.png",
+        "**/*.gif",
+        "**/*.svg",
+        "**/*.ico",
+        "**/*.lock",
+        "**/*.tsv",
+        "**/*.pdf",
+        "**/*.doc",
+        "**/*.docx",
+        "**/*.xls",
+        "**/*.xlsx",
+        "**/*.ppt",
+        "**/*.pptx",
+        "**/LICENSE",
+        "**/README*",
+        "**/CONTRIBUTING*",
+      ]
 
 jobs:
   analyze:
@@ -59,11 +61,6 @@ jobs:
       contents: read
       security-events: write
 
-    strategy:
-      fail-fast: false
-      matrix:
-        language: [ 'python', 'javascript' ] # Adicione/remova linguagens conforme seu projeto
-
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
@@ -71,7 +68,7 @@ jobs:
       - name: Initialize CodeQL
         uses: github/codeql-action/init@v3
         with:
-          languages: ${{ matrix.language }}
+          languages: python
           queries: security-extended
 
       # Se precisar de build customizada, adicione steps aqui (exemplo para node/python)
