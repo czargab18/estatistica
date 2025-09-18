@@ -1,5 +1,12 @@
 @charset "UTF-8";
 
+body div.quarto-container {
+  margin: 0 auto;
+  padding: 0;
+  max-width: 2560px;
+  width: 100%;
+}
+
 main[id*="book-list"] {
   all: unset;
   margin: 0;
