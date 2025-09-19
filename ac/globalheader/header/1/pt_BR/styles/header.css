@@ -95,6 +95,7 @@
 #globalheader progress {
   vertical-align: baseline
 }
+
 #globalheader svg {
   display: block;
   fill: currentColor;
@@ -479,6 +480,7 @@ body {
 .globalheader-dark #globalnav-bag .ac-bag-flyout-container .ac-gn-bagview-subheader a {
   color: #2997ff
 }
+
 .theme-dark #globalnav-bag .ac-bag-flyout-container .ac-gn-bagview-message,
 .globalheader-dark #globalnav-bag .ac-bag-flyout-container .ac-gn-bagview-message {
   color: #86868b
@@ -493,6 +495,7 @@ body {
 .globalheader-dark #globalnav-bag .ac-bag-flyout-container .ac-gn-bagview-bagitem-column2:hover {
   color: #fff
 }
+
 .theme-dark #globalnav-bag .ac-bag-flyout-container .ac-gn-bagview-nav-item-header,
 .globalheader-dark #globalnav-bag .ac-bag-flyout-container .ac-gn-bagview-nav-item-header {
   color: #86868b
