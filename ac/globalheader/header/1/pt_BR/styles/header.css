@@ -9,12 +9,17 @@ body {
 }
 
 #globalheader {
+  --r-globalnavbar-link-color-secondary-black: #000000;
+  --r-globalheader-max-width: 2560px;
+  --r-globalfont-family: "SF Pro Text", "SF Pro Dislay", "SF Pro Icons", "Helvetica Neue", "Helvetica", "San Francisco",
+    "Open Sans", "Noto Sans", "Arial", sans-serif;
   all: unset;
   position: relative;
   overflow: visible;
-  width: 100%;
-  max-width: 2560px;
   margin: 0 auto;
+  width: 100%;
+  max-width: var(--r-globalheader-max-width);
+  font-family: var(--r-globalfont-family);
 }
 
 #globalheader ul,
