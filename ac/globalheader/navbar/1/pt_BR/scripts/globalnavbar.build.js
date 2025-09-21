@@ -6,7 +6,7 @@ function handleNavbarHover() {
   navItems.forEach(item => {
     const hasSubmenu = item.querySelector('.globalnavbar-submenu') !== null;
     if (hasSubmenu) {
-      const link = item.querySelector('.globalnavbar-link');
+      const link = item.querySelector('.globalnavbar-item-link');
       link.addEventListener('mouseenter', () => {
         navbar.classList.add('globalnavbar-hover-active');
       });
