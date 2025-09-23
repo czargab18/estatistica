@@ -2,54 +2,52 @@ main[id="globalbookshome"] {
   all: unset;
 }
 
-main[id="globalbookshome"]
-  :is(
-    ul,
-    ol,
-    li,
-    dl,
-    dt,
-    dd,
-    h1,
-    h2,
-    h3,
-    h4,
-    h5,
-    h6,
-    hgroup,
-    p,
-    blockquote,
-    figure,
-    form,
-    fieldset,
-    input,
-    legend,
-    pre,
-    abbr,
-    button,
-    canvas,
-    caption,
-    code,
-    details,
-    div,
-    dl,
-    dt,
-    figcaption,
-    img,
-    label,
-    main,
-    mark,
-    nav,
-    ol,
-    picture,
-    samp,
-    section,
-    summary,
-    time
-  ) {
+main[id="globalbookshome"] :is(ul,
+  ol,
+  li,
+  dl,
+  dt,
+  dd,
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  hgroup,
+  p,
+  blockquote,
+  figure,
+  form,
+  fieldset,
+  input,
+  legend,
+  pre,
+  abbr,
+  button,
+  canvas,
+  caption,
+  code,
+  details,
+  div,
+  dl,
+  dt,
+  figcaption,
+  img,
+  label,
+  main,
+  mark,
+  nav,
+  ol,
+  picture,
+  samp,
+  section,
+  summary,
+  time) {
   margin: 0;
   padding: 0;
 }
+
 main[id="globalbookshome"] :is(h1, h2, h3, h4, h5, h6, p, div, span) {
   display: block;
   margin: 0;
@@ -87,17 +85,20 @@ main[id="globalbookshome"] {
   max-width: 2560px;
   width: 100%;
 }
+
 main[id="globalbookshome"] #globalbookshome-content {
   width: 960px;
   max-width: 2560px;
   margin: 0 auto;
   margin-top: 12px;
 }
+
 main[id="globalbookshome"] h1[id="bookshome-title"] {
   margin: 0;
   font-size: 48px;
   font-weight: bold;
 }
+
 main[id="globalbookshome"] div[id="globalbookshome-content"] ul[id="books-lista"] {
   display: flex;
   display: flex;
@@ -110,6 +111,7 @@ main[id="globalbookshome"] ul[id="books-lista"] li {
   margin-bottom: 12px;
   width: fit-content;
 }
+
 main[id="globalbookshome"] a :is(span[class="books-codigo-disciplina"], span[class="books-title-disciplina"]) {
   display: inline-flex;
 }
@@ -132,5 +134,11 @@ main[id="globalbookshome"] main[id="sumario"] {
 
 main[id="globalbookshome"] main[class="content"] :is(h1, h2, h3, h4, h5, h6, p, span, p, div) {
   display: contents !important;
-  margin:  0 auto;
+  margin: 0 auto;
+}
+
+
+
+header#quarto-header {
+  position: relative !important;
 }
