@@ -1,0 +1,79 @@
+name: "CodeQL"
+
+on:
+  push:
+    paths-ignore: [
+        # Arquivos estáticos e de documentação ignorados para análise,
+        "**/*.html",
+        "**/*.css",
+        "**/*.md",
+        "**/*.jpg",
+        "**/*.jpeg",
+        "**/*.png",
+        "**/*.gif",
+        "**/*.svg",
+        "**/*.ico",
+        "**/*.lock",
+        "**/*.tsv",
+        "**/*.pdf",
+        "**/*.doc",
+        "**/*.docx",
+        "**/*.xls",
+        "**/*.xlsx",
+        "**/*.ppt",
+        "**/*.pptx",
+        "**/LICENSE",
+        "**/README*",
+        "**/CONTRIBUTING*",
+      ]
+  pull_request:
+    paths-ignore: [
+        # Arquivos estáticos e de documentação ignorados para análise,
+        "**/*.html",
+        "**/*.css",
+        "**/*.md",
+        "**/*.jpg",
+        "**/*.jpeg",
+        "**/*.png",
+        "**/*.gif",
+        "**/*.svg",
+        "**/*.ico",
+        "**/*.lock",
+        "**/*.tsv",
+        "**/*.pdf",
+        "**/*.doc",
+        "**/*.docx",
+        "**/*.xls",
+        "**/*.xlsx",
+        "**/*.ppt",
+        "**/*.pptx",
+        "**/LICENSE",
+        "**/README*",
+        "**/CONTRIBUTING*",
+      ]
+
+jobs:
+  analyze:
+    name: Analyze
+    runs-on: ubuntu-latest
+    permissions:
+      actions: read
+      contents: read
+      security-events: write
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Initialize CodeQL
+        uses: github/codeql-action/init@v3
+        with:
+          languages: python
+          queries: security-extended
+
+      # Se precisar de build customizada, adicione steps aqui (exemplo para node/python)
+      - name: Autobuild
+        uses: github/codeql-action/autobuild@v3
+
+      - name: Perform CodeQL Analysis
+        uses: github/codeql-action/analyze@v3

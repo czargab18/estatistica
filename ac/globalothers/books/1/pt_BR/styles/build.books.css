@@ -1,5 +1,12 @@
 @charset "UTF-8";
 
+body div.quarto-container {
+  margin: 0 auto;
+  padding: 0;
+  max-width: 2560px;
+  width: 100%;
+}
+
 main[id*="book-list"] {
   all: unset;
   margin: 0;
@@ -413,6 +420,11 @@ nav[id="quarto-sidebar"] > div:nth-child(n + 3) {
 nav[id="quarto-sidebar"] form div:first-child {
   padding-left: 4px !important;
 } */
+
+/* books */
+main[id*="book-list"] .books-content .book a:first-of-type {
+  border-top: none;
+}
 
 
 header#quarto-header {

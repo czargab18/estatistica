@@ -3,6 +3,7 @@ section[id="globalribbon"] {
   all: unset;
   max-width: 2560px;
   width: 100%;
+  margin: 0 auto;
 }
 
 section[id="globalribbon"] {

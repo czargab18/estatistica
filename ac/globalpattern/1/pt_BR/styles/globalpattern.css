@@ -95,15 +95,14 @@
   font-family: var(--r-globalfont-family);
 }
 
-/* Global Header */
-#globalheader {
-  all: unset;
+html {
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%
 }
 
-#globalheader {
-  width: 100%;
-  max-width: 2560px;
-  display: contents;
+body {
+  margin: 0;
+  padding: 0
 }
 
 ul,
@@ -130,7 +129,7 @@ pre,
 abbr,
 button {
   margin: 0;
-  padding: 0;
+  padding: 0
 }
 
 pre,
@@ -141,136 +140,96 @@ th,
 figcaption {
   font-size: 1em;
   font-weight: normal;
-  font-style: normal;
+  font-style: normal
 }
 
 fieldset,
 iframe {
-  border: 0;
+  border: 0
 }
 
 caption,
 th {
-  text-align: left;
+  text-align: left
 }
 
 table {
   border-collapse: collapse;
-  border-spacing: 0;
+  border-spacing: 0
 }
 
 main,
 summary,
 details {
-  display: block;
+  display: block
 }
 
 audio,
 canvas,
 video,
 progress {
-  vertical-align: baseline;
+  vertical-align: baseline
 }
 
 button {
   background: none;
   border: 0;
+  -webkit-box-sizing: content-box;
   box-sizing: content-box;
   color: inherit;
   cursor: pointer;
   font: inherit;
   line-height: inherit;
   overflow: visible;
-  vertical-align: inherit;
+  vertical-align: inherit
 }
 
 button:disabled {
-  cursor: default;
+  cursor: default
 }
 
 :focus {
   outline: 4px solid rgba(0, 125, 250, 0.6);
-  outline-offset: 1px;
+  outline-offset: 1px
 }
 
 :focus[data-focus-method="mouse"]:not(input):not(textarea):not(select),
 :focus[data-focus-method="touch"]:not(input):not(textarea):not(select) {
-  outline: none;
-}
-
-:focus-visible {
-  outline: 4px solid rgba(0, 125, 250, 0.6);
-  outline-offset: 1px;
-}
-
-:focus:not(:focus-visible) {
-  outline: none;
+  outline: none
 }
 
 ::-moz-focus-inner {
   border: 0;
-  padding: 0;
+  padding: 0
 }
 
 html {
-  -ms-text-size-adjust: 100%;
-  -webkit-text-size-adjust: 100%;
   font-family: "SF Pro Text", "SF Pro Icons", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
   font-size: 106.25%;
-  quotes: "“" "”";
-}
-[lang]:lang(pt-BR) {
-  font-family: var(--r-globalfont-family),
-    sans-serif;
-}
-:lang(pt-BR) {
-  quotes: "“" "”";
+  quotes: "â€œ" "â€"
 }
 
+[lang]:lang(ar) {
+  font-family: "SF Pro AR", "SF Pro Gulf", "SF Pro Text", "SF Pro Icons", "Helvetica Neue", "Helvetica", "Arial", sans-serif
+}
+
+
 body {
-  margin: 0;
-  padding: 0;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-items: center;
-    font-size: 17px;
+  font-size: 17px;
   line-height: 1.47059;
   font-weight: 400;
-  letter-spacing: -0.022em;
+  letter-spacing: -.022em;
   font-family: "SF Pro Text", "SF Pro Icons", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
   background-color: #fff;
   color: #1d1d1f;
-  font-style: normal;
-}
-
-body > :is(nav, header, main, footer, div) {
-  max-width: 2560px;
-  width: 100%;
+  font-style: normal
 }
 
 body:lang(ar) {
   line-height: 1.58824;
   letter-spacing: 0em;
-  font-family: "SF Pro AR", "SF Pro Gulf", "SF Pro Text", "SF Pro Icons", "Helvetica Neue", "Helvetica", "Arial",
-    sans-serif;
+  font-family: "SF Pro AR", "SF Pro Gulf", "SF Pro Text", "SF Pro Icons", "Helvetica Neue", "Helvetica", "Arial", sans-serif
 }
-
-body:lang(zh) {
-  letter-spacing: 0em;
-}
-
-body:lang(th) {
-  line-height: 1.35296;
-  letter-spacing: 0em;
-  font-family: "SF Pro TH", "SF Pro Text", "SF Pro Icons", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
-}
-
-body:lang(zh-CN) {
-  font-family: "SF Pro SC", "SF Pro Text", "SF Pro Icons", "PingFang SC", "Helvetica Neue", "Helvetica", "Arial",
-    sans-serif;
-}
-
 
 body,
 input,
@@ -278,12 +237,11 @@ textarea,
 select,
 button {
   font-synthesis: none;
-  -moz-font-feature-settings: "kern";
-  font-feature-settings: "kern";
+  -moz-font-feature-settings: 'kern';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   direction: ltr;
-  text-align: left;
+  text-align: left
 }
 
 h1,
@@ -293,7 +251,7 @@ h4,
 h5,
 h6 {
   font-weight: 600;
-  color: #1d1d1f;
+  color: #1d1d1f
 }
 
 h1 img,
@@ -303,91 +261,88 @@ h4 img,
 h5 img,
 h6 img {
   display: block;
-  margin: 0;
+  margin: 0
 }
 
-h1 + *,
-h2 + *,
-h3 + *,
-h4 + *,
-h5 + *,
-h6 + * {
-  margin-top: 0.8em;
+h1+*,
+h2+*,
+h3+*,
+h4+*,
+h5+*,
+h6+* {
+  margin-top: .8em
 }
 
-h1 + h1,
-h1 + h2,
-h1 + h3,
-h1 + h4,
-h1 + h5,
-h1 + h6,
-h2 + h1,
-h2 + h2,
-h2 + h3,
-h2 + h4,
-h2 + h5,
-h2 + h6,
-h3 + h1,
-h3 + h2,
-h3 + h3,
-h3 + h4,
-h3 + h5,
-h3 + h6,
-h4 + h1,
-h4 + h2,
-h4 + h3,
-h4 + h4,
-h4 + h5,
-h4 + h6,
-h5 + h1,
-h5 + h2,
-h5 + h3,
-h5 + h4,
-h5 + h5,
-h5 + h6,
-h6 + h1,
-h6 + h2,
-h6 + h3,
-h6 + h4,
-h6 + h5,
-h6 + h6 {
-  margin-top: 0.4em;
+h1+h1,
+h1+h2,
+h1+h3,
+h1+h4,
+h1+h5,
+h1+h6,
+h2+h1,
+h2+h2,
+h2+h3,
+h2+h4,
+h2+h5,
+h2+h6,
+h3+h1,
+h3+h2,
+h3+h3,
+h3+h4,
+h3+h5,
+h3+h6,
+h4+h1,
+h4+h2,
+h4+h3,
+h4+h4,
+h4+h5,
+h4+h6,
+h5+h1,
+h5+h2,
+h5+h3,
+h5+h4,
+h5+h5,
+h5+h6,
+h6+h1,
+h6+h2,
+h6+h3,
+h6+h4,
+h6+h5,
+h6+h6 {
+  margin-top: .4em
 }
 
-p + h1,
-ul + h1,
-ol + h1,
-p + h2,
-ul + h2,
-ol + h2,
-p + h3,
-ul + h3,
-ol + h3,
-p + h4,
-ul + h4,
-ol + h4,
-p + h5,
-ul + h5,
-ol + h5,
-p + h6,
-ul + h6,
-ol + h6 {
-  margin-top: 1.6em;
+p+h1,
+ul+h1,
+ol+h1,
+p+h2,
+ul+h2,
+ol+h2,
+p+h3,
+ul+h3,
+ol+h3,
+p+h4,
+ul+h4,
+ol+h4,
+p+h5,
+ul+h5,
+ol+h5,
+p+h6,
+ul+h6,
+ol+h6 {
+  margin-top: 1.6em
 }
 
-.heading-collapsed + * {
-  margin-top: 0;
-}
 
-p + *,
-ul + *,
-ol + * {
-  margin-top: 0.8em;
+p+*,
+ul+*,
+ol+* {
+  margin-top: .8em
 }
 
 ul,
 ol {
-  margin-left: 1.17647em;
+  margin-left: 1.17647em
 }
 
 ul ul,
@@ -395,282 +350,99 @@ ul ol,
 ol ul,
 ol ol {
   margin-top: 0;
-  margin-bottom: 0;
+  margin-bottom: 0
 }
 
 nav ul,
 nav ol {
   margin: 0;
-  list-style: none;
+  list-style: none
 }
 
 li li {
-  font-size: 1em;
+  font-size: 1em
 }
 
 a,
 .link {
   color: #06c;
-  letter-spacing: inherit;
+  letter-spacing: inherit
 }
 
 a:link,
 a:visited,
 .link:link,
 .link:visited {
-  text-decoration: none;
+  text-decoration: none
 }
 
 a:hover,
 .link:hover {
-  text-decoration: underline;
+  text-decoration: underline
 }
 
 a:active,
 .link:active {
-  text-decoration: none;
+  text-decoration: none
 }
 
 a:disabled,
 .link:disabled {
-  opacity: 0.32;
+  opacity: .32
 }
 
 .links-inline,
 .links-stacked {
   margin-left: 0;
   margin-right: 0;
-  list-style: none;
+  list-style: none
 }
 
 .links-inline li {
   display: inline;
-  margin: 0 0.8em;
+  margin: 0 0.8em
 }
 
 .links-inline li:first-child {
-  margin-left: 0;
+  margin-left: 0
 }
 
 .links-inline li:last-child {
-  margin-right: 0;
+  margin-right: 0
 }
 
 .links-stacked li {
   margin: 0;
-  display: block;
+  display: block
 }
 
-.links-stacked li + li {
-  margin-top: 0.4em;
+.links-stacked li+li {
+  margin-top: .4em
 }
 
 b,
 strong {
-  font-weight: 600;
+  font-weight: 600
 }
 
 em,
 i,
 cite,
 dfn {
-  font-style: italic;
+  font-style: italic
 }
 
 sup,
 sub {
   position: relative;
-  font-size: 0.6em;
-  vertical-align: baseline;
+  font-size: .6em;
+  vertical-align: baseline
 }
 
 sup {
-  top: -0.5em;
+  top: -.5em
 }
 
 sub {
-  bottom: -0.25em;
-}
-
-.footnote a {
-  vertical-align: inherit;
-  color: inherit;
-}
-
-.footnote a:hover {
-  color: #06c;
-  text-decoration: none;
-}
-
-.footnote-reduced {
-  font-size: 0.45em;
-}
-
-sup.footnote-reduced {
-  top: -0.86em;
-}
-
-sub.footnote-reduced {
-  bottom: -0.36em;
-}
-
-.footnote-supglyph {
-  position: relative;
-  vertical-align: baseline;
-}
-
-.footnote-supglyph.footnote-reduced {
-  font-size: 0.9em;
-  top: -0.09em;
-}
-
-.footnote-diamond {
-  position: relative;
-  vertical-align: baseline;
-  font-feature-settings: "numr";
-  font-size: 1em;
-}
-
-sup.footnote-diamond {
-  top: initial;
-}
-
-sub.footnote-diamond {
-  bottom: -0.5em;
-}
-
-.footnote-diamond.footnote-reduced {
-  font-size: 0.9em;
-  top: -0.09em;
-}
-
-sub.footnote-diamond.footnote-reduced {
-  top: initial;
-  bottom: -0.52em;
-}
-
-.footnote-number {
-  position: relative;
-  vertical-align: baseline;
-  font-feature-settings: "numr";
-  font-size: 1em;
-}
-
-sup.footnote-number {
-  top: initial;
-}
-
-sub.footnote-number {
-  bottom: -0.5em;
-}
-
-.footnote-number.footnote-reduced {
-  font-size: 0.9em;
-  top: -0.09em;
-}
-
-sub.footnote-number.footnote-reduced {
-  top: initial;
-  bottom: -0.52em;
-}
-
-abbr {
-  border: 0;
-}
-
-:lang(ja),
-:lang(ko),
-:lang(th),
-:lang(zh) {
-  font-style: normal;
-}
-
-:lang(ko) {
-  word-break: keep-all;
-}
-
-/* 
-- ICONS Padrão 
-- Definição de ícones padrão para serem usados em diversos elementos do site.
-*/
-.icon-chevronright::before {
-  content: "";
-}
-.icon-chevronright::after {
-  content: "\F301";
-}
-
-/* FOOTER */
-#globalfooter,
-main {
-  position: static;
-}
-#globalfooter,
-#globalfooter:before,
-#globalfooter:after,
-#globalfooter *,
-#globalfooter *:before,
-#globalfooter *:after {
-  box-sizing: content-box;
-  margin: 0;
-  padding: 0;
-  pointer-events: auto;
-  letter-spacing: normal;
-  font-size: 1em;
-  font-family: inherit;
-  font-weight: inherit;
-  line-height: inherit;
-  text-align: inherit;
-}
-
-#globalfooter :is(article, aside, details, figcaption, figure, footer, header, nav, section) {
-  display: block;
-}
-#globalfooter img {
-  border: 0;
-  vertical-align: middle;
-}
-#globalfooter ul {
-  list-style: none;
-}
-
-#globalfooter,
-#globalfooter:is(input, textarea, select, button) {
-  font-synthesis: none;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  direction: ltr;
-  text-align: left;
-}
-
-#globalfooter,
-#globalfooter:is(select, button, input, textarea) {
-  font-family: var(--r-globalfont-family);
-}
-
-#globalfooter sup {
-  font-size: 0.6em;
-  vertical-align: top;
-  position: relative;
-  bottom: -0.2em;
-}
-
-:is(h1, h2, h3) #globalfooter sup {
-  font-size: 0.4em;
-}
-
-#globalfooter sup a {
-  vertical-align: inherit;
-  color: inherit;
-}
-
-#globalfooter sup a:hover {
-  color: #06c;
-  text-decoration: none;
-}
-
-#globalfooter sub {
-  font-size: smaller;
-  vertical-align: sub;
-  line-height: 1;
+  bottom: -0.25em
 }
