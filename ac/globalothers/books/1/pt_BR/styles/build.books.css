@@ -413,3 +413,8 @@ nav[id="quarto-sidebar"] > div:nth-child(n + 3) {
 nav[id="quarto-sidebar"] form div:first-child {
   padding-left: 4px !important;
 } */
+
+
+header#quarto-header {
+  position: relative !important;
+}
