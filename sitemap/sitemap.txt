@@ -1,285 +1,285 @@
-# Submenu 
+Submenu
 
 boasvindas
-  - destaque
-    - Registro Academico
-    - Matricula
-    - Mapa do Campus
-    - Manual para Calouros
-    - Estatutos e Regimentos
-    - Programas e Orientações
-    - Biblioteca Central
-    - Calendário Acadêmico (Graduação e Pós-Graduação)
-    - passos apos aprovação (Checklist)
-    - evento de boas vindas
+destaque
+- Registro Academico
+- Matricula
+- Mapa do Campus
+- Manual para Calouros
+- Estatutos e Regimentos
+- Programas e Orientações
+- Biblioteca Central
+- Calendário Acadêmico (Graduação e Pós-Graduação)
+- passos apos aprovação (Checklist)
+- evento de boas vindas
 
-  - links rápidos
-    - Plataformas
-    - Contatos Institucionais (email, telefones, etc -  dep. inst. da UnB)
-    - Serviços
-    - Menção
-    - Créditos
-    - Estágio Não Obrigatório
+links rápidos
+- Plataformas
+- Contatos Institucionais (email, telefones, etc - dep. inst. da UnB)
+- Serviços
+- Menção
+- Créditos
+- Estágio Não Obrigatório
 
-  - Ajuda
-    - Auxilios e Bolsas
-    - Identidade Estudantil
-    - Ouvidoria
-    - Perguntas Frequentes (FAQ)
+Ajuda
+- Auxilios e Bolsas
+- Identidade Estudantil
+- Ouvidoria
+- Perguntas Frequentes (FAQ)
 
 departamento
-  - destaque
-    - historia
-    - instalacoes
-    - administracao
-    - secretaria
-    - docente
-    - documentos
-    - producao
-    - coordenacoes
-    - grupos-de-pesquisa
+destaque
+- historia
+- instalacoes
+- administracao
+- secretaria
+- docente
+- documentos
+- producao
+- coordenacoes
+- grupos-de-pesquisa
 
-  - explorar (departamento)
-    - Mapa do Campus
-    - Biblioteca Central
-    - Notícias
-    - Eventos
-    - Parceiros
-    - Benefícios
-    - Comissoes
-    - Chefia
-    - Galeria de imagens
-  
-  - links rápidos
-    - SIGAA
-    - Moodle MAT 
-    - Aprender3
-    - Calendário Acadêmico (Graduação e Pós-Graduação)
-    - Normas e Regulamentos (departamento ou UnB)
-    - Projeto R
-    - GitHub (estudantes)
-    - Samsung (estudantes)
+explorar (departamento)
+- Mapa do Campus
+- Biblioteca Central
+- Notícias
+- Eventos
+- Parceiros
+- Benefícios
+- Comissoes
+- Chefia
+- Galeria de imagens
 
-  - Ajuda
-    - Registro Academico
-    - Identidade Estudantil
-    - Auxilios e Bolsas
-    - Manual para Calouros
-    - Editais (departamento ou UnB)
-    - Ouvidoria
+links rápidos
+- SIGAA
+- Moodle MAT
+- Aprender3
+- Calendário Acadêmico (Graduação e Pós-Graduação)
+- Normas e Regulamentos (departamento ou UnB)
+- Projeto R
+- GitHub (estudantes)
+- Samsung (estudantes)
+
+Ajuda
+- Registro Academico
+- Identidade Estudantil
+- Auxilios e Bolsas
+- Manual para Calouros
+- Editais (departamento ou UnB)
+- Ouvidoria
 
 graduacao
-  - destaque
-    - descricao
-    - disciplinas
-    - nucleo-docente-estruturante
-    - coordenacao
-    - docentes
-    - estagio
-    - monitoria
+destaque
+- descricao
+- disciplinas
+- nucleo-docente-estruturante
+- coordenacao
+- docentes
+- estagio
+- monitoria
 
-  - explorar (graduacao)
-    - manual-para-estudantes
-    - processos-seletivos
-    - formas-de-ingresso
-    - aluno-especial
-    - matricula
-    - egresso
-    - producao
+explorar (graduacao)
+- manual-para-estudantes
+- processos-seletivos
+- formas-de-ingresso
+- aluno-especial
+- matricula
+- egresso
+- producao
 
-  - links rápidos
-    - calendarioacademico-grad
-    - documentos-grad
-    - normativos-graduacao
-    - iniciacao-cientifica
-    - programas-institucionais
+links rápidos
+- calendarioacademico-grad
+- documentos-grad
+- normativos-graduacao
+- iniciacao-cientifica
+- programas-institucionais
 
-  - Ajuda
-    - perguntas-frequentes-grad
-    - boas-vindas-calouros
-    - Ouvidoria
+Ajuda
+- perguntas-frequentes-grad
+- boas-vindas-calouros
+- Ouvidoria
 
 pos-graduacao
-  - destaque
-    - descricao
-    - disciplinas
-    - linhas-de-pesquisa
-    - oferta
-    - processo-seletivo
-    - docentes
-    - regulamento
-    - criterios-para-concessao-de-bolsa
+destaque
+- descricao
+- disciplinas
+- linhas-de-pesquisa
+- oferta
+- processo-seletivo
+- docentes
+- regulamento
+- criterios-para-concessao-de-bolsa
 
-  - explorar (pos-graduacao)
-    - alunos-de-mestrado
-    - egressos
-    - dissertacoes-repositorio-unb
-    - dissertacoes-repositorio-ppgest
-    - publicacoes
-    - premios-e-titulos
-    - seminarios
-    - bancas-qualificacoes
+explorar (pos-graduacao)
+- alunos-de-mestrado
+- egressos
+- dissertacoes-repositorio-unb
+- dissertacoes-repositorio-ppgest
+- publicacoes
+- premios-e-titulos
+- seminarios
+- bancas-qualificacoes
 
-  - links rápidos
-    - auxilio-ao-discente
-    - planejamento-estrategico
-    - regras-para-a-indicacao-de-orientador
-    - regras-de-concessao-de-auxilio-financeiro
-    - criterios-de-credenciamento
-    - bancas-orientacoes-para-defesa
+links rápidos
+- auxilio-ao-discente
+- planejamento-estrategico
+- regras-para-a-indicacao-de-orientador
+- regras-de-concessao-de-auxilio-financeiro
+- criterios-de-credenciamento
+- bancas-orientacoes-para-defesa
 
-  - Ajuda
-    - instalacoes
-    - contato
-    - ouvidoria
+Ajuda
+- instalacoes
+- contato
+- ouvidoria
 
 extensao
-  - destaque
-    - monitoria
-    - programas
-    - pet
-    - projetos
-    - consultoria
-    - cursos
-    - laboratorios
+destaque
+- monitoria
+- programas
+- pet
+- projetos
+- consultoria
+- cursos
+- laboratorios
 
-  - explorar (extensao)
-    - workshop
-    - seminarios
-    - coloquios
-    - encontros
-    - feiras
-    - conferencias
-    - mesa-redonda
-    - palestras
+explorar (extensao)
+- workshop
+- seminarios
+- coloquios
+- encontros
+- feiras
+- conferencias
+- mesa-redonda
+- palestras
 
-  - links rápidos
-    - editais-e-chamadas-publicas
-    - programas-e-projetos
-    - arte-e-cultura
-    - cursos-livres
-    - esporte-e-lazer
-    - escola-de-verao
-    - workshop-de-verao
+links rápidos
+- editais-e-chamadas-publicas
+- programas-e-projetos
+- arte-e-cultura
+- cursos-livres
+- esporte-e-lazer
+- escola-de-verao
+- workshop-de-verao
 
-  - Ajuda
-    - sobre-a-extensao
-    - contatos-extensao
-    - voluntariado
+Ajuda
+- sobre-a-extensao
+- contatos-extensao
+- voluntariado
 
 educacao
-  - destaque
-    - disciplinas
-    - artigos
-    - notas-aulas
-    - livros
-    - video-aulas
-    - exercicios
-    - laboratorios
+destaque
+- disciplinas
+- artigos
+- notas-aulas
+- livros
+- video-aulas
+- exercicios
+- laboratorios
 
-  - explorar (educacao)
-    - aprender-unb
-    - plataformas-digitais
-    - programas-institucionais
-    - plataforma-aprender
-    - idiomas
-    - ferramentas
-    - slides
+explorar (educacao)
+- aprender-unb
+- plataformas-digitais
+- programas-institucionais
+- plataforma-aprender
+- idiomas
+- ferramentas
+- slides
 
-  - links rápidos
-    - moodle
-    - office365
-    - sigaa
-    - sigunb
-    - sigrh
-    - sipac
-    - unb-idiomas
-    - unb-pesquisa
+links rápidos
+- moodle
+- office365
+- sigaa
+- sigunb
+- sigrh
+- sipac
+- unb-idiomas
+- unb-pesquisa
 
-  - Ajuda
-    - dicas
-    - softwares
-    - ingressante
+Ajuda
+- dicas
+- softwares
+- ingressante
 
 documentos
-  - destaque
-    - Estatuto e Regimento
-    - Regulamentos
-    - Resoluções
-    - Normativos
-    - Formulários
-    - Editais
-    - Atos Oficiais
+destaque
+- Estatuto e Regimento
+- Regulamentos
+- Resoluções
+- Normativos
+- Formulários
+- Editais
+- Atos Oficiais
 
-  - explorar (documentos)
-    - Manual de Documentos
-    - Processos SEI
-    - Documentos Acadêmicos
-    - Legislação Graduação
-    - Legislação Pós-Graduação
-    - Diretrizes
-    - Termo de Ajustamento
+explorar (documentos)
+- Manual de Documentos
+- Processos SEI
+- Documentos Acadêmicos
+- Legislação Graduação
+- Legislação Pós-Graduação
+- Diretrizes
+- Termo de Ajustamento
 
-  - links rápidos
-    - Carta de Serviços
-    - Relatório de Gestão
-    - Plano de Desenvolvimento
-    - Política de Riscos
-    - Base Jurídica
+links rápidos
+- Carta de Serviços
+- Relatório de Gestão
+- Plano de Desenvolvimento
+- Política de Riscos
+- Base Jurídica
 
 unb
-  - destaque
-    - Reitoria
-    - Vice-Reitoria
-    - Conselhos e câmaras
-    - Decanatos
-    - História da UnB
-    - UnB em Números
-    - Conheça os campi
+destaque
+- Reitoria
+- Vice-Reitoria
+- Conselhos e câmaras
+- Decanatos
+- História da UnB
+- UnB em Números
+- Conheça os campi
 
-  - explorar (unb)
-    - Faculdades
-    - Institutos
-    - Centros
-    - Assuntos Internacionais
-    - Arquivo Central
-    - Biblioteca Central
-    - Editora UnB
-    - Fazenda Água Limpa
+explorar (unb)
+- Faculdades
+- Institutos
+- Centros
+- Assuntos Internacionais
+- Arquivo Central
+- Biblioteca Central
+- Editora UnB
+- Fazenda Água Limpa
 
-  - links rápidos
-    - sigaa
-    - diploma-digital
-    - matricula-nas-disciplinas
-    - identidade-estudantil
-    - calendario-academico
-    - registro-academico
-    - peticionamento-eletronico
+links rápidos
+- sigaa
+- diploma-digital
+- matricula-nas-disciplinas
+- identidade-estudantil
+- calendario-academico
+- registro-academico
+- peticionamento-eletronico
 
-  - Ajuda
-    - assistencia-estudantil
-    - restaurante-universitario
-    - transporte
-    - ouvidoria
-    - fale-conosco
-    - contato
-    - servicos
+Ajuda
+- assistencia-estudantil
+- restaurante-universitario
+- transporte
+- ouvidoria
+- fale-conosco
+- contato
+- servicos
 
 noticias
-  - destaque
-    - Comunicados
-    - Eventos
-    - Oportunidades
-    - Notícias Departamento
-    - Notícias Estatística
-    - Eventos Estatística
+destaque
+- Comunicados
+- Eventos
+- Oportunidades
+- Notícias Departamento
+- Notícias Estatística
+- Eventos Estatística
 
-  - explorar (noticias)
-    - Informações
-    - Atendimento Jornalistas
-    - Sala de Imprensa
-    - Canais Oficiais
+explorar (noticias)
+- Informações
+- Atendimento Jornalistas
+- Sala de Imprensa
+- Canais Oficiais
 
-  - links rápidos
-    - FAQ
+links rápidos
+- FAQ
 

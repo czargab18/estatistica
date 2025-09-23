@@ -423,6 +423,10 @@ nav[id="quarto-sidebar"] form div:first-child {
 
 /* books */
 main[id*="book-list"] .books-content .book a:first-of-type {
-  /* display: none; */
   border-top: none;
+}
+
+
+header#quarto-header {
+  position: relative !important;
 }
