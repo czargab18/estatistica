@@ -82,7 +82,6 @@ document.addEventListener('DOMContentLoaded', function () {
   const navbar = document.getElementById('globalnavbar');
   const curtain = document.getElementById('globalnavbar-curtain');
 
-  // Elementos das animações
   const topLineOpenAnim = document.getElementById('globalnavbar-anim-menutrigger-bread-top-open');
   const topLineCloseAnim = document.getElementById('globalnavbar-anim-menutrigger-bread-top-close');
   const bottomLineOpenAnim = document.getElementById('globalnavbar-anim-menutrigger-bread-bottom-open');
@@ -92,10 +91,8 @@ document.addEventListener('DOMContentLoaded', function () {
 
   menuButton.addEventListener('click', function () {
     if (!isMenuOpen) {
-      // Abrir menu - transformar em X
       openMenu();
     } else {
-      // Fechar menu - voltar ao hambúrguer
       closeMenu();
     }
 
@@ -103,11 +100,8 @@ document.addEventListener('DOMContentLoaded', function () {
   });
 
   function openMenu() {
-    // Iniciar animações de abertura
     topLineOpenAnim.beginElement();
     bottomLineOpenAnim.beginElement();
-
-    // Adicionar classes para o menu aberto
     navbar.classList.add('globalnavbar-open');
     curtain.classList.add('globalnavbar-curtain-visible');
     menuButton.setAttribute('aria-expanded', 'true');
@@ -115,18 +109,14 @@ document.addEventListener('DOMContentLoaded', function () {
   }
 
   function closeMenu() {
-    // Iniciar animações de fechamento
     topLineCloseAnim.beginElement();
     bottomLineCloseAnim.beginElement();
-
-    // Remover classes do menu aberto
     navbar.classList.remove('globalnavbar-open');
     curtain.classList.remove('globalnavbar-curtain-visible');
     menuButton.setAttribute('aria-expanded', 'false');
     menuButton.setAttribute('aria-label', 'Abrir menu principal');
   }
 
-  // Fechar menu ao clicar na cortina
   curtain.addEventListener('click', function () {
     if (isMenuOpen) {
       closeMenu();
@@ -134,7 +124,6 @@ document.addEventListener('DOMContentLoaded', function () {
     }
   });
 
-  // Fechar menu com a tecla ESC
   document.addEventListener('keydown', function (event) {
     if (event.key === 'Escape' && isMenuOpen) {
       closeMenu();
