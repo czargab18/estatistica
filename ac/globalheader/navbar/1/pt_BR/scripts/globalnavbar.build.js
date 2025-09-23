@@ -76,3 +76,69 @@ document.addEventListener('DOMContentLoaded', () => {
 
   navbar.addEventListener('mouseleave', () => navbar.classList.remove('globalnavbar-hover-active'));
 });
+
+document.addEventListener('DOMContentLoaded', function () {
+  const menuButton = document.getElementById('globalnavbar-menutrigger-button');
+  const navbar = document.getElementById('globalnavbar');
+  const curtain = document.getElementById('globalnavbar-curtain');
+
+  // Elementos das animações
+  const topLineOpenAnim = document.getElementById('globalnavbar-anim-menutrigger-bread-top-open');
+  const topLineCloseAnim = document.getElementById('globalnavbar-anim-menutrigger-bread-top-close');
+  const bottomLineOpenAnim = document.getElementById('globalnavbar-anim-menutrigger-bread-bottom-open');
+  const bottomLineCloseAnim = document.getElementById('globalnavbar-anim-menutrigger-bread-bottom-close');
+
+  let isMenuOpen = false;
+
+  menuButton.addEventListener('click', function () {
+    if (!isMenuOpen) {
+      // Abrir menu - transformar em X
+      openMenu();
+    } else {
+      // Fechar menu - voltar ao hambúrguer
+      closeMenu();
+    }
+
+    isMenuOpen = !isMenuOpen;
+  });
+
+  function openMenu() {
+    // Iniciar animações de abertura
+    topLineOpenAnim.beginElement();
+    bottomLineOpenAnim.beginElement();
+
+    // Adicionar classes para o menu aberto
+    navbar.classList.add('globalnavbar-open');
+    curtain.classList.add('globalnavbar-curtain-visible');
+    menuButton.setAttribute('aria-expanded', 'true');
+    menuButton.setAttribute('aria-label', 'Fechar menu principal');
+  }
+
+  function closeMenu() {
+    // Iniciar animações de fechamento
+    topLineCloseAnim.beginElement();
+    bottomLineCloseAnim.beginElement();
+
+    // Remover classes do menu aberto
+    navbar.classList.remove('globalnavbar-open');
+    curtain.classList.remove('globalnavbar-curtain-visible');
+    menuButton.setAttribute('aria-expanded', 'false');
+    menuButton.setAttribute('aria-label', 'Abrir menu principal');
+  }
+
+  // Fechar menu ao clicar na cortina
+  curtain.addEventListener('click', function () {
+    if (isMenuOpen) {
+      closeMenu();
+      isMenuOpen = false;
+    }
+  });
+
+  // Fechar menu com a tecla ESC
+  document.addEventListener('keydown', function (event) {
+    if (event.key === 'Escape' && isMenuOpen) {
+      closeMenu();
+      isMenuOpen = false;
+    }
+  });
+});
