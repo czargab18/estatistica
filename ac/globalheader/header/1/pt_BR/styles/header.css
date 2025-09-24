@@ -104,6 +104,10 @@ body {
   height: 100%;
   width: auto;
 }
+                                               
+#globalheader svg[fill="none"] {
+  fill: black !important;
+}
 
 #globalheader button {
   background: none;

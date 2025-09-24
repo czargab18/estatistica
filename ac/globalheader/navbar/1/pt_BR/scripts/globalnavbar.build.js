@@ -136,3 +136,39 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   });
 });
+
+// Adicionar esta função para monitorar mudanças de tela
+function handleResize() {
+  const navbar = document.getElementById("globalnavbar");
+
+  // Se a tela for >= 834px, remover a classe globalnavbar-open
+  if (window.innerWidth >= 834) {
+    if (navbar && navbar.classList.contains("globalnavbar-open")) {
+      navbar.classList.remove("globalnavbar-open");
+
+      // Resetar estado do menu se necessário
+      const curtain = document.getElementById("globalnavbar-curtain");
+      if (curtain) {
+        curtain.classList.remove("globalnavbar-curtain-visible");
+      }
+
+      // Resetar botão do menu
+      const menuButton = document.getElementById("globalnavbar-menutrigger-button");
+      if (menuButton) {
+        menuButton.setAttribute("aria-expanded", "false");
+        menuButton.setAttribute("aria-label", "Abrir menu principal");
+      }
+
+      // Resetar variável de estado se existir
+      if (typeof isMenuOpen !== 'undefined') {
+        isMenuOpen = false;
+      }
+    }
+  }
+}
+
+// Adicionar event listener para resize
+window.addEventListener("resize", handleResize);
+
+// Executar uma vez no carregamento
+document.addEventListener("DOMContentLoaded", handleResize);

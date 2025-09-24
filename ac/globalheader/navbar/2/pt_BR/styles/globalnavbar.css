@@ -416,6 +416,11 @@
   }
 }
 
+#globalnavbar .globalnavbar-list .globalnavbar-submenu .globalnavbar-submenu-content h2[class="globalnavbar-submenu-header"] {
+  border-bottom: 1px solid #dee2e6;
+  padding-bottom: 0.5rem;
+}
+
 #globalnavbar .globalnavbar-list .globalnavbar-submenu .globalnavbar-submenu-content .globalnavbar-submenu-header {
   color: var(--r-globalnavbar-submenu-header-color, rgb(110, 110, 115));
   display: block;
