@@ -1,7 +1,6 @@
 # Código gerado/assistido por IA
 name: Submodules Dispatch
-description: 
-  Workflow para atualizar arquivos dos submódulos com o repositório Estatística.
+description: Workflow para atualizar arquivos dos submódulos com o repositório Estatística.
 
 on:
   workflow_dispatch:
@@ -36,38 +35,45 @@ jobs:
           path: "estatistica"
           ref: "stag"
           fetch-tags: true
+          
+        #1. checar repositório
+        #2. puxar submodule book
+        #3. detectar arquivos alterados
+        #4. renderizar livros
+        #5. padronizar livros par ao site via repositório backend
+        #5. fazer o merge para o repositório estatística via branch: book
 
-      - name: Configura credenciais do Git
-        working-directory: estatistica
-        run: |
-          git config --global url."https://${{ env.TOKEN }}:x-oauth-basic@github.com/".insteadOf "https://github.com/"
-          git remote set-url origin https://${{ env.TOKEN }}:x-oauth-basic@github.com/${{ github.repository }}.git
-          git config user.name "${{ env.USERNAME }}"
-          git config user.email "${{ env.USEREMAIL }}@users.noreply.github.com"
+  #     - name: Configura credenciais do Git
+  #       working-directory: estatistica
+  #       run: |
+  #         git config --global url."https://${{ env.TOKEN }}:x-oauth-basic@github.com/".insteadOf "https://github.com/"
+  #         git remote set-url origin https://${{ env.TOKEN }}:x-oauth-basic@github.com/${{ github.repository }}.git
+  #         git config user.name "${{ env.USERNAME }}"
+  #         git config user.email "${{ env.USEREMAIL }}@users.noreply.github.com"
 
-      - name: Atualizar submodule 'books'
-        working-directory: estatistica
-        run: |
-          git submodule update --init books
+  #     - name: Atualizar submodule 'books'
+  #       working-directory: estatistica
+  #       run: |
+  #         git submodule update --init books
 
-      # PASSOS PARA AUTOMAÇÃO DO BOOKS PARA O REPOSITÓRIO ESTATÍSTICA
-      # usar o repositório 'backend' com backend/action/book/ para a renderização
-      # EM DESENVOLVIMENTO
+  #     # PASSOS PARA AUTOMAÇÃO DO BOOKS PARA O REPOSITÓRIO ESTATÍSTICA
+  #     # usar o repositório 'backend' com backend/action/book/ para a renderização
+  #     # EM DESENVOLVIMENTO
 
-      - name: Sincronizar pastas entre os repositórios
-        working-directory: estatistica
-        run: |
-          ORIGIN="books/book"
-          DESTINO="book"
-          rsync -av --update "$DESTINO"/ "$ORIGIN"/ 
+  #     - name: Sincronizar pastas entre os repositórios
+  #       working-directory: estatistica
+  #       run: |
+  #         ORIGIN="books/book"
+  #         DESTINO="book"
+  #         rsync -av --update "$DESTINO"/ "$ORIGIN"/
 
-      - name: Faz commit e push dos livros renderizados
-        working-directory: estatistica
-        run: |
-          git checkout -B book
-          git add book/
-          git commit -m "book: atualiza 'livros' a partir do submodule:books" || echo "Nada a commitar"
-          git push --force origin book
+  #     - name: Faz commit e push dos livros renderizados
+  #       working-directory: estatistica
+  #       run: |
+  #         git checkout -B book
+  #         git add book/
+  #         git commit -m "book: atualiza 'livros' a partir do submodule:books" || echo "Nada a commitar"
+  #         git push --force origin book
 
-      # O deploy será feito em um job onde eu puxo o site e submodulos.
-      # EM DESENVOLVIMENTO
+  #     # O deploy será feito em um job onde eu puxo o site e submodulos.
+  #     # EM DESENVOLVIMENTO

@@ -1,8 +1,8 @@
 @charset "UTF-8";
 #globalaside {
-  all:  unset;
+  all: unset;
 }
-#globalaside body {
+body #globalaside {
   margin: 0;
   padding: 0;
 }
@@ -106,7 +106,6 @@
   width: 100%;
   justify-content: center;
   position: relative;
-  z-index: 3;
   top: 0;
   left: 0;
   right: 0;
@@ -120,6 +119,7 @@
   align-items: center;
   max-width: 2560px;
   margin: 0 auto;
+  z-index: 9999;
 }
 
 #globalaside .globalaside-content {
