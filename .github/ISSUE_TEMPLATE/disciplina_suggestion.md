@@ -1,6 +1,6 @@
 ---
 name: 🎓 Sugestão de Disciplina
-about: Propor nova disciplina ou material para o sistema de books
+about: Propor correções ou melhorias em disciplinas, materiais ou conteúdos acadêmicos
 title: '[DISCIPLINA] '
 labels: 'content, books, enhancement'
 assignees: ''

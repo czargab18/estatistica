@@ -1,21 +1,20 @@
 ---
 name: 📝 Melhoria de Conteúdo
-about: Sugerir melhorias em textos, documentação ou materiais existentes
+about: Sugerir melhorias em textos, materiais didáticos ou informações do projeto
 title: '[CONTENT] '
 labels: 'content, documentation'
 assignees: ''
 ---
 
-## 📝 Tipo de Conteúdo
-- [ ] 📚 Material didático (books)
-- [ ] 📰 Artigo newsroom (newsroom)
+## 📝 Tipo de Melhoria
+- [ ] 📚 Material didático
+- [ ] 📰 Artigo ou notícia
 - [ ] 📋 Documentação técnica
-- [ ] 🎯 Página de boas-vindas (boasvindas)
 - [ ] ℹ️ Textos da interface
-- [ ] 🏠 Conteúdo da homepage
+- [ ] 🏠 Conteúdo geral do site
 
 ## 📍 Localização
-Arquivo ou seção específica: `caminho/para/arquivo.md`
+Arquivo, seção ou material relacionado: `caminho/para/arquivo.md`
 
 ## 🎯 Problema Identificado
 - [ ] 📝 Erro de português/gramática
@@ -28,13 +27,8 @@ Arquivo ou seção específica: `caminho/para/arquivo.md`
 ## ✨ Melhoria Proposta
 Descreva a melhoria sugerida ou forneça o texto corrigido.
 
-## 🎓 Contexto Acadêmico (se aplicável)
-Esta melhoria está relacionada a alguma disciplina específica?
-- [ ] EST0033 - Estatística Aplicada
-- [ ] TAS0000 - Introdução à Estatística
-- [ ] Outros: ___________
-
-## 📚 Referências
+## 📚 Referências (opcional)
 Cite fontes acadêmicas ou materiais de referência, se aplicável.
 
-
+## 📝 Informações Adicionais
+Inclua qualquer detalhe relevante para facilitar a análise da sugestão.

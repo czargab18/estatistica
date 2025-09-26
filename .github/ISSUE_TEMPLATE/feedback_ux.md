@@ -16,12 +16,12 @@ assignees: ''
 - [ ] 🎯 Funcionalidade
 
 ## 📍 Área do Site
-- [ ] 🏠 Homepage
-- [ ] 📊 Calculadora IRA
-- [ ] 📚 Sistema de Livros
-- [ ] 📰 Newsroom
-- [ ] 🎯 Boas-vindas
-- [ ] 📱 Mobile geral
+Especifique onde podemos melhorar a experiência. Exemplo:
+- [ ] home
+- [ ] book
+- [ ] newsroom
+- [ ] apps/ira
+- [ ] boasvindas
 
 ## 😊 O que está funcionando bem?
 Destaque os aspectos positivos da experiência:
@@ -31,13 +31,6 @@ Identifique pontos de dificuldade ou confusão:
 
 ## 💭 Sugestão de Melhoria
 Como você resolveria ou melhoraria esta experiência?
-
-## 👤 Perfil do Usuário
-- [ ] 👨‍🎓 Estudante de graduação
-- [ ] 👩‍🎓 Estudante de pós-graduação
-- [ ] 👨‍🏫 Professor/Docente
-- [ ] 👩‍💼 Profissional da área
-- [ ] 🔍 Visitante ocasional
 
 ## 📊 Frequência de Uso
 - [ ] 📅 Diário
@@ -56,3 +49,6 @@ O que você estava tentando fazer quando encontrou este ponto de melhoria?
 
 ## 💡 Inspiração
 Conhece algum site ou app que resolve este problema de forma elegante?
+
+## 📝 Informações Adicionais
+Qualquer outra informação relevante que possa ajudar na análise do feedback.
