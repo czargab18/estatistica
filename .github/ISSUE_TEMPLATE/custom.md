@@ -1,6 +1,6 @@
 ---
 name: 📝 Melhoria de Conteúdo
-about: Sugerir melhorias em textos, documentação ou materiais educacionais
+about: Sugerir melhorias em textos, documentação ou materiais existentes
 title: '[CONTENT] '
 labels: 'content, documentation'
 assignees: ''
