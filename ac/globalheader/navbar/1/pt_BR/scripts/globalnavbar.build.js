@@ -86,6 +86,8 @@ document.addEventListener("DOMContentLoaded", function () {
   const menuButton = document.getElementById("globalnavbar-menutrigger-button");
   const navbar = document.getElementById("globalnavbar");
   const curtain = document.getElementById("globalnavbar-curtain");
+  
+  console.log('DEBUG: Elements found:', { menuButton, navbar, curtain }); // DEBUG
 
   const topLineOpenAnim = document.getElementById("globalnavbar-anim-menutrigger-bread-top-open");
   const topLineCloseAnim = document.getElementById("globalnavbar-anim-menutrigger-bread-top-close");
@@ -105,19 +107,23 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 
   function openMenu() {
+    console.log('DEBUG: Opening menu'); // DEBUG
     topLineOpenAnim.beginElement();
     bottomLineOpenAnim.beginElement();
     navbar.classList.add("globalnavbar-open");
     curtain.classList.add("globalnavbar-curtain-visible");
+    console.log('DEBUG: Curtain classes:', curtain.className); // DEBUG
     menuButton.setAttribute("aria-expanded", "true");
     menuButton.setAttribute("aria-label", "Fechar menu principal");
   }
 
   function closeMenu() {
+    console.log('DEBUG: Closing menu'); // DEBUG
     topLineCloseAnim.beginElement();
     bottomLineCloseAnim.beginElement();
     navbar.classList.remove("globalnavbar-open");
     curtain.classList.remove("globalnavbar-curtain-visible");
+    console.log('DEBUG: Curtain classes after close:', curtain.className); // DEBUG
     menuButton.setAttribute("aria-expanded", "false");
     menuButton.setAttribute("aria-label", "Abrir menu principal");
   }
