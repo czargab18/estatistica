@@ -129,6 +129,9 @@ body {
   outline: 2px solid var(--sk-focus-color, #0071e3);
   outline-offset: var(--sk-focus-offset, 1px);
 }
+#globalheader :focus:not(:focus-visible) {
+  outline: none;
+}
 
 #globalheader ::-moz-focus-inner {
   border: 0;
