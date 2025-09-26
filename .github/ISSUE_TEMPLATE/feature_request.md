@@ -1,20 +1,36 @@
 ---
-name: Solicitação de funcionalidade
-about: Sugira uma ideia para este projeto
-title: ''
-labels: ''
+name: 💡 Solicitação de Funcionalidade
+about: Sugerir uma nova funcionalidade ou melhoria
+title: '[FEATURE] '
+labels: 'enhancement, needs-discussion'
 assignees: ''
-
 ---
 
-**Sua solicitação de funcionalidade está relacionada a um problema? Descreva.**
-Uma descrição clara e concisa de qual é o problema. Ex. Sempre fico frustrado quando [...]
+## 💡 Resumo da Funcionalidade
+Descreva brevemente a funcionalidade que você gostaria de ver implementada.
 
-**Descreva a solução que você gostaria**
-Uma descrição clara e concisa do que você quer que aconteça.
+## 🎯 Problema que Resolve
+Qual problema esta funcionalidade resolveria? Como isso melhoraria a experiência do usuário?
 
-**Descreva as alternativas que você considerou**
-Uma descrição clara e concisa de qualquer solução alternativa ou funcionalidades que você considerou.
+## 💭 Solução Proposta
+Descreva como você imagina que esta funcionalidade deveria funcionar.
 
-**Contexto adicional**
-Adicione qualquer outro contexto ou capturas de tela sobre a solicitação de funcionalidade aqui.
+## 🎨 Mockups/Exemplos (opcional)
+<!-- Adicione imagens, sketches ou links para exemplos similares -->
+
+## 📍 Área do Sistema
+- [ ] 📊 Calculadora IRA
+- [ ] 📚 Sistema de Livros
+- [ ] 📰 Newsroom/Artigos
+- [ ] 🏠 Homepage
+- [ ] 🎯 Boas-vindas (boasvindas)
+- [ ] 🔧 Backend/Automação
+- [ ] 📱 Mobile/Responsividade
+
+## 🏆 Prioridade
+- [ ] 🔥 Alta (impacto significativo)
+- [ ] 📈 Média (melhoria importante)
+- [ ] 💡 Baixa (nice to have)
+
+## 🤔 Alternativas Consideradas
+Você considerou outras abordagens para resolver este problema?
