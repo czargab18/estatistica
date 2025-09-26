@@ -1,4 +1,10 @@
 @charset "UTF-8";
+
+section[id="globalribbon"] {
+  /* temporariamente "desabilitada" */
+  display: none !important;
+}
+
 section[id="globalribbon"] {
   all: unset;
   max-width: 2560px;

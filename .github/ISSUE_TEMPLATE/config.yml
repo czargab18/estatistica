@@ -1,0 +1,11 @@
+blank_issues_enabled: false
+contact_links:
+  - name: 💬 Discussões Gerais
+    url: https://github.com/czargab18/estatistica/discussions
+    about: Para dúvidas gerais, sugestões abertas ou discussões sobre o projeto
+  - name: 📚 Documentação UnB
+    url: https://www.unb.br
+    about: Para informações oficiais da Universidade de Brasília
+  - name: 📊 Calculadora IRA
+    url: https://estatistica.pro/apps/ira/
+    about: Acesse a calculadora de IRA diretamente

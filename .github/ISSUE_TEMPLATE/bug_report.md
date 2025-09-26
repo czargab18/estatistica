@@ -1,38 +1,45 @@
 ---
-name: Relatório de bug
-about: Criar um relatório para nos ajudar a melhorar
-title: ''
-labels: ''
+name: 🐛 Relatório de Bug
+about: Reportar um erro ou comportamento inesperado
+title: '[BUG] '
+labels: 'bug, needs-triage'
 assignees: ''
-
 ---
 
-**Descreva o bug**
-Uma descrição clara e concisa do que é o bug.
+## 🐛 Descrição do Bug
+Uma descrição clara e concisa do problema encontrado.
 
-**Para Reproduzir**
-Passos para reproduzir o comportamento:
-1. Vá para '...'
-2. Clique em '....'
-3. Role para baixo até '....'
-4. Veja o erro
+## 🔄 Passos para Reproduzir
+1. Acesse a página `...`
+2. Clique em `...`
+3. Preencha o campo `...` com `...`
+4. Observe o erro
 
-**Comportamento esperado**
-Uma descrição clara e concisa do que você esperava que acontecesse.
+## ✅ Comportamento Esperado
+Descreva o que deveria acontecer normalmente.
 
-**Capturas de tela**
-Se aplicável, adicione capturas de tela para ajudar a explicar seu problema.
+## 📱 Ambiente
+**Desktop:**
+- SO: [Windows 11 / macOS / Linux]
+- Navegador: [Chrome / Firefox / Safari / Edge]
+- Versão: [ex. 120.0]
 
-**Desktop (complete as seguintes informações):**
- - SO: [ex. Windows]
- - Navegador [ex. chrome, safari]
- - Versão [ex. 22]
+**Mobile (se aplicável):**
+- Dispositivo: [iPhone 15 / Samsung Galaxy]
+- SO: [iOS 17 / Android 14]
+- Navegador: [Safari / Chrome Mobile]
 
-**Smartphone (complete as seguintes informações):**
- - Dispositivo: [ex. iPhone6]
- - SO: [ex. iOS8.1]
- - Navegador [ex. navegador padrão, safari]
- - Versão [ex. 22]
+## 📸 Evidências
+<!-- Adicione capturas de tela, vídeos ou logs de console -->
 
-**Contexto adicional**
-Adicione qualquer outro contexto sobre o problema aqui.
+## 🎯 Área Afetada
+- [ ] 📊 Calculadora IRA (apps/ira)
+- [ ] 📚 Livros/Books (books)
+- [ ] 📰 Newsroom (newsroom)
+- [ ] 🏠 Página Principal
+- [ ] 🎨 Interface/CSS
+- [ ] ⚡ Performance
+- [ ] 📱 Responsividade
+
+## 🔍 Informações Adicionais
+<!-- Console errors, network requests, ou qualquer contexto relevante -->

@@ -1,6 +1,7 @@
 @charset "UTF-8";
+
 #main404 {
- all: initial;
+  all: initial;
 }
 
 #main404 {
@@ -16,6 +17,7 @@
   height: 820px;
   background-color: #fff;
 }
+
 #main404 .content404 section {
   max-width: 1440px;
   margin: 0 auto;
@@ -29,42 +31,43 @@
 
 #main404 .content404 section .content-erro-page {
   max-width: 620px;
-  margin:0px 20px;
+  margin: 0px 20px;
   word-wrap: break-word;
   -webkit-box-ordinal-group: 3;
   -ms-flex-order: 2;
   order: 2;
 }
+
 #main404 .content404 section .content-erro-page .headline404 {
   font-family: "SamsungSharpSans", arial, sans-serif;
   font-weight: bold;
   font-size: 48px;
   line-height: 1.2;
 }
+
 #main404 .content404 section .content-erro-page .headline404 .desc {
   font-size: 18px;
   line-height: 1.33;
   margin-top: 16px;
 }
+
 #main404 .content404 section .content-erro-page .error-page-cta {
   margin-top: 48px;
   display: flex;
   gap: 20px;
+  flex-wrap: wrap;
+  justify-content: flex-start;
 }
 
-#main404
-  .content404
-  section
-  .content-erro-page
-  .error-page-cta
-  .content404-cta
-  .cta-page-home {
+#main404 .content404 section .content-erro-page .error-page-cta .content404-cta .cta-page-home {
   color: #fff !important;
   background-color: #000 !important;
-  padding: 0.69444444vw 1.66666667vw 0.76388889vw 1.66666667vw;
-  border-radius: 1.38888889vw;
-  padding: 10px 24px 11px 24px;
-  border-radius: 20px;
+  border-radius: 14px;
+  padding: 12px 24px 12px 24px;
+}
+
+#main404 .content404 section .content-erro-page .error-page-cta .error-page-cta-sitemap .cta-sitemap {
+  padding-left: 24px;
 }
 
 #main404 .content404 section .unit-image-warpper #unit-image-astronauta {
@@ -79,15 +82,18 @@
 
 @media screen and (max-width: 1280px) {
   #main404 .content404 section {
-    padding: 160px 145px; /* Ou o valor desejado para telas menores */
+    padding: 160px 145px;
+    /* Ou o valor desejado para telas menores */
   }
 }
 
 @media screen and (max-width: 1024px) {
   #main404 .content404 section {
-    padding: 112px 100px; /* Ou o valor desejado para telas menores */
+    padding: 112px 100px;
+    /* Ou o valor desejado para telas menores */
   }
 }
+
 @media screen and (max-width: 940px) {
   #main404 .content404 section .content-erro-page .headline404 {
     font-family: "SamsungSharpSans", arial, sans-serif;
@@ -95,6 +101,7 @@
     font-size: 40px;
     line-height: 1;
   }
+
   #main404 .content404 section .content-erro-page .headline404 .desc {
     font-size: 16px;
     line-height: 1.33;
@@ -107,16 +114,14 @@
     flex-direction: column;
     gap: 5px;
   }
-  #main404
-    .content404
-    section
-    .content-erro-page
-    .error-page-cta
-    .error-page-cta-sitemap {
+
+  #main404 .content404 section .content-erro-page .error-page-cta .error-page-cta-sitemap {
     padding: 24px;
   }
+
   #main404 .content404 section {
-    padding: 112px 100px; /* Ou o valor desejado para telas menores */
+    padding: 112px 100px;
+    /* Ou o valor desejado para telas menores */
   }
 }
 
@@ -127,9 +132,11 @@
     flex-direction: column;
     padding: 50px 10px;
   }
+
   #main404 .content404 section .content-erro-page {
     margin-top: 24px;
   }
+
   /* #main404 .content404 section .content-erro-page .error-page-cta {
     display: flex;
     flex-direction: row;
@@ -144,7 +151,7 @@
 }
 
 @media screen and (max-width: 430px) {
-    #main404 .content404 section .unit-image-warpper #unit-image-astronauta {
+  #main404 .content404 section .unit-image-warpper #unit-image-astronauta {
     height: 200px;
     width: 200px;
     background-size: cover;
