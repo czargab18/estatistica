@@ -1,11 +1,9 @@
 @charset "UTF-8";
 #globalaside {
-  all: unset;
-}
-body #globalaside {
   margin: 0;
   padding: 0;
 }
+
 #globalaside ul,
 #globalaside ol,
 #globalaside li,
@@ -94,13 +92,10 @@ body #globalaside {
   border: 0;
   padding: 0;
 }
-@media print {
-  #globalaside {
-    display: none;
-  }
-}
+
 
 #globalaside {
+  all: unset;
   background-color: var(--r-globalaside-background-color-dark-blue);
   height: var(--r-globalaside-height);
   width: 100%;
