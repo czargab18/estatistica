@@ -3,7 +3,7 @@
     // OCULTAR ARQUIVOS GIT
     "**/.git": true,
     "**/.github/copilot/": true,
-    "**/.github/ISSUE_TEMPLATE/": false,
+    "**/.github/ISSUE_TEMPLATE/": true,
     // OCULTAR SUBMODULOS GIT
     // submodulo API
     "api/**/.git": true,
