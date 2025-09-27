@@ -1,7 +1,18 @@
+.article h1,
+.article h2,
+.article h3,
+.article h4,
+.article h5,
+.article h6 {
+  font-weight: 600;
+  color: var(--sk-headline-text-color, rgb(29, 29, 31));
+}
+
 .article {
   margin: 0 auto;
   margin-top: 56px;
   width: 980px;
+  margin-bottom: 44px;
 }
 
 .article .article-header {
@@ -12,6 +23,20 @@
   .article .article-header {
     width: 980px;
   }
+}
+
+.article-header::after {
+  content: "";
+  display: block;
+  border-top: 1px solid #d2d2d7;
+  margin-inline-start: auto;
+  margin-inline-end: auto;
+  margin-top: 36px;
+  width: 653px;
+  width: 100%;
+}
+.article .article-header span {
+  display: block;
 }
 
 .article .category.component {
@@ -98,12 +123,59 @@
   margin-bottom: 0;
 }
 
-/*  */
-.article .article-header span {
-  display: block;
+.article section {
+  margin: 0 auto;
+  width: 653px;
 }
 
-.article img {
+@media screen and (min-width: 1280px) {
+  .article section {
+    width: 980px;
+  }
+}
+
+.article section .pagebody,
+.article section p {
+  font-size: 19px;
+  line-height: 1.4211026316;
+  font-weight: 400;
+  letter-spacing: 0.012em;
+  font-family: "SF Pro Display", "SF Pro Icons", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+}
+
+.article section .pagebody .pagebody-copy:first-child,
+.article section p .pagebody-copy:first-child {
+  margin-top: 0;
+}
+.article section .pagebody-copy,
+.article section p {
+  margin-bottom: 1.4211026316em;
+}
+
+.article section .pagebody-header,
+.article section h2 {
+  font-size: 24px;
+  line-height: 1.1666666667;
+  font-weight: 700;
+  letter-spacing: 0.009em;
+  font-family: "SF Pro Display", "SF Pro Icons", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+  margin-bottom: 16px;
+  margin-top: 52px;
+}
+.article section:last-of-type,
+.article section:last-of-type {
+  content: "";
+  display: block;
+  border-bottom: 1px solid #d2d2d7;
+  margin-inline-start: auto;
+  margin-inline-end: auto;
+  margin-top: 36px;
+  width: 653px;
+  width: 100%;
+}
+
+.article .pagebody img,
+.article section img {
   width: 100%;
   display: block;
 }
