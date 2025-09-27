@@ -113,6 +113,28 @@
   color: var(--sk-headline-text-color, rgb(29, 29, 31));
 }
 
+@media only screen and (max-width: 1068px) {
+  .article .pagetitle h1,
+  .article .pagetitle .hero-headline h1 {
+    font-size: 40px;
+    line-height: 1.1;
+    font-weight: 700;
+    letter-spacing: 0em;
+    font-family: "SF Pro Display", "SF Pro Icons", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+  }
+}
+
+@media only screen and (max-width: 734px) {
+  .article .pagetitle h1,
+  .article .pagetitle .hero-headline h1 {
+    font-size: 32px;
+    line-height: 1.125;
+    font-weight: 700;
+    letter-spacing: 0.004em;
+    font-family: "SF Pro Display", "SF Pro Icons", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+  }
+}
+
 .article .pagetitle .article-subhead {
   font-size: 24px;
   line-height: 1.1666666667;
