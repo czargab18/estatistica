@@ -8,17 +8,17 @@ function handleNavbarHover() {
     if (hasSubmenu) {
       const link = item.querySelector(".globalnavbar-item-link");
       link.addEventListener("mouseenter", () => {
-        navbar.classList.add("globalnavbar-hover-active");
+        navbar.classList.add("globalnavbar-hover-active", "globalnavbar-with-opened", "globalnavbar-with-flyout-opened");
       });
       link.addEventListener("mouseleave", () => {
         if (!item.querySelector(".globalnavbar-submenu:hover")) {
-          navbar.classList.remove("globalnavbar-hover-active");
+          navbar.classList.remove("globalnavbar-hover-active", "globalnavbar-with-opened", "globalnavbar-with-flyout-opened");
         }
       });
     }
   });
   navbar.addEventListener("mouseleave", () => {
-    navbar.classList.remove("globalnavbar-hover-active");
+    navbar.classList.remove("globalnavbar-hover-active", "globalnavbar-with-opened", "globalnavbar-with-flyout-opened");
   });
 }
 
@@ -33,7 +33,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const isMobile = () => window.matchMedia("(max-width: 979px)").matches;
 
   const closeAll = () => {
-    navbar.classList.remove("globalnavbar-hover-active");
+    navbar.classList.remove("globalnavbar-hover-active", "globalnavbar-with-opened", "globalnavbar-with-flyout-opened");
     navbar
       .querySelectorAll(".globalnavbar-submenu-opened")
       .forEach((el) => el.classList.remove("globalnavbar-submenu-opened"));
@@ -47,11 +47,11 @@ document.addEventListener("DOMContentLoaded", () => {
     const trigger = item.querySelector(".globalnavbar-item-link");
     if (!submenu || !trigger) return;
 
-    const show = () => navbar.classList.add("globalnavbar-hover-active");
+    const show = () => navbar.classList.add("globalnavbar-hover-active", "globalnavbar-with-opened", "globalnavbar-with-flyout-opened");
     const hide = () => {
       setTimeout(() => {
         if (!navbar.contains(document.activeElement) && !navbar.querySelector(":hover")) {
-          navbar.classList.remove("globalnavbar-hover-active");
+          navbar.classList.remove("globalnavbar-hover-active", "globalnavbar-with-opened", "globalnavbar-with-flyout-opened");
         }
       }, 40);
     };
@@ -69,9 +69,9 @@ document.addEventListener("DOMContentLoaded", () => {
       e.preventDefault();
       const opened = item.classList.toggle("globalnavbar-submenu-opened");
       trigger.setAttribute("aria-expanded", opened ? "true" : "false");
-      if (opened) navbar.classList.add("globalnavbar-hover-active");
+      if (opened) navbar.classList.add("globalnavbar-hover-active", "globalnavbar-with-opened", "globalnavbar-with-flyout-opened");
       else if (!navbar.querySelector(".globalnavbar-submenu-opened"))
-        navbar.classList.remove("globalnavbar-hover-active");
+        navbar.classList.remove("globalnavbar-hover-active", "globalnavbar-with-opened", "globalnavbar-with-flyout-opened");
     });
   });
 
@@ -79,7 +79,7 @@ document.addEventListener("DOMContentLoaded", () => {
     curtain.addEventListener("click", closeAll);
   }
 
-  navbar.addEventListener("mouseleave", () => navbar.classList.remove("globalnavbar-hover-active"));
+  navbar.addEventListener("mouseleave", () => navbar.classList.remove("globalnavbar-hover-active", "globalnavbar-with-opened", "globalnavbar-with-flyout-opened"));
 });
 
 document.addEventListener("DOMContentLoaded", function () {
