@@ -35,8 +35,8 @@ document.addEventListener("DOMContentLoaded", () => {
   const closeAll = () => {
     navbar.classList.remove("globalnavbar-hover-active");
     navbar
-      .querySelectorAll(".globalnavbar-submenu-open")
-      .forEach((el) => el.classList.remove("globalnavbar-submenu-open"));
+      .querySelectorAll(".globalnavbar-submenu-opened")
+      .forEach((el) => el.classList.remove("globalnavbar-submenu-opened"));
     navbar
       .querySelectorAll('.globalnavbar-item-link[aria-expanded="true"]')
       .forEach((a) => a.setAttribute("aria-expanded", "false"));
@@ -67,10 +67,10 @@ document.addEventListener("DOMContentLoaded", () => {
     trigger.addEventListener("click", (e) => {
       if (!isMobile()) return;
       e.preventDefault();
-      const opened = item.classList.toggle("globalnavbar-submenu-open");
+      const opened = item.classList.toggle("globalnavbar-submenu-opened");
       trigger.setAttribute("aria-expanded", opened ? "true" : "false");
       if (opened) navbar.classList.add("globalnavbar-hover-active");
-      else if (!navbar.querySelector(".globalnavbar-submenu-open"))
+      else if (!navbar.querySelector(".globalnavbar-submenu-opened"))
         navbar.classList.remove("globalnavbar-hover-active");
     });
   });
@@ -110,7 +110,7 @@ document.addEventListener("DOMContentLoaded", function () {
     console.log('DEBUG: Opening menu'); // DEBUG
     topLineOpenAnim.beginElement();
     bottomLineOpenAnim.beginElement();
-    navbar.classList.add("globalnavbar-open");
+    navbar.classList.add("globalnavbar-opened");
     curtain.classList.add("globalnavbar-curtain-visible");
     console.log('DEBUG: Curtain classes:', curtain.className); // DEBUG
     menuButton.setAttribute("aria-expanded", "true");
@@ -121,7 +121,7 @@ document.addEventListener("DOMContentLoaded", function () {
     console.log('DEBUG: Closing menu'); // DEBUG
     topLineCloseAnim.beginElement();
     bottomLineCloseAnim.beginElement();
-    navbar.classList.remove("globalnavbar-open");
+    navbar.classList.remove("globalnavbar-opened");
     curtain.classList.remove("globalnavbar-curtain-visible");
     console.log('DEBUG: Curtain classes after close:', curtain.className); // DEBUG
     menuButton.setAttribute("aria-expanded", "false");
@@ -147,10 +147,10 @@ document.addEventListener("DOMContentLoaded", function () {
 function handleResize() {
   const navbar = document.getElementById("globalnavbar");
 
-  // Se a tela for >= 834px, remover a classe globalnavbar-open
+  // Se a tela for >= 834px, remover a classe globalnavbar-opened
   if (window.innerWidth >= 834) {
-    if (navbar && navbar.classList.contains("globalnavbar-open")) {
-      navbar.classList.remove("globalnavbar-open");
+    if (navbar && navbar.classList.contains("globalnavbar-opened")) {
+      navbar.classList.remove("globalnavbar-opened");
 
       // Resetar estado do menu se necessário
       const curtain = document.getElementById("globalnavbar-curtain");
