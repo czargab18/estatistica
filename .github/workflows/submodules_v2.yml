@@ -92,7 +92,7 @@ jobs:
         uses: peter-evans/create-pull-request@v5
         with:
           token: ${{ env.TOKEN }}
-          base: stag # branch base onde a PR (de book para stag)
+          base: main # branch main onde a PR (de book para main)
           branch: book
           delete-branch: true
           title: "book: atualiza novos livros Quarto renderizados"
