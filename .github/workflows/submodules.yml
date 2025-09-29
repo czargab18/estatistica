@@ -30,7 +30,7 @@ jobs:
       
       - name: Configura credenciais do Git para submódulos privados
         run: |
-          git config --global url."https://${{ secrets.GITHUB_TOKEN }}:x-oauth-basic@github.com/".insteadOf "https://github.com/"
+          git config --global url."https://${{ env.TOKEN }}:x-oauth-basic@github.com/".insteadOf "https://github.com/"
           
       - name: Checkout
         uses: actions/checkout@v4
