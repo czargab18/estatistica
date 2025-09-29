@@ -59,6 +59,11 @@ jobs:
         with:
           python-version: '3.13.*'
 
+      - name: Instalar dependências do backend
+        run: |
+          pip install -r ./backend/actions/run/requirements.txt ||
+          pip install -r backend/actions/run/requirements.txt
+
       - name: Automação com 'backend/action/run/'
         run: |
           python ./backend/actions/run/site_html_manager.py --only-head --dynamic-head --path ./book/
