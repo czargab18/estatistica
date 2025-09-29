@@ -61,3 +61,50 @@ jobs:
           python ./backend/actions/run/site_html_manager.py --only-footer --path ./book/
 
         #5. fazer o merge para o repositório estatística via branch: book
+      - name: Commit e criar Pull Request
+        uses: peter-evans/create-pull-request@v5
+        with:
+          base: stag # branch base onde a PR (de book para stag)
+          branch: book
+          delete-branch: true
+          title: "book: atualiza novos livros Quarto renderizados"
+          labels: |
+            books
+            quarto
+            action
+            needs-review
+            automated-pr
+          assignees: ${{ github.repository_owner }}
+          reviewers: ${{ github.repository_owner  }}
+          draft: false
+          commit-message: |
+            books: atualiza e padroniza livros renderizados
+
+            Commit fonte: ${{ github.sha }}
+            Data: $(date +'%Y-%m-%d %H:%M:%S UTC')
+
+          body: |
+            ## 📖 atualiza e padroniza livros renderizados pelo GitHub Actions
+
+            Esta 'pull_request' contém a atualização dos livros renderizados, via GitHub Actions, a partir dos arquivos fonte em Quarto (.qmd) presentes na pasta `build/`.
+
+            ### 📋 Detalhes da Renderização
+            - **Commit fonte**: `${{ github.sha }}`
+            - **Workflow**: `${{ github.run_id }}`
+            - **Data**: $(date +'%Y-%m-%d %H:%M:%S UTC')
+            - **Triggering commit**: `${{ github.event.head_commit.message }}`
+
+            ### 📚 Livros Renderizados
+            $(ls book 2>/dev/null | grep -E '^[A-Z]{3}[0-9]{4}' | sed 's/^/- 📖 /' || echo "- Nenhum livro renderizado")
+
+            ## 👀 Review Checklist
+            Por favor, verifique se todos os livros foram renderizados corretamente e estão prontos para publicação.:
+            - [ ] 📖 Livros foram renderizados corretamente
+            - [ ] 🎨 Formatação e estilos estão adequados
+            - [ ] 🔗 Links internos funcionam
+            - [ ] 📱 Layout é responsivo
+            - [ ] 📁 Estrutura de pastas está organizada
+
+            ---
+            **⚠️ Esta PR requer aprovação manual do proprietário antes do merge.**
+
