@@ -27,53 +27,94 @@ jobs:
     environment:
       name: ENVIRONMENT
     steps:
+      
+      - name: Configura credenciais do Git para submódulos privados
+        run: |
+          git config --global url."https://${{ env.TOKEN }}:x-oauth-basic@github.com/".insteadOf "https://github.com/"
+          
       - name: Checkout
         uses: actions/checkout@v4
         with:
           repository: ${{ env.USERNAME }}/estatistica
           token: ${{ env.TOKEN }}
-          path: "estatistica"
           ref: "stag"
           fetch-tags: true
-          
-        #1. checar repositório
-        #2. puxar submodule book
-        #3. detectar arquivos alterados
-        #4. renderizar livros
+
+      - name: Atualizar submodule 'books'
+        run: |
+          git submodule update --init books
+      
+      - name: Movendo de 'books/book' para 'book/'
+        run: |
+          rsync -av --delete books/book/ book/
+
         #5. padronizar livros par ao site via repositório backend
+      - name: Atualizar submodule 'backend'
+        run: |
+          git submodule update --init backend
+      
+
+      - name: Instalar o python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.13.*'
+
+      - name: Instalar dependências do backend
+        run: |
+          pip install -r backend/actions/run/requirements.txt
+
+      - name: Automação com 'backend/action/run/'
+        run: |
+          python ./backend/actions/run/site_html_manager.py --only-head --dynamic-head --path ./book/
+          python ./backend/actions/run/site_html_manager.py --only-header --path ./book/
+          python ./backend/actions/run/site_html_manager.py --only-footer --path ./book/
+
         #5. fazer o merge para o repositório estatística via branch: book
+      - name: Commit e criar Pull Request
+        uses: peter-evans/create-pull-request@v5
+        with:
+          token: ${{ env.TOKEN }}
+          base: stag # branch base onde a PR (de book para stag)
+          branch: book
+          delete-branch: true
+          title: "book: atualiza novos livros Quarto renderizados"
+          labels: |
+            books
+            quarto
+            action
+            needs-review
+            automated-pr
+          assignees: ${{ github.repository_owner }}
+          reviewers: ${{ github.repository_owner  }}
+          draft: false
+          commit-message: |
+            books: atualiza e padroniza livros renderizados
 
-  #     - name: Configura credenciais do Git
-  #       working-directory: estatistica
-  #       run: |
-  #         git config --global url."https://${{ env.TOKEN }}:x-oauth-basic@github.com/".insteadOf "https://github.com/"
-  #         git remote set-url origin https://${{ env.TOKEN }}:x-oauth-basic@github.com/${{ github.repository }}.git
-  #         git config user.name "${{ env.USERNAME }}"
-  #         git config user.email "${{ env.USEREMAIL }}@users.noreply.github.com"
+            Commit fonte: ${{ github.sha }}
+            Data: $(date +'%Y-%m-%d %H:%M:%S UTC')
 
-  #     - name: Atualizar submodule 'books'
-  #       working-directory: estatistica
-  #       run: |
-  #         git submodule update --init books
+          body: |
+            ## 📖 atualiza e padroniza livros renderizados pelo GitHub Actions
 
-  #     # PASSOS PARA AUTOMAÇÃO DO BOOKS PARA O REPOSITÓRIO ESTATÍSTICA
-  #     # usar o repositório 'backend' com backend/action/book/ para a renderização
-  #     # EM DESENVOLVIMENTO
+            Esta 'pull_request' contém a atualização dos livros renderizados, via GitHub Actions, a partir dos arquivos fonte em Quarto (.qmd) presentes na pasta `build/`.
 
-  #     - name: Sincronizar pastas entre os repositórios
-  #       working-directory: estatistica
-  #       run: |
-  #         ORIGIN="books/book"
-  #         DESTINO="book"
-  #         rsync -av --update "$DESTINO"/ "$ORIGIN"/
+            ### 📋 Detalhes da Renderização
+            - **Commit fonte**: `${{ github.sha }}`
+            - **Workflow**: `${{ github.run_id }}`
+            - **Data**: $(date +'%Y-%m-%d %H:%M:%S UTC')
+            - **Triggering commit**: `${{ github.event.head_commit.message }}`
 
-  #     - name: Faz commit e push dos livros renderizados
-  #       working-directory: estatistica
-  #       run: |
-  #         git checkout -B book
-  #         git add book/
-  #         git commit -m "book: atualiza 'livros' a partir do submodule:books" || echo "Nada a commitar"
-  #         git push --force origin book
+            ### 📚 Livros Renderizados
+            $(ls book 2>/dev/null | grep -E '^[A-Z]{3}[0-9]{4}' | sed 's/^/- 📖 /' || echo "- Nenhum livro renderizado")
 
-  #     # O deploy será feito em um job onde eu puxo o site e submodulos.
-  #     # EM DESENVOLVIMENTO
+            ## 👀 Review Checklist
+            Por favor, verifique se todos os livros foram renderizados corretamente e estão prontos para publicação.:
+            - [ ] 📖 Livros foram renderizados corretamente
+            - [ ] 🎨 Formatação e estilos estão adequados
+            - [ ] 🔗 Links internos funcionam
+            - [ ] 📱 Layout é responsivo
+            - [ ] 📁 Estrutura de pastas está organizada
+
+            ---
+            **⚠️ Esta PR requer aprovação manual do proprietário antes do merge.**
+

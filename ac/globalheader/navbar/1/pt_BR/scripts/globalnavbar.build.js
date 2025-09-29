@@ -8,17 +8,17 @@ function handleNavbarHover() {
     if (hasSubmenu) {
       const link = item.querySelector(".globalnavbar-item-link");
       link.addEventListener("mouseenter", () => {
-        navbar.classList.add("globalnavbar-hover-active");
+        navbar.classList.add("globalnavbar-hover-active", "globalnavbar-with-opened", "globalnavbar-with-flyout-opened");
       });
       link.addEventListener("mouseleave", () => {
         if (!item.querySelector(".globalnavbar-submenu:hover")) {
-          navbar.classList.remove("globalnavbar-hover-active");
+          navbar.classList.remove("globalnavbar-hover-active", "globalnavbar-with-opened", "globalnavbar-with-flyout-opened");
         }
       });
     }
   });
   navbar.addEventListener("mouseleave", () => {
-    navbar.classList.remove("globalnavbar-hover-active");
+    navbar.classList.remove("globalnavbar-hover-active", "globalnavbar-with-opened", "globalnavbar-with-flyout-opened");
   });
 }
 
@@ -33,10 +33,10 @@ document.addEventListener("DOMContentLoaded", () => {
   const isMobile = () => window.matchMedia("(max-width: 979px)").matches;
 
   const closeAll = () => {
-    navbar.classList.remove("globalnavbar-hover-active");
+    navbar.classList.remove("globalnavbar-hover-active", "globalnavbar-with-opened", "globalnavbar-with-flyout-opened");
     navbar
-      .querySelectorAll(".globalnavbar-submenu-open")
-      .forEach((el) => el.classList.remove("globalnavbar-submenu-open"));
+      .querySelectorAll(".globalnavbar-submenu-opened")
+      .forEach((el) => el.classList.remove("globalnavbar-submenu-opened"));
     navbar
       .querySelectorAll('.globalnavbar-item-link[aria-expanded="true"]')
       .forEach((a) => a.setAttribute("aria-expanded", "false"));
@@ -47,11 +47,11 @@ document.addEventListener("DOMContentLoaded", () => {
     const trigger = item.querySelector(".globalnavbar-item-link");
     if (!submenu || !trigger) return;
 
-    const show = () => navbar.classList.add("globalnavbar-hover-active");
+    const show = () => navbar.classList.add("globalnavbar-hover-active", "globalnavbar-with-opened", "globalnavbar-with-flyout-opened");
     const hide = () => {
       setTimeout(() => {
         if (!navbar.contains(document.activeElement) && !navbar.querySelector(":hover")) {
-          navbar.classList.remove("globalnavbar-hover-active");
+          navbar.classList.remove("globalnavbar-hover-active", "globalnavbar-with-opened", "globalnavbar-with-flyout-opened");
         }
       }, 40);
     };
@@ -67,11 +67,11 @@ document.addEventListener("DOMContentLoaded", () => {
     trigger.addEventListener("click", (e) => {
       if (!isMobile()) return;
       e.preventDefault();
-      const opened = item.classList.toggle("globalnavbar-submenu-open");
+      const opened = item.classList.toggle("globalnavbar-submenu-opened");
       trigger.setAttribute("aria-expanded", opened ? "true" : "false");
-      if (opened) navbar.classList.add("globalnavbar-hover-active");
-      else if (!navbar.querySelector(".globalnavbar-submenu-open"))
-        navbar.classList.remove("globalnavbar-hover-active");
+      if (opened) navbar.classList.add("globalnavbar-hover-active", "globalnavbar-with-opened", "globalnavbar-with-flyout-opened");
+      else if (!navbar.querySelector(".globalnavbar-submenu-opened"))
+        navbar.classList.remove("globalnavbar-hover-active", "globalnavbar-with-opened", "globalnavbar-with-flyout-opened");
     });
   });
 
@@ -79,7 +79,7 @@ document.addEventListener("DOMContentLoaded", () => {
     curtain.addEventListener("click", closeAll);
   }
 
-  navbar.addEventListener("mouseleave", () => navbar.classList.remove("globalnavbar-hover-active"));
+  navbar.addEventListener("mouseleave", () => navbar.classList.remove("globalnavbar-hover-active", "globalnavbar-with-opened", "globalnavbar-with-flyout-opened"));
 });
 
 document.addEventListener("DOMContentLoaded", function () {
@@ -110,7 +110,7 @@ document.addEventListener("DOMContentLoaded", function () {
     console.log('DEBUG: Opening menu'); // DEBUG
     topLineOpenAnim.beginElement();
     bottomLineOpenAnim.beginElement();
-    navbar.classList.add("globalnavbar-open");
+    navbar.classList.add("globalnavbar-opened");
     curtain.classList.add("globalnavbar-curtain-visible");
     console.log('DEBUG: Curtain classes:', curtain.className); // DEBUG
     menuButton.setAttribute("aria-expanded", "true");
@@ -121,7 +121,7 @@ document.addEventListener("DOMContentLoaded", function () {
     console.log('DEBUG: Closing menu'); // DEBUG
     topLineCloseAnim.beginElement();
     bottomLineCloseAnim.beginElement();
-    navbar.classList.remove("globalnavbar-open");
+    navbar.classList.remove("globalnavbar-opened");
     curtain.classList.remove("globalnavbar-curtain-visible");
     console.log('DEBUG: Curtain classes after close:', curtain.className); // DEBUG
     menuButton.setAttribute("aria-expanded", "false");
@@ -147,10 +147,10 @@ document.addEventListener("DOMContentLoaded", function () {
 function handleResize() {
   const navbar = document.getElementById("globalnavbar");
 
-  // Se a tela for >= 834px, remover a classe globalnavbar-open
+  // Se a tela for >= 834px, remover a classe globalnavbar-opened
   if (window.innerWidth >= 834) {
-    if (navbar && navbar.classList.contains("globalnavbar-open")) {
-      navbar.classList.remove("globalnavbar-open");
+    if (navbar && navbar.classList.contains("globalnavbar-opened")) {
+      navbar.classList.remove("globalnavbar-opened");
 
       // Resetar estado do menu se necessário
       const curtain = document.getElementById("globalnavbar-curtain");

@@ -4,7 +4,7 @@
     "href": "index.html",
     "title": "Estatística Exploratória",
     "section": "",
-    "text": "Estatística Exploratória\nEm desenvolvimento",
+    "text": "Estatística Exploratória\nLivro em desenvolvimento. Acesse algumas formulas",
     "crumbs": [
       "<span class='chapter-number'>1</span>  <span class='chapter-title'>Estatística Exploratória</span>"
     ]
@@ -60,168 +60,23 @@
     ]
   },
   {
-    "objectID": "textuais/unid1/introd.html",
-    "href": "textuais/unid1/introd.html",
-    "title": "O que é estatística?",
-    "section": "",
-    "text": "Em desenvolvimento",
-    "crumbs": [
-      "Unidade I",
-      "<span class='chapter-number'>3</span>  <span class='chapter-title'>O que é estatística?</span>"
-    ]
-  },
-  {
-    "objectID": "textuais/unid1/brasil.html",
-    "href": "textuais/unid1/brasil.html",
-    "title": "Brasil",
-    "section": "",
-    "text": "Em desenvolvimento",
-    "crumbs": [
-      "Unidade I",
-      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Brasil</span>"
-    ]
-  },
-  {
-    "objectID": "textuais/unid2/introd.html",
-    "href": "textuais/unid2/introd.html",
-    "title": "Fase do Trabalho Estatístico?",
-    "section": "",
-    "text": "Em desenvolvimento",
-    "crumbs": [
-      "Unidade II",
-      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Fase do Trabalho Estatístico?</span>"
-    ]
-  },
-  {
-    "objectID": "textuais/unid3/introd.html",
-    "href": "textuais/unid3/introd.html",
-    "title": "Análise de 1 variável",
-    "section": "",
-    "text": "Em Desenvolvimento",
-    "crumbs": [
-      "Unidade III",
-      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Análise de 1 variável</span>"
-    ]
-  },
-  {
-    "objectID": "textuais/unid4/introd.html",
-    "href": "textuais/unid4/introd.html",
-    "title": "Análise de 2 variáveis",
-    "section": "",
-    "text": "ANÁLISE DE VARIÁVEIS BIDIMENSIONAIS",
-    "crumbs": [
-      "Unidade IV",
-      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Análise de 2 variáveis</span>"
-    ]
-  },
-  {
-    "objectID": "postextuais/apendice/ementa.html",
-    "href": "postextuais/apendice/ementa.html",
-    "title": "Programa de Estatística Básica",
-    "section": "",
-    "text": "2. OBJETIVOS:\nEsta ementa está sendo adaptada da disciplina ofertada pelo Departamentod de Estatística da Universidade de Brasília",
-    "crumbs": [
-      "Anexos",
-      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Programa de Estatística Básica</span>"
-    ]
-  },
-  {
-    "objectID": "postextuais/apendice/ementa.html#objetivos",
-    "href": "postextuais/apendice/ementa.html#objetivos",
-    "title": "Programa de Estatística Básica",
-    "section": "",
-    "text": "Introduzir noções básicas de Análise Exploratória de Dados, familiarizando o estudante com sua terminologia e principais técnicas.\n\nFamiliarizar o estudante com as fases do trabalho estatístico e capacitá-lo, através da solução e discussão de exercícios, a sedimentar e utilizar os conceitos aprendidos na análise de dados.\n\nApresentar ao estudante uma visão geral da Estatística no Brasil: campo de aplicação, a profissão e sua regulamentação.\n\nApresentar ao estudante as principais fontes de dados estatísticos no Brasil.\n\nIntroduzir o estudante ao uso de aplicativos estatísticos para microcomputadores.\n\nDesenvolver a capacidade crítica e analítica do estudante através da discussão de exercícios e problemas, bem como a capacidade de se expressar oralmente e por escrito.",
-    "crumbs": [
-      "Anexos",
-      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Programa de Estatística Básica</span>"
-    ]
-  },
-  {
-    "objectID": "postextuais/apendice/ementa.html#unidade-i-introdução-à-estatística",
-    "href": "postextuais/apendice/ementa.html#unidade-i-introdução-à-estatística",
-    "title": "Programa de Estatística Básica",
-    "section": "UNIDADE I: INTRODUÇÃO À ESTATÍSTICA",
-    "text": "UNIDADE I: INTRODUÇÃO À ESTATÍSTICA\n\n1. Conceitos Fundamentais\n\nO que é Estatística?\n\nDefinição, aplicações e divisões (descritiva × inferencial).\n\n\nEstatística no Brasil\n\nHistórico e papel no setor público e privado.\n\n\n\n\n2. Profissão e Sistema Estatístico\n\nAtuação do Estatístico\n\nÁreas de trabalho e regulamentação profissional.\n\n\nSistema Estatístico Brasileiro\n\nIBGE, CONCLA, e outras instituições.\n\n\n\n\n3. Fontes de Dados\n\nBases nacionais\n\nCensos, PNAD, registros administrativos (ex: DATASUS).",
-    "crumbs": [
-      "Anexos",
-      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Programa de Estatística Básica</span>"
-    ]
-  },
-  {
-    "objectID": "postextuais/apendice/ementa.html#unidade-ii-etapas-do-método-estatístico",
-    "href": "postextuais/apendice/ementa.html#unidade-ii-etapas-do-método-estatístico",
-    "title": "Programa de Estatística Básica",
-    "section": "UNIDADE II: ETAPAS DO MÉTODO ESTATÍSTICO",
-    "text": "UNIDADE II: ETAPAS DO MÉTODO ESTATÍSTICO\n\n1. Planejamento\n\nProjeto de Pesquisa\n\nDefinição de objetivos, população e amostra.\n\n\n\n\n2. Coleta de Dados\n\nMétodos\n\nCensos, amostragem (probabilística e não-probabilística).\n\n\nInstrumentos\n\nElaboração de questionários (tipos de perguntas, validação).\n\n\n\n\n3. Organização e Apuração\n\nVariáveis e Escalas\n\nQualitativas (nominal/ordinal) × Quantitativas (discreta/contínua).\n\n\n\n\n4. Apresentação de Dados\n\nSéries Estatísticas\n\nTemporal, geográfica, categórica.\n\n\nGráficos para Variáveis Qualitativas\n\nBarras, setores, pictogramas.",
-    "crumbs": [
-      "Anexos",
-      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Programa de Estatística Básica</span>"
-    ]
-  },
-  {
-    "objectID": "postextuais/apendice/ementa.html#unidade-iii-análise-univariada",
-    "href": "postextuais/apendice/ementa.html#unidade-iii-análise-univariada",
-    "title": "Programa de Estatística Básica",
-    "section": "UNIDADE III: ANÁLISE UNIVARIADA",
-    "text": "UNIDADE III: ANÁLISE UNIVARIADA\n\n1. Representação Gráfica\n\nDiagrama de pontos, ramo-e-folhas, histogramas.\n\n\n\n2. Medidas-Resumo\n\nPosição: Média, mediana, moda.\n\nVariabilidade: Amplitude, desvio padrão.\n\nForma: Coeficientes de assimetria e curtose.\n\n\n\n3. Análise Robustez\n\nBox-plot: Interpretação e identificação de outliers.",
-    "crumbs": [
-      "Anexos",
-      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Programa de Estatística Básica</span>"
-    ]
-  },
-  {
-    "objectID": "postextuais/apendice/ementa.html#unidade-iv-análise-bivariada-cap.-4-bussab-morettin-10ª-ed.",
-    "href": "postextuais/apendice/ementa.html#unidade-iv-análise-bivariada-cap.-4-bussab-morettin-10ª-ed.",
-    "title": "Programa de Estatística Básica",
-    "section": "UNIDADE IV: ANÁLISE BIVARIADA (Cap. 4 – Bussab & Morettin, 10ª ed.)",
-    "text": "UNIDADE IV: ANÁLISE BIVARIADA (Cap. 4 – Bussab & Morettin, 10ª ed.)\n\n1. Variáveis Qualitativas\n\nTabelas de contingência\n\nMedidas de associação: Qui-Quadrado, V de Cramer.\n\n\n\n2. Variáveis Quantitativas\n\nDiagrama de dispersão\n\nCorrelação: Pearson (linear) e Spearman (monotônica).\n\n\n\n3. Relações Qualitativa × Quantitativa\n\nComparação de grupos: Box-plot por categoria.",
-    "crumbs": [
-      "Anexos",
-      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Programa de Estatística Básica</span>"
-    ]
-  },
-  {
-    "objectID": "postextuais/apendice/ementa.html#referências",
-    "href": "postextuais/apendice/ementa.html#referências",
-    "title": "Programa de Estatística Básica",
-    "section": "REFERÊNCIAS",
-    "text": "REFERÊNCIAS\n\nBásica\n\nBARATELA MARTINS NETO, Daniele da Silva. Cálculo de Probabilidade 1. Notas de aula. Universidade de Brasília (UnB), Departamento de Matemática, 2025. Disponível mediante solicitação por e-mail: danielebaratela@unb.br.\nBARBETTA, Pedro A. Estatística Aplicada às Ciências Sociais. 7. ed. Florianópolis: Ed. da UFSC, 2007.\nBUSSAB, W.; MORETTIN, P. Estatística Básica. 5. ed. São Paulo: Saraiva, 2003.\nFONSECA, J. S.; MARTINS, G. A. Curso de Estatística. São Paulo: Atlas, 1994.\nMAGALHÃES, Marcos N.; LIMA, Antonio Carlos P. Noções de Probabilidade e Estatística. São Paulo: EdUSP, 2002.\nTOLEDO, G. L.; OVALLE, I. J. Estatística Básica. 2. ed. São Paulo: Atlas, 2010.\n\n\n\nComplementar\n\nBERQUÓ, E. S.; GOTLIEB, Sabina L. D.; SOUSA, J. M. P. de. Bioestatística. 2. ed. rev. São Paulo: Editora Pedagógica e Universitária Ltda., 2001.\nHAKKERT, R. Fontes de dados demográficos. Belo Horizonte: ABEP, 1996. (Textos Didáticos)\nLEOROLLA, F. Estatística para Engenheiros. Brasília: UnB, 2025.\nLEVIN, J.; FOX, J. A. Estatística Aplicada às Ciências Humanas. 9. ed. São Paulo: Pearson, 2004.\nLEVINE, D. M. Estatística: Teoria e Aplicações usando o Microsoft Excel © em Português. 6. ed. Rio de Janeiro: Livros Técnicos e Científicos Editora S.A., 2012.\nSHELDON, R. Estatística para Negócios. São Paulo: Atlas, 2009.\nSTEVENSON, W.J. Estatística Aplicada à Administração. São Paulo: Harbra, 2000.\nTRIOLA, M.F. Introdução à Estatística - Atualização da Tecnologia. 11. ed. Rio de Janeiro: Livros Técnicos e Científicos Editora S.A., 2013.\nTRIOLA, M.F. E-Book - Introdução à Estatística - Atualização da Tecnologia. 11. ed. Rio de Janeiro: Livros Técnicos e Científicos Editora S.A., 2013.\nVELLEMAN, P.; HOAGLIN, D.C. Applications, Basics and Computing Exploratory Data Analysis. 1. ed. Boston: Duxbury Press, 1981.\nWILD, C. J.; SEBER, G. A. F. Encontros com o acaso: um primeiro curso de análise de dados e inferência. Rio de Janeiro: Livros Técnicos e Científicos, 2004.",
-    "crumbs": [
-      "Anexos",
-      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Programa de Estatística Básica</span>"
-    ]
-  },
-  {
-    "objectID": "postextuais/apendice/ementa.html#estrutura-do-curso-de-estatística-básica",
-    "href": "postextuais/apendice/ementa.html#estrutura-do-curso-de-estatística-básica",
-    "title": "Programa de Estatística Básica",
-    "section": "Estrutura do Curso de Estatística Básica",
-    "text": "Estrutura do Curso de Estatística Básica\n\n1. Visão Geral do Curso\n\nSlide\nVisão Geral do Curso (vídeo, 6m)\n\n\n\n2. Conceitos Iniciais\n\nSlides - Conceitos Iniciais\nConceitos Iniciais (vídeo, 20m)\n\n\n\n3. Séries Estatísticas\n\nSlides - Séries Estatísticas\nSéries Estatísticas (vídeo, 5m)\n\n\n\n4. Gráficos\n\nSlides - Gráficos\nGráficos (vídeo, 15m)\nDiagrama de Pareto (vídeo, 6m)\n\n\n\n5. Distribuição de Frequências\n\nSlides - Distribuição de Frequências\nDistribuição de Frequências (vídeo, 18m)\nExercícios - Distribuição de Frequências\nResoluções Exercícios - Distribuição de Frequências\n\n\n\n6. Histograma e Polígono de Frequências\n\nSlides - Histograma e Polígono de Frequências\nHistograma e Polígono de Frequências (vídeo, 5m)\n\n\n\n7. Medidas de Posição\n\nSlides - Medidas de Posição\nMédia Aritmética (vídeo, 9m)\nMédia Ponderada (vídeo, 6m)\nExercícios - Média Aritmética e Média Ponderada\nResoluções Exercícios - Média Aritmética e Média Ponderada\nMediana (vídeo, 20m)\nExercícios - Mediana\nResoluções Exercícios - Mediana\nModa (vídeo, 8m)\nExercícios - Moda\nResoluções Exercícios - Moda\n\n\n\n8. Medidas Separatrizes\n\nSlides - Medidas Separatrizes\nMedidas Separatrizes (vídeo, 14m)\nMedidas Separatrizes no Excel (vídeo, 5m)\nExercícios - Medidas Separatrizes\nResoluções Exercícios - Medidas Separatrizes\n\n\n\n9. Probabilidade\n\nSlides - Probabilidade\nProbabilidade - Conceitos Iniciais (vídeo, 7m)\nProbabilidade Frequentista (vídeo, 13m)\nProbabilidade - Teoremas da Soma (vídeo, 20m)\nProbabilidade - Teoremas do Produto (vídeo, 18m)\nExercícios - Probabilidade\nResoluções Exercícios - Probabilidade\n\n\n\n10. Medidas de Dispersão\n\nSlides - Medidas de Dispersão\nVariância (vídeo, 10m)\nDesvio Padrão (vídeo, 18m)\nCoeficiente de Variação (vídeo, 5m)\nExercícios Propostos - Medidas de Dispersão\nResolução Exercícios Propostos - Medidas de Dispersão\n\n\n\n11. Distribuição Binomial\n\nSlides - Distribuição Binomial\nDistribuição Binomial (vídeo, 24m)\nExercícios - Distribuição Binomial\nResoluções Exercícios - Distribuição Binomial\n\n\n\n12. Medidas de Associação\n\nSlides - Medidas de Associação\nMedidas de Associação (vídeo, 30m)\nExercícios - Medidas de Associação\nResoluções Exercícios - Medidas de Associação\n\n\n\n13. Análise de Regressão Linear Simples\n\nSlides - Análise de Regressão Linear Simples\nAnálise de Regressão Linear Simples (vídeo, 36m)\nExercícios - Análise de Regressão Linear Simples\nResoluções Exercícios - Análise de Regressão Linear Simples\n\n\n\n14. Distribuição Normal\n\nSlides - Distribuição Normal\nTabela Distribuição Normal Padrão\nDistribuição Normal (vídeo, 33m)\nAproximação da Distribuição Binomial pela Distribuição Normal (vídeo, 3m)\nFunção Distribuição Normal no Excel (vídeo, 3m)\nExercícios - Distribuição Normal\nResoluções Exercícios - Distribuição Normal\n\n\n\n15. Teorema do Limite Central - TLC\n\nSlides - Teorema do Limite Central - TLC\nTeorema do Limite Central - TLC (vídeo, 22m)\nExercícios - Teorema do Limite Central\nResoluções Exercícios - Teorema do Limite Central\n\n\n\n16. Estimação\n\nSlides - Estimação\nTabela Distribuição t\nPopulação Normal e Desvio Padrão Conhecido (vídeo, 19m)\nDistribuição t (vídeo, 13m)\nComo Escolher a Distribuição Adequada (vídeo, 4m)\nEstimativa Intervalar Para Proporções Populacionais (vídeo, 11m)\nExercícios Propostos - Estimação\nResoluções Exercícios Propostos - Estimação\n\n\n\n17. Teste de Hipóteses Com Uma Amostra\n\nSlides - Teste de Hipóteses\nTeste de Hipóteses - Introdução e Distribuição Normal (vídeo, 29m)\nTeste de Hipóteses - Distribuição t (vídeo, 7m)\nTeste de Hipóteses para Proporções (vídeo, 11m)\nExercícios - Teste de Hipóteses\nResoluções Exercícios - Teste de Hipóteses\nErrata Correção Questão 6\n\n\n\n18. Referências Bibliográficas\n\nReferências Bibliográficas",
-    "crumbs": [
-      "Anexos",
-      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Programa de Estatística Básica</span>"
-    ]
-  },
-  {
     "objectID": "postextuais/apendice/formulas/formulas.html",
     "href": "postextuais/apendice/formulas/formulas.html",
-    "title": "Formulas de Medidas Resumo",
+    "title": "Formulas",
     "section": "",
     "text": "Medidas de posição\nMedidas de dispersão\nQuantis empiricos\nBox Plot\nTransformações",
     "crumbs": [
-      "Anexos",
-      "<span class='chapter-number'>9</span>  <span class='chapter-title'>Formulas de Medidas Resumo</span>"
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Formulas</span>"
     ]
   },
   {
     "objectID": "postextuais/apendice/formulas/formulas.html#medidas-de-posição",
     "href": "postextuais/apendice/formulas/formulas.html#medidas-de-posição",
-    "title": "Formulas de Medidas Resumo",
+    "title": "Formulas",
     "section": "",
     "text": "Média aritmética (dados não-agrupados\n\\[\\bar{x} = \\frac{\\sum_{i=1}^n x_i}{n}\\]\nMédia aritmética (dados agrupados): \\[\\bar{x} = \\frac{\\sum_{i=1}^k f_i x_i}{\\sum_{i=1}^k f_i}\\]\nMédia geral \\[\\bar{x}_g = \\frac{\\sum_{j=1}^m n_j \\bar{x}_j}{\\sum_{j=1}^m n_j}\\]\nMédia harmônica (Dados não agrupados): \\[H = \\frac{n}{\\sum_{i=1}^n \\frac{1}{x_i}}\\]\nMédia harmônica (dados agrupados) \\[H = \\frac{\\sum_{i=1}^k f_i}{\\sum_{i=1}^k \\frac{f_i}{x_i}}\\]\nMediana\n\nDados não agrupados: Para dados ordenados: se \\(n\\) ímpar, \\[Md = x_{\\left(\\frac{n+1}{2}\\right)}\\] se \\(n\\) par, \\[Md = \\frac{x_{\\left(\\frac{n}{2}\\right)} + x_{\\left(\\frac{n}{2}+1\\right)}}{2}\\]\nDados agrupados: \\[Md = L + \\frac{\\left(\\frac{N}{2} - F_{ant}\\right)}{f_{Md}} \\cdot h\\] onde: \\(L\\) = limite inferior da classe mediana, \\(N\\) = total de observações, \\(F_{ant}\\) = frequência acumulada antes da classe mediana, \\(f_{Md}\\) = frequência da classe mediana, \\(h\\) = amplitude da classe.\n\nQuartis\n\nDados não agrupados: \\[Q_k = x_{\\left(\\frac{k(n+1)}{4}\\right)}\\], onde \\(k=1,2,3\\)\nDados agrupados: \\[Q_k = L + \\frac{\\left(\\frac{kN}{4} - F_{ant}\\right)}{f_{Q_k}} \\cdot h\\]\n\nDecis\n\nDados não agrupados: \\[D_k = x_{\\left(\\frac{k(n+1)}{10}\\right)}\\], onde \\(k=1,2,...,9\\)$\nDados agrupados: \\[D_k = L + \\frac{\\left(\\frac{kN}{10} - F_{ant}\\right)}{f_{D_k}} \\cdot h\\]\n\nPercentis\n\nDados não agrupados: \\[P_k = x_{\\left(\\frac{k(n+1)}{100}\\right)}\\], onde \\(k=1,2,...,99\\)$\nDados agrupados: \\[P_k = L + \\frac{\\left(\\frac{kN}{100} - F_{ant}\\right)}{f_{P_k}} \\cdot h\\]\n\nModa\n\nDados não agrupados: valor mais frequente.\nDados agrupados: \\[Mo = L + \\frac{(f_1 - f_0)}{(2f_1 - f_0 - f_2)} \\cdot h\\]\nonde: \\(L\\) = limite inferior da classe modal, \\(f_1\\) = frequência da classe modal, \\(f_0\\) = frequência da classe anterior, \\(f_2\\) = frequência da classe posterior, \\(h\\) = amplitude da classe.",
     "crumbs": [
-      "Anexos",
-      "<span class='chapter-number'>9</span>  <span class='chapter-title'>Formulas de Medidas Resumo</span>"
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Formulas</span>"
     ]
   }
 ]

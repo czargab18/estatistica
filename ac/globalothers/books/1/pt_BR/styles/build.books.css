@@ -16,54 +16,52 @@ main[id*="book-list"] {
   --sk-headline-text-color: rgb(29, 29, 31);
 }
 
-main[id*="book-list"] :is(h1,
-  h2,
-  h3,
-  h4,
-  h5,
-  h6) {
+main[id*="book-list"] :is(h1, h2, h3, h4, h5, h6) {
   color: var(--sk-headline-text-color, rgb(29, 29, 31));
 }
 
-main[id*="book-list"] :is(ul,
-  ol,
-  li,
-  dl,
-  dt,
-  dd,
-  h1,
-  h2,
-  h3,
-  h4,
-  h5,
-  h6,
-  hgroup,
-  p,
-  blockquote,
-  figure,
-  form,
-  fieldset,
-  input,
-  legend,
-  pre,
-  abbr,
-  button,
-  canvas,
-  caption,
-  code,
-  details,
-  div,
-  figcaption,
-  img,
-  label,
-  main,
-  mark,
-  nav,
-  picture,
-  samp,
-  section,
-  summary,
-  time) {
+main[id*="book-list"]
+  :is(
+    ul,
+    ol,
+    li,
+    dl,
+    dt,
+    dd,
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6,
+    hgroup,
+    p,
+    blockquote,
+    figure,
+    form,
+    fieldset,
+    input,
+    legend,
+    pre,
+    abbr,
+    button,
+    canvas,
+    caption,
+    code,
+    details,
+    div,
+    figcaption,
+    img,
+    label,
+    main,
+    mark,
+    nav,
+    picture,
+    samp,
+    section,
+    summary,
+    time
+  ) {
   margin: 0;
   padding: 0;
 }
@@ -210,14 +208,22 @@ main[id*="book-list"] div[class="books-content"] a[class*="book-item"] picture[c
   }
 }
 
-main[id*="book-list"] div[class="books-content"] a[class*="book-item"] picture[class="viewport-picture"] img[class="viewport-image"] {
+main[id*="book-list"]
+  div[class="books-content"]
+  a[class*="book-item"]
+  picture[class="viewport-picture"]
+  img[class="viewport-image"] {
   border-radius: 20px;
   width: max-content;
   height: 165px;
 }
 
 @media only screen and (max-width: 1068px) {
-  main[id*="book-list"] div[class="books-content"] a[class*="book-item"] picture[class="viewport-picture"] img[class="viewport-image"] {
+  main[id*="book-list"]
+    div[class="books-content"]
+    a[class*="book-item"]
+    picture[class="viewport-picture"]
+    img[class="viewport-image"] {
     width: 105px;
     height: 105px;
   }
@@ -426,7 +432,70 @@ main[id*="book-list"] .books-content .book a:first-of-type {
   border-top: none;
 }
 
-
 header#quarto-header {
   position: relative !important;
+}
+
+/* =================================================================
+adicionado automaticamente ao head pelo quarto ao renderizar o livro */
+code {
+  white-space: pre-wrap;
+}
+
+span.smallcaps {
+  font-variant: small-caps;
+}
+
+div.columns {
+  display: flex;
+  gap: min(4vw, 1.5em);
+}
+
+div.column {
+  flex: auto;
+  overflow-x: auto;
+}
+
+div.hanging-indent {
+  margin-left: 1.5em;
+  text-indent: -1.5em;
+}
+
+ul.task-list {
+  list-style: none;
+}
+
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em;
+  /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */
+  vertical-align: middle;
+}
+
+/* CSS for citations */
+div.csl-bib-body {
+}
+
+div.csl-entry {
+  clear: both;
+  margin-bottom: 0em;
+}
+
+.hanging-indent div.csl-entry {
+  margin-left: 2em;
+  text-indent: -2em;
+}
+
+div.csl-left-margin {
+  min-width: 2em;
+  float: left;
+}
+
+div.csl-right-inline {
+  margin-left: 2em;
+  padding-left: 1em;
+}
+
+div.csl-indent {
+  margin-left: 2em;
 }
