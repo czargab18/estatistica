@@ -1,6 +1,6 @@
 # Código gerado/assistido por IA
 name: Submodules Dispatch
-description: Workflow para atualizar arquivos dos submódulos com o repositório Estatística.
+# description: Workflow para atualizar arquivos dos submódulos com o repositório Estatística.
 
 on:
   workflow_dispatch:
