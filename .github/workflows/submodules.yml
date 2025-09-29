@@ -61,7 +61,6 @@ jobs:
 
       - name: Instalar dependências do backend
         run: |
-          pip install -r ./backend/actions/run/requirements.txt ||
           pip install -r backend/actions/run/requirements.txt
 
       - name: Automação com 'backend/action/run/'
