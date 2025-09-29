@@ -49,7 +49,7 @@ jobs:
           rsync -av --delete books/book/ book/
 
         #5. padronizar livros par ao site via repositório backend
-      - name: Atualizar submodule 'books'
+      - name: Atualizar submodule 'backend'
         run: |
           git submodule update --init backend
       
@@ -73,6 +73,7 @@ jobs:
       - name: Commit e criar Pull Request
         uses: peter-evans/create-pull-request@v5
         with:
+          token: ${{ env.TOKEN }}
           base: stag # branch base onde a PR (de book para stag)
           branch: book
           delete-branch: true
