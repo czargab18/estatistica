@@ -77,6 +77,9 @@ jobs:
           echo "livros=$LIVROS_ARRAY" >> $GITHUB_OUTPUT
           echo "Livros a renderizar: $LIVROS_ARRAY"
 
+      - name: Instalar Quarto
+        uses: quarto-dev/quarto-actions/setup@v2
+
       - name: Renderiza livros Quarto
         run: |
           LIVROS='${{ steps.books-list.outputs.livros }}'
