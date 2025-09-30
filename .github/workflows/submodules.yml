@@ -1,5 +1,5 @@
 # Código gerado/assistido por IA
-name: Submodules Dispatch
+name: submodules_v2
 # description: Workflow para atualizar arquivos dos submódulos com o repositório Estatística.
 
 on:
@@ -14,9 +14,12 @@ env:
   USEREMAIL: ${{ secrets.USEREMAIL }}
 
 permissions:
-  contents: read
   pages: write
   id-token: write
+  contents: write
+  actions: write
+  pull-requests: write
+
 
 jobs:
   books:
@@ -42,18 +45,32 @@ jobs:
 
       - name: Atualizar submodule 'books'
         run: |
-          git submodule update --init books
-      
-      - name: Movendo de 'books/book' para 'book/'
+          git submodule update --init --remote --merge books
+
+      # paaso: Encontrar uma maneira de detectar apenas o livro que foi modificado
+      #        pois, o quarto já vai sobreescrever o livro atualizado em book sem
+      #        sem precisar 'mover/sincronizar/verificar/ect.'
+      #        substituuir ' $(ls build)' pelo novo metódo.
+
+      - name: Renderiza livros Quarto
         run: |
-          rsync -av --delete books/book/ book/
+          for folder in $(ls build); do
+            if [ -d "build/$folder" ]; then
+              echo "Renderizando livro: $folder"
+              quarto render "books/build/$folder" --to html --execute --output-dir "./../../../book/$folder"
+            fi
+          done
+
+      # - name: Lista os livros renderizados
+      #   run: |
+      #     echo "Livros renderizados:"
+      #     echo "RENDERED_BOOKS=$(ls build/_rendered | xargs)" >> $GITHUB_ENV
 
         #5. padronizar livros par ao site via repositório backend
       - name: Atualizar submodule 'backend'
         run: |
-          git submodule update --init backend
+          git submodule update --init --remote --merge backend
       
-
       - name: Instalar o python
         uses: actions/setup-python@v4
         with:
@@ -74,7 +91,7 @@ jobs:
         uses: peter-evans/create-pull-request@v5
         with:
           token: ${{ env.TOKEN }}
-          base: stag # branch base onde a PR (de book para stag)
+          base: main # branch main onde a PR (de book para main)
           branch: book
           delete-branch: true
           title: "book: atualiza novos livros Quarto renderizados"
@@ -117,4 +134,3 @@ jobs:
 
             ---
             **⚠️ Esta PR requer aprovação manual do proprietário antes do merge.**
-
