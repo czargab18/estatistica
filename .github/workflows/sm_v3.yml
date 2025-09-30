@@ -6,9 +6,10 @@ on:
   workflow_dispatch:
     inputs:
       livros:
-        description: 'Lista de livros para renderizar (ex: MAT1001 FIS2023)'
+        description: 'Lista de livros para renderizar (ex: MAT1001 FIS2023) - deixe vazio para renderizar todos'
         required: false
         type: string
+        default: ''
   repository_dispatch:
     types: [atualizar-books, atualizar-newshub, atualizar-backend, atualizar-wss]
 
@@ -165,6 +166,11 @@ jobs:
           
           echo "✅ Padronização concluída"
 
+      - name: Configura Git
+        run: |
+          git config user.name "${{ env.USERNAME }}"
+          git config user.email "${{ env.USEREMAIL }}"
+
       - name: Commit e criar Pull Request
         uses: peter-evans/create-pull-request@v5
         with:
@@ -203,7 +209,7 @@ jobs:
             - **Books commit**: ${{ github.event.client_payload.commit_sha || 'N/A' }}
             - **Workflow**: `${{ github.run_id }}`
             - **Data**: $(date +'%Y-%m-%d %H:%M:%S UTC')
-            - **Livros processados**: ${{ steps.get-books.outputs.books-count }}
+            - **Livros processados**: ${{ steps.get-books-manual.outputs.books-count || steps.get-books-dispatch.outputs.books-count }}
 
             ### 📚 Livros Renderizados e Padronizados
             $(cat rendered_books.txt 2>/dev/null | sed 's/^/- 📖 /' || echo "- Nenhum livro renderizado")
@@ -231,3 +237,9 @@ jobs:
             ---
             **⚠️ Esta PR requer aprovação manual antes do merge.**
 
+      - name: Limpa arquivos temporários
+        if: always()
+        run: |
+          echo "🧹 Limpando arquivos temporários..."
+          rm -f books_list.txt rendered_books.txt render_*.log
+          echo "✅ Arquivos temporários removidos"
