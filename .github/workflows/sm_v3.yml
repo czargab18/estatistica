@@ -99,7 +99,7 @@ jobs:
             [ -z "$folder" ] && continue
             
             # Valida padrão [A-Z]{3}[0-9]{4}
-            if ! echo "$folder" | grep -qE '^[A-Z]{3}[0-9]{4}; then
+            if ! echo "$folder" | grep -qE '^[A-Z]{3}[0-9]{4}''; then
               echo "⚠️  '$folder' não segue padrão [A-Z]{3}[0-9]{4} - pulando"
               continue
             fi
