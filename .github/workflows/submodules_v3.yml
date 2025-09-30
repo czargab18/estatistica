@@ -1,8 +1,15 @@
 # Código gerado/assistido por IA
-name: submodules_v2
+name: submodules_v3
 # description: Workflow para atualizar arquivos dos submódulos com o repositório Estatística.
 
 on:
+  workflow_dispatch:
+    inputs:
+      livros:
+        description: 'Lista de livros para renderizar (JSON array, ex: ["EST1234", "EST5678"])'
+        required: false
+        default: '[]'
+        type: string
   repository_dispatch:
     types: [atualizar-books, atualizar-newshub, atualizar-backend, atualizar-wss]
 
@@ -46,26 +53,55 @@ jobs:
         run: |
           git submodule update --init --remote --merge books
 
-      # paaso: Encontrar uma maneira de detectar apenas o livro que foi modificado
-      #        pois, o quarto já vai sobreescrever o livro atualizado em book sem
-      #        sem precisar 'mover/sincronizar/verificar/ect.'
-      #        substituuir ' $(ls build)' pelo novo metódo.
+      - name: Determinar livros a renderizar
+        id: books-list
+        run: |
+          # Obtém a lista de livros do client_payload (repository_dispatch) ou workflow_dispatch
+          if [ "${{ github.event_name }}" == "repository_dispatch" ]; then
+            LIVROS='${{ toJson(github.event.client_payload.livros) }}'
+          else
+            LIVROS='${{ inputs.livros }}'
+          fi
+          
+          # Se a lista estiver vazia ou for null, renderiza todos os livros
+          if [ -z "$LIVROS" ] || [ "$LIVROS" == "null" ] || [ "$LIVROS" == "[]" ]; then
+            echo "Renderizando TODOS os livros"
+            LIVROS_ARRAY=$(cd books/build && ls -d */ 2>/dev/null | sed 's#/##' | jq -R -s -c 'split("\n")[:-1]')
+            echo "render_all=true" >> $GITHUB_OUTPUT
+          else
+            echo "Renderizando livros específicos: $LIVROS"
+            LIVROS_ARRAY="$LIVROS"
+            echo "render_all=false" >> $GITHUB_OUTPUT
+          fi
+          
+          echo "livros=$LIVROS_ARRAY" >> $GITHUB_OUTPUT
+          echo "Livros a renderizar: $LIVROS_ARRAY"
 
       - name: Renderiza livros Quarto
         run: |
-          for folder in $(ls build); do
-            if [ -d "build/$folder" ]; then
-              echo "Renderizando livro: $folder"
-              quarto render "books/build/$folder" --to html --execute --output-dir "./../../../book/$folder"
+          LIVROS='${{ steps.books-list.outputs.livros }}'
+          
+          # Converte o JSON array para bash array
+          LIVROS_ARRAY=($(echo "$LIVROS" | jq -r '.[]'))
+          
+          if [ ${#LIVROS_ARRAY[@]} -eq 0 ]; then
+            echo "⚠️ Nenhum livro para renderizar"
+            exit 0
+          fi
+          
+          echo "📚 Renderizando ${#LIVROS_ARRAY[@]} livro(s)..."
+          
+          for livro in "${LIVROS_ARRAY[@]}"; do
+            if [ -d "books/build/$livro" ]; then
+              echo "✅ Renderizando livro: $livro"
+              quarto render "books/build/$livro" --to html --execute --output-dir "./../../../book/$livro"
+            else
+              echo "⚠️ Livro não encontrado: $livro"
             fi
           done
+          
+          echo "✨ Renderização concluída!"
 
-      # - name: Lista os livros renderizados
-      #   run: |
-      #     echo "Livros renderizados:"
-      #     echo "RENDERED_BOOKS=$(ls build/_rendered | xargs)" >> $GITHUB_ENV
-
-        #5. padronizar livros par ao site via repositório backend
       - name: Atualizar submodule 'backend'
         run: |
           git submodule update --init --remote --merge backend
@@ -85,12 +121,11 @@ jobs:
           python ./backend/actions/run/site_html_manager.py --only-header --path ./book/
           python ./backend/actions/run/site_html_manager.py --only-footer --path ./book/
 
-        #5. fazer o merge para o repositório estatística via branch: book
       - name: Commit e criar Pull Request
         uses: peter-evans/create-pull-request@v5
         with:
           token: ${{ env.TOKEN }}
-          base: main # branch main onde a PR (de book para main)
+          base: main
           branch: book
           delete-branch: true
           title: "book: atualiza novos livros Quarto renderizados"
@@ -108,6 +143,7 @@ jobs:
 
             Commit fonte: ${{ github.sha }}
             Data: $(date +'%Y-%m-%d %H:%M:%S UTC')
+            Livros renderizados: ${{ steps.books-list.outputs.livros }}
 
           body: |
             ## 📖 atualiza e padroniza livros renderizados pelo GitHub Actions
@@ -119,9 +155,10 @@ jobs:
             - **Workflow**: `${{ github.run_id }}`
             - **Data**: $(date +'%Y-%m-%d %H:%M:%S UTC')
             - **Triggering commit**: `${{ github.event.head_commit.message }}`
+            - **Modo**: ${{ steps.books-list.outputs.render_all == 'true' && '🔄 Todos os livros' || '🎯 Livros específicos' }}
 
             ### 📚 Livros Renderizados
-            $(ls book 2>/dev/null | grep -E '^[A-Z]{3}[0-9]{4}' | sed 's/^/- 📖 /' || echo "- Nenhum livro renderizado")
+            $(echo '${{ steps.books-list.outputs.livros }}' | jq -r '.[]' | sed 's/^/- 📖 /' || echo "- Nenhum livro renderizado")
 
             ## 👀 Review Checklist
             Por favor, verifique se todos os livros foram renderizados corretamente e estão prontos para publicação.:
