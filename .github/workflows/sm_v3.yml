@@ -1,5 +1,5 @@
 # Código gerado/assistido por IA
-name: submodules_v2
+name: sm_v3
 # description: Workflow para atualizar arquivos dos submódulos com o repositório Estatística.
 
 on:
@@ -160,9 +160,14 @@ jobs:
         run: |
           echo "🎨 Padronizando HTMLs dos livros..."
           
-          python ./backend/actions/run/site_html_manager.py --only-head --dynamic-head --path ./book/
-          python ./backend/actions/run/site_html_manager.py --only-header --path ./book/
-          python ./backend/actions/run/site_html_manager.py --only-footer --path ./book/
+          python ./backend/actions/run/site_html_manager.py \
+            --only-head --dynamic-head --path ./book/
+          
+          python ./backend/actions/run/site_html_manager.py \
+            --only-header --path ./book/
+          
+          python ./backend/actions/run/site_html_manager.py \
+            --only-footer --path ./book/
           
           echo "✅ Padronização concluída"
 
