@@ -1,5 +1,5 @@
 # Código gerado/assistido por IA
-name: submodules_v3
+name: submodules_v4
 # description: Workflow para atualizar arquivos dos submódulos com o repositório Estatística.
 
 on:
@@ -66,35 +66,38 @@ jobs:
           # Se a lista estiver vazia ou for null, renderiza todos os livros
           if [ -z "$LIVROS" ] || [ "$LIVROS" == "null" ] || [ "$LIVROS" == "[]" ]; then
             echo "Renderizando TODOS os livros"
-            LIVROS_ARRAY=$(cd books/build && ls -d */ 2>/dev/null | sed 's#/##' | jq -R -s -c 'split("\n")[:-1]')
+            LIVROS_LIST=$(cd books/build && ls -d */ 2>/dev/null | sed 's#/##' | tr '\n' ' ')
             echo "render_all=true" >> $GITHUB_OUTPUT
           else
             echo "Renderizando livros específicos: $LIVROS"
-            LIVROS_ARRAY="$LIVROS"
+            LIVROS_LIST=$(echo "$LIVROS" | jq -r '.[]' | tr '\n' ' ')
             echo "render_all=false" >> $GITHUB_OUTPUT
           fi
           
-          echo "livros=$LIVROS_ARRAY" >> $GITHUB_OUTPUT
-          echo "Livros a renderizar: $LIVROS_ARRAY"
+          echo "livros=$LIVROS_LIST" >> $GITHUB_OUTPUT
+          echo "Livros a renderizar: $LIVROS_LIST"
 
       - name: Instalar Quarto
+        if: steps.books-list.outputs.livros != ''
         uses: quarto-dev/quarto-actions/setup@v2
 
       - name: Renderiza livros Quarto
         run: |
-          LIVROS='${{ steps.books-list.outputs.livros }}'
+          LIVROS_LIST='${{ steps.books-list.outputs.livros }}'
           
-          # Converte o JSON array para bash array
-          LIVROS_ARRAY=($(echo "$LIVROS" | jq -r '.[]'))
+          # Remove espaços extras e converte para lista
+          LIVROS_LIST=$(echo "$LIVROS_LIST" | xargs)
           
-          if [ ${#LIVROS_ARRAY[@]} -eq 0 ]; then
+          if [ -z "$LIVROS_LIST" ]; then
             echo "⚠️ Nenhum livro para renderizar"
             exit 0
           fi
           
-          echo "📚 Renderizando ${#LIVROS_ARRAY[@]} livro(s)..."
+          # Conta quantos livros
+          NUM_LIVROS=$(echo "$LIVROS_LIST" | wc -w)
+          echo "📚 Renderizando $NUM_LIVROS livro(s)..."
           
-          for livro in "${LIVROS_ARRAY[@]}"; do
+          for livro in $LIVROS_LIST; do
             if [ -d "books/build/$livro" ]; then
               echo "✅ Renderizando livro: $livro"
               quarto render "books/build/$livro" --to html --execute --output-dir "./../../../book/$livro"
