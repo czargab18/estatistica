@@ -1,0 +1,305 @@
+{
+  "estrutura_deste_json": {
+    "elevated - links elevados/destacados": {
+      "diretório": "descrição do diretório"
+    },
+    "quicklinks - links rápidos": [],
+    "explore - explorar": [],
+    "help - ajuda": []
+  },
+  "boasvindas": {
+    "elevated": {
+      "registro": "Registro Academico",
+      "matricula": "Matricula",
+      "checklist": "Próximos Passo",
+      "mapa": "Mapa do Campus",
+      "manual": "Manual para Calouros",
+      "estatutos": "Estatutos e Regimentos",
+      "orientacoes": "Programas e Orientações",
+      "biblioteca": "Biblioteca Central",
+      "calenário": "Calendário Acadêmico",
+      "evento": "Evento de boas vindas"
+    },
+    "quicklinks": {
+      "plataformas": "Plataformas",
+      "contatos-institucionais": "Contatos Institucionais",
+      "servicos": "Serviços",
+      "mencao": "Menção",
+      "creditos": "Créditos",
+      "estagio-nao-obrigatorio": "Estágio Não Obrigatório"
+    },
+    "explore": {},
+    "help": {
+      "auxilios-bolsas": "Auxilios e Bolsas",
+      "identidade-estudantil": "Identidade Estudantil",
+      "ouvidoria": "Ouvidoria",
+      "faq": "Perguntas Frequentes (FAQ)"
+    }
+  },
+  "departamento": {
+    "elevated": {
+      "historia": "historia",
+      "instalacoes": "instalacoes",
+      "administracao": "administracao",
+      "secretaria": "secretaria",
+      "docente": "docente",
+      "documentos": "documentos",
+      "producao": "producao",
+      "coordenacoes": "coordenacoes",
+      "grupos-de-pesquisa": "grupos-de-pesquisa"
+    },
+    "explore": {
+      "mapa-campus": "Mapa do Campus",
+      "biblioteca-central": "Biblioteca Central",
+      "noticias": "Notícias",
+      "eventos": "Eventos",
+      "parceiros": "Parceiros",
+      "beneficios": "Benefícios",
+      "comissoes": "Comissoes",
+      "chefia": "Chefia",
+      "galeria-imagens": "Galeria de imagens"
+    },
+    "quicklinks": {
+      "sigaa": "SIGAA",
+      "moodle-mat": "Moodle MAT",
+      "aprender3": "Aprender3",
+      "calendario-academico": "Calendário Acadêmico",
+      "normas-regulamentos": "Normas e Regulamentos",
+      "projeto-r": "Projeto R",
+      "github-estudantes": "GitHub (estudantes)",
+      "samsung-estudantes": "Samsung (estudantes)"
+    },
+    "help": {
+      "registro-academico": "Registro Academico",
+      "identidade-estudantil": "Identidade Estudantil",
+      "auxilios-bolsas": "Auxilios e Bolsas",
+      "manual-calouros": "Manual para Calouros",
+      "editais": "Editais",
+      "ouvidoria": "Ouvidoria"
+    }
+  },
+  "graduacao": {
+    "elevated": {
+      "descricao": "descricao",
+      "disciplinas": "disciplinas",
+      "nucleo-docente-estruturante": "nucleo-docente-estruturante",
+      "coordenacao": "coordenacao",
+      "docentes": "docentes",
+      "estagio": "estagio",
+      "monitoria": "monitoria"
+    },
+    "explore": {
+      "manual-para-estudantes": "manual-para-estudantes",
+      "processos-seletivos": "processos-seletivos",
+      "formas-de-ingresso": "formas-de-ingresso",
+      "aluno-especial": "aluno-especial",
+      "matricula": "matricula",
+      "egresso": "egresso",
+      "producao": "producao"
+    },
+    "quicklinks": {
+      "calendarioacademico-grad": "calendarioacademico-grad",
+      "documentos-grad": "documentos-grad",
+      "normativos-graduacao": "normativos-graduacao",
+      "iniciacao-cientifica": "iniciacao-cientifica",
+      "programas-institucionais": "programas-institucionais"
+    },
+    "help": {
+      "perguntas-frequentes-grad": "perguntas-frequentes-grad",
+      "boas-vindas-calouros": "boas-vindas-calouros",
+      "ouvidoria": "Ouvidoria"
+    }
+  },
+  "pos-graduacao": {
+    "elevated": {
+      "descricao": "descricao",
+      "disciplinas": "disciplinas",
+      "linhas-de-pesquisa": "linhas-de-pesquisa",
+      "oferta": "oferta",
+      "processo-seletivo": "processo-seletivo",
+      "docentes": "docentes",
+      "regulamento": "regulamento",
+      "criterios-para-concessao-de-bolsa": "criterios-para-concessao-de-bolsa"
+    },
+    "explore": {
+      "alunos-de-mestrado": "alunos-de-mestrado",
+      "egressos": "egressos",
+      "dissertacoes-repositorio-unb": "dissertacoes-repositorio-unb",
+      "dissertacoes-repositorio-ppgest": "dissertacoes-repositorio-ppgest",
+      "publicacoes": "publicacoes",
+      "premios-e-titulos": "premios-e-titulos",
+      "seminarios": "seminarios",
+      "bancas-qualificacoes": "bancas-qualificacoes"
+    },
+    "quicklinks": {
+      "auxilio-ao-discente": "auxilio-ao-discente",
+      "planejamento-estrategico": "planejamento-estrategico",
+      "regras-para-a-indicacao-de-orientador": "regras-para-a-indicacao-de-orientador",
+      "regras-de-concessao-de-auxilio-financeiro": "regras-de-concessao-de-auxilio-financeiro",
+      "criterios-de-credenciamento": "criterios-de-credenciamento",
+      "bancas-orientacoes-para-defesa": "bancas-orientacoes-para-defesa"
+    },
+    "help": {
+      "instalacoes": "instalacoes",
+      "contato": "contato",
+      "ouvidoria": "ouvidoria"
+    }
+  },
+  "extensao": {
+    "elevated": {
+      "monitoria": "monitoria",
+      "programas": "programas",
+      "pet": "pet",
+      "projetos": "projetos",
+      "consultoria": "consultoria",
+      "cursos": "cursos",
+      "laboratorios": "laboratorios"
+    },
+    "explore": {
+      "workshop": "workshop",
+      "seminarios": "seminarios",
+      "coloquios": "coloquios",
+      "encontros": "encontros",
+      "feiras": "feiras",
+      "conferencias": "conferencias",
+      "mesa-redonda": "mesa-redonda",
+      "palestras": "palestras"
+    },
+    "quicklinks": {
+      "editais-e-chamadas-publicas": "editais-e-chamadas-publicas",
+      "programas-e-projetos": "programas-e-projetos",
+      "arte-e-cultura": "arte-e-cultura",
+      "cursos-livres": "cursos-livres",
+      "esporte-e-lazer": "esporte-e-lazer",
+      "escola-de-verao": "escola-de-verao",
+      "workshop-de-verao": "workshop-de-verao"
+    },
+    "help": {
+      "sobre-a-extensao": "sobre-a-extensao",
+      "contatos-extensao": "contatos-extensao",
+      "voluntariado": "voluntariado"
+    }
+  },
+  "educacao": {
+    "elevated": {
+      "disciplinas": "disciplinas",
+      "artigos": "artigos",
+      "notas-aulas": "notas-aulas",
+      "livros": "livros",
+      "video-aulas": "video-aulas",
+      "exercicios": "exercicios",
+      "laboratorios": "laboratorios"
+    },
+    "explore": {
+      "aprender-unb": "aprender-unb",
+      "plataformas-digitais": "plataformas-digitais",
+      "programas-institucionais": "programas-institucionais",
+      "plataforma-aprender": "plataforma-aprender",
+      "idiomas": "idiomas",
+      "ferramentas": "ferramentas",
+      "slides": "slides"
+    },
+    "quicklinks": {
+      "moodle": "moodle",
+      "office365": "office365",
+      "sigaa": "sigaa",
+      "sigunb": "sigunb",
+      "sigrh": "sigrh",
+      "sipac": "sipac",
+      "unb-idiomas": "unb-idiomas",
+      "unb-pesquisa": "unb-pesquisa"
+    },
+    "help": {
+      "dicas": "dicas",
+      "softwares": "softwares",
+      "ingressante": "ingressante"
+    }
+  },
+  "documentos": {
+    "elevated": {
+      "estatuto-e-regimento": "Estatuto e Regimento",
+      "regulamentos": "Regulamentos",
+      "resolucoes": "Resoluções",
+      "normativos": "Normativos",
+      "formularios": "Formulários",
+      "editais": "Editais",
+      "atos-oficiais": "Atos Oficiais"
+    },
+    "explore": {
+      "manual-de-documentos": "Manual de Documentos",
+      "processos-sei": "Processos SEI",
+      "documentos-academicos": "Documentos Acadêmicos",
+      "legislacao-graduacao": "Legislação Graduação",
+      "legislacao-pos-graduacao": "Legislação Pós-Graduação",
+      "diretrizes": "Diretrizes",
+      "termo-de-ajustamento": "Termo de Ajustamento"
+    },
+    "quicklinks": {
+      "carta-de-servicos": "Carta de Serviços",
+      "relatorio-de-gestao": "Relatório de Gestão",
+      "plano-de-desenvolvimento": "Plano de Desenvolvimento",
+      "politica-de-riscos": "Política de Riscos",
+      "base-juridica": "Base Jurídica"
+    },
+    "help": {}
+  },
+  "unb": {
+    "elevated": {
+      "reitoria": "Reitoria",
+      "vice-reitoria": "Vice-Reitoria",
+      "conselhos-e-camaras": "Conselhos e câmaras",
+      "decanatos": "Decanatos",
+      "historia-da-unb": "História da UnB",
+      "unb-em-numeros": "UnB em Números",
+      "conheca-os-campi": "Conheça os campi"
+    },
+    "explore": {
+      "faculdades": "Faculdades",
+      "institutos": "Institutos",
+      "centros": "Centros",
+      "assuntos-internacionais": "Assuntos Internacionais",
+      "arquivo-central": "Arquivo Central",
+      "biblioteca-central": "Biblioteca Central",
+      "editora-unb": "Editora UnB",
+      "fazenda-agua-limpa": "Fazenda Água Limpa"
+    },
+    "quicklinks": {
+      "sigaa": "sigaa",
+      "diploma-digital": "diploma-digital",
+      "matricula-nas-disciplinas": "matricula-nas-disciplinas",
+      "identidade-estudantil": "identidade-estudantil",
+      "calendario-academico": "calendario-academico",
+      "registro-academico": "registro-academico",
+      "peticionamento-eletronico": "peticionamento-eletronico"
+    },
+    "help": {
+      "assistencia-estudantil": "assistencia-estudantil",
+      "restaurante-universitario": "restaurante-universitario",
+      "transporte": "transporte",
+      "ouvidoria": "ouvidoria",
+      "fale-conosco": "fale-conosco",
+      "contato": "contato",
+      "servicos": "servicos"
+    }
+  },
+  "noticias": {
+    "elevated": {
+      "comunicados": "Comunicados",
+      "eventos": "Eventos",
+      "oportunidades": "Oportunidades",
+      "noticias-departamento": "Notícias Departamento",
+      "noticias-estatistica": "Notícias Estatística",
+      "eventos-estatistica": "Eventos Estatística"
+    },
+    "explore": {
+      "informacoes": "Informações",
+      "atendimento-jornalistas": "Atendimento Jornalistas",
+      "sala-de-imprensa": "Sala de Imprensa",
+      "canais-oficiais": "Canais Oficiais"
+    },
+    "quicklinks": {
+      "faq": "FAQ"
+    },
+    "help": {}
+  }
+}
