@@ -121,7 +121,7 @@ jobs:
         run: |
           pip install -r backend/actions/run/requirements.txt
 
-      - name: Automação com 'backend/action/run/'
+      - name: Automação com 'backend/actions/run/'
         run: |
           python ./backend/actions/run/site_html_manager.py --only-head --dynamic-head --path ./book/
           python ./backend/actions/run/site_html_manager.py --only-header --path ./book/
