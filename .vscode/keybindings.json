@@ -1,0 +1,27 @@
+[
+  {
+    "key": "ctrl+shift+i",
+    "command": "github.copilot.chat.open",
+    "when": "editorTextFocus"
+  },
+  {
+    "key": "ctrl+shift+e",
+    "command": "github.copilot.chat.explain",
+    "when": "editorHasSelection"
+  },
+  {
+    "key": "ctrl+shift+f",
+    "command": "github.copilot.chat.fix",
+    "when": "editorHasSelection"
+  },
+  {
+    "key": "ctrl+shift+t",
+    "command": "github.copilot.chat.tests.generate",
+    "when": "editorHasSelection"
+  },
+  {
+    "key": "ctrl+shift+d",
+    "command": "github.copilot.chat.docs",
+    "when": "editorHasSelection"
+  }
+]

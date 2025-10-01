@@ -2,24 +2,28 @@
   "version": "2.0.0",
   "tasks": [
     {
-      "label": "Run Quarto Book",
+      "label": "Atualizar Head (Livros)",
       "type": "shell",
-      "command": "cmd",
-      "args": ["/c"],
-      "options": {
-        "cwd": "c:/Users/cesargabrielphd/Documents/github/books/"
-      },
-      "group": {
-        "kind": "build",
-        "isDefault": true
-      }
+      "command": "python",
+      "args": ["backend/actions/run/site_html_manager.py", "--only-head", "--path", "./book/"],
+      "problemMatcher": [],
+      "group": "build"
     },
     {
-      "label": "Run All Scripts in bin",
+      "label": "Executar Testes",
       "type": "shell",
-      "command": "bash",
-      "args": ["-c", "for script in \"${workspaceFolder}/bin/*\"; do bash \"$script\"; done"],
-      "problemMatcher": []
+      "command": "python",
+      "args": ["backend/actions/run/test_head_manager.py"],
+      "problemMatcher": [],
+      "group": "test"
+    },
+    {
+      "label": "Validar HTML",
+      "type": "shell",
+      "command": "python",
+      "args": ["backend/actions/run/site_html_manager.py", "--validate", "--path", "./"],
+      "problemMatcher": [],
+      "group": "build"
     }
   ]
 }
