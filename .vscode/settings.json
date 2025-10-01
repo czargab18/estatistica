@@ -63,7 +63,6 @@
   "editor.lineHeight": 1.8,
   "editor.stickyScroll.enabled": false,
   "editor.parameterHints.enabled": false,
-  "editor.renderLineHighlight": "gutter",
   "editor.suggestSelection": "first",
   "editor.fontLigatures": true,
   "editor.acceptSuggestionOnCommitCharacter": false,
