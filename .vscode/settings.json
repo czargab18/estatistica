@@ -276,11 +276,9 @@
     "**/bower_components": true,
     "**/*.code-search": true,
     "**/.venv": true,
-    "**/__pycache__": true,
+    "**/*cache*": true,
     "**/*.pyc": true,
-    "**/.pytest_cache": true,
     "**/dist": true,
-    "**/build": true
   },
 
   // Melhorar performance do Copilot
@@ -290,7 +288,11 @@
     "**/node_modules/*/**": true,
     "**/.hg/store/**": true,
     "**/.venv/**": true,
-    "**/__pycache__/**": true
+    "**/*cache*": true,
+    "**/*.pyc": true,
+    "**/dist": true,
+    "**/*env*/*": true,
+    "**/.quarto/**": true,
   },
 
   // Configurações: GitHub Copilot
