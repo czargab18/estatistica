@@ -1,5 +1,10 @@
 {
   "files.exclude": {
+    // OCULTAR DA RAIZ
+    ".editorconfig": false,
+    ".htaccess": true,
+    "CNAME": true,
+    "404.html": true,
     // OCULTAR ARQUIVOS GIT
     "**/.git": true,
     "**/.github/copilot/": false,
@@ -46,11 +51,7 @@
     "**/*env*/": true,
     "**/.quarto/": true,
     "**/delete/": true,
-    "**/*libs*/": true,
-    // OCULTAR OUTRAS ARQUIVOS
-    "404.html": true,
-    "CNAME": true,
-    ".htaccess": true
+    "**/*libs*/": true
   },
 
   // Configurações: Editor
@@ -290,5 +291,25 @@
     "**/.hg/store/**": true,
     "**/.venv/**": true,
     "**/__pycache__/**": true
-  }
+  },
+
+  // Configurações: GitHub Copilot
+  "github.copilot.enable": {
+    "*": true,
+    "yaml": true,
+    "plaintext": true,
+    "markdown": true,
+    "python": true,
+    "javascript": true,
+    "typescript": true,
+    "html": true,
+    "css": true,
+    "json": true,
+    "jsonc": true
+  },
+
+  // Configurações avançadas do Copilot
+  "github.copilot.editor.enableAutoCompletions": true,
+  "github.copilot.chat.localeOverride": "pt-br",
+  "github.copilot.chat.temporalContext.enabled": true
 }

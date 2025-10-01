@@ -1,4 +1,8 @@
 [
+  // ========================================
+  // Atalhos do GitHub Copilot
+  // ========================================
+
   {
     "key": "ctrl+shift+i",
     "command": "github.copilot.chat.open",
@@ -22,6 +26,11 @@
   {
     "key": "ctrl+shift+d",
     "command": "github.copilot.chat.docs",
+    "when": "editorHasSelection"
+  },
+  {
+    "key": "ctrl+shift+o",
+    "command": "github.copilot.chat.optimize",
     "when": "editorHasSelection"
   }
 ]
