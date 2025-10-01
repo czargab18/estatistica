@@ -176,7 +176,7 @@ jobs:
         uses: peter-evans/create-pull-request@v6
         with:
           token: ${{ env.TOKEN }}
-          base: main
+          base: stag
           branch: book
           delete-branch: true
           title: "book: atualiza novos livros Quarto renderizados"
@@ -205,7 +205,6 @@ jobs:
             ### 📋 Detalhes da Renderização
             - **Commit fonte**: `${{ github.sha }}`
             - **Workflow Run**: [${{ github.run_id }}](${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }})
-            - **Data**: $(date +'%Y-%m-%d %H:%M:%S UTC')
             - **Modo**: ${{ steps.books-list.outputs.render_all == 'true' && '🔄 Todos os livros' || '🎯 Livros específicos' }}
 
             ### 📚 Livros Renderizados
