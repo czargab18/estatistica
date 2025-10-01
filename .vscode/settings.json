@@ -73,7 +73,7 @@
 
   // ✅ DESATIVAR ITENS ENFATIZADOS
   "editor.occurrencesHighlight": "off", // Desativa destaque de ocorrências
-  "editor.selectionHighlight": false, // Desativa destaque de seleções similares
+  "editor.selectionHighlight": true, // Desativa destaque de seleções similares
   "editor.renderLineHighlight": "none", // Desativa destaque da linha atual (sobrescreve "gutter")
   "editor.matchBrackets": "never", // Desativa destaque de parênteses correspondentes
   "editor.guides.bracketPairs": false, // Desativa linhas guia de pares de colchetes
@@ -172,14 +172,6 @@
   "workbench.editor.empty.hint": "hidden",
 
   // ✅ DESATIVAR MAIS DESTAQUES
-  "workbench.colorCustomizations": {
-    "editor.selectionBackground": "#00000000", // Remove fundo de seleção
-    "editor.selectionHighlightBackground": "#00000000", // Remove destaque de seleções
-    "editor.wordHighlightBackground": "#00000000", // Remove destaque de palavras
-    "editor.wordHighlightStrongBackground": "#00000000", // Remove destaque forte
-    "editorBracketMatch.background": "#00000000", // Remove fundo de parênteses correspondentes
-    "editorBracketMatch.border": "#00000000" // Remove borda de parênteses correspondentes
-  },
 
   // Configurações: Git
   "gitlens.codeLens.recentChange.enabled": false,
@@ -355,7 +347,7 @@
   "github.copilot.editor.enableAutoCompletions": true, // ✅ ADICIONADO
 
   // Configurações: GitHub Pull Requests (ADICIONADO)
-  "githubPullRequests.useReviewMode": false, // ✅ ADICIONADO
+  "githubPullRequests.useReviewMode": "never", // ✅ String correta
   "githubPullRequests.pullBranch": "never", // ✅ ADICIONADO
-  "githubPullRequests.createOnPublishBranch": "never" // ✅ ADICIONADO
+  "githubPullRequests.createOnPublishBranch": "never" // ✅ ADICIONADO,
 }
