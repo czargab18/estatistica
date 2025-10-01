@@ -24,8 +24,12 @@
 }
 
 #globalaside .globalaside-content {
+margin: 0 auto;
+  box-sizing: border-box;
   width: 100%;
-  max-width: var(--r-globalaside-width);
+  height: 100%;
+  max-width: 1024px;
+  padding: 0 22px;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -76,10 +80,12 @@
   outline-offset: -7px;
   transition: color 0.32s cubic-bezier(0.4, 0, 0.6, 1);
 }
+
 #globalaside .globalaside-link:lang(pt-br) {
   letter-spacing: 0em;
   font-family: var(--r-globalfont-family);
 }
+
 #globalaside .globalaside-link svg {
   fill: currentColor;
 }
@@ -89,6 +95,7 @@
   color: var(--r-globalaside-color-secondary-hover);
   text-decoration: none;
 }
+
 #globalaside .globalaside-link-govbr {
   font-size: 17px;
   line-height: 1.2353641176;
@@ -98,13 +105,16 @@
   display: flex;
   align-items: center;
 }
+
 #globalaside .globalaside-link-govbr:lang(ar) {
   letter-spacing: 0em;
   font-family: var(--r-globalfont-family);
 }
+
 #globalaside .globalaside-link-govbr-logo {
   height: 100%;
 }
+
 #globalaside .globalaside-link-govbr .globalaside-link-text {
   margin-inline-start: 4px;
   height: 100%;
@@ -123,7 +133,8 @@
   letter-spacing: 0.05em !important;
   font-family: var(--r-globalfont-family);
   display: flex;
-  align-items: center; /* aninhar-conteudo do link */
+  align-items: center;
+  /* aninhar-conteudo do link */
 }
 
 .globalaside-image-regular,
@@ -152,17 +163,13 @@
 
 /* mediaQuery verificado */
 @media screen and (max-width: 1024px) {
-  #globalaside,
-  .globalaside,
-  .globalaside-content,
-  .globalaside-list {
-    width: 100%;
-  }
+
   .globalaside-item,
   .globalaside-espacador {
     display: none;
   }
-  .globalaside-list-unbt-gov > *,
+
+  .globalaside-list-unbt-gov>*,
   .globalaside-item-coronavarius,
   .globalaside-item-orggovbr,
   .globalaside-item-acessibilidade,
@@ -183,6 +190,7 @@
     background: var(--globalaside-background);
     transition: background var(--r-globalaside-flyout-rate) cubic-bezier(0.4, 0, 0.6, 1) 80ms;
   }
+
   .globalaside-content {
     -webkit-backdrop-filter: var(--globalaside-backdrop-filter);
     backdrop-filter: var(--globalaside-backdrop-filter);
@@ -203,21 +211,26 @@
     box-sizing: border-box;
     -webkit-overflow-scrolling: touch;
   }
+
   #globalaside:not([dir="rtl"]) #globalaside .globalaside-list {
     padding-right: calc(48px + max(0px, calc(env(safe-area-inset-right) - 16px)));
   }
+
   #globalaside[dir="rtl"] #globalaside .globalaside-list {
     padding-left: calc(48px + max(0px, calc(env(safe-area-inset-left) - 16px)));
   }
+
   #globalaside .globalaside-item {
     width: auto;
     height: auto;
     transition: color 0.32s cubic-bezier(0.4, 0, 0.6, 1);
   }
-  #globalaside .globalaside-list > .globalaside-item {
+
+  #globalaside .globalaside-list>.globalaside-item {
     height: 100%;
   }
-  #globalaside .globalaside-list > .globalaside-item:not(.globalaside-menu) .globalaside-link {
+
+  #globalaside .globalaside-list>.globalaside-item:not(.globalaside-menu) .globalaside-link {
     opacity: 1;
     visibility: visible;
     transition: opacity 0.24s cubic-bezier(0.4, 0, 0.6, 1) 80ms, visibility 0.24s step-start 80ms;
@@ -225,24 +238,29 @@
 }
 
 @media only screen and (max-width: 768px) {
+
   #globalaside,
   .globalaside,
   .globalaside-content,
   .globalaside-list {
     width: 100%;
   }
+
   .globalaside-item,
   .globalaside-espacador {
     display: none;
   }
-  .globalaside-list-unbt-gov > * {
+
+  .globalaside-list-unbt-gov>* {
     display: block;
   }
+
   .globalaside-item-orggovbr,
   .globalaside-espacador-01,
   .globalaside-item-coronavarius {
     display: block;
   }
+
   #globalaside .globalaside-link- {
     font-size: 28px;
     line-height: 1.1428571429;
@@ -250,26 +268,31 @@
     letter-spacing: 0.007em;
     font-family: var(--r-globalfont-family);
   }
+
   #globalaside .globalaside-link:lang(ar) {
     font-family: SF Pro AR, SF Pro Gulf, SF Pro Display, SF Pro Icons, Helvetica Neue, Helvetica, Arial, sans-serif;
   }
+
   #globalaside .globalaside-link:lang(zh-TW) {
     font-family: SF Pro TC, SF Pro Display, SF Pro Icons, PingFang TC, Helvetica Neue, Helvetica, Arial, sans-serif;
   }
 }
 
 @media only screen and (max-width: 540px) {
+
   #globalaside,
   #globalaside,
   .globalaside-content {
     width: 100%;
   }
+
   .globalaside-item,
   .globalaside-espacador,
   .globalaside-link-text-vacinacao {
     display: none;
   }
-  .globalaside-list-unbt-gov > *,
+
+  .globalaside-list-unbt-gov>*,
   .globalaside-item-coronavarius {
     display: block;
     justify-content: right;

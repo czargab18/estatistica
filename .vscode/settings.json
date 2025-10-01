@@ -1,5 +1,10 @@
 {
   "files.exclude": {
+    // OCULTAR DA RAIZ
+    ".editorconfig": true,
+    ".htaccess": true,
+    "CNAME": true,
+    "404.html": true,
     // OCULTAR ARQUIVOS GIT
     "**/.git": true,
     "**/.github/copilot/": true,
@@ -46,14 +51,10 @@
     "**/*env*/": true,
     "**/.quarto/": true,
     "**/delete/": true,
-    "**/*libs*/": true,
-    // OCULTAR OUTRAS ARQUIVOS
-    "404.html": true,
-    "CNAME": true,
-    ".htaccess": true,
+    "**/*libs*/": true
   },
 
-  // Configurações: Editor
+  // Configurações: Editor (MELHORADO)
   "editor.rulers": [80, 120],
   "editor.wordWrap": "on",
   "editor.wordWrapColumn": 80,
@@ -62,7 +63,6 @@
   "editor.lineHeight": 1.8,
   "editor.stickyScroll.enabled": false,
   "editor.parameterHints.enabled": false,
-  "editor.renderLineHighlight": "gutter",
   "editor.suggestSelection": "first",
   "editor.fontLigatures": true,
   "editor.acceptSuggestionOnCommitCharacter": false,
@@ -70,6 +70,22 @@
   "editor.tabSize": 2,
   "editor.hideCursorInOverviewRuler": true,
   "editor.scrollbar.vertical": "hidden",
+
+  // ✅ DESATIVAR ITENS ENFATIZADOS
+  "editor.occurrencesHighlight": "off", // Desativa destaque de ocorrências
+  "editor.selectionHighlight": true, // Desativa destaque de seleções similares
+  "editor.renderLineHighlight": "none", // Desativa destaque da linha atual (sobrescreve "gutter")
+  "editor.matchBrackets": "never", // Desativa destaque de parênteses correspondentes
+  "editor.guides.bracketPairs": false, // Desativa linhas guia de pares de colchetes
+  "editor.guides.bracketPairsHorizontal": false, // Desativa guias horizontais de colchetes
+  "editor.guides.highlightActiveBracketPair": false, // Desativa destaque do par ativo
+  "editor.guides.indentation": false, // Desativa linhas de indentação
+  "editor.guides.highlightActiveIndentation": false, // Desativa destaque da indentação ativa
+  "editor.bracketPairColorization.enabled": false, // Desativa colorização de pares de colchetes
+  "editor.linkedEditing": false, // Desativa edição vinculada de tags HTML
+  "editor.foldingHighlight": false, // Desativa destaque de regiões dobráveis
+  "editor.showFoldingControls": "never", // Remove controles de dobra de código
+
   "editor.tokenColorCustomizations": {
     "textMateRules": [
       {
@@ -82,6 +98,18 @@
   },
   "editor.formatOnPaste": true,
   "editor.formatOnType": true,
+
+  // Snippets personalizados
+  "editor.snippetSuggestions": "top",
+  "editor.suggest.snippetsPreventQuickSuggestions": false,
+
+  // Melhorar sugestões do Copilot
+  "editor.inlineSuggest.enabled": true,
+  "editor.quickSuggestions": {
+    "other": "on",
+    "comments": "on",
+    "strings": "on"
+  },
 
   // Configurações: terminal
   "terminal.integrated.cwd": "${workspaceFolder}",
@@ -143,6 +171,8 @@
   "workbench.iconTheme": "symbols",
   "workbench.editor.empty.hint": "hidden",
 
+  // ✅ DESATIVAR MAIS DESTAQUES
+
   // Configurações: Git
   "gitlens.codeLens.recentChange.enabled": false,
   "gitlens.codeLens.authors.enabled": false,
@@ -177,7 +207,8 @@
 
   // Configurações: Formatação
   "editor.codeActionsOnSave": {
-    "source.fixAll.eslint": "explicit"
+    "source.fixAll.eslint": "explicit",
+    "source.organizeImports": "explicit" // ✅ ADICIONADO
   },
   "eslint.validate": ["javascript", "javascriptreact", "graphql"],
   "[prisma]": {
@@ -190,7 +221,20 @@
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
   "[javascript]": {
-    "editor.defaultFormatter": "vscode.typescript-language-features"
+    "editor.defaultFormatter": "esbenp.prettier-vscode" // ✅ CORRIGIDO
+  },
+  "[typescript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode" // ✅ ADICIONADO
+  },
+  "[yaml]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode" // ✅ ADICIONADO
+  },
+  "[python]": {
+    "editor.defaultFormatter": "ms-python.black-formatter", // ✅ ADICIONADO
+    "editor.formatOnSave": true,
+    "editor.codeActionsOnSave": {
+      "source.organizeImports": "explicit"
+    }
   },
 
   // Configurações: Live Server
@@ -255,5 +299,55 @@
 
   // Configurações: Spell Check (se extensão instalada)
   "cSpell.words": ["estatistica", "quarto", "cesargabriel", "newsroom", "ira"],
-  "cSpell.language": "pt-BR,en"
+  "cSpell.language": "pt-BR,en",
+
+  // Configurações de busca inteligente
+  "search.exclude": {
+    "**/node_modules": true,
+    "**/bower_components": true,
+    "**/*.code-search": true,
+    "**/.venv": true,
+    "**/*cache*": true,
+    "**/*.pyc": true,
+    "**/dist": true
+  },
+
+  // Melhorar performance do Copilot
+  "files.watcherExclude": {
+    "**/.git/objects/**": true,
+    "**/.git/subtree-cache/**": true,
+    "**/node_modules/*/**": true,
+    "**/.hg/store/**": true,
+    "**/.venv/**": true,
+    "**/*cache*": true,
+    "**/*.pyc": true,
+    "**/dist": true,
+    "**/*env*/*": true,
+    "**/.quarto/**": true
+  },
+
+  // Configurações: GitHub Copilot (MELHORADO)
+  "github.copilot.enable": {
+    "*": true,
+    "yaml": true,
+    "plaintext": true,
+    "markdown": true,
+    "python": true,
+    "javascript": true,
+    "typescript": true,
+    "html": true,
+    "css": true,
+    "json": true,
+    "jsonc": true
+  },
+
+  // Configurações avançadas do Copilot
+  "github.copilot.chat.localeOverride": "pt-br",
+  "github.copilot.chat.reviewSelection.enabled": false, // ✅ ADICIONADO
+  "github.copilot.editor.enableAutoCompletions": true, // ✅ ADICIONADO
+
+  // Configurações: GitHub Pull Requests (ADICIONADO)
+  "githubPullRequests.useReviewMode": "never", // ✅ String correta
+  "githubPullRequests.pullBranch": "never", // ✅ ADICIONADO
+  "githubPullRequests.createOnPublishBranch": "never" // ✅ ADICIONADO,
 }

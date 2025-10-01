@@ -33,24 +33,6 @@ BREAKING CHANGE: <descrição> (se aplicável)
 - **content:** Alterações no conteúdo de livros ou artigos
 - **assets:** Mudanças em recursos visuais
 
-## Escopos Específicos Recomendados
-
-- **books**: Para alterações nos livros (EST0033, CIC0007, MAT0075, TAS0000)
-- **pages**: Para páginas do site
-- **apps**: Para aplicativos (IRA, etc)
-- **newsroom**: Para sistema de artigos
-- **newshub**: Para sistema de notícias
-- **components**: Para componentes globais (ac/)
-- **assets**: Para recursos visuais (sd/)
-- **styles**: Para CSS/design
-- **scripts**: Para JavaScript
-- **quarto**: Para configurações do Quarto
-- **ira**: Calculadora de IRA
-- **api**: Funcionalidades da API
-- **ac**: Componentes globais
-- **boasvindas**: Páginas de boas-vindas
-- **backend**: Scripts e automações
-
 ## Boas Práticas para o Copilot
 
 - Sempre respeite o formato: `<tipo>(<escopo>): <descrição curta>`
@@ -111,10 +93,9 @@ Description: Seção sobre estatística descritiva
 
 ### Nova Funcionalidade
 ```
-feat(books/EST0033): adiciona capítulo sobre regressão linear
+feat(books): adiciona capítulo sobre regressão linear
 
-Implementa novo capítulo com exemplos práticos e exercícios.
-
+Implementa novo capítulo com exemplos práticos e exercícios:
 - Adiciona teoria sobre regressão linear simples
 - Inclui exemplos com dados reais
 - Cria exercícios de fixação
@@ -123,10 +104,9 @@ Implementa novo capítulo com exemplos práticos e exercícios.
 
 ### Correção de Bug
 ```
-fix(apps/ira): corrige cálculo do índice acadêmico
+fix(ira): corrige cálculo do índice acadêmico
 
-Resolve erro no cálculo quando disciplina tem menção SS.
-
+Resolve erro no cálculo quando disciplina tem menção SS:
 - Corrige validação de menções especiais
 - Adiciona tratamento para casos edge
 - Atualiza testes unitários
@@ -134,10 +114,9 @@ Resolve erro no cálculo quando disciplina tem menção SS.
 
 ### Renderização Quarto
 ```
-render(books/EST0033): atualiza capítulos 1-3
+render(books): atualiza capítulos 1-3
 
-Renderiza conteúdo atualizado após revisão.
-
+Renderiza conteúdo atualizado após revisão:
 - Corrige formatação de tabelas
 - Atualiza gráficos estatísticos
 - Melhora layout responsivo
@@ -145,7 +124,7 @@ Renderiza conteúdo atualizado após revisão.
 
 ### Refatoração
 ```
-refactor(ac): consolidar arquivos CSS e JavaScript
+refactor: consolidar arquivos CSS e JavaScript
 
 Unifica estilos e scripts para melhor performance.
 
