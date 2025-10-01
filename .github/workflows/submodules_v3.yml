@@ -3,13 +3,6 @@ name: submodules_v4
 # description: Workflow para atualizar arquivos dos submódulos com o repositório Estatística.
 
 on:
-  workflow_dispatch:
-    inputs:
-      livros:
-        description: 'Lista de livros para renderizar (JSON array, ex: ["EST1234", "EST5678"])'
-        required: false
-        default: '[]'
-        type: string
   repository_dispatch:
     types: [atualizar-books, atualizar-newshub, atualizar-backend, atualizar-wss]
 
@@ -31,7 +24,7 @@ jobs:
   books:
     permissions:
       contents: write
-    if: ${{ github.event_name == 'workflow_dispatch' || github.event.action == 'atualizar-books' }}
+    if: ${{ github.event.action == 'atualizar-books' }}
     runs-on: ubuntu-latest
     environment:
       name: ENVIRONMENT
@@ -48,6 +41,7 @@ jobs:
           token: ${{ env.TOKEN }}
           ref: "stag"
           fetch-tags: true
+          submodules: false
 
       - name: Atualizar submodule 'books'
         run: |
@@ -56,37 +50,51 @@ jobs:
       - name: Determinar livros a renderizar
         id: books-list
         run: |
-          # Obtém a lista de livros do client_payload (repository_dispatch) ou workflow_dispatch
-          if [ "${{ github.event_name }}" == "repository_dispatch" ]; then
-            LIVROS='${{ toJson(github.event.client_payload.livros) }}'
-          else
-            LIVROS='${{ inputs.livros }}'
-          fi
+          # Obtém a lista de livros do client_payload (repository_dispatch)
+          LIVROS='${{ toJson(github.event.client_payload.livros) }}'
           
-          # Se a lista estiver vazia ou for null, renderiza todos os livros
+          echo "📦 Payload recebido: $LIVROS"
+          
+          # Se a lista estiver vazia, for null ou array vazio, renderiza todos os livros
           if [ -z "$LIVROS" ] || [ "$LIVROS" == "null" ] || [ "$LIVROS" == "[]" ]; then
-            echo "Renderizando TODOS os livros"
-            LIVROS_LIST=$(cd books/build && ls -d */ 2>/dev/null | sed 's#/##' | tr '\n' ' ')
+            echo "🔄 Renderizando TODOS os livros"
+            LIVROS_LIST=$(cd books/build && ls -d */ 2>/dev/null | sed 's#/##' | tr '\n' ' ' | xargs)
             echo "render_all=true" >> $GITHUB_OUTPUT
+            echo "has_books=true" >> $GITHUB_OUTPUT
           else
-            echo "Renderizando livros específicos: $LIVROS"
-            LIVROS_LIST=$(echo "$LIVROS" | jq -r '.[]' | tr '\n' ' ')
+            echo "🎯 Renderizando livros específicos"
+            # Converte JSON array para lista separada por espaço
+            LIVROS_LIST=$(echo "$LIVROS" | jq -r '.[]' | tr '\n' ' ' | xargs)
             echo "render_all=false" >> $GITHUB_OUTPUT
+            
+            if [ -n "$LIVROS_LIST" ]; then
+              echo "has_books=true" >> $GITHUB_OUTPUT
+            else
+              echo "has_books=false" >> $GITHUB_OUTPUT
+            fi
           fi
           
           echo "livros=$LIVROS_LIST" >> $GITHUB_OUTPUT
-          echo "Livros a renderizar: $LIVROS_LIST"
+          echo "📚 Livros a renderizar: $LIVROS_LIST"
+          echo "✅ Total: $(echo $LIVROS_LIST | wc -w) livro(s)"
 
       - name: Instalar Quarto
-        if: steps.books-list.outputs.livros != ''
+        if: steps.books-list.outputs.has_books == 'true'
         uses: quarto-dev/quarto-actions/setup@v2
+        with:
+          version: 'release'
 
-      - name: Renderiza livros Quarto
+      - name: Verificar instalação do Quarto
+        if: steps.books-list.outputs.has_books == 'true'
+        run: |
+          echo "🔍 Verificando instalação do Quarto..."
+          quarto --version
+          which quarto
+
+      - name: Renderizar livros Quarto
+        if: steps.books-list.outputs.has_books == 'true'
         run: |
           LIVROS_LIST='${{ steps.books-list.outputs.livros }}'
-          
-          # Remove espaços extras e converte para lista
-          LIVROS_LIST=$(echo "$LIVROS_LIST" | xargs)
           
           if [ -z "$LIVROS_LIST" ]; then
             echo "⚠️ Nenhum livro para renderizar"
@@ -97,38 +105,77 @@ jobs:
           NUM_LIVROS=$(echo "$LIVROS_LIST" | wc -w)
           echo "📚 Renderizando $NUM_LIVROS livro(s)..."
           
+          # Contador de sucesso e falha
+          SUCCESS_COUNT=0
+          FAIL_COUNT=0
+          
           for livro in $LIVROS_LIST; do
             if [ -d "books/build/$livro" ]; then
-              echo "✅ Renderizando livro: $livro"
-              quarto render "books/build/$livro" --to html --execute --output-dir "./../../../book/$livro"
+              echo ""
+              echo "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
+              echo "📖 Renderizando: $livro"
+              echo "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
+              
+              if quarto render "books/build/$livro" --to html --execute --output-dir "./../../../book/$livro"; then
+                echo "✅ Sucesso: $livro"
+                SUCCESS_COUNT=$((SUCCESS_COUNT + 1))
+              else
+                echo "❌ Erro ao renderizar: $livro"
+                FAIL_COUNT=$((FAIL_COUNT + 1))
+              fi
             else
               echo "⚠️ Livro não encontrado: $livro"
+              FAIL_COUNT=$((FAIL_COUNT + 1))
             fi
           done
           
-          echo "✨ Renderização concluída!"
+          echo ""
+          echo "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
+          echo "📊 Resumo da Renderização"
+          echo "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
+          echo "✅ Sucesso: $SUCCESS_COUNT"
+          echo "❌ Falhas: $FAIL_COUNT"
+          echo "📚 Total: $NUM_LIVROS"
+          echo "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
+          
+          # Falha se houve algum erro
+          if [ $FAIL_COUNT -gt 0 ]; then
+            echo "⚠️ Alguns livros falharam na renderização"
+            exit 1
+          fi
+          
+          echo "✨ Renderização concluída com sucesso!"
 
       - name: Atualizar submodule 'backend'
+        if: steps.books-list.outputs.has_books == 'true'
         run: |
           git submodule update --init --remote --merge backend
       
-      - name: Instalar o python
-        uses: actions/setup-python@v4
+      - name: Instalar o Python
+        if: steps.books-list.outputs.has_books == 'true'
+        uses: actions/setup-python@v5
         with:
-          python-version: '3.13.*'
+          python-version: '3.13'
+          cache: 'pip'
 
       - name: Instalar dependências do backend
+        if: steps.books-list.outputs.has_books == 'true'
         run: |
+          python -m pip install --upgrade pip
           pip install -r backend/actions/run/requirements.txt
 
       - name: Automação com 'backend/actions/run/'
+        if: steps.books-list.outputs.has_books == 'true'
         run: |
+          echo "🎨 Aplicando padronização HTML..."
           python ./backend/actions/run/site_html_manager.py --only-head --dynamic-head --path ./book/
           python ./backend/actions/run/site_html_manager.py --only-header --path ./book/
           python ./backend/actions/run/site_html_manager.py --only-footer --path ./book/
+          echo "✅ Padronização concluída!"
 
       - name: Commit e criar Pull Request
-        uses: peter-evans/create-pull-request@v5
+        if: steps.books-list.outputs.has_books == 'true'
+        uses: peter-evans/create-pull-request@v6
         with:
           token: ${{ env.TOKEN }}
           base: main
@@ -142,7 +189,7 @@ jobs:
             needs-review
             automated-pr
           assignees: ${{ github.repository_owner }}
-          reviewers: ${{ github.repository_owner  }}
+          reviewers: ${{ github.repository_owner }}
           draft: false
           commit-message: |
             books: atualiza e padroniza livros renderizados
@@ -150,29 +197,37 @@ jobs:
             Commit fonte: ${{ github.sha }}
             Data: $(date +'%Y-%m-%d %H:%M:%S UTC')
             Livros renderizados: ${{ steps.books-list.outputs.livros }}
+            Modo: ${{ steps.books-list.outputs.render_all == 'true' && 'Todos os livros' || 'Livros específicos' }}
 
           body: |
-            ## 📖 atualiza e padroniza livros renderizados pelo GitHub Actions
+            ## 📖 Atualização de Livros Renderizados
 
-            Esta 'pull_request' contém a atualização dos livros renderizados, via GitHub Actions, a partir dos arquivos fonte em Quarto (.qmd) presentes na pasta `build/`.
+            Esta Pull Request contém a atualização dos livros renderizados via GitHub Actions a partir dos arquivos fonte em Quarto (.qmd) presentes na pasta `build/`.
 
             ### 📋 Detalhes da Renderização
             - **Commit fonte**: `${{ github.sha }}`
-            - **Workflow**: `${{ github.run_id }}`
+            - **Workflow Run**: [${{ github.run_id }}](${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }})
             - **Data**: $(date +'%Y-%m-%d %H:%M:%S UTC')
-            - **Triggering commit**: `${{ github.event.head_commit.message }}`
             - **Modo**: ${{ steps.books-list.outputs.render_all == 'true' && '🔄 Todos os livros' || '🎯 Livros específicos' }}
 
             ### 📚 Livros Renderizados
-            $(echo '${{ steps.books-list.outputs.livros }}' | jq -r '.[]' | sed 's/^/- 📖 /' || echo "- Nenhum livro renderizado")
+            ```
+            ${{ steps.books-list.outputs.livros }}
+            ```
+
+            ### 🔄 Alterações Aplicadas
+            - ✅ Renderização Quarto → HTML
+            - ✅ Atualização do `<head>` dinâmico
+            - ✅ Padronização do header
+            - ✅ Padronização do footer
 
             ## 👀 Review Checklist
-            Por favor, verifique se todos os livros foram renderizados corretamente e estão prontos para publicação.:
-            - [ ] 📖 Livros foram renderizados corretamente
-            - [ ] 🎨 Formatação e estilos estão adequados
+            Por favor, verifique se todos os livros foram renderizados corretamente:
+            - [ ] 📖 Livros renderizados corretamente
+            - [ ] 🎨 Formatação e estilos adequados
             - [ ] 🔗 Links internos funcionam
-            - [ ] 📱 Layout é responsivo
-            - [ ] 📁 Estrutura de pastas está organizada
+            - [ ] 📱 Layout responsivo
+            - [ ] 📁 Estrutura de pastas organizada
 
             ---
             **⚠️ Esta PR requer aprovação manual do proprietário antes do merge.**
