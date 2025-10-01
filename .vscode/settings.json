@@ -71,20 +71,20 @@
   "editor.hideCursorInOverviewRuler": true,
   "editor.scrollbar.vertical": "hidden",
 
-  // ✅ DESATIVAR ITENS ENFATIZADOS
-  "editor.occurrencesHighlight": "off", // Desativa destaque de ocorrências
-  "editor.selectionHighlight": true, // Desativa destaque de seleções similares
-  "editor.renderLineHighlight": "none", // Desativa destaque da linha atual (sobrescreve "gutter")
-  "editor.matchBrackets": "never", // Desativa destaque de parênteses correspondentes
-  "editor.guides.bracketPairs": false, // Desativa linhas guia de pares de colchetes
-  "editor.guides.bracketPairsHorizontal": false, // Desativa guias horizontais de colchetes
-  "editor.guides.highlightActiveBracketPair": false, // Desativa destaque do par ativo
-  "editor.guides.indentation": false, // Desativa linhas de indentação
-  "editor.guides.highlightActiveIndentation": false, // Desativa destaque da indentação ativa
-  "editor.bracketPairColorization.enabled": false, // Desativa colorização de pares de colchetes
-  "editor.linkedEditing": false, // Desativa edição vinculada de tags HTML
-  "editor.foldingHighlight": false, // Desativa destaque de regiões dobráveis
-  "editor.showFoldingControls": "never", // Remove controles de dobra de código
+  // // ✅ DESATIVAR ITENS ENFATIZADOS
+  // "editor.occurrencesHighlight": "off", // Desativa destaque de ocorrências
+  // "editor.selectionHighlight": true, // Desativa destaque de seleções similares
+  // "editor.renderLineHighlight": "none", // Desativa destaque da linha atual (sobrescreve "gutter")
+  // "editor.matchBrackets": "never", // Desativa destaque de parênteses correspondentes
+  // "editor.guides.bracketPairs": false, // Desativa linhas guia de pares de colchetes
+  // "editor.guides.bracketPairsHorizontal": false, // Desativa guias horizontais de colchetes
+  // "editor.guides.highlightActiveBracketPair": false, // Desativa destaque do par ativo
+  // "editor.guides.indentation": false, // Desativa linhas de indentação
+  // "editor.guides.highlightActiveIndentation": false, // Desativa destaque da indentação ativa
+  // "editor.bracketPairColorization.enabled": false, // Desativa colorização de pares de colchetes
+  // "editor.linkedEditing": false, // Desativa edição vinculada de tags HTML
+  // "editor.foldingHighlight": false, // Desativa destaque de regiões dobráveis
+  // "editor.showFoldingControls": "never", // Remove controles de dobra de código
 
   "editor.tokenColorCustomizations": {
     "textMateRules": [

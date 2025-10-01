@@ -168,9 +168,7 @@ jobs:
         if: steps.books-list.outputs.has_books == 'true'
         run: |
           echo "🎨 Aplicando padronização HTML..."
-          python ./backend/actions/run/site_html_manager.py --only-head --dynamic-head --path ./book/
-          python ./backend/actions/run/site_html_manager.py --only-header --path ./book/
-          python ./backend/actions/run/site_html_manager.py --only-footer --path ./book/
+          python ./backend/actions/run/site_html_manager.py --update-all --path ./book/
           echo "✅ Padronização concluída!"
 
       - name: Commit e criar Pull Request
