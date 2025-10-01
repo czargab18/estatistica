@@ -191,7 +191,7 @@ jobs:
             needs-review
             automated-pr
           assignees: ${{ github.repository_owner }}
-          reviewers: ${{ github.repository_owner }}
+          reviewers: ${{ env.USERNAME }}
           draft: false
           commit-message: |
             books: atualiza e padroniza livros renderizados
