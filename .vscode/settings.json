@@ -54,7 +54,7 @@
     "**/*libs*/": true
   },
 
-  // Configurações: Editor
+  // Configurações: Editor (MELHORADO)
   "editor.rulers": [80, 120],
   "editor.wordWrap": "on",
   "editor.wordWrapColumn": 80,
@@ -71,6 +71,22 @@
   "editor.tabSize": 2,
   "editor.hideCursorInOverviewRuler": true,
   "editor.scrollbar.vertical": "hidden",
+
+  // ✅ DESATIVAR ITENS ENFATIZADOS
+  "editor.occurrencesHighlight": "off", // Desativa destaque de ocorrências
+  "editor.selectionHighlight": false, // Desativa destaque de seleções similares
+  "editor.renderLineHighlight": "none", // Desativa destaque da linha atual (sobrescreve "gutter")
+  "editor.matchBrackets": "never", // Desativa destaque de parênteses correspondentes
+  "editor.guides.bracketPairs": false, // Desativa linhas guia de pares de colchetes
+  "editor.guides.bracketPairsHorizontal": false, // Desativa guias horizontais de colchetes
+  "editor.guides.highlightActiveBracketPair": false, // Desativa destaque do par ativo
+  "editor.guides.indentation": false, // Desativa linhas de indentação
+  "editor.guides.highlightActiveIndentation": false, // Desativa destaque da indentação ativa
+  "editor.bracketPairColorization.enabled": false, // Desativa colorização de pares de colchetes
+  "editor.linkedEditing": false, // Desativa edição vinculada de tags HTML
+  "editor.foldingHighlight": false, // Desativa destaque de regiões dobráveis
+  "editor.showFoldingControls": "never", // Remove controles de dobra de código
+
   "editor.tokenColorCustomizations": {
     "textMateRules": [
       {
@@ -156,6 +172,16 @@
   "workbench.iconTheme": "symbols",
   "workbench.editor.empty.hint": "hidden",
 
+  // ✅ DESATIVAR MAIS DESTAQUES
+  "workbench.colorCustomizations": {
+    "editor.selectionBackground": "#00000000", // Remove fundo de seleção
+    "editor.selectionHighlightBackground": "#00000000", // Remove destaque de seleções
+    "editor.wordHighlightBackground": "#00000000", // Remove destaque de palavras
+    "editor.wordHighlightStrongBackground": "#00000000", // Remove destaque forte
+    "editorBracketMatch.background": "#00000000", // Remove fundo de parênteses correspondentes
+    "editorBracketMatch.border": "#00000000" // Remove borda de parênteses correspondentes
+  },
+
   // Configurações: Git
   "gitlens.codeLens.recentChange.enabled": false,
   "gitlens.codeLens.authors.enabled": false,
@@ -190,7 +216,8 @@
 
   // Configurações: Formatação
   "editor.codeActionsOnSave": {
-    "source.fixAll.eslint": "explicit"
+    "source.fixAll.eslint": "explicit",
+    "source.organizeImports": "explicit" // ✅ ADICIONADO
   },
   "eslint.validate": ["javascript", "javascriptreact", "graphql"],
   "[prisma]": {
@@ -203,7 +230,20 @@
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
   "[javascript]": {
-    "editor.defaultFormatter": "vscode.typescript-language-features"
+    "editor.defaultFormatter": "esbenp.prettier-vscode" // ✅ CORRIGIDO
+  },
+  "[typescript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode" // ✅ ADICIONADO
+  },
+  "[yaml]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode" // ✅ ADICIONADO
+  },
+  "[python]": {
+    "editor.defaultFormatter": "ms-python.black-formatter", // ✅ ADICIONADO
+    "editor.formatOnSave": true,
+    "editor.codeActionsOnSave": {
+      "source.organizeImports": "explicit"
+    }
   },
 
   // Configurações: Live Server
@@ -278,7 +318,7 @@
     "**/.venv": true,
     "**/*cache*": true,
     "**/*.pyc": true,
-    "**/dist": true,
+    "**/dist": true
   },
 
   // Melhorar performance do Copilot
@@ -292,10 +332,10 @@
     "**/*.pyc": true,
     "**/dist": true,
     "**/*env*/*": true,
-    "**/.quarto/**": true,
+    "**/.quarto/**": true
   },
 
-  // Configurações: GitHub Copilot
+  // Configurações: GitHub Copilot (MELHORADO)
   "github.copilot.enable": {
     "*": true,
     "yaml": true,
@@ -311,7 +351,12 @@
   },
 
   // Configurações avançadas do Copilot
-  "github.copilot.editor.enableAutoCompletions": true,
   "github.copilot.chat.localeOverride": "pt-br",
-  "github.copilot.chat.temporalContext.enabled": true
+  "github.copilot.chat.reviewSelection.enabled": false, // ✅ ADICIONADO
+  "github.copilot.editor.enableAutoCompletions": true, // ✅ ADICIONADO
+
+  // Configurações: GitHub Pull Requests (ADICIONADO)
+  "githubPullRequests.useReviewMode": false, // ✅ ADICIONADO
+  "githubPullRequests.pullBranch": "never", // ✅ ADICIONADO
+  "githubPullRequests.createOnPublishBranch": "never" // ✅ ADICIONADO
 }
