@@ -1,7 +1,7 @@
 {
   "files.exclude": {
     // OCULTAR DA RAIZ
-    ".editorconfig": false,
+    ".editorconfig": true,
     ".htaccess": true,
     "CNAME": true,
     "404.html": true,
