@@ -343,11 +343,12 @@
 
   // Configurações avançadas do Copilot
   "github.copilot.chat.localeOverride": "pt-br",
-  "github.copilot.chat.reviewSelection.enabled": false, // ✅ ADICIONADO
+  "github.copilot.chat.reviewSelection.enabled": false, // ❌ Desabilita review de código
   "github.copilot.editor.enableAutoCompletions": true, // ✅ ADICIONADO
 
-  // Configurações: GitHub Pull Requests (ADICIONADO)
-  "githubPullRequests.useReviewMode": "never", // ✅ String correta
-  "githubPullRequests.pullBranch": "never", // ✅ ADICIONADO
-  "githubPullRequests.createOnPublishBranch": "never" // ✅ ADICIONADO,
+  // Configurações: GitHub Pull Requests (CORRIGIDO)
+  "githubPullRequests.pullBranch": "prompt", // ✅ Pergunta antes de puxar branch
+  "githubPullRequests.createOnPublishBranch": "ask", // ✅ Pergunta antes de criar PR
+  "githubPullRequests.defaultMergeMethod": "merge", // ✅ Método padrão de merge
+  "githubPullRequests.remotes": ["origin", "upstream"] // ✅ Remotes a incluir
 }
