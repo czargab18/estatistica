@@ -171,6 +171,14 @@ jobs:
           python ./backend/actions/run/site_html_manager.py --update-all --path ./book/
           echo "✅ Padronização concluída!"
 
+      - name: Limpar arquivos gerados pelo Quarto com script Python
+        if: steps.books-list.outputs.has_books == 'true'
+        run: |
+          echo "🧹 Limpando pastas temporárias..."
+          python ./backend/actions/run/clean_quarto_output.py --path ./book/
+          echo "✅ Limpeza concluída!"
+
+
       - name: Commit e criar Pull Request
         if: steps.books-list.outputs.has_books == 'true'
         uses: peter-evans/create-pull-request@v6
@@ -187,7 +195,7 @@ jobs:
             needs-review
             automated-pr
           assignees: ${{ github.repository_owner }}
-          reviewers: ${{ env.USERNAME }}
+          # reviewers: ${{ env.USERNAME }}
           draft: false
           commit-message: |
             books: atualiza e padroniza livros renderizados
