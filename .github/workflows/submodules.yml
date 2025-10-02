@@ -168,17 +168,23 @@ jobs:
         if: steps.books-list.outputs.has_books == 'true'
         run: |
           echo "🎨 Aplicando padronização HTML..."
-          python ./backend/actions/run/site_html_manager.py --only-head --dynamic-head --path ./book/
-          python ./backend/actions/run/site_html_manager.py --only-header --path ./book/
-          python ./backend/actions/run/site_html_manager.py --only-footer --path ./book/
+          python ./backend/actions/run/site_html_manager.py --update-all --path ./book/
           echo "✅ Padronização concluída!"
+
+      - name: Limpar arquivos gerados pelo Quarto com script Python
+        if: steps.books-list.outputs.has_books == 'true'
+        run: |
+          echo "🧹 Limpando pastas temporárias..."
+          python ./backend/actions/run/clean_quarto_output.py --path ./book/
+          echo "✅ Limpeza concluída!"
+
 
       - name: Commit e criar Pull Request
         if: steps.books-list.outputs.has_books == 'true'
         uses: peter-evans/create-pull-request@v6
         with:
           token: ${{ env.TOKEN }}
-          base: main
+          base: stag
           branch: book
           delete-branch: true
           title: "book: atualiza novos livros Quarto renderizados"
@@ -189,7 +195,7 @@ jobs:
             needs-review
             automated-pr
           assignees: ${{ github.repository_owner }}
-          reviewers: ${{ github.repository_owner }}
+          # reviewers: ${{ env.USERNAME }}
           draft: false
           commit-message: |
             books: atualiza e padroniza livros renderizados
@@ -207,7 +213,6 @@ jobs:
             ### 📋 Detalhes da Renderização
             - **Commit fonte**: `${{ github.sha }}`
             - **Workflow Run**: [${{ github.run_id }}](${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }})
-            - **Data**: $(date +'%Y-%m-%d %H:%M:%S UTC')
             - **Modo**: ${{ steps.books-list.outputs.render_all == 'true' && '🔄 Todos os livros' || '🎯 Livros específicos' }}
 
             ### 📚 Livros Renderizados
