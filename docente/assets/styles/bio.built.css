@@ -9,12 +9,14 @@ body {
   all: unset;
 }
 
-#page-docente h1 {
+#page-docente :is(h1, h2, h3, h4, h5, h6, p, span) {
   margin: 0;
+  padding: 0;
 }
 
 #page-docente {
   max-width: 2560px;
+  min-width: 320px;
   width: 100%;
   margin: 0 auto;
 }
@@ -59,7 +61,7 @@ body {
 
 
 #page-docente header.section-hero .image-hero {
-  background-image: url(https://www.apple.com/leadership/images/bio/tim-cook_image.png.large.png);
+  background-image: url("../../cesargabrielphd/image/bio/cesargabriel_image.png.large_2x.png");
   height: 336px;
   background-size: 489px 336px;
   background-repeat: no-repeat;
