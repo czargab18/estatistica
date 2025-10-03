@@ -161,6 +161,25 @@ only screen and (max-width: 735px) and (min-resolution: 144dppx) {
   font-family: "SF Pro Display", "SF Pro Icons", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
 }
 
+@media only screen and (max-width: 1068px) {
+  #page-docente header.section-hero .typography-section-headline {
+    font-size: 34px;
+    line-height: 1.08824;
+    font-weight: 500;
+    letter-spacing: .01em;
+    font-family: "SF Pro Display", "SF Pro Icons", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+  }
+}
+
+@media only screen and (max-width: 735px) {
+  #page-docente header.section-hero .typography-section-headline {
+    font-size: 28px;
+    line-height: 1.1073;
+    font-weight: 500;
+    letter-spacing: .012em;
+    font-family: "SF Pro Display", "SF Pro Icons", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+  }
+}
 #page-docente header.section-hero .typography-subsection-subhead {
   font-size: 32px;
   line-height: 1.09375;
