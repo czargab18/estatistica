@@ -25,7 +25,19 @@ body {
   position: relative;
   display: block;
   padding-top: 88px;
-  min-height: 320px;
+  min-height: 336px;
+  }
+  
+  @media only screen and (max-width: 1068px) {
+    #page-docente header.section-hero {
+      min-height: 313px;
+    }
+  }
+  
+  @media only screen and (max-width: 735px) {
+    #page-docente header.section-hero {
+      min-height: auto;
+    }
 }
 
 #page-docente header.section-hero .section-content {
@@ -61,12 +73,54 @@ body {
 
 
 #page-docente header.section-hero .image-hero {
-  background-image: url("../../cesargabrielphd/image/bio/cesargabriel_image.png.large_2x.png");
+  background-image: url("../../cesargabrielphd/image/bio/cesargabriel_image.png.large.png");
   height: 336px;
   background-size: 489px 336px;
   background-repeat: no-repeat;
 }
 
+@media only screen and (-webkit-min-device-pixel-ratio: 1.5),
+only screen and (min-resolution: 1.5dppx),
+(-webkit-min-device-pixel-ratio: 1.5),
+(min-resolution: 144dpi) {
+  #page-docente header.section-hero .image-hero {
+    background-image: url("../../cesargabrielphd/image/bio/cesargabriel_image.png.large_2x.png");
+  }
+}
+
+@media only screen and (max-width: 1068px) {
+  #page-docente header.section-hero .image-hero {
+    background-image: url("../../cesargabrielphd/image/bio/cesargabriel_image.png.medium.png");
+    height: 313px;
+    background-size: 414px 313px;
+  }
+}
+
+@media only screen and (max-width: 1068px) and (-webkit-min-device-pixel-ratio: 1.5),
+only screen and (max-width: 1068px) and (min-resolution: 144dpi),
+only screen and (max-width: 1068px) and (-webkit-min-device-pixel-ratio: 144),
+only screen and (max-width: 1068px) and (min-resolution: 144dppx) {
+  #page-docente header.section-hero .image-hero {
+    background-image: url("../../cesargabrielphd/image/bio/cesargabrielphd_image.png.medium_2x.png");
+  }
+}
+
+@media only screen and (max-width: 735px) {
+  #page-docente header.section-hero .image-hero {
+    background-image: url("../../cesargabrielphd/image/bio/cesargabriel_image.png.small.png");
+    height: 220px;
+    background-size: 292px 220px;
+  }
+}
+
+@media only screen and (max-width: 735px) and (-webkit-min-device-pixel-ratio: 1.5),
+only screen and (max-width: 735px) and (min-resolution: 144dpi),
+only screen and (max-width: 735px) and (-webkit-min-device-pixel-ratio: 144),
+only screen and (max-width: 735px) and (min-resolution: 144dppx) {
+  #page-docente header.section-hero .image-hero {
+    background-image: url("../../cesargabrielphd/image/bio/cesargabriel_image.png.small_2x.png");
+  }
+}
 @media only screen and (min-width: 1442px) {
   #page-docente header.section-hero .image-hero {
     margin-left: auto;
