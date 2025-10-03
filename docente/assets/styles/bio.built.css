@@ -1,9 +1,82 @@
+html, 
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  top: 0;
+}
 
+#page-docente {
+  all: unset;
+}
 
+#page-docente {
+  max-width: 2560px;
+  width: 100%;
+  margin: 0 auto;
+}
 
-
-.page-bio .section-hero {
+#page-docente header.section-hero {
+  max-width: 980px;
+  width: 100%;
   position: relative;
+}
+
+#page-docente header.section-hero .section-content {
+  margin: 0 auto;
+}
+
+#page-docente header.section-hero .section-content {
+  margin-left: auto;
+  margin-right: auto;
+  width: 980px;
+}
+
+@media only screen and (max-width: 1068px) {
+  #page-docente header.section-hero .section-content {
+    margin-left: auto;
+    margin-right: auto;
+    width: 692px;
+  }
+}
+
+#page-docente header.section-hero .image-hero-container {
+  position: absolute;
+  z-index: 1;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  overflow: hidden;
+  background: -webkit-gradient(linear, left top, left bottom, from(#eaeaea), to(#fafafa));
+  background: -webkit-linear-gradient(top, #eaeaea 0%, #fafafa 100%);
+  background: linear-gradient(to bottom, #eaeaea 0%, #fafafa 100%);
+}
+
+/* .page-bio .section-hero .image-hero {
+  background-image: url(https://www.apple.com/leadership/images/bio/tim-cook_image.png.large.png);
+  height: 336px;
+  background-size: 489px 336px;
+  background-repeat: no-repeat;
+}
+
+.page-bio .section-hero .image-hero {
+  margin-left: auto;
+  margin-right: auto;
+  width: 980px;
+  -webkit-transform: translateX(-50%);
+  transform: translateX(-50%);
+  position: absolute;
+  z-index: 1;
+  bottom: 0;
+  left: 50%;
+  background-position: 381px 100%;
+}
+
+*/
+
+/* 
+.page-bio .section-hero {
   padding-top: 106px
 }
 
@@ -225,3 +298,4 @@ only screen and (max-width: 735px) and (min-resolution: 144dppx) {
     background-image: url(https://www.apple.com/leadership/images/bio/tim-cook_image.png.small_2x.png);
   }
 }
+*/
