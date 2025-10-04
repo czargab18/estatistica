@@ -95,7 +95,7 @@ nav#localnav {
   bottom: 0;
   left: 50%;
   background-position: 381px 100%;
-  background-image: url("../../cesargabrielphd/image/bio/cesargabriel_image.png.large_2x.png");
+  background-image: url("../../cesargabriel/image/bio/cesargabriel_image.png.large_2x.png");
   height: 336px;
   background-size: 489px 336px;
   background-repeat: no-repeat;
@@ -114,7 +114,7 @@ only screen and (min-resolution: 1.5dppx),
 (-webkit-min-device-pixel-ratio: 1.5),
 (min-resolution: 144dpi) {
   #page-docente .section-hero .image-hero {
-    background-image: url("../../cesargabrielphd/image/bio/cesargabriel_image.png.large_2x.png");
+    background-image: url("../../cesargabriel/image/bio/cesargabriel_image.png.large_2x.png");
   }
 }
 
@@ -123,7 +123,7 @@ only screen and (min-resolution: 1.5dppx),
     margin-left: auto;
     margin-right: auto;
     width: 692px;
-    background-image: url("../../cesargabrielphd/image/bio/cesargabriel_image.png.medium.png");
+    background-image: url("../../cesargabriel/image/bio/cesargabriel_image.png.medium.png");
     height: 313px;
     background-size: 414px 313px;
     background-position: 285px 100%;
@@ -135,7 +135,7 @@ only screen and (max-width: 1068px) and (min-resolution: 144dpi),
 only screen and (max-width: 1068px) and (-webkit-min-device-pixel-ratio: 144),
 only screen and (max-width: 1068px) and (min-resolution: 144dppx) {
   #page-docente .section-hero .image-hero {
-    background-image: url("../../cesargabrielphd/image/bio/cesargabriel_image.png.medium_2x.png");
+    background-image: url("../../cesargabriel/image/bio/cesargabriel_image.png.medium_2x.png");
   }
 }
 
@@ -148,7 +148,7 @@ only screen and (max-width: 1068px) and (min-resolution: 144dppx) {
     -webkit-transform: none;
     transform: none;
     background-position: 50% 100%;
-    background-image: url("../../cesargabrielphd/image/bio/cesargabriel_image.png.small.png");
+    background-image: url("../../cesargabriel/image/bio/cesargabriel_image.png.small.png");
     height: 220px;
     background-size: 292px 220px;
   }
@@ -159,7 +159,7 @@ only screen and (max-width: 735px) and (min-resolution: 144dpi),
 only screen and (max-width: 735px) and (-webkit-min-device-pixel-ratio: 144),
 only screen and (max-width: 735px) and (min-resolution: 144dppx) {
   #page-docente .section-hero .image-hero {
-    background-image: url("../../cesargabrielphd/image/bio/cesargabriel_image.png.small_2x.png");
+    background-image: url("../../cesargabriel/image/bio/cesargabriel_image.png.small_2x.png");
   }
 }
 
