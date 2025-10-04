@@ -5,6 +5,12 @@ body {
   box-sizing: border-box;
 }
 
+nav#localnav {
+  display: none;
+}
+
+
+
 #page-docente {
   max-width: 2560px;
   min-width: 320px;
@@ -250,26 +256,3 @@ only screen and (max-width: 735px) and (min-resolution: 144dppx) {
   margin-top: 0.7em;
 }
 
-/* Correções de navegação */
-.ac-nav-overlap #ac-localnav {
-  margin-top: 0px;
-}
-
-nav#ac-localnav .ac-ln-wrapper .ac-ln-content .ac-ln-title {
-  display: inline-flex;
-  align-items: center;
-  justify-content: space-between;
-  width: 100%;
-  max-width: 980px;
-}
-
-nav#ac-localnav .ac-ln-wrapper .ac-ln-content .ac-ln-title div.ac-ln-title-separator {
-  display: inline-flex;
-  gap: 24px;
-}
-
-nav#ac-localnav .ac-ln-wrapper .ac-ln-content .ac-ln-title div.ac-ln-title-separator a {
-  font-size: medium;
-  margin-right: 12px;
-  color: #1a1919;
-}
