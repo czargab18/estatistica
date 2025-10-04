@@ -5,46 +5,46 @@ body {
   box-sizing: border-box;
 }
 
-.page-bio {
+#page-docente {
   max-width: 2560px;
   min-width: 320px;
   width: 100%;
   margin: 0 auto;
 }
 
-.page-bio :is(h1, h2, h3, h4, h5, h6, p, span) {
+#page-docente :is(h1, h2, h3, h4, h5, h6, p, span) {
   margin: 0;
   padding: 0;
 }
 
-.page-bio .section-hero {
+#page-docente .section-hero {
   position: relative;
   padding-top: 106px;
   min-height: 336px;
 }
 
 @media only screen and (max-width: 1068px) {
-  .page-bio .section-hero {
+  #page-docente .section-hero {
       padding-top: 102px;
       min-height: 313px;
     }
   }
   
   @media only screen and (max-width: 735px) {
-  .page-bio .section-hero {
+  #page-docente .section-hero {
       padding-top: 12px;
       min-height: auto;
     }
 }
 
-.page-bio .section-hero .section-content {
+#page-docente .section-hero .section-content {
   margin-left: auto;
   margin-right: auto;
   width: 980px;
 }
 
 @media only screen and (max-width: 1068px) {
-  .page-bio .section-hero .section-content {
+  #page-docente .section-hero .section-content {
     margin-left: auto;
     margin-right: auto;
     width: 692px;
@@ -52,12 +52,12 @@ body {
 }
 
 @media only screen and (max-width: 735px) {
-  .page-bio .section-hero .section-content {
+  #page-docente .section-hero .section-content {
     width: auto;
   }
 }
 
-.page-bio .section-hero .image-hero-container {
+#page-docente .section-hero .image-hero-container {
   position: absolute;
   z-index: 1;
   top: 0;
@@ -71,14 +71,14 @@ body {
 }
 
 @media only screen and (max-width: 735px) {
-  .page-bio .section-hero .image-hero-container {
+  #page-docente .section-hero .image-hero-container {
     position: static;
     margin-bottom: 40px;
     padding-top: 96px;
   }
 }
 
-.page-bio .section-hero .image-hero {
+#page-docente .section-hero .image-hero {
   margin-left: auto;
   margin-right: auto;
   width: 980px;
@@ -89,14 +89,14 @@ body {
   bottom: 0;
   left: 50%;
   background-position: 381px 100%;
-  background-image: url("../../cesargabrielphd/mocky/portifolio/assets/sd/1/pt_BR/retratos/cesargabriel/cesargabriel_image.png.large_2x.png");
+  background-image: url("../../cesargabrielphd/image/bio/cesargabriel_image.png.large_2x.png");
   height: 336px;
   background-size: 489px 336px;
   background-repeat: no-repeat;
 }
 
 @media only screen and (min-width: 1442px) {
-  .page-bio .section-hero .image-hero {
+  #page-docente .section-hero .image-hero {
     margin-left: auto;
     margin-right: auto;
     width: 980px;
@@ -106,17 +106,17 @@ body {
 only screen and (min-resolution: 1.5dppx),
 (-webkit-min-device-pixel-ratio: 1.5),
 (min-resolution: 144dpi) {
-  .page-bio .section-hero .image-hero {
-      background-image: url("../../cesargabrielphd/mocky/portifolio/assets/sd/1/pt_BR/retratos/cesargabriel/cesargabriel_image.png.large_2x.png");
+  #page-docente .section-hero .image-hero {
+      background-image: url("../../cesargabrielphd/image/bio/cesargabriel_image.png.large_2x.png");
   }
 }
 
 @media only screen and (max-width: 1068px) {
-  .page-bio .section-hero .image-hero {
+  #page-docente .section-hero .image-hero {
       margin-left: auto;
       margin-right: auto;
       width: 692px;
-      background-image: url("../../cesargabrielphd/mocky/portifolio/assets/sd/1/pt_BR/retratos/cesargabriel/cesargabriel_image.png.medium.png");
+      background-image: url("../../cesargabrielphd/image/bio/cesargabriel_image.png.medium.png");
     height: 313px;
     background-size: 414px 313px;
     background-position: 285px 100%;
@@ -127,13 +127,13 @@ only screen and (min-resolution: 1.5dppx),
 only screen and (max-width: 1068px) and (min-resolution: 144dpi),
 only screen and (max-width: 1068px) and (-webkit-min-device-pixel-ratio: 144),
 only screen and (max-width: 1068px) and (min-resolution: 144dppx) {
-  .page-bio .section-hero .image-hero {
-      background-image: url("../../cesargabrielphd/mocky/portifolio/assets/sd/1/pt_BR/retratos/cesargabriel/cesargabriel_image.png.medium_2x.png");
+  #page-docente .section-hero .image-hero {
+      background-image: url("../../cesargabrielphd/image/bio/cesargabriel_image.png.medium_2x.png");
   }
 }
 
 @media only screen and (max-width: 735px) {
-  .page-bio .section-hero .image-hero {
+  #page-docente .section-hero .image-hero {
       margin-left: auto;
       margin-right: auto;
       width: 87.5%;
@@ -141,7 +141,7 @@ only screen and (max-width: 1068px) and (min-resolution: 144dppx) {
       -webkit-transform: none;
       transform: none;
       background-position: 50% 100%;
-      background-image: url("../../cesargabrielphd/mocky/portifolio/assets/sd/1/pt_BR/retratos/cesargabriel/cesargabriel_image.png.small.png");
+      background-image: url("../../cesargabrielphd/image/bio/cesargabriel_image.png.small.png");
     height: 220px;
     background-size: 292px 220px;
   }
@@ -151,12 +151,12 @@ only screen and (max-width: 1068px) and (min-resolution: 144dppx) {
 only screen and (max-width: 735px) and (min-resolution: 144dpi),
 only screen and (max-width: 735px) and (-webkit-min-device-pixel-ratio: 144),
 only screen and (max-width: 735px) and (min-resolution: 144dppx) {
-  .page-bio .section-hero .image-hero {
-      background-image: url("../../cesargabrielphd/mocky/portifolio/assets/sd/1/pt_BR/retratos/cesargabriel/cesargabriel_image.png.small_2x.png");
+  #page-docente .section-hero .image-hero {
+      background-image: url("../../cesargabrielphd/image/bio/cesargabriel_image.png.small_2x.png");
     }
   }
   
-  .page-bio .section-hero .headlines {
+  #page-docente .section-hero .headlines {
     position: relative;
     z-index: 1;
     width: 50%;
@@ -164,25 +164,25 @@ only screen and (max-width: 735px) and (min-resolution: 144dppx) {
   }
   
   @media only screen and (max-width: 1068px) {
-    .page-bio .section-hero .headlines {
+    #page-docente .section-hero .headlines {
       padding-top: 83px;
   }
 }
 @media only screen and (max-width: 735px) {
-  .page-bio .section-hero .headlines {
+  #page-docente .section-hero .headlines {
     padding-top: 0;
   }
 }
 
 @media only screen and (max-width: 735px) and (max-width: 735px) {
-  .page-bio .section-hero .headlines {
+  #page-docente .section-hero .headlines {
     margin-left: auto;
     margin-right: auto;
     width: 87.5%;
     }
 }
 
-.page-bio .section-hero .typography-section-headline {
+#page-docente .section-hero .typography-section-headline {
   margin-bottom: 11px;
   font-size: 40px;
   line-height: 1.05;
@@ -192,7 +192,7 @@ only screen and (max-width: 735px) and (min-resolution: 144dppx) {
 }
 
 @media only screen and (max-width: 1068px) {
-  .page-bio .section-hero .typography-section-headline {
+  #page-docente .section-hero .typography-section-headline {
     font-size: 34px;
     line-height: 1.08824;
     font-weight: 500;
@@ -202,7 +202,7 @@ only screen and (max-width: 735px) and (min-resolution: 144dppx) {
 }
 
 @media only screen and (max-width: 735px) {
-  .page-bio .section-hero .typography-section-headline {
+  #page-docente .section-hero .typography-section-headline {
     font-size: 28px;
     line-height: 1.1073;
     font-weight: 500;
@@ -210,7 +210,7 @@ only screen and (max-width: 735px) and (min-resolution: 144dppx) {
     font-family: "SF Pro Display", "SF Pro Icons", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
   }
 }
-.page-bio .section-hero .typography-subsection-subhead {
+#page-docente .section-hero .typography-subsection-subhead {
   font-size: 32px;
   line-height: 1.09375;
   font-weight: 300;
@@ -218,31 +218,31 @@ only screen and (max-width: 735px) and (min-resolution: 144dppx) {
   font-family: "SF Pro Display", "SF Pro Icons", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
 }
 @media only screen and (max-width: 735px) {
-  .page-bio .section-hero .typography-subsection-subhead {
+  #page-docente .section-hero .typography-subsection-subhead {
     margin-bottom: 15px;
   }
 }
 
-.page-bio .section-bio {
+#page-docente .section-bio {
   padding-top: 52px;
   padding-bottom: 110px;
 }
 
 @media only screen and (max-width: 1068px) {
-  .page-bio .section-bio {
+  #page-docente .section-bio {
     padding-top: 48px;
     padding-bottom: 64px;
   }
 }
 
 @media only screen and (max-width: 735px) {
-  .page-bio .section-bio {
+  #page-docente .section-bio {
     padding-top: 0;
     padding-bottom: 50px;
   }
 }
 
-.page-bio .section-bio p {
+#page-docente .section-bio p {
   margin-top: 0.7em;
 }
 
