@@ -50,8 +50,7 @@
   }
 
 }
-
-#globalnavbar.globalnavbar-hover-active {
+#globalnavbar.globalnavbar-with-opened {
   background-color: var(--r-globalnavbar-background-opened);
   transition: background-color 0s ease;
 }
@@ -506,7 +505,7 @@
   }
 }
 
-#globalnavbar.globalnavbar-hover-active~.globalnavbar-curtain,
+#globalnavbar.globalnavbar-with-opened~.globalnavbar-curtain,
 #globalnavbar:has(.globalnavbar-submenu-open)~.globalnavbar-curtain {
   opacity: 1;
   visibility: visible;
