@@ -8,6 +8,20 @@ body {
   font-size: 106.25%;
   font-weight: 400;
 }
+body {        font-size: 17px;
+        line-height: 1.52947;
+        font-weight: 400;
+        letter-spacing: -.021em;
+        font-family: "SF Pro Text",
+        "SF Pro Icons",
+        "Helvetica Neue",
+        "Helvetica",
+        "Arial",
+        sans-serif;
+        background-color: #fff;
+        color: #333;
+        font-style: normal;}
+
 
 nav#localnav {
   display: none;
@@ -41,7 +55,7 @@ nav#localnav {
 
 @media only screen and (max-width: 735px) {
   #page-docente .section-hero {
-    padding-top: 12px;
+    padding-top: 0;
     min-height: auto;
   }
 }
@@ -254,6 +268,7 @@ only screen and (max-width: 735px) and (min-resolution: 144dppx) {
 #page-docente .section-bio {
   padding-top: 52px;
   padding-bottom: 110px;
+  display: flex;
 }
 
 @media only screen and (max-width: 1068px) {
@@ -322,6 +337,40 @@ only screen and (max-width: 735px) and (min-resolution: 144dppx) {
   display: table;
 }
 
+.column {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  position: relative;
+  z-index: 1;
+  margin: 0;
+  padding: 0;
+  float: left;
+  min-height: 2px;
+}
+
+.large-5 {
+  width: 41.66667%;
+}
+
+.large-offset-1 {
+  margin-left: 8.33333%;
+}
+
+@media only screen and (max-width: 735px) {
+  .small-12 {
+    width: 100%;
+  }
+}
+
+@media only screen and (max-width: 735px) {
+  .small-offset-0 {
+    margin-left: 0;
+  }
+}
+
+.page-bio .section-bio p {
+  margin-top: .7em;
+}
 #page-docente .section-bio p {
   margin-top: 0.7em;
 }
