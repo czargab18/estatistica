@@ -1,292 +1,376 @@
-@charset "UTF-8";
-body#globaldocente {
- all: initial;
-}
-body#globaldocente main {
-  font-size: 17px;
-  padding-top: calc(
-    var(--r-globalheader-height) + var(--r-globalnavbar-height)
-  );
-  display: flex;
-  justify-content: center;
-  font-size: 17px;
-  line-height: 1.52947;
+html,
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  quotes: "“" "”";
+  font-family: "SF Pro Text", "SF Pro Icons", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+  font-size: 106.25%;
   font-weight: 400;
-  letter-spacing: -0.021em;
-  background-color: #fff;
-  color: #333;
-  font-style: normal;
-  gap: 1em;
-  margin-bottom: 1em;
+}
+body {        font-size: 17px;
+        line-height: 1.52947;
+        font-weight: 400;
+        letter-spacing: -.021em;
+        font-family: "SF Pro Text",
+        "SF Pro Icons",
+        "Helvetica Neue",
+        "Helvetica",
+        "Arial",
+        sans-serif;
+        background-color: #fff;
+        color: #333;
+        font-style: normal;}
+
+
+nav#localnav {
+  display: none;
 }
 
-#globalmain-docente {
-  padding-top: calc(
-    var(--r-globalheader-height) + var(--r-globalnavbar-height)
-  );
-}
 
-#content-gradient .content {
+#page-docente {
+  max-width: 2560px;
+  min-width: 320px;
   width: 100%;
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
-  gap: 20px;
-}
-#content-gradient {
-  background: -webkit-gradient(
-    linear,
-    left top,
-    left bottom,
-    from(#eaeaea),
-    to(#fafafa)
-  );
-  width: 100%;
-  display: flex;
-  justify-content: center;
-}
-.content-profile {
-  width: 980px;
-}
-@media (max-width: 980px) {
-  .content-profile {
-    margin: 0 50px;
-  }
-}
-.profile-ribbon {
-  width: 100%;
-  padding-top: 14px;
-  padding-bottom: 16px;
-  font-size: 21px;
-  font-weight: 600;
-  letter-spacing: 0.23px;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.16);
-  line-height: 1.14286;
-  letter-spacing: 0.011em;
-  cursor: default;
-  white-space: nowrap;
-  float: none;
-}
-.profile-apresentation {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: space-between;
+  margin: 0 auto;
 }
 
-.apresentation-title {
-  width: 360px;
-  height: 190px;
-}
-.apresentation-title h1 {
-  color: #333333;
-  font-size: 34px;
-  line-height: 40px;
-  letter-spacing: 0.34px;
-  font-weight: 600;
+#page-docente :is(h1, h2, h3, h4, h5, h6, p, span) {
   margin: 0;
-  padding-top: 50px;
-}
-.apresentation-title span {
-  color: #333333;
-  font-size: 28px;
-  letter-spacing: 0.3px;
-  font-weight: lighter;
-  margin: 0;
-  padding-top: 50px;
+  padding: 0;
 }
 
-.img-person figure[id="unit-image-docente-cesargabrielphd"] {
-  background-image: url("/sd/images/br/retratos/docente/cesargabrielphd.png");
-  width: 380px;
-  height: 400px;
-}
-
-main {
-  display: flex;
-  justify-content: center;
-  color: #333333;
-  flex-direction: column;
-  align-items: center;
-}
-main .content {
-  width: 980px;
-}
-
-@media (max-width: 980px) {
-  main .content {
-    margin: 0 50px;
-  }
-}
-main .title-main {
-  font-size: 20px;
-  font-weight: 600;
-  letter-spacing: 0.23px;
-  color: #1c1010;
-}
-@media (max-width: 980px) {
-  main .title-main {
-    margin: 0 50px;
-  }
-}
-main .content-main {
-  display: flex;
-  flex-direction: row;
-  justify-content: flex-start;
-  gap: 56px;
-  /* margin:0 50px; */
-}
-@media (max-width: 980px) {
-  main .content-main {
-    margin: 0 50px;
-  }
-}
-
-main .description-left,
-main .description-right {
-  width: 420px;
-  height: max-content;
-}
-
-main :is(.description-left, .description-right) p {
-  padding-bottom: 20px;
-  margin: 0;
-}
-
-main .habilidades {
-  width: 980px;
-  height: max-content;
-}
-
-main .habilidades .title2 {
-  font-size: 20px;
-  font-weight: 600;
-  letter-spacing: 0.23px;
-  color: #1c1010;
-  margin: 0 50px;
-}
-@media (max-width: 980px) {
-  main .habilidades .title2 {
-    margin: 0 50px;
-  }
-}
-main .content-habilid {
-  margin: 0 50px;
-  margin-top: 16px;
-}
-
-@media (max-width: 980px) {
-  main .content-habilid {
-    margin: 0 50px;
-  }
-}
-
-main .content-habilid .title3 {
-  font-size: 16px;
-  font-weight: 400;
-  letter-spacing: 0.23px;
-  color: #1c1010;
-  margin: 0;
-}
-
-main .content-habilid .box {
-  margin: 0 32px;
+#page-docente .section-hero {
   position: relative;
-  width: 100%;
-  height: 40px;
-  display: grid;
-  grid-template-columns: 0.2fr 0.6fr;
-  justify-content: start;
-  align-items: center;
-}
-main .habilidades .more {
-  margin-top: 60px;
+  padding-top: 106px;
+  min-height: 336px;
 }
 
-main .box h4 {
-  text-transform: uppercase;
-  color: #848c90;
-  font-weight: 500;
-  margin: 0;
+@media only screen and (max-width: 1068px) {
+  #page-docente .section-hero {
+    padding-top: 102px;
+    min-height: 313px;
+  }
 }
 
-main .box .percent {
-  position: relative;
-  width: 100%;
-  height: 10px;
-  background: #f0f0f0;
-  border-radius: 12px;
+@media only screen and (max-width: 735px) {
+  #page-docente .section-hero {
+    padding-top: 0;
+    min-height: auto;
+  }
 }
 
-main .box .percent div {
+#page-docente .section-hero .section-content {
+  margin-left: auto;
+  margin-right: auto;
+  width: 980px;
+}
+
+@media only screen and (max-width: 1068px) {
+  #page-docente .section-hero .section-content {
+    margin-left: auto;
+    margin-right: auto;
+    width: 692px;
+  }
+}
+
+@media only screen and (max-width: 735px) {
+  #page-docente .section-hero .section-content {
+    width: auto;
+  }
+}
+
+#page-docente .section-hero .image-hero-container {
   position: absolute;
+  z-index: 1;
   top: 0;
+  bottom: 0;
   left: 0;
-  height: 100%;
-  background: #03a9f4;
-  border-radius: 12px;
+  width: 100%;
+  overflow: hidden;
+  background: -webkit-gradient(linear, left top, left bottom, from(#eaeaea), to(#fafafa));
+  background: -webkit-linear-gradient(top, #eaeaea 0%, #fafafa 100%);
+  background: linear-gradient(to bottom, #eaeaea 0%, #fafafa 100%);
 }
 
-main .latters-curriculum {
-  width: 980px;
-  height: max-content;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  gap: 20px;
-}
-
-main .latters-curriculum .title-main {
-  font-size: 20px;
-  font-weight: 600;
-  letter-spacing: 0.23px;
-  color: #1c1010;
-}
-@media (max-width: 980px) {
-  main .latters-curriculum .title-main {
-    margin: 0 50px;
-  }
-  main .content-latters {
-    margin: 0 50px;
+@media only screen and (max-width: 735px) {
+  #page-docente .section-hero .image-hero-container {
+    position: static;
+    margin-bottom: 40px;
+    padding-top: 96px;
   }
 }
-main .latters-curriculum .box-latters {
+
+#page-docente .section-hero .image-hero {
+  margin-left: auto;
+  margin-right: auto;
   width: 980px;
-  height: 36px;
-  display: flex;
-  align-items: center;
+  -webkit-transform: translateX(-50%);
+  transform: translateX(-50%);
+  position: absolute;
+  z-index: 1;
+  bottom: 0;
+  left: 50%;
+  background-position: 381px 100%;
+  background-image: url("../../cesargabriel/image/bio/cesargabriel_image.png.large_2x.png");
+  height: 336px;
+  background-size: 489px 336px;
+  background-repeat: no-repeat;
 }
 
-main .box-latters .box-lattters-text {
+@media only screen and (min-width: 1442px) {
+  #page-docente .section-hero .image-hero {
+    margin-left: auto;
+    margin-right: auto;
+    width: 980px;
+  }
+}
+
+@media only screen and (-webkit-min-device-pixel-ratio: 1.5),
+only screen and (min-resolution: 1.5dppx),
+(-webkit-min-device-pixel-ratio: 1.5),
+(min-resolution: 144dpi) {
+  #page-docente .section-hero .image-hero {
+    background-image: url("../../cesargabriel/image/bio/cesargabriel_image.png.large_2x.png");
+  }
+}
+
+@media only screen and (max-width: 1068px) {
+  #page-docente .section-hero .image-hero {
+    margin-left: auto;
+    margin-right: auto;
+    width: 692px;
+    background-image: url("../../cesargabriel/image/bio/cesargabriel_image.png.medium.png");
+    height: 313px;
+    background-size: 414px 313px;
+    background-position: 285px 100%;
+  }
+}
+
+@media only screen and (max-width: 1068px) and (-webkit-min-device-pixel-ratio: 1.5),
+only screen and (max-width: 1068px) and (min-resolution: 144dpi),
+only screen and (max-width: 1068px) and (-webkit-min-device-pixel-ratio: 144),
+only screen and (max-width: 1068px) and (min-resolution: 144dppx) {
+  #page-docente .section-hero .image-hero {
+    background-image: url("../../cesargabriel/image/bio/cesargabriel_image.png.medium_2x.png");
+  }
+}
+
+@media only screen and (max-width: 735px) {
+  #page-docente .section-hero .image-hero {
+    margin-left: auto;
+    margin-right: auto;
+    width: 87.5%;
+    position: static;
+    -webkit-transform: none;
+    transform: none;
+    background-position: 50% 100%;
+    background-image: url("../../cesargabriel/image/bio/cesargabriel_image.png.small.png");
+    height: 220px;
+    background-size: 292px 220px;
+  }
+}
+
+@media only screen and (max-width: 735px) and (-webkit-min-device-pixel-ratio: 1.5),
+only screen and (max-width: 735px) and (min-resolution: 144dpi),
+only screen and (max-width: 735px) and (-webkit-min-device-pixel-ratio: 144),
+only screen and (max-width: 735px) and (min-resolution: 144dppx) {
+  #page-docente .section-hero .image-hero {
+    background-image: url("../../cesargabriel/image/bio/cesargabriel_image.png.small_2x.png");
+  }
+}
+
+#page-docente .section-hero .headlines {
+  position: relative;
+  z-index: 1;
   width: 50%;
+  padding-top: 94px;
+}
+
+@media only screen and (max-width: 1068px) {
+  #page-docente .section-hero .headlines {
+    padding-top: 83px;
+  }
+}
+
+@media only screen and (max-width: 735px) {
+  #page-docente .section-hero .headlines {
+    padding-top: 0;
+  }
+}
+
+@media only screen and (max-width: 735px) and (max-width: 735px) {
+  #page-docente .section-hero .headlines {
+    margin-left: auto;
+    margin-right: auto;
+    width: 87.5%;
+  }
+}
+
+#page-docente .section-hero .typography-section-headline {
+  margin-bottom: 11px;
+  font-size: 40px;
+  line-height: 1.05;
+  font-weight: 500;
+  letter-spacing: .008em;
+  font-family: "SF Pro Display", "SF Pro Icons", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+}
+
+@media only screen and (max-width: 1068px) {
+  #page-docente .section-hero .typography-section-headline {
+    font-size: 34px;
+    line-height: 1.08824;
+    font-weight: 500;
+    letter-spacing: .01em;
+    font-family: "SF Pro Display", "SF Pro Icons", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+  }
+}
+
+@media only screen and (max-width: 735px) {
+  #page-docente .section-hero .typography-section-headline {
+    font-size: 28px;
+    line-height: 1.1073;
+    font-weight: 500;
+    letter-spacing: .012em;
+    font-family: "SF Pro Display", "SF Pro Icons", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+  }
+}
+
+#page-docente .section-hero .typography-subsection-subhead {
+  font-size: 32px;
+  line-height: 1.09375;
+  font-weight: 300;
+  letter-spacing: .011em;
+  font-family: "SF Pro Display", "SF Pro Icons", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+}
+
+@media only screen and (max-width: 1068px) {
+  #page-docente .section-hero .typography-subsection-subhead {
+    font-size: 28px;
+    line-height: 1.1073;
+    font-weight: 300;
+    letter-spacing: .012em;
+    font-family: "SF Pro Display", "SF Pro Icons", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+  }
+}
+
+@media only screen and (max-width: 735px) {
+  #page-docente .section-hero .typography-subsection-subhead {
+    font-size: 24px;
+    line-height: 1.20849;
+    font-weight: 300;
+    letter-spacing: .015em;
+    font-family: "SF Pro Display", "SF Pro Icons", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+    margin-bottom: 15px;
+  }
+}
+
+#page-docente .section-bio {
+  padding-top: 52px;
+  padding-bottom: 110px;
   display: flex;
-  flex-direction: row;
-  align-items: center;
-  column-gap: 16px;
-  color: #326c99;
-  margin: 0 36px;
 }
 
-main .lattters-text {
-  display: flex;
-  flex-direction: column;
+@media only screen and (max-width: 1068px) {
+  #page-docente .section-bio {
+    padding-top: 48px;
+    padding-bottom: 64px;
+  }
 }
-main .lattters-text h5 {
+
+@media only screen and (max-width: 735px) {
+  #page-docente .section-bio {
+    padding-top: 0;
+    padding-bottom: 50px;
+  }
+}
+
+.page-bio .section-bio {
+  padding-top: 52px;
+  padding-bottom: 110px;
+}
+
+@media only screen and (max-width: 1068px) {
+  .page-bio .section-bio {
+    padding-top: 48px;
+    padding-bottom: 64px;
+  }
+}
+
+@media only screen and (max-width: 735px) {
+  .page-bio .section-bio {
+    padding-top: 0;
+    padding-bottom: 50px;
+  }
+}
+
+.section-content {
+  margin-left: auto;
+  margin-right: auto;
+  width: 980px;
+}
+
+@media only screen and (max-width: 1068px) {
+  .section-content {
+    margin-left: auto;
+    margin-right: auto;
+    width: 692px;
+  }
+}
+
+@media only screen and (max-width: 735px) {
+  .section-content {
+    margin-left: auto;
+    margin-right: auto;
+    width: 87.5%;
+  }
+}
+
+.row {
+  position: relative;
+  z-index: 1;
+}
+
+.row::before,
+.row::after {
+  content: ' ';
+  display: table;
+}
+
+.column {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  position: relative;
+  z-index: 1;
   margin: 0;
-}
-main .lattters-text .lattters-sub {
-  margin: 0;
-  padding-left: 15px;
-}
-
-main .box-latters .box-lattters-text h4 {
-  margin: 0;
+  padding: 0;
+  float: left;
+  min-height: 2px;
 }
 
-main .box-latters .box-lattters-text svg {
-  fill: #848c90 !important;
+.large-5 {
+  width: 41.66667%;
 }
 
-main .box-latters .box-lattters-text h5 {
-  color: #848c90;
+.large-offset-1 {
+  margin-left: 8.33333%;
+}
+
+@media only screen and (max-width: 735px) {
+  .small-12 {
+    width: 100%;
+  }
+}
+
+@media only screen and (max-width: 735px) {
+  .small-offset-0 {
+    margin-left: 0;
+  }
+}
+
+.page-bio .section-bio p {
+  margin-top: .7em;
+}
+#page-docente .section-bio p {
+  margin-top: 0.7em;
 }
