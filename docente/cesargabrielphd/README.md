@@ -1,3 +1,46 @@
+# Ideias
+Biografia:
+- Informações sobre a formação acadêmica e carreira do docente.
+- Áreas de pesquisa e interesses.
+
+Ensino:
+- Disciplinas ministradas.
+- Materiais de aula (slides, notas de aula, exercícios).
+- Horários de atendimento.
+
+Publicações:
+- Lista de artigos científicos publicados.
+- Livros e capítulos de livros escritos.
+- Trabalhos apresentados em conferências.
+
+Projetos de Pesquisa:
+- Descrição dos projetos de pesquisa em andamento.
+- Colaborações com outros pesquisadores e instituições.
+
+- Orientações:
+Informações sobre orientação de alunos de graduação, mestrado e doutorado.
+Tópicos de pesquisa disponíveis para orientação.
+
+Eventos:
+- Participação em conferências, workshops e seminários.
+- Eventos organizados pelo docente.
+
+Recursos:
+- Links para recursos úteis, como softwares, bases de dados e ferramentas online.
+
+Contato:
+- Informações de contato, como e-mail e telefone.
+- Formulário de contato para dúvidas e agendamentos.
+
+Blog:
+- Artigos e posts sobre temas relacionados à área de atuação do docente.
+
+Galeria de Fotos:
+- Fotos de eventos, aulas e atividades de pesquisa.
+
+
+
+---
 # Página do Docente - Prof. Dr. César Gabriel
 
 Esta é a página pessoal personalizada do Prof. Dr. César Gabriel, docente do Departamento de Estatística da UnB.
