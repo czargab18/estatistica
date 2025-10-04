@@ -1,3 +1,25 @@
+html,
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-size: 106.25%;
+}
+
+#page-docente {
+  --r-globalfont-family: "SF Pro Text", "SF Pro Dislay", "SF Pro Icons", "Helvetica Neue", "Helvetica", "San Francisco",
+    "Open Sans", "Noto Sans", "Arial", sans-serif;
+  font-size: 17px;
+  line-height: 1.52947;
+  font-weight: 400;
+  letter-spacing: -.021em;
+  font-family: var(--r-globalfont-family);
+  background-color: #fff;
+  color: #333;
+  font-style: normal;
+  quotes: "“" "”";
+}
+
 #page-docente {
   max-width: 2560px;
   min-width: 320px;
