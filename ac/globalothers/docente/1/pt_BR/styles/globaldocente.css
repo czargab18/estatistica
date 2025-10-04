@@ -6,14 +6,19 @@ body {
   font-size: 106.25%;
 }
 
+html,
+body,
 #page-docente {
+  font-family: var(--r-globalfont-family);
   --r-globalfont-family: "SF Pro Text", "SF Pro Dislay", "SF Pro Icons", "Helvetica Neue", "Helvetica", "San Francisco",
     "Open Sans", "Noto Sans", "Arial", sans-serif;
+}
+
+#page-docente {
   font-size: 17px;
   line-height: 1.52947;
-  font-weight: 400;
+  font-weight: 300;
   letter-spacing: -.021em;
-  font-family: var(--r-globalfont-family);
   background-color: #fff;
   color: #333;
   font-style: normal;
