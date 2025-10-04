@@ -1,36 +1,3 @@
-html,
-body {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  quotes: "“" "”";
-  font-family: "SF Pro Text", "SF Pro Icons", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
-  font-size: 106.25%;
-  font-weight: 400;
-}
-
-body {
-  font-size: 17px;
-  line-height: 1.52947;
-  font-weight: 400;
-  letter-spacing: -.021em;
-  font-family: "SF Pro Text",
-    "SF Pro Icons",
-    "Helvetica Neue",
-    "Helvetica",
-    "Arial",
-    sans-serif;
-  background-color: #fff;
-  color: #333;
-  font-style: normal;
-}
-
-
-nav#localnav {
-  display: none;
-}
-
-
 #page-docente {
   max-width: 2560px;
   min-width: 320px;
@@ -41,6 +8,10 @@ nav#localnav {
 #page-docente :is(h1, h2, h3, h4, h5, h6, p, span) {
   margin: 0;
   padding: 0;
+}
+
+nav#localnav {
+  display: none;
 }
 
 #page-docente .section-hero {
@@ -91,7 +62,11 @@ nav#localnav {
   left: 0;
   width: 100%;
   overflow: hidden;
-  background: -webkit-gradient(linear, left top, left bottom, from(#eaeaea), to(#fafafa));
+  background: -webkit-gradient(linear,
+      left top,
+      left bottom,
+      from(#eaeaea),
+      to(#fafafa));
   background: -webkit-linear-gradient(top, #eaeaea 0%, #fafafa 100%);
   background: linear-gradient(to bottom, #eaeaea 0%, #fafafa 100%);
 }
@@ -214,8 +189,9 @@ only screen and (max-width: 735px) and (min-resolution: 144dppx) {
   font-size: 40px;
   line-height: 1.05;
   font-weight: 500;
-  letter-spacing: .008em;
-  font-family: "SF Pro Display", "SF Pro Icons", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+  letter-spacing: 0.008em;
+  font-family: "SF Pro Display", "SF Pro Icons", "Helvetica Neue", "Helvetica",
+    "Arial", sans-serif;
 }
 
 @media only screen and (max-width: 1068px) {
@@ -223,8 +199,9 @@ only screen and (max-width: 735px) and (min-resolution: 144dppx) {
     font-size: 34px;
     line-height: 1.08824;
     font-weight: 500;
-    letter-spacing: .01em;
-    font-family: "SF Pro Display", "SF Pro Icons", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+    letter-spacing: 0.01em;
+    font-family: "SF Pro Display", "SF Pro Icons", "Helvetica Neue", "Helvetica",
+      "Arial", sans-serif;
   }
 }
 
@@ -233,8 +210,9 @@ only screen and (max-width: 735px) and (min-resolution: 144dppx) {
     font-size: 28px;
     line-height: 1.1073;
     font-weight: 500;
-    letter-spacing: .012em;
-    font-family: "SF Pro Display", "SF Pro Icons", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+    letter-spacing: 0.012em;
+    font-family: "SF Pro Display", "SF Pro Icons", "Helvetica Neue", "Helvetica",
+      "Arial", sans-serif;
   }
 }
 
@@ -242,8 +220,9 @@ only screen and (max-width: 735px) and (min-resolution: 144dppx) {
   font-size: 32px;
   line-height: 1.09375;
   font-weight: 300;
-  letter-spacing: .011em;
-  font-family: "SF Pro Display", "SF Pro Icons", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+  letter-spacing: 0.011em;
+  font-family: "SF Pro Display", "SF Pro Icons", "Helvetica Neue", "Helvetica",
+    "Arial", sans-serif;
 }
 
 @media only screen and (max-width: 1068px) {
@@ -251,8 +230,9 @@ only screen and (max-width: 735px) and (min-resolution: 144dppx) {
     font-size: 28px;
     line-height: 1.1073;
     font-weight: 300;
-    letter-spacing: .012em;
-    font-family: "SF Pro Display", "SF Pro Icons", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+    letter-spacing: 0.012em;
+    font-family: "SF Pro Display", "SF Pro Icons", "Helvetica Neue", "Helvetica",
+      "Arial", sans-serif;
   }
 }
 
@@ -261,8 +241,9 @@ only screen and (max-width: 735px) and (min-resolution: 144dppx) {
     font-size: 24px;
     line-height: 1.20849;
     font-weight: 300;
-    letter-spacing: .015em;
-    font-family: "SF Pro Display", "SF Pro Icons", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+    letter-spacing: 0.015em;
+    font-family: "SF Pro Display", "SF Pro Icons", "Helvetica Neue", "Helvetica",
+      "Arial", sans-serif;
     margin-bottom: 15px;
   }
 }
@@ -335,7 +316,7 @@ only screen and (max-width: 735px) and (min-resolution: 144dppx) {
 
 .row::before,
 .row::after {
-  content: ' ';
+  content: " ";
   display: table;
 }
 
@@ -371,13 +352,12 @@ only screen and (max-width: 735px) and (min-resolution: 144dppx) {
 }
 
 .page-bio .section-bio p {
-  margin-top: .7em;
+  margin-top: 0.7em;
 }
 
 #page-docente .section-bio p {
   margin-top: 0.7em;
 }
-
 
 #page-docente .latters-curriculum {
   display: none;
