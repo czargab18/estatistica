@@ -71,16 +71,16 @@ Plataforma web educacional para ensino de Estatística com:
 
 ```bash
 # Atualizar head de livros
-python backend/actions/run/site_html_manager.py --only-head --path ./book/
+python ./backend/src/scripts/site_html_manager.py --only-head --path ./book/
 
 # Executar testes
-python backend/actions/run/test_head_manager.py
+python ./backend/src/scripts/test_head_manager.py
 
 # Validar HTML (dry-run)
-python backend/actions/run/site_html_manager.py --only-head --dry-run --path ./
+python ./backend/src/scripts/site_html_manager.py --only-head --dry-run --path ./
 
 # Atualizar todos os componentes
-python backend/actions/run/site_html_manager.py --update-all --path ./
+python ./backend/src/scripts/site_html_manager.py --update-all --path ./
 ```
 
 ---

@@ -5,7 +5,7 @@
       "label": "Atualizar Head (Livros)",
       "type": "shell",
       "command": "python",
-      "args": ["backend/actions/run/site_html_manager.py", "--only-head", "--path", "./book/"],
+      "args": ["./backend/src/scripts/site_html_manager.py", "--only-head", "--path", "./book/"],
       "problemMatcher": [],
       "group": "build"
     },
@@ -13,7 +13,7 @@
       "label": "Executar Testes",
       "type": "shell",
       "command": "python",
-      "args": ["backend/actions/run/test_head_manager.py"],
+      "args": ["./backend/src/scripts/test_head_manager.py"],
       "problemMatcher": [],
       "group": "test"
     },
@@ -21,7 +21,7 @@
       "label": "Validar HTML",
       "type": "shell",
       "command": "python",
-      "args": ["backend/actions/run/site_html_manager.py", "--validate", "--path", "./"],
+      "args": ["./backend/src/scripts/site_html_manager.py", "--validate", "--path", "./"],
       "problemMatcher": [],
       "group": "build"
     }

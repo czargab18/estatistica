@@ -162,9 +162,9 @@ jobs:
         if: steps.books-list.outputs.has_books == 'true'
         run: |
           python -m pip install --upgrade pip
-          pip install -r backend/actions/run/requirements.txt
+          pip install -r ./backend/requirements.txt
 
-      - name: Automação com 'backend/actions/run/'
+      - name: Automação com './backend/src/scripts/'
         if: steps.books-list.outputs.has_books == 'true'
         run: |
           echo "🎨 Aplicando padronização HTML..."
