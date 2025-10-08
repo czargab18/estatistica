@@ -245,7 +245,7 @@ git diff
 git status
 
 # Adicionar arquivos específicos
-git add backend/actions/run/htmltools/head.py
+git add ./backend/src/scripts/htmltools/head.py
 
 # Commitar
 git commit -m "feat(head): adiciona cache para dependências"

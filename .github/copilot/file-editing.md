@@ -11,7 +11,7 @@
 ### 1. Correções e Melhorias
 ```python
 # ✅ BOM: Editar arquivo existente
-# Arquivo: backend/actions/run/htmltools/head.py
+# Arquivo: ./backend/src/scripts/htmltools/head.py
 
 # ANTES:
 def funcao_antiga():
@@ -26,7 +26,7 @@ def funcao_melhorada():
 ### 2. Refatorações
 ```python
 # ✅ BOM: Remover código obsoleto
-# Arquivo: backend/actions/run/site_html_manager.py
+# Arquivo: ./backend/src/scripts/site_html_manager.py
 
 # ANTES:
 class UpdateHead:  # Classe antiga
@@ -45,7 +45,7 @@ class DynamicHeadManager:  # Classe nova
 ### 3. Adicionar Funcionalidades
 ```python
 # ✅ BOM: Adicionar método em classe existente
-# Arquivo: backend/actions/run/htmltools/head.py
+# Arquivo: ./backend/src/scripts/htmltools/head.py
 
 class DynamicHeadManager:
     # ...métodos existentes...
@@ -90,13 +90,13 @@ git mv nome_antigo.py novo_nome.py  # Se estiver no git
 ```python
 # ✅ Criar testes para código existente
 create_file(
-    "backend/actions/run/test_head_manager.py",
+    "./backend/src/scripts/test_head_manager.py",
     conteudo_dos_testes
 )
 
 # ✅ Adicionar novo módulo
 create_file(
-    "backend/actions/run/htmltools/seo.py",
+    "./backend/src/scripts/htmltools/seo.py",
     novo_modulo_seo
 )
 ```
@@ -254,14 +254,14 @@ Preciso modificar arquivo?
 
 ### Exemplo 1: Remover Função Obsoleta
 ```python
-# Arquivo: backend/actions/run/htmltools/head.py
+# Arquivo: ./backend/src/scripts/htmltools/head.py
 
 # PASSO 1: Identificar código a remover
-read_file("backend/actions/run/htmltools/head.py", 1, 100)
+read_file("./backend/src/scripts/htmltools/head.py", 1, 100)
 
 # PASSO 2: Remover via replace_string_in_file
 replace_string_in_file(
-    filePath="c:/Users/cesar.oliveira/github/estatistica/backend/actions/run/htmltools/head.py",
+    filePath="c:/Users/cesar.oliveira/github/estatistica/./backend/src/scripts/htmltools/head.py",
     oldString="""
 class UpdateHead:
     '''Classe obsoleta.'''
@@ -277,10 +277,10 @@ class UpdateHead:
 
 ### Exemplo 2: Adicionar Nova Função
 ```python
-# Arquivo: backend/actions/run/htmltools/head.py
+# Arquivo: ./backend/src/scripts/htmltools/head.py
 
 insert_edit_into_file(
-    filePath="c:/Users/cesar.oliveira/github/estatistica/backend/actions/run/htmltools/head.py",
+    filePath="c:/Users/cesar.oliveira/github/estatistica/./backend/src/scripts/htmltools/head.py",
     explanation="Adiciona função de validação de SEO",
     code="""
 class DynamicHeadManager:
@@ -302,10 +302,10 @@ class DynamicHeadManager:
 
 ### Exemplo 3: Atualizar Import
 ```python
-# Arquivo: backend/actions/run/htmltools/__init__.py
+# Arquivo: ./backend/src/scripts/htmltools/__init__.py
 
 replace_string_in_file(
-    filePath="c:/Users/cesar.oliveira/github/estatistica/backend/actions/run/htmltools/__init__.py",
+    filePath="c:/Users/cesar.oliveira/github/estatistica/./backend/src/scripts/htmltools/__init__.py",
     oldString="""
 from .head import UpdateHead, DynamicHeadManager
 

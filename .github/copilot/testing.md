@@ -19,7 +19,7 @@ pytest --cov=backend/actions/run --cov-report=html
 ## 📁 Organização de Arquivos
 
 ```
-backend/actions/run/
+./backend/src/scripts/
 ├── htmltools/
 │   ├── __init__.py
 │   ├── head.py                 # Código fonte
