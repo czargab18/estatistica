@@ -168,14 +168,14 @@ jobs:
         if: steps.books-list.outputs.has_books == 'true'
         run: |
           echo "🎨 Aplicando padronização HTML..."
-          python ./backend/actions/run/site_html_manager.py --update-all --path ./book/
+          python ./backend/src/scripts/site_html_manager.py --update-all --path ./book/
           echo "✅ Padronização concluída!"
 
       - name: Limpar arquivos gerados pelo Quarto com script Python
         if: steps.books-list.outputs.has_books == 'true'
         run: |
           echo "🧹 Limpando pastas temporárias..."
-          python ./backend/actions/run/clean_quarto_output.py --path ./book/
+          python ./backend/src/scripts/clean_quarto_output.py --path ./book/
           echo "✅ Limpeza concluída!"
 
 
