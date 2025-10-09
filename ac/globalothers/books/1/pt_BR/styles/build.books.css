@@ -20,48 +20,45 @@ main[id*="book-list"] :is(h1, h2, h3, h4, h5, h6) {
   color: var(--sk-headline-text-color, rgb(29, 29, 31));
 }
 
-main[id*="book-list"]
-  :is(
-    ul,
-    ol,
-    li,
-    dl,
-    dt,
-    dd,
-    h1,
-    h2,
-    h3,
-    h4,
-    h5,
-    h6,
-    hgroup,
-    p,
-    blockquote,
-    figure,
-    form,
-    fieldset,
-    input,
-    legend,
-    pre,
-    abbr,
-    button,
-    canvas,
-    caption,
-    code,
-    details,
-    div,
-    figcaption,
-    img,
-    label,
-    main,
-    mark,
-    nav,
-    picture,
-    samp,
-    section,
-    summary,
-    time
-  ) {
+main[id*="book-list"] :is(ul,
+  ol,
+  li,
+  dl,
+  dt,
+  dd,
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  hgroup,
+  p,
+  blockquote,
+  figure,
+  form,
+  fieldset,
+  input,
+  legend,
+  pre,
+  abbr,
+  button,
+  canvas,
+  caption,
+  code,
+  details,
+  div,
+  figcaption,
+  img,
+  label,
+  main,
+  mark,
+  nav,
+  picture,
+  samp,
+  section,
+  summary,
+  time) {
   margin: 0;
   padding: 0;
 }
@@ -142,7 +139,8 @@ main[id*="book-list"] div[class="books-content"] h2[class="book-title"] {
   line-height: 1.1428571429;
   font-weight: 700;
   letter-spacing: 0.007em;
-  font-family: "SF Pro Display", "SF Pro Icons", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+  font-family: "SF Pro Display", "SF Pro Icons", "Helvetica Neue", "Helvetica",
+    "Arial", sans-serif;
   margin-top: 52px;
 }
 
@@ -152,7 +150,8 @@ main[id*="book-list"] div[class="books-content"] h2[class="book-title"] {
     line-height: 1.1666666667;
     font-weight: 700;
     letter-spacing: 0.009em;
-    font-family: "SF Pro Display", "SF Pro Icons", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+    font-family: "SF Pro Display", "SF Pro Icons", "Helvetica Neue", "Helvetica",
+      "Arial", sans-serif;
     margin-top: 48px;
   }
 }
@@ -186,6 +185,14 @@ main[id*="book-list"] div[class="books-content"] a[class*="book-item"] {
   }
 }
 
+main[id*="book-list"] div[class="books-content"] a[class*="book-item"]:not(.visuallyhidden) {
+  display: block !important;
+}
+
+main[id*="book-list"] div[class="books-content"] a[class*="book-item"]:not(.visuallyhidden):first-of-type {
+  border: 0px !important;
+}
+
 main[id*="book-list"] div[class="books-content"] a[class*="book-item"] picture[class="viewport-picture"] {
   align-self: flex-start;
   flex-shrink: 0;
@@ -208,22 +215,14 @@ main[id*="book-list"] div[class="books-content"] a[class*="book-item"] picture[c
   }
 }
 
-main[id*="book-list"]
-  div[class="books-content"]
-  a[class*="book-item"]
-  picture[class="viewport-picture"]
-  img[class="viewport-image"] {
+main[id*="book-list"] div[class="books-content"] a[class*="book-item"] picture[class="viewport-picture"] img[class="viewport-image"] {
   border-radius: 20px;
   width: max-content;
   height: 165px;
 }
 
 @media only screen and (max-width: 1068px) {
-  main[id*="book-list"]
-    div[class="books-content"]
-    a[class*="book-item"]
-    picture[class="viewport-picture"]
-    img[class="viewport-image"] {
+  main[id*="book-list"] div[class="books-content"] a[class*="book-item"] picture[class="viewport-picture"] img[class="viewport-image"] {
     width: 105px;
     height: 105px;
   }
@@ -251,7 +250,8 @@ main[id*="book-list"] a[class*="book-item"] div[class="item-content"] p[class*="
   line-height: 1.2857742857;
   font-weight: 700;
   letter-spacing: -0.016em;
-  font-family: "SF Pro Text", "SF Pro Icons", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+  font-family: "SF Pro Text", "SF Pro Icons", "Helvetica Neue", "Helvetica",
+    "Arial", sans-serif;
   text-transform: uppercase;
 }
 
@@ -261,7 +261,8 @@ main[id*="book-list"] a[class*="book-item"] div[class="item-content"] p[class*="
     line-height: 1.3333733333;
     font-weight: 700;
     letter-spacing: -0.01em;
-    font-family: "SF Pro Text", "SF Pro Icons", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+    font-family: "SF Pro Text", "SF Pro Icons", "Helvetica Neue", "Helvetica",
+      "Arial", sans-serif;
   }
 }
 
@@ -270,7 +271,8 @@ main[id*="book-list"] a[class*="book-item"] div[class="item-content"] h3[class="
   line-height: 1.1666666667;
   font-weight: 700;
   letter-spacing: 0.009em;
-  font-family: "SF Pro Display", "SF Pro Icons", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+  font-family: "SF Pro Display", "SF Pro Icons", "Helvetica Neue", "Helvetica",
+    "Arial", sans-serif;
   margin-top: 8px;
   -webkit-line-clamp: 3;
 }
@@ -281,7 +283,8 @@ main[id*="book-list"] a[class*="book-item"] div[class="item-content"] h3[class="
     line-height: 1.1904761905;
     font-weight: 700;
     letter-spacing: 0.011em;
-    font-family: "SF Pro Display", "SF Pro Icons", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+    font-family: "SF Pro Display", "SF Pro Icons", "Helvetica Neue", "Helvetica",
+      "Arial", sans-serif;
   }
 }
 
@@ -291,7 +294,8 @@ main[id*="book-list"] a[class*="book-item"] div[class="item-content"] h3[class="
     line-height: 1.2353641176;
     font-weight: 700;
     letter-spacing: -0.022em;
-    font-family: "SF Pro Text", "SF Pro Icons", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+    font-family: "SF Pro Text", "SF Pro Icons", "Helvetica Neue", "Helvetica",
+      "Arial", sans-serif;
   }
 }
 
@@ -301,7 +305,8 @@ main[id*="book-list"] a[class*="book-item"] div[class="item-content"] p[class="i
   line-height: 1.4285914286;
   font-weight: 600;
   letter-spacing: -0.016em;
-  font-family: "SF Pro Text", "SF Pro Icons", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+  font-family: "SF Pro Text", "SF Pro Icons", "Helvetica Neue", "Helvetica",
+    "Arial", sans-serif;
   margin-top: 12px;
 }
 
@@ -311,7 +316,8 @@ main[id*="book-list"] a[class*="book-item"] div[class="item-content"] p[class="i
     line-height: 1.2857742857;
     font-weight: 600;
     letter-spacing: -0.016em;
-    font-family: "SF Pro Text", "SF Pro Icons", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+    font-family: "SF Pro Text", "SF Pro Icons", "Helvetica Neue", "Helvetica",
+      "Arial", sans-serif;
   }
 }
 
@@ -473,8 +479,7 @@ ul.task-list li input[type="checkbox"] {
 }
 
 /* CSS for citations */
-div.csl-bib-body {
-}
+div.csl-bib-body {}
 
 div.csl-entry {
   clear: both;
