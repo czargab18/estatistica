@@ -1,4 +1,5 @@
 @charset "UTF-8";
+
 /* Scripts do antigo homebooks.css
  */
 main[id="globalbookshome"] {
@@ -334,12 +335,9 @@ main[id*="book-list"] div[class="books-content"] a[class*="book-item"] {
   }
 }
 
-main[id*="book-list"] div[class="books-content"] a[class*="book-item"]:not(.visuallyhidden) {
-  display: block !important;
-}
-
-main[id*="book-list"] div[class="books-content"] a[class*="book-item"]:not(.visuallyhidden):first-of-type {
-  border: 0px !important;
+main[id*="book-list"] .books-content .book a:not(.visuallyhidden) {
+  border: 0px;
+  /* border: 0px !important; */
 }
 
 main[id*="book-list"] div[class="books-content"] a[class*="book-item"] picture[class="viewport-picture"] {
