@@ -1,4 +1,153 @@
 @charset "UTF-8";
+/* Scripts do antigo homebooks.css
+ */
+main[id="globalbookshome"] {
+  all: unset;
+}
+
+main[id="globalbookshome"] :is(ul,
+  ol,
+  li,
+  dl,
+  dt,
+  dd,
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  hgroup,
+  p,
+  blockquote,
+  figure,
+  form,
+  fieldset,
+  input,
+  legend,
+  pre,
+  abbr,
+  button,
+  canvas,
+  caption,
+  code,
+  details,
+  div,
+  dl,
+  dt,
+  figcaption,
+  img,
+  label,
+  main,
+  mark,
+  nav,
+  ol,
+  picture,
+  samp,
+  section,
+  summary,
+  time) {
+  margin: 0;
+  padding: 0;
+}
+
+main[id="globalbookshome"] :is(h1, h2, h3, h4, h5, h6, p, div, span) {
+  display: block;
+  margin: 0;
+  padding: 0;
+  font-family: var(--r-globalfont-family);
+  font-size: 16px;
+}
+
+main[id="globalbookshome"] :is(pre, code, address, caption, th, figcaption) {
+  font-size: 1em;
+  font-weight: 400;
+  font-style: normal;
+}
+
+main[id="globalbookshome"] :is(fieldset, iframe) {
+  border: 0;
+}
+
+main[id="globalbookshome"] :is(caption, th) {
+  text-align: left;
+}
+
+main[id="globalbookshome"] :is(summary, details) {
+  display: block;
+}
+
+main[id="globalbookshome"] :is(audio, canvas, video, progress) {
+  vertical-align: baseline;
+}
+
+main[id="globalbookshome"] {
+  display: flex;
+  gap: 1rem;
+  margin: 0 auto;
+  max-width: 2560px;
+  width: 100%;
+}
+
+main[id="globalbookshome"] #globalbookshome-content {
+  width: 960px;
+  max-width: 2560px;
+  margin: 0 auto;
+  margin-top: 12px;
+}
+
+main[id="globalbookshome"] h1[id="bookshome-title"] {
+  margin: 0;
+  font-size: 48px;
+  font-weight: bold;
+}
+
+main[id="globalbookshome"] div[id="globalbookshome-content"] ul[id="books-lista"] {
+  display: flex;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 2rem;
+}
+
+main[id="globalbookshome"] ul[id="books-lista"] li {
+  box-sizing: border-box;
+  margin-bottom: 12px;
+  width: fit-content;
+}
+
+main[id="globalbookshome"] a :is(span[class="books-codigo-disciplina"], span[class="books-title-disciplina"]) {
+  display: inline-flex;
+}
+
+main[id="globalbookshome"] ul[id="books-lista"] li:first-child {
+  margin-top: 12px;
+}
+
+main[id="globalbookshome"] ul[id="books-lista"] li:last-child {
+  margin-bottom: 0;
+}
+
+main[id="globalbookshome"] main[id="sumario"] {
+  all: inherit;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+main[id="globalbookshome"] main[class="content"] :is(h1, h2, h3, h4, h5, h6, p, span, p, div) {
+  display: contents !important;
+  margin: 0 auto;
+}
+
+
+
+header#quarto-header {
+  position: relative !important;
+}
+
+/* Scripts do antigo build.books.css
+ */
 
 body div.quarto-container {
   margin: 0 auto;
@@ -20,48 +169,45 @@ main[id*="book-list"] :is(h1, h2, h3, h4, h5, h6) {
   color: var(--sk-headline-text-color, rgb(29, 29, 31));
 }
 
-main[id*="book-list"]
-  :is(
-    ul,
-    ol,
-    li,
-    dl,
-    dt,
-    dd,
-    h1,
-    h2,
-    h3,
-    h4,
-    h5,
-    h6,
-    hgroup,
-    p,
-    blockquote,
-    figure,
-    form,
-    fieldset,
-    input,
-    legend,
-    pre,
-    abbr,
-    button,
-    canvas,
-    caption,
-    code,
-    details,
-    div,
-    figcaption,
-    img,
-    label,
-    main,
-    mark,
-    nav,
-    picture,
-    samp,
-    section,
-    summary,
-    time
-  ) {
+main[id*="book-list"] :is(ul,
+  ol,
+  li,
+  dl,
+  dt,
+  dd,
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  hgroup,
+  p,
+  blockquote,
+  figure,
+  form,
+  fieldset,
+  input,
+  legend,
+  pre,
+  abbr,
+  button,
+  canvas,
+  caption,
+  code,
+  details,
+  div,
+  figcaption,
+  img,
+  label,
+  main,
+  mark,
+  nav,
+  picture,
+  samp,
+  section,
+  summary,
+  time) {
   margin: 0;
   padding: 0;
 }
@@ -142,7 +288,8 @@ main[id*="book-list"] div[class="books-content"] h2[class="book-title"] {
   line-height: 1.1428571429;
   font-weight: 700;
   letter-spacing: 0.007em;
-  font-family: "SF Pro Display", "SF Pro Icons", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+  font-family: "SF Pro Display", "SF Pro Icons", "Helvetica Neue", "Helvetica",
+    "Arial", sans-serif;
   margin-top: 52px;
 }
 
@@ -152,7 +299,8 @@ main[id*="book-list"] div[class="books-content"] h2[class="book-title"] {
     line-height: 1.1666666667;
     font-weight: 700;
     letter-spacing: 0.009em;
-    font-family: "SF Pro Display", "SF Pro Icons", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+    font-family: "SF Pro Display", "SF Pro Icons", "Helvetica Neue", "Helvetica",
+      "Arial", sans-serif;
     margin-top: 48px;
   }
 }
@@ -186,6 +334,14 @@ main[id*="book-list"] div[class="books-content"] a[class*="book-item"] {
   }
 }
 
+main[id*="book-list"] div[class="books-content"] a[class*="book-item"]:not(.visuallyhidden) {
+  display: block !important;
+}
+
+main[id*="book-list"] div[class="books-content"] a[class*="book-item"]:not(.visuallyhidden):first-of-type {
+  border: 0px !important;
+}
+
 main[id*="book-list"] div[class="books-content"] a[class*="book-item"] picture[class="viewport-picture"] {
   align-self: flex-start;
   flex-shrink: 0;
@@ -208,22 +364,14 @@ main[id*="book-list"] div[class="books-content"] a[class*="book-item"] picture[c
   }
 }
 
-main[id*="book-list"]
-  div[class="books-content"]
-  a[class*="book-item"]
-  picture[class="viewport-picture"]
-  img[class="viewport-image"] {
+main[id*="book-list"] div[class="books-content"] a[class*="book-item"] picture[class="viewport-picture"] img[class="viewport-image"] {
   border-radius: 20px;
   width: max-content;
   height: 165px;
 }
 
 @media only screen and (max-width: 1068px) {
-  main[id*="book-list"]
-    div[class="books-content"]
-    a[class*="book-item"]
-    picture[class="viewport-picture"]
-    img[class="viewport-image"] {
+  main[id*="book-list"] div[class="books-content"] a[class*="book-item"] picture[class="viewport-picture"] img[class="viewport-image"] {
     width: 105px;
     height: 105px;
   }
@@ -251,7 +399,8 @@ main[id*="book-list"] a[class*="book-item"] div[class="item-content"] p[class*="
   line-height: 1.2857742857;
   font-weight: 700;
   letter-spacing: -0.016em;
-  font-family: "SF Pro Text", "SF Pro Icons", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+  font-family: "SF Pro Text", "SF Pro Icons", "Helvetica Neue", "Helvetica",
+    "Arial", sans-serif;
   text-transform: uppercase;
 }
 
@@ -261,7 +410,8 @@ main[id*="book-list"] a[class*="book-item"] div[class="item-content"] p[class*="
     line-height: 1.3333733333;
     font-weight: 700;
     letter-spacing: -0.01em;
-    font-family: "SF Pro Text", "SF Pro Icons", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+    font-family: "SF Pro Text", "SF Pro Icons", "Helvetica Neue", "Helvetica",
+      "Arial", sans-serif;
   }
 }
 
@@ -270,7 +420,8 @@ main[id*="book-list"] a[class*="book-item"] div[class="item-content"] h3[class="
   line-height: 1.1666666667;
   font-weight: 700;
   letter-spacing: 0.009em;
-  font-family: "SF Pro Display", "SF Pro Icons", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+  font-family: "SF Pro Display", "SF Pro Icons", "Helvetica Neue", "Helvetica",
+    "Arial", sans-serif;
   margin-top: 8px;
   -webkit-line-clamp: 3;
 }
@@ -281,7 +432,8 @@ main[id*="book-list"] a[class*="book-item"] div[class="item-content"] h3[class="
     line-height: 1.1904761905;
     font-weight: 700;
     letter-spacing: 0.011em;
-    font-family: "SF Pro Display", "SF Pro Icons", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+    font-family: "SF Pro Display", "SF Pro Icons", "Helvetica Neue", "Helvetica",
+      "Arial", sans-serif;
   }
 }
 
@@ -291,7 +443,8 @@ main[id*="book-list"] a[class*="book-item"] div[class="item-content"] h3[class="
     line-height: 1.2353641176;
     font-weight: 700;
     letter-spacing: -0.022em;
-    font-family: "SF Pro Text", "SF Pro Icons", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+    font-family: "SF Pro Text", "SF Pro Icons", "Helvetica Neue", "Helvetica",
+      "Arial", sans-serif;
   }
 }
 
@@ -301,7 +454,8 @@ main[id*="book-list"] a[class*="book-item"] div[class="item-content"] p[class="i
   line-height: 1.4285914286;
   font-weight: 600;
   letter-spacing: -0.016em;
-  font-family: "SF Pro Text", "SF Pro Icons", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+  font-family: "SF Pro Text", "SF Pro Icons", "Helvetica Neue", "Helvetica",
+    "Arial", sans-serif;
   margin-top: 12px;
 }
 
@@ -311,7 +465,8 @@ main[id*="book-list"] a[class*="book-item"] div[class="item-content"] p[class="i
     line-height: 1.2857742857;
     font-weight: 600;
     letter-spacing: -0.016em;
-    font-family: "SF Pro Text", "SF Pro Icons", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+    font-family: "SF Pro Text", "SF Pro Icons", "Helvetica Neue", "Helvetica",
+      "Arial", sans-serif;
   }
 }
 
@@ -342,7 +497,7 @@ main[id*="book-list"] a[class*="book-item"] div[class="item-content"] p[class="i
 
 /* temporariamente */
 p span[class="citation-long"] {
-  padding-left: 4cm;
+  /* padding-left: 4cm; */
   display: block;
   text-align: justify;
 }
@@ -473,8 +628,7 @@ ul.task-list li input[type="checkbox"] {
 }
 
 /* CSS for citations */
-div.csl-bib-body {
-}
+div.csl-bib-body {}
 
 div.csl-entry {
   clear: both;
@@ -498,4 +652,56 @@ div.csl-right-inline {
 
 div.csl-indent {
   margin-left: 2em;
+}
+
+
+
+/* Normas abnt */
+/* temporariamente */
+p span[class="citation-long"] {
+  /* padding-left: 4cm; */
+  display: block;
+  text-align: justify;
+}
+
+p span[class="headline-question"] {
+  width: max-content;
+  display: block;
+}
+
+/* NORMAS DA ABNT */
+.abnt-margem {
+  margin-top: 3cm;
+  margin-bottom: 2cm;
+  margin-left: 3cm;
+  margin-right: 2cm;
+}
+
+.abnt-titulo-secao {
+  font-size: 16pt;
+  font-weight: bold;
+  text-align: center;
+  margin-top: 2cm;
+  margin-bottom: 1cm;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.abnt-referencia {
+  font-size: 12pt;
+  text-align: justify;
+  font-family: Arial, Helvetica, sans-serif;
+  margin-bottom: 0.5cm;
+}
+
+.abnt-legenda {
+  font-size: 10pt;
+  text-align: center;
+  font-family: Arial, Helvetica, sans-serif;
+  margin-top: 0.2cm;
+}
+
+.abnt-nota-rodape {
+  font-size: 10pt;
+  text-align: justify;
+  font-family: Arial, Helvetica, sans-serif;
 }
