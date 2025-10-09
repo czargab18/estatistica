@@ -497,7 +497,7 @@ main[id*="book-list"] a[class*="book-item"] div[class="item-content"] p[class="i
 
 /* temporariamente */
 p span[class="citation-long"] {
-  padding-left: 4cm;
+  /* padding-left: 4cm; */
   display: block;
   text-align: justify;
 }
