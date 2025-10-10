@@ -100,10 +100,10 @@ main[id="globalmain"] section[data-module-template="heroes"] figure[id="unit-ima
 }
 
 /* gradiente */
-main[id="globalmain"] section[data-module-template="heroes"] div:nth-child(2) .unit-image-warpper {
-  /* background: radial-gradient(circle at top, #ffcd07 3%, rgb(245, 30, 30) 50%, #bc3131 70%); */
-
+/* main[id="globalmain"] section[data-module-template="heroes"] div:nth-child(2) .unit-image-warpper {
+  background: radial-gradient(circle at top, #ffcd07 3%, rgb(245, 30, 30) 50%, #bc3131 70%);
 }
+*/
 
 main[id="globalmain"] section[data-module-template="heroes"] div:nth-child(2) .unit-image-warpper figure[id="unit-image-graduacao"] {
   width: 3008px;
@@ -321,8 +321,14 @@ main[id="globalmain"] section[data-module-template="heroes"] figure.unit-image {
 }
 
 main[id="globalmain"] section[data-module-template="heroes"] figure[id="unit-image-boasvindas"] {
-  background-position: center 8px;
+  background-position: center 88px;
   background-image: url("/boasvindas/assets/image/eleved_main_with_bg.png");
+}
+
+@media screen and (min-width: 834px) {
+  main[id="globalmain"] section[data-module-template="heroes"] figure[id="unit-image-boasvindas"] {
+    background-position: center -20px;
+  }
 }
 
 @media screen and (min-width: 1280px) {
@@ -330,25 +336,6 @@ main[id="globalmain"] section[data-module-template="heroes"] figure[id="unit-ima
     background-position: center -288px;
   }
 }
-
-@media screen and (min-width: 834px) and (max-width: 1279px) {
-  main[id="globalmain"] section[data-module-template="heroes"] figure[id="unit-image-boasvindas"] {
-    background-position: center -20px;
-  }
-}
-
-@media screen and (min-width: 734px) and (max-width: 833px) {
-  main[id="globalmain"] section[data-module-template="heroes"] figure[id="unit-image-boasvindas"] {
-    background-position: center 88px;
-  }
-}
-
-@media screen and (min-width: 320px) and (max-width: 733px) {
-  main[id="globalmain"] section[data-module-template="heroes"] figure[id="unit-image-boasvindas"] {
-    background-position: center 88px;
-  }
-}
-
 
 main[id="globalmain"] section[data-module-template="heroes"] .unit-image-warpper figure[id="unit-image-graduacao"] {
   background-position: center 72px !important;
