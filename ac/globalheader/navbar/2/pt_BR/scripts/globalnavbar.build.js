@@ -27,8 +27,8 @@ function initGlobalNavbar() {
   // Função para fechar todos os submenus
   function closeAll() {
     navbar.classList.remove(
-      "globalnavbar-with-opened",
-      "globalnavbar-with-flyout-opened"
+      "globalnavbar-with-flyout-open",
+      "globalnavbar-with-submenu-open"
     );
     navbar
       .querySelectorAll(".globalnavbar-submenu-opened")
@@ -46,8 +46,8 @@ function initGlobalNavbar() {
 
     const show = () =>
       navbar.classList.add(
-        "globalnavbar-with-opened",
-        "globalnavbar-with-flyout-opened"
+        "globalnavbar-with-flyout-open",
+        "globalnavbar-with-submenu-open"
       );
     const hide = () => {
       setTimeout(() => {
@@ -56,8 +56,8 @@ function initGlobalNavbar() {
           !navbar.querySelector(":hover")
         ) {
           navbar.classList.remove(
-            "globalnavbar-with-opened",
-            "globalnavbar-with-flyout-opened"
+            "globalnavbar-with-flyout-open",
+            "globalnavbar-with-submenu-open"
           );
         }
       }, 40);
@@ -78,13 +78,13 @@ function initGlobalNavbar() {
       trigger.setAttribute("aria-expanded", opened ? "true" : "false");
       if (opened)
         navbar.classList.add(
-          "globalnavbar-with-opened",
-          "globalnavbar-with-flyout-opened"
+          "globalnavbar-with-flyout-open",
+          "globalnavbar-with-submenu-open"
         );
       else if (!navbar.querySelector(".globalnavbar-submenu-opened"))
         navbar.classList.remove(
-          "globalnavbar-with-opened",
-          "globalnavbar-with-flyout-opened"
+          "globalnavbar-with-flyout-open",
+          "globalnavbar-with-submenu-open"
         );
     });
   });
@@ -108,7 +108,7 @@ function initGlobalNavbar() {
   function openMenu() {
     if (topLineOpenAnim) topLineOpenAnim.beginElement();
     if (bottomLineOpenAnim) bottomLineOpenAnim.beginElement();
-    navbar.classList.add("globalnavbar-open");
+    navbar.classList.add("globalnavbar-with-menu-open");
     if (curtain) curtain.classList.add("globalnavbar-curtain-visible");
     if (menuButton) {
       menuButton.setAttribute("aria-expanded", "true");
@@ -119,7 +119,7 @@ function initGlobalNavbar() {
   function closeMenu() {
     if (topLineCloseAnim) topLineCloseAnim.beginElement();
     if (bottomLineCloseAnim) bottomLineCloseAnim.beginElement();
-    navbar.classList.remove("globalnavbar-open");
+    navbar.classList.remove("globalnavbar-with-menu-open");
     if (curtain) curtain.classList.remove("globalnavbar-curtain-visible");
     if (menuButton) {
       menuButton.setAttribute("aria-expanded", "false");
@@ -146,8 +146,8 @@ function initGlobalNavbar() {
   // Função para monitorar mudanças de tela
   function handleResize() {
     if (window.innerWidth >= 834) {
-      if (navbar && navbar.classList.contains("globalnavbar-open")) {
-        navbar.classList.remove("globalnavbar-open");
+      if (navbar && navbar.classList.contains("globalnavbar-with-menu-open")) {
+        navbar.classList.remove("globalnavbar-with-menu-open");
         if (curtain) {
           curtain.classList.remove("globalnavbar-curtain-visible");
         }
