@@ -17,43 +17,12 @@ function initGlobalNavbar() {
   const bottomLineCloseAnim = document.getElementById(
     "globalnavbar-anim-menutrigger-bread-bottom-close"
   );
-  const navItems = document.querySelectorAll(".globalnavbar-item");
   const items = Array.from(
     navbar ? navbar.querySelectorAll(".globalnavbar-item") : []
   );
 
   // Variável de estado do menu
   let isMenuOpen = false;
-
-  // Função para hover do navbar
-  function handleNavbarHover() {
-    navItems.forEach((item) => {
-      const hasSubmenu = item.querySelector(".globalnavbar-submenu") !== null;
-      if (hasSubmenu) {
-        const link = item.querySelector(".globalnavbar-item-link");
-        link.addEventListener("mouseenter", () => {
-          navbar.classList.add(
-            "globalnavbar-with-opened",
-            "globalnavbar-with-flyout-opened"
-          );
-        });
-        link.addEventListener("mouseleave", () => {
-          if (!item.querySelector(".globalnavbar-submenu:hover")) {
-            navbar.classList.remove(
-              "globalnavbar-with-opened",
-              "globalnavbar-with-flyout-opened"
-            );
-          }
-        });
-      }
-    });
-    navbar.addEventListener("mouseleave", () => {
-      navbar.classList.remove(
-        "globalnavbar-with-opened",
-        "globalnavbar-with-flyout-opened"
-      );
-    });
-  }
 
   // Função para fechar todos os submenus
   function closeAll() {
@@ -193,7 +162,6 @@ function initGlobalNavbar() {
 
   window.addEventListener("resize", handleResize);
   handleResize();
-  handleNavbarHover();
 }
 
 document.addEventListener("DOMContentLoaded", initGlobalNavbar);
