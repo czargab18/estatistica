@@ -108,7 +108,7 @@ function initGlobalNavbar() {
   function openMenu() {
     if (topLineOpenAnim) topLineOpenAnim.beginElement();
     if (bottomLineOpenAnim) bottomLineOpenAnim.beginElement();
-    navbar.classList.add("globalnavbar-opened");
+    navbar.classList.add("globalnavbar-open");
     if (curtain) curtain.classList.add("globalnavbar-curtain-visible");
     if (menuButton) {
       menuButton.setAttribute("aria-expanded", "true");
@@ -119,7 +119,7 @@ function initGlobalNavbar() {
   function closeMenu() {
     if (topLineCloseAnim) topLineCloseAnim.beginElement();
     if (bottomLineCloseAnim) bottomLineCloseAnim.beginElement();
-    navbar.classList.remove("globalnavbar-opened");
+    navbar.classList.remove("globalnavbar-open");
     if (curtain) curtain.classList.remove("globalnavbar-curtain-visible");
     if (menuButton) {
       menuButton.setAttribute("aria-expanded", "false");
@@ -146,8 +146,8 @@ function initGlobalNavbar() {
   // Função para monitorar mudanças de tela
   function handleResize() {
     if (window.innerWidth >= 834) {
-      if (navbar && navbar.classList.contains("globalnavbar-opened")) {
-        navbar.classList.remove("globalnavbar-opened");
+      if (navbar && navbar.classList.contains("globalnavbar-open")) {
+        navbar.classList.remove("globalnavbar-open");
         if (curtain) {
           curtain.classList.remove("globalnavbar-curtain-visible");
         }
