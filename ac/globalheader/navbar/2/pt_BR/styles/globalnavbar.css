@@ -239,7 +239,7 @@
 
 @media screen and (max-width: 440px) {
   #globalnavbar.globalnavbar-with-menu-open .globalnavbar-list .globalnavbar-item {
-    padding-left: 0;
+    padding-left: 22px;
   }
 }
 
