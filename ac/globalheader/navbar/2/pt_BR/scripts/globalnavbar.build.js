@@ -1,6 +1,6 @@
 !(function () {
   "use strict";
-  function initGlobalNavbar() {
+  function init() {
     const navbar = document.getElementById("globalnavbar");
     const curtain = document.getElementById("globalnavbar-curtain");
     const menuButton = document.getElementById(
@@ -22,7 +22,8 @@
       navbar ? navbar.querySelectorAll(".globalnavbar-item") : []
     );
     let isMenuOpen = false;
-    function closeAll() {
+
+    function resetsubmenu() {
       navbar.classList.remove(
         "globalnavbar-with-flyout-open",
         "globalnavbar-with-submenu-open"
@@ -35,18 +36,17 @@
         .forEach((a) => a.setAttribute("aria-expanded", "false"));
     }
 
-    // Função para mostrar/ocultar submenu
     items.forEach((item) => {
       const submenu = item.querySelector(".globalnavbar-submenu");
       const trigger = item.querySelector(".globalnavbar-item-link");
       if (!submenu || !trigger) return;
 
-      const show = () =>
+      const showflyout = () =>
         navbar.classList.add(
           "globalnavbar-with-flyout-open",
           "globalnavbar-with-submenu-open"
         );
-      const hide = () => {
+      const hideflyout = () => {
         setTimeout(() => {
           if (
             !navbar.contains(document.activeElement) &&
@@ -60,10 +60,10 @@
         }, 40);
       };
 
-      item.addEventListener("mouseenter", show);
-      item.addEventListener("mouseleave", hide);
-      item.addEventListener("focusin", show);
-      item.addEventListener("focusout", hide);
+      item.addEventListener("mouseenter", showflyout);
+      item.addEventListener("mouseleave", hideflyout);
+      item.addEventListener("focusin", showflyout);
+      item.addEventListener("focusout", hideflyout);
 
       trigger.setAttribute("aria-haspopup", "true");
       trigger.setAttribute("aria-expanded", "false");
@@ -87,19 +87,21 @@
     });
 
     if (curtain) {
-      curtain.addEventListener("click", closeAll);
+      curtain.addEventListener("click", resetsubmenu);
     }
+
     if (menuButton) {
       menuButton.addEventListener("click", function () {
         if (!isMenuOpen) {
-          openMenu();
+          openmenu();
         } else {
-          closeMenu();
+          closemenu();
         }
         isMenuOpen = !isMenuOpen;
       });
     }
-    function openMenu() {
+
+    function openmenu() {
       if (topLineOpenAnim) topLineOpenAnim.beginElement();
       if (bottomLineOpenAnim) bottomLineOpenAnim.beginElement();
       navbar.classList.add("globalnavbar-with-menu-open");
@@ -109,7 +111,8 @@
         menuButton.setAttribute("aria-label", "Fechar menu principal");
       }
     }
-    function closeMenu() {
+
+    function closemenu() {
       if (topLineCloseAnim) topLineCloseAnim.beginElement();
       if (bottomLineCloseAnim) bottomLineCloseAnim.beginElement();
       navbar.classList.remove("globalnavbar-with-menu-open");
@@ -119,21 +122,24 @@
         menuButton.setAttribute("aria-label", "Abrir menu principal");
       }
     }
+
     if (curtain) {
       curtain.addEventListener("click", function () {
         if (isMenuOpen) {
-          closeMenu();
+          closemenu();
           isMenuOpen = false;
         }
       });
     }
+
     document.addEventListener("keydown", function (event) {
       if (event.key === "Escape" && isMenuOpen) {
-        closeMenu();
+        closemenu();
         isMenuOpen = false;
       }
     });
-    function handleResize() {
+
+    function resize() {
       if (window.innerWidth >= 834) {
         if (
           navbar &&
@@ -151,12 +157,14 @@
         }
       }
     }
-    window.addEventListener("resize", handleResize);
-    handleResize();
+
+    window.addEventListener("resize", resize);
+    resize();
   }
+
   if (document.readyState === "loading") {
-    document.addEventListener("DOMContentLoaded", initGlobalNavbar);
+    document.addEventListener("DOMContentLoaded", init);
   } else {
-    initGlobalNavbar();
+    init();
   }
 })();
