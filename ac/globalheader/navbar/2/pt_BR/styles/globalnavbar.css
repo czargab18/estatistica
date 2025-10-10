@@ -506,11 +506,18 @@
   }
 }
 
-#globalnavbar.globalnavbar-with-flyout-open~.globalnavbar-curtain,
+/* #globalnavbar.globalnavbar-with-flyout-open~.globalnavbar-curtain,
 #globalnavbar.globalnavbar-with-submenu-open~.globalnavbar-curtain,
 #globalnavbar:has(.globalnavbar-submenu-open)~.globalnavbar-curtain {
   opacity: 1;
   visibility: visible;
+  transition: opacity 0.32s cubic-bezier(0.4, 0, 0.6, 1) 80ms, visibility 0.32s step-start 80ms;
+} */
+
+#globalheader:has(#globalnavbar.globalnavbar-with-flyout-open)~.globalnavbar-curtain,
+#globalheader:has(#globalnavbar.globalnavbar-with-submenu-open)~.globalnavbar-curtain {
+  opacity: 1 !important;
+  visibility: visible !important;
   transition: opacity 0.32s cubic-bezier(0.4, 0, 0.6, 1) 80ms, visibility 0.32s step-start 80ms;
 }
 
@@ -638,7 +645,7 @@
 
 #globalnavbar-submenu-search .globalnavbar-flyout-content {
   max-width: 980px;
-  margin: 0 auto;
+margin: 0 auto;
   padding: 0;
 }
 
