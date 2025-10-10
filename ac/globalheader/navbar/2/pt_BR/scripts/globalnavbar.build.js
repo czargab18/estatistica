@@ -41,11 +41,13 @@
       const trigger = item.querySelector(".globalnavbar-item-link");
       if (!submenu || !trigger) return;
 
-      const showflyout = () =>
+      const showflyout = () => {
         navbar.classList.add(
           "globalnavbar-with-flyout-open",
           "globalnavbar-with-submenu-open"
         );
+      };
+      
       const hideflyout = () => {
         setTimeout(() => {
           if (
