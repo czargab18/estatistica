@@ -1310,3 +1310,23 @@ html[dir=rtl] #globalheader {
   --r-globalheader-safe-area-inset-start: var(--r-sk-safe-area-inset-start, env(safe-area-inset-right));
   --r-globalheader-safe-area-inset-end: var(--r-sk-safe-area-inset-end, env(safe-area-inset-left));
 }
+
+/* 
+ TESTE ANIMAÇÃO-DROPDOWN SUBMENU
+ */
+
+@media only screen and (min-width: 834px) {
+  #globalnavbar.globalnavbar-item.globalnavbar-item-flyout-open .globalnavbar-submenu {
+    transition: height var(--r-globalnavbar-flyout-rate,2400ms) cubic-bezier(.4, 0, .6, 1);
+  }
+}
+
+@media only screen and (min-width: 834px) {
+  #globalnavbar.globalnavbar-item.globalnavbar-item-flyout-open .globalnavbar-submenu {
+    opacity: 1;
+    visibility: visible;
+    height: var(--r-globalnavbar-flyout-height,490px);
+    background: var(--r-globalnavbar-background-opened, #fafafc);
+    transition: height var(--r-globalnavbar-flyout-rate,240ms) cubic-bezier(.4, 0, .6, 1), visibility var(--r-globalnavbar-flyout-rate,240ms) step-start, background var(--r-globalnavbar-flyout-rate,240ms) cubic-bezier(.4, 0, .6, 1);
+  }
+}
