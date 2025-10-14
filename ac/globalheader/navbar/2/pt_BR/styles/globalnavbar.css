@@ -1,14 +1,10 @@
 @charset "UTF-8";
 
-:root {
-  --r-globalnavbar-link-color-secondary-black: #000000;
-}
-
-
 #globalnavbar {
   --r-globalnavbar-color: rgba(0, 0, 0, 0.8);
   --r-globalnavbar-color-secondary: #333336;
   --r-globalnavbar-color-secondary-black: #000000;
+  --r-globalnavbar-link-color-secondary-black: #000000;
   --r-globalnavbar-background: rgba(251, 251, 253, 0.8);
   --r-globalnavbar-backdrop-filter: saturate(180%) blur(20px);
   --r-globalnavbar-background-opened: #f5f5f7;
