@@ -25,7 +25,7 @@
       if (this.isValid()) {
         this.init();
       } else {
-        console.warn('❌ PaddleNavigation: Invalid gallery setup for', gallerySelector);
+        // console.warn('❌ PaddleNavigation: Invalid gallery setup for', gallerySelector);
         this.logDebugInfo();
       }
     }
@@ -408,7 +408,7 @@
       const paddleNav = new PaddleNavigation('#noticias');
       if (paddleNav.isValid()) {
         paddleNavInstances.push(paddleNav);
-        console.log('✅ PaddleNavigation initialized for #noticias gallery');
+        // console.log('✅ PaddleNavigation initialized for #noticias gallery');
       } else {
         console.warn('❌ Failed to initialize PaddleNavigation for #noticias gallery');
       }
@@ -422,7 +422,7 @@
         const paddleNav = new PaddleNavigation(`#${galleryId}`);
         if (paddleNav.isValid()) {
           paddleNavInstances.push(paddleNav);
-          console.log(`✅ PaddleNavigation initialized for #${galleryId}`);
+          // console.log(`✅ PaddleNavigation initialized for #${galleryId}`);
         }
       });
     }
