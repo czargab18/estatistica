@@ -506,18 +506,36 @@
   }
 }
 
-/* #globalnavbar.globalnavbar-with-flyout-open~.globalnavbar-curtain,
+#globalnavbar~.globalnavbar-curtain,
+#globalnavbar-curtain.globalnavbar-curtain {
+  background: rgba(232, 232, 237, 0.4);
+  -webkit-backdrop-filter: blur(20px);
+  backdrop-filter: blur(20px);
+  visibility: hidden;
+  opacity: 0;
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 9998;
+  transition: opacity 0.32s cubic-bezier(0.4, 0, 0.6, 1) 80ms, visibility 0.32s step-end 80ms;
+}
+
+#globalnavbar.globalnavbar-with-flyout-open~.globalnavbar-curtain,
+#globalnavbar.globalnavbar-with-submenu-open~.globalnavbar-curtain {
+  opacity: 1;
+  visibility: visible;
+  transition: opacity 0.32s cubic-bezier(0.4, 0, 0.6, 1) 80ms, visibility 0.32s step-start 80ms;
+}
+
+#globalnavbar.globalnavbar-with-flyout-open~.globalnavbar-curtain,
 #globalnavbar.globalnavbar-with-submenu-open~.globalnavbar-curtain,
 #globalnavbar:has(.globalnavbar-submenu-open)~.globalnavbar-curtain {
   opacity: 1;
   visibility: visible;
-  transition: opacity 0.32s cubic-bezier(0.4, 0, 0.6, 1) 80ms, visibility 0.32s step-start 80ms;
-} */
-
-#globalheader:has(#globalnavbar.globalnavbar-with-flyout-open)~.globalnavbar-curtain,
-#globalheader:has(#globalnavbar.globalnavbar-with-submenu-open)~.globalnavbar-curtain {
-  opacity: 1 !important;
-  visibility: visible !important;
   transition: opacity 0.32s cubic-bezier(0.4, 0, 0.6, 1) 80ms, visibility 0.32s step-start 80ms;
 }
 
@@ -555,25 +573,6 @@
     padding: 10px 0;
     color: var(--r-globalnavbar-color-secondary);
   }
-}
-
-#globalnavbar .globalnavbar-curtain,
-#globalnavbar-curtain,
-.globalnavbar-curtain {
-  background: rgba(232, 232, 237, 0.4);
-  -webkit-backdrop-filter: blur(20px);
-  backdrop-filter: blur(20px);
-  visibility: hidden;
-  position: fixed;
-  opacity: 0;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  z-index: 9998;
-  transition: opacity 0.32s cubic-bezier(0.4, 0, 0.6, 1) 80ms, visibility 0.32s step-end 80ms;
 }
 
 /* 
@@ -817,16 +816,6 @@ margin: 0 auto;
 }
 
 /* filepath: c:\Users\cesar.oliveira\github\estatistica\backend\actions\components\global\4\build.nav.css */
-.globalnavbar-curtain {
-  opacity: 0;
-  visibility: hidden;
-  transition: opacity 0.3s ease, visibility 0.3s ease;
-}
-
-.globalnavbar-curtain-visible {
-  opacity: 1;
-  visibility: visible;
-}
 
 .globalnavbar-menutrigger-button {
   transition: transform 0.2s ease;
