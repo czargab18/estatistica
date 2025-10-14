@@ -22,6 +22,7 @@
       navbar ? navbar.querySelectorAll(".globalnavbar-item") : []
     );
     let isMenuOpen = false;
+    let currentOpenItem = null; // Adicione esta variável
 
     function resetsubmenu() {
       navbar.classList.remove(
@@ -34,6 +35,7 @@
       navbar
         .querySelectorAll('.globalnavbar-item-link[aria-expanded="true"]')
         .forEach((a) => a.setAttribute("aria-expanded", "false"));
+      currentOpenItem = null; // Reset da variável
     }
 
     items.forEach((item) => {
@@ -42,6 +44,13 @@
       if (!submenu || !trigger) return;
 
       const showflyout = () => {
+        // Remove classes do item anterior se houver
+        if (currentOpenItem && currentOpenItem !== item) {
+          currentOpenItem.classList.remove("globalnavbar-item-hover");
+        }
+        
+        currentOpenItem = item;
+        item.classList.add("globalnavbar-item-hover");
         navbar.classList.add(
           "globalnavbar-with-flyout-open",
           "globalnavbar-with-submenu-open"
@@ -49,17 +58,20 @@
       };
       
       const hideflyout = () => {
+        // Remove imediatamente quando sair do item
+        item.classList.remove("globalnavbar-item-hover");
+        
+        // Verifica se ainda há algum item com hover
         setTimeout(() => {
-          if (
-            !navbar.contains(document.activeElement) &&
-            !navbar.querySelector(":hover")
-          ) {
+          const hasHoveredItem = navbar.querySelector(".globalnavbar-item-hover");
+          if (!hasHoveredItem) {
             navbar.classList.remove(
               "globalnavbar-with-flyout-open",
               "globalnavbar-with-submenu-open"
             );
+            currentOpenItem = null;
           }
-        }, 40);
+        }, 50);
       };
 
       item.addEventListener("mouseenter", showflyout);
@@ -131,13 +143,17 @@
           closemenu();
           isMenuOpen = false;
         }
+        resetsubmenu(); // Adicione esta linha
       });
     }
 
     document.addEventListener("keydown", function (event) {
-      if (event.key === "Escape" && isMenuOpen) {
-        closemenu();
-        isMenuOpen = false;
+      if (event.key === "Escape") {
+        if (isMenuOpen) {
+          closemenu();
+          isMenuOpen = false;
+        }
+        resetsubmenu(); // Adicione esta linha
       }
     });
 
