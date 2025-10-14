@@ -466,7 +466,7 @@
   font-family: SF Pro Text, SF Pro Icons, Helvetica Neue, Helvetica, Arial, sans-serif;
 }
 
-#globalnavbar .globalnavbar-list .globalnavbar-submenu .globalnavbar-submenu-content .globalnavbar-submenu-list-item-elevated .globalnavbar-submenu-link {
+#globalnavbar .globalnavbar-submenu-content .globalnavbar-submenu-list .globalnavbar-submenu-list-item-elevated .globalnavbar-submenu-link {
   font-family: "SF Pro Display", "SF Pro Icons", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
   font-size: 24px;
   font-weight: 600;
@@ -524,6 +524,9 @@
   transition: opacity 0.32s cubic-bezier(0.4, 0, 0.6, 1) 80ms, visibility 0.32s step-end 80ms;
 }
 
+/* Ativa o curtain apenas quando há hover/focus real no item */
+#globalnavbar .globalnavbar-item:hover~.globalnavbar-curtain,
+#globalnavbar .globalnavbar-item:focus-within~.globalnavbar-curtain,
 #globalnavbar.globalnavbar-with-flyout-open~.globalnavbar-curtain,
 #globalnavbar.globalnavbar-with-submenu-open~.globalnavbar-curtain {
   opacity: 1;
@@ -531,48 +534,12 @@
   transition: opacity 0.32s cubic-bezier(0.4, 0, 0.6, 1) 80ms, visibility 0.32s step-start 80ms;
 }
 
-#globalnavbar.globalnavbar-with-flyout-open~.globalnavbar-curtain,
-#globalnavbar.globalnavbar-with-submenu-open~.globalnavbar-curtain,
-#globalnavbar:has(.globalnavbar-submenu-open)~.globalnavbar-curtain {
+/* Remove a regra problemática com :has() ou adicione um delay maior */
+#globalnavbar:has(.globalnavbar-item:hover)~.globalnavbar-curtain,
+#globalnavbar:has(.globalnavbar-item:focus-within)~.globalnavbar-curtain {
   opacity: 1;
   visibility: visible;
-  transition: opacity 0.32s cubic-bezier(0.4, 0, 0.6, 1) 80ms, visibility 0.32s step-start 80ms;
-}
-
-#globalnavbar .globalnavbar-item.globalnavbar-submenu-open>.globalnavbar-submenu {
-  position: static;
-  transform: none;
-  left: 0;
-  width: 100%;
-  opacity: 1;
-  visibility: visible;
-}
-
-@media screen and (max-width: 979px) {
-  #globalnavbar .globalnavbar-submenu {
-    position: static;
-    transform: none;
-    width: 100%;
-  }
-
-  /* #globalnavbar .globalnavbar-submenu .globalnavbar-submenu-group {
-    display: none;
-  } */
-  #globalnavbar .globalnavbar-submenu .globalnavbar-submenu-group-elevated {
-    display: block;
-  }
-
-  #globalnavbar .globalnavbar-submenu-group-elevated .globalnavbar-submenu-list {
-    display: block;
-  }
-
-  #globalnavbar .globalnavbar-submenu-group-elevated .globalnavbar-submenu-list .globalnavbar-submenu-link {
-    display: block;
-    font-size: 32px;
-    line-height: 1.25;
-    padding: 10px 0;
-    color: var(--r-globalnavbar-color-secondary);
-  }
+  transition: opacity 0.1s cubic-bezier(0.4, 0, 0.6, 1), visibility 0.1s step-start;
 }
 
 /* 
