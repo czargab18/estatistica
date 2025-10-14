@@ -483,7 +483,19 @@
   font-family: SF Pro Text, SF Pro Icons, Helvetica Neue, Helvetica, Arial, sans-serif;
 }
 
-#globalnavbar .globalnavbar-submenu-content .globalnavbar-submenu-list .globalnavbar-submenu-list-item-elevated .globalnavbar-submenu-link {
+/*
+ ==================================
+ ========= links em destaque/elevados
+ ==================================
+ */
+
+#globalnavbar .globalnavbar-submenu-group-elevated,
+#globalnavbar .globalnavbar-submenu-group-elevated .globalnavbar-submenu-list,
+#globalnavbar .globalnavbar-submenu-group-elevated .globalnavbar-submenu-list .globalnavbar-submenu-list-item-elevated {
+  display: block;
+}
+
+#globalnavbar .globalnavbar-submenu-group-elevated .globalnavbar-submenu-list .globalnavbar-submenu-list-item-elevated .globalnavbar-submenu-link {
   font-family: "SF Pro Display", "SF Pro Icons", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
   font-size: 24px;
   font-weight: 600;
@@ -492,11 +504,11 @@
   padding: 7px 0;
 }
 
-#globalnavbar .globalnavbar-submenu-content .globalnavbar-submenu-list .globalnavbar-submenu-list-item-elevated:nth-last-of-type(-n + 2) {
+#globalnavbar .globalnavbar-submenu-group-elevated .globalnavbar-submenu-list-item-elevated:nth-last-of-type(-n + 2) {
   background: transparent;
 }
 
-#globalnavbar .globalnavbar-submenu-content .globalnavbar-submenu-list .globalnavbar-submenu-list-item-elevated:nth-last-of-type(-n + 2) .globalnavbar-submenu-link {
+#globalnavbar .globalnavbar-submenu-group-elevated .globalnavbar-submenu-list-item-elevated:nth-last-of-type(-n + 2) .globalnavbar-submenu-link {
   font-size: 12px;
   line-height: 16px;
 }
