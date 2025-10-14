@@ -42,6 +42,7 @@ section[id="cabecalho-ira"] div[class="container-ira-cabecalho"] div[class="cont
 }
 
 section[id="cabecalho-ira"] div[class="conteudo-cabecalho-simples"] h1[class="titulo-ira-simples"] {
+  display: contents;
   flex-grow: 1;
   max-width: calc(100% - var(--col-gap));
   font-size: 80px;
