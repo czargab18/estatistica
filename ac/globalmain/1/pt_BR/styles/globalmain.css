@@ -110,7 +110,7 @@ main[id="globalmain"] section[data-module-template="heroes"] div:nth-child(2) .u
   height: 624px;
   background-size: 3008px 624px;
   background-repeat: no-repeat;
-  background-image: url("/sd/images/br/banners/heroes/home/graduacao-banner-grande.png");
+  background-image: url("/sd/banners/pt_BR/heroes/home/graduacao-banner-grande.png");
 }
 
 @media only screen and (-webkit-min-device-pixel-ratio: 1.5),
@@ -118,7 +118,7 @@ only screen and (min-resolution: 1.5dppx),
 (-webkit-min-device-pixel-ratio: 1.5),
 (min-resolution: 144dpi) {
   main[id="globalmain"] [data-module-template="heroes"] .unit-image-wrapper .unit-image.unit-image-graduacao {
-    background-image: url("/sd/images/br/banners/heroes/home/graduacao-banner-grande.png");
+    background-image: url("/sd/banners/pt_BR/heroes/home/graduacao-banner-grande.png");
   }
 }
 
@@ -128,7 +128,7 @@ only screen and (min-resolution: 1.5dppx),
     height: 617px;
     background-size: 1068px 617px;
     background-repeat: no-repeat;
-    background-image: url("/sd/images/br/banners/heroes/home/graduacao-banner-grande.png");
+    background-image: url("/sd/banners/pt_BR/heroes/home/graduacao-banner-grande.png");
   }
 }
 
@@ -136,7 +136,7 @@ only screen and (min-resolution: 1.5dppx),
 only screen and (max-width: 1068px) and (min-resolution: 1.5dppx),
 only screen and (max-width: 1068px) and (min-resolution: 144dpi) {
   main[id="globalmain"] [data-module-template="heroes"] .unit-image-wrapper .unit-image.unit-image-graduacao {
-    background-image: url("/sd/images/br/banners/heroes/home/graduacao-banner-grande.png");
+    background-image: url("/sd/banners/pt_BR/heroes/home/graduacao-banner-grande.png");
   }
 }
 
@@ -146,7 +146,7 @@ only screen and (max-width: 1068px) and (min-resolution: 144dpi) {
     height: 548px;
     background-size: 734px 548px;
     background-repeat: no-repeat;
-    background-image: url("/sd/images/br/banners/heroes/home/graduacao-banner-grande.png");
+    background-image: url("/sd/banners/pt_BR/heroes/home/graduacao-banner-grande.png");
   }
 }
 
@@ -154,7 +154,7 @@ only screen and (max-width: 1068px) and (min-resolution: 144dpi) {
 only screen and (max-width: 734px) and (min-resolution: 1.5dppx),
 only screen and (max-width: 734px) and (min-resolution: 144dpi) {
   main[id="globalmain"] [data-module-template="heroes"] .unit-image-wrapper .unit-image.unit-image-graduacao {
-    background-image: url("/sd/images/br/banners/heroes/home/graduacao-banner-grande.png");
+    background-image: url("/sd/banners/pt_BR/heroes/home/graduacao-banner-grande.png");
   }
 }
 
@@ -164,7 +164,7 @@ only screen and (max-width: 734px) and (min-resolution: 144dpi) {
     height: 736px;
     background-size: 3008px 736px;
     background-repeat: no-repeat;
-    background-image: url("/sd/images/br/banners/heroes/home/graduacao-banner-grande.png");
+    background-image: url("/sd/banners/pt_BR/heroes/home/graduacao-banner-grande.png");
   }
 }
 
@@ -172,7 +172,7 @@ only screen and (max-width: 734px) and (min-resolution: 144dpi) {
 only screen and (min-width: 1069px) and (min-height: 776px) and (min-resolution: 1.5dppx),
 only screen and (min-width: 1069px) and (min-height: 776px) and (min-resolution: 144dpi) {
   main[id="globalmain"] [data-module-template="heroes"] .unit-image-wrapper .unit-image.unit-image-graduacao {
-    background-image: url("/sd/images/br/banners/heroes/home/graduacao-banner-grande.png");
+    background-image: url("/sd/banners/pt_BR/heroes/home/graduacao-banner-grande.png");
   }
 }
 
@@ -182,7 +182,7 @@ only screen and (min-width: 1069px) and (min-height: 776px) and (min-resolution:
     height: 694px;
     background-size: 1068px 694px;
     background-repeat: no-repeat;
-    background-image: url("/sd/images/br/banners/heroes/home/graduacao-banner-grande.png");
+    background-image: url("/sd/banners/pt_BR/heroes/home/graduacao-banner-grande.png");
   }
 }
 
@@ -190,20 +190,20 @@ only screen and (min-width: 1069px) and (min-height: 776px) and (min-resolution:
 only screen and (max-width: 1068px) and (min-width: 735px) and (min-height: 734px) and (min-resolution: 1.5dppx),
 only screen and (max-width: 1068px) and (min-width: 735px) and (min-height: 734px) and (min-resolution: 144dpi) {
   main[id="globalmain"] [data-module-template="heroes"] .unit-image-wrapper .unit-image.unit-image-graduacao {
-    background-image: url("/sd/images/br/banners/heroes/home/graduacao-banner-grande.png");
+    background-image: url("/sd/banners/pt_BR/heroes/home/graduacao-banner-grande.png");
   }
 }
 
 main[id="globalmain"] section[data-module-template="heroes"] figure[id="unit-image-posgraduacao"] {
   width: 3008px;
   height: 624px;
-  background-image: url("/sd/images/br/banners/heroes/home/posgraduacao-banner-grande.png");
+  background-image: url("/sd/banners/pt_BR/heroes/home/posgraduacao-banner-grande.png");
 }
 
 main[id="globalmain"] section[data-module-template="heroes"] figure[id="unit-image-docentes"] {
   width: 3008px;
   height: 624px;
-  background-image: url("/sd/images/br/banners/heroes/home/docente-banner-grande.png");
+  background-image: url("/sd/banners/pt_BR/heroes/home/docente-banner-grande.png");
 }
 
 main[id="globalmain"] [data-module-template="heroes"] {
