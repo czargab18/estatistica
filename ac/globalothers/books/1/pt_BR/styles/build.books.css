@@ -703,3 +703,13 @@ p span[class="headline-question"] {
   text-align: justify;
   font-family: Arial, Helvetica, sans-serif;
 }
+
+
+
+/* 
+Organizar
+ */
+
+span.screen-reader-only {
+  display: none;
+}
