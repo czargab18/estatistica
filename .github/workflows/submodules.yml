@@ -138,13 +138,14 @@ jobs:
           echo "📚 Total: $NUM_LIVROS"
           echo "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
           
-          # Falha se houve algum erro
-          if [ $FAIL_COUNT -gt 0 ]; then
+          # Comparação segura e saída explícita
+          if [ "${FAIL_COUNT:-0}" -gt 0 ]; then
             echo "⚠️ Alguns livros falharam na renderização"
             exit 1
+          else
+            echo "✨ Renderização concluída com sucesso!"
+            exit 0
           fi
-          
-          echo "✨ Renderização concluída com sucesso!"
 
       - name: Atualizar submodule 'backend'
         if: steps.books-list.outputs.has_books == 'true'
