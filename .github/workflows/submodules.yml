@@ -164,11 +164,11 @@ jobs:
           python -m pip install --upgrade pip
           pip install -r ./backend/requirements.txt
 
-      - name: Automação com './backend/src/scripts/'
+      - name: Automação de Componentes dos livros
         if: steps.books-list.outputs.has_books == 'true'
         run: |
           echo "🎨 Aplicando padronização HTML..."
-          python ./backend/src/scripts/site_html_manager.py --update-all --path ./book/
+          python ./backend/src/scripts/site_manager.py --comp --update --all --path ./book/
           echo "✅ Padronização concluída!"
 
       - name: Limpar arquivos gerados pelo Quarto com script Python
