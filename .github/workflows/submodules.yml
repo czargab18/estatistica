@@ -175,7 +175,7 @@ jobs:
         if: steps.books-list.outputs.has_books == 'true'
         run: |
           echo "🧹 Limpando pastas temporárias..."
-          python ./backend/src/scripts/clean_quarto_output.py --path ./book/
+          python ./backend/src/scripts/quarto_clean.py --path ./book/
           echo "✅ Limpeza concluída!"
 
 
