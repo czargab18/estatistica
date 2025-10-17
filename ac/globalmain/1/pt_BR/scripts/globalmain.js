@@ -4,19 +4,23 @@
  * Inclui suporte para touch, teclado, e navegação por clique
  */
 (function () {
-  'use strict';
+  "use strict";
   class PaddleNavigation {
     constructor(gallerySelector) {
       this.gallery = document.querySelector(gallerySelector);
-      this.itemContainer = this.gallery?.querySelector('.item-container');
-      this.items = this.gallery?.querySelectorAll('.gallery-item');
-      this.paddlenav = this.gallery?.querySelector('.paddlenav');
-      this.nextButton = this.paddlenav?.querySelector('.next button, .paddlenav-arrow-next');
-      this.prevButton = this.paddlenav?.querySelector('.previous button, .paddlenav-arrow-previous');
-      this.playButton = this.gallery?.querySelector('.play-pause, #playButton');
-      this.playIcon = this.gallery?.querySelector('#play-icon');
-      this.pauseIcon = this.gallery?.querySelector('#pause-icon');
-      this.dots = this.gallery?.querySelectorAll('.dotnav-item');
+      this.itemContainer = this.gallery?.querySelector(".item-container");
+      this.items = this.gallery?.querySelectorAll(".gallery-item");
+      this.paddlenav = this.gallery?.querySelector(".paddlenav");
+      this.nextButton = this.paddlenav?.querySelector(
+        ".next button, .paddlenav-arrow-next"
+      );
+      this.prevButton = this.paddlenav?.querySelector(
+        ".previous button, .paddlenav-arrow-previous"
+      );
+      this.playButton = this.gallery?.querySelector(".play-pause, #playButton");
+      this.playIcon = this.gallery?.querySelector("#play-icon");
+      this.pauseIcon = this.gallery?.querySelector("#pause-icon");
+      this.dots = this.gallery?.querySelectorAll(".dotnav-item");
       this.currentIndex = 0;
       this.totalItems = this.items?.length || 0;
       this.autoPlayInterval = null;
@@ -31,7 +35,7 @@
     }
 
     logDebugInfo() {
-      console.log('Debug Info:', {
+      console.log("Debug Info:", {
         gallery: !!this.gallery,
         itemContainer: !!this.itemContainer,
         items: this.items?.length,
@@ -39,38 +43,47 @@
         nextButton: !!this.nextButton,
         prevButton: !!this.prevButton,
         playButton: !!this.playButton,
-        dots: this.dots?.length
+        dots: this.dots?.length,
       });
     }
     isValid() {
-      return this.gallery && this.itemContainer && this.items &&
-        this.paddlenav && this.nextButton && this.prevButton &&
-        this.totalItems > 0;
+      return (
+        this.gallery &&
+        this.itemContainer &&
+        this.items &&
+        this.paddlenav &&
+        this.nextButton &&
+        this.prevButton &&
+        this.totalItems > 0
+      );
     }
 
     init() {
       this.setInitialStyles();
-      this.nextButton.addEventListener('click', () => {
+      this.nextButton.addEventListener("click", () => {
         this.next();
         this.stopAutoPlay();
       });
-      this.prevButton.addEventListener('click', () => {
+      this.prevButton.addEventListener("click", () => {
         this.previous();
         this.stopAutoPlay();
       });
       if (this.playButton) {
-        this.playButton.addEventListener('click', this.togglePlayPause.bind(this));
+        this.playButton.addEventListener(
+          "click",
+          this.togglePlayPause.bind(this)
+        );
       }
       if (this.dots) {
         this.dots.forEach((dot, index) => {
-          dot.addEventListener('click', (e) => {
+          dot.addEventListener("click", (e) => {
             e.preventDefault();
             this.goToSlide(index);
             this.stopAutoPlay();
           });
         });
       }
-      document.addEventListener('keydown', this.handleKeydown.bind(this));
+      document.addEventListener("keydown", this.handleKeydown.bind(this));
       this.addTouchSupport();
       this.addIntersectionObserver();
       this.updateGallery();
@@ -91,25 +104,23 @@
           progress = -1;
           translateItemX = -containerWidth;
           isVisible = true;
-        }
-        else if (this.currentIndex === this.totalItems - 1 && index === 0) {
+        } else if (this.currentIndex === this.totalItems - 1 && index === 0) {
           progress = 1;
           translateItemX = containerWidth;
           isVisible = true;
-        }
-        else if (Math.abs(progress) <= 1) {
+        } else if (Math.abs(progress) <= 1) {
           isVisible = true;
         }
 
-        item.style.setProperty('--progress', progress);
+        item.style.setProperty("--progress", progress);
         item.style.zIndex = zIndex;
         item.style.opacity = isVisible ? 1 : 0;
-        item.style.visibility = isVisible ? 'visible' : 'hidden';
+        item.style.visibility = isVisible ? "visible" : "hidden";
         item.style.transform = `translate(${translateItemX}px, 0px)`;
         if (index === this.currentIndex) {
-          item.classList.add('current');
+          item.classList.add("current");
         } else {
-          item.classList.remove('current');
+          item.classList.remove("current");
         }
       });
     }
@@ -162,29 +173,28 @@
           progress = -1;
           translateItemX = -containerWidth;
           isVisible = true;
-        }
-        else if (this.currentIndex === this.totalItems - 1 && index === 0) {
+        } else if (this.currentIndex === this.totalItems - 1 && index === 0) {
           progress = 1;
           translateItemX = containerWidth;
           isVisible = true;
-        }
-        else if (Math.abs(progress) <= 1) {
+        } else if (Math.abs(progress) <= 1) {
           isVisible = true;
         }
 
-        item.style.setProperty('--progress', progress);
+        item.style.setProperty("--progress", progress);
         item.style.zIndex = index === this.currentIndex ? 1 : 0;
         item.style.opacity = isVisible ? 1 : 0;
-        item.style.visibility = isVisible ? 'visible' : 'hidden';
+        item.style.visibility = isVisible ? "visible" : "hidden";
         item.style.transform = `translate(${translateItemX}px, 0px)`;
 
         if (index === this.currentIndex) {
-          item.classList.add('current');
+          item.classList.add("current");
         } else {
-          item.classList.remove('current');
+          item.classList.remove("current");
         }
       });
-    } updateButtons() {
+    }
+    updateButtons() {
       // Enable/disable buttons based on current position
       const isFirstItem = this.currentIndex === 0;
       const isLastItem = this.currentIndex === this.totalItems - 1;
@@ -192,14 +202,14 @@
       // For infinite loop, buttons are always enabled if we have more than 1 item
       if (this.totalItems > 1) {
         this.prevButton.disabled = false;
-        this.prevButton.classList.remove('disabled');
+        this.prevButton.classList.remove("disabled");
         this.nextButton.disabled = false;
-        this.nextButton.classList.remove('disabled');
+        this.nextButton.classList.remove("disabled");
       } else {
         this.prevButton.disabled = true;
-        this.prevButton.classList.add('disabled');
+        this.prevButton.classList.add("disabled");
         this.nextButton.disabled = true;
-        this.nextButton.classList.add('disabled');
+        this.nextButton.classList.add("disabled");
       }
     }
 
@@ -207,9 +217,9 @@
       if (!this.dots) return;
       this.dots.forEach((dot, index) => {
         if (index === this.currentIndex) {
-          dot.classList.add('current');
+          dot.classList.add("current");
         } else {
-          dot.classList.remove('current');
+          dot.classList.remove("current");
         }
       });
     }
@@ -221,7 +231,7 @@
       this.isPlaying = true;
       this.updatePlayPauseIcons();
       if (this.gallery) {
-        this.gallery.classList.add('autoplay');
+        this.gallery.classList.add("autoplay");
       }
     }
     stopAutoPlay() {
@@ -232,7 +242,7 @@
       this.isPlaying = false;
       this.updatePlayPauseIcons();
       if (this.gallery) {
-        this.gallery.classList.remove('autoplay');
+        this.gallery.classList.remove("autoplay");
       }
     }
 
@@ -247,41 +257,44 @@
     updatePlayPauseIcons() {
       if (this.playIcon && this.pauseIcon) {
         if (this.isPlaying) {
-          this.playIcon.style.display = 'none';
-          this.pauseIcon.style.display = 'block';
+          this.playIcon.style.display = "none";
+          this.pauseIcon.style.display = "block";
         } else {
-          this.playIcon.style.display = 'block';
-          this.pauseIcon.style.display = 'none';
+          this.playIcon.style.display = "block";
+          this.pauseIcon.style.display = "none";
         }
       }
       if (this.playButton) {
         if (this.isPlaying) {
-          this.playButton.classList.remove('paused');
-          this.playButton.setAttribute('aria-label', 'pause slideshow gallery');
+          this.playButton.classList.remove("paused");
+          this.playButton.setAttribute("aria-label", "pause slideshow gallery");
         } else {
-          this.playButton.classList.add('paused');
-          this.playButton.setAttribute('aria-label', 'play slideshow gallery');
+          this.playButton.classList.add("paused");
+          this.playButton.setAttribute("aria-label", "play slideshow gallery");
         }
       }
     }
 
     addIntersectionObserver() {
-      const observer = new IntersectionObserver((entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting && !this.isPlaying) {
-            setTimeout(() => {
-              if (entry.isIntersecting && !this.isPlaying) {
-                this.startAutoPlay();
-              }
-            }, 1000);
-          } else if (!entry.isIntersecting && this.isPlaying) {
-            this.stopAutoPlay();
-          }
-        });
-      }, {
-        threshold: 0.5,
-        rootMargin: '0px 0px -100px 0px'
-      });
+      const observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting && !this.isPlaying) {
+              setTimeout(() => {
+                if (entry.isIntersecting && !this.isPlaying) {
+                  this.startAutoPlay();
+                }
+              }, 1000);
+            } else if (!entry.isIntersecting && this.isPlaying) {
+              this.stopAutoPlay();
+            }
+          });
+        },
+        {
+          threshold: 0.5,
+          rootMargin: "0px 0px -100px 0px",
+        }
+      );
       if (this.gallery) {
         observer.observe(this.gallery);
       }
@@ -302,32 +315,32 @@
     }
 
     handleKeydown(event) {
-      if (!this.gallery.closest(':focus-within') && !this.isInViewport()) {
+      if (!this.gallery.closest(":focus-within") && !this.isInViewport()) {
         return;
       }
       switch (event.key) {
-        case 'ArrowLeft':
+        case "ArrowLeft":
           event.preventDefault();
           this.stopAutoPlay();
           this.previous();
           break;
-        case 'ArrowRight':
+        case "ArrowRight":
           event.preventDefault();
           this.stopAutoPlay();
           this.next();
           break;
-        case 'Home':
+        case "Home":
           event.preventDefault();
           this.stopAutoPlay();
           this.goToSlide(0);
           break;
-        case 'End':
+        case "End":
           event.preventDefault();
           this.stopAutoPlay();
           this.goToSlide(this.totalItems - 1);
           break;
-        case ' ':
-        case 'Enter':
+        case " ":
+        case "Enter":
           event.preventDefault();
           this.togglePlayPause();
           break;
@@ -340,30 +353,45 @@
       let deltaX = 0;
       let deltaY = 0;
       const threshold = 50;
-      this.itemContainer.addEventListener('touchstart', (e) => {
-        startX = e.touches[0].clientX;
-        startY = e.touches[0].clientY;
-      }, { passive: true });
-      this.itemContainer.addEventListener('touchmove', (e) => {
-        if (!startX || !startY) return;
-        deltaX = e.touches[0].clientX - startX;
-        deltaY = e.touches[0].clientY - startY;
-      }, { passive: true });
-      this.itemContainer.addEventListener('touchend', (e) => {
-        if (!startX || !startY) return;
-        if (Math.abs(deltaX) > Math.abs(deltaY) && Math.abs(deltaX) > threshold) {
-          this.stopAutoPlay();
-          if (deltaX > 0) {
-            this.previous();
-          } else {
-            this.next();
+      this.itemContainer.addEventListener(
+        "touchstart",
+        (e) => {
+          startX = e.touches[0].clientX;
+          startY = e.touches[0].clientY;
+        },
+        { passive: true }
+      );
+      this.itemContainer.addEventListener(
+        "touchmove",
+        (e) => {
+          if (!startX || !startY) return;
+          deltaX = e.touches[0].clientX - startX;
+          deltaY = e.touches[0].clientY - startY;
+        },
+        { passive: true }
+      );
+      this.itemContainer.addEventListener(
+        "touchend",
+        (e) => {
+          if (!startX || !startY) return;
+          if (
+            Math.abs(deltaX) > Math.abs(deltaY) &&
+            Math.abs(deltaX) > threshold
+          ) {
+            this.stopAutoPlay();
+            if (deltaX > 0) {
+              this.previous();
+            } else {
+              this.next();
+            }
           }
-        }
-        startX = 0;
-        startY = 0;
-        deltaX = 0;
-        deltaY = 0;
-      }, { passive: true });
+          startX = 0;
+          startY = 0;
+          deltaX = 0;
+          deltaY = 0;
+        },
+        { passive: true }
+      );
     }
 
     isInViewport() {
@@ -371,8 +399,10 @@
       return (
         rect.top >= 0 &&
         rect.left >= 0 &&
-        rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
-        rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+        rect.bottom <=
+          (window.innerHeight || document.documentElement.clientHeight) &&
+        rect.right <=
+          (window.innerWidth || document.documentElement.clientWidth)
       );
     }
 
@@ -402,18 +432,24 @@
     }
   }
   function initializePaddleNav() {
-    const mainGallery = document.querySelector('section[data-module-template="noticias"] .gallery#noticias');
+    const mainGallery = document.querySelector(
+      'section[data-module-template="noticias"] .gallery#noticias'
+    );
     const paddleNavInstances = [];
     if (mainGallery) {
-      const paddleNav = new PaddleNavigation('#noticias');
+      const paddleNav = new PaddleNavigation("#noticias");
       if (paddleNav.isValid()) {
         paddleNavInstances.push(paddleNav);
         // console.log('✅ PaddleNavigation initialized for #noticias gallery');
       } else {
-        console.warn('❌ Failed to initialize PaddleNavigation for #noticias gallery');
+        console.warn(
+          "❌ Failed to initialize PaddleNavigation for #noticias gallery"
+        );
       }
     } else {
-      const galleries = document.querySelectorAll('section[data-module-template="noticias"] .gallery');
+      const galleries = document.querySelectorAll(
+        'section[data-module-template="noticias"] .gallery'
+      );
       galleries.forEach((gallery, index) => {
         const galleryId = gallery.id || `noticias-gallery-${index}`;
         if (!gallery.id) {
@@ -427,10 +463,10 @@
       });
     }
     let resizeTimeout;
-    window.addEventListener('resize', () => {
+    window.addEventListener("resize", () => {
       clearTimeout(resizeTimeout);
       resizeTimeout = setTimeout(() => {
-        paddleNavInstances.forEach(instance => {
+        paddleNavInstances.forEach((instance) => {
           instance.handleResize();
         });
       }, 100);
@@ -438,8 +474,8 @@
     return paddleNavInstances;
   }
 
-  if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', initializePaddleNav);
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", initializePaddleNav);
   } else {
     initializePaddleNav();
   }

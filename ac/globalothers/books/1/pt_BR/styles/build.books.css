@@ -713,3 +713,9 @@ Organizar
 span.screen-reader-only {
   display: none;
 }
+
+.references div {
+  display: block;
+  margin-left: 1.5em !important;
+  text-indent: 0 !important; /* este trecho força o texto a não ter recuo */
+}
