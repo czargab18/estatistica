@@ -403,3 +403,113 @@
  *
  * ============================================================================
  */
+
+/**
+ * ============================================================================
+ * DIAGNÓSTICO E SOLUÇÃO PARA BUSCA NÃO FUNCIONAL (PÓS-AUTOMAÇÃO)
+ * ============================================================================
+ *
+ * ANÁLISE DO PROBLEMA:
+ * --------------------
+ * A funcionalidade de busca parou de funcionar após a automação do backend
+ * que padroniza os componentes HTML (header, footer, head) nas páginas
+ * geradas pelo Quarto.
+ *
+ * A causa raiz é que o processo de automação, ao substituir o <head> original
+ * da página, remove dois elementos cruciais que o script `quarto-search.js`
+ * necessita para inicializar e funcionar corretamente.
+ *
+ * ELEMENTOS AUSENTES NAS PÁGINAS ATUALIZADAS:
+ * -------------------------------------------
+ *
+ * 1. O Bloco de Configurações da Busca:
+ *    O Quarto gera um <script> com o ID "quarto-search-options". Este script
+ *    contém um objeto JSON com todas as configurações para a busca, como os
+ *    textos de idioma, limite de resultados, atalhos de teclado, etc.
+ *
+ *    Exemplo do que está faltando:
+ *    <script id="quarto-search-options" type="application/json">
+ *      {
+ *        "location": "sidebar",
+ *        "copy-button": false,
+ *        "collapse-after": 3,
+ *        "panel-placement": "start",
+ *        "type": "textbox",
+ *        "limit": 50,
+ *        "keyboard-shortcut": ["f", "/", "s"],
+ *        "language": {
+ *          "search-no-results-text": "Sem resultados",
+ *          "search-matching-documents-text": "documentos encontrados",
+ *          ...
+ *        }
+ *      }
+ *    </script>
+ *
+ *    Sem este bloco, o `quarto-search.js` não consegue carregar suas
+ *    configurações (a variável `quartoSearchOptions` fica vazia) e a
+ *    inicialização falha silenciosamente.
+ *
+ * 2. A Meta Tag de Offset do Caminho:
+ *    O Quarto também gera uma meta tag para ajudar o script a localizar o
+ *    arquivo `search.json` de forma relativa, não importa em qual subdiretório
+ *    a página HTML esteja.
+ *
+ *    Exemplo do que está faltando:
+ *    <meta name="quarto:offset" content="../">
+ *
+ *    O valor do atributo `content` muda dependendo da profundidade do arquivo.
+ *    - Para `book/EST0033/index.html`, o content seria `./`.
+ *    - Para `book/EST0033/pretextuais/sumario.html`, o content seria `../`.
+ *
+ *    A função `offsetURL()` dentro deste script usa essa meta tag para montar
+ *    o caminho correto para `search.json`. Sem ela, o script tentará buscar
+ *    `search.json` no diretório atual, o que falhará para páginas em
+ *    subdiretórios (ex: `pretextuais/`).
+ *
+ *
+ * PLANO DE AÇÃO PARA CORREÇÃO (NO BACKEND):
+ * -----------------------------------------
+ * O script de automação do backend (`site_manager.py` ou similar) que manipula
+ * o <head> das páginas HTML precisa ser modificado para garantir que esses
+ * dois elementos sejam preservados ou reinseridos.
+ *
+ * SUGESTÃO DE IMPLEMENTAÇÃO:
+ *
+ * 1.  **Extrair Antes de Substituir:**
+ *     Antes de o seu script Python substituir o `<head>` antigo, ele deve
+ *     primeiro ler o HTML original e extrair o conteúdo do script
+ *     `#quarto-search-options` e da meta tag `[name="quarto:offset"]`.
+ *
+ *     Exemplo com BeautifulSoup4 em Python:
+ *     ```python
+ *     from bs4 import BeautifulSoup
+ *
+ *     # ... dentro da sua função de atualização de head ...
+ *     with open(caminho_html, 'r', encoding='utf-8') as f:
+ *         soup_original = BeautifulSoup(f, 'html.parser')
+ *
+ *     search_options_tag = soup_original.find('script', id='quarto-search-options')
+ *     offset_meta_tag = soup_original.find('meta', attrs={'name': 'quarto:offset'})
+ *     ```
+ *
+ * 2.  **Reinserir no Novo `<head>`:**
+ *     Após criar o novo `<head>` padronizado, o script deve inserir os dois
+ *     elementos que foram extraídos (se eles existirem) dentro do novo `<head>`
+ *     antes de salvar o arquivo HTML.
+ *
+ *     ```python
+ *     # soup_novo é o seu novo <head>
+ *     if search_options_tag:
+ *         soup_novo.head.append(search_options_tag)
+ *     if offset_meta_tag:
+ *         soup_novo.head.append(offset_meta_tag)
+ *
+ *     # Prossiga com a substituição do <head> no arquivo...
+ *     ```
+ *
+ * Ao seguir esses passos, a automação preservará a configuração e o contexto
+ * necessários para a busca, fazendo com que ela volte a funcionar em todas as
+ * páginas do livro.
+ *
+ * ============================================================================
+ */
