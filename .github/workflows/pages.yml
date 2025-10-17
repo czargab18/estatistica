@@ -77,14 +77,38 @@ jobs:
           git submodule update --init wss
 
       - name: Remover subpastas do 'deploy'
+        working-directory: estatistica
         run: |
           PASTAS=(
-          "build", ".github", ".vscode", "templates", "assets_apple", "outros_books", "tests", "actions", "src"
-          "README.md", "LICENSE", "CONTRIBUTING.md", "CODE_OF_CONDUCT.md"
+            "ac/components"
+            "build"
+            ".github"
+            ".vscode"
+            "templates"
+            "assets_apple"
+            "outros_books"
+            "tests"
+            "actions"
+            "backend"
+            "books"
+            "newshub"
+            "dados"
+            "README.md"
+            "LICENSE"
+            "CONTRIBUTING.md"
+            "CODE_OF_CONDUCT.md"
           )
+          
+          echo "Removendo pastas desnecessarias para o deploy..."
+          REMOVED=0
           for pasta in "${PASTAS[@]}"; do
-            rm -rf "$pasta"
+            if [ -e "$pasta" ]; then
+              echo "  - Removendo: $pasta"
+              rm -rf "$pasta"
+              REMOVED=$((REMOVED + 1))
+            fi
           done
+          echo "Total removido: $REMOVED de ${#PASTAS[@]} pastas"
 
       - name: Setup Pages
         uses: actions/configure-pages@v5
