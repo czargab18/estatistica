@@ -361,6 +361,7 @@ header#quarto-header {
   transition: position 200ms linear;
   transition: all 200ms linear;
 }
+
 #quarto-container {
   display: flex;
   gap: 1rem;
@@ -380,20 +381,10 @@ header#quarto-header {
     display: grid;
     gap: 0;
     grid-template-columns:
-      [screen-start] 1.5em
-      [screen-start-inset] 5fr
-      [page-start] minmax(25px, 50px)
-      [page-start-inset] minmax(50px, 150px)
-      [body-start-outset] minmax(25px, 50px)
-      [body-start] 1.5em
-      [body-content-start] minmax(500px, calc(800px - 3em))
-      [body-content-end] 1.5em
-      [body-end] minmax(25px, 50px)
-      [body-end-outset] minmax(50px, 150px)
-      [page-end-inset] minmax(25px, 50px)
-      [page-end] 5fr
-      [screen-end-inset] 1.5em
-      [screen-end];
+        [page-start] minmax(25px, 50px) 
+        [page-start-inset] minmax(50px, 150px) 
+        [body-start-outset] minmax(25px, 50px) 
+        [body-content-start] minmax(500px, calc(800px - 3em))
   }
 }
 
@@ -410,11 +401,11 @@ header#quarto-header {
   padding-top: 0;
 }
 
-#quarto-content nav, 
+#quarto-content nav,
 #quarto-content main,
 #quarto-content div {
   margin: 0;
-  padding-top: 0 ;
+  padding-top: 0;
 }
 
 
@@ -422,8 +413,10 @@ header#quarto-header {
   padding: 0;
   width: max-content;
 }
+
 #quarto-content nav.sidebar .sidebar-header {
   margin: 0;
   padding: 0;
-  display: none;  /* remove o titulo da sidebar */
+  display: none;
+  /* remove o titulo da sidebar */
 }
