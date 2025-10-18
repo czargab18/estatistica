@@ -1,9 +1,19 @@
 @charset "UTF-8";
 
+
 /* 1. Declarações de variaveis */
 .main-book-list {
   all: unset;
-  font-family: var(--r-globalfont-family);
+}
+.main-book-list {
+  margin: 0;
+  font-family: var(--bs-body-font-family, valor_substituir);
+  font-size: var(--bs-body-font-size, valor_substituir);
+  font-weight: var(--bs-body-font-weight, valor_substituir);
+  line-height: var(--bs-body-line-height, valor_substituir);
+  color: var(--bs-body-color, valor_substituir);
+  text-align: var(--bs-body-text-align, valor_substituir);
+  background-color: var(--bs-body-bg, valor_substituir);
 }
 
 .main-book-list ul,
