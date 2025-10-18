@@ -396,3 +396,31 @@ header#quarto-header {
       [screen-end];
   }
 }
+
+#quarto-content #title-block-header {
+ display: none;
+}
+
+
+#quarto-content h1 {
+  margin-top: 0;
+  padding-top: 0;
+}
+
+#quarto-content nav, 
+#quarto-content main,
+#quarto-content div {
+  margin: 0;
+  padding-top: 0 ;
+}
+
+
+#quarto-content nav.sidebar {
+  padding: 0;
+  width: max-content;
+}
+#quarto-content nav.sidebar .sidebar-header {
+  margin: 0;
+  padding: 0;
+  display: none;  /* remove o titulo da sidebar */
+}
