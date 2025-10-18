@@ -5,15 +5,18 @@
 .main-book-list {
   all: unset;
 }
+
 .main-book-list {
+  --r-globalfont-family: "SF Pro Text", "SF Pro Dislay", "SF Pro Icons", "Helvetica Neue", "Helvetica", "San Francisco",
+    "Open Sans", "Noto Sans", "Arial", sans-serif;
   margin: 0;
-  font-family: var(--bs-body-font-family, valor_substituir);
-  font-size: var(--bs-body-font-size, valor_substituir);
-  font-weight: var(--bs-body-font-weight, valor_substituir);
-  line-height: var(--bs-body-line-height, valor_substituir);
-  color: var(--bs-body-color, valor_substituir);
-  text-align: var(--bs-body-text-align, valor_substituir);
-  background-color: var(--bs-body-bg, valor_substituir);
+  font-family: var(--r-globalfont-family);
+  font-size: var(--bs-body-font-size, 1rem);
+  font-weight: var(--bs-body-font-weight, 400);
+  line-height: var(--bs-body-line-height, 1.5);
+  color: var(--bs-body-color, #343a40);
+  text-align: var(--bs-body-text-align, left);
+  background-color: var(--bs-body-bg, #fff);
 }
 
 .main-book-list ul,
