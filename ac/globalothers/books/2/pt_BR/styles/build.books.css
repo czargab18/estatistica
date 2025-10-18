@@ -3,6 +3,7 @@
 /* 1. Declarações de variaveis */
 .main-book-list {
   all: unset;
+  font-family: var(--r-globalfont-family);
 }
 
 .main-book-list ul,
@@ -17,8 +18,8 @@
 .main-book-list h4,
 .main-book-list h5,
 .main-book-list h6,
-.main-book-list hgroup,
 .main-book-list p,
+.main-book-list hgroup,
 .main-book-list blockquote,
 .main-book-list figure,
 .main-book-list form,
@@ -61,8 +62,10 @@
   display: block;
   margin: 0;
   padding: 0;
-  font-family: var(--r-globalfont-family);
   font-size: 16px;
+  font-family: var(--r-globalfont-family);
+  --sk-headline-text-color: rgb(29, 29, 31);
+  color: var(--sk-headline-text-color, rgb(29, 29, 31));
 }
 
 .main-book-list pre,
@@ -98,7 +101,6 @@
   vertical-align: baseline;
 }
 
-/* #quarto-content */
 .main-book-list {
   display: flex;
   gap: 1rem;
@@ -115,6 +117,7 @@
 } */
 
 /* 2. "resetar" pré existentes do BootStrap */
+
 /* 3. Declarações da book-lista (index.html na raiz de book) */
 .main-book-list .archive {
   width: 100%;
@@ -166,8 +169,7 @@
     line-height: 1.1666666667;
     font-weight: 700;
     letter-spacing: 0.009em;
-    font-family: "SF Pro Display", "SF Pro Icons", "Helvetica Neue", "Helvetica",
-      "Arial", sans-serif;
+    font-family: var(--r-globalfont-family);
     margin-top: 48px;
   }
 }
@@ -203,6 +205,134 @@
 
 .main-book-list .archive .books .books-content a:not(.visuallyhidden) {
   border: 0px;
+}
+
+.main-book-list .archive .books .books-content a[class*="book-item"] picture[class="viewport-picture"] {
+  align-self: flex-start;
+  flex-shrink: 0;
+  font-size: 0;
+  width: 295px;
+  display: flex;
+  justify-content: center;
+}
+
+@media only screen and (max-width: 1068px) {
+  .main-book-list .archive .books .books-content a[class*="book-item"] picture[class="viewport-picture"] {
+    width: 264px;
+  }
+}
+
+@media only screen and (max-width: 1068px) {
+  .main-book-list .archive .books .books-content a[class*="book-item"] picture[class="viewport-picture"] {
+    width: 105px;
+    height: max-content;
+  }
+}
+
+.main-book-list .archive .books .books-content a[class*="book-item"] picture[class="viewport-picture"] img[class="viewport-image"] {
+  border-radius: 20px;
+  width: max-content;
+  height: 165px;
+}
+
+@media only screen and (max-width: 1068px) {
+  .main-book-list .archive .books .books-content a[class*="book-item"] picture[class="viewport-picture"] img[class="viewport-image"] {
+    width: 105px;
+    height: 105px;
+  }
+}
+
+.main-book-list .archive .books .books-content a[class*="book-item"] div[class="item-content"] {
+  margin-inline-start: 32px;
+}
+
+@media only screen and (max-width: 1068px) {
+  .main-book-list .archive .books .books-content a[class*="book-item"] div[class="item-content"] {
+    margin-inline-start: 24px;
+  }
+}
+
+@media only screen and (max-width: 734px) {
+  .main-book-list .archive .books .books-content a[class*="book-item"] div[class="item-content"] {
+    margin-inline-start: 16px;
+  }
+}
+
+.main-book-list a[class*="book-item"] div[class="item-content"] p[class*="item-category"] {
+  color: #6e6e73;
+  font-size: 14px;
+  line-height: 1.2857742857;
+  font-weight: 700;
+  letter-spacing: -0.016em;
+  font-family: "SF Pro Text", "SF Pro Icons", "Helvetica Neue", "Helvetica",
+    "Arial", sans-serif;
+  text-transform: uppercase;
+}
+
+@media only screen and (max-width: 1068px) {
+  .main-book-list a[class*="book-item"] div[class="item-content"] p[class*="item-category"] {
+    font-size: 12px;
+    line-height: 1.3333733333;
+    font-weight: 700;
+    letter-spacing: -0.01em;
+    font-family: "SF Pro Text", "SF Pro Icons", "Helvetica Neue", "Helvetica",
+      "Arial", sans-serif;
+  }
+}
+
+.main-book-list a[class*="book-item"] div[class="item-content"] h3[class="item-headline"] {
+  font-size: 24px;
+  line-height: 1.1666666667;
+  font-weight: 700;
+  letter-spacing: 0.009em;
+  font-family: "SF Pro Display", "SF Pro Icons", "Helvetica Neue", "Helvetica",
+    "Arial", sans-serif;
+  margin-top: 8px;
+  -webkit-line-clamp: 3;
+}
+
+@media only screen and (max-width: 1068px) {
+  .main-book-list a[class*="book-item"] div[class="item-content"] h3[class="item-headline"] {
+    font-size: 21px;
+    line-height: 1.1904761905;
+    font-weight: 700;
+    letter-spacing: 0.011em;
+    font-family: "SF Pro Display", "SF Pro Icons", "Helvetica Neue", "Helvetica",
+      "Arial", sans-serif;
+  }
+}
+
+@media only screen and (max-width: 734px) {
+  .main-book-list a[class*="book-item"] div[class="item-content"] h3[class="item-headline"] {
+    font-size: 17px;
+    line-height: 1.2353641176;
+    font-weight: 700;
+    letter-spacing: -0.022em;
+    font-family: "SF Pro Text", "SF Pro Icons", "Helvetica Neue", "Helvetica",
+      "Arial", sans-serif;
+  }
+}
+
+.main-book-list a[class*="book-item"] div[class="item-content"] p[class="item-date last-update"] {
+  color: #6e6e73;
+  font-size: 14px;
+  line-height: 1.4285914286;
+  font-weight: 600;
+  letter-spacing: -0.016em;
+  font-family: "SF Pro Text", "SF Pro Icons", "Helvetica Neue", "Helvetica",
+    "Arial", sans-serif;
+  margin-top: 12px;
+}
+
+@media only screen and (max-width: 734px) {
+  .main-book-list a[class*="book-item"] div[class="item-content"] p[class="item-date last-update"] {
+    font-size: 14px;
+    line-height: 1.2857742857;
+    font-weight: 600;
+    letter-spacing: -0.016em;
+    font-family: "SF Pro Text", "SF Pro Icons", "Helvetica Neue", "Helvetica",
+      "Arial", sans-serif;
+  }
 }
 
 /* 4. Demais declarações dos livros (do bootstrap) */
