@@ -1,3 +1,7 @@
+// TUDO JÁ FOI RESOLVIDO
+
+
+
 /**
  * ============================================================================
  * QUARTO SEARCH - VERSÃO 2.0 - DOCUMENTAÇÃO E PLANO DE IMPLEMENTAÇÃO
