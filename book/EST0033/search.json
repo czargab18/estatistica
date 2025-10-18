@@ -14,7 +14,7 @@
     "href": "pretextuais/sumario.html",
     "title": "Sumário",
     "section": "",
-    "text": "Parte 1 - Preliminares\nAinda em organização para melhor clareza",
+    "text": "Parte I: Fundamentos",
     "crumbs": [
       "<span class='chapter-number'>2</span>  <span class='chapter-title'>Sumário</span>"
     ]
@@ -57,6 +57,26 @@
     "text": "Média aritmética (dados não-agrupados\n\\[\\bar{x} = \\frac{\\sum_{i=1}^n x_i}{n}\\]\nMédia aritmética (dados agrupados): \\[\\bar{x} = \\frac{\\sum_{i=1}^k f_i x_i}{\\sum_{i=1}^k f_i}\\]\nMédia geral \\[\\bar{x}_g = \\frac{\\sum_{j=1}^m n_j \\bar{x}_j}{\\sum_{j=1}^m n_j}\\]\nMédia harmônica (Dados não agrupados): \\[H = \\frac{n}{\\sum_{i=1}^n \\frac{1}{x_i}}\\]\nMédia harmônica (dados agrupados) \\[H = \\frac{\\sum_{i=1}^k f_i}{\\sum_{i=1}^k \\frac{f_i}{x_i}}\\]\nMediana\n\nDados não agrupados: Para dados ordenados: se \\(n\\) ímpar, \\[Md = x_{\\left(\\frac{n+1}{2}\\right)}\\] se \\(n\\) par, \\[Md = \\frac{x_{\\left(\\frac{n}{2}\\right)} + x_{\\left(\\frac{n}{2}+1\\right)}}{2}\\]\nDados agrupados: \\[Md = L + \\frac{\\left(\\frac{N}{2} - F_{ant}\\right)}{f_{Md}} \\cdot h\\] onde: \\(L\\) = limite inferior da classe mediana, \\(N\\) = total de observações, \\(F_{ant}\\) = frequência acumulada antes da classe mediana, \\(f_{Md}\\) = frequência da classe mediana, \\(h\\) = amplitude da classe.\n\nQuartis\n\nDados não agrupados: \\[Q_k = x_{\\left(\\frac{k(n+1)}{4}\\right)}\\], onde \\(k=1,2,3\\)\nDados agrupados: \\[Q_k = L + \\frac{\\left(\\frac{kN}{4} - F_{ant}\\right)}{f_{Q_k}} \\cdot h\\]\n\nDecis\n\nDados não agrupados: \\[D_k = x_{\\left(\\frac{k(n+1)}{10}\\right)}\\], onde \\(k=1,2,...,9\\)$\nDados agrupados: \\[D_k = L + \\frac{\\left(\\frac{kN}{10} - F_{ant}\\right)}{f_{D_k}} \\cdot h\\]\n\nPercentis\n\nDados não agrupados: \\[P_k = x_{\\left(\\frac{k(n+1)}{100}\\right)}\\], onde \\(k=1,2,...,99\\)$\nDados agrupados: \\[P_k = L + \\frac{\\left(\\frac{kN}{100} - F_{ant}\\right)}{f_{P_k}} \\cdot h\\]\n\nModa\n\nDados não agrupados: valor mais frequente.\nDados agrupados: \\[Mo = L + \\frac{(f_1 - f_0)}{(2f_1 - f_0 - f_2)} \\cdot h\\]\nonde: \\(L\\) = limite inferior da classe modal, \\(f_1\\) = frequência da classe modal, \\(f_0\\) = frequência da classe anterior, \\(f_2\\) = frequência da classe posterior, \\(h\\) = amplitude da classe.",
     "crumbs": [
       "<span class='chapter-number'>3</span>  <span class='chapter-title'>Formulas</span>"
+    ]
+  },
+  {
+    "objectID": "pretextuais/sumario.html#parte-i-fundamentos",
+    "href": "pretextuais/sumario.html#parte-i-fundamentos",
+    "title": "Sumário",
+    "section": "",
+    "text": "Capítulo 1: Preliminares\n\nIntrodução\nModelos Estatísticos\nEstatística e Ciência de Dados\n\nAprendizado Supervisionado\nAprendizado Não Supervisionado\nDados e Megadados (Big Data)\nProgramação Clássica vs. “Machine Learning”\n\nAspectos Computacionais\n\nO Repositório R\n\nMétodos Gráficos\nConjuntos de Dados\nPlano do Livro",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Sumário</span>"
+    ]
+  },
+  {
+    "objectID": "pretextuais/sumario.html#parte-ii-análise-exploratória-de-dados",
+    "href": "pretextuais/sumario.html#parte-ii-análise-exploratória-de-dados",
+    "title": "Sumário",
+    "section": "Parte II: Análise Exploratória de Dados",
+    "text": "Parte II: Análise Exploratória de Dados\n\nCapítulo 2: Resumo de Dados\n\nTipos de Variáveis\nDistribuições de Frequências\nGráficos\n\nGráficos para Variáveis Qualitativas\nGráficos para Variáveis Quantitativas\n\nDiagrama de Ramo e Folhas\nExemplos Computacionais\nProblemas Suplementares\nComplementos Metodológicos\n\n\n\nCapítulo 3: Medidas-Resumo\n\nMedidas de Posição (Média, Mediana, Moda)\nMedidas de Dispersão (Variância, Desvio Padrão)\nQuantis Empíricos (Quartis, Decis, Percentis)\n“Box Plots” (Diagrama de Caixa)\nGráficos de Simetria\nTransformações de Dados\nExemplos Computacionais\nProblemas Suplementares\nComplementos Metodológicos\n\n\n\nCapítulo 4: Análise de Dados Multivariados\n\nIntrodução\nAnálise de Variáveis Qualitativas\nAssociação entre Variáveis Qualitativas\nMedidas de Associação para Variáveis Qualitativas\nAssociação entre Variáveis Quantitativas\nAssociação entre Variáveis Qualitativas e Quantitativas\nGráficos q × q (Quantil-Quantil)\nAnálise com Três ou Mais Variáveis\nProblemas Suplementares\nComplementos Metodológicos",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Sumário</span>"
     ]
   }
 ]
