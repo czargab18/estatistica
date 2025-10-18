@@ -397,8 +397,11 @@ header#quarto-header {
   }
 }
 
-#quarto-content #title-block-header {
- display: none;
+/* Oculta o cabeçalho do título apenas se ele não tiver conteúdo */
+#quarto-content #title-block-header:empty {
+  margin: 0;
+  padding: 0;
+  display: none;
 }
 
 
