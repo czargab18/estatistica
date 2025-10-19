@@ -20,26 +20,6 @@
     ]
   },
   {
-    "objectID": "pretextuais/whatsstatistc.html",
-    "href": "pretextuais/whatsstatistc.html",
-    "title": "O que é estátistica?",
-    "section": "",
-    "text": "Em muitas bibliográfias, é útil usar o conceito sobre Estatística da forma mais abrangente, como a de (ALGUEM, XXXXX): “a ciência que estuda a coleta, análise, interpretação, apresentação e organização de dados” (ALGUEM, XXXXX) Estatística Básica (z-library)\nGosto mais da definição de (Noether 1991) como sendo ideias e métodos que visam a aperfeiçoar a obtenção de conclusões a partir das informações numéricas, na presença da incerteza .\n“A estatística trata de ideas e métodos que visam a aperfeiçoar a obtenção de conclusões a partir das informações numéricas, na presença da incerteza” (Noether 1991)\nAbaixo apresento a minha interpretação que eu acredito que seja a melhor para este projeto.\n“A Estatística é uma ciência que busca maximizar o poder de escolha sobre um determinado assuntode em estudo, ou seja, auxiliar a tomada da melhor decisão possível.”.\nDefenderei a definição com seguinte exemplo:\nUma estatistica é contratado para trabalhar em uma empresas especializada na venda de 2 produtos químicos. Após uma analise minucioso, ela conclui que produto A é 30% mais eficaz que o produto B. B é 65% mais caro que A. A decisão de comercializar ou não o produto será da empresa. Seus estudos ajudarão na decisão. A estatistica melhorou as opções de escolha. Em outras palavras, ela maxmixou o poder de escolha da empresa em escolher o melhor produto a ser comercializado, com base em suas analises estisticas.\n\n\n\n\nNoether, Gottfried E. 1991. Introduction to Statistics: The Nonparametric Way. 1st ed. Springer Texts in Statistics. Springer New York, NY. https://doi.org/10.1007/978-1-4612-0943-0.",
-    "crumbs": [
-      "<span class='chapter-number'>2</span>  <span class='chapter-title'>O que é estátistica?</span>"
-    ]
-  },
-  {
-    "objectID": "postextuais/references.html",
-    "href": "postextuais/references.html",
-    "title": "References",
-    "section": "",
-    "text": "Knuth, Donald E. 1968. The Art of Computer Programming. Volumes\n1–4A. Addison-Wesley. https://www-cs-faculty.stanford.edu/~knuth/taocp.html.\n\n\nNoether, Gottfried E. 1991. Introduction to Statistics: The\nNonparametric Way. 1st ed. Springer Texts in Statistics. Springer\nNew York, NY. https://doi.org/10.1007/978-1-4612-0943-0.",
-    "crumbs": [
-      "<span class='chapter-number'>5</span>  <span class='chapter-title'>References</span>"
-    ]
-  },
-  {
     "objectID": "textuais/whatsstatistc.html",
     "href": "textuais/whatsstatistc.html",
     "title": "O que é estátistica?",
