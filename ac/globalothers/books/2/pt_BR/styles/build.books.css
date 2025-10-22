@@ -296,7 +296,7 @@
   font-family: "SF Pro Display", "SF Pro Icons", "Helvetica Neue", "Helvetica",
     "Arial", sans-serif;
   margin-top: 8px;
-  -webkit-line-clamp: 3;
+  text-transform: uppercase;
 }
 
 @media only screen and (max-width: 1068px) {
@@ -381,10 +381,7 @@ header#quarto-header {
     display: grid;
     gap: 0;
     grid-template-columns:
-        [page-start] minmax(25px, 50px) 
-        [page-start-inset] minmax(50px, 150px) 
-        [body-start-outset] minmax(25px, 50px) 
-        [body-content-start] minmax(500px, calc(800px - 3em))
+      [page-start] minmax(25px, 50px) [page-start-inset] minmax(50px, 150px) [body-start-outset] minmax(25px, 50px) [body-content-start] minmax(500px, calc(800px - 3em))
   }
 }
 
