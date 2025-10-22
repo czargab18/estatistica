@@ -436,3 +436,10 @@ header#quarto-header {
   border: 0;
   overflow: hidden;
 }
+
+#quarto-sidebar.collapse.show {
+  top: 0 !important;
+  max-height: calc(100vh - 0px) !important;
+  position: relative;
+  padding-left: 2em;
+}
