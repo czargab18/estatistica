@@ -1,5 +1,7 @@
 @charset "UTF-8";
-
+/* 
+** este é minha versão do BootStrap adaptado para meu site
+*/
 
 /* 1. Declarações de variaveis */
 .main-book-list {
@@ -416,4 +418,28 @@ header#quarto-header {
   padding: 0;
   display: none;
   /* remove o titulo da sidebar */
+}
+
+
+/* detalhes extras 
+  * decidir em qual parte do código colocar esses estilos
+  * este é minha versão do BootStrap adaptado para meu site
+*/
+
+#quarto-content .screen-reader-only {
+  margin: -1px;
+  position: absolute;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  width: 1px;
+  padding: 0;
+  border: 0;
+  overflow: hidden;
+}
+
+#quarto-sidebar.collapse.show {
+  top: 0 !important;
+  max-height: calc(100vh - 0px) !important;
+  position: relative;
+  padding-left: 2em;
 }
